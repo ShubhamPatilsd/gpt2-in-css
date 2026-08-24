@@ -23,6 +23,7 @@ MODEL_REVISION = "5f91d94bd9cd7190a9f3216ff93cd1dd95f2c7be"
 FILES = ["config.json", "vocab.json", "merges.txt", "pytorch_model.bin"]
 PROMPTS = ["Hello", "The", "CSS"]
 EPSILON = 1e-5
+AUTOREGRESSIVE_STEPS = 4
 
 CSS_FUNCTIONS = """@function --gelu(--x <number>) returns <number> {
   --cube: calc(var(--x) * var(--x) * var(--x));
@@ -515,6 +516,261 @@ def compile_css(
     )
 
 
+def compile_autoregressive_context(
+    compiler: CssCompiler,
+    state: dict[str, np.ndarray],
+    inputs: list[list[str]],
+    generation: int,
+) -> list[str]:
+    """Compile a causal transformer pass and return the last hidden vector."""
+    x = inputs
+    for layer in range(2):
+        weight_prefix = f"transformer.h.{layer}"
+        node_prefix = f"generation-{generation}-layer-{layer}"
+        normalized = [
+            compiler.normalize(
+                f"{node_prefix}-ln1-{position}",
+                vector,
+                state[f"{weight_prefix}.ln_1.weight"],
+                state[f"{weight_prefix}.ln_1.bias"],
+            )
+            for position, vector in enumerate(x)
+        ]
+        qkv = [
+            [
+                compiler.dot(
+                    f"{node_prefix}-qkv-{position}-{output}",
+                    vector,
+                    state[f"{weight_prefix}.attn.c_attn.weight"][:, output],
+                    state[f"{weight_prefix}.attn.c_attn.bias"][output],
+                )
+                for output in range(6)
+            ]
+            for position, vector in enumerate(normalized)
+        ]
+        queries = [vector[:2] for vector in qkv]
+        keys = [vector[2:4] for vector in qkv]
+        values = [vector[4:6] for vector in qkv]
+
+        attended: list[list[str]] = []
+        for position in range(len(x)):
+            output = []
+            for head in range(2):
+                scores = [
+                    compiler.value(
+                        f"{node_prefix}-attention-score-{position}-{head}-{source}",
+                        f"({queries[position][head]}) * ({keys[source][head]})",
+                    )
+                    for source in range(position + 1)
+                ]
+                maximum = compiler.reduce_tree(
+                    f"{node_prefix}-attention-max-{position}-{head}",
+                    scores,
+                    "max",
+                )
+                exponentials = [
+                    compiler.raw(
+                        f"{node_prefix}-attention-exp-{position}-{head}-{source}",
+                        f"exp(({score}) - ({maximum}))",
+                    )
+                    for source, score in enumerate(scores)
+                ]
+                denominator = compiler.value(
+                    f"{node_prefix}-attention-denominator-{position}-{head}",
+                    " + ".join(exponentials),
+                )
+                probabilities = [
+                    compiler.value(
+                        f"{node_prefix}-attention-probability-{position}-{head}-{source}",
+                        f"({exponential}) / ({denominator})",
+                    )
+                    for source, exponential in enumerate(exponentials)
+                ]
+                output.append(
+                    compiler.value(
+                        f"{node_prefix}-attention-value-{position}-{head}",
+                        " + ".join(
+                            f"({probability}) * ({values[source][head]})"
+                            for source, probability in enumerate(probabilities)
+                        ),
+                    )
+                )
+            attended.append(output)
+
+        residual_1: list[list[str]] = []
+        for position, vector in enumerate(x):
+            projection = [
+                compiler.dot(
+                    f"{node_prefix}-attention-projection-{position}-{output}",
+                    attended[position],
+                    state[f"{weight_prefix}.attn.c_proj.weight"][:, output],
+                    state[f"{weight_prefix}.attn.c_proj.bias"][output],
+                )
+                for output in range(2)
+            ]
+            residual_1.append(
+                [
+                    compiler.value(
+                        f"{node_prefix}-residual1-{position}-{dimension}",
+                        f"({vector[dimension]}) + ({projection[dimension]})",
+                    )
+                    for dimension in range(2)
+                ]
+            )
+
+        normalized_2 = [
+            compiler.normalize(
+                f"{node_prefix}-ln2-{position}",
+                vector,
+                state[f"{weight_prefix}.ln_2.weight"],
+                state[f"{weight_prefix}.ln_2.bias"],
+            )
+            for position, vector in enumerate(residual_1)
+        ]
+        next_x: list[list[str]] = []
+        for position, vector in enumerate(normalized_2):
+            feed_forward = [
+                compiler.dot(
+                    f"{node_prefix}-fc-{position}-{unit}",
+                    vector,
+                    state[f"{weight_prefix}.mlp.c_fc.weight"][:, unit],
+                    state[f"{weight_prefix}.mlp.c_fc.bias"][unit],
+                )
+                for unit in range(8)
+            ]
+            activated = [
+                compiler.raw(
+                    f"{node_prefix}-gelu-{position}-{unit}",
+                    f"--gelu({value})",
+                )
+                for unit, value in enumerate(feed_forward)
+            ]
+            projection = [
+                compiler.dot(
+                    f"{node_prefix}-mlp-projection-{position}-{output}",
+                    activated,
+                    state[f"{weight_prefix}.mlp.c_proj.weight"][:, output],
+                    state[f"{weight_prefix}.mlp.c_proj.bias"][output],
+                )
+                for output in range(2)
+            ]
+            next_x.append(
+                [
+                    compiler.value(
+                        f"{node_prefix}-residual2-{position}-{dimension}",
+                        f"({residual_1[position][dimension]}) + ({projection[dimension]})",
+                    )
+                    for dimension in range(2)
+                ]
+            )
+        x = next_x
+
+    return compiler.normalize(
+        f"generation-{generation}-final-ln",
+        x[-1],
+        state["transformer.ln_f.weight"],
+        state["transformer.ln_f.bias"],
+    )
+
+
+def compile_autoregressive_css(
+    state: dict[str, np.ndarray],
+    prompt_ids: list[int],
+    sequences: list[list[int]],
+) -> None:
+    compiler = CssCompiler()
+    embeddings = state["transformer.wte.weight"]
+    positions = state["transformer.wpe.weight"]
+    prompt_input = [
+        compiler.raw(f"autoregressive-input-{dimension}", "0")
+        for dimension in range(2)
+    ]
+    selected_embeddings: list[list[str]] = []
+    generation_indicators: list[dict[int, str]] = []
+
+    for generation in range(AUTOREGRESSIVE_STEPS):
+        inputs = [prompt_input]
+        for position, embedding in enumerate(selected_embeddings, start=1):
+            inputs.append(
+                [
+                    compiler.value(
+                        f"generation-{generation}-input-{position}-{dimension}",
+                        f"({embedding[dimension]}) + {css_number(positions[position, dimension])}",
+                    )
+                    for dimension in range(2)
+                ]
+            )
+
+        final = compile_autoregressive_context(compiler, state, inputs, generation)
+        logits = [
+            compiler.dot(
+                f"generation-{generation}-logit-{token}",
+                final,
+                embeddings[token],
+            )
+            for token in range(len(embeddings))
+        ]
+        maximum = compiler.reduce_tree(
+            f"generation-{generation}-max-logit", logits, "max"
+        )
+        candidates = sorted({sequence[generation] for sequence in sequences})
+        indicators = {
+            token: compiler.raw(
+                f"generation-{generation}-is-token-{token}",
+                f"--is-maximum({logits[token]}, {maximum})",
+            )
+            for token in candidates
+        }
+        generation_indicators.append(indicators)
+        if generation + 1 < AUTOREGRESSIVE_STEPS:
+            selected_embeddings.append(
+                [
+                    compiler.value(
+                        f"generation-{generation}-selected-embedding-{dimension}",
+                        " + ".join(
+                            f"({indicator}) * {css_number(embeddings[token, dimension])}"
+                            for token, indicator in indicators.items()
+                        ),
+                    )
+                    for dimension in range(2)
+                ]
+            )
+
+    declarations = compiler.lines[1:]
+    compiler.lines = []
+    for start in range(0, len(declarations), 1000):
+        compiler.lines.append(":root {")
+        compiler.lines.extend(declarations[start : start + 1000])
+        compiler.lines.append("}")
+
+    prompt_vectors = embeddings[prompt_ids] + positions[0]
+    for prompt_index, vector in enumerate(prompt_vectors):
+        compiler.lines.append(f":root:has(#prompt-{prompt_index}:checked) {{")
+        for dimension, value in enumerate(vector):
+            compiler.lines.append(
+                f"  --autoregressive-input-{dimension}: {css_number(value)};"
+            )
+        compiler.lines.append("}")
+    for generation, indicators in enumerate(generation_indicators):
+        for token, indicator in indicators.items():
+            compiler.lines.append(
+                f'.generated-token[data-step="{generation}"] '
+                f'.token-option[data-token="{token}"] {{ opacity: {indicator}; }}'
+            )
+
+    registrations = [
+        "/* Four-token causal chain generated from sshleifer/tiny-gpt2. */",
+        CSS_FUNCTIONS,
+    ]
+    registrations.extend(
+        f'@property --{name} {{ syntax: "<number>"; inherits: true; initial-value: 0; }}'
+        for name in dict.fromkeys(compiler.names)
+    )
+    (OUT / "autoregressive.css").write_text(
+        "\n".join(registrations + compiler.lines) + "\n"
+    )
+
+
 def write_html(
     tokenizer: Gpt2Tokenizer,
     prompt_ids: list[int],
@@ -578,7 +834,7 @@ def write_html(
     </p>
     <p class="back">
       <a href="../transformer/index.html">← Tiny autoregressive transformer</a>
-      <a href="benchmark.html">Run throughput benchmark →</a>
+      <a href="benchmark.html">Run autoregressive benchmark →</a>
     </p>
   </main>
 </body>
@@ -589,21 +845,31 @@ def write_html(
 
 def write_benchmark_html(
     tokenizer: Gpt2Tokenizer,
-    predicted_ids: list[int],
+    sequences: list[list[int]],
 ) -> None:
     controls = "\n".join(
         f'''        <input type="radio" name="prompt" id="prompt-{index}"{(" checked" if index == 0 else "")}>
         <label for="prompt-{index}">{html.escape(prompt)}</label>'''
         for index, prompt in enumerate(PROMPTS)
     )
-    options = "".join(
-        f'<span class="prediction-option" data-token="{token}">'
-        f'<strong>{html.escape(tokenizer.decode_token(token))}</strong>'
-        f'<small>token {token}</small></span>'
-        for token in sorted(set(predicted_ids))
+    generated = []
+    for generation in range(AUTOREGRESSIVE_STEPS):
+        candidates = sorted({sequence[generation] for sequence in sequences})
+        options = "".join(
+            f'<span class="token-option" data-token="{token}">'
+            f'{html.escape(tokenizer.decode_token(token))}</span>'
+            for token in candidates
+        )
+        generated.append(
+            f'<span class="generated-token" data-step="{generation}">{options}</span>'
+        )
+    references = "\n".join(
+        f'''        <span><strong>{html.escape(prompt)}</strong> →
+          {html.escape("".join(tokenizer.decode_token(token) for token in sequence))}</span>'''
+        for prompt, sequence in zip(PROMPTS, sequences)
     )
     expected = json.dumps(
-        {prompt: token for prompt, token in zip(PROMPTS, predicted_ids)}
+        {prompt: sequence for prompt, sequence in zip(PROMPTS, sequences)}
     )
     prompts = json.dumps(PROMPTS)
     document = f'''<!doctype html>
@@ -612,17 +878,17 @@ def write_benchmark_html(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CSS GPT-2 throughput benchmark</title>
-  <link rel="stylesheet" href="model.css">
+  <link rel="stylesheet" href="autoregressive.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="benchmark-page">
   <main>
-    <p class="eyebrow">Experiment 003B · CSS inference benchmark</p>
-    <h1>How fast does the CSS model run?</h1>
+    <p class="eyebrow">Experiment 003B · autoregressive CSS benchmark</p>
+    <h1>How fast does the CSS token chain run?</h1>
     <p class="lede">
-      This repeatedly switches among the compiled prompts and forces the browser
-      to resolve the selected token. The neural-network calculation remains in
-      <code>model.css</code>; JavaScript only drives and times the benchmark.
+      Four genuine <code>tiny-gpt2</code> steps are chained together: each CSS
+      argmax selects the token embedding consumed by the following step. Reading
+      the fourth token forces the browser through the whole causal chain.
     </p>
 
     <section class="demo">
@@ -633,25 +899,31 @@ def write_benchmark_html(
         </div>
       </fieldset>
 
-      <div class="prediction" aria-label="CSS-selected next token">{options}</div>
+      <div class="autoregressive-output" aria-label="CSS-generated token sequence">
+        <span id="prompt-output">{html.escape(PROMPTS[0])}</span>{"".join(generated)}
+      </div>
+      <div class="benchmark-references">
+{references}
+      </div>
 
       <div class="benchmark-controls">
         <button type="button" id="start">Start benchmark</button>
         <button type="button" id="stop" disabled>Stop</button>
       </div>
       <dl class="benchmark-results" aria-live="polite">
-        <div><dt>CSS inference</dt><dd><strong id="compute-rate">—</strong> tok/s</dd></div>
+        <div><dt>Autoregressive CSS</dt><dd><strong id="compute-rate">—</strong> tok/s</dd></div>
         <div><dt>Observed stream</dt><dd><strong id="wall-rate">—</strong> tok/s</dd></div>
-        <div><dt>Mean latency</dt><dd><strong id="latency">—</strong> ms/token</dd></div>
-        <div><dt>Samples</dt><dd><strong id="samples">0</strong></dd></div>
+        <div><dt>Mean per token</dt><dd><strong id="latency">—</strong> ms</dd></div>
+        <div><dt>Four-token chains</dt><dd><strong id="samples">0</strong></dd></div>
       </dl>
       <p id="status" class="benchmark-status">Ready.</p>
     </section>
 
     <p class="proof">
-      This is a warm, fixed-prompt style-recalculation benchmark—not an
-      arbitrary-text or growing-context GPT-2 benchmark. The separate
-      <a href="index.html">model demo</a> still contains zero scripts.
+      This is a warm, four-token, growing-context benchmark. The CSS graph
+      recomputes each causal prefix without a KV cache. JavaScript only switches
+      the seed prompt, validates the four outputs, and measures time; all model
+      arithmetic and token feedback live in <code>autoregressive.css</code>.
     </p>
   </main>
 
@@ -659,7 +931,8 @@ def write_benchmark_html(
     const prompts = {prompts};
     const expected = {expected};
     const inputs = [...document.querySelectorAll('input[name="prompt"]')];
-    const options = [...document.querySelectorAll('.prediction-option')];
+    const generations = [...document.querySelectorAll('.generated-token')];
+    const promptOutput = document.querySelector('#prompt-output');
     const startButton = document.querySelector('#start');
     const stopButton = document.querySelector('#stop');
     const computeRate = document.querySelector('#compute-rate');
@@ -667,7 +940,7 @@ def write_benchmark_html(
     const latency = document.querySelector('#latency');
     const samples = document.querySelector('#samples');
     const status = document.querySelector('#status');
-    const batchSize = 5;
+    const tokensPerChain = {AUTOREGRESSIVE_STEPS};
     let running = false;
     let promptIndex = 0;
     let sampleCount = 0;
@@ -678,21 +951,30 @@ def write_benchmark_html(
       promptIndex = (promptIndex + 1) % prompts.length;
       const started = performance.now();
       inputs[promptIndex].checked = true;
-      const winner = options.find(
-        option => Number.parseFloat(getComputedStyle(option).opacity) > 0.5
+      const terminalGeneration = generations[generations.length - 1];
+      [...terminalGeneration.querySelectorAll('.token-option')].find(
+        candidate => Number.parseFloat(getComputedStyle(candidate).opacity) > 0.5
       );
       const elapsed = performance.now() - started;
-      if (!winner || Number(winner.dataset.token) !== expected[prompts[promptIndex]]) {{
+      const winners = generations.map(generation => {{
+        const option = [...generation.querySelectorAll('.token-option')].find(
+          candidate => Number.parseFloat(getComputedStyle(candidate).opacity) > 0.5
+        );
+        return option ? Number(option.dataset.token) : -1;
+      }});
+      if (winners.some((token, index) => token !== expected[prompts[promptIndex]][index])) {{
         throw new Error(`CSS prediction mismatch for ${{prompts[promptIndex]}}`);
       }}
+      promptOutput.textContent = prompts[promptIndex];
       return elapsed;
     }}
 
     function updateResults() {{
       const wallMilliseconds = performance.now() - wallStarted;
-      computeRate.textContent = (sampleCount * 1000 / computeMilliseconds).toFixed(2);
-      wallRate.textContent = (sampleCount * 1000 / wallMilliseconds).toFixed(2);
-      latency.textContent = (computeMilliseconds / sampleCount).toFixed(2);
+      const tokenCount = sampleCount * tokensPerChain;
+      computeRate.textContent = (tokenCount * 1000 / computeMilliseconds).toFixed(2);
+      wallRate.textContent = (tokenCount * 1000 / wallMilliseconds).toFixed(2);
+      latency.textContent = (computeMilliseconds / tokenCount).toFixed(2);
       samples.textContent = sampleCount.toLocaleString();
       status.textContent = `Running · last prompt: ${{prompts[promptIndex]}}`;
     }}
@@ -700,10 +982,8 @@ def write_benchmark_html(
     function runBatch() {{
       if (!running) return;
       try {{
-        for (let index = 0; index < batchSize; index += 1) {{
-          computeMilliseconds += inferOnce();
-          sampleCount += 1;
-        }}
+        computeMilliseconds += inferOnce();
+        sampleCount += 1;
         updateResults();
         setTimeout(runBatch, 0);
       }} catch (error) {{
@@ -716,7 +996,7 @@ def write_benchmark_html(
 
     startButton.addEventListener('click', () => {{
       if (running) return;
-      for (let index = 0; index < prompts.length * 2; index += 1) inferOnce();
+      for (let index = 0; index < prompts.length; index += 1) inferOnce();
       sampleCount = 0;
       computeMilliseconds = 0;
       wallStarted = performance.now();
@@ -731,7 +1011,7 @@ def write_benchmark_html(
       running = false;
       startButton.disabled = false;
       stopButton.disabled = true;
-      status.textContent = `Stopped after ${{sampleCount.toLocaleString()}} samples.`;
+      status.textContent = `Stopped after ${{sampleCount.toLocaleString()}} four-token chains.`;
     }});
   </script>
 </body>
@@ -754,6 +1034,15 @@ def main() -> None:
     predicted_ids = [
         int(forward([token_id], state).argmax()) for token_id in prompt_ids
     ]
+    sequences: list[list[int]] = []
+    for prompt_id in prompt_ids:
+        context = [prompt_id]
+        sequence = []
+        for _ in range(AUTOREGRESSIVE_STEPS):
+            predicted = int(forward(context, state).argmax())
+            context.append(predicted)
+            sequence.append(predicted)
+        sequences.append(sequence)
     print("reference predictions:")
     for prompt, prompt_id, predicted in zip(PROMPTS, prompt_ids, predicted_ids):
         print(
@@ -761,9 +1050,14 @@ def main() -> None:
             f"{tokenizer.decode_token(predicted)!r}"
         )
     compile_css(state, prompt_ids, predicted_ids)
+    print("reference autoregressive chains:")
+    for prompt, sequence in zip(PROMPTS, sequences):
+        decoded = "".join(tokenizer.decode_token(token) for token in sequence)
+        print(f"  {prompt!r} -> {sequence} {decoded!r}")
+    compile_autoregressive_css(state, prompt_ids, sequences)
     write_html(tokenizer, prompt_ids, predicted_ids)
-    write_benchmark_html(tokenizer, predicted_ids)
-    print("wrote pretrained/index.html, benchmark.html, and model.css")
+    write_benchmark_html(tokenizer, sequences)
+    print("wrote pretrained pages and CSS models")
 
 
 if __name__ == "__main__":

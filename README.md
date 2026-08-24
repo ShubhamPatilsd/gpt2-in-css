@@ -80,8 +80,12 @@ python3 -m http.server 4173
 ```
 
 Open `http://localhost:4173/pretrained/benchmark.html` and press **Start
-benchmark**. The model remains CSS-only; that page uses a small JavaScript
-harness solely to switch prompts, force style resolution, and measure time.
+benchmark**. Each run resolves four growing-context tokens: every CSS argmax
+selects the embedding consumed by the next transformer pass. The model remains
+CSS-only; a small JavaScript harness switches seed prompts, validates the full
+chain, and measures time. The benchmark intentionally recomputes every causal
+prefix instead of using a KV cache. Its four-step generated stylesheet is about
+57 MB, which also makes the cost of static autoregressive unrolling visible.
 
 ## GPT-2 small scaling result
 

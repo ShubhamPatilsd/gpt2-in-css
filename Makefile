@@ -16,4 +16,4 @@ analyze-full:
 	python3 tools/analyze_full_gpt2.py
 
 clean:
-	rm -f index.html model.css transformer/index.html transformer/model.css pretrained/index.html pretrained/benchmark.html pretrained/model.css
+	rm -f index.html model.css transformer/index.html transformer/model.css pretrained/index.html pretrained/benchmark.html pretrained/model.css pretrained/autoregressive.css
