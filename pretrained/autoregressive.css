@@ -1,4 +1,4 @@
-/* Four-token causal chain generated from sshleifer/tiny-gpt2. */
+/* 4-token causal chain generated from sshleifer/tiny-gpt2. */
 @function --gelu(--x <number>) returns <number> {
   --cube: calc(var(--x) * var(--x) * var(--x));
   --tanh-input: calc(0.7978845608 * (var(--x) + 0.044715 * var(--cube)));
@@ -199,13 +199,13 @@
 @property --generation-0-layer-1-mlp-projection-0-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-0-layer-1-residual2-0-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-0-layer-1-residual2-0-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-0-final-ln-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-0-final-ln-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-0-final-ln-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-0-final-ln-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-0-final-ln-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-0-final-ln-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-0-final-ln-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-0-final-ln-0-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-0-final-ln-0-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-0-final-ln-0-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-0-final-ln-0-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-0-final-ln-0-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-0-final-ln-0-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-0-final-ln-0-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-0-logit-367 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-0-logit-581 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-0-logit-1572 { syntax: "<number>"; inherits: true; initial-value: 0; }
@@ -623,13 +623,20 @@
 @property --generation-1-layer-1-mlp-projection-1-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-1-layer-1-residual2-1-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-1-layer-1-residual2-1-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-1-final-ln-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-1-final-ln-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-1-final-ln-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-1-final-ln-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-1-final-ln-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-1-final-ln-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-1-final-ln-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-0-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-0-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-0-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-0-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-0-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-0-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-0-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-1-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-1-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-1-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-1-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-1-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-1-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-1-final-ln-1-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-1-logit-367 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-1-logit-581 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-1-logit-1572 { syntax: "<number>"; inherits: true; initial-value: 0; }
@@ -1265,13 +1272,27 @@
 @property --generation-2-layer-1-mlp-projection-2-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-2-layer-1-residual2-2-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-2-layer-1-residual2-2-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-2-final-ln-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-2-final-ln-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-2-final-ln-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-2-final-ln-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-2-final-ln-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-2-final-ln-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-2-final-ln-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-0-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-0-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-0-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-0-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-0-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-0-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-0-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-1-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-1-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-1-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-1-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-1-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-1-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-1-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-2-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-2-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-2-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-2-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-2-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-2-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-2-final-ln-2-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-2-logit-367 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-2-logit-581 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-2-logit-1572 { syntax: "<number>"; inherits: true; initial-value: 0; }
@@ -2137,13 +2158,34 @@
 @property --generation-3-layer-1-mlp-projection-3-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-3-layer-1-residual2-3-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-3-layer-1-residual2-3-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-3-final-ln-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-3-final-ln-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-3-final-ln-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-3-final-ln-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-3-final-ln-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-3-final-ln-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --generation-3-final-ln-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-0-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-0-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-0-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-0-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-0-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-0-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-0-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-1-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-1-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-1-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-1-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-1-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-1-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-1-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-2-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-2-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-2-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-2-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-2-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-2-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-2-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-3-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-3-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-3-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-3-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-3-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-3-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --generation-3-final-ln-3-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-3-logit-367 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-3-logit-581 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-3-logit-1572 { syntax: "<number>"; inherits: true; initial-value: 0; }
@@ -2356,29 +2398,29 @@
   --generation-0-layer-1-mlp-projection-0-1: calc(0 + (var(--generation-0-layer-1-gelu-0-0)) * -0.032813452 + (var(--generation-0-layer-1-gelu-0-1)) * -0.014475741 + (var(--generation-0-layer-1-gelu-0-2)) * -0.012716192 + (var(--generation-0-layer-1-gelu-0-3)) * -0.019075541 + (var(--generation-0-layer-1-gelu-0-4)) * 0.010075798 + (var(--generation-0-layer-1-gelu-0-5)) * -0.008753267 + (var(--generation-0-layer-1-gelu-0-6)) * -0.004611595 + (var(--generation-0-layer-1-gelu-0-7)) * 0.001718842);
   --generation-0-layer-1-residual2-0-0: calc((var(--generation-0-layer-1-residual1-0-0)) + (var(--generation-0-layer-1-mlp-projection-0-0)));
   --generation-0-layer-1-residual2-0-1: calc((var(--generation-0-layer-1-residual1-0-1)) + (var(--generation-0-layer-1-mlp-projection-0-1)));
-  --generation-0-final-ln-mean: calc((var(--generation-0-layer-1-residual2-0-0) + var(--generation-0-layer-1-residual2-0-1)) / 2);
-  --generation-0-final-ln-delta-0: calc((var(--generation-0-layer-1-residual2-0-0)) - (var(--generation-0-final-ln-mean)));
-  --generation-0-final-ln-delta-1: calc((var(--generation-0-layer-1-residual2-0-1)) - (var(--generation-0-final-ln-mean)));
-  --generation-0-final-ln-variance: calc(((var(--generation-0-final-ln-delta-0)) * (var(--generation-0-final-ln-delta-0)) + (var(--generation-0-final-ln-delta-1)) * (var(--generation-0-final-ln-delta-1))) / 2);
-  --generation-0-final-ln-inverse-std: calc(1 / sqrt((var(--generation-0-final-ln-variance)) + 1e-05));
-  --generation-0-final-ln-value-0: calc((var(--generation-0-final-ln-delta-0)) * (var(--generation-0-final-ln-inverse-std)) * 1 + 0);
-  --generation-0-final-ln-value-1: calc((var(--generation-0-final-ln-delta-1)) * (var(--generation-0-final-ln-inverse-std)) * 1 + 0);
-  --generation-0-logit-367: calc(0 + (var(--generation-0-final-ln-value-0)) * -0.019083934 + (var(--generation-0-final-ln-value-1)) * -0.076618291);
-  --generation-0-logit-581: calc(0 + (var(--generation-0-final-ln-value-0)) * -0.062276013 + (var(--generation-0-final-ln-value-1)) * -0.048446383);
-  --generation-0-logit-1572: calc(0 + (var(--generation-0-final-ln-value-0)) * -0.080695249 + (var(--generation-0-final-ln-value-1)) * 0.010182603);
-  --generation-0-logit-5074: calc(0 + (var(--generation-0-final-ln-value-0)) * -0.007806188 + (var(--generation-0-final-ln-value-1)) * -0.082312107);
-  --generation-0-logit-5087: calc(0 + (var(--generation-0-final-ln-value-0)) * -0.071673967 + (var(--generation-0-final-ln-value-1)) * 0.043780126);
-  --generation-0-logit-7504: calc(0 + (var(--generation-0-final-ln-value-0)) * 0.021004319 + (var(--generation-0-final-ln-value-1)) * -0.078619309);
-  --generation-0-logit-12386: calc(0 + (var(--generation-0-final-ln-value-0)) * 0.044991326 + (var(--generation-0-final-ln-value-1)) * 0.075771004);
-  --generation-0-logit-16046: calc(0 + (var(--generation-0-final-ln-value-0)) * 0.094471298 + (var(--generation-0-final-ln-value-1)) * -0.034702003);
-  --generation-0-logit-17192: calc(0 + (var(--generation-0-final-ln-value-0)) * 0.075060956 + (var(--generation-0-final-ln-value-1)) * -0.052458495);
-  --generation-0-logit-19244: calc(0 + (var(--generation-0-final-ln-value-0)) * -0.079752535 + (var(--generation-0-final-ln-value-1)) * -0.008820225);
-  --generation-0-logit-33277: calc(0 + (var(--generation-0-final-ln-value-0)) * -0.002917513 + (var(--generation-0-final-ln-value-1)) * -0.083955184);
-  --generation-0-logit-34007: calc(0 + (var(--generation-0-final-ln-value-0)) * -0.054816052 + (var(--generation-0-final-ln-value-1)) * -0.055831064);
-  --generation-0-logit-39692: calc(0 + (var(--generation-0-final-ln-value-0)) * 0.077534862 + (var(--generation-0-final-ln-value-1)) * 0.022318203);
-  --generation-0-logit-44317: calc(0 + (var(--generation-0-final-ln-value-0)) * -0.02410996 + (var(--generation-0-final-ln-value-1)) * 0.079939768);
-  --generation-0-logit-45016: calc(0 + (var(--generation-0-final-ln-value-0)) * 0.072285704 + (var(--generation-0-final-ln-value-1)) * 0.038755827);
-  --generation-0-logit-45275: calc(0 + (var(--generation-0-final-ln-value-0)) * 0.035239756 + (var(--generation-0-final-ln-value-1)) * 0.07676328);
+  --generation-0-final-ln-0-mean: calc((var(--generation-0-layer-1-residual2-0-0) + var(--generation-0-layer-1-residual2-0-1)) / 2);
+  --generation-0-final-ln-0-delta-0: calc((var(--generation-0-layer-1-residual2-0-0)) - (var(--generation-0-final-ln-0-mean)));
+  --generation-0-final-ln-0-delta-1: calc((var(--generation-0-layer-1-residual2-0-1)) - (var(--generation-0-final-ln-0-mean)));
+  --generation-0-final-ln-0-variance: calc(((var(--generation-0-final-ln-0-delta-0)) * (var(--generation-0-final-ln-0-delta-0)) + (var(--generation-0-final-ln-0-delta-1)) * (var(--generation-0-final-ln-0-delta-1))) / 2);
+  --generation-0-final-ln-0-inverse-std: calc(1 / sqrt((var(--generation-0-final-ln-0-variance)) + 1e-05));
+  --generation-0-final-ln-0-value-0: calc((var(--generation-0-final-ln-0-delta-0)) * (var(--generation-0-final-ln-0-inverse-std)) * 1 + 0);
+  --generation-0-final-ln-0-value-1: calc((var(--generation-0-final-ln-0-delta-1)) * (var(--generation-0-final-ln-0-inverse-std)) * 1 + 0);
+  --generation-0-logit-367: calc(0 + (var(--generation-0-final-ln-0-value-0)) * -0.019083934 + (var(--generation-0-final-ln-0-value-1)) * -0.076618291);
+  --generation-0-logit-581: calc(0 + (var(--generation-0-final-ln-0-value-0)) * -0.062276013 + (var(--generation-0-final-ln-0-value-1)) * -0.048446383);
+  --generation-0-logit-1572: calc(0 + (var(--generation-0-final-ln-0-value-0)) * -0.080695249 + (var(--generation-0-final-ln-0-value-1)) * 0.010182603);
+  --generation-0-logit-5074: calc(0 + (var(--generation-0-final-ln-0-value-0)) * -0.007806188 + (var(--generation-0-final-ln-0-value-1)) * -0.082312107);
+  --generation-0-logit-5087: calc(0 + (var(--generation-0-final-ln-0-value-0)) * -0.071673967 + (var(--generation-0-final-ln-0-value-1)) * 0.043780126);
+  --generation-0-logit-7504: calc(0 + (var(--generation-0-final-ln-0-value-0)) * 0.021004319 + (var(--generation-0-final-ln-0-value-1)) * -0.078619309);
+  --generation-0-logit-12386: calc(0 + (var(--generation-0-final-ln-0-value-0)) * 0.044991326 + (var(--generation-0-final-ln-0-value-1)) * 0.075771004);
+  --generation-0-logit-16046: calc(0 + (var(--generation-0-final-ln-0-value-0)) * 0.094471298 + (var(--generation-0-final-ln-0-value-1)) * -0.034702003);
+  --generation-0-logit-17192: calc(0 + (var(--generation-0-final-ln-0-value-0)) * 0.075060956 + (var(--generation-0-final-ln-0-value-1)) * -0.052458495);
+  --generation-0-logit-19244: calc(0 + (var(--generation-0-final-ln-0-value-0)) * -0.079752535 + (var(--generation-0-final-ln-0-value-1)) * -0.008820225);
+  --generation-0-logit-33277: calc(0 + (var(--generation-0-final-ln-0-value-0)) * -0.002917513 + (var(--generation-0-final-ln-0-value-1)) * -0.083955184);
+  --generation-0-logit-34007: calc(0 + (var(--generation-0-final-ln-0-value-0)) * -0.054816052 + (var(--generation-0-final-ln-0-value-1)) * -0.055831064);
+  --generation-0-logit-39692: calc(0 + (var(--generation-0-final-ln-0-value-0)) * 0.077534862 + (var(--generation-0-final-ln-0-value-1)) * 0.022318203);
+  --generation-0-logit-44317: calc(0 + (var(--generation-0-final-ln-0-value-0)) * -0.02410996 + (var(--generation-0-final-ln-0-value-1)) * 0.079939768);
+  --generation-0-logit-45016: calc(0 + (var(--generation-0-final-ln-0-value-0)) * 0.072285704 + (var(--generation-0-final-ln-0-value-1)) * 0.038755827);
+  --generation-0-logit-45275: calc(0 + (var(--generation-0-final-ln-0-value-0)) * 0.035239756 + (var(--generation-0-final-ln-0-value-1)) * 0.07676328);
   --generation-0-max-logit-0-0: max(var(--generation-0-logit-367), var(--generation-0-logit-581), var(--generation-0-logit-1572), var(--generation-0-logit-5074), var(--generation-0-logit-5087), var(--generation-0-logit-7504), var(--generation-0-logit-12386), var(--generation-0-logit-16046), var(--generation-0-logit-17192), var(--generation-0-logit-19244), var(--generation-0-logit-33277), var(--generation-0-logit-34007), var(--generation-0-logit-39692), var(--generation-0-logit-44317), var(--generation-0-logit-45016), var(--generation-0-logit-45275));
   --generation-0-token-difference-5087: calc(abs((var(--generation-0-logit-5087)) - (var(--generation-0-max-logit-0-0))));
   --generation-0-is-token-5087: calc(1 - max(0, sign((var(--generation-0-token-difference-5087)) - 0.000001)));
@@ -2780,29 +2822,36 @@
   --generation-1-layer-1-mlp-projection-1-1: calc(0 + (var(--generation-1-layer-1-gelu-1-0)) * -0.032813452 + (var(--generation-1-layer-1-gelu-1-1)) * -0.014475741 + (var(--generation-1-layer-1-gelu-1-2)) * -0.012716192 + (var(--generation-1-layer-1-gelu-1-3)) * -0.019075541 + (var(--generation-1-layer-1-gelu-1-4)) * 0.010075798 + (var(--generation-1-layer-1-gelu-1-5)) * -0.008753267 + (var(--generation-1-layer-1-gelu-1-6)) * -0.004611595 + (var(--generation-1-layer-1-gelu-1-7)) * 0.001718842);
   --generation-1-layer-1-residual2-1-0: calc((var(--generation-1-layer-1-residual1-1-0)) + (var(--generation-1-layer-1-mlp-projection-1-0)));
   --generation-1-layer-1-residual2-1-1: calc((var(--generation-1-layer-1-residual1-1-1)) + (var(--generation-1-layer-1-mlp-projection-1-1)));
-  --generation-1-final-ln-mean: calc((var(--generation-1-layer-1-residual2-1-0) + var(--generation-1-layer-1-residual2-1-1)) / 2);
-  --generation-1-final-ln-delta-0: calc((var(--generation-1-layer-1-residual2-1-0)) - (var(--generation-1-final-ln-mean)));
-  --generation-1-final-ln-delta-1: calc((var(--generation-1-layer-1-residual2-1-1)) - (var(--generation-1-final-ln-mean)));
-  --generation-1-final-ln-variance: calc(((var(--generation-1-final-ln-delta-0)) * (var(--generation-1-final-ln-delta-0)) + (var(--generation-1-final-ln-delta-1)) * (var(--generation-1-final-ln-delta-1))) / 2);
-  --generation-1-final-ln-inverse-std: calc(1 / sqrt((var(--generation-1-final-ln-variance)) + 1e-05));
-  --generation-1-final-ln-value-0: calc((var(--generation-1-final-ln-delta-0)) * (var(--generation-1-final-ln-inverse-std)) * 1 + 0);
-  --generation-1-final-ln-value-1: calc((var(--generation-1-final-ln-delta-1)) * (var(--generation-1-final-ln-inverse-std)) * 1 + 0);
-  --generation-1-logit-367: calc(0 + (var(--generation-1-final-ln-value-0)) * -0.019083934 + (var(--generation-1-final-ln-value-1)) * -0.076618291);
-  --generation-1-logit-581: calc(0 + (var(--generation-1-final-ln-value-0)) * -0.062276013 + (var(--generation-1-final-ln-value-1)) * -0.048446383);
-  --generation-1-logit-1572: calc(0 + (var(--generation-1-final-ln-value-0)) * -0.080695249 + (var(--generation-1-final-ln-value-1)) * 0.010182603);
-  --generation-1-logit-5074: calc(0 + (var(--generation-1-final-ln-value-0)) * -0.007806188 + (var(--generation-1-final-ln-value-1)) * -0.082312107);
-  --generation-1-logit-5087: calc(0 + (var(--generation-1-final-ln-value-0)) * -0.071673967 + (var(--generation-1-final-ln-value-1)) * 0.043780126);
-  --generation-1-logit-7504: calc(0 + (var(--generation-1-final-ln-value-0)) * 0.021004319 + (var(--generation-1-final-ln-value-1)) * -0.078619309);
-  --generation-1-logit-12386: calc(0 + (var(--generation-1-final-ln-value-0)) * 0.044991326 + (var(--generation-1-final-ln-value-1)) * 0.075771004);
-  --generation-1-logit-16046: calc(0 + (var(--generation-1-final-ln-value-0)) * 0.094471298 + (var(--generation-1-final-ln-value-1)) * -0.034702003);
-  --generation-1-logit-17192: calc(0 + (var(--generation-1-final-ln-value-0)) * 0.075060956 + (var(--generation-1-final-ln-value-1)) * -0.052458495);
-  --generation-1-logit-19244: calc(0 + (var(--generation-1-final-ln-value-0)) * -0.079752535 + (var(--generation-1-final-ln-value-1)) * -0.008820225);
-  --generation-1-logit-33277: calc(0 + (var(--generation-1-final-ln-value-0)) * -0.002917513 + (var(--generation-1-final-ln-value-1)) * -0.083955184);
-  --generation-1-logit-34007: calc(0 + (var(--generation-1-final-ln-value-0)) * -0.054816052 + (var(--generation-1-final-ln-value-1)) * -0.055831064);
-  --generation-1-logit-39692: calc(0 + (var(--generation-1-final-ln-value-0)) * 0.077534862 + (var(--generation-1-final-ln-value-1)) * 0.022318203);
-  --generation-1-logit-44317: calc(0 + (var(--generation-1-final-ln-value-0)) * -0.02410996 + (var(--generation-1-final-ln-value-1)) * 0.079939768);
-  --generation-1-logit-45016: calc(0 + (var(--generation-1-final-ln-value-0)) * 0.072285704 + (var(--generation-1-final-ln-value-1)) * 0.038755827);
-  --generation-1-logit-45275: calc(0 + (var(--generation-1-final-ln-value-0)) * 0.035239756 + (var(--generation-1-final-ln-value-1)) * 0.07676328);
+  --generation-1-final-ln-0-mean: calc((var(--generation-1-layer-1-residual2-0-0) + var(--generation-1-layer-1-residual2-0-1)) / 2);
+  --generation-1-final-ln-0-delta-0: calc((var(--generation-1-layer-1-residual2-0-0)) - (var(--generation-1-final-ln-0-mean)));
+  --generation-1-final-ln-0-delta-1: calc((var(--generation-1-layer-1-residual2-0-1)) - (var(--generation-1-final-ln-0-mean)));
+  --generation-1-final-ln-0-variance: calc(((var(--generation-1-final-ln-0-delta-0)) * (var(--generation-1-final-ln-0-delta-0)) + (var(--generation-1-final-ln-0-delta-1)) * (var(--generation-1-final-ln-0-delta-1))) / 2);
+  --generation-1-final-ln-0-inverse-std: calc(1 / sqrt((var(--generation-1-final-ln-0-variance)) + 1e-05));
+  --generation-1-final-ln-0-value-0: calc((var(--generation-1-final-ln-0-delta-0)) * (var(--generation-1-final-ln-0-inverse-std)) * 1 + 0);
+  --generation-1-final-ln-0-value-1: calc((var(--generation-1-final-ln-0-delta-1)) * (var(--generation-1-final-ln-0-inverse-std)) * 1 + 0);
+  --generation-1-final-ln-1-mean: calc((var(--generation-1-layer-1-residual2-1-0) + var(--generation-1-layer-1-residual2-1-1)) / 2);
+  --generation-1-final-ln-1-delta-0: calc((var(--generation-1-layer-1-residual2-1-0)) - (var(--generation-1-final-ln-1-mean)));
+  --generation-1-final-ln-1-delta-1: calc((var(--generation-1-layer-1-residual2-1-1)) - (var(--generation-1-final-ln-1-mean)));
+  --generation-1-final-ln-1-variance: calc(((var(--generation-1-final-ln-1-delta-0)) * (var(--generation-1-final-ln-1-delta-0)) + (var(--generation-1-final-ln-1-delta-1)) * (var(--generation-1-final-ln-1-delta-1))) / 2);
+  --generation-1-final-ln-1-inverse-std: calc(1 / sqrt((var(--generation-1-final-ln-1-variance)) + 1e-05));
+  --generation-1-final-ln-1-value-0: calc((var(--generation-1-final-ln-1-delta-0)) * (var(--generation-1-final-ln-1-inverse-std)) * 1 + 0);
+  --generation-1-final-ln-1-value-1: calc((var(--generation-1-final-ln-1-delta-1)) * (var(--generation-1-final-ln-1-inverse-std)) * 1 + 0);
+  --generation-1-logit-367: calc(0 + (var(--generation-1-final-ln-1-value-0)) * -0.019083934 + (var(--generation-1-final-ln-1-value-1)) * -0.076618291);
+  --generation-1-logit-581: calc(0 + (var(--generation-1-final-ln-1-value-0)) * -0.062276013 + (var(--generation-1-final-ln-1-value-1)) * -0.048446383);
+  --generation-1-logit-1572: calc(0 + (var(--generation-1-final-ln-1-value-0)) * -0.080695249 + (var(--generation-1-final-ln-1-value-1)) * 0.010182603);
+  --generation-1-logit-5074: calc(0 + (var(--generation-1-final-ln-1-value-0)) * -0.007806188 + (var(--generation-1-final-ln-1-value-1)) * -0.082312107);
+  --generation-1-logit-5087: calc(0 + (var(--generation-1-final-ln-1-value-0)) * -0.071673967 + (var(--generation-1-final-ln-1-value-1)) * 0.043780126);
+  --generation-1-logit-7504: calc(0 + (var(--generation-1-final-ln-1-value-0)) * 0.021004319 + (var(--generation-1-final-ln-1-value-1)) * -0.078619309);
+  --generation-1-logit-12386: calc(0 + (var(--generation-1-final-ln-1-value-0)) * 0.044991326 + (var(--generation-1-final-ln-1-value-1)) * 0.075771004);
+  --generation-1-logit-16046: calc(0 + (var(--generation-1-final-ln-1-value-0)) * 0.094471298 + (var(--generation-1-final-ln-1-value-1)) * -0.034702003);
+  --generation-1-logit-17192: calc(0 + (var(--generation-1-final-ln-1-value-0)) * 0.075060956 + (var(--generation-1-final-ln-1-value-1)) * -0.052458495);
+  --generation-1-logit-19244: calc(0 + (var(--generation-1-final-ln-1-value-0)) * -0.079752535 + (var(--generation-1-final-ln-1-value-1)) * -0.008820225);
+  --generation-1-logit-33277: calc(0 + (var(--generation-1-final-ln-1-value-0)) * -0.002917513 + (var(--generation-1-final-ln-1-value-1)) * -0.083955184);
+  --generation-1-logit-34007: calc(0 + (var(--generation-1-final-ln-1-value-0)) * -0.054816052 + (var(--generation-1-final-ln-1-value-1)) * -0.055831064);
+  --generation-1-logit-39692: calc(0 + (var(--generation-1-final-ln-1-value-0)) * 0.077534862 + (var(--generation-1-final-ln-1-value-1)) * 0.022318203);
+  --generation-1-logit-44317: calc(0 + (var(--generation-1-final-ln-1-value-0)) * -0.02410996 + (var(--generation-1-final-ln-1-value-1)) * 0.079939768);
+  --generation-1-logit-45016: calc(0 + (var(--generation-1-final-ln-1-value-0)) * 0.072285704 + (var(--generation-1-final-ln-1-value-1)) * 0.038755827);
+  --generation-1-logit-45275: calc(0 + (var(--generation-1-final-ln-1-value-0)) * 0.035239756 + (var(--generation-1-final-ln-1-value-1)) * 0.07676328);
   --generation-1-max-logit-0-0: max(var(--generation-1-logit-367), var(--generation-1-logit-581), var(--generation-1-logit-1572), var(--generation-1-logit-5074), var(--generation-1-logit-5087), var(--generation-1-logit-7504), var(--generation-1-logit-12386), var(--generation-1-logit-16046), var(--generation-1-logit-17192), var(--generation-1-logit-19244), var(--generation-1-logit-33277), var(--generation-1-logit-34007), var(--generation-1-logit-39692), var(--generation-1-logit-44317), var(--generation-1-logit-45016), var(--generation-1-logit-45275));
   --generation-1-token-difference-5087: calc(abs((var(--generation-1-logit-5087)) - (var(--generation-1-max-logit-0-0))));
   --generation-1-is-token-5087: calc(1 - max(0, sign((var(--generation-1-token-difference-5087)) - 0.000001)));
@@ -3159,6 +3208,8 @@
   --generation-2-layer-1-qkv-2-5: calc(0 + (var(--generation-2-layer-1-ln1-2-value-0)) * 0.00177633 + (var(--generation-2-layer-1-ln1-2-value-1)) * -0.004476126);
   --generation-2-layer-1-attention-score-0-0-0: calc((var(--generation-2-layer-1-qkv-0-0)) * (var(--generation-2-layer-1-qkv-0-2)));
   --generation-2-layer-1-attention-exp-0-0-0: exp((var(--generation-2-layer-1-attention-score-0-0-0)) - (var(--generation-2-layer-1-attention-score-0-0-0)));
+}
+:root {
   --generation-2-layer-1-attention-denominator-0-0: calc(var(--generation-2-layer-1-attention-exp-0-0-0));
   --generation-2-layer-1-attention-probability-0-0-0: calc((var(--generation-2-layer-1-attention-exp-0-0-0)) / (var(--generation-2-layer-1-attention-denominator-0-0)));
   --generation-2-layer-1-attention-value-0-0: calc((var(--generation-2-layer-1-attention-probability-0-0-0)) * (var(--generation-2-layer-1-qkv-0-4)));
@@ -3166,8 +3217,6 @@
   --generation-2-layer-1-attention-exp-0-1-0: exp((var(--generation-2-layer-1-attention-score-0-1-0)) - (var(--generation-2-layer-1-attention-score-0-1-0)));
   --generation-2-layer-1-attention-denominator-0-1: calc(var(--generation-2-layer-1-attention-exp-0-1-0));
   --generation-2-layer-1-attention-probability-0-1-0: calc((var(--generation-2-layer-1-attention-exp-0-1-0)) / (var(--generation-2-layer-1-attention-denominator-0-1)));
-}
-:root {
   --generation-2-layer-1-attention-value-0-1: calc((var(--generation-2-layer-1-attention-probability-0-1-0)) * (var(--generation-2-layer-1-qkv-0-5)));
   --generation-2-layer-1-attention-score-1-0-0: calc((var(--generation-2-layer-1-qkv-1-0)) * (var(--generation-2-layer-1-qkv-0-2)));
   --generation-2-layer-1-attention-score-1-0-1: calc((var(--generation-2-layer-1-qkv-1-0)) * (var(--generation-2-layer-1-qkv-1-2)));
@@ -3424,29 +3473,43 @@
   --generation-2-layer-1-mlp-projection-2-1: calc(0 + (var(--generation-2-layer-1-gelu-2-0)) * -0.032813452 + (var(--generation-2-layer-1-gelu-2-1)) * -0.014475741 + (var(--generation-2-layer-1-gelu-2-2)) * -0.012716192 + (var(--generation-2-layer-1-gelu-2-3)) * -0.019075541 + (var(--generation-2-layer-1-gelu-2-4)) * 0.010075798 + (var(--generation-2-layer-1-gelu-2-5)) * -0.008753267 + (var(--generation-2-layer-1-gelu-2-6)) * -0.004611595 + (var(--generation-2-layer-1-gelu-2-7)) * 0.001718842);
   --generation-2-layer-1-residual2-2-0: calc((var(--generation-2-layer-1-residual1-2-0)) + (var(--generation-2-layer-1-mlp-projection-2-0)));
   --generation-2-layer-1-residual2-2-1: calc((var(--generation-2-layer-1-residual1-2-1)) + (var(--generation-2-layer-1-mlp-projection-2-1)));
-  --generation-2-final-ln-mean: calc((var(--generation-2-layer-1-residual2-2-0) + var(--generation-2-layer-1-residual2-2-1)) / 2);
-  --generation-2-final-ln-delta-0: calc((var(--generation-2-layer-1-residual2-2-0)) - (var(--generation-2-final-ln-mean)));
-  --generation-2-final-ln-delta-1: calc((var(--generation-2-layer-1-residual2-2-1)) - (var(--generation-2-final-ln-mean)));
-  --generation-2-final-ln-variance: calc(((var(--generation-2-final-ln-delta-0)) * (var(--generation-2-final-ln-delta-0)) + (var(--generation-2-final-ln-delta-1)) * (var(--generation-2-final-ln-delta-1))) / 2);
-  --generation-2-final-ln-inverse-std: calc(1 / sqrt((var(--generation-2-final-ln-variance)) + 1e-05));
-  --generation-2-final-ln-value-0: calc((var(--generation-2-final-ln-delta-0)) * (var(--generation-2-final-ln-inverse-std)) * 1 + 0);
-  --generation-2-final-ln-value-1: calc((var(--generation-2-final-ln-delta-1)) * (var(--generation-2-final-ln-inverse-std)) * 1 + 0);
-  --generation-2-logit-367: calc(0 + (var(--generation-2-final-ln-value-0)) * -0.019083934 + (var(--generation-2-final-ln-value-1)) * -0.076618291);
-  --generation-2-logit-581: calc(0 + (var(--generation-2-final-ln-value-0)) * -0.062276013 + (var(--generation-2-final-ln-value-1)) * -0.048446383);
-  --generation-2-logit-1572: calc(0 + (var(--generation-2-final-ln-value-0)) * -0.080695249 + (var(--generation-2-final-ln-value-1)) * 0.010182603);
-  --generation-2-logit-5074: calc(0 + (var(--generation-2-final-ln-value-0)) * -0.007806188 + (var(--generation-2-final-ln-value-1)) * -0.082312107);
-  --generation-2-logit-5087: calc(0 + (var(--generation-2-final-ln-value-0)) * -0.071673967 + (var(--generation-2-final-ln-value-1)) * 0.043780126);
-  --generation-2-logit-7504: calc(0 + (var(--generation-2-final-ln-value-0)) * 0.021004319 + (var(--generation-2-final-ln-value-1)) * -0.078619309);
-  --generation-2-logit-12386: calc(0 + (var(--generation-2-final-ln-value-0)) * 0.044991326 + (var(--generation-2-final-ln-value-1)) * 0.075771004);
-  --generation-2-logit-16046: calc(0 + (var(--generation-2-final-ln-value-0)) * 0.094471298 + (var(--generation-2-final-ln-value-1)) * -0.034702003);
-  --generation-2-logit-17192: calc(0 + (var(--generation-2-final-ln-value-0)) * 0.075060956 + (var(--generation-2-final-ln-value-1)) * -0.052458495);
-  --generation-2-logit-19244: calc(0 + (var(--generation-2-final-ln-value-0)) * -0.079752535 + (var(--generation-2-final-ln-value-1)) * -0.008820225);
-  --generation-2-logit-33277: calc(0 + (var(--generation-2-final-ln-value-0)) * -0.002917513 + (var(--generation-2-final-ln-value-1)) * -0.083955184);
-  --generation-2-logit-34007: calc(0 + (var(--generation-2-final-ln-value-0)) * -0.054816052 + (var(--generation-2-final-ln-value-1)) * -0.055831064);
-  --generation-2-logit-39692: calc(0 + (var(--generation-2-final-ln-value-0)) * 0.077534862 + (var(--generation-2-final-ln-value-1)) * 0.022318203);
-  --generation-2-logit-44317: calc(0 + (var(--generation-2-final-ln-value-0)) * -0.02410996 + (var(--generation-2-final-ln-value-1)) * 0.079939768);
-  --generation-2-logit-45016: calc(0 + (var(--generation-2-final-ln-value-0)) * 0.072285704 + (var(--generation-2-final-ln-value-1)) * 0.038755827);
-  --generation-2-logit-45275: calc(0 + (var(--generation-2-final-ln-value-0)) * 0.035239756 + (var(--generation-2-final-ln-value-1)) * 0.07676328);
+  --generation-2-final-ln-0-mean: calc((var(--generation-2-layer-1-residual2-0-0) + var(--generation-2-layer-1-residual2-0-1)) / 2);
+  --generation-2-final-ln-0-delta-0: calc((var(--generation-2-layer-1-residual2-0-0)) - (var(--generation-2-final-ln-0-mean)));
+  --generation-2-final-ln-0-delta-1: calc((var(--generation-2-layer-1-residual2-0-1)) - (var(--generation-2-final-ln-0-mean)));
+  --generation-2-final-ln-0-variance: calc(((var(--generation-2-final-ln-0-delta-0)) * (var(--generation-2-final-ln-0-delta-0)) + (var(--generation-2-final-ln-0-delta-1)) * (var(--generation-2-final-ln-0-delta-1))) / 2);
+  --generation-2-final-ln-0-inverse-std: calc(1 / sqrt((var(--generation-2-final-ln-0-variance)) + 1e-05));
+  --generation-2-final-ln-0-value-0: calc((var(--generation-2-final-ln-0-delta-0)) * (var(--generation-2-final-ln-0-inverse-std)) * 1 + 0);
+  --generation-2-final-ln-0-value-1: calc((var(--generation-2-final-ln-0-delta-1)) * (var(--generation-2-final-ln-0-inverse-std)) * 1 + 0);
+  --generation-2-final-ln-1-mean: calc((var(--generation-2-layer-1-residual2-1-0) + var(--generation-2-layer-1-residual2-1-1)) / 2);
+  --generation-2-final-ln-1-delta-0: calc((var(--generation-2-layer-1-residual2-1-0)) - (var(--generation-2-final-ln-1-mean)));
+  --generation-2-final-ln-1-delta-1: calc((var(--generation-2-layer-1-residual2-1-1)) - (var(--generation-2-final-ln-1-mean)));
+  --generation-2-final-ln-1-variance: calc(((var(--generation-2-final-ln-1-delta-0)) * (var(--generation-2-final-ln-1-delta-0)) + (var(--generation-2-final-ln-1-delta-1)) * (var(--generation-2-final-ln-1-delta-1))) / 2);
+  --generation-2-final-ln-1-inverse-std: calc(1 / sqrt((var(--generation-2-final-ln-1-variance)) + 1e-05));
+  --generation-2-final-ln-1-value-0: calc((var(--generation-2-final-ln-1-delta-0)) * (var(--generation-2-final-ln-1-inverse-std)) * 1 + 0);
+  --generation-2-final-ln-1-value-1: calc((var(--generation-2-final-ln-1-delta-1)) * (var(--generation-2-final-ln-1-inverse-std)) * 1 + 0);
+  --generation-2-final-ln-2-mean: calc((var(--generation-2-layer-1-residual2-2-0) + var(--generation-2-layer-1-residual2-2-1)) / 2);
+  --generation-2-final-ln-2-delta-0: calc((var(--generation-2-layer-1-residual2-2-0)) - (var(--generation-2-final-ln-2-mean)));
+  --generation-2-final-ln-2-delta-1: calc((var(--generation-2-layer-1-residual2-2-1)) - (var(--generation-2-final-ln-2-mean)));
+  --generation-2-final-ln-2-variance: calc(((var(--generation-2-final-ln-2-delta-0)) * (var(--generation-2-final-ln-2-delta-0)) + (var(--generation-2-final-ln-2-delta-1)) * (var(--generation-2-final-ln-2-delta-1))) / 2);
+  --generation-2-final-ln-2-inverse-std: calc(1 / sqrt((var(--generation-2-final-ln-2-variance)) + 1e-05));
+  --generation-2-final-ln-2-value-0: calc((var(--generation-2-final-ln-2-delta-0)) * (var(--generation-2-final-ln-2-inverse-std)) * 1 + 0);
+  --generation-2-final-ln-2-value-1: calc((var(--generation-2-final-ln-2-delta-1)) * (var(--generation-2-final-ln-2-inverse-std)) * 1 + 0);
+  --generation-2-logit-367: calc(0 + (var(--generation-2-final-ln-2-value-0)) * -0.019083934 + (var(--generation-2-final-ln-2-value-1)) * -0.076618291);
+  --generation-2-logit-581: calc(0 + (var(--generation-2-final-ln-2-value-0)) * -0.062276013 + (var(--generation-2-final-ln-2-value-1)) * -0.048446383);
+  --generation-2-logit-1572: calc(0 + (var(--generation-2-final-ln-2-value-0)) * -0.080695249 + (var(--generation-2-final-ln-2-value-1)) * 0.010182603);
+  --generation-2-logit-5074: calc(0 + (var(--generation-2-final-ln-2-value-0)) * -0.007806188 + (var(--generation-2-final-ln-2-value-1)) * -0.082312107);
+  --generation-2-logit-5087: calc(0 + (var(--generation-2-final-ln-2-value-0)) * -0.071673967 + (var(--generation-2-final-ln-2-value-1)) * 0.043780126);
+  --generation-2-logit-7504: calc(0 + (var(--generation-2-final-ln-2-value-0)) * 0.021004319 + (var(--generation-2-final-ln-2-value-1)) * -0.078619309);
+  --generation-2-logit-12386: calc(0 + (var(--generation-2-final-ln-2-value-0)) * 0.044991326 + (var(--generation-2-final-ln-2-value-1)) * 0.075771004);
+  --generation-2-logit-16046: calc(0 + (var(--generation-2-final-ln-2-value-0)) * 0.094471298 + (var(--generation-2-final-ln-2-value-1)) * -0.034702003);
+  --generation-2-logit-17192: calc(0 + (var(--generation-2-final-ln-2-value-0)) * 0.075060956 + (var(--generation-2-final-ln-2-value-1)) * -0.052458495);
+  --generation-2-logit-19244: calc(0 + (var(--generation-2-final-ln-2-value-0)) * -0.079752535 + (var(--generation-2-final-ln-2-value-1)) * -0.008820225);
+  --generation-2-logit-33277: calc(0 + (var(--generation-2-final-ln-2-value-0)) * -0.002917513 + (var(--generation-2-final-ln-2-value-1)) * -0.083955184);
+  --generation-2-logit-34007: calc(0 + (var(--generation-2-final-ln-2-value-0)) * -0.054816052 + (var(--generation-2-final-ln-2-value-1)) * -0.055831064);
+  --generation-2-logit-39692: calc(0 + (var(--generation-2-final-ln-2-value-0)) * 0.077534862 + (var(--generation-2-final-ln-2-value-1)) * 0.022318203);
+  --generation-2-logit-44317: calc(0 + (var(--generation-2-final-ln-2-value-0)) * -0.02410996 + (var(--generation-2-final-ln-2-value-1)) * 0.079939768);
+  --generation-2-logit-45016: calc(0 + (var(--generation-2-final-ln-2-value-0)) * 0.072285704 + (var(--generation-2-final-ln-2-value-1)) * 0.038755827);
+  --generation-2-logit-45275: calc(0 + (var(--generation-2-final-ln-2-value-0)) * 0.035239756 + (var(--generation-2-final-ln-2-value-1)) * 0.07676328);
   --generation-2-max-logit-0-0: max(var(--generation-2-logit-367), var(--generation-2-logit-581), var(--generation-2-logit-1572), var(--generation-2-logit-5074), var(--generation-2-logit-5087), var(--generation-2-logit-7504), var(--generation-2-logit-12386), var(--generation-2-logit-16046), var(--generation-2-logit-17192), var(--generation-2-logit-19244), var(--generation-2-logit-33277), var(--generation-2-logit-34007), var(--generation-2-logit-39692), var(--generation-2-logit-44317), var(--generation-2-logit-45016), var(--generation-2-logit-45275));
   --generation-2-token-difference-5087: calc(abs((var(--generation-2-logit-5087)) - (var(--generation-2-max-logit-0-0))));
   --generation-2-is-token-5087: calc(1 - max(0, sign((var(--generation-2-token-difference-5087)) - 0.000001)));
@@ -4147,6 +4210,8 @@
   --generation-3-layer-1-gelu-1-3-bounded: clamp(-10, var(--generation-3-layer-1-gelu-1-3-input), 10);
   --generation-3-layer-1-gelu-1-3-exp: exp(2 * (var(--generation-3-layer-1-gelu-1-3-bounded)));
   --generation-3-layer-1-gelu-1-3-tanh: calc(((var(--generation-3-layer-1-gelu-1-3-exp)) - 1) / ((var(--generation-3-layer-1-gelu-1-3-exp)) + 1));
+}
+:root {
   --generation-3-layer-1-gelu-1-3: calc(0.5 * (var(--generation-3-layer-1-fc-1-3)) * (1 + (var(--generation-3-layer-1-gelu-1-3-tanh))));
   --generation-3-layer-1-gelu-1-4-cube: calc((var(--generation-3-layer-1-fc-1-4)) * (var(--generation-3-layer-1-fc-1-4)) * (var(--generation-3-layer-1-fc-1-4)));
   --generation-3-layer-1-gelu-1-4-input: calc(0.7978845608 * ((var(--generation-3-layer-1-fc-1-4)) + 0.044715 * (var(--generation-3-layer-1-gelu-1-4-cube))));
@@ -4168,8 +4233,6 @@
   --generation-3-layer-1-gelu-1-6: calc(0.5 * (var(--generation-3-layer-1-fc-1-6)) * (1 + (var(--generation-3-layer-1-gelu-1-6-tanh))));
   --generation-3-layer-1-gelu-1-7-cube: calc((var(--generation-3-layer-1-fc-1-7)) * (var(--generation-3-layer-1-fc-1-7)) * (var(--generation-3-layer-1-fc-1-7)));
   --generation-3-layer-1-gelu-1-7-input: calc(0.7978845608 * ((var(--generation-3-layer-1-fc-1-7)) + 0.044715 * (var(--generation-3-layer-1-gelu-1-7-cube))));
-}
-:root {
   --generation-3-layer-1-gelu-1-7-bounded: clamp(-10, var(--generation-3-layer-1-gelu-1-7-input), 10);
   --generation-3-layer-1-gelu-1-7-exp: exp(2 * (var(--generation-3-layer-1-gelu-1-7-bounded)));
   --generation-3-layer-1-gelu-1-7-tanh: calc(((var(--generation-3-layer-1-gelu-1-7-exp)) - 1) / ((var(--generation-3-layer-1-gelu-1-7-exp)) + 1));
@@ -4298,29 +4361,50 @@
   --generation-3-layer-1-mlp-projection-3-1: calc(0 + (var(--generation-3-layer-1-gelu-3-0)) * -0.032813452 + (var(--generation-3-layer-1-gelu-3-1)) * -0.014475741 + (var(--generation-3-layer-1-gelu-3-2)) * -0.012716192 + (var(--generation-3-layer-1-gelu-3-3)) * -0.019075541 + (var(--generation-3-layer-1-gelu-3-4)) * 0.010075798 + (var(--generation-3-layer-1-gelu-3-5)) * -0.008753267 + (var(--generation-3-layer-1-gelu-3-6)) * -0.004611595 + (var(--generation-3-layer-1-gelu-3-7)) * 0.001718842);
   --generation-3-layer-1-residual2-3-0: calc((var(--generation-3-layer-1-residual1-3-0)) + (var(--generation-3-layer-1-mlp-projection-3-0)));
   --generation-3-layer-1-residual2-3-1: calc((var(--generation-3-layer-1-residual1-3-1)) + (var(--generation-3-layer-1-mlp-projection-3-1)));
-  --generation-3-final-ln-mean: calc((var(--generation-3-layer-1-residual2-3-0) + var(--generation-3-layer-1-residual2-3-1)) / 2);
-  --generation-3-final-ln-delta-0: calc((var(--generation-3-layer-1-residual2-3-0)) - (var(--generation-3-final-ln-mean)));
-  --generation-3-final-ln-delta-1: calc((var(--generation-3-layer-1-residual2-3-1)) - (var(--generation-3-final-ln-mean)));
-  --generation-3-final-ln-variance: calc(((var(--generation-3-final-ln-delta-0)) * (var(--generation-3-final-ln-delta-0)) + (var(--generation-3-final-ln-delta-1)) * (var(--generation-3-final-ln-delta-1))) / 2);
-  --generation-3-final-ln-inverse-std: calc(1 / sqrt((var(--generation-3-final-ln-variance)) + 1e-05));
-  --generation-3-final-ln-value-0: calc((var(--generation-3-final-ln-delta-0)) * (var(--generation-3-final-ln-inverse-std)) * 1 + 0);
-  --generation-3-final-ln-value-1: calc((var(--generation-3-final-ln-delta-1)) * (var(--generation-3-final-ln-inverse-std)) * 1 + 0);
-  --generation-3-logit-367: calc(0 + (var(--generation-3-final-ln-value-0)) * -0.019083934 + (var(--generation-3-final-ln-value-1)) * -0.076618291);
-  --generation-3-logit-581: calc(0 + (var(--generation-3-final-ln-value-0)) * -0.062276013 + (var(--generation-3-final-ln-value-1)) * -0.048446383);
-  --generation-3-logit-1572: calc(0 + (var(--generation-3-final-ln-value-0)) * -0.080695249 + (var(--generation-3-final-ln-value-1)) * 0.010182603);
-  --generation-3-logit-5074: calc(0 + (var(--generation-3-final-ln-value-0)) * -0.007806188 + (var(--generation-3-final-ln-value-1)) * -0.082312107);
-  --generation-3-logit-5087: calc(0 + (var(--generation-3-final-ln-value-0)) * -0.071673967 + (var(--generation-3-final-ln-value-1)) * 0.043780126);
-  --generation-3-logit-7504: calc(0 + (var(--generation-3-final-ln-value-0)) * 0.021004319 + (var(--generation-3-final-ln-value-1)) * -0.078619309);
-  --generation-3-logit-12386: calc(0 + (var(--generation-3-final-ln-value-0)) * 0.044991326 + (var(--generation-3-final-ln-value-1)) * 0.075771004);
-  --generation-3-logit-16046: calc(0 + (var(--generation-3-final-ln-value-0)) * 0.094471298 + (var(--generation-3-final-ln-value-1)) * -0.034702003);
-  --generation-3-logit-17192: calc(0 + (var(--generation-3-final-ln-value-0)) * 0.075060956 + (var(--generation-3-final-ln-value-1)) * -0.052458495);
-  --generation-3-logit-19244: calc(0 + (var(--generation-3-final-ln-value-0)) * -0.079752535 + (var(--generation-3-final-ln-value-1)) * -0.008820225);
-  --generation-3-logit-33277: calc(0 + (var(--generation-3-final-ln-value-0)) * -0.002917513 + (var(--generation-3-final-ln-value-1)) * -0.083955184);
-  --generation-3-logit-34007: calc(0 + (var(--generation-3-final-ln-value-0)) * -0.054816052 + (var(--generation-3-final-ln-value-1)) * -0.055831064);
-  --generation-3-logit-39692: calc(0 + (var(--generation-3-final-ln-value-0)) * 0.077534862 + (var(--generation-3-final-ln-value-1)) * 0.022318203);
-  --generation-3-logit-44317: calc(0 + (var(--generation-3-final-ln-value-0)) * -0.02410996 + (var(--generation-3-final-ln-value-1)) * 0.079939768);
-  --generation-3-logit-45016: calc(0 + (var(--generation-3-final-ln-value-0)) * 0.072285704 + (var(--generation-3-final-ln-value-1)) * 0.038755827);
-  --generation-3-logit-45275: calc(0 + (var(--generation-3-final-ln-value-0)) * 0.035239756 + (var(--generation-3-final-ln-value-1)) * 0.07676328);
+  --generation-3-final-ln-0-mean: calc((var(--generation-3-layer-1-residual2-0-0) + var(--generation-3-layer-1-residual2-0-1)) / 2);
+  --generation-3-final-ln-0-delta-0: calc((var(--generation-3-layer-1-residual2-0-0)) - (var(--generation-3-final-ln-0-mean)));
+  --generation-3-final-ln-0-delta-1: calc((var(--generation-3-layer-1-residual2-0-1)) - (var(--generation-3-final-ln-0-mean)));
+  --generation-3-final-ln-0-variance: calc(((var(--generation-3-final-ln-0-delta-0)) * (var(--generation-3-final-ln-0-delta-0)) + (var(--generation-3-final-ln-0-delta-1)) * (var(--generation-3-final-ln-0-delta-1))) / 2);
+  --generation-3-final-ln-0-inverse-std: calc(1 / sqrt((var(--generation-3-final-ln-0-variance)) + 1e-05));
+  --generation-3-final-ln-0-value-0: calc((var(--generation-3-final-ln-0-delta-0)) * (var(--generation-3-final-ln-0-inverse-std)) * 1 + 0);
+  --generation-3-final-ln-0-value-1: calc((var(--generation-3-final-ln-0-delta-1)) * (var(--generation-3-final-ln-0-inverse-std)) * 1 + 0);
+  --generation-3-final-ln-1-mean: calc((var(--generation-3-layer-1-residual2-1-0) + var(--generation-3-layer-1-residual2-1-1)) / 2);
+  --generation-3-final-ln-1-delta-0: calc((var(--generation-3-layer-1-residual2-1-0)) - (var(--generation-3-final-ln-1-mean)));
+  --generation-3-final-ln-1-delta-1: calc((var(--generation-3-layer-1-residual2-1-1)) - (var(--generation-3-final-ln-1-mean)));
+  --generation-3-final-ln-1-variance: calc(((var(--generation-3-final-ln-1-delta-0)) * (var(--generation-3-final-ln-1-delta-0)) + (var(--generation-3-final-ln-1-delta-1)) * (var(--generation-3-final-ln-1-delta-1))) / 2);
+  --generation-3-final-ln-1-inverse-std: calc(1 / sqrt((var(--generation-3-final-ln-1-variance)) + 1e-05));
+  --generation-3-final-ln-1-value-0: calc((var(--generation-3-final-ln-1-delta-0)) * (var(--generation-3-final-ln-1-inverse-std)) * 1 + 0);
+  --generation-3-final-ln-1-value-1: calc((var(--generation-3-final-ln-1-delta-1)) * (var(--generation-3-final-ln-1-inverse-std)) * 1 + 0);
+  --generation-3-final-ln-2-mean: calc((var(--generation-3-layer-1-residual2-2-0) + var(--generation-3-layer-1-residual2-2-1)) / 2);
+  --generation-3-final-ln-2-delta-0: calc((var(--generation-3-layer-1-residual2-2-0)) - (var(--generation-3-final-ln-2-mean)));
+  --generation-3-final-ln-2-delta-1: calc((var(--generation-3-layer-1-residual2-2-1)) - (var(--generation-3-final-ln-2-mean)));
+  --generation-3-final-ln-2-variance: calc(((var(--generation-3-final-ln-2-delta-0)) * (var(--generation-3-final-ln-2-delta-0)) + (var(--generation-3-final-ln-2-delta-1)) * (var(--generation-3-final-ln-2-delta-1))) / 2);
+  --generation-3-final-ln-2-inverse-std: calc(1 / sqrt((var(--generation-3-final-ln-2-variance)) + 1e-05));
+  --generation-3-final-ln-2-value-0: calc((var(--generation-3-final-ln-2-delta-0)) * (var(--generation-3-final-ln-2-inverse-std)) * 1 + 0);
+  --generation-3-final-ln-2-value-1: calc((var(--generation-3-final-ln-2-delta-1)) * (var(--generation-3-final-ln-2-inverse-std)) * 1 + 0);
+  --generation-3-final-ln-3-mean: calc((var(--generation-3-layer-1-residual2-3-0) + var(--generation-3-layer-1-residual2-3-1)) / 2);
+  --generation-3-final-ln-3-delta-0: calc((var(--generation-3-layer-1-residual2-3-0)) - (var(--generation-3-final-ln-3-mean)));
+  --generation-3-final-ln-3-delta-1: calc((var(--generation-3-layer-1-residual2-3-1)) - (var(--generation-3-final-ln-3-mean)));
+  --generation-3-final-ln-3-variance: calc(((var(--generation-3-final-ln-3-delta-0)) * (var(--generation-3-final-ln-3-delta-0)) + (var(--generation-3-final-ln-3-delta-1)) * (var(--generation-3-final-ln-3-delta-1))) / 2);
+  --generation-3-final-ln-3-inverse-std: calc(1 / sqrt((var(--generation-3-final-ln-3-variance)) + 1e-05));
+  --generation-3-final-ln-3-value-0: calc((var(--generation-3-final-ln-3-delta-0)) * (var(--generation-3-final-ln-3-inverse-std)) * 1 + 0);
+  --generation-3-final-ln-3-value-1: calc((var(--generation-3-final-ln-3-delta-1)) * (var(--generation-3-final-ln-3-inverse-std)) * 1 + 0);
+  --generation-3-logit-367: calc(0 + (var(--generation-3-final-ln-3-value-0)) * -0.019083934 + (var(--generation-3-final-ln-3-value-1)) * -0.076618291);
+  --generation-3-logit-581: calc(0 + (var(--generation-3-final-ln-3-value-0)) * -0.062276013 + (var(--generation-3-final-ln-3-value-1)) * -0.048446383);
+  --generation-3-logit-1572: calc(0 + (var(--generation-3-final-ln-3-value-0)) * -0.080695249 + (var(--generation-3-final-ln-3-value-1)) * 0.010182603);
+  --generation-3-logit-5074: calc(0 + (var(--generation-3-final-ln-3-value-0)) * -0.007806188 + (var(--generation-3-final-ln-3-value-1)) * -0.082312107);
+  --generation-3-logit-5087: calc(0 + (var(--generation-3-final-ln-3-value-0)) * -0.071673967 + (var(--generation-3-final-ln-3-value-1)) * 0.043780126);
+  --generation-3-logit-7504: calc(0 + (var(--generation-3-final-ln-3-value-0)) * 0.021004319 + (var(--generation-3-final-ln-3-value-1)) * -0.078619309);
+  --generation-3-logit-12386: calc(0 + (var(--generation-3-final-ln-3-value-0)) * 0.044991326 + (var(--generation-3-final-ln-3-value-1)) * 0.075771004);
+  --generation-3-logit-16046: calc(0 + (var(--generation-3-final-ln-3-value-0)) * 0.094471298 + (var(--generation-3-final-ln-3-value-1)) * -0.034702003);
+  --generation-3-logit-17192: calc(0 + (var(--generation-3-final-ln-3-value-0)) * 0.075060956 + (var(--generation-3-final-ln-3-value-1)) * -0.052458495);
+  --generation-3-logit-19244: calc(0 + (var(--generation-3-final-ln-3-value-0)) * -0.079752535 + (var(--generation-3-final-ln-3-value-1)) * -0.008820225);
+  --generation-3-logit-33277: calc(0 + (var(--generation-3-final-ln-3-value-0)) * -0.002917513 + (var(--generation-3-final-ln-3-value-1)) * -0.083955184);
+  --generation-3-logit-34007: calc(0 + (var(--generation-3-final-ln-3-value-0)) * -0.054816052 + (var(--generation-3-final-ln-3-value-1)) * -0.055831064);
+  --generation-3-logit-39692: calc(0 + (var(--generation-3-final-ln-3-value-0)) * 0.077534862 + (var(--generation-3-final-ln-3-value-1)) * 0.022318203);
+  --generation-3-logit-44317: calc(0 + (var(--generation-3-final-ln-3-value-0)) * -0.02410996 + (var(--generation-3-final-ln-3-value-1)) * 0.079939768);
+  --generation-3-logit-45016: calc(0 + (var(--generation-3-final-ln-3-value-0)) * 0.072285704 + (var(--generation-3-final-ln-3-value-1)) * 0.038755827);
+  --generation-3-logit-45275: calc(0 + (var(--generation-3-final-ln-3-value-0)) * 0.035239756 + (var(--generation-3-final-ln-3-value-1)) * 0.07676328);
   --generation-3-max-logit-0-0: max(var(--generation-3-logit-367), var(--generation-3-logit-581), var(--generation-3-logit-1572), var(--generation-3-logit-5074), var(--generation-3-logit-5087), var(--generation-3-logit-7504), var(--generation-3-logit-12386), var(--generation-3-logit-16046), var(--generation-3-logit-17192), var(--generation-3-logit-19244), var(--generation-3-logit-33277), var(--generation-3-logit-34007), var(--generation-3-logit-39692), var(--generation-3-logit-44317), var(--generation-3-logit-45016), var(--generation-3-logit-45275));
   --generation-3-token-difference-5087: calc(abs((var(--generation-3-logit-5087)) - (var(--generation-3-max-logit-0-0))));
   --generation-3-is-token-5087: calc(1 - max(0, sign((var(--generation-3-token-difference-5087)) - 0.000001)));

@@ -13,7 +13,7 @@ just make its source prettier. The measured before/after results are:
 A later checkpoint-specific exact optimization reduced the pretrained
 one-token stylesheet further to 23,968 bytes and the four-token autoregressive
 stylesheet to 561,026 bytes. Interactive graphs for one through four prompt
-tokens range from about 601 KB to 1.36 MB.
+lengths now share one 1,508,399-byte recurrent stylesheet.
 
 ## Applied
 
@@ -57,20 +57,29 @@ sets commonly place most points on the hull.
 CSS cannot inspect a text input's live string, so the interactive pages expose
 native token `<select>` controls instead. A selected option has dynamic
 `:checked` state; generated `:has()` rules map 2,066 selectable token IDs to
-their two positioned embedding values. Each prompt position adds about 253 KB
+their two raw embedding values. Each prompt position adds about 253 KB
 of lookup CSS. The model graph and full-vocabulary output argmax remain exact;
 only the available prompt-token UI is bounded.
+
+### Animation-latched autoregressive stream
+
+The interactive compiler emits one transformer step over a fixed 16-token
+window. A four-phase animation clock alternates paused `execute` and `store`
+animations. Unregistered custom-property banks latch the winning embedding,
+context count, and growing `<content-list>` between cycles. Each state update
+forces the same circuit to resolve the next token; future tokens are not
+present in the initial dependency graph. This follows the state-bank technique
+demonstrated by [x86CSS](https://github.com/rebane2001/x86CSS).
 
 ## Investigated but not applied
 
 ### CSS CPU/state-machine emulation
 
-[x86CSS](https://github.com/rebane2001/x86CSS) demonstrates a real CSS-only x86
-emulator, including a JavaScript-free clock built from animation and style
-container queries. That is useful proof that CSS can execute a serial machine,
-but it does not remove GPT-2's weights. Serially interpreting 123.55 million
-multiply-accumulate terms would also trade the current parallel style graph for
-an enormous number of browser restyles.
+[x86CSS](https://github.com/rebane2001/x86CSS) also demonstrates a complete
+CSS-only x86 emulator. This project applies its animation clock and state-latch
+idea directly to a transformer step instead of interpreting x86 instructions.
+It does not remove GPT-2's weights; applying the same recurrent structure to
+GPT-2 Small would still make each clock cycle resolve its enormous matrix graph.
 
 ### Model pruning
 

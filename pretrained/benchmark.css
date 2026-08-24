@@ -21,6 +21,12 @@ select { width: min(30rem, 80vw); }
 .prompt-selectors { display: grid; gap: 0.5rem; max-width: 32rem; }
 .prompt-selectors label { display: grid; gap: 0.15rem; }
 .completion { white-space: pre-wrap; font-size: 1.15rem; }
+.stream-toggle { margin: 0.75rem 0.35rem 0.75rem 0; }
+.stream-button { cursor: pointer; }
+.reset-link { margin-left: 0.75rem; }
+.reset-copy { display: none; }
+#stream-toggle:checked + .stream-button .start-copy { display: none; }
+#stream-toggle:checked + .stream-button .reset-copy { display: inline; }
 
 .model-state { max-width: 60rem; }
 

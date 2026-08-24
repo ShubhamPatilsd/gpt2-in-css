@@ -101,11 +101,20 @@ python3 -m http.server 4173
 
 Then open `http://localhost:4173/pretrained/interactive.html`. Choose the prompt
 length and select GPT-2 token pieces; native select menus support type-to-search.
-CSS observes each selected `option:checked`, maps it to a positioned embedding,
-and runs the four transformer passes, argmax operations, and autoregressive
-feedback. The bounded picker exposes 2,066 useful/common/example token pieces;
+CSS observes each selected `option:checked` and maps it to a raw embedding.
+Press **start / resume generation** to start a four-phase CSS animation clock.
+Every 1.2-second cycle evaluates one transformer pass, latches the winning
+embedding into model state, and appends the decoded token to a CSS content
+buffer. The bounded picker exposes 2,066 useful/common/example token pieces;
 the output argmax remains exact over the full 50,257-token vocabulary because
 only 16 embeddings are geometrically capable of winning for this checkpoint.
+
+The page no longer precomputes future tokens. It contains one 1.51 MB recurrent
+transformer circuit and animation-latched state copied through execute/store
+custom-property banks. Generation can continue indefinitely. To keep the
+state fixed-size, the model uses a 16-token sliding context: after it fills,
+each cycle discards the oldest embedding, shifts the window, and appends the
+new winner. **Pause generation** preserves state; **reset** reloads the page.
 
 There is intentionally no ordinary text field. CSS selectors cannot read a
 text input's live string, and `attr()` reads markup attributes rather than the

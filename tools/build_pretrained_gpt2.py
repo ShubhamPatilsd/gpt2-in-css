@@ -26,6 +26,7 @@ EPSILON = 1e-5
 AUTOREGRESSIVE_STEPS = 4
 MAX_INTERACTIVE_PROMPT_TOKENS = 4
 INTERACTIVE_TOKEN_LIMIT = 2048
+RECURRENT_WINDOW = 16
 
 CSS_FUNCTIONS = """@function --gelu(--x <number>) returns <number> {
   --cube: calc(var(--x) * var(--x) * var(--x));
@@ -42,6 +43,17 @@ CSS_FUNCTIONS = """@function --gelu(--x <number>) returns <number> {
 def css_number(value: float) -> str:
     text = f"{float(value):.9f}".rstrip("0").rstrip(".")
     return "0" if text in {"", "-0"} else text
+
+
+def css_string(value: str) -> str:
+    escaped = (
+        value.replace("\\", "\\\\")
+        .replace('"', '\\"')
+        .replace("\r", "\\A ")
+        .replace("\n", "\\A ")
+        .replace("\t", "\\9 ")
+    )
+    return f'"{escaped}"'
 
 
 def convex_hull_token_ids(embeddings: np.ndarray) -> list[int]:
@@ -564,13 +576,13 @@ def compile_css(
     )
 
 
-def compile_autoregressive_context(
+def compile_transformer_context(
     compiler: CssCompiler,
     state: dict[str, np.ndarray],
     inputs: list[list[str]],
     generation: int,
-) -> list[str]:
-    """Compile a causal transformer pass and return the last hidden vector."""
+) -> list[list[str]]:
+    """Compile a causal transformer pass and return every final hidden vector."""
     x = inputs
     for layer in range(2):
         weight_prefix = f"transformer.h.{layer}"
@@ -735,12 +747,25 @@ def compile_autoregressive_context(
             )
         x = next_x
 
-    return compiler.normalize(
-        f"generation-{generation}-final-ln",
-        x[-1],
-        state["transformer.ln_f.weight"],
-        state["transformer.ln_f.bias"],
-    )
+    return [
+        compiler.normalize(
+            f"generation-{generation}-final-ln-{position}",
+            vector,
+            state["transformer.ln_f.weight"],
+            state["transformer.ln_f.bias"],
+        )
+        for position, vector in enumerate(x)
+    ]
+
+
+def compile_autoregressive_context(
+    compiler: CssCompiler,
+    state: dict[str, np.ndarray],
+    inputs: list[list[str]],
+    generation: int,
+) -> list[str]:
+    """Compile a causal transformer pass and return the last hidden vector."""
+    return compile_transformer_context(compiler, state, inputs, generation)[-1]
 
 
 def compile_autoregressive_css(
@@ -751,6 +776,7 @@ def compile_autoregressive_css(
     full_vocabulary: bool = False,
     filename: str = "autoregressive.css",
     prompt_length: int = 1,
+    steps: int = AUTOREGRESSIVE_STEPS,
 ) -> None:
     compiler = CssCompiler()
     embeddings = state["transformer.wte.weight"]
@@ -774,7 +800,7 @@ def compile_autoregressive_css(
     selected_embeddings: list[list[str]] = []
     generation_indicators: list[dict[int, str]] = []
 
-    for generation in range(AUTOREGRESSIVE_STEPS):
+    for generation in range(steps):
         inputs = [vector[:] for vector in prompt_inputs]
         for position, embedding in enumerate(
             selected_embeddings, start=prompt_length
@@ -826,7 +852,7 @@ def compile_autoregressive_css(
                 ),
             )
             compiler.raw(f"generation-{generation}-winner-id", winner_sum)
-        if generation + 1 < AUTOREGRESSIVE_STEPS:
+        if generation + 1 < steps:
             selected_embeddings.append(
                 [
                     compiler.value(
@@ -866,7 +892,7 @@ def compile_autoregressive_css(
             )
 
     registrations = [
-        "/* Four-token causal chain generated from sshleifer/tiny-gpt2. */",
+        f"/* {steps}-token causal chain generated from sshleifer/tiny-gpt2. */",
         CSS_FUNCTIONS,
     ]
     registrations.extend(
@@ -875,6 +901,216 @@ def compile_autoregressive_css(
     )
     (OUT / filename).write_text(
         "\n".join(registrations + compiler.lines) + "\n"
+    )
+
+
+def compile_recurrent_css(
+    state: dict[str, np.ndarray], tokenizer: Gpt2Tokenizer
+) -> None:
+    """Compile one recurrent transformer step with animation-latched state."""
+    compiler = CssCompiler()
+    embeddings = state["transformer.wte.weight"]
+    positions = state["transformer.wpe.weight"]
+    output_tokens = convex_hull_token_ids(embeddings)
+
+    bank_lines = [
+        "  --__1count: var(--__2count, var(--initial-count));",
+        '  --__1text: var(--__2text, "");',
+    ]
+    for slot in range(RECURRENT_WINDOW):
+        for dimension in range(2):
+            fallback = (
+                f"var(--interactive-token-{slot}-{dimension}, 0)"
+                if slot < MAX_INTERACTIVE_PROMPT_TOKENS
+                else "0"
+            )
+            bank_lines.append(
+                f"  --__1slot-{slot}-{dimension}: "
+                f"var(--__2slot-{slot}-{dimension}, {fallback});"
+            )
+
+    inputs = [
+        [
+            compiler.value(
+                f"recurrent-input-{slot}-{dimension}",
+                f"var(--__1slot-{slot}-{dimension}) + "
+                f"{css_number(positions[slot, dimension])}",
+            )
+            for dimension in range(2)
+        ]
+        for slot in range(RECURRENT_WINDOW)
+    ]
+    finals = compile_transformer_context(compiler, state, inputs, "recurrent")
+    last_indicators = []
+    for slot in range(RECURRENT_WINDOW):
+        difference = compiler.value(
+            f"recurrent-last-difference-{slot}",
+            f"abs(var(--__1count) - {slot + 1})",
+        )
+        last_indicators.append(
+            compiler.value(
+                f"recurrent-is-last-{slot}",
+                f"1 - max(0, sign(({difference}) - 0.000001))",
+            )
+        )
+    final = [
+        compiler.value(
+            f"recurrent-final-{dimension}",
+            " + ".join(
+                f"({last_indicators[slot]}) * ({finals[slot][dimension]})"
+                for slot in range(RECURRENT_WINDOW)
+            ),
+        )
+        for dimension in range(2)
+    ]
+    logits = {
+        token: compiler.dot(f"recurrent-logit-{token}", final, embeddings[token])
+        for token in output_tokens
+    }
+    maximum = compiler.reduce_tree(
+        "recurrent-max-logit", list(logits.values()), "max"
+    )
+    winner_indicators = {}
+    for token in output_tokens:
+        difference = compiler.value(
+            f"recurrent-token-difference-{token}",
+            f"abs(({logits[token]}) - ({maximum}))",
+        )
+        winner_indicators[token] = compiler.value(
+            f"recurrent-is-token-{token}",
+            f"1 - max(0, sign(({difference}) - 0.000001))",
+        )
+    winner_id = compiler.value(
+        "recurrent-winner-id",
+        " + ".join(
+            f"({indicator}) * {token}"
+            for token, indicator in winner_indicators.items()
+        ),
+    )
+    next_embedding = [
+        compiler.value(
+            f"recurrent-next-embedding-{dimension}",
+            " + ".join(
+                f"({indicator}) * {css_number(embeddings[token, dimension])}"
+                for token, indicator in winner_indicators.items()
+            ),
+        )
+        for dimension in range(2)
+    ]
+    next_count = compiler.raw(
+        "recurrent-next-count",
+        f"min({RECURRENT_WINDOW}, calc(var(--__1count) + 1))",
+    )
+
+    next_slots: list[list[str]] = []
+    for slot in range(RECURRENT_WINDOW):
+        vector = []
+        for dimension in range(2):
+            current = f"var(--__1slot-{slot}-{dimension})"
+            if slot + 1 < RECURRENT_WINDOW:
+                shifted = f"var(--__1slot-{slot + 1}-{dimension})"
+                expression = (
+                    f"if(style(--__1count: {slot}): {next_embedding[dimension]}; "
+                    f"style(--__1count: {RECURRENT_WINDOW}): {shifted}; "
+                    f"else: {current})"
+                )
+            else:
+                expression = (
+                    f"if(style(--__1count: {slot}): {next_embedding[dimension]}; "
+                    f"style(--__1count: {RECURRENT_WINDOW}): {next_embedding[dimension]}; "
+                    f"else: {current})"
+                )
+            vector.append(
+                compiler.raw(f"recurrent-next-slot-{slot}-{dimension}", expression)
+            )
+        next_slots.append(vector)
+
+    text_cases = "; ".join(
+        f"style(--recurrent-winner-id: {token}): "
+        f"var(--__1text) {css_string(tokenizer.decode_token(token))}"
+        for token in output_tokens
+    )
+
+    declarations = compiler.lines[1:]
+    circuit_lines = []
+    for start in range(0, len(declarations), 1000):
+        circuit_lines.append(".model {")
+        circuit_lines.extend(declarations[start : start + 1000])
+        circuit_lines.append("}")
+
+    execute_lines = [
+        "    --__0count: var(--recurrent-next-count);",
+        '    --__0text: var(--recurrent-next-text);',
+    ]
+    store_lines = [
+        "    --__2count: var(--__0count, var(--initial-count));",
+        '    --__2text: var(--__0text, "");',
+    ]
+    for slot in range(RECURRENT_WINDOW):
+        for dimension in range(2):
+            fallback = (
+                f"var(--interactive-token-{slot}-{dimension}, 0)"
+                if slot < MAX_INTERACTIVE_PROMPT_TOKENS
+                else "0"
+            )
+            execute_lines.append(
+                f"    --__0slot-{slot}-{dimension}: "
+                f"var(--recurrent-next-slot-{slot}-{dimension});"
+            )
+            store_lines.append(
+                f"    --__2slot-{slot}-{dimension}: "
+                f"var(--__0slot-{slot}-{dimension}, {fallback});"
+            )
+
+    registrations = [
+        "/* One animation-latched recurrent step from sshleifer/tiny-gpt2. */",
+        CSS_FUNCTIONS,
+        '@property --clock { syntax: "<integer>"; inherits: true; initial-value: 0; }',
+        '@property --recurrent-next-text { syntax: "<content-list>"; inherits: true; initial-value: ""; }',
+    ]
+    registrations.extend(
+        f'@property --{name} {{ syntax: "<number>"; inherits: true; initial-value: 0; }}'
+        for name in dict.fromkeys(compiler.names)
+    )
+    runtime = [
+        ".model {",
+        *bank_lines,
+        f"  --recurrent-next-text: if({text_cases}; else: var(--__1text));",
+        "}",
+        ".screen::after { content: var(--__1text); }",
+        ".clock { --clock: 0; }",
+        "#stream-toggle:checked ~ .clock {",
+        "  animation: recurrent-clock 1200ms steps(4, jump-end) infinite;",
+        "}",
+        ".model {",
+        "  animation: recurrent-store 1ms infinite, recurrent-execute 1ms infinite;",
+        "  animation-play-state: paused, paused;",
+        "}",
+        "@container style(--clock: 1) {",
+        "  .model { animation-play-state: running, paused; }",
+        "}",
+        "@container style(--clock: 3) {",
+        "  .model { animation-play-state: paused, running; }",
+        "}",
+        "@keyframes recurrent-clock {",
+        "  0% { --clock: 0; }",
+        "  25% { --clock: 1; }",
+        "  50% { --clock: 2; }",
+        "  75% { --clock: 3; }",
+        "}",
+        "@keyframes recurrent-store {",
+        "  0%, 100% {",
+        *store_lines,
+        "  }",
+        "}",
+        "@keyframes recurrent-execute {",
+        "  0%, 100% {",
+        *execute_lines,
+        "  }",
+        "}",
+    ]
+    (OUT / "recurrent.css").write_text(
+        "\n".join(registrations + circuit_lines + runtime) + "\n"
     )
 
 
@@ -1020,19 +1256,17 @@ def write_prompt_selector_css(
     tokenizer: Gpt2Tokenizer, state: dict[str, np.ndarray]
 ) -> None:
     embeddings = state["transformer.wte.weight"]
-    positions = state["transformer.wpe.weight"][:MAX_INTERACTIVE_PROMPT_TOKENS]
     selectable_tokens = interactive_token_ids(tokenizer, state)
     for position in range(MAX_INTERACTIVE_PROMPT_TOKENS):
         lines = [
-            "/* CSS-only mapping from selected GPT-2 token to its positioned embedding. */"
+            "/* CSS-only mapping from selected GPT-2 token to its raw embedding. */"
         ]
         for token in selectable_tokens:
             embedding = embeddings[token]
-            vector = embedding + positions[position]
             lines.append(
                 f'body:has(#prompt-{position} option[value="{token}"]:checked){{'
-                f'--interactive-input-{position}-0:{css_number(vector[0])};'
-                f'--interactive-input-{position}-1:{css_number(vector[1])}'
+                f'--interactive-token-{position}-0:{css_number(embedding[0])};'
+                f'--interactive-token-{position}-1:{css_number(embedding[1])}'
                 "}"
             )
         (OUT / f"prompt-position-{position}.css").write_text("\n".join(lines) + "\n")
@@ -1042,7 +1276,6 @@ def write_interactive_html(
     tokenizer: Gpt2Tokenizer, state: dict[str, np.ndarray]
 ) -> None:
     selectable_tokens = interactive_token_ids(tokenizer, state)
-    hull_tokens = convex_hull_token_ids(state["transformer.wte.weight"])
     defaults = [
         tokenizer.encode("Hello"),
         tokenizer.encode("The dog"),
@@ -1062,16 +1295,6 @@ def write_interactive_html(
             selects.append(
                 f'<label>token {position + 1}<select id="prompt-{position}">{options}</select></label>'
             )
-        generated = []
-        for generation in range(AUTOREGRESSIVE_STEPS):
-            options = "".join(
-                f'<span class="token-option" data-token="{token}">'
-                f'{html.escape(tokenizer.decode_token(token))}</span>'
-                for token in hull_tokens
-            )
-            generated.append(
-                f'<span class="generated-token" data-step="{generation}">{options}</span>'
-            )
         position_styles = "\n".join(
             f'  <link rel="stylesheet" href="prompt-position-{position}.css">'
             for position in range(length)
@@ -1088,17 +1311,22 @@ def write_interactive_html(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CSS-only GPT-2 token prompt</title>
 {position_styles}
-  <link rel="stylesheet" href="interactive-{length}.css">
+  <link rel="stylesheet" href="recurrent.css">
   <link rel="stylesheet" href="benchmark.css">
 </head>
 <body>
   <p>Prompt length: {navigation} tokens</p>
   <p class="note">Choose from {len(selectable_tokens):,} GPT-2 token pieces. Open a menu and type to search it; spaces are annotated.</p>
   <div class="prompt-selectors">{"".join(selects)}</div>
-  <section class="model">
-    <p class="completion">completion: {"".join(generated)}</p>
-  </section>
-  <p class="note">native HTML selection · CSS token-to-embedding lookup · CSS inference · zero scripts</p>
+  <input class="stream-toggle" type="checkbox" id="stream-toggle">
+  <label class="stream-button" for="stream-toggle"><span class="start-copy">start / resume generation</span><span class="reset-copy">pause generation</span></label>
+  <a class="reset-link" href="">reset</a>
+  <div class="clock">
+    <section class="model" style="--initial-count:{length}">
+      <p class="completion">completion: <output class="screen"></output></p>
+    </section>
+  </div>
+  <p class="note">one inference per CSS clock cycle · 16-token sliding context · zero scripts</p>
 </body>
 </html>
 '''
@@ -1143,16 +1371,8 @@ def main() -> None:
     compile_autoregressive_css(state, prompt_ids, sequences)
     write_html(tokenizer, prompt_ids, predicted_ids)
     write_benchmark_html(tokenizer, sequences)
-    for prompt_length in range(1, MAX_INTERACTIVE_PROMPT_TOKENS + 1):
-        print(f"compiling exact {prompt_length}-token interactive graph...")
-        compile_autoregressive_css(
-            state,
-            prompt_ids,
-            sequences,
-            full_vocabulary=True,
-            filename=f"interactive-{prompt_length}.css",
-            prompt_length=prompt_length,
-        )
+    print("compiling animation-latched recurrent graph...")
+    compile_recurrent_css(state, tokenizer)
     write_prompt_selector_css(tokenizer, state)
     write_interactive_html(tokenizer, state)
     print("wrote pretrained pages and CSS models")
