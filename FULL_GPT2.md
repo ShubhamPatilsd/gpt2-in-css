@@ -26,17 +26,24 @@ For one next-token inference at context length one:
 | 50,257-token language head | 38,597,376 |
 | Total | 123,550,464 |
 
-The equivalent CSS graph also needs approximately 480,000 typed custom
-properties. Typed properties are not optional in this design: experiments
-showed that unregistered properties recursively substitute their complete
-expression text until the browser invalidates the expanded graph.
+After the optimizations in [`OPTIMIZATIONS.md`](OPTIMIZATIONS.md), the
+equivalent fixed-prompt graph needs approximately **229,365** typed custom
+properties. A reusable `@function` now keeps GELU's five internal temporaries
+local instead of registering them for every feed-forward unit. The fixed
+prompt page also compares the maximum only with tokens that can win for one of
+its selectable inputs. A general full-vocabulary argmax would need about
+**279,621** properties.
+
+Typed properties remain necessary in this design: experiments showed that
+unregistered properties recursively substitute their complete expression text
+until the browser invalidates the expanded graph.
 
 Using the checkpoint's actual serialized weight lengths, the projected source
 size is:
 
-- approximately **3.18 GB** with aggressively shortened property names;
-- approximately **6.14 GB** with readable generated names;
-- approximately **6.4–30.7 GB** of browser working memory at a conservative
+- approximately **3.16 GB** with aggressively shortened property names;
+- approximately **6.12 GB** with readable generated names;
+- approximately **6.3–30.6 GB** of browser working memory at a conservative
   2–5× source-size multiplier.
 
 Each statically unrolled generated token adds another transformer computation
@@ -49,8 +56,9 @@ has browser-verified CSS implementations of matrix-vector products, ReLU,
 layer normalization, causal softmax attention, GELU, residual connections,
 tree-reduced argmax, discrete token selection, and autoregressive feedback.
 
-The blocker is representation and browser capacity: CSS has neither tensor
-storage nor loops, so every scalar operation must be materialized as source.
+The blocker is representation and browser capacity: CSS has neither reusable
+tensor storage nor a parallel matrix primitive, so every scalar product term
+must still be materialized as source.
 Loading a multi-gigabyte stylesheet with hundreds of millions of arithmetic
 terms would risk exhausting browser and system memory, and would not be a
 credible working artifact.
@@ -60,4 +68,3 @@ constraint—for example, JavaScript with WebGPU/Wasm—or adding tensor and loo
 primitives to CSS. Under the strict HTML+CSS-only runtime constraint, the real
 pretrained tiny checkpoint is the largest verified end-to-end result in this
 repository.
-
