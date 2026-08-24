@@ -25,6 +25,7 @@ PROMPTS = ["Hello", "The", "CSS"]
 EPSILON = 1e-5
 AUTOREGRESSIVE_STEPS = 4
 MAX_INTERACTIVE_PROMPT_TOKENS = 4
+INTERACTIVE_TOKEN_LIMIT = 2048
 
 CSS_FUNCTIONS = """@function --gelu(--x <number>) returns <number> {
   --cube: calc(var(--x) * var(--x) * var(--x));
@@ -70,6 +71,17 @@ def convex_hull_token_ids(embeddings: np.ndarray) -> list[int]:
             upper.pop()
         upper.append(point)
     return sorted({point[2] for point in lower[:-1] + upper[:-1]})
+
+
+def interactive_token_ids(
+    tokenizer: Gpt2Tokenizer, state: dict[str, np.ndarray]
+) -> list[int]:
+    """Bound the CSS selector UI while preserving useful examples and outputs."""
+    tokens = set(range(INTERACTIVE_TOKEN_LIMIT))
+    tokens.update(convex_hull_token_ids(state["transformer.wte.weight"]))
+    for prompt in ["Hello", "The dog", "Once upon a time", "CSS"]:
+        tokens.update(tokenizer.encode(prompt))
+    return sorted(tokens)
 
 
 def download_checkpoint() -> None:
@@ -337,6 +349,11 @@ class CssCompiler:
     def raw(self, name: str, expression: str) -> str:
         self.names.append(name)
         self.lines.append(f"  --{name}: {expression};")
+        return self.ref(name)
+
+    def inherited(self, name: str) -> str:
+        """Register an input supplied by an ancestor without overriding it."""
+        self.names.append(name)
         return self.ref(name)
 
     def value(self, name: str, expression: str) -> str:
@@ -742,9 +759,7 @@ def compile_autoregressive_css(
     if full_vocabulary:
         prompt_inputs = [
             [
-                compiler.raw(
-                    f"interactive-input-{position}-{dimension}", "0"
-                )
+                compiler.inherited(f"interactive-input-{position}-{dimension}")
                 for dimension in range(2)
             ]
             for position in range(prompt_length)
@@ -827,8 +842,9 @@ def compile_autoregressive_css(
 
     declarations = compiler.lines[1:]
     compiler.lines = []
+    scope = ".model" if full_vocabulary else ":root"
     for start in range(0, len(declarations), 1000):
-        compiler.lines.append(":root {")
+        compiler.lines.append(f"{scope} {{")
         compiler.lines.extend(declarations[start : start + 1000])
         compiler.lines.append("}")
 
@@ -841,13 +857,13 @@ def compile_autoregressive_css(
                     f"  --autoregressive-input-{dimension}: {css_number(value)};"
                 )
             compiler.lines.append("}")
-    if not full_vocabulary:
-        for generation, indicators in enumerate(generation_indicators):
-            for token, indicator in indicators.items():
-                compiler.lines.append(
-                    f'.generated-token[data-step="{generation}"] '
-                    f'.token-option[data-token="{token}"] {{ opacity: {indicator}; }}'
-                )
+    for generation, indicators in enumerate(generation_indicators):
+        for token, indicator in indicators.items():
+            prefix = ".model " if full_vocabulary else ""
+            compiler.lines.append(
+                f'{prefix}.generated-token[data-step="{generation}"] '
+                f'.token-option[data-token="{token}"] {{ opacity: {indicator}; }}'
+            )
 
     registrations = [
         "/* Four-token causal chain generated from sshleifer/tiny-gpt2. */",
@@ -943,7 +959,8 @@ def write_benchmark_html(
     controls = "\n".join(
         f'<input type="radio" name="prompt" id="prompt-{index}"'
         f'{(" checked" if index == 0 else "")}>'
-        for index, _prompt in enumerate(PROMPTS)
+        f'<label for="prompt-{index}">{html.escape(prompt)}</label>'
+        for index, prompt in enumerate(PROMPTS)
     )
     generated = []
     for generation in range(AUTOREGRESSIVE_STEPS):
@@ -956,189 +973,137 @@ def write_benchmark_html(
         generated.append(
             f'<span class="generated-token" data-step="{generation}">{options}</span>'
         )
-    expected = json.dumps(
-        {prompt: sequence for prompt, sequence in zip(PROMPTS, sequences)}
-    )
-    prompts = json.dumps(PROMPTS)
     document = f'''<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CSS GPT-2 throughput benchmark</title>
+  <title>CSS-only GPT-2 autoregressive chain</title>
   <link rel="stylesheet" href="autoregressive.css">
   <link rel="stylesheet" href="benchmark.css">
 </head>
 <body>
-  <div class="model-state" aria-hidden="true">
+  <main class="model-state">
+    <p>Choose a one-token prompt:</p>
 {controls}
-    {"".join(generated)}
-  </div>
-  <pre id="stream">warming up…</pre>
-  <p class="controls">
-    <button type="button" id="stop">pause</button>
-    <button type="button" id="start" disabled>resume</button>
-    <span id="metrics">loading CSS graph…</span>
-  </p>
-  <p class="note">four-token causal chains · 561 KB tiny-gpt2 graph · full GPT-2 small projection: 3.16 GB per token · <a href="interactive.html">typed prompt</a></p>
-
-  <script type="module">
-    const prompts = {prompts};
-    const expected = {expected};
-    const inputs = [...document.querySelectorAll('input[name="prompt"]')];
-    const generations = [...document.querySelectorAll('.generated-token')];
-    const stream = document.querySelector('#stream');
-    const startButton = document.querySelector('#start');
-    const stopButton = document.querySelector('#stop');
-    const metrics = document.querySelector('#metrics');
-    const tokensPerChain = {AUTOREGRESSIVE_STEPS};
-    let running = false;
-    let promptIndex = 0;
-    let sampleCount = 0;
-    let computeMilliseconds = 0;
-    let wallStarted = 0;
-    let lines = [];
-
-    function inferOnce() {{
-      promptIndex = (promptIndex + 1) % prompts.length;
-      const started = performance.now();
-      inputs[promptIndex].checked = true;
-      const terminalGeneration = generations[generations.length - 1];
-      [...terminalGeneration.querySelectorAll('.token-option')].find(
-        candidate => Number.parseFloat(getComputedStyle(candidate).opacity) > 0.5
-      );
-      const elapsed = performance.now() - started;
-      const selected = generations.map(generation => {{
-        const option = [...generation.querySelectorAll('.token-option')].find(
-          candidate => Number.parseFloat(getComputedStyle(candidate).opacity) > 0.5
-        );
-        return option;
-      }});
-      const winners = selected.map(option => option ? Number(option.dataset.token) : -1);
-      if (winners.some((token, index) => token !== expected[prompts[promptIndex]][index])) {{
-        throw new Error(`CSS prediction mismatch for ${{prompts[promptIndex]}}`);
-      }}
-      return {{ elapsed, text: prompts[promptIndex] + selected.map(option => option.textContent).join('') }};
-    }}
-
-    function updateResults() {{
-      const wallMilliseconds = performance.now() - wallStarted;
-      const tokenCount = sampleCount * tokensPerChain;
-      const computeRate = tokenCount * 1000 / computeMilliseconds;
-      const wallRate = tokenCount * 1000 / wallMilliseconds;
-      const latency = computeMilliseconds / tokenCount;
-      metrics.textContent = `${{computeRate.toFixed(2)}} tok/s · ${{latency.toFixed(2)}} ms/token · ${{wallRate.toFixed(2)}} tok/s including display`;
-    }}
-
-    function runBatch() {{
-      if (!running) return;
-      try {{
-        const result = inferOnce();
-        computeMilliseconds += result.elapsed;
-        sampleCount += 1;
-        lines.push(result.text);
-        if (lines.length > 200) lines = lines.slice(-200);
-        stream.textContent = `${{lines.join('\\n')}}\\n`;
-        stream.scrollTop = stream.scrollHeight;
-        updateResults();
-        setTimeout(runBatch, 2000);
-      }} catch (error) {{
-        running = false;
-        metrics.textContent = error.message;
-        startButton.disabled = false;
-        stopButton.disabled = true;
-      }}
-    }}
-
-    function begin() {{
-      if (running) return;
-      stream.textContent = 'warming up…';
-      for (let index = 0; index < prompts.length; index += 1) inferOnce();
-      sampleCount = 0;
-      computeMilliseconds = 0;
-      lines = [];
-      wallStarted = performance.now();
-      running = true;
-      startButton.disabled = true;
-      stopButton.disabled = false;
-      metrics.textContent = 'running…';
-      setTimeout(runBatch, 2000);
-    }}
-
-    startButton.addEventListener('click', begin);
-
-    stopButton.addEventListener('click', () => {{
-      running = false;
-      startButton.disabled = false;
-      stopButton.disabled = true;
-      metrics.textContent += ` · paused after ${{sampleCount.toLocaleString()}} chains`;
-    }});
-
-    setTimeout(begin, 0);
-  </script>
+    <p class="completion">completion: {"".join(generated)}</p>
+    <p class="note">four growing-context passes · CSS inference and feedback · zero scripts · <a href="interactive.html">choose arbitrary tokens</a></p>
+  </main>
 </body>
 </html>
 '''
     (OUT / "benchmark.html").write_text(document)
 
 
-def write_prompt_data(
-    tokenizer: Gpt2Tokenizer,
-    state: dict[str, np.ndarray],
+def token_choice_label(tokenizer: Gpt2Tokenizer, token: int) -> str:
+    decoded = tokenizer.decode_token(token)
+    leading_spaces = len(decoded) - len(decoded.lstrip(" "))
+    trailing_spaces = len(decoded) - len(decoded.rstrip(" "))
+    visible = decoded.strip(" ")
+    visible = visible.replace("\n", "↵").replace("\r", "↵").replace("\t", "⇥")
+    visible = "".join(
+        character if character.isprintable() else f"U+{ord(character):04X}"
+        for character in visible
+    )
+    if not visible:
+        visible = "space"
+    annotations = []
+    if leading_spaces:
+        annotations.append(f"{leading_spaces} leading space")
+    if trailing_spaces:
+        annotations.append(f"{trailing_spaces} trailing space")
+    suffix = f" ({', '.join(annotations)})" if annotations else ""
+    return f"{visible} · token {token}{suffix}"
+
+
+def write_prompt_selector_css(
+    tokenizer: Gpt2Tokenizer, state: dict[str, np.ndarray]
 ) -> None:
     embeddings = state["transformer.wte.weight"]
     positions = state["transformer.wpe.weight"][:MAX_INTERACTIVE_PROMPT_TOKENS]
-    by_id = []
-    for token in range(len(embeddings)):
-        decoded = tokenizer.decode_token(token)
-        by_id.append(decoded)
-    merges = [
-        list(pair)
-        for pair, _rank in sorted(
-            tokenizer.merge_ranks.items(), key=lambda item: item[1]
-        )
+    selectable_tokens = interactive_token_ids(tokenizer, state)
+    for position in range(MAX_INTERACTIVE_PROMPT_TOKENS):
+        lines = [
+            "/* CSS-only mapping from selected GPT-2 token to its positioned embedding. */"
+        ]
+        for token in selectable_tokens:
+            embedding = embeddings[token]
+            vector = embedding + positions[position]
+            lines.append(
+                f'body:has(#prompt-{position} option[value="{token}"]:checked){{'
+                f'--interactive-input-{position}-0:{css_number(vector[0])};'
+                f'--interactive-input-{position}-1:{css_number(vector[1])}'
+                "}"
+            )
+        (OUT / f"prompt-position-{position}.css").write_text("\n".join(lines) + "\n")
+
+
+def write_interactive_html(
+    tokenizer: Gpt2Tokenizer, state: dict[str, np.ndarray]
+) -> None:
+    selectable_tokens = interactive_token_ids(tokenizer, state)
+    hull_tokens = convex_hull_token_ids(state["transformer.wte.weight"])
+    defaults = [
+        tokenizer.encode("Hello"),
+        tokenizer.encode("The dog"),
+        tokenizer.encode("Once upon a"),
+        tokenizer.encode("Once upon a time"),
     ]
-    payload = {
-        "vocab": tokenizer.vocab,
-        "merges": merges,
-        "byId": by_id,
-        "embeddings": [
-            [float(css_number(value)) for value in vector]
-            for vector in embeddings
-        ],
-        "positions": [
-            [float(css_number(value)) for value in vector]
-            for vector in positions
-        ],
-    }
-    (OUT / "prompt-data.json").write_text(
-        json.dumps(payload, ensure_ascii=True, separators=(",", ":"))
-    )
-
-
-def write_interactive_html() -> None:
-    document = '''<!doctype html>
+    for length, default_ids in enumerate(defaults, start=1):
+        if len(default_ids) != length:
+            raise ValueError(f"interactive default must have {length} tokens: {default_ids}")
+        selects = []
+        for position, selected in enumerate(default_ids):
+            options = "".join(
+                f'<option value="{token}"{(" selected" if token == selected else "")}>'
+                f'{html.escape(token_choice_label(tokenizer, token))}</option>'
+                for token in selectable_tokens
+            )
+            selects.append(
+                f'<label>token {position + 1}<select id="prompt-{position}">{options}</select></label>'
+            )
+        generated = []
+        for generation in range(AUTOREGRESSIVE_STEPS):
+            options = "".join(
+                f'<span class="token-option" data-token="{token}">'
+                f'{html.escape(tokenizer.decode_token(token))}</span>'
+                for token in hull_tokens
+            )
+            generated.append(
+                f'<span class="generated-token" data-step="{generation}">{options}</span>'
+            )
+        position_styles = "\n".join(
+            f'  <link rel="stylesheet" href="prompt-position-{position}.css">'
+            for position in range(length)
+        )
+        navigation = " ".join(
+            f'<strong>{candidate}</strong>' if candidate == length else
+            f'<a href="{("interactive.html" if candidate == 1 else f"interactive-{candidate}.html")}">{candidate}</a>'
+            for candidate in range(1, MAX_INTERACTIVE_PROMPT_TOKENS + 1)
+        )
+        document = f'''<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Type a prompt for CSS GPT-2</title>
-  <link id="model-css" rel="stylesheet">
+  <title>CSS-only GPT-2 token prompt</title>
+{position_styles}
+  <link rel="stylesheet" href="interactive-{length}.css">
   <link rel="stylesheet" href="benchmark.css">
 </head>
 <body>
-  <form id="prompt-form">
-    <input id="prompt" value="Once upon a time" autocomplete="off" spellcheck="false" aria-label="GPT-2 prompt">
-    <button type="submit">start</button>
-  </form>
-  <pre id="stream">loading tokenizer…</pre>
-  <p id="metrics">Enter a prompt containing 1–4 GPT-2 tokens.</p>
-  <p class="note">four greedy CSS-generated tokens · JavaScript only tokenizes, wires inputs, and times the CSS result · <a href="benchmark.html">benchmark</a></p>
-  <script type="module" src="interactive.js"></script>
+  <p>Prompt length: {navigation} tokens</p>
+  <p class="note">Choose from {len(selectable_tokens):,} GPT-2 token pieces. Open a menu and type to search it; spaces are annotated.</p>
+  <div class="prompt-selectors">{"".join(selects)}</div>
+  <section class="model">
+    <p class="completion">completion: {"".join(generated)}</p>
+  </section>
+  <p class="note">native HTML selection · CSS token-to-embedding lookup · CSS inference · zero scripts</p>
 </body>
 </html>
 '''
-    (OUT / "interactive.html").write_text(document)
+        filename = "interactive.html" if length == 1 else f"interactive-{length}.html"
+        (OUT / filename).write_text(document)
 
 
 def main() -> None:
@@ -1188,8 +1153,8 @@ def main() -> None:
             filename=f"interactive-{prompt_length}.css",
             prompt_length=prompt_length,
         )
-    write_prompt_data(tokenizer, state)
-    write_interactive_html()
+    write_prompt_selector_css(tokenizer, state)
+    write_interactive_html(tokenizer, state)
     print("wrote pretrained pages and CSS models")
 
 

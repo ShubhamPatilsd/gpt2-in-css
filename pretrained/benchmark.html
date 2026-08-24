@@ -3,118 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CSS GPT-2 throughput benchmark</title>
+  <title>CSS-only GPT-2 autoregressive chain</title>
   <link rel="stylesheet" href="autoregressive.css">
   <link rel="stylesheet" href="benchmark.css">
 </head>
 <body>
-  <div class="model-state" aria-hidden="true">
-<input type="radio" name="prompt" id="prompt-0" checked>
-<input type="radio" name="prompt" id="prompt-1">
-<input type="radio" name="prompt" id="prompt-2">
-    <span class="generated-token" data-step="0"><span class="token-option" data-token="5087"> factors</span><span class="token-option" data-token="16046"> stairs</span></span><span class="generated-token" data-step="1"><span class="token-option" data-token="5087"> factors</span><span class="token-option" data-token="16046"> stairs</span></span><span class="generated-token" data-step="2"><span class="token-option" data-token="5087"> factors</span><span class="token-option" data-token="16046"> stairs</span></span><span class="generated-token" data-step="3"><span class="token-option" data-token="5087"> factors</span><span class="token-option" data-token="16046"> stairs</span></span>
-  </div>
-  <pre id="stream">warming up…</pre>
-  <p class="controls">
-    <button type="button" id="stop">pause</button>
-    <button type="button" id="start" disabled>resume</button>
-    <span id="metrics">loading CSS graph…</span>
-  </p>
-  <p class="note">four-token causal chains · 561 KB tiny-gpt2 graph · full GPT-2 small projection: 3.16 GB per token · <a href="interactive.html">typed prompt</a></p>
-
-  <script type="module">
-    const prompts = ["Hello", "The", "CSS"];
-    const expected = {"Hello": [16046, 16046, 16046, 16046], "The": [5087, 5087, 5087, 5087], "CSS": [16046, 16046, 16046, 16046]};
-    const inputs = [...document.querySelectorAll('input[name="prompt"]')];
-    const generations = [...document.querySelectorAll('.generated-token')];
-    const stream = document.querySelector('#stream');
-    const startButton = document.querySelector('#start');
-    const stopButton = document.querySelector('#stop');
-    const metrics = document.querySelector('#metrics');
-    const tokensPerChain = 4;
-    let running = false;
-    let promptIndex = 0;
-    let sampleCount = 0;
-    let computeMilliseconds = 0;
-    let wallStarted = 0;
-    let lines = [];
-
-    function inferOnce() {
-      promptIndex = (promptIndex + 1) % prompts.length;
-      const started = performance.now();
-      inputs[promptIndex].checked = true;
-      const terminalGeneration = generations[generations.length - 1];
-      [...terminalGeneration.querySelectorAll('.token-option')].find(
-        candidate => Number.parseFloat(getComputedStyle(candidate).opacity) > 0.5
-      );
-      const elapsed = performance.now() - started;
-      const selected = generations.map(generation => {
-        const option = [...generation.querySelectorAll('.token-option')].find(
-          candidate => Number.parseFloat(getComputedStyle(candidate).opacity) > 0.5
-        );
-        return option;
-      });
-      const winners = selected.map(option => option ? Number(option.dataset.token) : -1);
-      if (winners.some((token, index) => token !== expected[prompts[promptIndex]][index])) {
-        throw new Error(`CSS prediction mismatch for ${prompts[promptIndex]}`);
-      }
-      return { elapsed, text: prompts[promptIndex] + selected.map(option => option.textContent).join('') };
-    }
-
-    function updateResults() {
-      const wallMilliseconds = performance.now() - wallStarted;
-      const tokenCount = sampleCount * tokensPerChain;
-      const computeRate = tokenCount * 1000 / computeMilliseconds;
-      const wallRate = tokenCount * 1000 / wallMilliseconds;
-      const latency = computeMilliseconds / tokenCount;
-      metrics.textContent = `${computeRate.toFixed(2)} tok/s · ${latency.toFixed(2)} ms/token · ${wallRate.toFixed(2)} tok/s including display`;
-    }
-
-    function runBatch() {
-      if (!running) return;
-      try {
-        const result = inferOnce();
-        computeMilliseconds += result.elapsed;
-        sampleCount += 1;
-        lines.push(result.text);
-        if (lines.length > 200) lines = lines.slice(-200);
-        stream.textContent = `${lines.join('\n')}\n`;
-        stream.scrollTop = stream.scrollHeight;
-        updateResults();
-        setTimeout(runBatch, 2000);
-      } catch (error) {
-        running = false;
-        metrics.textContent = error.message;
-        startButton.disabled = false;
-        stopButton.disabled = true;
-      }
-    }
-
-    function begin() {
-      if (running) return;
-      stream.textContent = 'warming up…';
-      for (let index = 0; index < prompts.length; index += 1) inferOnce();
-      sampleCount = 0;
-      computeMilliseconds = 0;
-      lines = [];
-      wallStarted = performance.now();
-      running = true;
-      startButton.disabled = true;
-      stopButton.disabled = false;
-      metrics.textContent = 'running…';
-      setTimeout(runBatch, 2000);
-    }
-
-    startButton.addEventListener('click', begin);
-
-    stopButton.addEventListener('click', () => {
-      running = false;
-      startButton.disabled = false;
-      stopButton.disabled = true;
-      metrics.textContent += ` · paused after ${sampleCount.toLocaleString()} chains`;
-    });
-
-    setTimeout(begin, 0);
-  </script>
+  <main class="model-state">
+    <p>Choose a one-token prompt:</p>
+<input type="radio" name="prompt" id="prompt-0" checked><label for="prompt-0">Hello</label>
+<input type="radio" name="prompt" id="prompt-1"><label for="prompt-1">The</label>
+<input type="radio" name="prompt" id="prompt-2"><label for="prompt-2">CSS</label>
+    <p class="completion">completion: <span class="generated-token" data-step="0"><span class="token-option" data-token="5087"> factors</span><span class="token-option" data-token="16046"> stairs</span></span><span class="generated-token" data-step="1"><span class="token-option" data-token="5087"> factors</span><span class="token-option" data-token="16046"> stairs</span></span><span class="generated-token" data-step="2"><span class="token-option" data-token="5087"> factors</span><span class="token-option" data-token="16046"> stairs</span></span><span class="generated-token" data-step="3"><span class="token-option" data-token="5087"> factors</span><span class="token-option" data-token="16046"> stairs</span></span></p>
+    <p class="note">four growing-context passes · CSS inference and feedback · zero scripts · <a href="interactive.html">choose arbitrary tokens</a></p>
+  </main>
 </body>
 </html>

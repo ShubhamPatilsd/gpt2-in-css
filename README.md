@@ -59,8 +59,8 @@ in a browser.
 
 ## Pretrained GPT-2 checkpoint
 
-The third experiment downloads and compiles the real `sshleifer/tiny-gpt2`
-checkpoint, including its complete 50,257-token language-model head:
+The third experiment downloads and compiles the `sshleifer/tiny-gpt2` test
+checkpoint, including its 50,257-token language-model head:
 
 ```sh
 make pretrained
@@ -73,35 +73,47 @@ runtime JavaScript. The tied language head is two-dimensional, so an exact
 convex-hull pass proves that only 16 of its 50,257 token embeddings can ever win
 an argmax; the compiler omits the other mathematically dead logits.
 
-To measure repeated one-token CSS inference in the browser:
+This checkpoint has only two hidden dimensions and two transformer layers. It
+is useful for verifying the compiler, but it is not a usable language model:
+greedy generation collapses to repeated `stairs` or `factors` tokens even in
+the Python reference implementation.
+
+To inspect four chained CSS inference passes:
 
 ```sh
 make benchmark
 python3 -m http.server 4173
 ```
 
-Open `http://localhost:4173/pretrained/benchmark.html` and press **Start
-benchmark**. Each run resolves four growing-context tokens: every CSS argmax
-selects the embedding consumed by the next transformer pass. The model remains
-CSS-only; a small JavaScript harness switches seed prompts, validates the full
-chain, and measures time. The benchmark intentionally recomputes every causal
-prefix instead of using a KV cache. Exact convex-hull elimination reduces its
-four-step generated stylesheet to about 561 KB.
+Open `http://localhost:4173/pretrained/benchmark.html` and choose a prompt.
+Every CSS argmax selects the embedding consumed by the next transformer pass.
+The page contains no script. It intentionally recomputes every causal prefix
+instead of using a KV cache, and therefore cannot measure its own wall-clock
+throughput. Exact convex-hull elimination reduces its four-step stylesheet to
+about 561 KB.
 
-For an exact full-vocabulary decoder with a typed 1–4 token prompt:
+For a CSS-only prompt picker with one through four initial tokens:
 
 ```sh
 make interactive
 python3 -m http.server 4173
 ```
 
-Then open `http://localhost:4173/pretrained/interactive.html`. JavaScript runs
-the standard GPT-2 byte-pair tokenizer, supplies the prompt embeddings, decodes
-the result, and reports timing. The four transformer passes, argmax operations,
-and autoregressive embedding feedback are CSS. Separate exact CSS graphs cover
-initial contexts of one through four tokens. The decoder evaluates the 16
-vocabulary embeddings that are geometrically capable of winning for this
-checkpoint.
+Then open `http://localhost:4173/pretrained/interactive.html`. Choose the prompt
+length and select GPT-2 token pieces; native select menus support type-to-search.
+CSS observes each selected `option:checked`, maps it to a positioned embedding,
+and runs the four transformer passes, argmax operations, and autoregressive
+feedback. The bounded picker exposes 2,066 useful/common/example token pieces;
+the output argmax remains exact over the full 50,257-token vocabulary because
+only 16 embeddings are geometrically capable of winning for this checkpoint.
+
+There is intentionally no ordinary text field. CSS selectors cannot read a
+text input's live string, and `attr()` reads markup attributes rather than the
+mutable form-control value. Without JavaScript or a server, arbitrary text
+cannot be BPE-tokenized. Selected `<option>` elements do expose dynamic
+`:checked` state, so token selection is the honest zero-script workaround. See
+the [Selectors input-state specification](https://www.w3.org/TR/selectors-4/#input-value-states)
+and [`attr()` definition](https://www.w3.org/TR/css-values-5/#attr-notation).
 
 ## GPT-2 small scaling result
 

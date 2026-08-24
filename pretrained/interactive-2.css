@@ -3175,11 +3175,7 @@
 @property --generation-3-is-token-45275 { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-3-winner-sum { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --generation-3-winner-id { syntax: "<number>"; inherits: true; initial-value: 0; }
-:root {
-  --interactive-input-0-0: 0;
-  --interactive-input-0-1: 0;
-  --interactive-input-1-0: 0;
-  --interactive-input-1-1: 0;
+.model {
   --generation-0-layer-0-ln1-0-mean: calc((var(--interactive-input-0-0) + var(--interactive-input-0-1)) / 2);
   --generation-0-layer-0-ln1-0-delta-0: calc((var(--interactive-input-0-0)) - (var(--generation-0-layer-0-ln1-0-mean)));
   --generation-0-layer-0-ln1-0-delta-1: calc((var(--interactive-input-0-1)) - (var(--generation-0-layer-0-ln1-0-mean)));
@@ -4176,12 +4172,12 @@
   --generation-1-layer-1-gelu-1-7-input: calc(0.7978845608 * ((var(--generation-1-layer-1-fc-1-7)) + 0.044715 * (var(--generation-1-layer-1-gelu-1-7-cube))));
   --generation-1-layer-1-gelu-1-7-bounded: clamp(-10, var(--generation-1-layer-1-gelu-1-7-input), 10);
   --generation-1-layer-1-gelu-1-7-exp: exp(2 * (var(--generation-1-layer-1-gelu-1-7-bounded)));
-}
-:root {
   --generation-1-layer-1-gelu-1-7-tanh: calc(((var(--generation-1-layer-1-gelu-1-7-exp)) - 1) / ((var(--generation-1-layer-1-gelu-1-7-exp)) + 1));
   --generation-1-layer-1-gelu-1-7: calc(0.5 * (var(--generation-1-layer-1-fc-1-7)) * (1 + (var(--generation-1-layer-1-gelu-1-7-tanh))));
   --generation-1-layer-1-mlp-projection-1-0: calc(0 + (var(--generation-1-layer-1-gelu-1-0)) * 0.013557709 + (var(--generation-1-layer-1-gelu-1-1)) * 0.000779573 + (var(--generation-1-layer-1-gelu-1-2)) * -0.014545985 + (var(--generation-1-layer-1-gelu-1-3)) * -0.007958967 + (var(--generation-1-layer-1-gelu-1-4)) * 0.037451725 + (var(--generation-1-layer-1-gelu-1-5)) * 0.009499419 + (var(--generation-1-layer-1-gelu-1-6)) * 0.012534348 + (var(--generation-1-layer-1-gelu-1-7)) * -0.014422158);
   --generation-1-layer-1-mlp-projection-1-1: calc(0 + (var(--generation-1-layer-1-gelu-1-0)) * -0.032813452 + (var(--generation-1-layer-1-gelu-1-1)) * -0.014475741 + (var(--generation-1-layer-1-gelu-1-2)) * -0.012716192 + (var(--generation-1-layer-1-gelu-1-3)) * -0.019075541 + (var(--generation-1-layer-1-gelu-1-4)) * 0.010075798 + (var(--generation-1-layer-1-gelu-1-5)) * -0.008753267 + (var(--generation-1-layer-1-gelu-1-6)) * -0.004611595 + (var(--generation-1-layer-1-gelu-1-7)) * 0.001718842);
+}
+.model {
   --generation-1-layer-1-residual2-1-0: calc((var(--generation-1-layer-1-residual1-1-0)) + (var(--generation-1-layer-1-mlp-projection-1-0)));
   --generation-1-layer-1-residual2-1-1: calc((var(--generation-1-layer-1-residual1-1-1)) + (var(--generation-1-layer-1-mlp-projection-1-1)));
   --generation-1-layer-1-fc-2-0: calc(0 + (var(--generation-1-layer-1-ln2-2-value-0)) * 0.023650292 + (var(--generation-1-layer-1-ln2-2-value-1)) * -0.036560751);
@@ -5178,12 +5174,12 @@
   --generation-2-is-token-5074: calc(1 - max(0, sign((var(--generation-2-token-difference-5074)) - 0.000001)));
   --generation-2-token-difference-5087: calc(abs((var(--generation-2-logit-5087)) - (var(--generation-2-max-logit-0-0))));
   --generation-2-is-token-5087: calc(1 - max(0, sign((var(--generation-2-token-difference-5087)) - 0.000001)));
-}
-:root {
   --generation-2-token-difference-7504: calc(abs((var(--generation-2-logit-7504)) - (var(--generation-2-max-logit-0-0))));
   --generation-2-is-token-7504: calc(1 - max(0, sign((var(--generation-2-token-difference-7504)) - 0.000001)));
   --generation-2-token-difference-12386: calc(abs((var(--generation-2-logit-12386)) - (var(--generation-2-max-logit-0-0))));
   --generation-2-is-token-12386: calc(1 - max(0, sign((var(--generation-2-token-difference-12386)) - 0.000001)));
+}
+.model {
   --generation-2-token-difference-16046: calc(abs((var(--generation-2-logit-16046)) - (var(--generation-2-max-logit-0-0))));
   --generation-2-is-token-16046: calc(1 - max(0, sign((var(--generation-2-token-difference-16046)) - 0.000001)));
   --generation-2-token-difference-17192: calc(abs((var(--generation-2-logit-17192)) - (var(--generation-2-max-logit-0-0))));
@@ -6180,12 +6176,12 @@
   --generation-3-layer-1-gelu-3-0-input: calc(0.7978845608 * ((var(--generation-3-layer-1-fc-3-0)) + 0.044715 * (var(--generation-3-layer-1-gelu-3-0-cube))));
   --generation-3-layer-1-gelu-3-0-bounded: clamp(-10, var(--generation-3-layer-1-gelu-3-0-input), 10);
   --generation-3-layer-1-gelu-3-0-exp: exp(2 * (var(--generation-3-layer-1-gelu-3-0-bounded)));
-}
-:root {
   --generation-3-layer-1-gelu-3-0-tanh: calc(((var(--generation-3-layer-1-gelu-3-0-exp)) - 1) / ((var(--generation-3-layer-1-gelu-3-0-exp)) + 1));
   --generation-3-layer-1-gelu-3-0: calc(0.5 * (var(--generation-3-layer-1-fc-3-0)) * (1 + (var(--generation-3-layer-1-gelu-3-0-tanh))));
   --generation-3-layer-1-gelu-3-1-cube: calc((var(--generation-3-layer-1-fc-3-1)) * (var(--generation-3-layer-1-fc-3-1)) * (var(--generation-3-layer-1-fc-3-1)));
   --generation-3-layer-1-gelu-3-1-input: calc(0.7978845608 * ((var(--generation-3-layer-1-fc-3-1)) + 0.044715 * (var(--generation-3-layer-1-gelu-3-1-cube))));
+}
+.model {
   --generation-3-layer-1-gelu-3-1-bounded: clamp(-10, var(--generation-3-layer-1-gelu-3-1-input), 10);
   --generation-3-layer-1-gelu-3-1-exp: exp(2 * (var(--generation-3-layer-1-gelu-3-1-bounded)));
   --generation-3-layer-1-gelu-3-1-tanh: calc(((var(--generation-3-layer-1-gelu-3-1-exp)) - 1) / ((var(--generation-3-layer-1-gelu-3-1-exp)) + 1));
@@ -6349,3 +6345,67 @@
   --generation-3-winner-sum: calc((var(--generation-3-is-token-367)) * 367 + (var(--generation-3-is-token-581)) * 581 + (var(--generation-3-is-token-1572)) * 1572 + (var(--generation-3-is-token-5074)) * 5074 + (var(--generation-3-is-token-5087)) * 5087 + (var(--generation-3-is-token-7504)) * 7504 + (var(--generation-3-is-token-12386)) * 12386 + (var(--generation-3-is-token-16046)) * 16046 + (var(--generation-3-is-token-17192)) * 17192 + (var(--generation-3-is-token-19244)) * 19244 + (var(--generation-3-is-token-33277)) * 33277 + (var(--generation-3-is-token-34007)) * 34007 + (var(--generation-3-is-token-39692)) * 39692 + (var(--generation-3-is-token-44317)) * 44317 + (var(--generation-3-is-token-45016)) * 45016 + (var(--generation-3-is-token-45275)) * 45275);
   --generation-3-winner-id: var(--generation-3-winner-sum);
 }
+.model .generated-token[data-step="0"] .token-option[data-token="367"] { opacity: var(--generation-0-is-token-367); }
+.model .generated-token[data-step="0"] .token-option[data-token="581"] { opacity: var(--generation-0-is-token-581); }
+.model .generated-token[data-step="0"] .token-option[data-token="1572"] { opacity: var(--generation-0-is-token-1572); }
+.model .generated-token[data-step="0"] .token-option[data-token="5074"] { opacity: var(--generation-0-is-token-5074); }
+.model .generated-token[data-step="0"] .token-option[data-token="5087"] { opacity: var(--generation-0-is-token-5087); }
+.model .generated-token[data-step="0"] .token-option[data-token="7504"] { opacity: var(--generation-0-is-token-7504); }
+.model .generated-token[data-step="0"] .token-option[data-token="12386"] { opacity: var(--generation-0-is-token-12386); }
+.model .generated-token[data-step="0"] .token-option[data-token="16046"] { opacity: var(--generation-0-is-token-16046); }
+.model .generated-token[data-step="0"] .token-option[data-token="17192"] { opacity: var(--generation-0-is-token-17192); }
+.model .generated-token[data-step="0"] .token-option[data-token="19244"] { opacity: var(--generation-0-is-token-19244); }
+.model .generated-token[data-step="0"] .token-option[data-token="33277"] { opacity: var(--generation-0-is-token-33277); }
+.model .generated-token[data-step="0"] .token-option[data-token="34007"] { opacity: var(--generation-0-is-token-34007); }
+.model .generated-token[data-step="0"] .token-option[data-token="39692"] { opacity: var(--generation-0-is-token-39692); }
+.model .generated-token[data-step="0"] .token-option[data-token="44317"] { opacity: var(--generation-0-is-token-44317); }
+.model .generated-token[data-step="0"] .token-option[data-token="45016"] { opacity: var(--generation-0-is-token-45016); }
+.model .generated-token[data-step="0"] .token-option[data-token="45275"] { opacity: var(--generation-0-is-token-45275); }
+.model .generated-token[data-step="1"] .token-option[data-token="367"] { opacity: var(--generation-1-is-token-367); }
+.model .generated-token[data-step="1"] .token-option[data-token="581"] { opacity: var(--generation-1-is-token-581); }
+.model .generated-token[data-step="1"] .token-option[data-token="1572"] { opacity: var(--generation-1-is-token-1572); }
+.model .generated-token[data-step="1"] .token-option[data-token="5074"] { opacity: var(--generation-1-is-token-5074); }
+.model .generated-token[data-step="1"] .token-option[data-token="5087"] { opacity: var(--generation-1-is-token-5087); }
+.model .generated-token[data-step="1"] .token-option[data-token="7504"] { opacity: var(--generation-1-is-token-7504); }
+.model .generated-token[data-step="1"] .token-option[data-token="12386"] { opacity: var(--generation-1-is-token-12386); }
+.model .generated-token[data-step="1"] .token-option[data-token="16046"] { opacity: var(--generation-1-is-token-16046); }
+.model .generated-token[data-step="1"] .token-option[data-token="17192"] { opacity: var(--generation-1-is-token-17192); }
+.model .generated-token[data-step="1"] .token-option[data-token="19244"] { opacity: var(--generation-1-is-token-19244); }
+.model .generated-token[data-step="1"] .token-option[data-token="33277"] { opacity: var(--generation-1-is-token-33277); }
+.model .generated-token[data-step="1"] .token-option[data-token="34007"] { opacity: var(--generation-1-is-token-34007); }
+.model .generated-token[data-step="1"] .token-option[data-token="39692"] { opacity: var(--generation-1-is-token-39692); }
+.model .generated-token[data-step="1"] .token-option[data-token="44317"] { opacity: var(--generation-1-is-token-44317); }
+.model .generated-token[data-step="1"] .token-option[data-token="45016"] { opacity: var(--generation-1-is-token-45016); }
+.model .generated-token[data-step="1"] .token-option[data-token="45275"] { opacity: var(--generation-1-is-token-45275); }
+.model .generated-token[data-step="2"] .token-option[data-token="367"] { opacity: var(--generation-2-is-token-367); }
+.model .generated-token[data-step="2"] .token-option[data-token="581"] { opacity: var(--generation-2-is-token-581); }
+.model .generated-token[data-step="2"] .token-option[data-token="1572"] { opacity: var(--generation-2-is-token-1572); }
+.model .generated-token[data-step="2"] .token-option[data-token="5074"] { opacity: var(--generation-2-is-token-5074); }
+.model .generated-token[data-step="2"] .token-option[data-token="5087"] { opacity: var(--generation-2-is-token-5087); }
+.model .generated-token[data-step="2"] .token-option[data-token="7504"] { opacity: var(--generation-2-is-token-7504); }
+.model .generated-token[data-step="2"] .token-option[data-token="12386"] { opacity: var(--generation-2-is-token-12386); }
+.model .generated-token[data-step="2"] .token-option[data-token="16046"] { opacity: var(--generation-2-is-token-16046); }
+.model .generated-token[data-step="2"] .token-option[data-token="17192"] { opacity: var(--generation-2-is-token-17192); }
+.model .generated-token[data-step="2"] .token-option[data-token="19244"] { opacity: var(--generation-2-is-token-19244); }
+.model .generated-token[data-step="2"] .token-option[data-token="33277"] { opacity: var(--generation-2-is-token-33277); }
+.model .generated-token[data-step="2"] .token-option[data-token="34007"] { opacity: var(--generation-2-is-token-34007); }
+.model .generated-token[data-step="2"] .token-option[data-token="39692"] { opacity: var(--generation-2-is-token-39692); }
+.model .generated-token[data-step="2"] .token-option[data-token="44317"] { opacity: var(--generation-2-is-token-44317); }
+.model .generated-token[data-step="2"] .token-option[data-token="45016"] { opacity: var(--generation-2-is-token-45016); }
+.model .generated-token[data-step="2"] .token-option[data-token="45275"] { opacity: var(--generation-2-is-token-45275); }
+.model .generated-token[data-step="3"] .token-option[data-token="367"] { opacity: var(--generation-3-is-token-367); }
+.model .generated-token[data-step="3"] .token-option[data-token="581"] { opacity: var(--generation-3-is-token-581); }
+.model .generated-token[data-step="3"] .token-option[data-token="1572"] { opacity: var(--generation-3-is-token-1572); }
+.model .generated-token[data-step="3"] .token-option[data-token="5074"] { opacity: var(--generation-3-is-token-5074); }
+.model .generated-token[data-step="3"] .token-option[data-token="5087"] { opacity: var(--generation-3-is-token-5087); }
+.model .generated-token[data-step="3"] .token-option[data-token="7504"] { opacity: var(--generation-3-is-token-7504); }
+.model .generated-token[data-step="3"] .token-option[data-token="12386"] { opacity: var(--generation-3-is-token-12386); }
+.model .generated-token[data-step="3"] .token-option[data-token="16046"] { opacity: var(--generation-3-is-token-16046); }
+.model .generated-token[data-step="3"] .token-option[data-token="17192"] { opacity: var(--generation-3-is-token-17192); }
+.model .generated-token[data-step="3"] .token-option[data-token="19244"] { opacity: var(--generation-3-is-token-19244); }
+.model .generated-token[data-step="3"] .token-option[data-token="33277"] { opacity: var(--generation-3-is-token-33277); }
+.model .generated-token[data-step="3"] .token-option[data-token="34007"] { opacity: var(--generation-3-is-token-34007); }
+.model .generated-token[data-step="3"] .token-option[data-token="39692"] { opacity: var(--generation-3-is-token-39692); }
+.model .generated-token[data-step="3"] .token-option[data-token="44317"] { opacity: var(--generation-3-is-token-44317); }
+.model .generated-token[data-step="3"] .token-option[data-token="45016"] { opacity: var(--generation-3-is-token-45016); }
+.model .generated-token[data-step="3"] .token-option[data-token="45275"] { opacity: var(--generation-3-is-token-45275); }

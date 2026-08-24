@@ -16,14 +16,13 @@ body { margin: 1rem; }
 
 .controls, .note { margin: 0.5rem 0 0; }
 .note { font-size: 12px; }
-button { font: inherit; }
-input { width: min(36rem, 70vw); font: inherit; }
+button, input, select { font: inherit; }
+select { width: min(30rem, 80vw); }
+.prompt-selectors { display: grid; gap: 0.5rem; max-width: 32rem; }
+.prompt-selectors label { display: grid; gap: 0.15rem; }
+.completion { white-space: pre-wrap; font-size: 1.15rem; }
 
-.model-state {
-  position: fixed;
-  left: -10000px;
-  top: 0;
-}
+.model-state { max-width: 60rem; }
 
-.generated-token { display: grid; }
+.generated-token { display: inline-grid; }
 .token-option { grid-area: 1 / 1; opacity: 0; }

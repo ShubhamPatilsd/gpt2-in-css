@@ -13,7 +13,7 @@ just make its source prettier. The measured before/after results are:
 A later checkpoint-specific exact optimization reduced the pretrained
 one-token stylesheet further to 23,968 bytes and the four-token autoregressive
 stylesheet to 561,026 bytes. Interactive graphs for one through four prompt
-tokens range from 592,897 to 1,350,461 bytes.
+tokens range from about 601 KB to 1.36 MB.
 
 ## Applied
 
@@ -51,6 +51,15 @@ arbitrary-token decoder and autoregressive embedding selection.
 This is special to the width-two test checkpoint. It is not expected to reduce
 ordinary 768-dimensional GPT-2 meaningfully, because high-dimensional point
 sets commonly place most points on the hull.
+
+### Zero-script prompt state
+
+CSS cannot inspect a text input's live string, so the interactive pages expose
+native token `<select>` controls instead. A selected option has dynamic
+`:checked` state; generated `:has()` rules map 2,066 selectable token IDs to
+their two positioned embedding values. Each prompt position adds about 253 KB
+of lookup CSS. The model graph and full-vocabulary output argmax remain exact;
+only the available prompt-token UI is bounded.
 
 ## Investigated but not applied
 
