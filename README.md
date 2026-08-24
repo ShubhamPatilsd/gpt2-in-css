@@ -41,3 +41,17 @@ dataset is cached under `data/` and excluded from version control.
 
 Requirements: Python 3 and NumPy. The generated page needs a browser supporting
 CSS typed arithmetic (`*` in `calc()`), such as a current Chromium release.
+
+## Tiny transformer
+
+The second experiment compiles a GPT-2-style transformer block and three
+autoregressive generation steps to CSS:
+
+```sh
+make transformer
+open transformer/index.html
+```
+
+It uses a seven-token toy vocabulary and a fitted language head so the complete
+attention/GELU/residual/argmax/feedback circuit remains small enough to inspect
+in a browser.
