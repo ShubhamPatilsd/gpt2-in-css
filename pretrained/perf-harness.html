@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS GPT-2 performance harness</title>
+  <link rel="stylesheet" href="autoregressive.css?cache=kv-final">
+  <link rel="stylesheet" href="benchmark.css">
+</head>
+<body>
+  <main class="model-state">
+    <input type="radio" name="prompt" id="prompt-0" checked>
+    <input type="radio" name="prompt" id="prompt-1">
+    <input type="radio" name="prompt" id="prompt-2">
+    <span class="generated-token" data-step="0">
+      <span class="token-option" data-token="5087"> factors</span>
+      <span class="token-option" data-token="16046"> stairs</span>
+    </span>
+    <span class="generated-token" data-step="1">
+      <span class="token-option" data-token="5087"> factors</span>
+      <span class="token-option" data-token="16046"> stairs</span>
+    </span>
+    <span class="generated-token" data-step="2">
+      <span class="token-option" data-token="5087"> factors</span>
+      <span class="token-option" data-token="16046"> stairs</span>
+    </span>
+    <span class="generated-token" data-step="3">
+      <span class="token-option" data-token="5087"> factors</span>
+      <span class="token-option" data-token="16046"> stairs</span>
+    </span>
+  </main>
+  <pre id="results">running…</pre>
+  <script>
+    const rounds = 120;
+    const warmups = 12;
+    const inputs = [...document.querySelectorAll('input[name="prompt"]')];
+    const terminal = document.querySelector('.generated-token[data-step="3"]');
+    const expectedWinners = [16046, 5087, 16046];
+
+    function infer(index) {
+      const started = performance.now();
+      inputs[index].checked = true;
+      const styles = [...terminal.querySelectorAll('.token-option')].map(
+        option => Number.parseFloat(getComputedStyle(option).opacity)
+      );
+      return { elapsed: performance.now() - started, styles };
+    }
+
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      for (let index = 0; index < warmups; index += 1) infer(index % inputs.length);
+      const samples = [];
+      let checksum = 0;
+      let wrongWinners = 0;
+      for (let index = 0; index < rounds; index += 1) {
+        const prompt = index % inputs.length;
+        const result = infer(prompt);
+        samples.push(result.elapsed);
+        checksum += result.styles.reduce((sum, value) => sum + value, 0);
+        const candidates = [...terminal.querySelectorAll('.token-option')];
+        const winner = candidates[result.styles.findIndex(value => value > 0.5)];
+        if (Number(winner?.dataset.token) !== expectedWinners[prompt]) {
+          wrongWinners += 1;
+        }
+      }
+      samples.sort((a, b) => a - b);
+      const mean = samples.reduce((sum, value) => sum + value, 0) / samples.length;
+      const result = {
+        rounds,
+        meanMilliseconds: mean,
+        medianMilliseconds: samples[Math.floor(samples.length / 2)],
+        p95Milliseconds: samples[Math.floor(samples.length * 0.95)],
+        minimumMilliseconds: samples[0],
+        maximumMilliseconds: samples[samples.length - 1],
+        checksum,
+        wrongWinners,
+        navigation: performance.getEntriesByType('navigation')[0]?.toJSON(),
+      };
+      document.querySelector('#results').textContent = JSON.stringify(result, null, 2);
+      document.documentElement.dataset.benchmarkComplete = 'true';
+    }));
+  </script>
+</body>
+</html>
