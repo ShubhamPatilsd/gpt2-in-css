@@ -108,6 +108,35 @@ def main() -> None:
     language_head_macs = vocabulary * d_model
     total_macs = transformer_macs + language_head_macs
 
+    # Property count for the optimized, one-position compiler. GELU internals
+    # now live inside one @function call, and a fixed prompt page only needs a
+    # winner check for the token(s) its controls can actually produce.
+    layer_norm_properties = 2 * d_model + 3
+    properties_per_layer = (
+        2 * layer_norm_properties
+        + 3 * d_model
+        + d_model
+        + d_model
+        + d_ff
+        + d_ff
+        + d_model
+        + d_model
+    )
+    max_tree_properties = 0
+    level_width = vocabulary
+    while level_width > 1:
+        level_width = (level_width + 31) // 32
+        max_tree_properties += level_width
+    fixed_prompt_properties = (
+        d_model
+        + layers * properties_per_layer
+        + layer_norm_properties
+        + vocabulary
+        + max_tree_properties
+        + 1
+    )
+    full_vocab_properties = fixed_prompt_properties + vocabulary - 1
+
     sample_weights = np.concatenate(
         [
             np.asarray(tensors.tensor("h.0.attn.c_attn.weight")).reshape(-1)[::4096],
@@ -117,8 +146,7 @@ def main() -> None:
     numeric_bytes = np.mean([len(css_number(value)) for value in sample_weights])
     compact_term_bytes = numeric_bytes + 14  # v(--xN)* plus operator spacing
     readable_term_bytes = numeric_bytes + 38  # var(--descriptive-name)* plus spacing
-    property_count = 480_000
-    registration_bytes = property_count * 82
+    registration_bytes = fixed_prompt_properties * 82
     compact_css_bytes = total_macs * compact_term_bytes + registration_bytes
     readable_css_bytes = total_macs * readable_term_bytes + registration_bytes
 
@@ -127,7 +155,8 @@ def main() -> None:
     print(f"transformer MACs: {transformer_macs:,}")
     print(f"language-head MACs: {language_head_macs:,}")
     print(f"total CSS MAC terms: {total_macs:,}")
-    print(f"estimated typed properties: {property_count:,}")
+    print(f"fixed-prompt typed properties: {fixed_prompt_properties:,}")
+    print(f"full-vocabulary argmax properties: {full_vocab_properties:,}")
     print(f"mean serialized weight length: {numeric_bytes:.2f} bytes")
     print(f"compact CSS estimate: {compact_css_bytes / 1e9:.2f} GB")
     print(f"readable CSS estimate: {readable_css_bytes / 1e9:.2f} GB")
@@ -140,4 +169,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

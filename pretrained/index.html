@@ -30,8 +30,7 @@
         </div>
       </fieldset>
 
-      <div class="prediction" aria-label="CSS-selected next token"><span class="prediction-option" data-token="5087"> factors</span><span class="prediction-option" data-token="16046"> stairs</span></div>
-      <div class="token-id">CSS argmax token ID: <strong></strong></div>
+      <div class="prediction" aria-label="CSS-selected next token"><span class="prediction-option" data-token="5087"><strong> factors</strong><small>token 5087</small></span><span class="prediction-option" data-token="16046"><strong> stairs</strong><small>token 16046</small></span></div>
         <span class="reference" data-prompt="0">
           <span>Python reference</span>
           <strong>token 16046:  stairs</strong>
@@ -49,8 +48,8 @@
     <p class="proof">
       Build-time Python only downloads and converts the pretrained weights.
       At runtime, CSS computes both transformer blocks, all
-      <strong>50,257 logits</strong>, a tree-reduced maximum, a one-hot argmax,
-      and the winning token ID. This document contains no
+      <strong>50,257 logits</strong>, a tree-reduced maximum, and exact winner
+      checks for this page's finite prompt set. This document contains no
       <code>&lt;script&gt;</code> element.
     </p>
     <p class="back"><a href="../transformer/index.html">← Tiny autoregressive transformer</a></p>

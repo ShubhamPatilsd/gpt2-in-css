@@ -88,10 +88,13 @@ legend { margin-bottom: 0.8rem; color: #8f9ba2; font-size: 0.78rem; }
   white-space: pre;
 }
 
-.prediction-option { grid-area: 1 / 1; opacity: 0; }
-.token-id, .reference { color: #929ca2; font-size: 0.82rem; }
-.token-id strong { counter-reset: winner var(--winner-id); color: #eef3f4; }
-.token-id strong::after { content: counter(winner); }
+.prediction-option {
+  grid-area: 1 / 1;
+  display: grid;
+  gap: 0.35rem;
+  opacity: 0;
+}
+.prediction-option small, .reference { color: #929ca2; font-size: 0.82rem; }
 .reference { display: none; justify-content: space-between; gap: 1rem; margin-top: 0.8rem; }
 .reference strong { color: #eef3f4; }
 

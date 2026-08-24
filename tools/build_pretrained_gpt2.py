@@ -24,6 +24,19 @@ FILES = ["config.json", "vocab.json", "merges.txt", "pytorch_model.bin"]
 PROMPTS = ["Hello", "The", "CSS"]
 EPSILON = 1e-5
 
+CSS_FUNCTIONS = """@function --gelu(--x <number>) returns <number> {
+  --cube: calc(var(--x) * var(--x) * var(--x));
+  --tanh-input: calc(0.7978845608 * (var(--x) + 0.044715 * var(--cube)));
+  --bounded: clamp(-10, var(--tanh-input), 10);
+  --exponential: exp(calc(2 * var(--bounded)));
+  --tanh-value: calc((var(--exponential) - 1) / (var(--exponential) + 1));
+  result: calc(0.5 * var(--x) * (1 + var(--tanh-value)));
+}
+
+@function --is-maximum(--value <number>, --maximum <number>) returns <number> {
+  result: calc(1 - abs(sign(var(--value) - var(--maximum))));
+}"""
+
 
 def css_number(value: float) -> str:
     text = f"{float(value):.9f}".rstrip("0").rstrip(".")
@@ -423,32 +436,10 @@ def compile_css(
             )
             for unit in range(8)
         ]
-        activated = []
-        for unit, value in enumerate(feed_forward):
-            cube = compiler.value(
-                f"layer-{layer}-cube-{unit}", f"({value}) * ({value}) * ({value})"
-            )
-            tanh_input = compiler.value(
-                f"layer-{layer}-gelu-input-{unit}",
-                f"0.7978845608 * (({value}) + 0.044715 * ({cube}))",
-            )
-            bounded = compiler.raw(
-                f"layer-{layer}-gelu-bounded-{unit}",
-                f"clamp(-10, {tanh_input}, 10)",
-            )
-            exponential = compiler.raw(
-                f"layer-{layer}-gelu-exp-{unit}", f"exp(2 * ({bounded}))"
-            )
-            tanh_value = compiler.value(
-                f"layer-{layer}-gelu-tanh-{unit}",
-                f"(({exponential}) - 1) / (({exponential}) + 1)",
-            )
-            activated.append(
-                compiler.value(
-                    f"layer-{layer}-gelu-{unit}",
-                    f"0.5 * ({value}) * (1 + ({tanh_value}))",
-                )
-            )
+        activated = [
+            compiler.raw(f"layer-{layer}-gelu-{unit}", f"--gelu({value})")
+            for unit, value in enumerate(feed_forward)
+        ]
         down = [
             compiler.dot(
                 f"layer-{layer}-mlp-proj-{output}",
@@ -478,19 +469,16 @@ def compile_css(
         for token in range(len(embeddings))
     ]
     maximum = compiler.reduce_tree("max-logit", logits, "max")
-    indicators = [
-        compiler.value(
-            f"is-token-{token}",
-            f"1 - abs(sign(({logit}) - ({maximum})))",
+    # This page has a finite prompt domain. Compute every vocabulary logit and
+    # the exact maximum, but only materialize equality checks for tokens that a
+    # selectable prompt can produce. The other 50k one-hot and weighted-ID
+    # properties cannot affect anything visible on this page.
+    candidate_indicators = {
+        token: compiler.raw(
+            f"is-token-{token}", f"--is-maximum({logits[token]}, {maximum})"
         )
-        for token, logit in enumerate(logits)
-    ]
-    weighted_ids = [
-        compiler.value(f"weighted-id-{token}", f"({indicator}) * {token}")
-        for token, indicator in enumerate(indicators)
-    ]
-    winner_id = compiler.reduce_tree("winner-id-sum", weighted_ids, "sum")
-    compiler.raw("winner-id", winner_id)
+        for token in sorted(set(predicted_ids))
+    }
     declarations = compiler.lines[1:]
     compiler.lines = []
     for start in range(0, len(declarations), 1000):
@@ -508,14 +496,15 @@ def compile_css(
             f':root:has(#prompt-{prompt_index}:checked) '
             f'.reference[data-prompt="{prompt_index}"] {{ display: flex; }}'
         )
-    for token in sorted(set(predicted_ids)):
+    for token, indicator in candidate_indicators.items():
         compiler.lines.append(
             f'.prediction-option[data-token="{token}"] '
-            f'{{ opacity: var(--is-token-{token}); }}'
+            f'{{ opacity: {indicator}; }}'
         )
 
     registrations = [
-        "/* Generated from sshleifer/tiny-gpt2 by tools/build_pretrained_gpt2.py. */"
+        "/* Generated from sshleifer/tiny-gpt2 by tools/build_pretrained_gpt2.py. */",
+        CSS_FUNCTIONS,
     ]
     registrations.extend(
         f'@property --{name} {{ syntax: "<number>"; inherits: true; initial-value: 0; }}'
@@ -537,7 +526,9 @@ def write_html(
         for index, prompt in enumerate(PROMPTS)
     )
     options = "".join(
-        f'<span class="prediction-option" data-token="{token}">{html.escape(tokenizer.decode_token(token))}</span>'
+        f'<span class="prediction-option" data-token="{token}">'
+        f'<strong>{html.escape(tokenizer.decode_token(token))}</strong>'
+        f'<small>token {token}</small></span>'
         for token in sorted(set(predicted_ids))
     )
     references = "\n".join(
@@ -575,15 +566,14 @@ def write_html(
       </fieldset>
 
       <div class="prediction" aria-label="CSS-selected next token">{options}</div>
-      <div class="token-id">CSS argmax token ID: <strong></strong></div>
 {references}
     </section>
 
     <p class="proof">
       Build-time Python only downloads and converts the pretrained weights.
       At runtime, CSS computes both transformer blocks, all
-      <strong>50,257 logits</strong>, a tree-reduced maximum, a one-hot argmax,
-      and the winning token ID. This document contains no
+      <strong>50,257 logits</strong>, a tree-reduced maximum, and exact winner
+      checks for this page's finite prompt set. This document contains no
       <code>&lt;script&gt;</code> element.
     </p>
     <p class="back"><a href="../transformer/index.html">← Tiny autoregressive transformer</a></p>

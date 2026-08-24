@@ -40,7 +40,8 @@ The first build downloads `mnist.npz` (about 11 MB) and trains the model. The
 dataset is cached under `data/` and excluded from version control.
 
 Requirements: Python 3 and NumPy. The generated page needs a browser supporting
-CSS typed arithmetic (`*` in `calc()`), such as a current Chromium release.
+CSS typed arithmetic (`*` in `calc()`). The transformer pages additionally use
+CSS custom functions, available in Chromium 139 and newer.
 
 ## Tiny transformer
 
@@ -68,11 +69,14 @@ open pretrained/index.html
 
 The checkpoint is cached under `data/`. Its legacy PyTorch format is decoded by
 the build script without requiring PyTorch, and the generated page has no
-runtime JavaScript.
+runtime JavaScript. The current compiler emits all 50,257 logits but omits
+output-selector properties that are dead for the page's finite prompt set.
 
 ## GPT-2 small scaling result
 
 `make analyze-full` runs the real 124M GPT-2-small checkpoint for one token and
 calculates the size of the equivalent CSS circuit. See
 [`FULL_GPT2.md`](FULL_GPT2.md) for the measured limit: 123.55 million CSS MAC
-terms and a projected 3.18–6.14 GB stylesheet per unrolled token.
+terms and a projected 3.16–6.12 GB stylesheet per unrolled token. The research
+and implemented optimizations are recorded in
+[`OPTIMIZATIONS.md`](OPTIMIZATIONS.md).
