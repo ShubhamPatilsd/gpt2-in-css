@@ -55,3 +55,17 @@ open transformer/index.html
 It uses a seven-token toy vocabulary and a fitted language head so the complete
 attention/GELU/residual/argmax/feedback circuit remains small enough to inspect
 in a browser.
+
+## Pretrained GPT-2 checkpoint
+
+The third experiment downloads and compiles the real `sshleifer/tiny-gpt2`
+checkpoint, including its complete 50,257-token language-model head:
+
+```sh
+make pretrained
+open pretrained/index.html
+```
+
+The checkpoint is cached under `data/`. Its legacy PyTorch format is decoded by
+the build script without requiring PyTorch, and the generated page has no
+runtime JavaScript.

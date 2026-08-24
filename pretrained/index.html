@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pretrained GPT-2, computed by CSS</title>
+  <link rel="stylesheet" href="model.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Experiment 003 · pretrained checkpoint · zero scripts</p>
+    <h1>Pretrained GPT-2, computed by CSS.</h1>
+    <p class="lede">
+      The genuine two-layer <code>sshleifer/tiny-gpt2</code> checkpoint, its
+      50,257-token vocabulary, GELU blocks, layer norms, and complete language
+      head—compiled into browser-evaluated CSS.
+    </p>
+
+    <section class="demo">
+      <fieldset>
+        <legend>Choose a single-token GPT-2 prompt</legend>
+        <div class="prompt-options">
+        <input type="radio" name="prompt" id="prompt-0" checked>
+        <label for="prompt-0">Hello</label>
+        <input type="radio" name="prompt" id="prompt-1">
+        <label for="prompt-1">The</label>
+        <input type="radio" name="prompt" id="prompt-2">
+        <label for="prompt-2">CSS</label>
+        </div>
+      </fieldset>
+
+      <div class="prediction" aria-label="CSS-selected next token"><span class="prediction-option" data-token="5087"> factors</span><span class="prediction-option" data-token="16046"> stairs</span></div>
+      <div class="token-id">CSS argmax token ID: <strong></strong></div>
+        <span class="reference" data-prompt="0">
+          <span>Python reference</span>
+          <strong>token 16046:  stairs</strong>
+        </span>
+        <span class="reference" data-prompt="1">
+          <span>Python reference</span>
+          <strong>token 5087:  factors</strong>
+        </span>
+        <span class="reference" data-prompt="2">
+          <span>Python reference</span>
+          <strong>token 16046:  stairs</strong>
+        </span>
+    </section>
+
+    <p class="proof">
+      Build-time Python only downloads and converts the pretrained weights.
+      At runtime, CSS computes both transformer blocks, all
+      <strong>50,257 logits</strong>, a tree-reduced maximum, a one-hot argmax,
+      and the winning token ID. This document contains no
+      <code>&lt;script&gt;</code> element.
+    </p>
+    <p class="back"><a href="../transformer/index.html">← Tiny autoregressive transformer</a></p>
+  </main>
+</body>
+</html>
