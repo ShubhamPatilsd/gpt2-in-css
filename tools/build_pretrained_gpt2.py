@@ -576,12 +576,168 @@ def write_html(
       checks for this page's finite prompt set. This document contains no
       <code>&lt;script&gt;</code> element.
     </p>
-    <p class="back"><a href="../transformer/index.html">← Tiny autoregressive transformer</a></p>
+    <p class="back">
+      <a href="../transformer/index.html">← Tiny autoregressive transformer</a>
+      <a href="benchmark.html">Run throughput benchmark →</a>
+    </p>
   </main>
 </body>
 </html>
 '''
     (OUT / "index.html").write_text(document)
+
+
+def write_benchmark_html(
+    tokenizer: Gpt2Tokenizer,
+    predicted_ids: list[int],
+) -> None:
+    controls = "\n".join(
+        f'''        <input type="radio" name="prompt" id="prompt-{index}"{(" checked" if index == 0 else "")}>
+        <label for="prompt-{index}">{html.escape(prompt)}</label>'''
+        for index, prompt in enumerate(PROMPTS)
+    )
+    options = "".join(
+        f'<span class="prediction-option" data-token="{token}">'
+        f'<strong>{html.escape(tokenizer.decode_token(token))}</strong>'
+        f'<small>token {token}</small></span>'
+        for token in sorted(set(predicted_ids))
+    )
+    expected = json.dumps(
+        {prompt: token for prompt, token in zip(PROMPTS, predicted_ids)}
+    )
+    prompts = json.dumps(PROMPTS)
+    document = f'''<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS GPT-2 throughput benchmark</title>
+  <link rel="stylesheet" href="model.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="benchmark-page">
+  <main>
+    <p class="eyebrow">Experiment 003B · CSS inference benchmark</p>
+    <h1>How fast does the CSS model run?</h1>
+    <p class="lede">
+      This repeatedly switches among the compiled prompts and forces the browser
+      to resolve the selected token. The neural-network calculation remains in
+      <code>model.css</code>; JavaScript only drives and times the benchmark.
+    </p>
+
+    <section class="demo">
+      <fieldset>
+        <legend>Prompt being evaluated</legend>
+        <div class="prompt-options">
+{controls}
+        </div>
+      </fieldset>
+
+      <div class="prediction" aria-label="CSS-selected next token">{options}</div>
+
+      <div class="benchmark-controls">
+        <button type="button" id="start">Start benchmark</button>
+        <button type="button" id="stop" disabled>Stop</button>
+      </div>
+      <dl class="benchmark-results" aria-live="polite">
+        <div><dt>CSS inference</dt><dd><strong id="compute-rate">—</strong> tok/s</dd></div>
+        <div><dt>Observed stream</dt><dd><strong id="wall-rate">—</strong> tok/s</dd></div>
+        <div><dt>Mean latency</dt><dd><strong id="latency">—</strong> ms/token</dd></div>
+        <div><dt>Samples</dt><dd><strong id="samples">0</strong></dd></div>
+      </dl>
+      <p id="status" class="benchmark-status">Ready.</p>
+    </section>
+
+    <p class="proof">
+      This is a warm, fixed-prompt style-recalculation benchmark—not an
+      arbitrary-text or growing-context GPT-2 benchmark. The separate
+      <a href="index.html">model demo</a> still contains zero scripts.
+    </p>
+  </main>
+
+  <script type="module">
+    const prompts = {prompts};
+    const expected = {expected};
+    const inputs = [...document.querySelectorAll('input[name="prompt"]')];
+    const options = [...document.querySelectorAll('.prediction-option')];
+    const startButton = document.querySelector('#start');
+    const stopButton = document.querySelector('#stop');
+    const computeRate = document.querySelector('#compute-rate');
+    const wallRate = document.querySelector('#wall-rate');
+    const latency = document.querySelector('#latency');
+    const samples = document.querySelector('#samples');
+    const status = document.querySelector('#status');
+    const batchSize = 5;
+    let running = false;
+    let promptIndex = 0;
+    let sampleCount = 0;
+    let computeMilliseconds = 0;
+    let wallStarted = 0;
+
+    function inferOnce() {{
+      promptIndex = (promptIndex + 1) % prompts.length;
+      const started = performance.now();
+      inputs[promptIndex].checked = true;
+      const winner = options.find(
+        option => Number.parseFloat(getComputedStyle(option).opacity) > 0.5
+      );
+      const elapsed = performance.now() - started;
+      if (!winner || Number(winner.dataset.token) !== expected[prompts[promptIndex]]) {{
+        throw new Error(`CSS prediction mismatch for ${{prompts[promptIndex]}}`);
+      }}
+      return elapsed;
+    }}
+
+    function updateResults() {{
+      const wallMilliseconds = performance.now() - wallStarted;
+      computeRate.textContent = (sampleCount * 1000 / computeMilliseconds).toFixed(2);
+      wallRate.textContent = (sampleCount * 1000 / wallMilliseconds).toFixed(2);
+      latency.textContent = (computeMilliseconds / sampleCount).toFixed(2);
+      samples.textContent = sampleCount.toLocaleString();
+      status.textContent = `Running · last prompt: ${{prompts[promptIndex]}}`;
+    }}
+
+    function runBatch() {{
+      if (!running) return;
+      try {{
+        for (let index = 0; index < batchSize; index += 1) {{
+          computeMilliseconds += inferOnce();
+          sampleCount += 1;
+        }}
+        updateResults();
+        setTimeout(runBatch, 0);
+      }} catch (error) {{
+        running = false;
+        status.textContent = error.message;
+        startButton.disabled = false;
+        stopButton.disabled = true;
+      }}
+    }}
+
+    startButton.addEventListener('click', () => {{
+      if (running) return;
+      for (let index = 0; index < prompts.length * 2; index += 1) inferOnce();
+      sampleCount = 0;
+      computeMilliseconds = 0;
+      wallStarted = performance.now();
+      running = true;
+      startButton.disabled = true;
+      stopButton.disabled = false;
+      status.textContent = 'Running…';
+      setTimeout(runBatch, 0);
+    }});
+
+    stopButton.addEventListener('click', () => {{
+      running = false;
+      startButton.disabled = false;
+      stopButton.disabled = true;
+      status.textContent = `Stopped after ${{sampleCount.toLocaleString()}} samples.`;
+    }});
+  </script>
+</body>
+</html>
+'''
+    (OUT / "benchmark.html").write_text(document)
 
 
 def main() -> None:
@@ -606,7 +762,8 @@ def main() -> None:
         )
     compile_css(state, prompt_ids, predicted_ids)
     write_html(tokenizer, prompt_ids, predicted_ids)
-    print("wrote pretrained/index.html and pretrained/model.css")
+    write_benchmark_html(tokenizer, predicted_ids)
+    print("wrote pretrained/index.html, benchmark.html, and model.css")
 
 
 if __name__ == "__main__":

@@ -72,6 +72,17 @@ the build script without requiring PyTorch, and the generated page has no
 runtime JavaScript. The current compiler emits all 50,257 logits but omits
 output-selector properties that are dead for the page's finite prompt set.
 
+To measure repeated one-token CSS inference in the browser:
+
+```sh
+make benchmark
+python3 -m http.server 4173
+```
+
+Open `http://localhost:4173/pretrained/benchmark.html` and press **Start
+benchmark**. The model remains CSS-only; that page uses a small JavaScript
+harness solely to switch prompts, force style resolution, and measure time.
+
 ## GPT-2 small scaling result
 
 `make analyze-full` runs the real 124M GPT-2-small checkpoint for one token and
