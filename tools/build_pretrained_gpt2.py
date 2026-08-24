@@ -352,24 +352,30 @@ def forward(token_ids: list[int], state: dict[str, np.ndarray]) -> np.ndarray:
 class CssCompiler:
     def __init__(self) -> None:
         self.names: list[str] = []
+        self.inheriting_names: set[str] = set()
         self.lines = [":root {"]
 
     @staticmethod
     def ref(name: str) -> str:
         return f"var(--{name})"
 
-    def raw(self, name: str, expression: str) -> str:
+    def raw(self, name: str, expression: str, *, inherits: bool = False) -> str:
         self.names.append(name)
+        if inherits:
+            self.inheriting_names.add(name)
         self.lines.append(f"  --{name}: {expression};")
         return self.ref(name)
 
     def inherited(self, name: str) -> str:
         """Register an input supplied by an ancestor without overriding it."""
         self.names.append(name)
+        self.inheriting_names.add(name)
         return self.ref(name)
 
-    def value(self, name: str, expression: str) -> str:
-        return self.raw(name, f"calc({expression})")
+    def value(
+        self, name: str, expression: str, *, inherits: bool = False
+    ) -> str:
+        return self.raw(name, f"calc({expression})", inherits=inherits)
 
     def dot(
         self, name: str, inputs: list[str], weights: np.ndarray, bias: float = 0
@@ -539,6 +545,7 @@ def compile_css(
         candidate_indicators[token] = compiler.value(
             f"is-token-{token}",
             f"1 - max(0, sign(({difference}) - 0.000001))",
+            inherits=True,
         )
     declarations = compiler.lines[1:]
     compiler.lines = []
@@ -568,7 +575,8 @@ def compile_css(
         CSS_FUNCTIONS,
     ]
     registrations.extend(
-        f'@property --{name} {{ syntax: "<number>"; inherits: true; initial-value: 0; }}'
+        f'@property --{name} {{ syntax: "<number>"; inherits: '
+        f'{str(name in compiler.inheriting_names).lower()}; initial-value: 0; }}'
         for name in dict.fromkeys(compiler.names)
     )
     (OUT / "model.css").write_text(
@@ -758,14 +766,160 @@ def compile_transformer_context(
     ]
 
 
-def compile_autoregressive_context(
+def compile_cached_transformer_token(
     compiler: CssCompiler,
     state: dict[str, np.ndarray],
-    inputs: list[list[str]],
-    generation: int,
+    input_vector: list[str],
+    position: int,
+    key_cache: list[list[list[str]]],
+    value_cache: list[list[list[str]]],
 ) -> list[str]:
-    """Compile a causal transformer pass and return the last hidden vector."""
-    return compile_transformer_context(compiler, state, inputs, generation)[-1]
+    """Compile one token, appending its per-layer keys and values to a KV cache."""
+    x = input_vector
+    for layer in range(2):
+        weight_prefix = f"transformer.h.{layer}"
+        node_prefix = f"cached-position-{position}-layer-{layer}"
+        normalized = compiler.normalize(
+            f"{node_prefix}-ln1",
+            x,
+            state[f"{weight_prefix}.ln_1.weight"],
+            state[f"{weight_prefix}.ln_1.bias"],
+        )
+        qkv = [
+            compiler.dot(
+                f"{node_prefix}-qkv-{output}",
+                normalized,
+                state[f"{weight_prefix}.attn.c_attn.weight"][:, output],
+                state[f"{weight_prefix}.attn.c_attn.bias"][output],
+            )
+            for output in range(6)
+        ]
+        query = qkv[:2]
+        key_cache[layer].append(qkv[2:4])
+        value_cache[layer].append(qkv[4:6])
+
+        attended = []
+        for head in range(2):
+            scores = [
+                compiler.value(
+                    f"{node_prefix}-attention-score-{head}-{source}",
+                    f"({query[head]}) * ({key[head]})",
+                )
+                for source, key in enumerate(key_cache[layer])
+            ]
+            maximum = compiler.reduce_tree(
+                f"{node_prefix}-attention-max-{head}", scores, "max"
+            )
+            exponentials = [
+                compiler.raw(
+                    f"{node_prefix}-attention-exp-{head}-{source}",
+                    f"exp(({score}) - ({maximum}))",
+                )
+                for source, score in enumerate(scores)
+            ]
+            denominator = compiler.value(
+                f"{node_prefix}-attention-denominator-{head}",
+                " + ".join(exponentials),
+            )
+            probabilities = [
+                compiler.value(
+                    f"{node_prefix}-attention-probability-{head}-{source}",
+                    f"({exponential}) / ({denominator})",
+                )
+                for source, exponential in enumerate(exponentials)
+            ]
+            attended.append(
+                compiler.value(
+                    f"{node_prefix}-attention-value-{head}",
+                    " + ".join(
+                        f"({probability}) * ({value_cache[layer][source][head]})"
+                        for source, probability in enumerate(probabilities)
+                    ),
+                )
+            )
+
+        projection = [
+            compiler.dot(
+                f"{node_prefix}-attention-projection-{output}",
+                attended,
+                state[f"{weight_prefix}.attn.c_proj.weight"][:, output],
+                state[f"{weight_prefix}.attn.c_proj.bias"][output],
+            )
+            for output in range(2)
+        ]
+        residual_1 = [
+            compiler.value(
+                f"{node_prefix}-residual1-{dimension}",
+                f"({x[dimension]}) + ({projection[dimension]})",
+            )
+            for dimension in range(2)
+        ]
+        normalized_2 = compiler.normalize(
+            f"{node_prefix}-ln2",
+            residual_1,
+            state[f"{weight_prefix}.ln_2.weight"],
+            state[f"{weight_prefix}.ln_2.bias"],
+        )
+        feed_forward = [
+            compiler.dot(
+                f"{node_prefix}-fc-{unit}",
+                normalized_2,
+                state[f"{weight_prefix}.mlp.c_fc.weight"][:, unit],
+                state[f"{weight_prefix}.mlp.c_fc.bias"][unit],
+            )
+            for unit in range(8)
+        ]
+        activated = []
+        for unit, value in enumerate(feed_forward):
+            activation_prefix = f"{node_prefix}-gelu-{unit}"
+            cube = compiler.value(
+                f"{activation_prefix}-cube",
+                f"({value}) * ({value}) * ({value})",
+            )
+            tanh_input = compiler.value(
+                f"{activation_prefix}-input",
+                f"0.7978845608 * (({value}) + 0.044715 * ({cube}))",
+            )
+            bounded = compiler.raw(
+                f"{activation_prefix}-bounded",
+                f"clamp(-10, {tanh_input}, 10)",
+            )
+            exponential = compiler.raw(
+                f"{activation_prefix}-exp", f"exp(2 * ({bounded}))"
+            )
+            tanh_value = compiler.value(
+                f"{activation_prefix}-tanh",
+                f"(({exponential}) - 1) / (({exponential}) + 1)",
+            )
+            activated.append(
+                compiler.value(
+                    activation_prefix,
+                    f"0.5 * ({value}) * (1 + ({tanh_value}))",
+                )
+            )
+        mlp_projection = [
+            compiler.dot(
+                f"{node_prefix}-mlp-projection-{output}",
+                activated,
+                state[f"{weight_prefix}.mlp.c_proj.weight"][:, output],
+                state[f"{weight_prefix}.mlp.c_proj.bias"][output],
+            )
+            for output in range(2)
+        ]
+        x = [
+            compiler.value(
+                f"{node_prefix}-residual2-{dimension}",
+                f"({residual_1[dimension]}) + ({mlp_projection[dimension]})",
+            )
+            for dimension in range(2)
+        ]
+
+    return compiler.normalize(
+        f"cached-position-{position}-final-ln",
+        x,
+        state["transformer.ln_f.weight"],
+        state["transformer.ln_f.bias"],
+    )
 
 
 def compile_autoregressive_css(
@@ -799,23 +953,39 @@ def compile_autoregressive_css(
         ]
     selected_embeddings: list[list[str]] = []
     generation_indicators: list[dict[int, str]] = []
+    key_cache: list[list[list[str]]] = [[], []]
+    value_cache: list[list[list[str]]] = [[], []]
+
+    final: list[str] = []
+    for position, input_vector in enumerate(prompt_inputs):
+        final = compile_cached_transformer_token(
+            compiler,
+            state,
+            input_vector,
+            position,
+            key_cache,
+            value_cache,
+        )
 
     for generation in range(steps):
-        inputs = [vector[:] for vector in prompt_inputs]
-        for position, embedding in enumerate(
-            selected_embeddings, start=prompt_length
-        ):
-            inputs.append(
-                [
-                    compiler.value(
-                        f"generation-{generation}-input-{position}-{dimension}",
-                        f"({embedding[dimension]}) + {css_number(positions[position, dimension])}",
-                    )
-                    for dimension in range(2)
-                ]
+        if generation:
+            position = prompt_length + generation - 1
+            embedding = selected_embeddings[-1]
+            input_vector = [
+                compiler.value(
+                    f"generation-{generation}-input-{position}-{dimension}",
+                    f"({embedding[dimension]}) + {css_number(positions[position, dimension])}",
+                )
+                for dimension in range(2)
+            ]
+            final = compile_cached_transformer_token(
+                compiler,
+                state,
+                input_vector,
+                position,
+                key_cache,
+                value_cache,
             )
-
-        final = compile_autoregressive_context(compiler, state, inputs, generation)
         logits = {
             token: compiler.dot(
                 f"generation-{generation}-logit-{token}",
@@ -841,6 +1011,7 @@ def compile_autoregressive_css(
             indicators[token] = compiler.value(
                 f"generation-{generation}-is-token-{token}",
                 f"1 - max(0, sign(({difference}) - 0.000001))",
+                inherits=True,
             )
         generation_indicators.append(indicators)
         if full_vocabulary:
@@ -896,7 +1067,8 @@ def compile_autoregressive_css(
         CSS_FUNCTIONS,
     ]
     registrations.extend(
-        f'@property --{name} {{ syntax: "<number>"; inherits: true; initial-value: 0; }}'
+        f'@property --{name} {{ syntax: "<number>"; inherits: '
+        f'{str(name in compiler.inheriting_names).lower()}; initial-value: 0; }}'
         for name in dict.fromkeys(compiler.names)
     )
     (OUT / filename).write_text(
@@ -1069,7 +1241,8 @@ def compile_recurrent_css(
         '@property --recurrent-next-text { syntax: "<content-list>"; inherits: true; initial-value: ""; }',
     ]
     registrations.extend(
-        f'@property --{name} {{ syntax: "<number>"; inherits: true; initial-value: 0; }}'
+        f'@property --{name} {{ syntax: "<number>"; inherits: '
+        f'{str(name in compiler.inheriting_names).lower()}; initial-value: 0; }}'
         for name in dict.fromkeys(compiler.names)
     )
     runtime = [
@@ -1264,7 +1437,7 @@ def write_prompt_selector_css(
         for token in selectable_tokens:
             embedding = embeddings[token]
             lines.append(
-                f'body:has(#prompt-{position} option[value="{token}"]:checked){{'
+                f'body:has(#prompt-{position} option[value="{token}"]:checked) .model{{'
                 f'--interactive-token-{position}-0:{css_number(embedding[0])};'
                 f'--interactive-token-{position}-1:{css_number(embedding[1])}'
                 "}"
