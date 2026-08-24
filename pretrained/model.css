@@ -1,0 +1,266 @@
+/* Generated from sshleifer/tiny-gpt2 by tools/build_pretrained_gpt2.py. */
+@function --gelu(--x <number>) returns <number> {
+  --cube: calc(var(--x) * var(--x) * var(--x));
+  --tanh-input: calc(0.7978845608 * (var(--x) + 0.044715 * var(--cube)));
+  --bounded: clamp(-10, var(--tanh-input), 10);
+  --exponential: exp(calc(2 * var(--bounded)));
+  --tanh-value: calc((var(--exponential) - 1) / (var(--exponential) + 1));
+  result: calc(0.5 * var(--x) * (1 + var(--tanh-value)));
+}
+
+
+@property --input-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --input-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln1-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln1-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln1-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln1-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln1-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln1-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln1-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-qkv-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-qkv-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-qkv-2 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-qkv-3 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-qkv-4 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-qkv-5 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-attn-proj-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-attn-proj-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-residual1-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-residual1-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln2-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln2-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln2-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln2-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln2-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln2-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-ln2-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-fc-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-fc-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-fc-2 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-fc-3 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-fc-4 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-fc-5 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-fc-6 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-fc-7 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-gelu-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-gelu-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-gelu-2 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-gelu-3 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-gelu-4 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-gelu-5 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-gelu-6 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-gelu-7 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-mlp-proj-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-mlp-proj-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-residual2-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-0-residual2-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln1-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln1-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln1-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln1-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln1-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln1-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln1-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-qkv-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-qkv-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-qkv-2 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-qkv-3 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-qkv-4 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-qkv-5 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-attn-proj-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-attn-proj-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-residual1-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-residual1-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln2-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln2-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln2-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln2-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln2-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln2-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-ln2-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-fc-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-fc-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-fc-2 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-fc-3 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-fc-4 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-fc-5 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-fc-6 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-fc-7 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-gelu-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-gelu-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-gelu-2 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-gelu-3 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-gelu-4 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-gelu-5 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-gelu-6 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-gelu-7 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-mlp-proj-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-mlp-proj-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-residual2-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --layer-1-residual2-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --final-ln-mean { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --final-ln-delta-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --final-ln-delta-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --final-ln-variance { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --final-ln-inverse-std { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --final-ln-value-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --final-ln-value-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-367 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-581 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-1572 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-5074 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-5087 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-7504 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-12386 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-16046 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-17192 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-19244 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-33277 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-34007 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-39692 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-44317 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-45016 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --logit-45275 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --max-logit-0-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --token-difference-5087 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --is-token-5087 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --token-difference-16046 { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --is-token-16046 { syntax: "<number>"; inherits: true; initial-value: 0; }
+:root {
+  --input-0: 0;
+  --input-1: 0;
+  --layer-0-ln1-mean: calc((var(--input-0) + var(--input-1)) / 2);
+  --layer-0-ln1-delta-0: calc((var(--input-0)) - (var(--layer-0-ln1-mean)));
+  --layer-0-ln1-delta-1: calc((var(--input-1)) - (var(--layer-0-ln1-mean)));
+  --layer-0-ln1-variance: calc(((var(--layer-0-ln1-delta-0)) * (var(--layer-0-ln1-delta-0)) + (var(--layer-0-ln1-delta-1)) * (var(--layer-0-ln1-delta-1))) / 2);
+  --layer-0-ln1-inverse-std: calc(1 / sqrt((var(--layer-0-ln1-variance)) + 1e-05));
+  --layer-0-ln1-value-0: calc((var(--layer-0-ln1-delta-0)) * (var(--layer-0-ln1-inverse-std)) * 1 + 0);
+  --layer-0-ln1-value-1: calc((var(--layer-0-ln1-delta-1)) * (var(--layer-0-ln1-inverse-std)) * 1 + 0);
+  --layer-0-qkv-0: calc(0 + (var(--layer-0-ln1-value-0)) * -0.02331767 + (var(--layer-0-ln1-value-1)) * -0.00442026);
+  --layer-0-qkv-1: calc(0 + (var(--layer-0-ln1-value-0)) * -0.024542436 + (var(--layer-0-ln1-value-1)) * 0.013106774);
+  --layer-0-qkv-2: calc(0 + (var(--layer-0-ln1-value-0)) * -0.007554433 + (var(--layer-0-ln1-value-1)) * -0.015046273);
+  --layer-0-qkv-3: calc(0 + (var(--layer-0-ln1-value-0)) * -0.007611911 + (var(--layer-0-ln1-value-1)) * -0.001141266);
+  --layer-0-qkv-4: calc(0 + (var(--layer-0-ln1-value-0)) * -0.023966489 + (var(--layer-0-ln1-value-1)) * 0.038355175);
+  --layer-0-qkv-5: calc(0 + (var(--layer-0-ln1-value-0)) * -0.020979617 + (var(--layer-0-ln1-value-1)) * -0.016777636);
+  --layer-0-attn-proj-0: calc(0 + (var(--layer-0-qkv-4)) * -0.001299887 + (var(--layer-0-qkv-5)) * -0.057130642);
+  --layer-0-attn-proj-1: calc(0 + (var(--layer-0-qkv-4)) * -0.001211199 + (var(--layer-0-qkv-5)) * -0.023435669);
+  --layer-0-residual1-0: calc((var(--input-0)) + (var(--layer-0-attn-proj-0)));
+  --layer-0-residual1-1: calc((var(--input-1)) + (var(--layer-0-attn-proj-1)));
+  --layer-0-ln2-mean: calc((var(--layer-0-residual1-0) + var(--layer-0-residual1-1)) / 2);
+  --layer-0-ln2-delta-0: calc((var(--layer-0-residual1-0)) - (var(--layer-0-ln2-mean)));
+  --layer-0-ln2-delta-1: calc((var(--layer-0-residual1-1)) - (var(--layer-0-ln2-mean)));
+  --layer-0-ln2-variance: calc(((var(--layer-0-ln2-delta-0)) * (var(--layer-0-ln2-delta-0)) + (var(--layer-0-ln2-delta-1)) * (var(--layer-0-ln2-delta-1))) / 2);
+  --layer-0-ln2-inverse-std: calc(1 / sqrt((var(--layer-0-ln2-variance)) + 1e-05));
+  --layer-0-ln2-value-0: calc((var(--layer-0-ln2-delta-0)) * (var(--layer-0-ln2-inverse-std)) * 1 + 0);
+  --layer-0-ln2-value-1: calc((var(--layer-0-ln2-delta-1)) * (var(--layer-0-ln2-inverse-std)) * 1 + 0);
+  --layer-0-fc-0: calc(0 + (var(--layer-0-ln2-value-0)) * 0.010342321 + (var(--layer-0-ln2-value-1)) * 0.003922204);
+  --layer-0-fc-1: calc(0 + (var(--layer-0-ln2-value-0)) * -0.014049067 + (var(--layer-0-ln2-value-1)) * 0.018481256);
+  --layer-0-fc-2: calc(0 + (var(--layer-0-ln2-value-0)) * -0.005107099 + (var(--layer-0-ln2-value-1)) * 0.01181056);
+  --layer-0-fc-3: calc(0 + (var(--layer-0-ln2-value-0)) * 0.014867894 + (var(--layer-0-ln2-value-1)) * 0.025655035);
+  --layer-0-fc-4: calc(0 + (var(--layer-0-ln2-value-0)) * 0.006507293 + (var(--layer-0-ln2-value-1)) * -0.018095402);
+  --layer-0-fc-5: calc(0 + (var(--layer-0-ln2-value-0)) * -0.005215392 + (var(--layer-0-ln2-value-1)) * -0.020402892);
+  --layer-0-fc-6: calc(0 + (var(--layer-0-ln2-value-0)) * 0.017208505 + (var(--layer-0-ln2-value-1)) * -0.028685361);
+  --layer-0-fc-7: calc(0 + (var(--layer-0-ln2-value-0)) * 0.011794116 + (var(--layer-0-ln2-value-1)) * -0.002394628);
+  --layer-0-gelu-0: --gelu(var(--layer-0-fc-0));
+  --layer-0-gelu-1: --gelu(var(--layer-0-fc-1));
+  --layer-0-gelu-2: --gelu(var(--layer-0-fc-2));
+  --layer-0-gelu-3: --gelu(var(--layer-0-fc-3));
+  --layer-0-gelu-4: --gelu(var(--layer-0-fc-4));
+  --layer-0-gelu-5: --gelu(var(--layer-0-fc-5));
+  --layer-0-gelu-6: --gelu(var(--layer-0-fc-6));
+  --layer-0-gelu-7: --gelu(var(--layer-0-fc-7));
+  --layer-0-mlp-proj-0: calc(0 + (var(--layer-0-gelu-0)) * -0.038696416 + (var(--layer-0-gelu-1)) * -0.004183914 + (var(--layer-0-gelu-2)) * -0.001059682 + (var(--layer-0-gelu-3)) * 0.008543598 + (var(--layer-0-gelu-4)) * -0.00280465 + (var(--layer-0-gelu-5)) * -0.004639994 + (var(--layer-0-gelu-6)) * 0.021367176 + (var(--layer-0-gelu-7)) * 0.016399676);
+  --layer-0-mlp-proj-1: calc(0 + (var(--layer-0-gelu-0)) * 0.02628302 + (var(--layer-0-gelu-1)) * 0.009231341 + (var(--layer-0-gelu-2)) * 0.023871094 + (var(--layer-0-gelu-3)) * 0.000656307 + (var(--layer-0-gelu-4)) * 0.066325344 + (var(--layer-0-gelu-5)) * 0.043634474 + (var(--layer-0-gelu-6)) * 0.004163736 + (var(--layer-0-gelu-7)) * 0.012153131);
+  --layer-0-residual2-0: calc((var(--layer-0-residual1-0)) + (var(--layer-0-mlp-proj-0)));
+  --layer-0-residual2-1: calc((var(--layer-0-residual1-1)) + (var(--layer-0-mlp-proj-1)));
+  --layer-1-ln1-mean: calc((var(--layer-0-residual2-0) + var(--layer-0-residual2-1)) / 2);
+  --layer-1-ln1-delta-0: calc((var(--layer-0-residual2-0)) - (var(--layer-1-ln1-mean)));
+  --layer-1-ln1-delta-1: calc((var(--layer-0-residual2-1)) - (var(--layer-1-ln1-mean)));
+  --layer-1-ln1-variance: calc(((var(--layer-1-ln1-delta-0)) * (var(--layer-1-ln1-delta-0)) + (var(--layer-1-ln1-delta-1)) * (var(--layer-1-ln1-delta-1))) / 2);
+  --layer-1-ln1-inverse-std: calc(1 / sqrt((var(--layer-1-ln1-variance)) + 1e-05));
+  --layer-1-ln1-value-0: calc((var(--layer-1-ln1-delta-0)) * (var(--layer-1-ln1-inverse-std)) * 1 + 0);
+  --layer-1-ln1-value-1: calc((var(--layer-1-ln1-delta-1)) * (var(--layer-1-ln1-inverse-std)) * 1 + 0);
+  --layer-1-qkv-0: calc(0 + (var(--layer-1-ln1-value-0)) * 0.010871086 + (var(--layer-1-ln1-value-1)) * -0.005893996);
+  --layer-1-qkv-1: calc(0 + (var(--layer-1-ln1-value-0)) * 0.006783583 + (var(--layer-1-ln1-value-1)) * -0.022127746);
+  --layer-1-qkv-2: calc(0 + (var(--layer-1-ln1-value-0)) * -0.005362333 + (var(--layer-1-ln1-value-1)) * -0.001464313);
+  --layer-1-qkv-3: calc(0 + (var(--layer-1-ln1-value-0)) * -0.001079928 + (var(--layer-1-ln1-value-1)) * 0.017812347);
+  --layer-1-qkv-4: calc(0 + (var(--layer-1-ln1-value-0)) * -0.013645289 + (var(--layer-1-ln1-value-1)) * 0.006088429);
+  --layer-1-qkv-5: calc(0 + (var(--layer-1-ln1-value-0)) * 0.00177633 + (var(--layer-1-ln1-value-1)) * -0.004476126);
+  --layer-1-attn-proj-0: calc(0 + (var(--layer-1-qkv-4)) * 0.007410618 + (var(--layer-1-qkv-5)) * 0.018406747);
+  --layer-1-attn-proj-1: calc(0 + (var(--layer-1-qkv-4)) * 0.010375236 + (var(--layer-1-qkv-5)) * -0.021066347);
+  --layer-1-residual1-0: calc((var(--layer-0-residual2-0)) + (var(--layer-1-attn-proj-0)));
+  --layer-1-residual1-1: calc((var(--layer-0-residual2-1)) + (var(--layer-1-attn-proj-1)));
+  --layer-1-ln2-mean: calc((var(--layer-1-residual1-0) + var(--layer-1-residual1-1)) / 2);
+  --layer-1-ln2-delta-0: calc((var(--layer-1-residual1-0)) - (var(--layer-1-ln2-mean)));
+  --layer-1-ln2-delta-1: calc((var(--layer-1-residual1-1)) - (var(--layer-1-ln2-mean)));
+  --layer-1-ln2-variance: calc(((var(--layer-1-ln2-delta-0)) * (var(--layer-1-ln2-delta-0)) + (var(--layer-1-ln2-delta-1)) * (var(--layer-1-ln2-delta-1))) / 2);
+  --layer-1-ln2-inverse-std: calc(1 / sqrt((var(--layer-1-ln2-variance)) + 1e-05));
+  --layer-1-ln2-value-0: calc((var(--layer-1-ln2-delta-0)) * (var(--layer-1-ln2-inverse-std)) * 1 + 0);
+  --layer-1-ln2-value-1: calc((var(--layer-1-ln2-delta-1)) * (var(--layer-1-ln2-inverse-std)) * 1 + 0);
+  --layer-1-fc-0: calc(0 + (var(--layer-1-ln2-value-0)) * 0.023650292 + (var(--layer-1-ln2-value-1)) * -0.036560751);
+  --layer-1-fc-1: calc(0 + (var(--layer-1-ln2-value-0)) * 0.023294874 + (var(--layer-1-ln2-value-1)) * 0.034100458);
+  --layer-1-fc-2: calc(0 + (var(--layer-1-ln2-value-0)) * 0.013285851 + (var(--layer-1-ln2-value-1)) * -0.001212615);
+  --layer-1-fc-3: calc(0 + (var(--layer-1-ln2-value-0)) * 0.013157517 + (var(--layer-1-ln2-value-1)) * -0.020818323);
+  --layer-1-fc-4: calc(0 + (var(--layer-1-ln2-value-0)) * -0.02469006 + (var(--layer-1-ln2-value-1)) * 0.019279856);
+  --layer-1-fc-5: calc(0 + (var(--layer-1-ln2-value-0)) * -0.001999035 + (var(--layer-1-ln2-value-1)) * -0.004695932);
+  --layer-1-fc-6: calc(0 + (var(--layer-1-ln2-value-0)) * 0.005930316 + (var(--layer-1-ln2-value-1)) * -0.012901493);
+  --layer-1-fc-7: calc(0 + (var(--layer-1-ln2-value-0)) * -0.020251684 + (var(--layer-1-ln2-value-1)) * -0.048923474);
+  --layer-1-gelu-0: --gelu(var(--layer-1-fc-0));
+  --layer-1-gelu-1: --gelu(var(--layer-1-fc-1));
+  --layer-1-gelu-2: --gelu(var(--layer-1-fc-2));
+  --layer-1-gelu-3: --gelu(var(--layer-1-fc-3));
+  --layer-1-gelu-4: --gelu(var(--layer-1-fc-4));
+  --layer-1-gelu-5: --gelu(var(--layer-1-fc-5));
+  --layer-1-gelu-6: --gelu(var(--layer-1-fc-6));
+  --layer-1-gelu-7: --gelu(var(--layer-1-fc-7));
+  --layer-1-mlp-proj-0: calc(0 + (var(--layer-1-gelu-0)) * 0.013557709 + (var(--layer-1-gelu-1)) * 0.000779573 + (var(--layer-1-gelu-2)) * -0.014545985 + (var(--layer-1-gelu-3)) * -0.007958967 + (var(--layer-1-gelu-4)) * 0.037451725 + (var(--layer-1-gelu-5)) * 0.009499419 + (var(--layer-1-gelu-6)) * 0.012534348 + (var(--layer-1-gelu-7)) * -0.014422158);
+  --layer-1-mlp-proj-1: calc(0 + (var(--layer-1-gelu-0)) * -0.032813452 + (var(--layer-1-gelu-1)) * -0.014475741 + (var(--layer-1-gelu-2)) * -0.012716192 + (var(--layer-1-gelu-3)) * -0.019075541 + (var(--layer-1-gelu-4)) * 0.010075798 + (var(--layer-1-gelu-5)) * -0.008753267 + (var(--layer-1-gelu-6)) * -0.004611595 + (var(--layer-1-gelu-7)) * 0.001718842);
+  --layer-1-residual2-0: calc((var(--layer-1-residual1-0)) + (var(--layer-1-mlp-proj-0)));
+  --layer-1-residual2-1: calc((var(--layer-1-residual1-1)) + (var(--layer-1-mlp-proj-1)));
+  --final-ln-mean: calc((var(--layer-1-residual2-0) + var(--layer-1-residual2-1)) / 2);
+  --final-ln-delta-0: calc((var(--layer-1-residual2-0)) - (var(--final-ln-mean)));
+  --final-ln-delta-1: calc((var(--layer-1-residual2-1)) - (var(--final-ln-mean)));
+  --final-ln-variance: calc(((var(--final-ln-delta-0)) * (var(--final-ln-delta-0)) + (var(--final-ln-delta-1)) * (var(--final-ln-delta-1))) / 2);
+  --final-ln-inverse-std: calc(1 / sqrt((var(--final-ln-variance)) + 1e-05));
+  --final-ln-value-0: calc((var(--final-ln-delta-0)) * (var(--final-ln-inverse-std)) * 1 + 0);
+  --final-ln-value-1: calc((var(--final-ln-delta-1)) * (var(--final-ln-inverse-std)) * 1 + 0);
+  --logit-367: calc(0 + (var(--final-ln-value-0)) * -0.019083934 + (var(--final-ln-value-1)) * -0.076618291);
+  --logit-581: calc(0 + (var(--final-ln-value-0)) * -0.062276013 + (var(--final-ln-value-1)) * -0.048446383);
+  --logit-1572: calc(0 + (var(--final-ln-value-0)) * -0.080695249 + (var(--final-ln-value-1)) * 0.010182603);
+  --logit-5074: calc(0 + (var(--final-ln-value-0)) * -0.007806188 + (var(--final-ln-value-1)) * -0.082312107);
+  --logit-5087: calc(0 + (var(--final-ln-value-0)) * -0.071673967 + (var(--final-ln-value-1)) * 0.043780126);
+  --logit-7504: calc(0 + (var(--final-ln-value-0)) * 0.021004319 + (var(--final-ln-value-1)) * -0.078619309);
+  --logit-12386: calc(0 + (var(--final-ln-value-0)) * 0.044991326 + (var(--final-ln-value-1)) * 0.075771004);
+  --logit-16046: calc(0 + (var(--final-ln-value-0)) * 0.094471298 + (var(--final-ln-value-1)) * -0.034702003);
+  --logit-17192: calc(0 + (var(--final-ln-value-0)) * 0.075060956 + (var(--final-ln-value-1)) * -0.052458495);
+  --logit-19244: calc(0 + (var(--final-ln-value-0)) * -0.079752535 + (var(--final-ln-value-1)) * -0.008820225);
+  --logit-33277: calc(0 + (var(--final-ln-value-0)) * -0.002917513 + (var(--final-ln-value-1)) * -0.083955184);
+  --logit-34007: calc(0 + (var(--final-ln-value-0)) * -0.054816052 + (var(--final-ln-value-1)) * -0.055831064);
+  --logit-39692: calc(0 + (var(--final-ln-value-0)) * 0.077534862 + (var(--final-ln-value-1)) * 0.022318203);
+  --logit-44317: calc(0 + (var(--final-ln-value-0)) * -0.02410996 + (var(--final-ln-value-1)) * 0.079939768);
+  --logit-45016: calc(0 + (var(--final-ln-value-0)) * 0.072285704 + (var(--final-ln-value-1)) * 0.038755827);
+  --logit-45275: calc(0 + (var(--final-ln-value-0)) * 0.035239756 + (var(--final-ln-value-1)) * 0.07676328);
+  --max-logit-0-0: max(var(--logit-367), var(--logit-581), var(--logit-1572), var(--logit-5074), var(--logit-5087), var(--logit-7504), var(--logit-12386), var(--logit-16046), var(--logit-17192), var(--logit-19244), var(--logit-33277), var(--logit-34007), var(--logit-39692), var(--logit-44317), var(--logit-45016), var(--logit-45275));
+  --token-difference-5087: calc(abs((var(--logit-5087)) - (var(--max-logit-0-0))));
+  --is-token-5087: calc(1 - max(0, sign((var(--token-difference-5087)) - 0.000001)));
+  --token-difference-16046: calc(abs((var(--logit-16046)) - (var(--max-logit-0-0))));
+  --is-token-16046: calc(1 - max(0, sign((var(--token-difference-16046)) - 0.000001)));
+}
+:root:has(#prompt-0:checked) {
+  --input-0: 0.016010424;
+  --input-1: -0.016302655;
+}
+:root:has(#prompt-0:checked) .reference[data-prompt="0"] { display: flex; }
+:root:has(#prompt-1:checked) {
+  --input-0: -0.010140665;
+  --input-1: -0.000316163;
+}
+:root:has(#prompt-1:checked) .reference[data-prompt="1"] { display: flex; }
+:root:has(#prompt-2:checked) {
+  --input-0: 0.015998764;
+  --input-1: -0.016050242;
+}
+:root:has(#prompt-2:checked) .reference[data-prompt="2"] { display: flex; }
+.prediction-option[data-token="5087"] { opacity: var(--is-token-5087); }
+.prediction-option[data-token="16046"] { opacity: var(--is-token-16046); }

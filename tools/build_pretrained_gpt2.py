@@ -24,6 +24,7 @@ FILES = ["config.json", "vocab.json", "merges.txt", "pytorch_model.bin"]
 PROMPTS = ["Hello", "The", "CSS"]
 EPSILON = 1e-5
 AUTOREGRESSIVE_STEPS = 4
+MAX_INTERACTIVE_PROMPT_TOKENS = 4
 
 CSS_FUNCTIONS = """@function --gelu(--x <number>) returns <number> {
   --cube: calc(var(--x) * var(--x) * var(--x));
@@ -34,14 +35,41 @@ CSS_FUNCTIONS = """@function --gelu(--x <number>) returns <number> {
   result: calc(0.5 * var(--x) * (1 + var(--tanh-value)));
 }
 
-@function --is-maximum(--value <number>, --maximum <number>) returns <number> {
-  result: calc(1 - abs(sign(var(--value) - var(--maximum))));
-}"""
+"""
 
 
 def css_number(value: float) -> str:
     text = f"{float(value):.9f}".rstrip("0").rstrip(".")
     return "0" if text in {"", "-0"} else text
+
+
+def convex_hull_token_ids(embeddings: np.ndarray) -> list[int]:
+    """Return every 2D tied-embedding row that can win a dot-product argmax."""
+    points = sorted(
+        (float(vector[0]), float(vector[1]), token)
+        for token, vector in enumerate(embeddings)
+    )
+
+    def cross(
+        origin: tuple[float, float, int],
+        first: tuple[float, float, int],
+        second: tuple[float, float, int],
+    ) -> float:
+        return (first[0] - origin[0]) * (second[1] - origin[1]) - (
+            first[1] - origin[1]
+        ) * (second[0] - origin[0])
+
+    lower: list[tuple[float, float, int]] = []
+    for point in points:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], point) <= 0:
+            lower.pop()
+        lower.append(point)
+    upper: list[tuple[float, float, int]] = []
+    for point in reversed(points):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], point) <= 0:
+            upper.pop()
+        upper.append(point)
+    return sorted({point[2] for point in lower[:-1] + upper[:-1]})
 
 
 def download_checkpoint() -> None:
@@ -379,7 +407,6 @@ class CssCompiler:
             depth += 1
         return level[0]
 
-
 def compile_css(
     state: dict[str, np.ndarray],
     prompt_ids: list[int],
@@ -465,21 +492,25 @@ def compile_css(
         state["transformer.ln_f.bias"],
     )
     embeddings = state["transformer.wte.weight"]
-    logits = [
-        compiler.dot(f"logit-{token}", final, embeddings[token])
-        for token in range(len(embeddings))
-    ]
-    maximum = compiler.reduce_tree("max-logit", logits, "max")
-    # This page has a finite prompt domain. Compute every vocabulary logit and
-    # the exact maximum, but only materialize equality checks for tokens that a
-    # selectable prompt can produce. The other 50k one-hot and weighted-ID
-    # properties cannot affect anything visible on this page.
-    candidate_indicators = {
-        token: compiler.raw(
-            f"is-token-{token}", f"--is-maximum({logits[token]}, {maximum})"
-        )
-        for token in sorted(set(predicted_ids))
+    output_tokens = convex_hull_token_ids(embeddings)
+    logits = {
+        token: compiler.dot(f"logit-{token}", final, embeddings[token])
+        for token in output_tokens
     }
+    maximum = compiler.reduce_tree("max-logit", list(logits.values()), "max")
+    # Convex-hull vertices are the only tied embeddings capable of winning a
+    # dot-product argmax. This finite page only needs winner checks for tokens
+    # that one of its selectable prompts can produce.
+    candidate_indicators = {}
+    for token in sorted(set(predicted_ids)):
+        difference = compiler.value(
+            f"token-difference-{token}",
+            f"abs(({logits[token]}) - ({maximum}))",
+        )
+        candidate_indicators[token] = compiler.value(
+            f"is-token-{token}",
+            f"1 - max(0, sign(({difference}) - 0.000001))",
+        )
     declarations = compiler.lines[1:]
     compiler.lines = []
     for start in range(0, len(declarations), 1000):
@@ -638,13 +669,35 @@ def compile_autoregressive_context(
                 )
                 for unit in range(8)
             ]
-            activated = [
-                compiler.raw(
-                    f"{node_prefix}-gelu-{position}-{unit}",
-                    f"--gelu({value})",
+            activated = []
+            for unit, value in enumerate(feed_forward):
+                activation_prefix = f"{node_prefix}-gelu-{position}-{unit}"
+                cube = compiler.value(
+                    f"{activation_prefix}-cube",
+                    f"({value}) * ({value}) * ({value})",
                 )
-                for unit, value in enumerate(feed_forward)
-            ]
+                tanh_input = compiler.value(
+                    f"{activation_prefix}-input",
+                    f"0.7978845608 * (({value}) + 0.044715 * ({cube}))",
+                )
+                bounded = compiler.raw(
+                    f"{activation_prefix}-bounded",
+                    f"clamp(-10, {tanh_input}, 10)",
+                )
+                exponential = compiler.raw(
+                    f"{activation_prefix}-exp",
+                    f"exp(2 * ({bounded}))",
+                )
+                tanh_value = compiler.value(
+                    f"{activation_prefix}-tanh",
+                    f"(({exponential}) - 1) / (({exponential}) + 1)",
+                )
+                activated.append(
+                    compiler.value(
+                        activation_prefix,
+                        f"0.5 * ({value}) * (1 + ({tanh_value}))",
+                    )
+                )
             projection = [
                 compiler.dot(
                     f"{node_prefix}-mlp-projection-{position}-{output}",
@@ -677,20 +730,40 @@ def compile_autoregressive_css(
     state: dict[str, np.ndarray],
     prompt_ids: list[int],
     sequences: list[list[int]],
+    *,
+    full_vocabulary: bool = False,
+    filename: str = "autoregressive.css",
+    prompt_length: int = 1,
 ) -> None:
     compiler = CssCompiler()
     embeddings = state["transformer.wte.weight"]
+    output_tokens = convex_hull_token_ids(embeddings)
     positions = state["transformer.wpe.weight"]
-    prompt_input = [
-        compiler.raw(f"autoregressive-input-{dimension}", "0")
-        for dimension in range(2)
-    ]
+    if full_vocabulary:
+        prompt_inputs = [
+            [
+                compiler.raw(
+                    f"interactive-input-{position}-{dimension}", "0"
+                )
+                for dimension in range(2)
+            ]
+            for position in range(prompt_length)
+        ]
+    else:
+        prompt_inputs = [
+            [
+                compiler.raw(f"autoregressive-input-{dimension}", "0")
+                for dimension in range(2)
+            ]
+        ]
     selected_embeddings: list[list[str]] = []
     generation_indicators: list[dict[int, str]] = []
 
     for generation in range(AUTOREGRESSIVE_STEPS):
-        inputs = [prompt_input]
-        for position, embedding in enumerate(selected_embeddings, start=1):
+        inputs = [vector[:] for vector in prompt_inputs]
+        for position, embedding in enumerate(
+            selected_embeddings, start=prompt_length
+        ):
             inputs.append(
                 [
                     compiler.value(
@@ -702,26 +775,42 @@ def compile_autoregressive_css(
             )
 
         final = compile_autoregressive_context(compiler, state, inputs, generation)
-        logits = [
-            compiler.dot(
+        logits = {
+            token: compiler.dot(
                 f"generation-{generation}-logit-{token}",
                 final,
                 embeddings[token],
             )
-            for token in range(len(embeddings))
-        ]
-        maximum = compiler.reduce_tree(
-            f"generation-{generation}-max-logit", logits, "max"
-        )
-        candidates = sorted({sequence[generation] for sequence in sequences})
-        indicators = {
-            token: compiler.raw(
-                f"generation-{generation}-is-token-{token}",
-                f"--is-maximum({logits[token]}, {maximum})",
-            )
-            for token in candidates
+            for token in output_tokens
         }
+        maximum = compiler.reduce_tree(
+            f"generation-{generation}-max-logit", list(logits.values()), "max"
+        )
+        candidates = (
+            output_tokens
+            if full_vocabulary
+            else sorted({sequence[generation] for sequence in sequences})
+        )
+        indicators = {}
+        for token in candidates:
+            difference = compiler.value(
+                f"generation-{generation}-token-difference-{token}",
+                f"abs(({logits[token]}) - ({maximum}))",
+            )
+            indicators[token] = compiler.value(
+                f"generation-{generation}-is-token-{token}",
+                f"1 - max(0, sign(({difference}) - 0.000001))",
+            )
         generation_indicators.append(indicators)
+        if full_vocabulary:
+            winner_sum = compiler.value(
+                f"generation-{generation}-winner-sum",
+                " + ".join(
+                    f"({indicator}) * {token}"
+                    for token, indicator in indicators.items()
+                ),
+            )
+            compiler.raw(f"generation-{generation}-winner-id", winner_sum)
         if generation + 1 < AUTOREGRESSIVE_STEPS:
             selected_embeddings.append(
                 [
@@ -743,20 +832,22 @@ def compile_autoregressive_css(
         compiler.lines.extend(declarations[start : start + 1000])
         compiler.lines.append("}")
 
-    prompt_vectors = embeddings[prompt_ids] + positions[0]
-    for prompt_index, vector in enumerate(prompt_vectors):
-        compiler.lines.append(f":root:has(#prompt-{prompt_index}:checked) {{")
-        for dimension, value in enumerate(vector):
-            compiler.lines.append(
-                f"  --autoregressive-input-{dimension}: {css_number(value)};"
-            )
-        compiler.lines.append("}")
-    for generation, indicators in enumerate(generation_indicators):
-        for token, indicator in indicators.items():
-            compiler.lines.append(
-                f'.generated-token[data-step="{generation}"] '
-                f'.token-option[data-token="{token}"] {{ opacity: {indicator}; }}'
-            )
+    if not full_vocabulary:
+        prompt_vectors = embeddings[prompt_ids] + positions[0]
+        for prompt_index, vector in enumerate(prompt_vectors):
+            compiler.lines.append(f":root:has(#prompt-{prompt_index}:checked) {{")
+            for dimension, value in enumerate(vector):
+                compiler.lines.append(
+                    f"  --autoregressive-input-{dimension}: {css_number(value)};"
+                )
+            compiler.lines.append("}")
+    if not full_vocabulary:
+        for generation, indicators in enumerate(generation_indicators):
+            for token, indicator in indicators.items():
+                compiler.lines.append(
+                    f'.generated-token[data-step="{generation}"] '
+                    f'.token-option[data-token="{token}"] {{ opacity: {indicator}; }}'
+                )
 
     registrations = [
         "/* Four-token causal chain generated from sshleifer/tiny-gpt2. */",
@@ -766,7 +857,7 @@ def compile_autoregressive_css(
         f'@property --{name} {{ syntax: "<number>"; inherits: true; initial-value: 0; }}'
         for name in dict.fromkeys(compiler.names)
     )
-    (OUT / "autoregressive.css").write_text(
+    (OUT / filename).write_text(
         "\n".join(registrations + compiler.lines) + "\n"
     )
 
@@ -827,13 +918,15 @@ def write_html(
 
     <p class="proof">
       Build-time Python only downloads and converts the pretrained weights.
-      At runtime, CSS computes both transformer blocks, all
-      <strong>50,257 logits</strong>, a tree-reduced maximum, and exact winner
-      checks for this page's finite prompt set. This document contains no
+      At runtime, CSS computes both transformer blocks and an exact language-head
+      argmax. Because the tied embeddings are two-dimensional, only 16 points on
+      their convex hull can ever win; the other 50,241 logits are mathematically
+      dead. This document contains no
       <code>&lt;script&gt;</code> element.
     </p>
     <p class="back">
       <a href="../transformer/index.html">← Tiny autoregressive transformer</a>
+      <a href="interactive.html">Type a prompt →</a>
       <a href="benchmark.html">Run autoregressive benchmark →</a>
     </p>
   </main>
@@ -885,9 +978,9 @@ def write_benchmark_html(
   <p class="controls">
     <button type="button" id="stop">pause</button>
     <button type="button" id="start" disabled>resume</button>
-    <span id="metrics">loading 57 MB CSS graph…</span>
+    <span id="metrics">loading CSS graph…</span>
   </p>
-  <p class="note">four-token causal chains · 57 MB tiny-gpt2 graph · full GPT-2 small projection: 3.16 GB per token · <a href="index.html">one-token page</a></p>
+  <p class="note">four-token causal chains · 561 KB tiny-gpt2 graph · full GPT-2 small projection: 3.16 GB per token · <a href="interactive.html">typed prompt</a></p>
 
   <script type="module">
     const prompts = {prompts};
@@ -989,6 +1082,65 @@ def write_benchmark_html(
     (OUT / "benchmark.html").write_text(document)
 
 
+def write_prompt_data(
+    tokenizer: Gpt2Tokenizer,
+    state: dict[str, np.ndarray],
+) -> None:
+    embeddings = state["transformer.wte.weight"]
+    positions = state["transformer.wpe.weight"][:MAX_INTERACTIVE_PROMPT_TOKENS]
+    by_id = []
+    for token in range(len(embeddings)):
+        decoded = tokenizer.decode_token(token)
+        by_id.append(decoded)
+    merges = [
+        list(pair)
+        for pair, _rank in sorted(
+            tokenizer.merge_ranks.items(), key=lambda item: item[1]
+        )
+    ]
+    payload = {
+        "vocab": tokenizer.vocab,
+        "merges": merges,
+        "byId": by_id,
+        "embeddings": [
+            [float(css_number(value)) for value in vector]
+            for vector in embeddings
+        ],
+        "positions": [
+            [float(css_number(value)) for value in vector]
+            for vector in positions
+        ],
+    }
+    (OUT / "prompt-data.json").write_text(
+        json.dumps(payload, ensure_ascii=True, separators=(",", ":"))
+    )
+
+
+def write_interactive_html() -> None:
+    document = '''<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Type a prompt for CSS GPT-2</title>
+  <link id="model-css" rel="stylesheet">
+  <link rel="stylesheet" href="benchmark.css">
+</head>
+<body>
+  <form id="prompt-form">
+    <input id="prompt" value="Once upon a time" autocomplete="off" spellcheck="false" aria-label="GPT-2 prompt">
+    <button type="submit">start</button>
+  </form>
+  <pre id="stream">loading tokenizer…</pre>
+  <p id="metrics">Enter a prompt containing 1–4 GPT-2 tokens.</p>
+  <p class="note">four greedy CSS-generated tokens · JavaScript only tokenizes, wires inputs, and times the CSS result · <a href="benchmark.html">benchmark</a></p>
+  <script type="module" src="interactive.js"></script>
+</body>
+</html>
+'''
+    (OUT / "interactive.html").write_text(document)
+
+
 def main() -> None:
     download_checkpoint()
     OUT.mkdir(exist_ok=True)
@@ -1026,6 +1178,18 @@ def main() -> None:
     compile_autoregressive_css(state, prompt_ids, sequences)
     write_html(tokenizer, prompt_ids, predicted_ids)
     write_benchmark_html(tokenizer, sequences)
+    for prompt_length in range(1, MAX_INTERACTIVE_PROMPT_TOKENS + 1):
+        print(f"compiling exact {prompt_length}-token interactive graph...")
+        compile_autoregressive_css(
+            state,
+            prompt_ids,
+            sequences,
+            full_vocabulary=True,
+            filename=f"interactive-{prompt_length}.css",
+            prompt_length=prompt_length,
+        )
+    write_prompt_data(tokenizer, state)
+    write_interactive_html()
     print("wrote pretrained pages and CSS models")
 
 

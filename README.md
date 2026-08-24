@@ -69,8 +69,9 @@ open pretrained/index.html
 
 The checkpoint is cached under `data/`. Its legacy PyTorch format is decoded by
 the build script without requiring PyTorch, and the generated page has no
-runtime JavaScript. The current compiler emits all 50,257 logits but omits
-output-selector properties that are dead for the page's finite prompt set.
+runtime JavaScript. The tied language head is two-dimensional, so an exact
+convex-hull pass proves that only 16 of its 50,257 token embeddings can ever win
+an argmax; the compiler omits the other mathematically dead logits.
 
 To measure repeated one-token CSS inference in the browser:
 
@@ -84,8 +85,23 @@ benchmark**. Each run resolves four growing-context tokens: every CSS argmax
 selects the embedding consumed by the next transformer pass. The model remains
 CSS-only; a small JavaScript harness switches seed prompts, validates the full
 chain, and measures time. The benchmark intentionally recomputes every causal
-prefix instead of using a KV cache. Its four-step generated stylesheet is about
-57 MB, which also makes the cost of static autoregressive unrolling visible.
+prefix instead of using a KV cache. Exact convex-hull elimination reduces its
+four-step generated stylesheet to about 561 KB.
+
+For an exact full-vocabulary decoder with a typed 1–4 token prompt:
+
+```sh
+make interactive
+python3 -m http.server 4173
+```
+
+Then open `http://localhost:4173/pretrained/interactive.html`. JavaScript runs
+the standard GPT-2 byte-pair tokenizer, supplies the prompt embeddings, decodes
+the result, and reports timing. The four transformer passes, argmax operations,
+and autoregressive embedding feedback are CSS. Separate exact CSS graphs cover
+initial contexts of one through four tokens. The decoder evaluates the 16
+vocabulary embeddings that are geometrically capable of winning for this
+checkpoint.
 
 ## GPT-2 small scaling result
 

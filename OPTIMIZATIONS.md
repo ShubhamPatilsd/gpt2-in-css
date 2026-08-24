@@ -10,6 +10,11 @@ just make its source prettier. The measured before/after results are:
 | Toy transformer `model.css` | 1,646,406 bytes | 1,330,393 bytes | -19.2% |
 | Toy transformer typed properties | 4,509 | 3,069 | -31.9% |
 
+A later checkpoint-specific exact optimization reduced the pretrained
+one-token stylesheet further to 23,968 bytes and the four-token autoregressive
+stylesheet to 561,026 bytes. Interactive graphs for one through four prompt
+tokens range from 592,897 to 1,350,461 bytes.
+
 ## Applied
 
 ### Native CSS custom functions
@@ -17,24 +22,35 @@ just make its source prettier. The measured before/after results are:
 CSS `@function` can take typed arguments, define local custom properties, and
 return a calculated value. It shipped in Chromium 139. The compilers now emit
 one reusable `--gelu()` function, so every GELU activation needs one registered
-output instead of six globally registered intermediates. The pretrained
-decoder also uses a reusable `--is-maximum()` predicate.
+output instead of six globally registered intermediates. Deep autoregressive
+graphs materialize those intermediates because Chromium invalidated the reused
+function after several chained dependency levels.
 
 Sources: [W3C CSS Functions and Mixins](https://www.w3.org/TR/css-mixins-1/),
 [Chrome 139 release notes](https://developer.chrome.com/release-notes/139).
 
 ### Finite-domain dead-output elimination
 
-The pretrained page still computes every one of its 50,257 logits and their
-exact maximum. Its UI, however, only accepts three build-time prompts whose
-winners comprise two distinct tokens. The compiler now emits equality checks
-for those two candidates instead of 50,257 one-hot properties, 50,257 weighted
-token-ID properties, and a summation tree. Each candidate contains its static
-token ID, and the exact CSS maximum comparison determines which one is visible.
+Before the convex-hull pass, the pretrained page computed every one of its
+50,257 logits and their exact maximum. Its finite UI only needed equality checks
+for the two tokens produced by its three build-time prompts, so the compiler
+removed 50,257 one-hot properties, 50,257 weighted token-ID properties, and a
+summation tree. The later hull optimization supersedes the remaining dense
+logit calculation.
 
-This optimization is valid for a finite set of controls. An arbitrary-text or
-fully autoregressive interface still needs a general token decoder and an
-embedding-selection stage.
+This optimization is valid for a finite set of controls.
+
+### Two-dimensional convex-hull language head
+
+`tiny-gpt2` ties its language head to 50,257 two-dimensional token embeddings.
+A token can maximize a dot product only if its embedding lies on the convex
+hull. Just 16 embeddings meet that condition; the other 50,241 logits cannot
+win for any hidden state. The compiler now uses those vertices for an exact
+arbitrary-token decoder and autoregressive embedding selection.
+
+This is special to the width-two test checkpoint. It is not expected to reduce
+ordinary 768-dimensional GPT-2 meaningfully, because high-dimensional point
+sets commonly place most points on the hull.
 
 ## Investigated but not applied
 
