@@ -1,0 +1,28 @@
+html {
+  font: 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: white;
+  color: black;
+}
+
+body { margin: 1rem; }
+
+#stream {
+  height: calc(100vh - 6rem);
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.controls, .note { margin: 0.5rem 0 0; }
+.note { font-size: 12px; }
+button { font: inherit; }
+
+.model-state {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+}
+
+.generated-token { display: grid; }
+.token-option { grid-area: 1 / 1; opacity: 0; }

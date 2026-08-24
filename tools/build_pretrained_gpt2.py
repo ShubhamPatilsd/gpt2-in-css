@@ -848,9 +848,9 @@ def write_benchmark_html(
     sequences: list[list[int]],
 ) -> None:
     controls = "\n".join(
-        f'''        <input type="radio" name="prompt" id="prompt-{index}"{(" checked" if index == 0 else "")}>
-        <label for="prompt-{index}">{html.escape(prompt)}</label>'''
-        for index, prompt in enumerate(PROMPTS)
+        f'<input type="radio" name="prompt" id="prompt-{index}"'
+        f'{(" checked" if index == 0 else "")}>'
+        for index, _prompt in enumerate(PROMPTS)
     )
     generated = []
     for generation in range(AUTOREGRESSIVE_STEPS):
@@ -863,11 +863,6 @@ def write_benchmark_html(
         generated.append(
             f'<span class="generated-token" data-step="{generation}">{options}</span>'
         )
-    references = "\n".join(
-        f'''        <span><strong>{html.escape(prompt)}</strong> →
-          {html.escape("".join(tokenizer.decode_token(token) for token in sequence))}</span>'''
-        for prompt, sequence in zip(PROMPTS, sequences)
-    )
     expected = json.dumps(
         {prompt: sequence for prompt, sequence in zip(PROMPTS, sequences)}
     )
@@ -879,73 +874,37 @@ def write_benchmark_html(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CSS GPT-2 throughput benchmark</title>
   <link rel="stylesheet" href="autoregressive.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="benchmark.css">
 </head>
-<body class="benchmark-page">
-  <main>
-    <p class="eyebrow">Experiment 003B · autoregressive CSS benchmark</p>
-    <h1>How fast does the CSS token chain run?</h1>
-    <p class="lede">
-      Four genuine <code>tiny-gpt2</code> steps are chained together: each CSS
-      argmax selects the token embedding consumed by the following step. Reading
-      the fourth token forces the browser through the whole causal chain.
-    </p>
-
-    <section class="demo">
-      <fieldset>
-        <legend>Prompt being evaluated</legend>
-        <div class="prompt-options">
+<body>
+  <div class="model-state" aria-hidden="true">
 {controls}
-        </div>
-      </fieldset>
-
-      <div class="autoregressive-output" aria-label="CSS-generated token sequence">
-        <span id="prompt-output">{html.escape(PROMPTS[0])}</span>{"".join(generated)}
-      </div>
-      <div class="benchmark-references">
-{references}
-      </div>
-
-      <div class="benchmark-controls">
-        <button type="button" id="start">Start benchmark</button>
-        <button type="button" id="stop" disabled>Stop</button>
-      </div>
-      <dl class="benchmark-results" aria-live="polite">
-        <div><dt>Autoregressive CSS</dt><dd><strong id="compute-rate">—</strong> tok/s</dd></div>
-        <div><dt>Observed stream</dt><dd><strong id="wall-rate">—</strong> tok/s</dd></div>
-        <div><dt>Mean per token</dt><dd><strong id="latency">—</strong> ms</dd></div>
-        <div><dt>Four-token chains</dt><dd><strong id="samples">0</strong></dd></div>
-      </dl>
-      <p id="status" class="benchmark-status">Ready.</p>
-    </section>
-
-    <p class="proof">
-      This is a warm, four-token, growing-context benchmark. The CSS graph
-      recomputes each causal prefix without a KV cache. JavaScript only switches
-      the seed prompt, validates the four outputs, and measures time; all model
-      arithmetic and token feedback live in <code>autoregressive.css</code>.
-    </p>
-  </main>
+    {"".join(generated)}
+  </div>
+  <pre id="stream">warming up…</pre>
+  <p class="controls">
+    <button type="button" id="stop">pause</button>
+    <button type="button" id="start" disabled>resume</button>
+    <span id="metrics">loading 57 MB CSS graph…</span>
+  </p>
+  <p class="note">four-token causal chains · 57 MB tiny-gpt2 graph · full GPT-2 small projection: 3.16 GB per token · <a href="index.html">one-token page</a></p>
 
   <script type="module">
     const prompts = {prompts};
     const expected = {expected};
     const inputs = [...document.querySelectorAll('input[name="prompt"]')];
     const generations = [...document.querySelectorAll('.generated-token')];
-    const promptOutput = document.querySelector('#prompt-output');
+    const stream = document.querySelector('#stream');
     const startButton = document.querySelector('#start');
     const stopButton = document.querySelector('#stop');
-    const computeRate = document.querySelector('#compute-rate');
-    const wallRate = document.querySelector('#wall-rate');
-    const latency = document.querySelector('#latency');
-    const samples = document.querySelector('#samples');
-    const status = document.querySelector('#status');
+    const metrics = document.querySelector('#metrics');
     const tokensPerChain = {AUTOREGRESSIVE_STEPS};
     let running = false;
     let promptIndex = 0;
     let sampleCount = 0;
     let computeMilliseconds = 0;
     let wallStarted = 0;
+    let lines = [];
 
     function inferOnce() {{
       promptIndex = (promptIndex + 1) % prompts.length;
@@ -956,63 +915,73 @@ def write_benchmark_html(
         candidate => Number.parseFloat(getComputedStyle(candidate).opacity) > 0.5
       );
       const elapsed = performance.now() - started;
-      const winners = generations.map(generation => {{
+      const selected = generations.map(generation => {{
         const option = [...generation.querySelectorAll('.token-option')].find(
           candidate => Number.parseFloat(getComputedStyle(candidate).opacity) > 0.5
         );
-        return option ? Number(option.dataset.token) : -1;
+        return option;
       }});
+      const winners = selected.map(option => option ? Number(option.dataset.token) : -1);
       if (winners.some((token, index) => token !== expected[prompts[promptIndex]][index])) {{
         throw new Error(`CSS prediction mismatch for ${{prompts[promptIndex]}}`);
       }}
-      promptOutput.textContent = prompts[promptIndex];
-      return elapsed;
+      return {{ elapsed, text: prompts[promptIndex] + selected.map(option => option.textContent).join('') }};
     }}
 
     function updateResults() {{
       const wallMilliseconds = performance.now() - wallStarted;
       const tokenCount = sampleCount * tokensPerChain;
-      computeRate.textContent = (tokenCount * 1000 / computeMilliseconds).toFixed(2);
-      wallRate.textContent = (tokenCount * 1000 / wallMilliseconds).toFixed(2);
-      latency.textContent = (computeMilliseconds / tokenCount).toFixed(2);
-      samples.textContent = sampleCount.toLocaleString();
-      status.textContent = `Running · last prompt: ${{prompts[promptIndex]}}`;
+      const computeRate = tokenCount * 1000 / computeMilliseconds;
+      const wallRate = tokenCount * 1000 / wallMilliseconds;
+      const latency = computeMilliseconds / tokenCount;
+      metrics.textContent = `${{computeRate.toFixed(2)}} tok/s · ${{latency.toFixed(2)}} ms/token · ${{wallRate.toFixed(2)}} tok/s including display`;
     }}
 
     function runBatch() {{
       if (!running) return;
       try {{
-        computeMilliseconds += inferOnce();
+        const result = inferOnce();
+        computeMilliseconds += result.elapsed;
         sampleCount += 1;
+        lines.push(result.text);
+        if (lines.length > 200) lines = lines.slice(-200);
+        stream.textContent = `${{lines.join('\\n')}}\\n`;
+        stream.scrollTop = stream.scrollHeight;
         updateResults();
-        setTimeout(runBatch, 0);
+        setTimeout(runBatch, 2000);
       }} catch (error) {{
         running = false;
-        status.textContent = error.message;
+        metrics.textContent = error.message;
         startButton.disabled = false;
         stopButton.disabled = true;
       }}
     }}
 
-    startButton.addEventListener('click', () => {{
+    function begin() {{
       if (running) return;
+      stream.textContent = 'warming up…';
       for (let index = 0; index < prompts.length; index += 1) inferOnce();
       sampleCount = 0;
       computeMilliseconds = 0;
+      lines = [];
       wallStarted = performance.now();
       running = true;
       startButton.disabled = true;
       stopButton.disabled = false;
-      status.textContent = 'Running…';
-      setTimeout(runBatch, 0);
-    }});
+      metrics.textContent = 'running…';
+      setTimeout(runBatch, 2000);
+    }}
+
+    startButton.addEventListener('click', begin);
 
     stopButton.addEventListener('click', () => {{
       running = false;
       startButton.disabled = false;
       stopButton.disabled = true;
-      status.textContent = `Stopped after ${{sampleCount.toLocaleString()}} four-token chains.`;
+      metrics.textContent += ` · paused after ${{sampleCount.toLocaleString()}} chains`;
     }});
+
+    setTimeout(begin, 0);
   </script>
 </body>
 </html>
