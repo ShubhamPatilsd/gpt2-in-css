@@ -69,3 +69,10 @@ open pretrained/index.html
 The checkpoint is cached under `data/`. Its legacy PyTorch format is decoded by
 the build script without requiring PyTorch, and the generated page has no
 runtime JavaScript.
+
+## GPT-2 small scaling result
+
+`make analyze-full` runs the real 124M GPT-2-small checkpoint for one token and
+calculates the size of the equivalent CSS circuit. See
+[`FULL_GPT2.md`](FULL_GPT2.md) for the measured limit: 123.55 million CSS MAC
+terms and a projected 3.18–6.14 GB stylesheet per unrolled token.
