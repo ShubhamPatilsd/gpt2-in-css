@@ -1,0 +1,86 @@
+{
+  "results": [
+    {
+      "top_clusters": 256,
+      "children": 4,
+      "real_hidden_states": {
+        "queries": 72,
+        "exact": true,
+        "tokens_evaluated": {
+          "minimum": 6854,
+          "median": 8917,
+          "p95": 10547,
+          "maximum": 11151,
+          "mean": 9106.347222222223
+        },
+        "active_top_clusters_mean": 51.888888888888886,
+        "active_leaf_clusters_mean": 181.43055555555554,
+        "indexed_multiply_terms_mean": 612473.7777777778,
+        "mean_term_reduction": 5.251568502524552
+      }
+    },
+    {
+      "top_clusters": 256,
+      "children": 8,
+      "real_hidden_states": {
+        "queries": 72,
+        "exact": true,
+        "tokens_evaluated": {
+          "minimum": 4857,
+          "median": 8087,
+          "p95": 9757,
+          "maximum": 10312,
+          "mean": 8109.583333333333
+        },
+        "active_top_clusters_mean": 51.888888888888886,
+        "active_leaf_clusters_mean": 308.6666666666667,
+        "indexed_multiply_terms_mean": 561964.4444444445,
+        "mean_term_reduction": 5.723579190458866
+      }
+    },
+    {
+      "top_clusters": 256,
+      "children": 16,
+      "real_hidden_states": {
+        "queries": 72,
+        "exact": true,
+        "tokens_evaluated": {
+          "minimum": 3039,
+          "median": 6307,
+          "p95": 8823,
+          "maximum": 9381,
+          "mean": 6451.583333333333
+        },
+        "active_top_clusters_mean": 51.888888888888886,
+        "active_leaf_clusters_mean": 441.9583333333333,
+        "indexed_multiply_terms_mean": 482419.55555555556,
+        "mean_term_reduction": 6.66732507619002
+      }
+    }
+  ],
+  "flat_bound_comparison": {
+    "ball": {
+      "exact": true,
+      "tokens_evaluated_mean": 9962.25,
+      "tokens_evaluated_median": 9864,
+      "mean_term_reduction": 4.91835686149781
+    },
+    "coordinate_box": {
+      "exact": true,
+      "tokens_evaluated_mean": 11057.541666666666,
+      "tokens_evaluated_median": 10772,
+      "mean_term_reduction": 4.442198692569745
+    },
+    "combined": {
+      "exact": true,
+      "tokens_evaluated_mean": 9959.180555555555,
+      "tokens_evaluated_median": 9864,
+      "mean_term_reduction": 4.799554332327487
+    }
+  },
+  "css_feasibility": {
+    "status": "blocked_by_eager_global_state",
+    "reason": "Chromium custom functions are lazy, but a function-local custom property cannot select style() branches. Registering every leaf bound globally makes the bounds eager and erases the hierarchy's intended pruning benefit.",
+    "browser_probe": "tinystories/function-local-style-test.html"
+  }
+}

@@ -1,0 +1,15 @@
+<!doctype html>
+<style>
+  @function --local-style(--x <number>) returns <number> {
+    --local: calc(var(--x));
+    result: if(style(--local: 1): 42; else: 7);
+  }
+  @property --answer { syntax: "<number>"; inherits: false; initial-value: 0; }
+  main { --answer: --local-style(1); }
+</style>
+<main></main>
+<script>
+  const answer = getComputedStyle(document.querySelector('main')).getPropertyValue('--answer');
+  document.body.dataset.answer = answer;
+  document.body.textContent = answer;
+</script>

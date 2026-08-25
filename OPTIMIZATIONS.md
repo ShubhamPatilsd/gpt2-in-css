@@ -71,6 +71,98 @@ forces the same circuit to resolve the next token; future tokens are not
 present in the initial dependency graph. This follows the state-bank technique
 demonstrated by [x86CSS](https://github.com/rebane2001/x86CSS).
 
+### Exact lazy clustered TinyStories output head
+
+The width-64 TinyStories language head cannot use the width-two convex-hull
+shortcut. An exact ball-cluster index instead computes a safe upper bound for
+each token cluster and invokes only the CSS custom functions that can still
+contain the winner. On 35 deliberately hard real hidden states, the complete
+50,257-token score, winner ID, and 64-number feedback embedding took 743–755 ms
+median, down from 4.28–4.36 seconds for the eager registered-property feedback
+graph. All measured winner IDs matched NumPy. The tradeoff is 292 MB of CSS and
+about 1.28 GB of renderer RSS. Full measurements are in
+[`output-head-benchmark/RESULTS.md`](output-head-benchmark/RESULTS.md).
+
+### Shared output-head token functions
+
+The first clustered feedback graph repeated the same token dot products in its
+maximum and winner-recovery functions. Defining one shared lazy dot function
+per token reduced the exact score/winner/embedding head from 291,925,867 to
+213,028,755 bytes (-27.0%). A complete transformer-plus-shared-head update took
+670–702 ms median with zero wrong winners in the browser tests.
+
+### TinyStories incremental transformer and KV cache
+
+The TinyStories compiler now emits one width-64, eight-layer transformer pass
+for only the newest position. Each layer consumes stored keys and values from
+an eight-token sliding window, then the animation state machine appends the new
+key/value vectors and winning token embedding. This avoids recomputing every
+causal prefix. For `Once upon a time`, the recurrent CSS graph matched NumPy's
+four greedy token IDs and produced `, there was a`.
+
+The transformer/cache source is 21,433,725 bytes; with the shared exact head,
+the linked graph is 234,462,480 bytes. Chromium required an eight-second clock
+to keep the execute/store phases stable. The full measured run took 42.69
+seconds for four outputs and used roughly 1.4 GB of renderer RSS. Details are
+in [`tinystories/RESULTS.md`](tinystories/RESULTS.md).
+
+### Timer-free nested CSS state propagation
+
+The fixed animation clock is not reliable across browser load levels: a later
+eight-second-clock run reset its state bank mid-generation. The strict
+HTML/CSS-only page instead nests four model elements with bridge elements
+between them. Each bridge snapshots its parent's typed output properties; the
+child consumes those inherited values as its embedding and per-layer KV-cache
+input. All model elements reuse the same CSS declarations and output-head
+functions, so only the small state-handoff rule and HTML nodes grow per token.
+
+Two fresh Chromium loads produced the exact reference IDs
+`[11, 612, 373, 257]` with zero script elements and no animation clock. This
+turns slow evaluation into a render delay instead of state corruption. A
+bucketed CSS decoder now maps every possible winner ID back to its GPT-2 token
+text, so the page visibly renders `Once upon a time, there was a`. The browser
+can batch style and paint work, so the visible update is not guaranteed to be
+one token at a time. The tradeoff is finite generation: pure HTML must
+predeclare one nested element per output token.
+
+## Compression results and next work
+
+### Precision and output-state packing
+
+The current linked graph contains 6,911,520 decimal literals. A source sweep
+estimates that four-decimal model values would reduce linked CSS from
+236,988,204 to 202,682,646 bytes (-14.48%). A NumPy probe over 16 generated
+tokens for each of three prompts matched all 48 reference tokens at four
+decimals; three decimals matched 47/48. This does not establish browser or
+adversarial correctness, and exact cluster bounds must be regenerated or
+conservatively inflated before applying the change.
+
+The shared output head spends 83,862,579 bytes on token dot functions but
+120,588,798 bytes on mapping the winner ID back to 64 embedding coordinates.
+That repeated feedback table is the largest structural target. Safe-integer
+packing can store several quantized feedback coordinates per winner lookup,
+then recover them with division and `mod()`. A second packed-pair experiment
+can quantize each score finely, reserve low digits for its token ID, and avoid
+a separate winner pass, though winner-recovery source itself is only 5,662,448
+bytes in the shared design. Packing reduces parsed expression count, so it has
+a better chance of lowering renderer memory than merely shortening decimal
+strings.
+
+The 8-bit feedback packing experiment is now implemented. Chromium rounded a
+six-coordinate 48-bit pack, so the working form stores three coordinates per
+24-bit number. It reduced the head from 213,028,755 to 128,685,887 bytes and
+still generated `[11, 612, 373, 257]`. A clean process comparison reduced
+renderer RSS from 2,321,629,184 to 1,663,516,672 bytes (-28.35%). The remaining
+large target is the 83.9 MB token-dot table.
+
+For a larger architectural reduction without removing vocabulary entries,
+train a checkpoint with a factorized vocabulary embedding: project the
+64-number hidden state into an 8- or 16-number token space before the 50,257
+token scores. That preserves the complete vocabulary while reducing the
+dominant per-token CSS dot product by roughly 4-8x. Cross-layer parameter
+sharing and structured sparsity are complementary ways to reduce the 21 MB
+transformer circuit.
+
 ## Investigated but not applied
 
 ### CSS CPU/state-machine emulation
@@ -107,6 +199,18 @@ its output pixels cannot feed CSS numeric custom properties. Typed `attr()` can
 read one number from markup, but CSS has no list indexing or reduction loop, so
 moving weights into HTML attributes only relocates the same data.
 
+### Two-level exact cluster hierarchy
+
+An offline 256-by-16 ball hierarchy remained exact across 72 real hidden
+states and improved the theoretical multiply reduction from 4.92x to 6.67x,
+evaluating 6,452 rather than 9,962 token rows on average. It is not compiled
+into the runtime because its useful second-level pruning needs a
+function-local calculated bound to control a lazy `style()` branch. The browser
+probe showed that function-local custom properties cannot drive those queries.
+Registering all leaf bounds globally makes them eager and spends the work the
+hierarchy is intended to avoid. Axis-aligned box bounds were also tested and
+did not tighten pruning on these embeddings.
+
 ## Remaining asymptotic boundary
 
 The applied work removes dead nodes and repeated nonlinear scaffolding. It does
@@ -114,3 +218,12 @@ not change the dominant cost: GPT-2 small still requires 123,550,464 explicit
 multiply-accumulate terms for a one-position transformer pass and language
 head. A major next leap needs either model-level structure/sparsity or a runtime
 with tensor storage and matrix operations.
+
+For the 3M TinyStories checkpoint specifically, exact clustered search and KV
+caching make the complete system run, but do not make it practical. The current
+limits are about 234 MB of CSS, roughly 1.4 GB of renderer memory, and a stable
+eight-second recurrent clock. The tested hierarchy is arithmetically tighter
+but blocked by CSS's local-query semantics. A major next step therefore needs
+fewer explicit weights (for example structured pruning or a purpose-trained
+checkpoint), a new browser primitive for lazy local numeric branches, or a
+runtime with native tensor operations.

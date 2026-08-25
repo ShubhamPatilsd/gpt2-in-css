@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Nested CSS state propagation probe</title>
+<style>
+  @property --state-in { syntax: "<number>"; inherits: true; initial-value: 0; }
+  @property --state-out { syntax: "<number>"; inherits: true; initial-value: 0; }
+  .root { --state-out: 1; }
+  .bridge { --state-in: var(--state-out); }
+  .stage {
+    --state-out: calc(var(--state-in) + 1);
+    counter-reset: value var(--state-out);
+  }
+  .stage::before { content: counter(value) " "; }
+</style>
+<main class="root">
+  <div class="bridge"><div class="stage" id="stage-1">
+    <div class="bridge"><div class="stage" id="stage-2">
+      <div class="bridge"><div class="stage" id="stage-3">
+        <div class="bridge"><div class="stage" id="stage-4"></div></div>
+      </div></div>
+    </div></div>
+  </div></div>
+</main>

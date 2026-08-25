@@ -1,0 +1,98 @@
+{
+  "date": "2026-08-24",
+  "browser": "Chromium 151",
+  "model": "calum/tinystories-gpt2-3M",
+  "static_transformer_core": {
+    "source_bytes": 17997134,
+    "properties": 15411,
+    "median_milliseconds": 281.5,
+    "maximum_hidden_error": 0.00007987388091468262
+  },
+  "static_complete_token_shared_head": {
+    "transformer_source_bytes": 17997134,
+    "head_source_bytes": 213028755,
+    "median_milliseconds_runs": [670.4, 702.2],
+    "wrong_winners": 0,
+    "maximum_hidden_error": 0.00007987388091468262,
+    "maximum_score_error": 0.00004133183800902884,
+    "maximum_embedding_error": 4.989342689554199e-7
+  },
+  "recurrent_kv_cached_generation": {
+    "transformer_source_bytes": 21433725,
+    "head_source_bytes": 213028755,
+    "clock_milliseconds": 8000,
+    "prompt": "Once upon a time",
+    "expected_token_ids": [11, 612, 373, 257],
+    "output_token_ids": [11, 612, 373, 257],
+    "completion": ", there was a",
+    "wrong_tokens": 0,
+    "transition_milliseconds": [
+      1552.9000000059605,
+      15391.10000000894,
+      25788.0,
+      33506.90000000596,
+      41124.29999999702
+    ],
+    "total_milliseconds": 42694.60000000894,
+    "renderer_rss_bytes_approx": 1436663808
+  },
+  "recurrent_state_check": {
+    "winner": 11,
+    "expected_winner": 11,
+    "wrong_winner": false,
+    "maximum_cache_error": 0.00001934311557238999,
+    "embedding_finite": true
+  },
+  "clock_stability": {
+    "4000_milliseconds": "overloaded",
+    "6000_milliseconds": "incorrect recurrent state",
+    "8000_milliseconds": "one four-token run correct; a later run reset state and was incorrect"
+  },
+  "nested_timer_free_generation": {
+    "html_script_elements": 0,
+    "animation_clock": false,
+    "model_elements": 4,
+    "shared_handoff_and_decoder_css_bytes": 2525724,
+    "linked_css_bytes": 236988204,
+    "fresh_runs": 2,
+    "output_token_ids_each_run": [11, 612, 373, 257],
+    "wrong_tokens_each_run": 0,
+    "rendered_completion": "Once upon a time, there was a",
+    "full_vocabulary_decoder_entries": 50257,
+    "renderer_rss_bytes_approx": 1518878720,
+    "sequencing": "parent-to-child inherited CSS state"
+  },
+  "streaming_generation": {
+    "html_script_elements": 0,
+    "gate_delay_milliseconds": 2000,
+    "gate_mechanism": "content-visibility plus computed-winner style query",
+    "observed_paint_order": [
+      ",",
+      " there",
+      " was",
+      " a"
+    ],
+    "pause_test": "paused after token 11; no later stage appeared during a 3.2 second observation; resume produced token 612",
+    "computed_token_id_overlay": [
+      11,
+      612,
+      373,
+      257
+    ]
+  },
+  "packed8_streaming_generation": {
+    "html_script_elements": 0,
+    "feedback_bits_per_coordinate": 8,
+    "feedback_coordinates_per_pack": 3,
+    "feedback_packs": 22,
+    "head_source_bytes": 128685887,
+    "complete_page_raw_bytes": 152648738,
+    "complete_page_gzip_bytes": 35147978,
+    "maximum_embedding_error": 0.003100044849350697,
+    "output_token_ids": [11, 612, 373, 257],
+    "wrong_tokens": 0,
+    "fresh_original_renderer_rss_bytes": 2321629184,
+    "fresh_packed_renderer_rss_bytes": 1663516672,
+    "renderer_rss_reduction_percent": 28.35
+  }
+}

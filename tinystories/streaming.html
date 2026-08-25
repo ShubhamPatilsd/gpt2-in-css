@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Streaming CSS-only TinyStories generation</title>
+  <link rel="stylesheet" href="../output-head-benchmark/generated/clustered-256-embedding-shared-runtime.css?v=ts-streaming-1">
+  <link rel="stylesheet" href="recurrent.css?v=ts-streaming-1">
+  <link rel="stylesheet" href="nested-runtime.css?v=ts-streaming-1">
+  <link rel="stylesheet" href="streaming.css?v=ts-streaming-1">
+</head>
+<body class="streaming-page">
+  <h1>Streaming CSS-only TinyStories generation</h1>
+  <p class="status">Each later transformer stage stays render-skipped until the previous token is ready. No JavaScript.</p>
+  <input id="pause-generation" type="checkbox">
+  <div class="generation-controls">
+    <label class="pause-control" for="pause-generation" aria-label="Pause or play generation"></label>
+    <span class="control-status" aria-live="polite"></span>
+    <label for="show-token-ids">Show token IDs</label>
+  </div>
+  <input id="show-token-ids" type="checkbox">
+  <main class="story">Once upon a time<div class="model nested-model" data-step="1"><span class="token-output" aria-label="generated token 1"></span><div class="handoff"><div class="model nested-model" data-step="2"><span class="token-output" aria-label="generated token 2"></span><div class="handoff"><div class="model nested-model" data-step="3"><span class="token-output" aria-label="generated token 3"></span><div class="handoff"><div class="model nested-model" data-step="4"><span class="token-output" aria-label="generated token 4"></span></div></div></div></div></div></div></div></main>
+  <p class="status">Expected reference: <code>Once upon a time, there was a</code></p>
+</body>
+</html>

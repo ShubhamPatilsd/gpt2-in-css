@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS computed-state gate probe</title>
+  <style>
+    @property --winner {
+      syntax: "<integer>";
+      inherits: false;
+      initial-value: 0;
+    }
+    @property --gate-open {
+      syntax: "<integer>";
+      inherits: false;
+      initial-value: 0;
+    }
+    @keyframes open-gate { to { --gate-open: 1; } }
+
+    .model { --winner: 11; }
+    .gate {
+      --gate-open: 0;
+      content-visibility: if(style(--gate-open: 1): visible; else: hidden);
+    }
+    @container style(--winner) {
+      .gate { animation: open-gate 1ms 2s both; }
+    }
+  </style>
+</head>
+<body>
+  <div class="model">
+    parent ready
+    <div class="gate">child opened</div>
+  </div>
+</body>
+</html>

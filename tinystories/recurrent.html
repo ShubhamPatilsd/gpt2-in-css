@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS-only KV-cached TinyStories generator</title>
+  <link rel="stylesheet" href="../output-head-benchmark/generated/clustered-256-embedding-shared-runtime.css?v=ts-recurrent-3">
+  <link rel="stylesheet" href="recurrent.css?v=ts-recurrent-9">
+</head>
+<body>
+  <input type="checkbox" id="stream-toggle" checked>
+  <label for="stream-toggle">run / pause</label>
+  <div class="clock"><main class="model"></main></div>
+  <pre id="results">running...</pre>
+  <script>
+    const model = document.querySelector('.model');
+    const toggle = document.querySelector('#stream-toggle');
+    const expected = [11, 612, 373, 257];
+    const started = performance.now();
+    const transitions = [];
+    let previousStep = -1;
+    function observe() {
+      const styles = getComputedStyle(model);
+      const step = Number.parseFloat(styles.getPropertyValue('--visible-step'));
+      if (step !== previousStep) {
+        transitions.push({step, milliseconds: performance.now() - started});
+        previousStep = step;
+      }
+      if (step >= 4) {
+        toggle.checked = false;
+        const outputs = Array.from(
+          {length: 4},
+          (_, index) => Number.parseFloat(
+            styles.getPropertyValue(`--visible-output-${index}`)
+          ),
+        );
+        const result = {
+          expected,
+          outputs,
+          wrongTokens: outputs.filter((token, index) => token !== expected[index]).length,
+          transitions,
+          totalMilliseconds: performance.now() - started,
+          sourceBytes: 21433725,
+          properties: 28289,
+        };
+        document.querySelector('#results').textContent = JSON.stringify(result, null, 2);
+        document.documentElement.dataset.benchmarkComplete = 'true';
+        return;
+      }
+      requestAnimationFrame(observe);
+    }
+    requestAnimationFrame(observe);
+  </script>
+</body>
+</html>

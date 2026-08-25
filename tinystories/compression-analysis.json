@@ -1,0 +1,70 @@
+{
+  "date": "2026-08-24",
+  "current_linked_css_bytes": 236988204,
+  "decimal_literals": 6911520,
+  "decimal_precision_source_estimates": [
+    {
+      "decimal_places": 6,
+      "estimated_css_bytes": 216408354,
+      "estimated_reduction_percent": 8.68
+    },
+    {
+      "decimal_places": 5,
+      "estimated_css_bytes": 209543501,
+      "estimated_reduction_percent": 11.58
+    },
+    {
+      "decimal_places": 4,
+      "estimated_css_bytes": 202682646,
+      "estimated_reduction_percent": 14.48
+    }
+  ],
+  "numpy_quantization_probe": {
+    "prompts": [
+      "Once upon a time",
+      "The little girl",
+      "One day"
+    ],
+    "generated_tokens_per_prompt": 16,
+    "total_reference_tokens": 48,
+    "matching_tokens_by_decimal_places": {
+      "8": 48,
+      "7": 48,
+      "6": 48,
+      "5": 48,
+      "4": 48,
+      "3": 47,
+      "2": 34
+    },
+    "four_decimal_browser_validation": false,
+    "note": "The four-decimal result is an empirical candidate, not a correctness proof. Cluster bounds must be rebuilt or conservatively inflated before browser use."
+  },
+  "shared_output_head_segments_bytes": {
+    "token_dot_functions": 83862579,
+    "cluster_maximum_functions": 1552076,
+    "winner_recovery_functions": 5662448,
+    "embedding_feedback_functions": 120588798,
+    "registrations_and_rules": 1362854,
+    "total": 213028755
+  },
+  "packed8_feedback_result": {
+    "bits_per_coordinate": 8,
+    "coordinates_per_pack": 3,
+    "packs_per_embedding": 22,
+    "largest_pack_bits": 24,
+    "output_head_bytes": 128685887,
+    "complete_page_raw_bytes": 152648738,
+    "complete_page_gzip_bytes": 35147978,
+    "output_head_reduction_bytes": 84342868,
+    "output_head_reduction_percent": 39.59,
+    "maximum_embedding_error": 0.003100044849350697,
+    "browser_output_token_ids": [11, 612, 373, 257],
+    "browser_wrong_tokens": 0,
+    "browser_script_elements": 0,
+    "fresh_original_renderer_rss_bytes": 2321629184,
+    "fresh_packed_renderer_rss_bytes": 1663516672,
+    "renderer_rss_reduction_bytes": 658112512,
+    "renderer_rss_reduction_percent": 28.35,
+    "note": "A six-coordinate 48-bit pack failed because Chromium rounded registered CSS numbers to roughly 24 bits of integer precision. Three 8-bit coordinates remained exact in the observed CSS path."
+  }
+}

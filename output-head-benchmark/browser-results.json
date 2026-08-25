@@ -1,0 +1,59 @@
+{
+  "date": "2026-08-24",
+  "browser": "Chromium 151",
+  "model": "calum/tinystories-gpt2-3M",
+  "vocabulary": 50257,
+  "width": 64,
+  "hard_queries": 35,
+  "variants": {
+    "registered_score": {
+      "source_bytes": 82000000,
+      "median_milliseconds_range": [1700, 1730]
+    },
+    "registered_feedback": {
+      "source_bytes": 186000000,
+      "median_milliseconds_range": [4280, 4360]
+    },
+    "dom_layout_score": {
+      "source_bytes": 52000000,
+      "median_milliseconds": 4350
+    },
+    "clustered_score": {
+      "source_bytes": 83635991,
+      "median_milliseconds": 702.1,
+      "batch_milliseconds": 25717.7
+    },
+    "clustered_winner": {
+      "source_bytes": 170692673,
+      "median_milliseconds_range": [709.1, 729.0],
+      "batch_milliseconds_range": [25964.5, 26780.4],
+      "wrong_winners": 0
+    },
+    "clustered_embedding_runs": [
+      {
+        "source_bytes": 291925867,
+        "median_milliseconds": 754.6,
+        "batch_milliseconds": 27378.3
+      },
+      {
+        "source_bytes": 291925867,
+        "median_milliseconds": 742.6,
+        "batch_milliseconds": 26972.5
+      }
+    ],
+    "clustered_embedding_shared": {
+      "source_bytes": 213028755,
+      "source_reduction_percent": 27.03,
+      "static_full_transformer_median_milliseconds_runs": [670.4, 702.2],
+      "wrong_winners": 0
+    }
+  },
+  "correctness": {
+    "wrong_winners": 0,
+    "maximum_score_error": 0.00004530336967434323,
+    "maximum_embedding_error": 4.990463256804301e-7,
+    "winner_match_tolerance": 0.0001,
+    "minimum_real_winner_margin": 0.018032899136409597
+  },
+  "full_graph_renderer_rss_bytes_approx": 1306804224
+}

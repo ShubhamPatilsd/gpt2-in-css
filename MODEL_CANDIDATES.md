@@ -30,10 +30,14 @@ Other candidates:
   better general-English model, but it remains width 768 with six layers and 82M
   parameters, so its exact CSS circuit would still be multi-gigabyte.
 
-The practical route to better text while staying browser-loadable is the 3M
-TinyStories checkpoint plus an explicitly reduced output vocabulary, followed
-by accuracy testing to quantify how often the true argmax falls outside that
-subset.
+The 3M TinyStories full output vocabulary is browser-loadable without an
+approximation by using exact lazy clustered search. Sharing token dot-product
+functions reduced the output head from 291.9 MB to 213.0 MB. A complete static
+transformer-plus-head update takes 670–702 ms median, while the CSS-only
+KV-cached recurrent implementation produced four correct tokens in 42.69
+seconds. Its roughly 234 MB linked graph used about 1.4 GB of renderer memory.
+This is a viable research path, not yet a lightweight page. See
+[`tinystories/RESULTS.md`](tinystories/RESULTS.md).
 
 The exact 16-token convex-hull reduction used for the current width-two test
 checkpoint should not be assumed for this width-64 model. Convex hulls become

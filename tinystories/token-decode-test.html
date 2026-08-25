@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  @property --token-id { syntax: "<integer>"; inherits: true; initial-value: 0; }
+  @property --token-bucket { syntax: "<integer>"; inherits: false; initial-value: 0; }
+  @function --decode-zero() returns <string> {
+    result: if(style(--token-id: 11): ","; else: "wrong");
+  }
+  output {
+    --token-id: 11;
+    --token-bucket: round(down, calc(var(--token-id) / 256), 1);
+    --token-text: if(style(--token-bucket: 0): --decode-zero(); else: "bad bucket");
+  }
+  output::after { content: var(--token-text); }
+</style>
+<output></output>

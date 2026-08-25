@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TinyStories KV-cached transformer step</title>
+  <link rel="stylesheet" href="step.css?v=tinystories-step-2">
+</head>
+<body>
+  <input type="radio" name="query" id="q0" checked><input type="radio" name="query" id="q1"><input type="radio" name="query" id="q2">
+  <main class="model"></main>
+  <pre id="results">running...</pre>
+  <script>
+    const model = document.querySelector('.model');
+    const inputs = [...document.querySelectorAll('input[name="query"]')];
+    const queries = [{"tokens": [7454, 2402, 257, 640], "input0": -0.24123401381075382, "final": [-8.476177342020119, 1.5445544825186384, 7.488031519871533, 4.6197946019272464, -5.3352270626097305, -4.405997454131672, -2.655794468053366, -3.7764952426169445, -1.1625990470832075, -0.4270200439622167, 0.9703377498477841, -5.380646555194769, -2.134917941350073, 5.777329562729134, 1.1208940868106176, -1.3541809751289489, -2.88727647225474, 2.1457209970367614, 3.366434423187712, 1.3556130513768294, 3.616964578552934, -1.6333901451432227, -0.0005517680397685853, 2.489513930997898, -5.892598289243456, -2.9950316432941864, 8.335423097437737, 2.3603431250395697, 2.446916570275052, -0.7647819468388163, -3.2754900313813113, -1.7045149235649961, -0.86686509035471, 9.601872648379434, -1.791744472780916, 5.078796784460485, -0.40406066756949316, 1.8265362465954949, -1.5194594021682262, 0.5158841494489402, 2.843279544536492, -4.345114287519497, 0.6907140133998386, 1.8111155778902777, -1.6325469307485792, -0.5320915352491934, -5.307862708596079, -3.62973193797249, -1.4795569071016736, 1.2689866487457069, -6.105794763894834, 8.24886245349284, -3.9109885333791974, 5.396926578898197, -0.4672944877340638, -2.7000102050646912, 1.6515478515265778, 3.7506001198461005, -2.6763827505406383, 0.9925877607972273, 1.9566048210449378, -3.0085457983725012, -1.1513659487400045, 4.4178403251667655]}, {"tokens": [464, 1310, 2576, 373], "input0": -0.04212022386491299, "final": [-1.8762367954018893, 7.738718608886907, 4.670891207215634, 0.4687047534679276, 3.483788504480767, -4.033223616296017, -0.5193737857206717, -6.79807843087872, 6.013299839065134, -1.3876783438278133, 8.663578307473818, 1.7781468578364605, -2.0342282827595746, 2.5281708977646944, -3.842379397426315, 3.155413006320622, 1.8302251671993535, 3.4572928984772124, -0.28419397294981674, 0.17596789139090635, 0.5058300184912935, -4.953745618096585, 3.3268987792406737, -4.925019396912154, -2.8082025754692688, -4.895838750206393, -2.017269516669158, -0.917871801216108, -6.206169521119051, 0.14024602948686266, -0.8097911549705342, -2.1631578179961175, 1.8292629835597904, 3.0610351711868358, -2.105205072228078, 0.8927920301492176, -1.2467062387787273, 4.587641872691502, -2.7812287196155987, -2.90293114506518, 2.6887517230019338, -0.32152831335963206, -1.726372597354181, 5.3884927512071314, -2.3162596447802146, 3.150406100793084, -8.136203139031853, 1.1531491664859375, 2.9962013600243713, -0.7750396659940159, -2.156131308635497, 3.165157778079069, 7.043225001572776, 2.65798254864036, -3.5286739543626666, -5.557139090839913, -0.31205287970981954, 4.528897129537845, -1.9086832907972355, -0.7575124204812569, 4.95225222119925, -2.4223674974319684, 3.355009137302599, -5.682291748985181]}, {"tokens": [3198, 1110, 11, 257], "input0": -0.000786367803812027, "final": [-2.8591005766927258, -5.730809873880915, 4.175414748538236, 6.06834022098814, 2.3407079979500107, -6.428904763110044, -5.548534153803796, -7.0466167169415055, 1.7806715225728202, 4.317454331696537, 4.231783001063228, -3.8483738982834415, -2.941705571393472, 0.7493487051904868, -1.2688739563921918, 5.15879404438559, -2.0795684028054136, 6.86161981747808, 2.642406415735823, -0.8404008733088878, -2.079428369685198, -0.9838844522951462, -3.8513068831972657, -0.5944715058930623, -0.7918371928056148, -1.9219419989189221, -1.2362717308791709, 0.14924044223666383, -4.521011687621609, 0.022293331932647653, 1.9067433193264747, 2.6070097303239548, -0.2843526020201759, 0.47936939531191836, -0.34474417460587203, 2.175419671289394, 5.9365259197575995, -1.0338646967339757, -4.884267471074702, 2.8709050768701054, 4.832019746307018, -1.2434221774047074, -2.4246235724736436, 2.826254098501992, -7.478807833380794, -0.49928643210019485, 0.3035898004588302, -4.8847257956392856, 3.1846007778879195, 1.945350785740183, -1.0667335880003865, -1.0810698530006686, 7.695782567879303, 1.907081683891581, 3.3456481157058935, -6.944951556350714, 0.26251247936829614, 1.493555839481168, -4.125869903000712, 1.0112127744487152, 8.157910157800272, -1.4891065875140677, 6.307814820495359, -3.6381623997052186]}];
+    const fullHead = false;
+    const expectedWinners = [];
+    const expectedMaximums = [];
+    const expectedEmbeddings = [];
+    function infer(query, perturbation = null) {
+      const started = performance.now();
+      inputs[query].checked = true;
+      if (perturbation === null) model.style.removeProperty('--ts-in-0');
+      else model.style.setProperty('--ts-in-0', String(queries[0].input0 + perturbation));
+      const styles = getComputedStyle(model);
+      const hidden = Array.from(
+        {length: 64},
+        (_, dimension) => Number.parseFloat(styles.getPropertyValue(`--h${dimension}`)),
+      );
+      const maximum = fullHead
+        ? Number.parseFloat(styles.getPropertyValue('--maximum'))
+        : 0;
+      const winner = fullHead
+        ? Number.parseFloat(styles.getPropertyValue('--winner-id'))
+        : 0;
+      const embedding = fullHead
+        ? Array.from(
+            {length: 64},
+            (_, dimension) => Number.parseFloat(styles.getPropertyValue(`--next${dimension}`)),
+          )
+        : [];
+      return {
+        elapsed: performance.now() - started,
+        hidden,
+        maximum,
+        winner,
+        embedding,
+      };
+    }
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      let hiddenError = 0;
+      let maximumError = 0;
+      let embeddingError = 0;
+      let wrongWinners = 0;
+      for (let query = 0; query < queries.length; query += 1) {
+        const result = infer(query);
+        for (let dimension = 0; dimension < result.hidden.length; dimension += 1) {
+          hiddenError = Math.max(
+            hiddenError,
+            Math.abs(result.hidden[dimension] - queries[query].final[dimension]),
+          );
+          if (fullHead) {
+            embeddingError = Math.max(
+              embeddingError,
+              Math.abs(result.embedding[dimension] - expectedEmbeddings[query][dimension]),
+            );
+          }
+        }
+        if (fullHead) {
+          maximumError = Math.max(
+            maximumError,
+            Math.abs(result.maximum - expectedMaximums[query]),
+          );
+          if (result.winner !== expectedWinners[query]) wrongWinners += 1;
+        }
+      }
+      infer(0, 0.00001);
+      infer(0, 0.00002);
+      const samples = [];
+      for (let iteration = 0; iteration < 5; iteration += 1) {
+        samples.push(infer(0, (iteration + 10) * 0.00001).elapsed);
+      }
+      samples.sort((a, b) => a - b);
+      const result = {
+        fullHead,
+        sourceBytes: 17997134,
+        properties: 15411,
+        samples,
+        medianMilliseconds: samples[2],
+        hiddenError,
+        maximumError,
+        embeddingError,
+        wrongWinners,
+      };
+      document.querySelector('#results').textContent = JSON.stringify(result, null, 2);
+      document.documentElement.dataset.benchmarkComplete = 'true';
+    }));
+  </script>
+</body>
+</html>
