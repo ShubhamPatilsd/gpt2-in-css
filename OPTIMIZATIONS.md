@@ -225,7 +225,7 @@ base-32,767 digits. Container queries recover the two digits, and a 1.51 MB
 token-to-cluster map routes the ID through the output head's existing packed
 embedding functions.
 
-The full dynamic page is 131,313,662 raw / 17,550,232 Brotli bytes, only about
+The full dynamic page is 131,316,739 raw / 17,550,749 Brotli bytes, only about
 1.11 MB more compressed than the fixed row-int10 page. The cost is numerical:
 the existing feedback table stores embeddings at 8 bits per coordinate. The
 default prompt's first nine decisions matched the fixed reference, then it
@@ -241,6 +241,15 @@ the entire recurrent transformer stylesheet. The generated handoff chain also
 uses valid inline nesting. Together these details keep the initial paused page
 from resolving the transformer repeatedly or releasing all stages before the
 user presses Play.
+
+Arbitrary prompt editing cannot be debounced in static CSS, so the page now
+avoids invalidation instead. The editable stylesheet writes a registered,
+non-inheriting `--draft-prompt` while Edit mode removes the story graph. A
+radio-state transition to Run copies the draft into the inherited `--prompt`
+once; Edit / reset removes the animations before the next change. This reduced
+a 16-update browser editing loop from over 30 seconds to 632 ms total. The same
+state rules stop the handoff chain at token 50256 rather than calculating
+invisible post-EOS stages.
 
 For a larger architectural reduction without removing vocabulary entries,
 train a checkpoint with a factorized vocabulary embedding: project the

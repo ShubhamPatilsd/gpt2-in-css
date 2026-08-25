@@ -27,6 +27,7 @@ GENERATED_TOKENS = 32
 TOTAL_STAGES = MAX_PROMPT_TOKENS + GENERATED_TOKENS - 1
 TOKEN_BUCKET_SIZE = 256
 TOKEN_ID_BASE = 32_767
+END_OF_TEXT_TOKEN_ID = 50_256
 
 
 def cluster_labels_from_head(path: Path) -> list[int]:
@@ -191,6 +192,9 @@ def tokenizer_css(labels: list[int], embeddings: np.ndarray) -> str:
 
 def stage_css() -> str:
     lines = [
+        '@property --draft-prompt{syntax:"<string>";inherits:false;initial-value:""}',
+        '.prompt-source:has(#run-generation:checked,#pause-generation:checked)'
+        '{--prompt:var(--draft-prompt)}',
         '.dynamic-app{position:fixed;inset:0;z-index:1;overflow:auto;background:#fff;'
         'padding:2rem max(1rem,calc((100vw - 52rem)/2));font:16px/1.55 system-ui,sans-serif}',
         '.dynamic-app h1{font:700 1.5rem/1.2 system-ui,sans-serif}',
@@ -198,10 +202,37 @@ def stage_css() -> str:
         'border:1px solid #888;border-radius:.35rem;background:#fafafa;white-space:pre-wrap;'
         'font:14px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;caret-color:#000}',
         '.dynamic-app .editor:focus{outline:3px solid Highlight;outline-offset:2px}',
+        '.dynamic-app .prompt-preview{min-height:2.75rem;padding:.65rem;border:1px solid #bbb;'
+        'border-radius:.35rem;background:#f4f4f4}',
+        '.dynamic-app .prompt-preview-value::after{content:var(--prompt)}',
         '.dynamic-app .story{font:700 1.4rem/1.55 Georgia,serif;white-space:pre-wrap}',
         '.prompt-text::after{content:var(--prompt)}',
         '.dynamic-app .limits{color:#666;font-size:.9rem}',
-        '.nested-model .token-output{display:if(style(--emit-token:1):inline;else:none)}',
+        f'.nested-model .token-output{{display:if('
+        f'style(--winner-id:{END_OF_TEXT_TOKEN_ID}):none;'
+        'style(--emit-token:1):inline;else:none)}',
+        '#edit-prompt,#run-generation{position:absolute;inline-size:1px;block-size:1px;opacity:0}',
+        '#edit-prompt:not(:checked)~.editor{display:none}',
+        '#edit-prompt:checked~.prompt-preview{display:none}',
+        '#edit-prompt:checked~.story{display:none}',
+        '#edit-prompt:checked~.story .handoff{animation:none!important;content-visibility:hidden}',
+        '.generation-controls .edit-control::after{content:"Edit / reset"}',
+        '.generation-controls .run-control::after{content:"Resume"}',
+        '#edit-prompt:checked~.generation-controls .run-control::after{content:"Generate"}',
+        '#edit-prompt:checked~.generation-controls .edit-control,'
+        '#edit-prompt:checked~.generation-controls .pause-control,'
+        '#run-generation:checked~.generation-controls .run-control,'
+        '#pause-generation:checked~.generation-controls .pause-control{display:none}',
+        '#edit-prompt:checked~.generation-controls .control-status::after'
+        '{content:"Editing — inference is off"}',
+        '#run-generation:checked~.generation-controls .control-status::after'
+        '{content:"Generation is running"}',
+        '#pause-generation:checked~.generation-controls .control-status::after'
+        '{content:"Generation is paused before the next stage"}',
+        '#edit-prompt:focus-visible~.generation-controls .run-control,'
+        '#run-generation:focus-visible~.generation-controls .run-control,'
+        '#pause-generation:focus-visible~.generation-controls .pause-control'
+        '{outline:3px solid Highlight;outline-offset:3px}',
     ]
     for stage in range(1, MAX_PROMPT_TOKENS):
         declarations = []
@@ -232,9 +263,15 @@ def stage_css() -> str:
             f"style(--prompt-count:{count}):1"
             for count in range(minimum_count, MAX_PROMPT_TOKENS + 1)
         )
+        continue_expression = f"if({cases};else:0)"
+        if child_stage >= MAX_PROMPT_TOKENS:
+            continue_expression = (
+                f"if(style(--winner-id:{END_OF_TEXT_TOKEN_ID}):0;"
+                f"{cases};else:0)"
+            )
         lines.append(
             f'.streaming-page .handoff.to-stage-{child_stage}'
-            f'{{--continue-stream:if({cases};else:0);'
+            f'{{--continue-stream:{continue_expression};'
             'display:if(style(--continue-stream:1):inline-block;else:none)!important}'
         )
     return "\n".join(lines) + "\n"
@@ -257,17 +294,22 @@ def model_stages(stage: int = 0) -> str:
 def app_html() -> str:
     return f'''<main class="dynamic-app">
   <h1>CSS-only TinyStories with an editable prompt</h1>
-  <p class="limits">No JavaScript. Edit only the quoted text. Printable ASCII; the first {MAX_PROMPT_TOKENS} GPT-2 tokens are used.</p>
-  <style class="editor" contenteditable="plaintext-only" spellcheck="false">.prompt-source {{ --prompt: "Once upon a time"; }}</style>
-  <input id="pause-generation" type="checkbox" checked>
+  <p class="limits">No JavaScript. In Edit mode, change only the quoted text, then choose Generate. Printable ASCII; the first {MAX_PROMPT_TOKENS} GPT-2 tokens are used.</p>
+  <input id="edit-prompt" name="generation-mode" type="radio" checked>
+  <input id="run-generation" name="generation-mode" type="radio">
+  <input id="pause-generation" name="generation-mode" type="radio">
+  <style class="editor" contenteditable="plaintext-only" spellcheck="false">.prompt-source {{ --draft-prompt: "Once upon a time"; }}</style>
+  <div class="prompt-preview"><strong>Prompt:</strong> <span class="prompt-preview-value"></span></div>
   <div class="generation-controls">
+    <label class="edit-control" for="edit-prompt" aria-label="Edit or reset generation"> </label>
+    <label class="run-control" for="run-generation" aria-label="Generate or resume"> </label>
     <label class="pause-control" for="pause-generation" aria-label="Pause or play generation"></label>
     <span class="control-status"></span>
     <label for="show-token-ids">Show token IDs</label>
   </div>
   <input id="show-token-ids" type="checkbox">
   <div class="story"><span class="prompt-text"></span>{model_stages()}</div>
-  <p class="limits">The tokenizer and all {GENERATED_TOKENS} sequential next-token steps run in HTML/CSS. Reset by reloading after changing an already-generated prompt.</p>
+  <p class="limits">The tokenizer and all {GENERATED_TOKENS} sequential next-token steps run in HTML/CSS. Edit / reset discards the current run before the prompt can be changed.</p>
 </main>'''
 
 
@@ -296,7 +338,7 @@ def page() -> str:
   <link rel="stylesheet" href="dynamic-recurrent.css?v=ts-dynamic-2">
   <link rel="stylesheet" href="nested-runtime.css?v=ts-dynamic-2">
   <link rel="stylesheet" href="streaming.css?v=ts-dynamic-2">
-  <link rel="stylesheet" href="dynamic-prompt.css?v=ts-dynamic-3">
+  <link rel="stylesheet" href="dynamic-prompt.css?v=ts-dynamic-7">
 </head>
 <body class="prompt-source streaming-page">
   {tokenizer_chain()}

@@ -186,7 +186,7 @@ lookup for prompt embeddings, whereas the fixed page begins from a build-time
 exact prompt cache. The dynamic page therefore demonstrates genuine custom
 prompt inference but is not bit-identical to the checkpoint.
 
-Its complete row-int10 bundle is 131,313,662 bytes raw and 17,550,232 bytes
+Its complete row-int10 bundle is 131,316,739 bytes raw and 17,550,749 bytes
 under Brotli 9. The fixed row-int10 page is 126,338,257 raw / 16,441,633
 Brotli bytes, so editable tokenization and zero-state prompt ingestion add
 about 1.11 MB to compressed transfer. The prompt is currently limited to four
@@ -200,6 +200,14 @@ pause selector and all stages ran during load. It also gave the four tokenizer
 wrappers the generic `.model` class, making each wrapper match the transformer
 runtime. Valid span handoffs and tokenizer-specific wrappers remove both
 sources of accidental startup work.
+
+Prompt editing now has a separate CSS-only lifecycle. Edit mode writes a
+registered `--draft-prompt` whose value does not inherit into the model; Run
+and Pause copy it to `--prompt`. In Chromium, 16 successive automated edits
+completed in 632 ms total with a 38 ms median, whereas the formerly inherited
+live prompt did not complete the same loop within 30 seconds. Edit / reset
+hides and restarts the stage chain, so a second prompt cannot retain visible
+tokens from the first. Token 50256 stops later handoffs and is not painted.
 
 The recurrent graph has an eight-token sliding window and stores the key and
 value vectors for every layer. It computes only the newest token's transformer
