@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS prompt input experiment</title>
+  <style>
+    html {
+      font: 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: white;
+      color: black;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      width: min(42rem, calc(100% - 2rem));
+      margin: 1rem;
+      line-height: 1.45;
+    }
+
+    h1 { margin: 0 0 0.5rem; font-size: 1rem; }
+    p { margin: 0.5rem 0; }
+    code { font: inherit; }
+    .note { color: #555; font-size: 12px; }
+
+    .prompt-source { container-name: prompt; margin-top: 1rem; }
+
+    style.editor {
+      display: block;
+      width: 100%;
+      margin: 0.35rem 0 1rem;
+      padding: 0.65rem;
+      overflow: auto;
+      border: 1px solid #999;
+      background: #fafafa;
+      color: black;
+      caret-color: black;
+      line-height: 1.5;
+      outline: 0;
+      white-space: pre-wrap;
+    }
+
+    style.editor:focus { border-color: black; box-shadow: 0 0 0 1px black; }
+
+    .readout {
+      min-height: 3rem;
+      margin: 0;
+      padding: 0.75rem 0;
+      border-block: 1px solid #ccc;
+      font-size: 1.15rem;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .readout::after { content: var(--prompt); }
+
+    .result { margin-top: 1rem; }
+    .result::after { content: "not tokenized — CSS received the text but cannot split it"; }
+    .tokens::after { content: "—"; }
+    .initial-count::after { content: "—"; }
+
+    @container prompt style(--prompt: "Hello world!") {
+      .result::after { content: "recognized predeclared whole prompt"; }
+      .tokens::after { content: "15496, 995, 0"; }
+      .initial-count::after { content: "3"; }
+      .model {
+        --initial-count: 3;
+        --interactive-token-0-0: -0.003548181;
+        --interactive-token-0-1: -0.014499524;
+        --interactive-token-1-0: -0.006426282;
+        --interactive-token-1-1: 0.010121142;
+        --interactive-token-2-0: 0.003458115;
+        --interactive-token-2-1: -0.0096169;
+      }
+    }
+
+    @container prompt style(--prompt: "Hello") {
+      .result::after { content: "recognized predeclared whole prompt"; }
+      .tokens::after { content: "15496"; }
+      .initial-count::after { content: "1"; }
+      .model {
+        --initial-count: 1;
+        --interactive-token-0-0: -0.003548181;
+        --interactive-token-0-1: -0.014499524;
+      }
+    }
+
+    @container prompt style(--prompt: "The dog") {
+      .result::after { content: "recognized predeclared whole prompt"; }
+      .tokens::after { content: "464, 3290"; }
+      .initial-count::after { content: "2"; }
+      .model {
+        --initial-count: 2;
+        --interactive-token-0-0: -0.02969927;
+        --interactive-token-0-1: 0.001486968;
+        --interactive-token-1-0: 0.018935617;
+        --interactive-token-1-1: -0.010679178;
+      }
+    }
+
+    dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.25rem 1rem; }
+    dt { color: #555; }
+    dd { margin: 0; }
+    .conclusion { margin-top: 1.25rem; padding-top: 0.75rem; border-top: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>CSS prompt input experiment</h1>
+  <p class="note">zero scripts · edit only the quoted prompt · keep the rule on one line</p>
+  <p><a href="direct-embedding-tokenizer.html">open the working full-vocabulary tokenizer + inference demo →</a></p>
+
+  <main class="prompt-source">
+    <label for="prompt-editor">prompt</label>
+    <style id="prompt-editor" class="editor" contenteditable="plaintext-only" spellcheck="false">.prompt-source { --prompt: "Hello world!"; }</style>
+
+    <p class="readout">CSS sees: </p>
+
+    <section class="model">
+      <p class="result">status: </p>
+      <dl>
+        <dt>token ids</dt><dd class="tokens"></dd>
+        <dt>initial count</dt><dd class="initial-count"></dd>
+      </dl>
+    </section>
+  </main>
+
+  <p class="note">recognized examples: <code>"Hello world!"</code>, <code>"Hello"</code>, <code>"The dog"</code>. Any other text still appears in the readout.</p>
+
+  <section class="conclusion">
+    <p>integration result</p>
+    <p class="note">This page preserves the initial exact-match baseline. The linked demo now handles arbitrary one-line printable ASCII: OpenType GSUB performs the complete GPT-2 BPE merge process, glyph advances carry the two embedding coordinates through layout, and container units feed the existing recurrent CSS without scripts.</p>
+  </section>
+</body>
+</html>
