@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Streaming CSS-only TinyStories generation (row-quantized 8-bit token scores)</title>
+  <link rel="stylesheet" href="../output-head-benchmark/generated/clustered-256-embedding-packed8-row-int8-shared-runtime.css?v=ts-row-int8-1">
+  <link rel="stylesheet" href="recurrent.css?v=ts-streaming-2">
+  <link rel="stylesheet" href="nested-runtime.css?v=ts-streaming-2">
+  <link rel="stylesheet" href="streaming.css?v=ts-streaming-2">
+</head>
+<body class="streaming-page">
+  <h1>Streaming CSS-only TinyStories generation (row-quantized 8-bit token scores)</h1>
+  <p class="status">Each later transformer stage stays render-skipped until the previous token is ready. The gate has no pacing delay; its 1 ms transition only separates browser style passes. No JavaScript.</p>
+  <input id="pause-generation" type="checkbox" checked>
+  <div class="generation-controls">
+    <label class="pause-control" for="pause-generation" aria-label="Pause or play generation"></label>
+    <span class="control-status" aria-live="polite"></span>
+    <label for="show-token-ids">Show token IDs</label>
+  </div>
+  <input id="show-token-ids" type="checkbox">
+  <main class="story">Once upon a time<div class="model nested-model" data-step="1"><span class="token-output" aria-label="generated token 1"></span><div class="handoff" data-after-token="1"><div class="model nested-model" data-step="2"><span class="token-output" aria-label="generated token 2"></span><div class="handoff" data-after-token="2"><div class="model nested-model" data-step="3"><span class="token-output" aria-label="generated token 3"></span><div class="handoff" data-after-token="3"><div class="model nested-model" data-step="4"><span class="token-output" aria-label="generated token 4"></span><div class="handoff" data-after-token="4"><div class="model nested-model" data-step="5"><span class="token-output" aria-label="generated token 5"></span><div class="handoff" data-after-token="5"><div class="model nested-model" data-step="6"><span class="token-output" aria-label="generated token 6"></span><div class="handoff" data-after-token="6"><div class="model nested-model" data-step="7"><span class="token-output" aria-label="generated token 7"></span><div class="handoff" data-after-token="7"><div class="model nested-model" data-step="8"><span class="token-output" aria-label="generated token 8"></span><div class="handoff" data-after-token="8"><div class="model nested-model" data-step="9"><span class="token-output" aria-label="generated token 9"></span><div class="handoff" data-after-token="9"><div class="model nested-model" data-step="10"><span class="token-output" aria-label="generated token 10"></span><div class="handoff" data-after-token="10"><div class="model nested-model" data-step="11"><span class="token-output" aria-label="generated token 11"></span><div class="handoff" data-after-token="11"><div class="model nested-model" data-step="12"><span class="token-output" aria-label="generated token 12"></span><div class="handoff" data-after-token="12"><div class="model nested-model" data-step="13"><span class="token-output" aria-label="generated token 13"></span><div class="handoff" data-after-token="13"><div class="model nested-model" data-step="14"><span class="token-output" aria-label="generated token 14"></span><div class="handoff" data-after-token="14"><div class="model nested-model" data-step="15"><span class="token-output" aria-label="generated token 15"></span><div class="handoff" data-after-token="15"><div class="model nested-model" data-step="16"><span class="token-output" aria-label="generated token 16"></span><span class="handoff completion-marker" data-after-token="16"></span></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></main>
+  <p class="status">Experimental row-quantized 8-bit token scores. Painted throughput is measured externally; this page contains no script.</p>
+  <p class="status">This build predeclares 16 output stages. Live throughput requires external browser timing because CSS cannot read its own wall clock.</p>
+</body>
+</html>

@@ -1,4 +1,4 @@
-.PHONY: build transformer pretrained benchmark interactive analyze-full output-head-baselines output-head-search clustered-output-head hierarchical-output-head tinystories-step tinystories-recurrent tinystories-nested tinystories-all precompress-tinystories serve-tinystories test clean
+.PHONY: build transformer pretrained benchmark interactive analyze-full output-head-baselines output-head-search clustered-output-head hierarchical-output-head tinystories-step tinystories-recurrent tinystories-nested tinystories-all precompress-tinystories precompress-tinystories-experiments serve-tinystories test clean
 
 build:
 	python3 tools/build.py
@@ -44,12 +44,16 @@ tinystories-all: clustered-output-head tinystories-step tinystories-recurrent ti
 precompress-tinystories:
 	python3 tools/precompress_tinystories.py
 
+precompress-tinystories-experiments:
+	python3 tools/precompress_tinystories.py --experiments
+
 serve-tinystories: precompress-tinystories
 	python3 tools/serve_precompressed.py
 
 test:
 	python3 tools/test_css_number.py
 	python3 tools/test_precompressed_server.py
+	python3 tools/analyze_row_score_quantization.py --bits 10 --require-exact
 
 clean:
 	rm -f index.html model.css transformer/index.html transformer/model.css pretrained/index.html pretrained/benchmark.html pretrained/model.css pretrained/autoregressive.css pretrained/interactive.html pretrained/interactive-2.html pretrained/interactive-3.html pretrained/interactive-4.html pretrained/recurrent.css pretrained/prompt-position-0.css pretrained/prompt-position-1.css pretrained/prompt-position-2.css pretrained/prompt-position-3.css tinystories/step.css tinystories/recurrent.css tinystories/nested-runtime.css tinystories/streaming.css

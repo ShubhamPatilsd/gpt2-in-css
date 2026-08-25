@@ -200,12 +200,35 @@ For local testing, `make serve-tinystories` serves those precompressed static
 files at `http://127.0.0.1:4173` with immutable caching on versioned CSS. The
 server performs no inference and adds no client-side code.
 
+An alternating painted A/B test found no runtime penalty from the shorter
+numeric spelling. The legacy formatter took 17.926 and 17.355 seconds; the
+short formatter took 17.437 and 17.508 seconds. The roughly one-percent median
+difference favored the short formatter and is within renderer noise.
+
 `streaming-packed8x6.html` is a smaller experimental alternative. It packs six
 8-bit coordinates into an untyped 48-bit CSS value. All 16 token IDs match, and
 the rebuilt complete raw page is 134,485,605 bytes, but painted generation
 slowed to
 0.85 tokens/second in the measured runs. The typed 24-bit page remains the
 recommended balance of size, correctness, and speed.
+
+Three additional output-head candidates remain opt-in:
+
+- `streaming-packed8-score-token.html` carries a quantized score and token ID
+  through one untyped maximum. It is 0.96 MB smaller raw, but its two-run
+  painted median was about 4% slower and its Brotli file was slightly larger.
+- `streaming-packed8-row-int8.html` replaces full-precision score weights with
+  row-wise 8-bit codes. It is much smaller and faster, but diverged on two of
+  twenty expanded prompt tests, so it is not a faithful checkpoint build.
+- `streaming-packed8-row-int10.html` uses the safer 10-bit version. It matched
+  320/320 tested autoregressive decisions and all 16 browser tokens. The full
+  page is 126,338,257 bytes raw and 16,441,633 bytes with Brotli level 9. Its
+  two painted runs took 11.358 and 12.123 seconds versus 13.640 and 13.777 for
+  the exact baseline measured alongside it. This still changes the checkpoint
+  numerically and therefore remains experimental.
+
+Run `python3 tools/analyze_row_score_quantization.py --bits 10` to repeat the
+expanded prompt check. None of these pages contains JavaScript.
 
 Greedy generation remains the reference mode. Chromium 151 does not implement
 the draft CSS `random()` function (`tinystories/css-random-test.html` reports

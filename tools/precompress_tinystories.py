@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import gzip
 import json
 import shutil
@@ -20,6 +21,23 @@ ASSETS = [
     ROOT / "tinystories" / "nested-runtime.css",
     ROOT / "tinystories" / "streaming.css",
     ROOT / "tinystories" / "streaming-packed8.html",
+]
+EXPERIMENT_ASSETS = [
+    ROOT
+    / "output-head-benchmark"
+    / "generated"
+    / "clustered-256-embedding-packed8-score-token-shared-runtime.css",
+    ROOT
+    / "output-head-benchmark"
+    / "generated"
+    / "clustered-256-embedding-packed8-row-int8-shared-runtime.css",
+    ROOT
+    / "output-head-benchmark"
+    / "generated"
+    / "clustered-256-embedding-packed8-row-int10-shared-runtime.css",
+    ROOT / "tinystories" / "streaming-packed8-score-token.html",
+    ROOT / "tinystories" / "streaming-packed8-row-int8.html",
+    ROOT / "tinystories" / "streaming-packed8-row-int10.html",
 ]
 
 
@@ -47,7 +65,15 @@ def write_brotli(source: Path, executable: str) -> Path:
 
 
 def main() -> None:
-    missing = [path for path in ASSETS if not path.exists()]
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--experiments",
+        action="store_true",
+        help="also precompress score/token and row-quantized candidates",
+    )
+    arguments = parser.parse_args()
+    assets = ASSETS + EXPERIMENT_ASSETS if arguments.experiments else ASSETS
+    missing = [path for path in assets if not path.exists()]
     if missing:
         formatted = "\n".join(f"  {path.relative_to(ROOT)}" for path in missing)
         raise SystemExit(
@@ -58,7 +84,7 @@ def main() -> None:
         raise SystemExit("brotli executable not found")
 
     results = []
-    for source in ASSETS:
+    for source in assets:
         gzip_path = write_gzip(source)
         brotli_path = write_brotli(source, brotli)
         results.append(

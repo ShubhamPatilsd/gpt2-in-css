@@ -129,6 +129,32 @@ represents exactly the same nine-decimal value in fewer characters. The
 browser still produced all 16 reference IDs. The output-head audit found no
 identical function bodies and no unused registered properties left to remove.
 
+The original and short numeric emitters were rebuilt side by side and served
+uncompressed from the same local server. Alternating painted runs were
+17.926/17.355 seconds for legacy decimals and 17.437/17.508 seconds for short
+decimals and exponents. Numeric source compression did not slow inference.
+
+The recommended head itself contains 80,638,875 bytes of token dot functions,
+36,654,193 bytes of packed feedback lookup, 5,561,934 bytes of winner recovery,
+1,552,076 bytes of cluster maxima, and 937,854 bytes of registrations and
+runtime rules. The remaining 23.58 MB of the page is the transformer, nested
+handoff/decoder, streaming rules, and HTML. The 28.93 MB figure is compressed
+network transfer; the browser still processes 148.93 MB of raw source.
+
+An untyped packed-score/token prototype removed winner recovery but added a
+second packed maximum graph. It saved only 960,220 head bytes, compressed
+slightly worse, and ran about 4% slower in the paired painted test. It matched
+all 16 browser IDs but is retained only as a negative experiment.
+
+Row-wise post-training score quantization attacks the larger term directly.
+Eight-bit rows produced the reference browser story and ran at a 1.25
+tokens/second two-run median, but diverged on two of twenty additional prompts.
+Ten-bit rows matched all 320 expanded prompt decisions and all 16 browser IDs.
+Its complete page is 126,338,257 bytes raw and 16,441,633 bytes under Brotli 9.
+Two painted runs took 11.358 and 12.123 seconds, versus 13.640 and 13.777 for
+the exact page in the same alternating session. Because the weights are still
+approximated, `streaming-packed8-row-int10.html` is not yet the default.
+
 Greedy generation remains intentional. Chromium 151 reports the draft CSS
 `random()` function as unsupported, and exact cluster pruning is designed to
 find one maximum rather than construct a full sampling distribution. The

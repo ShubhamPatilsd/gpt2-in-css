@@ -173,6 +173,49 @@ browser winners. Brotli level 9 is 28,928,806 bytes. A graph audit found zero
 duplicate output-function bodies and zero unused registered properties, so no
 additional exact removal was available from those two mechanical passes.
 
+An alternating full-paint A/B test ruled out a runtime regression from numeric
+spelling. Legacy decimal runs took 17.926 and 17.355 seconds; equivalent short
+decimal/exponent runs took 17.437 and 17.508 seconds. The short median was about
+one percent faster, which is within normal renderer variation.
+
+The 148,926,533 raw bytes and 28,928,806 Brotli bytes describe different
+stages of the same bundle. The raw graph breaks down as follows:
+
+| Component | Raw bytes |
+|---|---:|
+| Full-vocabulary token dot functions | 80,638,875 |
+| Packed winning-embedding lookup | 36,654,193 |
+| Incremental transformer and KV cache | 21,049,908 |
+| Per-token winner recovery | 5,561,934 |
+| Nested state handoff and decoder | 2,525,724 |
+| Cluster maxima | 1,552,076 |
+| Registrations, runtime rules, streaming CSS, and HTML | 943,823 |
+
+Brotli reduces network transfer, but Chromium still expands and parses the raw
+CSS and constructs a substantially larger runtime graph.
+
+Packing a quantized score and token ID into one untyped maximum removed the
+5.56 MB recovery table but added 4.74 MB of packed maximum machinery. The head
+fell only from 125,344,932 to 124,384,712 bytes. All 16 browser IDs matched,
+but two alternating runs had a 14.245-second median versus 13.709 seconds for
+the existing head. Brotli was also 79 KB larger, so this is not the default.
+
+The exact token table has 3,216,448 nonzero products. Same-dimension repeated
+weights can share only 27,164 of them (0.84%), and an SVD required full rank 64
+to preserve all 72 stored winners. Exact mechanical compression is therefore
+exhausted. A post-training row-wise integer experiment is more effective:
+
+- 8-bit rows reduced the head to 100,334,943 bytes and the full Brotli bundle
+  to 14,760,651 bytes, but diverged on 2/20 expanded prompts.
+- 10-bit rows reduced the head to 102,756,721 bytes and the full bundle to
+  126,338,257 raw / 16,441,633 Brotli bytes. It matched 320/320 expanded prompt
+  decisions and all 16 browser IDs. Two painted runs took 11.358 and 12.123
+  seconds, about 17% higher throughput than the exact baseline measured beside
+  it.
+
+The 10-bit result needs a much broader quality evaluation before adoption. It
+does not require fine-tuning, but it is still an approximate checkpoint.
+
 For a larger architectural reduction without removing vocabulary entries,
 train a checkpoint with a factorized vocabulary embedding: project the
 64-number hidden state into an 8- or 16-number token space before the 50,257

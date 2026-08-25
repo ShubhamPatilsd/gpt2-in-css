@@ -201,21 +201,44 @@ def page() -> str:
 def streaming_page(
     packed_feedback: bool = False,
     wide_feedback: bool = False,
+    score_token_packing: bool = False,
+    row_int8_scores: bool = False,
+    row_int10_scores: bool = False,
 ) -> str:
-    head_name = (
-        "clustered-256-embedding-packed8x6-untyped-shared-runtime.css"
-        if wide_feedback
-        else
-        "clustered-256-embedding-packed8-shared-runtime.css"
-        if packed_feedback
-        else "clustered-256-embedding-shared-runtime.css"
-    )
-    suffix = (
-        " (six-coordinate 48-bit feedback candidate)"
-        if wide_feedback
-        else " (packed 8-bit feedback)"
-        if packed_feedback
-        else ""
+    if row_int10_scores:
+        head_name = (
+            "clustered-256-embedding-packed8-row-int10-shared-runtime.css"
+        )
+        suffix = " (row-quantized 10-bit token scores)"
+    elif row_int8_scores:
+        head_name = (
+            "clustered-256-embedding-packed8-row-int8-shared-runtime.css"
+        )
+        suffix = " (row-quantized 8-bit token scores)"
+    elif score_token_packing:
+        head_name = (
+            "clustered-256-embedding-packed8-score-token-shared-runtime.css"
+        )
+        suffix = " (packed score and token candidate)"
+    elif wide_feedback:
+        head_name = (
+            "clustered-256-embedding-packed8x6-untyped-shared-runtime.css"
+        )
+        suffix = " (six-coordinate 48-bit feedback candidate)"
+    elif packed_feedback:
+        head_name = "clustered-256-embedding-packed8-shared-runtime.css"
+        suffix = " (packed 8-bit feedback)"
+    else:
+        head_name = "clustered-256-embedding-shared-runtime.css"
+        suffix = ""
+    head_version = (
+        "ts-row-int10-1"
+        if row_int10_scores
+        else "ts-row-int8-1"
+        if row_int8_scores
+        else "ts-score-token-2"
+        if score_token_packing
+        else "ts-streaming-2"
     )
     median_milliseconds = sum(VISIBLE_BENCHMARK_MILLISECONDS) / len(
         VISIBLE_BENCHMARK_MILLISECONDS
@@ -223,7 +246,22 @@ def streaming_page(
     visible_tokens_per_second = (
         VISIBLE_BENCHMARK_TOKENS * 1000 / median_milliseconds
     )
-    if wide_feedback:
+    if row_int10_scores:
+        benchmark = (
+            "Experimental row-quantized 10-bit token scores. Painted "
+            "throughput is measured externally; this page contains no script."
+        )
+    elif row_int8_scores:
+        benchmark = (
+            "Experimental row-quantized 8-bit token scores. Painted "
+            "throughput is measured externally; this page contains no script."
+        )
+    elif score_token_packing:
+        benchmark = (
+            "Experimental packed score/token winner recovery. Painted "
+            "throughput is measured externally; this page contains no script."
+        )
+    elif wide_feedback:
         benchmark = (
             "<strong>Measured visible throughput:</strong> 0.85 tokens/second "
             "on Chromium 151 on this machine (15 tokens after Play in "
@@ -249,7 +287,7 @@ def streaming_page(
 <head>
   <meta charset="utf-8">
   <title>Streaming CSS-only TinyStories generation{suffix}</title>
-  <link rel="stylesheet" href="../output-head-benchmark/generated/{head_name}?v=ts-streaming-2">
+  <link rel="stylesheet" href="../output-head-benchmark/generated/{head_name}?v={head_version}">
   <link rel="stylesheet" href="recurrent.css?v=ts-streaming-2">
   <link rel="stylesheet" href="nested-runtime.css?v=ts-streaming-2">
   <link rel="stylesheet" href="streaming.css?v=ts-streaming-2">
@@ -283,6 +321,15 @@ def main() -> None:
     (OUT / "streaming-packed8.html").write_text(streaming_page(True))
     (OUT / "streaming-packed8x6.html").write_text(
         streaming_page(True, wide_feedback=True)
+    )
+    (OUT / "streaming-packed8-score-token.html").write_text(
+        streaming_page(True, score_token_packing=True)
+    )
+    (OUT / "streaming-packed8-row-int8.html").write_text(
+        streaming_page(True, row_int8_scores=True)
+    )
+    (OUT / "streaming-packed8-row-int10.html").write_text(
+        streaming_page(True, row_int10_scores=True)
     )
     print(
         {

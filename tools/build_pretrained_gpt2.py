@@ -6,6 +6,7 @@ from __future__ import annotations
 import collections
 import html
 import json
+import os
 import pickle
 import re
 import struct
@@ -27,6 +28,11 @@ AUTOREGRESSIVE_STEPS = 4
 MAX_INTERACTIVE_PROMPT_TOKENS = 4
 INTERACTIVE_TOKEN_LIMIT = 2048
 RECURRENT_WINDOW = 16
+CSS_NUMBER_FORMAT = os.environ.get("GPT2_CSS_NUMBER_FORMAT", "short")
+if CSS_NUMBER_FORMAT not in {"short", "legacy"}:
+    raise ValueError(
+        "GPT2_CSS_NUMBER_FORMAT must be either 'short' or 'legacy'"
+    )
 
 CSS_FUNCTIONS = """@function --gelu(--x <number>) returns <number> {
   --cube: calc(var(--x) * var(--x) * var(--x));
@@ -45,6 +51,8 @@ def css_number(value: float) -> str:
     fixed = f"{float(value):.9f}".rstrip("0").rstrip(".")
     if fixed in {"", "-0"}:
         return "0"
+    if CSS_NUMBER_FORMAT == "legacy":
+        return fixed
 
     candidates = [fixed]
     if fixed.startswith("0."):

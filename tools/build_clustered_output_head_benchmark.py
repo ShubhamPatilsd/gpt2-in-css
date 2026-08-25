@@ -21,6 +21,15 @@ FEEDBACK_COORDINATES_PER_PACK = 3
 WIDE_FEEDBACK_COORDINATES_PER_PACK = 6
 COMPACT_FEEDBACK_BITS = 6
 COMPACT_FEEDBACK_COORDINATES_PER_PACK = 4
+TOKEN_SCORE_PACK_BASE = 65536
+TOKEN_SCORE_CLUSTER_BASE = 256
+TOKEN_SCORE_PAYLOAD_BASE = TOKEN_SCORE_PACK_BASE * TOKEN_SCORE_CLUSTER_BASE
+TOKEN_SCORE_PACK_SCALE = 1_000_000
+TOKEN_SCORE_PACK_OFFSET = 64
+TOKEN_SCORE_TIE_MAX = 50_256
+TOKEN_SCORE_INACTIVE = -9_007_199_254_740_991
+ROW_SCORE_BITS = 8
+ROW_SCORE_SAFER_BITS = 10
 
 
 def import_module(name: str, path: Path) -> object:
@@ -240,6 +249,35 @@ def shared_token_function(token: int, embedding: np.ndarray) -> str:
     )
 
 
+def quantize_token_rows(
+    embeddings: np.ndarray, bits: int = ROW_SCORE_BITS
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    maximum_code = 2 ** (bits - 1) - 1
+    scales = np.max(np.abs(embeddings), axis=1) / maximum_code
+    codes = np.rint(embeddings / scales[:, None]).clip(
+        -maximum_code, maximum_code
+    )
+    codes = codes.astype(np.int64)
+    reconstructed = codes.astype(np.float64) * scales[:, None]
+    return codes, scales, reconstructed
+
+
+def shared_row_quantized_token_function(
+    token: int, codes: np.ndarray, scale: float
+) -> str:
+    terms = [
+        f"var(--h{dimension})*{int(code)}"
+        for dimension, code in enumerate(codes)
+    ]
+    return "\n".join(
+        [
+            f"@function --d{token}() returns <number>{{",
+            f"result:calc(({' + '.join(terms)})*{number(scale)});",
+            "}",
+        ]
+    )
+
+
 def shared_cluster_function(cluster: int, indices: np.ndarray) -> str:
     declarations = []
     level = []
@@ -265,6 +303,83 @@ def shared_cluster_function(cluster: int, indices: np.ndarray) -> str:
     return "\n".join(
         [
             f"@function --dc{cluster}() returns <number>{{",
+            *declarations,
+            f"result:var(--{level[0]});",
+            "}",
+        ]
+    )
+
+
+def shared_packed_cluster_function(cluster: int, indices: np.ndarray) -> str:
+    """Return a maximum carrying both a quantized score and its token ID."""
+    declarations = []
+    level = []
+    for local, token in enumerate(indices):
+        name = f"l{local}"
+        payload = (
+            (TOKEN_SCORE_TIE_MAX - int(token)) * TOKEN_SCORE_CLUSTER_BASE
+            + cluster
+        )
+        declarations.append(
+            f"--{name}:calc(round(nearest,calc((--d{int(token)}() + "
+            f"{TOKEN_SCORE_PACK_OFFSET})*{TOKEN_SCORE_PACK_SCALE}),1)*"
+            f"{TOKEN_SCORE_PAYLOAD_BASE} + {payload});"
+        )
+        level.append(name)
+    depth = 0
+    while len(level) > 1:
+        next_level = []
+        for group_index, start in enumerate(range(0, len(level), 32)):
+            group = level[start : start + 32]
+            if len(group) == 1:
+                next_level.append(group[0])
+                continue
+            name = f"m{depth}x{group_index}"
+            declarations.append(
+                f"--{name}:max({','.join(f'var(--{item})' for item in group)});"
+            )
+            next_level.append(name)
+        level = next_level
+        depth += 1
+    return "\n".join(
+        [
+            f"@function --pc{cluster}(){{",
+            *declarations,
+            f"result:var(--{level[0]});",
+            "}",
+        ]
+    )
+
+
+def packed_global_max_function() -> str:
+    """Lazily reduce active packed clusters without a typed large-number hop."""
+    declarations = []
+    level = []
+    for cluster in range(CLUSTERS):
+        name = f"l{cluster}"
+        declarations.append(
+            f"--{name}:if(style(--a{cluster}:1):--pc{cluster}();"
+            f"else:{TOKEN_SCORE_INACTIVE});"
+        )
+        level.append(name)
+    depth = 0
+    while len(level) > 1:
+        next_level = []
+        for group_index, start in enumerate(range(0, len(level), 32)):
+            group = level[start : start + 32]
+            if len(group) == 1:
+                next_level.append(group[0])
+                continue
+            name = f"m{depth}x{group_index}"
+            declarations.append(
+                f"--{name}:max({','.join(f'var(--{item})' for item in group)});"
+            )
+            next_level.append(name)
+        level = next_level
+        depth += 1
+    return "\n".join(
+        [
+            "@function --packed-global-max(){",
             *declarations,
             f"result:var(--{level[0]});",
             "}",
@@ -541,6 +656,42 @@ def main() -> None:
         shared_token_function(token, embedding)
         for token, embedding in enumerate(embeddings)
     ]
+    row_score_codes, row_score_scales, row_score_embeddings = quantize_token_rows(
+        embeddings
+    )
+    row_score_dot_functions = [
+        shared_row_quantized_token_function(
+            token, row_score_codes[token], row_score_scales[token]
+        )
+        for token in range(len(embeddings))
+    ]
+    row_score_radii = np.asarray(
+        [
+            np.linalg.norm(
+                row_score_embeddings[indices] - centers[cluster], axis=1
+            ).max()
+            for cluster, indices in enumerate(members)
+        ]
+    )
+    (
+        row10_score_codes,
+        row10_score_scales,
+        row10_score_embeddings,
+    ) = quantize_token_rows(embeddings, ROW_SCORE_SAFER_BITS)
+    row10_score_dot_functions = [
+        shared_row_quantized_token_function(
+            token, row10_score_codes[token], row10_score_scales[token]
+        )
+        for token in range(len(embeddings))
+    ]
+    row10_score_radii = np.asarray(
+        [
+            np.linalg.norm(
+                row10_score_embeddings[indices] - centers[cluster], axis=1
+            ).max()
+            for cluster, indices in enumerate(members)
+        ]
+    )
     shared_max_functions = [
         shared_cluster_function(cluster, indices)
         for cluster, indices in enumerate(members)
@@ -581,7 +732,7 @@ def main() -> None:
         coordinates_per_pack: int,
         typed_intermediate: bool,
         feedback_bits: int = FEEDBACK_BITS,
-    ) -> tuple[str, int, np.ndarray]:
+    ) -> tuple[str, int, np.ndarray, dict[str, list[str]]]:
         packed_embeddings, feedback_scales, reconstructed_embeddings = (
             quantize_and_pack_embeddings(
                 embeddings, coordinates_per_pack, feedback_bits
@@ -641,39 +792,202 @@ def main() -> None:
             ".model{" + "".join(packed_declarations[start : start + 1000]) + "}"
             for start in range(0, len(packed_declarations), 1000)
         ]
+        components = {
+            "token_dot_functions": shared_dot_functions,
+            "cluster_max_functions": shared_max_functions,
+            "winner_recovery_functions": shared_token_functions,
+            "feedback_lookup_functions": packed_embedding_functions,
+            "registrations": packed_registrations,
+            "runtime_rules": packed_rules,
+        }
         css = "\n".join(
-            shared_dot_functions
-            + shared_max_functions
-            + shared_token_functions
-            + packed_embedding_functions
-            + packed_registrations
-            + packed_rules
+            item for group in components.values() for item in group
         ) + "\n"
-        return css, feedback_packs, reconstructed_embeddings
+        return css, feedback_packs, reconstructed_embeddings, components
+
+    def build_score_packed_feedback() -> tuple[
+        str, int, np.ndarray, dict[str, list[str]]
+    ]:
+        """Build the 8-bit feedback head without per-token winner recovery."""
+        packed_embeddings, feedback_scales, reconstructed_embeddings = (
+            quantize_and_pack_embeddings(
+                embeddings, FEEDBACK_COORDINATES_PER_PACK, FEEDBACK_BITS
+            )
+        )
+        feedback_packs = packed_embeddings.shape[1]
+        packed_score_functions = [
+            shared_packed_cluster_function(cluster, indices)
+            for cluster, indices in enumerate(members)
+        ]
+        packed_embedding_functions = [
+            packed_embedding_function(
+                cluster,
+                pack,
+                indices,
+                packed_embeddings,
+                typed_return=True,
+            )
+            for pack in range(feedback_packs)
+            for cluster, indices in enumerate(members)
+        ]
+
+        removed_names = set(result_names)
+        removed_names.add("maximum")
+        removed_names.update(
+            line.split("--", 1)[1].split("{", 1)[0]
+            for line in registrations
+            if line.startswith("@property --fm")
+        )
+        score_registrations = [
+            line
+            for line in registrations
+            if line.split("--", 1)[1].split("{", 1)[0] not in removed_names
+        ]
+        score_declarations = [
+            line
+            for line in declarations
+            if line.removeprefix("--").split(":", 1)[0] not in removed_names
+        ]
+        for cluster in range(CLUSTERS):
+            raw_call = f"--c{cluster}({invocation})"
+            score_declarations = [
+                declaration.replace(raw_call, f"--dc{cluster}()")
+                for declaration in score_declarations
+            ]
+
+        score_declarations.append("--packed-maximum:--packed-global-max();")
+        score_registrations.append(registration("winner-cluster", "<integer>"))
+        score_declarations.append(
+            f"--winner-cluster:calc(mod(var(--packed-maximum),"
+            f"{TOKEN_SCORE_CLUSTER_BASE}));"
+        )
+        score_registrations.append(registration("winner-id", "<integer>"))
+        score_declarations.append(
+            f"--winner-id:calc({TOKEN_SCORE_TIE_MAX} - "
+            f"round(down,calc(mod(var(--packed-maximum),"
+            f"{TOKEN_SCORE_PAYLOAD_BASE})/{TOKEN_SCORE_CLUSTER_BASE}),1));"
+        )
+
+        for pack in range(feedback_packs):
+            score_registrations.append(registration(f"feedback-pack-{pack}"))
+            cases = ";".join(
+                f"style(--winner-cluster:{cluster}):--pe{cluster}x{pack}()"
+                for cluster in range(CLUSTERS)
+            )
+            score_declarations.append(
+                f"--feedback-pack-{pack}:if({cases};else:0);"
+            )
+        feedback_base = 2**FEEDBACK_BITS
+        feedback_offset = 2 ** (FEEDBACK_BITS - 1) - 1
+        for dimension in range(embeddings.shape[1]):
+            score_registrations.append(registration(f"next{dimension}"))
+            pack = dimension // FEEDBACK_COORDINATES_PER_PACK
+            offset = dimension % FEEDBACK_COORDINATES_PER_PACK
+            divisor = feedback_base**offset
+            code = (
+                f"mod(round(down,calc(var(--feedback-pack-{pack})/{divisor}),1),"
+                f"{feedback_base})"
+            )
+            score_declarations.append(
+                f"--next{dimension}:calc(({code} - {feedback_offset})*"
+                f"{number(feedback_scales[dimension])});"
+            )
+
+        score_rules = [
+            ".model{" + "".join(score_declarations[start : start + 1000]) + "}"
+            for start in range(0, len(score_declarations), 1000)
+        ]
+        components = {
+            "token_dot_functions": shared_dot_functions,
+            "raw_cluster_max_functions": shared_max_functions,
+            "packed_cluster_max_functions": packed_score_functions,
+            "packed_global_max_function": [packed_global_max_function()],
+            "feedback_lookup_functions": packed_embedding_functions,
+            "registrations": score_registrations,
+            "runtime_rules": score_rules,
+        }
+        css = "\n".join(
+            item for group in components.values() for item in group
+        ) + "\n"
+        return css, feedback_packs, reconstructed_embeddings, components
 
     print("building packed 8-bit embedding feedback...", flush=True)
-    packed_shared_css, feedback_packs, reconstructed_embeddings = (
+    (
+        packed_shared_css,
+        feedback_packs,
+        reconstructed_embeddings,
+        packed_components,
+    ) = (
         build_packed_feedback(FEEDBACK_COORDINATES_PER_PACK, True)
     )
     if write_full_benchmark or args.packed_candidates_only:
         (OUT / "clustered-256-embedding-packed8-shared-runtime.css").write_text(
             packed_shared_css
         )
-    print("building untyped 48-bit packed feedback...", flush=True)
-    wide_packed_shared_css, wide_feedback_packs, wide_reconstructed_embeddings = (
-        build_packed_feedback(WIDE_FEEDBACK_COORDINATES_PER_PACK, False)
+    def build_row_score_css(
+        dot_functions: list[str], candidate_radii: np.ndarray
+    ) -> str:
+        candidate = packed_shared_css.replace(
+            "\n".join(shared_dot_functions), "\n".join(dot_functions), 1
+        )
+        for cluster in range(CLUSTERS):
+            old_radius = f"var(--hnorm)*{number(radii[cluster])}"
+            new_radius = (
+                f"var(--hnorm)*{number(candidate_radii[cluster])}"
+            )
+            if candidate.count(old_radius) != 1:
+                raise RuntimeError(
+                    f"expected one radius declaration for cluster {cluster}"
+                )
+            candidate = candidate.replace(old_radius, new_radius, 1)
+        return candidate
+
+    row_score_packed_shared_css = build_row_score_css(
+        row_score_dot_functions, row_score_radii
     )
+    (
+        OUT
+        / "clustered-256-embedding-packed8-row-int8-shared-runtime.css"
+    ).write_text(row_score_packed_shared_css)
+    row10_score_packed_shared_css = build_row_score_css(
+        row10_score_dot_functions, row10_score_radii
+    )
+    (
+        OUT
+        / "clustered-256-embedding-packed8-row-int10-shared-runtime.css"
+    ).write_text(row10_score_packed_shared_css)
+    print("building packed score/token winner recovery...", flush=True)
+    (
+        score_packed_shared_css,
+        score_packed_feedback_packs,
+        score_packed_reconstructed_embeddings,
+        score_packed_components,
+    ) = build_score_packed_feedback()
+    (
+        OUT
+        / "clustered-256-embedding-packed8-score-token-shared-runtime.css"
+    ).write_text(score_packed_shared_css)
+    print("building untyped 48-bit packed feedback...", flush=True)
+    (
+        wide_packed_shared_css,
+        wide_feedback_packs,
+        wide_reconstructed_embeddings,
+        _wide_components,
+    ) = build_packed_feedback(WIDE_FEEDBACK_COORDINATES_PER_PACK, False)
     (
         OUT
         / "clustered-256-embedding-packed8x6-untyped-shared-runtime.css"
     ).write_text(wide_packed_shared_css)
     print("building typed 24-bit 6-bit packed feedback...", flush=True)
-    compact_packed_shared_css, compact_feedback_packs, compact_reconstructed_embeddings = (
-        build_packed_feedback(
-            COMPACT_FEEDBACK_COORDINATES_PER_PACK,
-            True,
-            COMPACT_FEEDBACK_BITS,
-        )
+    (
+        compact_packed_shared_css,
+        compact_feedback_packs,
+        compact_reconstructed_embeddings,
+        _compact_components,
+    ) = build_packed_feedback(
+        COMPACT_FEEDBACK_COORDINATES_PER_PACK,
+        True,
+        COMPACT_FEEDBACK_BITS,
     )
 
     expected_active = []
@@ -899,6 +1213,37 @@ def main() -> None:
     )
     if write_full_benchmark:
         (OUT / "clustered-256-all.html").write_text(all_active_document)
+
+    def component_bytes(components: dict[str, list[str]]) -> dict[str, int]:
+        return {
+            name: sum(len(item.encode()) + 1 for item in items)
+            for name, items in components.items()
+        }
+
+    score_pack_reference_scores = generated_hidden @ embeddings.T
+    score_pack_reference_winners = score_pack_reference_scores.argmax(axis=1)
+    score_pack_codes = (
+        np.rint(
+            (score_pack_reference_scores + TOKEN_SCORE_PACK_OFFSET)
+            * TOKEN_SCORE_PACK_SCALE
+        ).astype(np.int64)
+        * TOKEN_SCORE_PAYLOAD_BASE
+        + (
+            (
+                TOKEN_SCORE_TIE_MAX
+                - np.arange(embeddings.shape[0], dtype=np.int64)
+            )
+            * TOKEN_SCORE_CLUSTER_BASE
+            + labels.astype(np.int64)
+        )
+    )
+    score_pack_winners = score_pack_codes.argmax(axis=1)
+    top_two = np.partition(score_pack_reference_scores, -2, axis=1)[:, -2:]
+    score_pack_margins = top_two[:, 1] - top_two[:, 0]
+    row_score_winners = (generated_hidden @ row_score_embeddings.T).argmax(axis=1)
+    row10_score_winners = (
+        generated_hidden @ row10_score_embeddings.T
+    ).argmax(axis=1)
     metadata = {
         "clusters": CLUSTERS,
         "cluster_size": {
@@ -919,6 +1264,68 @@ def main() -> None:
         "packed8_feedback_packs": int(feedback_packs),
         "packed8_maximum_embedding_error": float(
             np.max(np.abs(reconstructed_embeddings - embeddings))
+        ),
+        "packed8_component_bytes": component_bytes(packed_components),
+        "row_int8_score_shared_embedding_css_bytes": len(
+            row_score_packed_shared_css.encode()
+        ),
+        "row_int8_score_dot_function_bytes": sum(
+            len(item.encode()) + 1 for item in row_score_dot_functions
+        ),
+        "row_int8_score_states": int(len(generated_hidden)),
+        "row_int8_score_wrong_winners": int(
+            np.sum(row_score_winners != score_pack_reference_winners)
+        ),
+        "row_int8_score_maximum_embedding_error": float(
+            np.max(np.abs(row_score_embeddings - embeddings))
+        ),
+        "row_int8_score_mean_squared_embedding_error": float(
+            np.mean((row_score_embeddings - embeddings) ** 2)
+        ),
+        "row_int10_score_shared_embedding_css_bytes": len(
+            row10_score_packed_shared_css.encode()
+        ),
+        "row_int10_score_dot_function_bytes": sum(
+            len(item.encode()) + 1 for item in row10_score_dot_functions
+        ),
+        "row_int10_score_states": int(len(generated_hidden)),
+        "row_int10_score_wrong_winners": int(
+            np.sum(row10_score_winners != score_pack_reference_winners)
+        ),
+        "row_int10_score_maximum_embedding_error": float(
+            np.max(np.abs(row10_score_embeddings - embeddings))
+        ),
+        "row_int10_score_mean_squared_embedding_error": float(
+            np.mean((row10_score_embeddings - embeddings) ** 2)
+        ),
+        "score_token_packed_shared_embedding_css_bytes": len(
+            score_packed_shared_css.encode()
+        ),
+        "score_token_pack_base": TOKEN_SCORE_PACK_BASE,
+        "score_token_cluster_base": TOKEN_SCORE_CLUSTER_BASE,
+        "score_token_payload_base": TOKEN_SCORE_PAYLOAD_BASE,
+        "score_token_pack_scale": TOKEN_SCORE_PACK_SCALE,
+        "score_token_pack_offset": TOKEN_SCORE_PACK_OFFSET,
+        "score_token_pack_states": int(len(generated_hidden)),
+        "score_token_pack_wrong_winners": int(
+            np.sum(score_pack_winners != score_pack_reference_winners)
+        ),
+        "score_token_pack_minimum_top_two_margin": float(
+            score_pack_margins.min()
+        ),
+        "score_token_pack_maximum_absolute_code": int(
+            np.max(np.abs(score_pack_codes))
+        ),
+        "score_token_pack_safe_integer": bool(
+            np.max(np.abs(score_pack_codes)) < 2**53
+        ),
+        "score_token_packed_component_bytes": component_bytes(
+            score_packed_components
+        ),
+        "score_token_packed_maximum_embedding_error": float(
+            np.max(
+                np.abs(score_packed_reconstructed_embeddings - embeddings)
+            )
         ),
         "packed8x6_untyped_shared_embedding_css_bytes": len(
             wide_packed_shared_css.encode()

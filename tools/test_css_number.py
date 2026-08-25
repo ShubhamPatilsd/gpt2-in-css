@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import importlib.util
+import os
+import subprocess
 import sys
 import unittest
 from decimal import Decimal
@@ -59,6 +61,25 @@ class CssNumberTest(unittest.TestCase):
                 after = BUILDER.css_number(value)
                 self.assertEqual(Decimal(before), Decimal(after))
                 self.assertLessEqual(len(after), len(before))
+
+    def test_legacy_mode_reproduces_previous_formatter(self) -> None:
+        environment = os.environ.copy()
+        environment["GPT2_CSS_NUMBER_FORMAT"] = "legacy"
+        command = (
+            "import importlib.util, pathlib; "
+            f"p=pathlib.Path({str(MODULE_PATH)!r}); "
+            "s=importlib.util.spec_from_file_location('legacy_builder',p); "
+            "m=importlib.util.module_from_spec(s); s.loader.exec_module(m); "
+            "print(m.css_number(0.000001)); print(m.css_number(-0.5))"
+        )
+        result = subprocess.run(
+            [sys.executable, "-c", command],
+            check=True,
+            capture_output=True,
+            text=True,
+            env=environment,
+        )
+        self.assertEqual(result.stdout.splitlines(), ["0.000001", "-0.5"])
 
 
 if __name__ == "__main__":
