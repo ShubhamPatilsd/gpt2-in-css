@@ -90,7 +90,11 @@ def decoder_css() -> list[str]:
             f"--token-bucket:round(down,calc(var(--token-id)/{DECODE_BUCKET_SIZE}),1);"
             f"--token-piece:if({outer_cases};else:\"\");"
             "}",
-            ".token-output::after{content:var(--token-piece);}",
+            ".candidate-token{"
+            f"--token-bucket:round(down,calc(var(--token-id)/{DECODE_BUCKET_SIZE}),1);"
+            f"--token-piece:if({outer_cases};else:\"\");"
+            "}",
+            ".token-output::after,.candidate-token::after{content:var(--token-piece);}",
         ]
     )
     return functions
@@ -122,7 +126,15 @@ def runtime_css() -> str:
     ) + "\n"
 
 
-def streaming_css() -> str:
+def streaming_css(*, include_winner_gate: bool = True) -> str:
+    winner_gate = (
+        "@container style(--winner-id){"
+        ".streaming-page .handoff{animation:ts-open-gate "
+        f"{STREAM_GATE_MILLISECONDS}ms steps(1,end) both}}"
+        "}"
+        if include_winner_gate
+        else ""
+    )
     return f"""@property --gate-open{{syntax:\"<integer>\";inherits:false;initial-value:0}}
 @keyframes ts-open-gate{{to{{--gate-open:1;display:inline}}}}
 .streaming-page .handoff{{
@@ -132,9 +144,7 @@ def streaming_css() -> str:
   contain-intrinsic-size:auto 1lh;
 }}
 .streaming-page .story{{white-space:pre-wrap}}
-@container style(--winner-id){{
-  .streaming-page .handoff{{animation:ts-open-gate {STREAM_GATE_MILLISECONDS}ms steps(1,end) both}}
-}}
+{winner_gate}
 #pause-generation:checked ~ .story .handoff{{animation-play-state:paused}}
 .generation-controls{{display:flex;align-items:center;gap:.75rem;margin:1.5rem 0}}
 #pause-generation,#show-token-ids{{position:absolute;inline-size:1px;block-size:1px;opacity:0}}
