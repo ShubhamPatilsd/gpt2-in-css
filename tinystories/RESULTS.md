@@ -186,13 +186,20 @@ lookup for prompt embeddings, whereas the fixed page begins from a build-time
 exact prompt cache. The dynamic page therefore demonstrates genuine custom
 prompt inference but is not bit-identical to the checkpoint.
 
-Its complete row-int10 bundle is 131,067,958 bytes raw and 17,542,662 bytes
+Its complete row-int10 bundle is 131,313,662 bytes raw and 17,550,232 bytes
 under Brotli 9. The fixed row-int10 page is 126,338,257 raw / 16,441,633
 Brotli bytes, so editable tokenization and zero-state prompt ingestion add
-about 1.10 MB to compressed transfer. The prompt is currently limited to four
+about 1.11 MB to compressed transfer. The prompt is currently limited to four
 printable-ASCII BPE tokens. Generation is limited to 32 outputs because CSS
 cannot create additional DOM nodes at runtime; a larger predeclared ceiling is
 possible, but truly unbounded HTML/CSS-only generation is not.
+
+Startup is paused before the first handoff. An earlier build nested block
+handoffs inside a paragraph, so HTML error recovery moved them outside the
+pause selector and all stages ran during load. It also gave the four tokenizer
+wrappers the generic `.model` class, making each wrapper match the transformer
+runtime. Valid span handoffs and tokenizer-specific wrappers remove both
+sources of accidental startup work.
 
 The recurrent graph has an eight-token sliding window and stores the key and
 value vectors for every layer. It computes only the newest token's transformer

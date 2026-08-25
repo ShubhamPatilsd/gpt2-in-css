@@ -6,6 +6,8 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+import numpy as np
+
 import build_output_head_benchmark as HEAD
 from build_tinystories_nested import decoder_css, runtime_css, state_pairs, streaming_css
 from build_tinystories_recurrent import LAYERS, WIDTH, compile_recurrent_graph
@@ -70,7 +72,7 @@ def cluster_lookup_css(labels: list[int]) -> str:
     functions.extend(
         [
             '@property --prompt-id-bucket{syntax:"<integer>";inherits:false;initial-value:0}',
-            '.model.prompt-embedding{'
+            '.prompt-embedding{'
             '--prompt-id-bucket:round(down,calc(var(--winner-id)/256),1);'
             f'--winner-cluster:if({outer};else:0);'
             '}',
@@ -79,7 +81,15 @@ def cluster_lookup_css(labels: list[int]) -> str:
     return "\n".join(functions)
 
 
-def tokenizer_css(labels: list[int]) -> str:
+def tokenizer_css(labels: list[int], embeddings: np.ndarray) -> str:
+    feedback_bits = 8
+    feedback_base = 2**feedback_bits
+    feedback_offset = 2 ** (feedback_bits - 1) - 1
+    coordinates_per_pack = 3
+    feedback_packs = (
+        embeddings.shape[1] + coordinates_per_pack - 1
+    ) // coordinates_per_pack
+    feedback_scales = np.max(np.abs(embeddings), axis=0) / feedback_offset
     lines = [
         cluster_lookup_css(labels),
         '@font-face{font-family:gpt2-token-id-0;src:url("gpt2-token-id-0-full.ttf?v=2") format("truetype")}',
@@ -110,9 +120,35 @@ def tokenizer_css(labels: list[int]) -> str:
             '.token-probe{position:absolute;inset:0 auto auto 0;height:1px}',
             '.token-part-0{font-family:gpt2-token-id-0}',
             '.token-part-1{font-family:gpt2-token-id-1}',
-            '.model.prompt-embedding{display:contents}',
+            '.prompt-embedding{display:contents}',
         ]
     )
+    for pack in range(feedback_packs):
+        lines.append(
+            f'@property --prompt-feedback-pack-{pack}'
+            '{syntax:"<number>";inherits:false;initial-value:0}'
+        )
+        cases = ";".join(
+            f"style(--winner-cluster:{cluster}):--pe{cluster}x{pack}()"
+            for cluster in range(256)
+        )
+        lines.append(
+            f'.prompt-embedding{{--prompt-feedback-pack-{pack}:'
+            f'if({cases};else:0)}}'
+        )
+    feedback_expressions = []
+    for dimension in range(WIDTH):
+        pack = dimension // coordinates_per_pack
+        offset = dimension % coordinates_per_pack
+        divisor = feedback_base**offset
+        code = (
+            f"mod(round(down,calc(var(--prompt-feedback-pack-{pack})/"
+            f"{divisor}),1),{feedback_base})"
+        )
+        scale = HEAD.BUILDER.css_number(float(feedback_scales[dimension]))
+        feedback_expressions.append(
+            f"calc(({code} - {feedback_offset})*{scale})"
+        )
     for slot in range(MAX_PROMPT_TOKENS):
         lines.extend(
             [
@@ -140,10 +176,11 @@ def tokenizer_css(labels: list[int]) -> str:
                 f'.prompt-embedding.slot-{slot}{{--prompt-token-id-{slot}:'
                 f'calc(var(--prompt-token-low-{slot}) + {TOKEN_ID_BASE}*'
                 f'var(--prompt-token-high-{slot}))}}',
-                f'.model.prompt-embedding.slot-{slot}'
+                f'.prompt-embedding.slot-{slot}'
                 f'{{--winner-id:var(--prompt-token-id-{slot});'
                 + "".join(
-                    f'--prompt-token-{slot}-{dimension}:var(--next{dimension});'
+                    f'--prompt-token-{slot}-{dimension}:'
+                    f'{feedback_expressions[dimension]};'
                     for dimension in range(WIDTH)
                 )
                 + '}',
@@ -206,7 +243,7 @@ def stage_css() -> str:
 def model_stages(stage: int = 0) -> str:
     child = model_stages(stage + 1) if stage + 1 < TOTAL_STAGES else ""
     handoff = (
-        f'<div class="handoff to-stage-{stage + 1}">{child}</div>'
+        f'<span class="handoff to-stage-{stage + 1}">{child}</span>'
         if child
         else ""
     )
@@ -229,7 +266,7 @@ def app_html() -> str:
     <label for="show-token-ids">Show token IDs</label>
   </div>
   <input id="show-token-ids" type="checkbox">
-  <p class="story"><span class="prompt-text"></span>{model_stages()}</p>
+  <div class="story"><span class="prompt-text"></span>{model_stages()}</div>
   <p class="limits">The tokenizer and all {GENERATED_TOKENS} sequential next-token steps run in HTML/CSS. Reset by reloading after changing an already-generated prompt.</p>
 </main>'''
 
@@ -243,7 +280,7 @@ def tokenizer_chain(slot: int = 0) -> str:
         f'<i class="token-metric token-position-{slot} token-part-1" aria-hidden="true"></i>'
         f'<div class="token-probe token-probe-{slot}-1">'
         f'<div class="token-high-bridge-{slot}">'
-        f'<div class="model prompt-embedding slot-{slot}">{child}</div>'
+        f'<div class="prompt-embedding slot-{slot}">{child}</div>'
         f'</div></div></div></div>'
     )
 
@@ -259,7 +296,7 @@ def page() -> str:
   <link rel="stylesheet" href="dynamic-recurrent.css?v=ts-dynamic-2">
   <link rel="stylesheet" href="nested-runtime.css?v=ts-dynamic-2">
   <link rel="stylesheet" href="streaming.css?v=ts-dynamic-2">
-  <link rel="stylesheet" href="dynamic-prompt.css?v=ts-dynamic-2">
+  <link rel="stylesheet" href="dynamic-prompt.css?v=ts-dynamic-3">
 </head>
 <body class="prompt-source streaming-page">
   {tokenizer_chain()}
@@ -291,7 +328,10 @@ def main() -> None:
     (OUT / "dynamic-recurrent.css").write_text(recurrent)
     (OUT / "nested-runtime.css").write_text(runtime_css())
     (OUT / "streaming.css").write_text(streaming_css())
-    (OUT / "dynamic-prompt.css").write_text(tokenizer_css(labels) + stage_css())
+    (OUT / "dynamic-prompt.css").write_text(
+        tokenizer_css(labels, state["transformer.wte.weight"].astype(np.float64))
+        + stage_css()
+    )
     (OUT / "dynamic.html").write_text(page())
     print(
         {

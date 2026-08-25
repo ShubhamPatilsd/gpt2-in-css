@@ -257,12 +257,18 @@ the sequence diverged because this path quantizes the prompt embeddings with
 the existing 8-bit feedback table. It is real inference over an approximate
 post-training representation, not a bit-identical checkpoint run.
 
-The complete dynamic page is 131,067,958 raw bytes and 17,542,662 bytes with
+The complete dynamic page is 131,313,662 raw bytes and 17,550,232 bytes with
 Brotli level 9. A CSS-only document cannot append new model elements, so the
 stream is necessarily finite: this build predeclares 35 transformer stages,
 which cover up to four prompt tokens followed by exactly 32 generated tokens.
 Raising that ceiling is a build-time constant, but runtime memory and computed
 style state grow with the number of predeclared stages.
+
+The initial page is genuinely paused. Its handoff elements use valid phrasing
+markup so the browser does not relocate them outside the pause selector, and
+the four prompt-tokenizer wrappers do not carry the generic `.model` class.
+That prevents startup from evaluating all 35 generation stages plus four
+redundant transformer matches before painting the controls.
 
 Greedy generation remains the reference mode. Chromium 151 does not implement
 the draft CSS `random()` function (`tinystories/css-random-test.html` reports
