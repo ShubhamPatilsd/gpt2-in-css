@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS-only typed GPT-2 prompt</title>
+  <link rel="stylesheet" href="../pretrained/recurrent.css">
+  <link rel="stylesheet" href="../pretrained/benchmark.css">
+  <style>
+    @font-face { font-family: gpt2-e0; src: url("gpt2-embedding-0-full.ttf?v=1"); }
+    @font-face { font-family: gpt2-e1; src: url("gpt2-embedding-1-full.ttf?v=1"); }
+
+    html { font: 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    body { width: min(48rem, calc(100% - 2rem)); margin: 1rem; }
+    h1 { font-size: 1rem; margin: 0 0 .5rem; }
+    p { margin: .5rem 0; }
+    .note { color: #555; font-size: 12px; }
+
+    style.editor {
+      display: block;
+      margin: .5rem 0;
+      padding: .65rem;
+      overflow: auto;
+      border: 1px solid #999;
+      background: #fafafa;
+      color: #000;
+      caret-color: #000;
+      outline: 0;
+      white-space: pre;
+    }
+    style.editor:focus { border-color: #000; box-shadow: 0 0 0 1px #000; }
+    .readout::after { content: var(--prompt); }
+
+    .metric {
+      position: absolute;
+      opacity: 0;
+      display: inline-block;
+      width: max-content;
+      height: 1px;
+      overflow: hidden;
+      font-size: 1px;
+      white-space: pre;
+    }
+    .metric::before { content: var(--prompt); }
+    .d0 { font-family: gpt2-e0; }
+    .d1 { font-family: gpt2-e1; }
+    .p0 { font-feature-settings: "p000" 1; }
+    .p1 { font-feature-settings: "p001" 1; }
+    .p2 { font-feature-settings: "p002" 1; }
+    .p3 { font-feature-settings: "p003" 1; }
+    .m-p0-d0 { anchor-name: --m-p0-d0; } .m-p0-d1 { anchor-name: --m-p0-d1; }
+    .m-p1-d0 { anchor-name: --m-p1-d0; } .m-p1-d1 { anchor-name: --m-p1-d1; }
+    .m-p2-d0 { anchor-name: --m-p2-d0; } .m-p2-d1 { anchor-name: --m-p2-d1; }
+    .m-p3-d0 { anchor-name: --m-p3-d0; } .m-p3-d1 { anchor-name: --m-p3-d1; }
+
+    .tokenizer-host { position: relative; min-height: 9rem; margin-top: 1rem; --initial-count: 0; }
+    .probe { position: absolute; inset: 0 auto auto 0; height: 1px; }
+    .q-p0-d0 { position-anchor: --m-p0-d0; container: p0d0 / inline-size; width: anchor-size(--m-p0-d0 width); }
+    .q-p0-d1 { position-anchor: --m-p0-d1; container: p0d1 / inline-size; width: anchor-size(--m-p0-d1 width); }
+    .q-p1-d0 { position-anchor: --m-p1-d0; container: p1d0 / inline-size; width: anchor-size(--m-p1-d0 width); }
+    .q-p1-d1 { position-anchor: --m-p1-d1; container: p1d1 / inline-size; width: anchor-size(--m-p1-d1 width); }
+    .q-p2-d0 { position-anchor: --m-p2-d0; container: p2d0 / inline-size; width: anchor-size(--m-p2-d0 width); }
+    .q-p2-d1 { position-anchor: --m-p2-d1; container: p2d1 / inline-size; width: anchor-size(--m-p2-d1 width); }
+    .q-p3-d0 { position-anchor: --m-p3-d0; container: p3d0 / inline-size; width: anchor-size(--m-p3-d0 width); }
+    .q-p3-d1 { position-anchor: --m-p3-d1; container: p3d1 / inline-size; width: anchor-size(--m-p3-d1 width); }
+    .model-stage { width: min(46rem, calc(100vw - 2rem)); }
+
+    @property --typed-token-0-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+    @property --typed-token-0-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+    @property --typed-token-1-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+    @property --typed-token-1-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+    @property --typed-token-2-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+    @property --typed-token-2-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+    @property --typed-token-3-0 { syntax: "<number>"; inherits: true; initial-value: 0; }
+    @property --typed-token-3-1 { syntax: "<number>"; inherits: true; initial-value: 0; }
+    .model-stage {
+      --interactive-token-0-0: var(--typed-token-0-0); --interactive-token-0-1: var(--typed-token-0-1);
+      --interactive-token-1-0: var(--typed-token-1-0); --interactive-token-1-1: var(--typed-token-1-1);
+      --interactive-token-2-0: var(--typed-token-2-0); --interactive-token-2-1: var(--typed-token-2-1);
+      --interactive-token-3-0: var(--typed-token-3-0); --interactive-token-3-1: var(--typed-token-3-1);
+    }
+
+    /* advance = round((embedding + .1) * 160000) + 1; 1px text = advance / 64px */
+    @container p0d0 (width > 0px) { .q-p0-d1 { --typed-token-0-0: calc((100cqi / 1px * 64 - 1) / 160000 - .1); --initial-count: 1; } }
+    @container p0d1 (width > 0px) { .q-p1-d0 { --typed-token-0-1: calc((100cqi / 1px * 64 - 1) / 160000 - .1); } }
+    @container p1d0 (width > 0px) { .q-p1-d1 { --typed-token-1-0: calc((100cqi / 1px * 64 - 1) / 160000 - .1); --initial-count: 2; } }
+    @container p1d1 (width > 0px) { .q-p2-d0 { --typed-token-1-1: calc((100cqi / 1px * 64 - 1) / 160000 - .1); } }
+    @container p2d0 (width > 0px) { .q-p2-d1 { --typed-token-2-0: calc((100cqi / 1px * 64 - 1) / 160000 - .1); --initial-count: 3; } }
+    @container p2d1 (width > 0px) { .q-p3-d0 { --typed-token-2-1: calc((100cqi / 1px * 64 - 1) / 160000 - .1); } }
+    @container p3d0 (width > 0px) { .q-p3-d1 { --typed-token-3-0: calc((100cqi / 1px * 64 - 1) / 160000 - .1); --initial-count: 4; } }
+    @container p3d1 (width > 0px) { .model-stage { --typed-token-3-1: calc((100cqi / 1px * 64 - 1) / 160000 - .1); } }
+  </style>
+</head>
+<body class="prompt-source">
+  <h1>typed GPT-2 prompt</h1>
+  <p class="note">CSS only · edit the quoted text · first four BPE tokens enter the existing recurrent model</p>
+  <style class="editor" contenteditable="plaintext-only" spellcheck="false">.prompt-source { --prompt: "Hello world!"; }</style>
+  <p class="readout">prompt: </p>
+
+  <div class="tokenizer-host">
+    <i class="metric d0 p0 m-p0-d0" aria-hidden="true"></i>
+    <div class="probe q-p0-d0">
+      <i class="metric d1 p0 m-p0-d1" aria-hidden="true"></i><div class="probe q-p0-d1">
+      <i class="metric d0 p1 m-p1-d0" aria-hidden="true"></i><div class="probe q-p1-d0">
+      <i class="metric d1 p1 m-p1-d1" aria-hidden="true"></i><div class="probe q-p1-d1">
+      <i class="metric d0 p2 m-p2-d0" aria-hidden="true"></i><div class="probe q-p2-d0">
+      <i class="metric d1 p2 m-p2-d1" aria-hidden="true"></i><div class="probe q-p2-d1">
+      <i class="metric d0 p3 m-p3-d0" aria-hidden="true"></i><div class="probe q-p3-d0">
+      <i class="metric d1 p3 m-p3-d1" aria-hidden="true"></i><div class="probe q-p3-d1">
+        <div class="model-stage">
+          <input class="stream-toggle" type="checkbox" id="stream-toggle">
+          <label class="stream-button" for="stream-toggle"><span class="start-copy">start / resume generation</span><span class="reset-copy">pause generation</span></label>
+          <a class="reset-link" href="">reset</a>
+          <div class="clock"><section class="model"><p class="completion">completion: <output class="screen"></output></p></section></div>
+        </div>
+      </div></div></div></div></div></div></div></div>
+  </div>
+
+  <p class="note">The tokenizer font contains GPT-2's complete 50,000 ranked merge table. This prototype currently accepts printable ASCII input.</p>
+</body>
+</html>
