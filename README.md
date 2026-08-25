@@ -257,7 +257,7 @@ the sequence diverged because this path quantizes the prompt embeddings with
 the existing 8-bit feedback table. It is real inference over an approximate
 post-training representation, not a bit-identical checkpoint run.
 
-The complete dynamic page is 131,316,739 raw bytes and 17,550,749 bytes with
+The complete dynamic page is 131,317,997 raw bytes and 17,550,761 bytes with
 Brotli level 9. A CSS-only document cannot append new model elements, so the
 stream is necessarily finite: this build predeclares 35 transformer stages,
 which cover up to four prompt tokens followed by exactly 32 generated tokens.
@@ -276,6 +276,11 @@ Its handoff elements use valid phrasing markup so the browser does not relocate
 them outside the state selectors, and the four prompt-tokenizer wrappers do not
 carry the generic `.model` class. Those details prevent accidental transformer
 matches during startup and editing.
+
+Closed handoffs remain `inline-block` so `content-visibility` can skip their
+subtrees. Once a gate opens it switches to normal `inline` layout, allowing the
+prompt and generated pieces to form one sentence and wrap at ordinary word
+boundaries instead of moving the entire continuation onto a new line.
 
 Greedy generation remains the reference mode. Chromium 151 does not implement
 the draft CSS `random()` function (`tinystories/css-random-test.html` reports
