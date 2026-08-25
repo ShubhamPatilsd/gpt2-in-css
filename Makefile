@@ -1,4 +1,4 @@
-.PHONY: build transformer pretrained benchmark interactive analyze-full output-head-baselines output-head-search clustered-output-head hierarchical-output-head tinystories-step tinystories-recurrent tinystories-nested tinystories-all precompress-tinystories precompress-tinystories-experiments serve-tinystories test clean
+.PHONY: build transformer pretrained benchmark interactive analyze-full output-head-baselines output-head-search clustered-output-head hierarchical-output-head tinystories-step tinystories-recurrent tinystories-nested tinystories-tokenizer-font tinystories-dynamic tinystories-all precompress-tinystories precompress-tinystories-experiments serve-tinystories test clean
 
 build:
 	python3 tools/build.py
@@ -39,7 +39,13 @@ tinystories-recurrent:
 tinystories-nested:
 	python3 tools/build_tinystories_nested.py
 
-tinystories-all: clustered-output-head tinystories-step tinystories-recurrent tinystories-nested
+tinystories-tokenizer-font:
+	uv run --with fonttools --with numpy python tools/build_metric_tokenizer_font.py --full --token-ids --positions 4 --output tinystories
+
+tinystories-dynamic: clustered-output-head tinystories-tokenizer-font
+	python3 tools/build_tinystories_dynamic.py
+
+tinystories-all: clustered-output-head tinystories-step tinystories-recurrent tinystories-nested tinystories-dynamic
 
 precompress-tinystories:
 	python3 tools/precompress_tinystories.py
@@ -54,6 +60,7 @@ test:
 	python3 tools/test_css_number.py
 	python3 tools/test_precompressed_server.py
 	python3 tools/analyze_row_score_quantization.py --bits 10 --require-exact
+	uv run --with fonttools --with numpy python tools/test_token_id_font.py
 
 clean:
-	rm -f index.html model.css transformer/index.html transformer/model.css pretrained/index.html pretrained/benchmark.html pretrained/model.css pretrained/autoregressive.css pretrained/interactive.html pretrained/interactive-2.html pretrained/interactive-3.html pretrained/interactive-4.html pretrained/recurrent.css pretrained/prompt-position-0.css pretrained/prompt-position-1.css pretrained/prompt-position-2.css pretrained/prompt-position-3.css tinystories/step.css tinystories/recurrent.css tinystories/nested-runtime.css tinystories/streaming.css
+	rm -f index.html model.css transformer/index.html transformer/model.css pretrained/index.html pretrained/benchmark.html pretrained/model.css pretrained/autoregressive.css pretrained/interactive.html pretrained/interactive-2.html pretrained/interactive-3.html pretrained/interactive-4.html pretrained/recurrent.css pretrained/prompt-position-0.css pretrained/prompt-position-1.css pretrained/prompt-position-2.css pretrained/prompt-position-3.css tinystories/step.css tinystories/recurrent.css tinystories/dynamic-recurrent.css tinystories/dynamic-prompt.css tinystories/dynamic.html tinystories/nested-runtime.css tinystories/streaming.css tinystories/gpt2-token-id-0-full.ttf tinystories/gpt2-token-id-1-full.ttf

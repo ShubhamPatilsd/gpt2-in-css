@@ -216,6 +216,26 @@ exhausted. A post-training row-wise integer experiment is more effective:
 The 10-bit result needs a much broader quality evaluation before adoption. It
 does not require fine-tuning, but it is still an approximate checkpoint.
 
+### Dynamic prompt transport
+
+The font tokenizer is integrated into `tinystories/dynamic.html` without
+adding 64 coordinate fonts or a second full embedding table. One token-ID
+advance overflowed above 32,767 in HarfBuzz, so two fonts encode the ID as
+base-32,767 digits. Container queries recover the two digits, and a 1.51 MB
+token-to-cluster map routes the ID through the output head's existing packed
+embedding functions.
+
+The full dynamic page is 131,067,958 raw / 17,542,662 Brotli bytes, only about
+1.10 MB more compressed than the fixed row-int10 page. The cost is numerical:
+the existing feedback table stores embeddings at 8 bits per coordinate. The
+default prompt's first nine decisions matched the fixed reference, then it
+diverged. The next targeted experiment is a 10- or 12-bit prompt-only feedback
+table, measured against the 8-bit path for bundle size, prompt fidelity,
+renderer memory, and tokens per second. After that, increasing the predeclared
+stage ceiling from 32 to 64 is meaningful only if renderer memory remains
+stable; CSS cannot make the sequence truly unbounded because it cannot append
+new stage elements.
+
 For a larger architectural reduction without removing vocabulary entries,
 train a checkpoint with a factorized vocabulary embedding: project the
 64-number hidden state into an 8- or 16-number token space before the 50,257

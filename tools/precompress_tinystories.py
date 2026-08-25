@@ -38,6 +38,11 @@ EXPERIMENT_ASSETS = [
     ROOT / "tinystories" / "streaming-packed8-score-token.html",
     ROOT / "tinystories" / "streaming-packed8-row-int8.html",
     ROOT / "tinystories" / "streaming-packed8-row-int10.html",
+    ROOT / "tinystories" / "dynamic-recurrent.css",
+    ROOT / "tinystories" / "dynamic-prompt.css",
+    ROOT / "tinystories" / "dynamic.html",
+    ROOT / "tinystories" / "gpt2-token-id-0-full.ttf",
+    ROOT / "tinystories" / "gpt2-token-id-1-full.ttf",
 ]
 
 
@@ -69,7 +74,7 @@ def main() -> None:
     parser.add_argument(
         "--experiments",
         action="store_true",
-        help="also precompress score/token and row-quantized candidates",
+        help="also precompress score/token, row-quantized, and dynamic pages",
     )
     arguments = parser.parse_args()
     assets = ASSETS + EXPERIMENT_ASSETS if arguments.experiments else ASSETS

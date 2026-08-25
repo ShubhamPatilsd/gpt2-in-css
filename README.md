@@ -230,6 +230,40 @@ Three additional output-head candidates remain opt-in:
 Run `python3 tools/analyze_row_score_quantization.py --bits 10` to repeat the
 expanded prompt check. None of these pages contains JavaScript.
 
+### Editable prompt experiment
+
+`tinystories/dynamic.html` connects the OpenType tokenizer experiment to the
+width-64 TinyStories circuit. The editable `<style>` element supplies normal
+text. Two generated fonts apply GPT-2's ranked BPE substitutions and expose
+each resulting token ID as two safe glyph-width digits. CSS then reuses the
+output head's existing packed token-to-embedding lookup and feeds the first
+four BPE tokens through a zero-state recurrent transformer before generating
+32 new tokens sequentially.
+
+Build and serve it with:
+
+```sh
+make tinystories-dynamic
+make precompress-tinystories-experiments
+python3 tools/serve_precompressed.py --port 4174
+```
+
+Then open `http://127.0.0.1:4174/tinystories/dynamic.html`. The page contains
+no script. Chromium recovered `Once upon a time` as token IDs
+`[7454, 2402, 257, 640]`; a second live edit recovered `The little girl` as
+`[464, 1310, 2576]` and generated ` named` next. The 32-token default run
+completed. Its first nine output IDs matched the fixed-prompt reference before
+the sequence diverged because this path quantizes the prompt embeddings with
+the existing 8-bit feedback table. It is real inference over an approximate
+post-training representation, not a bit-identical checkpoint run.
+
+The complete dynamic page is 131,067,958 raw bytes and 17,542,662 bytes with
+Brotli level 9. A CSS-only document cannot append new model elements, so the
+stream is necessarily finite: this build predeclares 35 transformer stages,
+which cover up to four prompt tokens followed by exactly 32 generated tokens.
+Raising that ceiling is a build-time constant, but runtime memory and computed
+style state grow with the number of predeclared stages.
+
 Greedy generation remains the reference mode. Chromium 151 does not implement
 the draft CSS `random()` function (`tinystories/css-random-test.html` reports
 `unsupported`), and full-vocabulary sampling would require substantially more

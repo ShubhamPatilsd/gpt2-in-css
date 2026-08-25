@@ -2,9 +2,10 @@
 """Build OpenType embedding fonts for CSS-only GPT-2 tokenization.
 
 The font applies the real GPT-2 BPE merges needed by the configured corpus,
-keeps one resulting token by position with contextual GSUB, and encodes one
-coordinate of that token's embedding as the only non-zero glyph advance. CSS
-recovers the coordinate from rendered width using 1px text at 64 units/em.
+keeps one resulting token by position with contextual GSUB, and encodes either
+one embedding coordinate or the token ID itself as the only non-zero glyph
+advance. CSS recovers the value from rendered width using 1px text at 64
+units/em.
 
 The default build is a small feasibility corpus; ``--full`` includes GPT-2's
 complete merge table and the token IDs accepted by the existing CSS demo.
@@ -31,6 +32,7 @@ DEFAULT_OUTPUT = ROOT / "experiments"
 UNITS_PER_EM = 64
 EMBEDDING_OFFSET = 0.1
 EMBEDDING_SCALE = 160_000
+TOKEN_ID_BASE = 32_767
 DEFAULT_CORPUS = (
     "Hello world!",
     "Hello",
@@ -104,9 +106,11 @@ def build_font(
     embeddings,
     corpus: tuple[str, ...],
     positions: int,
-    dimension: int,
+    dimension: int | None,
     destination: Path,
     full: bool = False,
+    token_ids: bool = False,
+    token_id_part: int = 0,
 ) -> None:
     if full:
         merges = sorted(
@@ -147,10 +151,18 @@ def build_font(
 
     widths = {name: 0 for name in glyph_order}
     for token_id in ordered_ids:
-        widths[glyph_name(token_id)] = round(
-            (float(embeddings[token_id, dimension]) + EMBEDDING_OFFSET)
-            * EMBEDDING_SCALE
-        ) + 1
+        if token_ids:
+            # HarfBuzz exposes advances above 32,767 as signed values. Two
+            # base-32,767 digits keep every measurement positive and exact.
+            digit = (token_id // (TOKEN_ID_BASE**token_id_part)) % TOKEN_ID_BASE
+            # The +1 keeps a zero digit distinguishable from a missing token.
+            widths[glyph_name(token_id)] = digit + 1
+        else:
+            assert dimension is not None
+            widths[glyph_name(token_id)] = round(
+                (float(embeddings[token_id, dimension]) + EMBEDDING_OFFSET)
+                * EMBEDDING_SCALE
+            ) + 1
 
     font = FontBuilder(UNITS_PER_EM, isTTF=True)
     font.setupGlyphOrder(glyph_order)
@@ -160,11 +172,27 @@ def build_font(
     font.setupHorizontalHeader(ascent=UNITS_PER_EM, descent=0)
     font.setupNameTable(
         {
-            "familyName": f"GPT2Embedding{dimension}",
+            "familyName": (
+                f"GPT2TokenID{token_id_part}"
+                if token_ids
+                else f"GPT2Embedding{dimension}"
+            ),
             "styleName": "Regular",
-            "uniqueFontIdentifier": f"gpt2-css-embedding-{dimension}",
-            "fullName": f"GPT2 Embedding Coordinate {dimension}",
-            "psName": f"GPT2Embedding{dimension}",
+            "uniqueFontIdentifier": (
+                f"gpt2-css-token-id-{token_id_part}"
+                if token_ids
+                else f"gpt2-css-embedding-{dimension}"
+            ),
+            "fullName": (
+                f"GPT2 Token ID part {token_id_part}"
+                if token_ids
+                else f"GPT2 Embedding Coordinate {dimension}"
+            ),
+            "psName": (
+                f"GPT2TokenID{token_id_part}"
+                if token_ids
+                else f"GPT2Embedding{dimension}"
+            ),
         }
     )
     font.setupOS2(
@@ -250,6 +278,18 @@ def main() -> None:
     parser.add_argument("--positions", type=int, default=4)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--full", action="store_true")
+    parser.add_argument(
+        "--token-ids",
+        action="store_true",
+        help="encode token_id + 1 instead of an embedding coordinate",
+    )
+    parser.add_argument(
+        "--token-id-part",
+        type=int,
+        choices=(0, 1),
+        action="append",
+        help="base-32767 token-ID digit to build; defaults to both digits",
+    )
     parser.add_argument("--dimension", type=int, choices=(0, 1), action="append")
     args = parser.parse_args()
 
@@ -257,9 +297,28 @@ def main() -> None:
         CHECKPOINT_DIR / "vocab.json", CHECKPOINT_DIR / "merges.txt"
     )
     suffix = ""
-    state = load_torch_legacy(CHECKPOINT_DIR / "pytorch_model.bin")
+    state = None
+    if not args.token_ids:
+        state = load_torch_legacy(CHECKPOINT_DIR / "pytorch_model.bin")
     if args.full:
         suffix = "-full"
+    if args.token_ids:
+        for part in args.token_id_part or range(2):
+            destination = args.output / f"gpt2-token-id-{part}{suffix}.ttf"
+            build_font(
+                tokenizer,
+                None,
+                DEFAULT_CORPUS,
+                args.positions,
+                None,
+                destination,
+                full=args.full,
+                token_ids=True,
+                token_id_part=part,
+            )
+            print(destination)
+        return
+    assert state is not None
     for dimension in args.dimension or range(2):
         destination = args.output / f"gpt2-embedding-{dimension}{suffix}.ttf"
         build_font(

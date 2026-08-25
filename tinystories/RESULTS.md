@@ -160,6 +160,40 @@ Greedy generation remains intentional. Chromium 151 reports the draft CSS
 find one maximum rather than construct a full sampling distribution. The
 zero-script probe is `css-random-test.html`.
 
+## Editable CSS-only prompt
+
+`dynamic.html` now joins the font tokenizer to the recurrent TinyStories
+graph. The runtime path is:
+
+```text
+editable CSS string
+  -> OpenType GPT-2 BPE substitutions
+  -> two glyph-width digits per token ID
+  -> existing packed token embedding lookup
+  -> zero-state recurrent transformer
+  -> 32 nested next-token stages
+```
+
+The browser recovered `Once upon a time` as `[7454, 2402, 257, 640]`. It also
+re-tokenized a live edit of `The little girl` as `[464, 1310, 2576]`; that
+prompt produced token `3706`, decoded as ` named`, as its first output. No
+script element is present.
+
+The default 32-token run produced all 32 visible pieces. Its first nine IDs
+matched the fixed-prompt reference, then the tenth chose `Lily` instead of
+`She`. The dynamic transport intentionally reuses the 8-bit packed feedback
+lookup for prompt embeddings, whereas the fixed page begins from a build-time
+exact prompt cache. The dynamic page therefore demonstrates genuine custom
+prompt inference but is not bit-identical to the checkpoint.
+
+Its complete row-int10 bundle is 131,067,958 bytes raw and 17,542,662 bytes
+under Brotli 9. The fixed row-int10 page is 126,338,257 raw / 16,441,633
+Brotli bytes, so editable tokenization and zero-state prompt ingestion add
+about 1.10 MB to compressed transfer. The prompt is currently limited to four
+printable-ASCII BPE tokens. Generation is limited to 32 outputs because CSS
+cannot create additional DOM nodes at runtime; a larger predeclared ceiling is
+possible, but truly unbounded HTML/CSS-only generation is not.
+
 The recurrent graph has an eight-token sliding window and stores the key and
 value vectors for every layer. It computes only the newest token's transformer
 path, then shifts the fixed-size cache. This replaces the earlier design that

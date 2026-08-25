@@ -135,12 +135,15 @@ def active_source(
 
 
 def compile_recurrent_graph(
-    state: dict[str, np.ndarray], initial: dict[str, object]
+    state: dict[str, np.ndarray],
+    initial: dict[str, object],
+    generations: int = GENERATIONS,
+    track_outputs: bool = True,
 ) -> tuple[str, dict[str, object]]:
     compiler = CssCompiler()
     positions = state["transformer.wpe.weight"]
     position_count = min(
-        len(positions), len(initial["tokens"]) + GENERATIONS
+        len(positions), len(initial["tokens"]) + generations
     )
     position_values = []
     for dimension in range(WIDTH):
@@ -324,7 +327,7 @@ def compile_recurrent_graph(
     )
     next_step = compiler.raw(
         "ts-next-step",
-        f"min({GENERATIONS},calc(var(--ts-step) + 1))",
+        f"min({generations},calc(var(--ts-step) + 1))",
     )
     next_cache: dict[tuple[str, int, int, int], str] = {}
     for kind, current_vectors in (("k", current_keys), ("v", current_values)):
@@ -352,7 +355,7 @@ def compile_recurrent_graph(
                     )
 
     next_outputs = []
-    for output in range(GENERATIONS):
+    for output in range(generations if track_outputs else 0):
         next_outputs.append(
             compiler.raw(
                 f"ts-next-output-{output}",
@@ -361,14 +364,14 @@ def compile_recurrent_graph(
             )
         )
 
+    dynamic_prompt = not initial["tokens"]
     initial_keys = initial["keys"]
     initial_values = initial["values"]
-    initial_token = initial["tokens"][-1]
-    embedding = state["transformer.wte.weight"][initial_token]
-    initial_length = len(initial["tokens"]) - 1
+    initial_length = 0 if dynamic_prompt else len(initial["tokens"]) - 1
+    initial_position = 0 if dynamic_prompt else initial_length
     bank_lines = [
         f"--__1length:var(--__2length,{initial_length});",
-        f"--__1position:var(--__2position,{initial_length});",
+        f"--__1position:var(--__2position,{initial_position});",
         "--__1step:var(--__2step,0);",
     ]
     interface_lines = [
@@ -379,16 +382,20 @@ def compile_recurrent_graph(
     ]
     execute_lines = [
         f"--__0length:if(style(--generation:0):{initial_length};else:{next_length});",
-        f"--__0position:if(style(--generation:0):{initial_length};else:{next_position});",
+        f"--__0position:if(style(--generation:0):{initial_position};else:{next_position});",
         f"--__0step:if(style(--generation:0):0;else:{next_step});",
     ]
     store_lines = [
         f"--__2length:var(--__0length,{initial_length});",
-        f"--__2position:var(--__0position,{initial_length});",
+        f"--__2position:var(--__0position,{initial_position});",
         "--__2step:var(--__0step,0);",
     ]
     for dimension in range(WIDTH):
-        fallback = number(embedding[dimension])
+        fallback = (
+            f"var(--prompt-token-0-{dimension},0)"
+            if dynamic_prompt
+            else number(state["transformer.wte.weight"][initial["tokens"][-1], dimension])
+        )
         bank_lines.append(
             f"--__1embedding-{dimension}:"
             f"var(--__2embedding-{dimension},{fallback});"
@@ -401,7 +408,7 @@ def compile_recurrent_graph(
             f"--__2embedding-{dimension}:"
             f"var(--__0embedding-{dimension},{fallback});"
         )
-    for output in range(GENERATIONS):
+    for output in range(generations if track_outputs else 0):
         bank_lines.append(f"--__1output-{output}:var(--__2output-{output},-1);")
         interface_lines.append(
             f"--visible-output-{output}:var(--__1output-{output});"
@@ -451,7 +458,7 @@ def compile_recurrent_graph(
     registrations.extend(
         f'@property --visible-output-{output}'
         '{syntax:"<integer>";inherits:false;initial-value:-1}'
-        for output in range(GENERATIONS)
+        for output in range(generations if track_outputs else 0)
     )
     skip_names = {"ts-length", "ts-position", "ts-step"}
     registrations.extend(
@@ -494,7 +501,7 @@ def compile_recurrent_graph(
         ".clock{--clock:0;--generation:0}",
         "#stream-toggle:checked~.clock{"
         f"animation:ts-clock {CLOCK_MILLISECONDS}ms steps(4,jump-end) infinite,"
-        f"ts-generation {(GENERATIONS + 1) * CLOCK_MILLISECONDS}ms linear 1 both}}",
+        f"ts-generation {(generations + 1) * CLOCK_MILLISECONDS}ms linear 1 both}}",
         f".model{{animation:{animation_values};animation-play-state:"
         + ",".join(paused_store + paused_execute)
         + "}",
@@ -508,13 +515,13 @@ def compile_recurrent_graph(
         "50%{--clock:2}75%{--clock:3}}",
     ]
     generation_frames = []
-    for generation in range(GENERATIONS + 1):
-        start = generation * 100 / (GENERATIONS + 1)
-        end = (generation + 1) * 100 / (GENERATIONS + 1) - 0.001
+    for generation in range(generations + 1):
+        start = generation * 100 / (generations + 1)
+        end = (generation + 1) * 100 / (generations + 1) - 0.001
         generation_frames.append(
             f"{start:.3f}%,{end:.3f}%{{--generation:{generation}}}"
         )
-    generation_frames.append(f"100%{{--generation:{GENERATIONS}}}")
+    generation_frames.append(f"100%{{--generation:{generations}}}")
     runtime.append("@keyframes ts-generation{" + "".join(generation_frames) + "}")
     runtime.extend(
         f"@keyframes {name}{{0%,100%{{{''.join(lines)}}}}}"
@@ -528,7 +535,7 @@ def compile_recurrent_graph(
     metadata = {
         "window": WINDOW,
         "cache_capacity": CACHE_CAPACITY,
-        "generations": GENERATIONS,
+        "generations": generations,
         "clock_milliseconds": CLOCK_MILLISECONDS,
         "position_count": position_count,
         "context_policy": f"rolling {WINDOW}-token KV cache with absolute positions",

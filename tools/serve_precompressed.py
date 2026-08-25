@@ -62,7 +62,8 @@ class PrecompressedHandler(SimpleHTTPRequestHandler):
             self.send_header("Vary", "Accept-Encoding")
             cache_control = (
                 "public, max-age=31536000, immutable"
-                if original.suffix == ".css" and "?v=" in self.path
+                if original.suffix in {".css", ".ttf", ".woff2"}
+                and "?v=" in self.path
                 else "no-cache"
             )
             self.send_header("Cache-Control", cache_control)
