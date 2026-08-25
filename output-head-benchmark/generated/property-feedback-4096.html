@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>property-feedback · 4,096 TinyStories rows</title>
+  <link rel="stylesheet" href="property-feedback-4096.css?v=output-head-3">
+</head>
+<body>
+  <input type="radio" name="query" id="q0" checked><input type="radio" name="query" id="q1"><input type="radio" name="query" id="q2">
+  <main class="model"></main>
+  <pre id="results">running...</pre>
+
+  <script>
+    const scriptStartMilliseconds = performance.now();
+    const variant = "property-feedback";
+    const feedback = variant === 'property-feedback';
+    const rounds = 12;
+    const expectedWinners = [11, 373, 11];
+    const expectedMaximums = [18.300258562907317, 9.995125732813971, 15.475256029091952];
+    const expectedEmbeddings = [[-0.0320190005004406, 0.09869793802499771, 0.12244973331689835, 0.04773793742060661, -0.08663712441921234, -0.18692834675312042, -0.15218861401081085, 0.008436640724539757, 0.07381553202867508, -0.05690544843673706, -0.01282899733632803, -0.22065547108650208, 0.08332452178001404, 0.040199536830186844, -0.008218079805374146, -0.16789039969444275, -0.02270348370075226, -0.035666853189468384, 0.13665840029716492, 0.0007959796348586679, 0.27183303236961365, -0.1671704798936844, 0.08196666836738586, 0.18743102252483368, -0.06666277348995209, -0.0319145992398262, 0.06315813213586807, 0.03849806264042854, 0.11275544762611389, 0.02410031110048294, -0.17058655619621277, -0.0753462016582489, -0.12123023718595505, 0.09719573706388474, -0.04325135052204132, 0.05171409994363785, -0.030252836644649506, 0.09158791601657867, -0.2964448034763336, 0.1402767300605774, -0.03752681240439415, -0.03475469350814819, 0.12511153519153595, 0.05605901777744293, -0.02654303051531315, 0.15870428085327148, -0.2528565526008606, -0.15491823852062225, 0.03580093011260033, -0.03511474281549454, 0.006571333389729261, 0.29529881477355957, -0.14047671854496002, 0.090601846575737, 0.06442461907863617, -0.13458842039108276, -0.043527647852897644, 0.06273121386766434, -0.08181989192962646, -0.08663773536682129, -0.22831407189369202, -0.173440620303154, 0.05587520822882652, 0.29839184880256653], [-0.014470275491476059, 0.17226596176624298, 0.2735515832901001, 0.01442901324480772, 0.031154869124293327, -0.11637511849403381, -0.1680530160665512, -0.13775815069675446, 0.1194998174905777, 0.0404420904815197, -0.09503279626369476, 0.08238769322633743, 0.008459105156362057, 0.04959971830248833, 0.03711972013115883, -0.18422533571720123, -0.12120181322097778, 0.011965048499405384, 0.04697016626596451, -0.04831206053495407, 0.02459733933210373, -0.12118914723396301, 0.13157127797603607, 0.014499112963676453, -0.16513532400131226, 0.05511382967233658, 0.11843032389879227, 0.1777956485748291, -0.05852416157722473, -0.10725919157266617, -0.20984600484371185, 0.05468571186065674, 0.08512086421251297, -0.028509320691227913, -0.04245783016085625, -0.10340867936611176, -0.07551099359989166, 0.014111037366092205, -0.09033564478158951, 0.22504070401191711, -0.11220821738243103, 0.0008163664024323225, 0.03995317965745926, -0.03602113947272301, 0.1795998513698578, 0.11899399012327194, -0.18064358830451965, 0.10695944726467133, -0.06252783536911011, -0.12711572647094727, 0.09648801386356354, -0.05205673351883888, -0.09947998821735382, -0.1011277511715889, 0.06731235235929489, -0.15894715487957, 0.16581733524799347, -0.19294673204421997, -0.028880277648568153, 0.12154296040534973, -0.017929350957274437, -0.012016368098556995, 0.147746741771698, 0.09359455853700638], [-0.0320190005004406, 0.09869793802499771, 0.12244973331689835, 0.04773793742060661, -0.08663712441921234, -0.18692834675312042, -0.15218861401081085, 0.008436640724539757, 0.07381553202867508, -0.05690544843673706, -0.01282899733632803, -0.22065547108650208, 0.08332452178001404, 0.040199536830186844, -0.008218079805374146, -0.16789039969444275, -0.02270348370075226, -0.035666853189468384, 0.13665840029716492, 0.0007959796348586679, 0.27183303236961365, -0.1671704798936844, 0.08196666836738586, 0.18743102252483368, -0.06666277348995209, -0.0319145992398262, 0.06315813213586807, 0.03849806264042854, 0.11275544762611389, 0.02410031110048294, -0.17058655619621277, -0.0753462016582489, -0.12123023718595505, 0.09719573706388474, -0.04325135052204132, 0.05171409994363785, -0.030252836644649506, 0.09158791601657867, -0.2964448034763336, 0.1402767300605774, -0.03752681240439415, -0.03475469350814819, 0.12511153519153595, 0.05605901777744293, -0.02654303051531315, 0.15870428085327148, -0.2528565526008606, -0.15491823852062225, 0.03580093011260033, -0.03511474281549454, 0.006571333389729261, 0.29529881477355957, -0.14047671854496002, 0.090601846575737, 0.06442461907863617, -0.13458842039108276, -0.043527647852897644, 0.06273121386766434, -0.08181989192962646, -0.08663773536682129, -0.22831407189369202, -0.173440620303154, 0.05587520822882652, 0.29839184880256653]];
+    const benchmarkH0 = -8.476177221982871;
+    const layoutFloor = 0;
+    const inputs = [...document.querySelectorAll('input[name="query"]')];
+    const model = document.querySelector('.model');
+    const stage = document.querySelector('.stage');
+    const expectedElements = stage
+      ? expectedWinners.map(token => stage.querySelector(`[data-token="${token}"]`))
+      : [];
+
+    function infer(index, perturbation = null) {
+      const started = performance.now();
+      inputs[index].checked = true;
+      if (perturbation === null) {
+        model.style.removeProperty('--h0');
+      } else {
+        model.style.setProperty('--h0', String(benchmarkH0 + perturbation));
+      }
+
+        const styles = getComputedStyle(model);
+        const maximum = Number.parseFloat(styles.getPropertyValue('--maximum'));
+        const winnerId = Number.parseFloat(styles.getPropertyValue('--winner-id'));
+        const embedding = feedback
+          ? Array.from({length: 64}, (_, dimension) =>
+              Number.parseFloat(styles.getPropertyValue(`--next-${dimension}`)))
+          : [];
+        
+
+        const winnerCorrect = feedback ? winnerId === expectedWinners[index] : true;
+        const embeddingError = feedback
+          ? Math.max(...embedding.map((value, dimension) =>
+              Math.abs(value - expectedEmbeddings[index][dimension])))
+          : 0;
+        return { elapsed: performance.now() - started, maximum, winnerCorrect, embeddingError };
+        
+    }
+
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      let maximumError = 0;
+      let wrongWinners = 0;
+      let embeddingError = 0;
+      for (let query = 0; query < inputs.length; query += 1) {
+        const result = infer(query);
+        maximumError = Math.max(
+          maximumError,
+          Math.abs(result.maximum - expectedMaximums[query]),
+        );
+        wrongWinners += result.winnerCorrect ? 0 : 1;
+        embeddingError = Math.max(embeddingError, result.embeddingError);
+      }
+      infer(0, 0.000001);
+      infer(0, 0.000002);
+      const samples = [];
+      for (let iteration = 0; iteration < rounds; iteration += 1) {
+        const result = infer(0, (iteration + 10) * 0.000001);
+        samples.push(result.elapsed);
+      }
+      samples.sort((a, b) => a - b);
+      const navigation = performance.getEntriesByType('navigation')[0]?.toJSON();
+      const result = {
+        variant,
+        scale: 4096,
+        rounds,
+        meanMilliseconds: samples.reduce((sum, value) => sum + value, 0) / rounds,
+        medianMilliseconds: samples[Math.floor(samples.length / 2)],
+        p95Milliseconds: samples[Math.floor(samples.length * 0.95)],
+        maximumError,
+        wrongWinners,
+        embeddingError,
+        scriptStartMilliseconds,
+        navigation,
+      };
+      document.querySelector('#results').textContent = JSON.stringify(result, null, 2);
+      document.documentElement.dataset.benchmarkComplete = 'true';
+    }));
+  </script>
+</body>
+</html>
