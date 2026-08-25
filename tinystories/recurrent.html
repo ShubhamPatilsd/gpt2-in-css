@@ -14,7 +14,7 @@
   <script>
     const model = document.querySelector('.model');
     const toggle = document.querySelector('#stream-toggle');
-    const expected = [11, 612, 373, 257];
+    const expected = [11, 612, 373, 257, 1310, 2576, 3706, 20037, 13, 1375, 6151, 284, 711, 351, 607, 14958];
     const started = performance.now();
     const transitions = [];
     let previousStep = -1;
@@ -25,10 +25,10 @@
         transitions.push({step, milliseconds: performance.now() - started});
         previousStep = step;
       }
-      if (step >= 4) {
+      if (step >= 16) {
         toggle.checked = false;
         const outputs = Array.from(
-          {length: 4},
+          {length: 16},
           (_, index) => Number.parseFloat(
             styles.getPropertyValue(`--visible-output-${index}`)
           ),
@@ -39,8 +39,8 @@
           wrongTokens: outputs.filter((token, index) => token !== expected[index]).length,
           transitions,
           totalMilliseconds: performance.now() - started,
-          sourceBytes: 21433725,
-          properties: 28289,
+          sourceBytes: 21467029,
+          properties: 28301,
         };
         document.querySelector('#results').textContent = JSON.stringify(result, null, 2);
         document.documentElement.dataset.benchmarkComplete = 'true';

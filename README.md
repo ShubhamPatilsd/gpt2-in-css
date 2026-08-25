@@ -136,9 +136,9 @@ and implemented optimizations are recorded in
 ## TinyStories exact output head
 
 The full width-64, eight-layer TinyStories model now generates recurrently in
-CSS with a real KV cache and an exact 50,257-token output head. For `Once upon
-a time`, the CSS state machine produced the same four greedy tokens as NumPy:
-`, there was a`.
+CSS with a real rolling KV cache and an exact 50,257-token output head. The
+current zero-script page predeclares 16 output stages and renders `Once upon a
+time, there was a little girl named Lily. She loved to play with her toys`.
 
 The optimized static transformer-plus-head path takes 670–702 ms median. The
 complete recurrent run takes 42.69 seconds for four tokens because Chromium
@@ -159,28 +159,35 @@ python3 -m http.server 4173
 ```
 
 Open `http://localhost:4173/tinystories/nested.html`. It contains no
-`<script>` element and uses no animation clock. Four nested model elements
+`<script>` element and uses no animation clock. Sixteen nested model elements
 reuse the same CSS circuit; each child inherits the previous model element's
 winning embedding and KV cache. The normal parent-to-child CSS cascade enforces
 the evaluation order, so a slow calculation cannot corrupt the next state.
 An exact CSS decoder covering all 50,257 tokens renders the generated text as
-`Once upon a time, there was a`. Generated pieces reflect live computed CSS
-state, although the browser may batch several stages into one paint.
+`Once upon a time, there was a little girl named Lily. She loved to play with
+her toys`. Generated pieces reflect live computed CSS state, although the
+browser may batch several stages into one paint.
 
 For actual staged painting with a CSS-only Pause/Play control, open
 `http://localhost:4173/tinystories/streaming.html`. Later model subtrees use
 `content-visibility: hidden` until the previous computed winner starts their
-two-second CSS gate. This makes the tokens appear one stage at a time instead
-of masking an already-rendered completion. The control pauses the gate before
-the next stage; a currently-running style calculation can still block the UI.
-The optional “Show token IDs” control exposes the computed winners alongside
-their decoded text.
+one-millisecond CSS gate. The gate has zero delay; the 1 ms duration is the
+smallest practical animation tick that keeps stages in separate style passes.
+The page starts paused after preparing the first token. Press Play to run the
+remaining 15 stages as quickly as Chromium can evaluate and paint them. A
+currently-running style calculation can still block the UI. The optional
+“Show token IDs” control exposes the computed winners alongside their decoded
+text.
 
 `http://localhost:4173/tinystories/streaming-packed8.html` is the recommended
 compressed experiment. It quantizes only the embedding fed from one generated
 token into the next and packs three 8-bit coordinates into each 24-bit CSS
-number. It preserves all 50,257 output candidates and produced the same four
-browser winners. The complete page is 152,648,738 bytes raw and 35,147,978
-bytes with gzip, versus 236,991,550 raw for the uncompressed streaming page.
+number. It preserves all 50,257 output candidates. The expanded 16-token run
+matched all 16 rolling-window reference IDs. The complete page is 152,684,609
+bytes raw and 33,694,759 bytes with gzip level 9, versus 236,991,550 raw for
+the earlier four-token
+uncompressed streaming page.
 A clean renderer comparison measured about 1.66 GB RSS packed versus 2.32 GB
-unpacked.
+unpacked. Two full-paint measurements took 12.828 and 12.891 seconds for the
+15 tokens generated after Play: 1.17 visible tokens/second median. The first
+token is prepared while paused, and stylesheet loading is excluded.

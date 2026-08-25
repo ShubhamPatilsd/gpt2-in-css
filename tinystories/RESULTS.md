@@ -15,6 +15,7 @@ remains eligible to win.
 | Incremental transformer core | 18.0 MB | 281.5 ms median | max hidden error `0.0000799` |
 | Core + shared exact output head | 231.0 MB total | 670.4–702.2 ms median | 0 wrong winners |
 | Four-token recurrent generator | 234.5 MB total | 42.69 s total | 4/4 tokens correct |
+| 16-token packed nested stream | 152.7 MB total | 12.86 s for 15 post-Play tokens | 16/16 tokens correct |
 
 For the prompt `Once upon a time`, both the NumPy reference and the CSS
 generator produced token IDs `[11, 612, 373, 257]`, which decode to
@@ -34,13 +35,15 @@ The cascade itself is the sequencer:
 model 1 output -> inherited bridge -> model 2 input -> ...
 ```
 
-Two fresh Chromium loads both rendered token IDs `[11, 612, 373, 257]`.
+The expanded Chromium run rendered token IDs
+`[11, 612, 373, 257, 1310, 2576, 3706, 20037, 13, 1375, 6151, 284, 711, 351, 607, 14958]`.
 Because the page has no independent clock, slow evaluation delays rendering
 but cannot make a later stage read half-written state. The extra handoff CSS is
 2,525,724 bytes, including an exact CSS decoder for all 50,257 vocabulary
 entries; the 213 MB head and 21 MB transformer circuit are still stored only
 once. The page now renders the decoded completion directly as
-`Once upon a time, there was a` and still contains no script elements.
+`Once upon a time, there was a little girl named Lily. She loved to play with
+her toys` and still contains no script elements.
 
 Each token becomes visible through CSS `content` as soon as its stage's
 computed winner is available. Chromium is allowed to batch style and paint
@@ -50,14 +53,22 @@ and would reintroduce the unreliable clock this page was designed to remove.
 
 `streaming.html` adds an experimental staged mode without changing the model
 math. Each child handoff starts with `content-visibility: hidden`; a style
-query on the parent's computed winner activates a two-second registered custom
-property animation, which then makes that child visible and eligible for style
-work. A visual Chromium run showed `,`, then ` there`, then ` was`, then ` a`
-on separate paints. Pausing the CSS animation after the comma kept every later
-stage hidden for more than three seconds; resuming opened the next stage. The
-page still reported zero script elements. This is real stage gating, but the
-control cannot interrupt a style calculation already executing on the browser
-main thread.
+query on the parent's computed winner activates a one-millisecond registered
+custom-property animation, which then makes that child visible and eligible
+for style work. There is no animation delay. The 1 ms transition is only a
+browser style-pass boundary, so tokens run as fast as the renderer allows.
+The page starts paused after computing the comma; Play releases the remaining
+15 stages. The page still reported zero script elements. This is real stage
+gating, but the control cannot interrupt a style calculation already executing
+on the browser main thread.
+
+Two uninterrupted Chromium 151 full-paint runs took 12.828 and 12.891 seconds
+from Play until all 16 generated pieces were visible. Because the comma was
+prepared while paused, that interval covers 15 tokens: 1.17 visible
+tokens/second median. This excludes stylesheet download and parse time. The
+page displays the measured figure statically because CSS cannot read a wall
+clock or calculate a live rate; browser automation was used only to observe
+paint completion and did not choose or feed back tokens.
 
 ## Size reduction measurements
 
@@ -83,20 +94,23 @@ measurements rather than source-only estimates.
 The first packed-feedback implementation tried six 8-bit coordinates in one
 48-bit integer. Python preserved it, but Chromium's registered `<number>` path
 rounded the value and corrupted the low coordinates. The corrected version
-packs three coordinates into a 24-bit integer. It passed the recurrent browser
-test with winners `[11, 612, 373, 257]` and zero script elements.
+packs three coordinates into a 24-bit integer. It passed the expanded browser
+test with all 16 rolling-window reference winners and zero script elements.
 
 The packed head is 128,685,887 bytes, 84,342,868 bytes (-39.59%) smaller than
-the original head. The complete streaming page is 152,648,738 bytes raw and
-35,147,978 bytes under gzip. In clean renderer-process samples, the original
-streaming page used 2,321,629,184 bytes RSS and the packed page used
-1,663,516,672 bytes: a 658,112,512-byte (-28.35%) reduction. RSS is a
+the original head. The current 16-stage streaming page is 152,684,609 bytes raw
+and 33,694,759 bytes under gzip level 9. In clean renderer-process samples,
+the original streaming page used 2,321,629,184 bytes RSS and the packed page
+used 1,663,516,672 bytes: a 658,112,512-byte (-28.35%) reduction. RSS is a
 process-level observation, not a portable browser guarantee.
 
 The recurrent graph has an eight-token sliding window and stores the key and
 value vectors for every layer. It computes only the newest token's transformer
 path, then shifts the fixed-size cache. This replaces the earlier design that
-recomputed every prefix from scratch.
+recomputed every prefix from scratch. The expanded compiler also stopped
+clamping positional embeddings at position 7: the 16-stage build includes
+absolute positions 0 through 19, while only the attention KV history rolls.
+The NumPy reference now mirrors that exact cache and position policy.
 
 ## Why recurrence is slower than the static token
 
@@ -165,5 +179,6 @@ python3 -m http.server 4173
 ```
 
 Open `tinystories/step-with-shared-head.html` for the static full-token test or
-`tinystories/nested.html` for the timer-free, script-free four-token text run.
+`tinystories/streaming-packed8.html` for the zero-delay, script-free 16-token
+text run.
 Generated CSS is excluded from Git.

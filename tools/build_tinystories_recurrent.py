@@ -27,21 +27,98 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "tinystories"
 WINDOW = 8
 CACHE_CAPACITY = WINDOW - 1
-GENERATIONS = 4
+GENERATIONS = 16
 CLOCK_MILLISECONDS = 8000
+
+
+def incremental_window_step(
+    token: int,
+    position: int,
+    state: dict[str, np.ndarray],
+    keys: list[list[np.ndarray]],
+    values: list[list[np.ndarray]],
+) -> tuple[np.ndarray, list[list[np.ndarray]], list[list[np.ndarray]]]:
+    """Run one token with the same absolute positions and rolling cache as CSS."""
+    embeddings = state["transformer.wte.weight"]
+    x = (
+        embeddings[token].astype(np.float64)
+        + state["transformer.wpe.weight"][position].astype(np.float64)
+    )
+    next_keys: list[list[np.ndarray]] = []
+    next_values: list[list[np.ndarray]] = []
+    for layer in range(LAYERS):
+        prefix = f"transformer.h.{layer}"
+        normalized = HEAD.layer_norm(
+            x,
+            state[f"{prefix}.ln_1.weight"],
+            state[f"{prefix}.ln_1.bias"],
+        )
+        qkv = (
+            normalized @ state[f"{prefix}.attn.c_attn.weight"]
+            + state[f"{prefix}.attn.c_attn.bias"]
+        )
+        query, key, value = [
+            part.reshape(HEADS, HEAD_WIDTH) for part in np.split(qkv, 3)
+        ]
+        layer_keys = [*keys[layer], key]
+        layer_values = [*values[layer], value]
+        key_array = np.stack(layer_keys)
+        value_array = np.stack(layer_values)
+        attended = np.empty((HEADS, HEAD_WIDTH), dtype=np.float64)
+        for head in range(HEADS):
+            scores = key_array[:, head] @ query[head] / math.sqrt(HEAD_WIDTH)
+            probabilities = np.exp(scores - scores.max())
+            probabilities /= probabilities.sum()
+            attended[head] = probabilities @ value_array[:, head]
+        x = (
+            x
+            + attended.reshape(WIDTH)
+            @ state[f"{prefix}.attn.c_proj.weight"]
+            + state[f"{prefix}.attn.c_proj.bias"]
+        )
+        normalized = HEAD.layer_norm(
+            x,
+            state[f"{prefix}.ln_2.weight"],
+            state[f"{prefix}.ln_2.bias"],
+        )
+        hidden = HEAD.gelu_new(
+            normalized @ state[f"{prefix}.mlp.c_fc.weight"]
+            + state[f"{prefix}.mlp.c_fc.bias"]
+        )
+        x = (
+            x
+            + hidden @ state[f"{prefix}.mlp.c_proj.weight"]
+            + state[f"{prefix}.mlp.c_proj.bias"]
+        )
+        next_keys.append(layer_keys[-CACHE_CAPACITY:])
+        next_values.append(layer_values[-CACHE_CAPACITY:])
+    final = HEAD.layer_norm(
+        x,
+        state["transformer.ln_f.weight"],
+        state["transformer.ln_f.bias"],
+    )
+    return final, next_keys, next_values
 
 
 def greedy_reference(
     prompt: list[int], state: dict[str, np.ndarray], steps: int
 ) -> list[int]:
     embeddings = state["transformer.wte.weight"]
-    context = prompt.copy()
+    keys: list[list[np.ndarray]] = [[] for _ in range(LAYERS)]
+    values: list[list[np.ndarray]] = [[] for _ in range(LAYERS)]
+    hidden = np.zeros(WIDTH, dtype=np.float64)
+    for position, token in enumerate(prompt):
+        hidden, keys, values = incremental_window_step(
+            token, position, state, keys, values
+        )
     generated = []
-    for _ in range(steps):
-        hidden = HEAD.final_hidden(context[-WINDOW:], state)
+    for step in range(steps):
         token = int((embeddings @ hidden).argmax())
         generated.append(token)
-        context.append(token)
+        if step + 1 < steps:
+            hidden, keys, values = incremental_window_step(
+                token, len(prompt) + step, state, keys, values
+            )
     return generated
 
 
@@ -62,11 +139,14 @@ def compile_recurrent_graph(
 ) -> tuple[str, dict[str, object]]:
     compiler = CssCompiler()
     positions = state["transformer.wpe.weight"]
+    position_count = min(
+        len(positions), len(initial["tokens"]) + GENERATIONS
+    )
     position_values = []
     for dimension in range(WIDTH):
         cases = ";".join(
             f"style(--ts-position:{position}):{number(positions[position, dimension])}"
-            for position in range(WINDOW)
+            for position in range(position_count)
         )
         position_values.append(
             compiler.raw(f"ts-position-value-{dimension}", f"if({cases};else:0)")
@@ -240,7 +320,7 @@ def compile_recurrent_graph(
     )
     next_position = compiler.raw(
         "ts-next-position",
-        f"min({WINDOW - 1},calc(var(--ts-position) + 1))",
+        f"min({position_count - 1},calc(var(--ts-position) + 1))",
     )
     next_step = compiler.raw(
         "ts-next-step",
@@ -450,6 +530,8 @@ def compile_recurrent_graph(
         "cache_capacity": CACHE_CAPACITY,
         "generations": GENERATIONS,
         "clock_milliseconds": CLOCK_MILLISECONDS,
+        "position_count": position_count,
+        "context_policy": f"rolling {WINDOW}-token KV cache with absolute positions",
         "properties": len(dict.fromkeys(compiler.names)),
         "css_bytes": len(css.encode()),
         "prompt": initial["tokens"],

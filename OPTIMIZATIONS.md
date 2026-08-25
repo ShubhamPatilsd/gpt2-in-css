@@ -110,20 +110,20 @@ in [`tinystories/RESULTS.md`](tinystories/RESULTS.md).
 
 The fixed animation clock is not reliable across browser load levels: a later
 eight-second-clock run reset its state bank mid-generation. The strict
-HTML/CSS-only page instead nests four model elements with bridge elements
+HTML/CSS-only page instead nests predeclared model elements with bridge elements
 between them. Each bridge snapshots its parent's typed output properties; the
 child consumes those inherited values as its embedding and per-layer KV-cache
 input. All model elements reuse the same CSS declarations and output-head
 functions, so only the small state-handoff rule and HTML nodes grow per token.
 
-Two fresh Chromium loads produced the exact reference IDs
-`[11, 612, 373, 257]` with zero script elements and no animation clock. This
+The current build predeclares 16 stages and produced all 16 rolling-window
+reference IDs with zero script elements and no animation clock. This
 turns slow evaluation into a render delay instead of state corruption. A
 bucketed CSS decoder now maps every possible winner ID back to its GPT-2 token
-text, so the page visibly renders `Once upon a time, there was a`. The browser
-can batch style and paint work, so the visible update is not guaranteed to be
-one token at a time. The tradeoff is finite generation: pure HTML must
-predeclare one nested element per output token.
+text. The staged page uses a zero-delay, 1 ms gate only to separate style
+passes. Two full-paint runs measured 1.17 visible tokens/second for the 15
+tokens after Play. The tradeoff is finite generation: pure HTML must predeclare
+one nested element per output token.
 
 ## Compression results and next work
 
