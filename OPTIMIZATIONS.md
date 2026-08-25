@@ -225,7 +225,7 @@ base-32,767 digits. Container queries recover the two digits, and a 1.51 MB
 token-to-cluster map routes the ID through the output head's existing packed
 embedding functions.
 
-The full dynamic page is 131,316,739 raw / 17,550,749 Brotli bytes, only about
+The full dynamic page is 131,317,997 raw / 17,550,761 Brotli bytes, only about
 1.11 MB more compressed than the fixed row-int10 page. The cost is numerical:
 the existing feedback table stores embeddings at 8 bits per coordinate. The
 default prompt's first nine decisions matched the fixed reference, then it
@@ -250,6 +250,11 @@ once; Edit / reset removes the animations before the next change. This reduced
 a 16-update browser editing loop from over 30 seconds to 632 ms total. The same
 state rules stop the handoff chain at token 50256 rather than calculating
 invisible post-EOS stages.
+
+Each closed handoff still needs an `inline-block` box for `content-visibility`,
+but an opened gate now switches that wrapper to `inline`. This retains lazy
+stage evaluation without treating the entire remaining continuation as one
+unbreakable inline block.
 
 For a larger architectural reduction without removing vocabulary entries,
 train a checkpoint with a factorized vocabulary embedding: project the
