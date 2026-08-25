@@ -131,5 +131,28 @@
     "fresh_original_renderer_rss_bytes": 2321629184,
     "fresh_packed_renderer_rss_bytes": 1663516672,
     "renderer_rss_reduction_percent": 28.35
+  },
+  "packed8x6_untyped_streaming_generation": {
+    "html_script_elements": 0,
+    "feedback_bits_per_coordinate": 8,
+    "feedback_coordinates_per_pack": 6,
+    "feedback_packs": 11,
+    "head_source_bytes": 114244898,
+    "complete_page_raw_bytes": 138243681,
+    "output_token_ids": [11, 612, 373, 257, 1310, 2576, 3706, 20037, 13, 1375, 6151, 284, 711, 351, 607, 14958],
+    "wrong_tokens": 0,
+    "full_paint_milliseconds": [17386, 17911],
+    "visible_tokens_per_second": 0.85,
+    "decision": "smaller but slower than packed8"
+  },
+  "packed6x4_typed_rejected_generation": {
+    "html_script_elements": 0,
+    "feedback_bits_per_coordinate": 6,
+    "feedback_coordinates_per_pack": 4,
+    "feedback_packs": 16,
+    "head_source_bytes": 118812255,
+    "output_token_ids": [11, 612, 373, 257, 1310, 2933, 3706, 5045, 13, 5045, 373, 6507, 13, 679, 2227, 284],
+    "first_wrong_token_index_zero_based": 5,
+    "decision": "rejected"
   }
 }

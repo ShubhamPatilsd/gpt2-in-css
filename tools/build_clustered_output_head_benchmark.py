@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import importlib.util
 import json
 import sys
@@ -17,6 +18,9 @@ CLUSTERS = 256
 WINNER_TOLERANCE = 0.0001
 FEEDBACK_BITS = 8
 FEEDBACK_COORDINATES_PER_PACK = 3
+WIDE_FEEDBACK_COORDINATES_PER_PACK = 6
+COMPACT_FEEDBACK_BITS = 6
+COMPACT_FEEDBACK_COORDINATES_PER_PACK = 4
 
 
 def import_module(name: str, path: Path) -> object:
@@ -183,6 +187,7 @@ def packed_embedding_function(
     pack: int,
     indices: np.ndarray,
     packed_embeddings: np.ndarray,
+    typed_return: bool = True,
 ) -> str:
     cases = ";".join(
         f"style(--winner-id:{int(token)}):{int(packed_embeddings[token, pack])}"
@@ -190,7 +195,8 @@ def packed_embedding_function(
     )
     return "\n".join(
         [
-            f"@function --pe{cluster}x{pack}() returns <number>{{",
+            f"@function --pe{cluster}x{pack}()"
+            f"{' returns <number>' if typed_return else ''}{{",
             f"result:if({cases};else:0);",
             "}",
         ]
@@ -199,20 +205,22 @@ def packed_embedding_function(
 
 def quantize_and_pack_embeddings(
     embeddings: np.ndarray,
+    coordinates_per_pack: int = FEEDBACK_COORDINATES_PER_PACK,
+    feedback_bits: int = FEEDBACK_BITS,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    maximum_code = 2 ** (FEEDBACK_BITS - 1) - 1
+    maximum_code = 2 ** (feedback_bits - 1) - 1
     scales = np.max(np.abs(embeddings), axis=0) / maximum_code
     signed = np.rint(embeddings / scales).clip(-maximum_code, maximum_code)
     signed = signed.astype(np.int64)
     unsigned = signed + maximum_code
     packs = (
-        embeddings.shape[1] + FEEDBACK_COORDINATES_PER_PACK - 1
-    ) // FEEDBACK_COORDINATES_PER_PACK
+        embeddings.shape[1] + coordinates_per_pack - 1
+    ) // coordinates_per_pack
     packed = np.zeros((embeddings.shape[0], packs), dtype=np.int64)
-    base = 2**FEEDBACK_BITS
+    base = 2**feedback_bits
     for dimension in range(embeddings.shape[1]):
-        pack = dimension // FEEDBACK_COORDINATES_PER_PACK
-        offset = dimension % FEEDBACK_COORDINATES_PER_PACK
+        pack = dimension // coordinates_per_pack
+        offset = dimension % coordinates_per_pack
         packed[:, pack] += unsigned[:, dimension] * (base**offset)
     reconstructed = signed.astype(np.float64) * scales
     return packed, scales, reconstructed
@@ -304,6 +312,14 @@ def shared_cluster_token_function(cluster: int, indices: np.ndarray) -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--packed-candidates-only",
+        action="store_true",
+        help="write only the packed feedback candidates and metadata",
+    )
+    args = parser.parse_args()
+    write_full_benchmark = not args.packed_candidates_only
     OUT.mkdir(parents=True, exist_ok=True)
     state = BUILDER.load_torch_zip(BUILDER.download_checkpoint())
     embeddings = state["transformer.wte.weight"].astype(np.float64)
@@ -423,15 +439,17 @@ def main() -> None:
         rules.append(".model{" + "".join(declarations[start : start + 1000]) + "}")
     css = "\n".join(functions + registrations + rules) + "\n"
     css_path = OUT / "clustered-256.css"
-    css_path.write_text(css)
     benchmark_query_rules = BUILDER.query_rules(hidden_vectors) + "\n"
-    (OUT / "clustered-256-runtime.css").write_text(
-        css.replace(benchmark_query_rules, "")
-    )
+    if write_full_benchmark:
+        css_path.write_text(css)
+        (OUT / "clustered-256-runtime.css").write_text(
+            css.replace(benchmark_query_rules, "")
+        )
     all_active_css = css
     for original, replacement in active_replacements:
         all_active_css = all_active_css.replace(original, replacement)
-    (OUT / "clustered-256-all.css").write_text(all_active_css)
+    if write_full_benchmark:
+        (OUT / "clustered-256-all.css").write_text(all_active_css)
 
     token_functions = [
         cluster_token_function(cluster, indices, embeddings)
@@ -477,10 +495,11 @@ def main() -> None:
     winner_css = "\n".join(
         functions + token_functions + winner_registrations + winner_rules
     ) + "\n"
-    (OUT / "clustered-256-winner.css").write_text(winner_css)
-    (OUT / "clustered-256-winner-runtime.css").write_text(
-        winner_css.replace(benchmark_query_rules, "")
-    )
+    if write_full_benchmark:
+        (OUT / "clustered-256-winner.css").write_text(winner_css)
+        (OUT / "clustered-256-winner-runtime.css").write_text(
+            winner_css.replace(benchmark_query_rules, "")
+        )
 
     print("building exact 64-number embedding lookup...", flush=True)
     embedding_functions = [
@@ -511,10 +530,11 @@ def main() -> None:
         + embedding_registrations
         + embedding_rules
     ) + "\n"
-    (OUT / "clustered-256-embedding.css").write_text(embedding_css)
-    (OUT / "clustered-256-embedding-runtime.css").write_text(
-        embedding_css.replace(benchmark_query_rules, "")
-    )
+    if write_full_benchmark:
+        (OUT / "clustered-256-embedding.css").write_text(embedding_css)
+        (OUT / "clustered-256-embedding-runtime.css").write_text(
+            embedding_css.replace(benchmark_query_rules, "")
+        )
 
     print("building shared-dot output head...", flush=True)
     shared_dot_functions = [
@@ -554,70 +574,111 @@ def main() -> None:
         + embedding_registrations
         + shared_rules
     ) + "\n"
-    (OUT / "clustered-256-embedding-shared-runtime.css").write_text(shared_css)
+    if write_full_benchmark:
+        (OUT / "clustered-256-embedding-shared-runtime.css").write_text(shared_css)
+
+    def build_packed_feedback(
+        coordinates_per_pack: int,
+        typed_intermediate: bool,
+        feedback_bits: int = FEEDBACK_BITS,
+    ) -> tuple[str, int, np.ndarray]:
+        packed_embeddings, feedback_scales, reconstructed_embeddings = (
+            quantize_and_pack_embeddings(
+                embeddings, coordinates_per_pack, feedback_bits
+            )
+        )
+        feedback_packs = packed_embeddings.shape[1]
+        packed_embedding_functions = [
+            packed_embedding_function(
+                cluster,
+                pack,
+                indices,
+                packed_embeddings,
+                typed_return=typed_intermediate,
+            )
+            for pack in range(feedback_packs)
+            for cluster, indices in enumerate(members)
+        ]
+        packed_registrations = winner_registrations.copy()
+        packed_declarations = winner_declarations.copy()
+        for pack in range(feedback_packs):
+            if typed_intermediate:
+                packed_registrations.append(registration(f"feedback-pack-{pack}"))
+            cases = ";".join(
+                f"style(--winner-cluster:{cluster}):--pe{cluster}x{pack}()"
+                for cluster in range(CLUSTERS)
+            )
+            packed_declarations.append(
+                f"--feedback-pack-{pack}:if({cases};else:0);"
+            )
+        feedback_base = 2**feedback_bits
+        feedback_offset = 2 ** (feedback_bits - 1) - 1
+        for dimension in range(embeddings.shape[1]):
+            packed_registrations.append(registration(f"next{dimension}"))
+            pack = dimension // coordinates_per_pack
+            offset = dimension % coordinates_per_pack
+            divisor = feedback_base**offset
+            code = (
+                f"mod(round(down,calc(var(--feedback-pack-{pack})/{divisor}),1),"
+                f"{feedback_base})"
+            )
+            packed_declarations.append(
+                f"--next{dimension}:calc(({code} - {feedback_offset})*"
+                f"{number(feedback_scales[dimension])});"
+            )
+        for cluster in range(CLUSTERS):
+            score_call = f"--c{cluster}({invocation})"
+            packed_declarations = [
+                declaration.replace(score_call, f"--dc{cluster}()")
+                for declaration in packed_declarations
+            ]
+            token_call = f"--t{cluster}({invocation},var(--maximum))"
+            packed_declarations = [
+                declaration.replace(token_call, f"--dt{cluster}(var(--maximum))")
+                for declaration in packed_declarations
+            ]
+        packed_rules = [
+            ".model{" + "".join(packed_declarations[start : start + 1000]) + "}"
+            for start in range(0, len(packed_declarations), 1000)
+        ]
+        css = "\n".join(
+            shared_dot_functions
+            + shared_max_functions
+            + shared_token_functions
+            + packed_embedding_functions
+            + packed_registrations
+            + packed_rules
+        ) + "\n"
+        return css, feedback_packs, reconstructed_embeddings
 
     print("building packed 8-bit embedding feedback...", flush=True)
-    packed_embeddings, feedback_scales, reconstructed_embeddings = (
-        quantize_and_pack_embeddings(embeddings)
+    packed_shared_css, feedback_packs, reconstructed_embeddings = (
+        build_packed_feedback(FEEDBACK_COORDINATES_PER_PACK, True)
     )
-    feedback_packs = packed_embeddings.shape[1]
-    packed_embedding_functions = [
-        packed_embedding_function(cluster, pack, indices, packed_embeddings)
-        for pack in range(feedback_packs)
-        for cluster, indices in enumerate(members)
-    ]
-    packed_registrations = winner_registrations.copy()
-    packed_declarations = winner_declarations.copy()
-    for pack in range(feedback_packs):
-        packed_registrations.append(registration(f"feedback-pack-{pack}"))
-        cases = ";".join(
-            f"style(--winner-cluster:{cluster}):--pe{cluster}x{pack}()"
-            for cluster in range(CLUSTERS)
+    if write_full_benchmark:
+        (OUT / "clustered-256-embedding-packed8-shared-runtime.css").write_text(
+            packed_shared_css
         )
-        packed_declarations.append(
-            f"--feedback-pack-{pack}:if({cases};else:0);"
-        )
-    feedback_base = 2**FEEDBACK_BITS
-    feedback_offset = 2 ** (FEEDBACK_BITS - 1) - 1
-    for dimension in range(embeddings.shape[1]):
-        packed_registrations.append(registration(f"next{dimension}"))
-        pack = dimension // FEEDBACK_COORDINATES_PER_PACK
-        offset = dimension % FEEDBACK_COORDINATES_PER_PACK
-        divisor = feedback_base**offset
-        code = (
-            f"mod(round(down,calc(var(--feedback-pack-{pack})/{divisor}),1),"
-            f"{feedback_base})"
-        )
-        packed_declarations.append(
-            f"--next{dimension}:calc(({code} - {feedback_offset})*"
-            f"{number(feedback_scales[dimension])});"
-        )
-    for cluster in range(CLUSTERS):
-        score_call = f"--c{cluster}({invocation})"
-        packed_declarations = [
-            declaration.replace(score_call, f"--dc{cluster}()")
-            for declaration in packed_declarations
-        ]
-        token_call = f"--t{cluster}({invocation},var(--maximum))"
-        packed_declarations = [
-            declaration.replace(token_call, f"--dt{cluster}(var(--maximum))")
-            for declaration in packed_declarations
-        ]
-    packed_rules = [
-        ".model{" + "".join(packed_declarations[start : start + 1000]) + "}"
-        for start in range(0, len(packed_declarations), 1000)
-    ]
-    packed_shared_css = "\n".join(
-        shared_dot_functions
-        + shared_max_functions
-        + shared_token_functions
-        + packed_embedding_functions
-        + packed_registrations
-        + packed_rules
-    ) + "\n"
-    (OUT / "clustered-256-embedding-packed8-shared-runtime.css").write_text(
-        packed_shared_css
+    print("building untyped 48-bit packed feedback...", flush=True)
+    wide_packed_shared_css, wide_feedback_packs, wide_reconstructed_embeddings = (
+        build_packed_feedback(WIDE_FEEDBACK_COORDINATES_PER_PACK, False)
     )
+    (
+        OUT
+        / "clustered-256-embedding-packed8x6-untyped-shared-runtime.css"
+    ).write_text(wide_packed_shared_css)
+    print("building typed 24-bit 6-bit packed feedback...", flush=True)
+    compact_packed_shared_css, compact_feedback_packs, compact_reconstructed_embeddings = (
+        build_packed_feedback(
+            COMPACT_FEEDBACK_COORDINATES_PER_PACK,
+            True,
+            COMPACT_FEEDBACK_BITS,
+        )
+    )
+    if args.packed_candidates_only:
+        (
+            OUT / "clustered-256-embedding-packed6x4-shared-runtime.css"
+        ).write_text(compact_packed_shared_css)
 
     expected_active = []
     for query, reference in zip(hidden_vectors, reference_maximums):
@@ -798,7 +859,8 @@ def main() -> None:
 </body>
 </html>
 """
-    (OUT / "clustered-256.html").write_text(document)
+    if write_full_benchmark:
+        (OUT / "clustered-256.html").write_text(document)
     winner_document = document.replace(
         "clustered-256.css?v=clustered-2",
         "clustered-256-winner.css?v=clustered-winner-5",
@@ -812,7 +874,8 @@ def main() -> None:
         f"sourceBytes: {len(css.encode())}",
         f"sourceBytes: {len(winner_css.encode())}",
     )
-    (OUT / "clustered-256-winner.html").write_text(winner_document)
+    if write_full_benchmark:
+        (OUT / "clustered-256-winner.html").write_text(winner_document)
     embedding_document = document.replace(
         "clustered-256.css?v=clustered-2",
         "clustered-256-embedding.css?v=clustered-embedding-4",
@@ -829,7 +892,8 @@ def main() -> None:
         f"sourceBytes: {len(css.encode())}",
         f"sourceBytes: {len(embedding_css.encode())}",
     )
-    (OUT / "clustered-256-embedding.html").write_text(embedding_document)
+    if write_full_benchmark:
+        (OUT / "clustered-256-embedding.html").write_text(embedding_document)
     all_active_document = document.replace(
         "clustered-256.css?v=clustered-2",
         "clustered-256-all.css?v=clustered-all-1",
@@ -837,7 +901,8 @@ def main() -> None:
         f"const expectedActive = {json.dumps(expected_active)};",
         f"const expectedActive = {json.dumps([CLUSTERS] * len(expected_active))};",
     )
-    (OUT / "clustered-256-all.html").write_text(all_active_document)
+    if write_full_benchmark:
+        (OUT / "clustered-256-all.html").write_text(all_active_document)
     metadata = {
         "clusters": CLUSTERS,
         "cluster_size": {
@@ -858,6 +923,20 @@ def main() -> None:
         "packed8_feedback_packs": int(feedback_packs),
         "packed8_maximum_embedding_error": float(
             np.max(np.abs(reconstructed_embeddings - embeddings))
+        ),
+        "packed8x6_untyped_shared_embedding_css_bytes": len(
+            wide_packed_shared_css.encode()
+        ),
+        "packed8x6_untyped_feedback_packs": int(wide_feedback_packs),
+        "packed8x6_untyped_maximum_embedding_error": float(
+            np.max(np.abs(wide_reconstructed_embeddings - embeddings))
+        ),
+        "packed6x4_shared_embedding_css_bytes": len(
+            compact_packed_shared_css.encode()
+        ),
+        "packed6x4_feedback_packs": int(compact_feedback_packs),
+        "packed6x4_maximum_embedding_error": float(
+            np.max(np.abs(compact_reconstructed_embeddings - embeddings))
         ),
     }
     (OUT / "clustered-256.json").write_text(json.dumps(metadata, indent=2) + "\n")

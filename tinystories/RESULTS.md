@@ -92,10 +92,26 @@ evaluation, but it saves much less source. Both require new browser correctness
 measurements rather than source-only estimates.
 
 The first packed-feedback implementation tried six 8-bit coordinates in one
-48-bit integer. Python preserved it, but Chromium's registered `<number>` path
-rounded the value and corrupted the low coordinates. The corrected version
-packs three coordinates into a 24-bit integer. It passed the expanded browser
-test with all 16 rolling-window reference winners and zero script elements.
+48-bit integer. The failure was narrower than first reported: Chromium
+corrupted the value only after it crossed a typed `<number>` boundary. A
+dedicated zero-script probe shows that the same 48-bit integer survives direct
+`calc()`, an unregistered custom property, and an untyped CSS custom function;
+registered `<number>`, registered `<integer>`, and a typed custom-function
+return lose information. See `css-number-precision-test.html`.
+
+An untyped six-coordinate implementation therefore works and matches all 16
+reference winners. Its head is 114,244,898 bytes, 14,440,989 bytes (11.22%)
+smaller than the typed 24-bit head. It is not the default because two full-paint
+runs took 17.386 and 17.911 seconds for the 15 post-Play tokens, versus 12.828
+and 12.891 seconds for the typed version. The smaller source rendered about 27%
+slower in this measurement.
+
+A second experiment used four 6-bit coordinates per typed 24-bit pack. It
+reduced the head to 118,812,255 bytes, but browser generation diverged at token
+six: reference token `2576` became `2933`. The resulting sequence was
+`[11, 612, 373, 257, 1310, 2933, 3706, 5045, 13, 5045, 373, 6507, 13, 679,
+2227, 284]`. This is a concrete example of why a quantization sweep over a
+limited set of hidden states is not an end-to-end correctness test.
 
 The packed head is 128,685,887 bytes, 84,342,868 bytes (-39.59%) smaller than
 the original head. The current 16-stage streaming page is 152,684,609 bytes raw

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS numeric packing precision probe</title>
+  <style>
+    @property --registered-number { syntax: "<number>"; inherits: false; initial-value: 0; }
+    @property --registered-integer { syntax: "<integer>"; inherits: false; initial-value: 0; }
+    @property --selector { syntax: "<integer>"; inherits: false; initial-value: 0; }
+    @property --byte-0 { syntax: "<integer>"; inherits: false; initial-value: -1; }
+    @property --byte-1 { syntax: "<integer>"; inherits: false; initial-value: -1; }
+    @property --byte-2 { syntax: "<integer>"; inherits: false; initial-value: -1; }
+    @property --byte-3 { syntax: "<integer>"; inherits: false; initial-value: -1; }
+    @property --byte-4 { syntax: "<integer>"; inherits: false; initial-value: -1; }
+    @property --byte-5 { syntax: "<integer>"; inherits: false; initial-value: -1; }
+
+    .case {
+      --byte-0: mod(round(down, calc(var(--source) / 1), 1), 256);
+      --byte-1: mod(round(down, calc(var(--source) / 256), 1), 256);
+      --byte-2: mod(round(down, calc(var(--source) / 65536), 1), 256);
+      --byte-3: mod(round(down, calc(var(--source) / 16777216), 1), 256);
+      --byte-4: mod(round(down, calc(var(--source) / 4294967296), 1), 256);
+      --byte-5: mod(round(down, calc(var(--source) / 1099511627776), 1), 256);
+      counter-reset:
+        byte-0 var(--byte-0) byte-1 var(--byte-1) byte-2 var(--byte-2)
+        byte-3 var(--byte-3) byte-4 var(--byte-4) byte-5 var(--byte-5);
+    }
+
+    #registered-number {
+      --registered-number: 188606631453441;
+      --source: var(--registered-number);
+    }
+    #registered-integer {
+      --registered-integer: 188606631453441;
+      --source: var(--registered-integer);
+    }
+    #unregistered-number { --source: 188606631453441; }
+    #calculated-number { --source: calc(11241831 * 16777216 + 4530945); }
+    #conditional-number {
+      --selector: 1;
+      --source: if(style(--selector: 1): 188606631453441; else: 0);
+    }
+    #function-number { --source: --precision-return-number(); }
+    #function-untyped { --source: --precision-return-untyped(); }
+    #control-24bit { --source: 4530945; }
+
+    @function --precision-return-number() returns <number> {
+      result: 188606631453441;
+    }
+    @function --precision-return-untyped() {
+      result: 188606631453441;
+    }
+
+    body { max-width: 52rem; margin: 3rem auto; font: 16px/1.5 system-ui, sans-serif; }
+    code { font-family: ui-monospace, monospace; }
+    .case::after {
+      content: " → [" counter(byte-0) ", " counter(byte-1) ", " counter(byte-2)
+        ", " counter(byte-3) ", " counter(byte-4) ", " counter(byte-5) "]";
+      font-family: ui-monospace, monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS numeric packing precision probe</h1>
+  <p>Expected low-to-high bytes: <code>1, 35, 69, 103, 137, 171</code>.</p>
+  <ol>
+    <li id="registered-number" class="case">Registered <code>&lt;number&gt;</code></li>
+    <li id="registered-integer" class="case">Registered <code>&lt;integer&gt;</code></li>
+    <li id="unregistered-number" class="case">Unregistered custom property</li>
+    <li id="calculated-number" class="case">Direct calculated number</li>
+    <li id="conditional-number" class="case">Unregistered <code>if()</code> result</li>
+    <li id="function-number" class="case">Typed CSS custom-function result</li>
+    <li id="function-untyped" class="case">Untyped CSS custom-function result</li>
+    <li id="control-24bit" class="case">24-bit control: expected <code>1, 35, 69, 0, 0, 0</code></li>
+  </ol>
+</body>
+</html>

@@ -191,3 +191,9 @@ A clean renderer comparison measured about 1.66 GB RSS packed versus 2.32 GB
 unpacked. Two full-paint measurements took 12.828 and 12.891 seconds for the
 15 tokens generated after Play: 1.17 visible tokens/second median. The first
 token is prepared while paused, and stylesheet loading is excluded.
+
+`streaming-packed8x6.html` is a smaller experimental alternative. It packs six
+8-bit coordinates into an untyped 48-bit CSS value. All 16 token IDs match, and
+the complete raw page is 138,243,681 bytes, but painted generation slowed to
+0.85 tokens/second in the measured runs. The typed 24-bit page remains the
+recommended balance of size, correctness, and speed.

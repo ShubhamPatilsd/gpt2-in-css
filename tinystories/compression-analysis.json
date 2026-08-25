@@ -53,18 +53,79 @@
     "packs_per_embedding": 22,
     "largest_pack_bits": 24,
     "output_head_bytes": 128685887,
-    "complete_page_raw_bytes": 152648738,
-    "complete_page_gzip_bytes": 35147978,
+    "complete_page_raw_bytes": 152684609,
+    "complete_page_gzip_bytes": 33694759,
     "output_head_reduction_bytes": 84342868,
     "output_head_reduction_percent": 39.59,
     "maximum_embedding_error": 0.003100044849350697,
-    "browser_output_token_ids": [11, 612, 373, 257],
+    "browser_output_token_ids": [11, 612, 373, 257, 1310, 2576, 3706, 20037, 13, 1375, 6151, 284, 711, 351, 607, 14958],
     "browser_wrong_tokens": 0,
     "browser_script_elements": 0,
     "fresh_original_renderer_rss_bytes": 2321629184,
     "fresh_packed_renderer_rss_bytes": 1663516672,
     "renderer_rss_reduction_bytes": 658112512,
     "renderer_rss_reduction_percent": 28.35,
-    "note": "A six-coordinate 48-bit pack failed because Chromium rounded registered CSS numbers to roughly 24 bits of integer precision. Three 8-bit coordinates remained exact in the observed CSS path."
+    "note": "Three 8-bit coordinates remain exact through the typed 24-bit CSS path and are the recommended speed/correctness tradeoff."
+  },
+  "css_number_precision_probe": {
+    "packed_integer": 188606631453441,
+    "expected_bytes": [1, 35, 69, 103, 137, 171],
+    "registered_number_bytes": [0, 182, 60, 125, 137, 171],
+    "registered_integer_value": 2147483647,
+    "registered_integer_bytes": [255, 255, 255, 127, 0, 0],
+    "unregistered_property_bytes": [1, 35, 69, 103, 137, 171],
+    "direct_calc_bytes": [1, 35, 69, 103, 137, 171],
+    "untyped_if_bytes": [1, 35, 69, 103, 137, 171],
+    "typed_function_bytes": [0, 182, 60, 125, 137, 171],
+    "untyped_function_bytes": [1, 35, 69, 103, 137, 171],
+    "page": "css-number-precision-test.html",
+    "conclusion": "The 48-bit arithmetic works. Typed CSS conversion loses precision."
+  },
+  "packed8x6_untyped_result": {
+    "bits_per_coordinate": 8,
+    "coordinates_per_pack": 6,
+    "packs_per_embedding": 11,
+    "largest_pack_bits": 48,
+    "output_head_bytes": 114244898,
+    "complete_page_raw_bytes": 138243681,
+    "output_head_reduction_from_packed8_bytes": 14440989,
+    "output_head_reduction_from_packed8_percent": 11.22,
+    "browser_output_token_ids": [11, 612, 373, 257, 1310, 2576, 3706, 20037, 13, 1375, 6151, 284, 711, 351, 607, 14958],
+    "browser_wrong_tokens": 0,
+    "full_paint_milliseconds": [17386, 17911],
+    "visible_tokens_per_second": 0.85,
+    "decision": "correct and smaller, but slower than typed 24-bit packing"
+  },
+  "packed6x4_typed_result": {
+    "bits_per_coordinate": 6,
+    "coordinates_per_pack": 4,
+    "packs_per_embedding": 16,
+    "largest_pack_bits": 24,
+    "output_head_bytes": 118812255,
+    "maximum_embedding_error": 0.012700240458211609,
+    "reference_token_ids": [11, 612, 373, 257, 1310, 2576, 3706, 20037, 13, 1375, 6151, 284, 711, 351, 607, 14958],
+    "browser_output_token_ids": [11, 612, 373, 257, 1310, 2933, 3706, 5045, 13, 5045, 373, 6507, 13, 679, 2227, 284],
+    "first_wrong_token_index_zero_based": 5,
+    "decision": "rejected because autoregressive browser generation diverged"
+  },
+  "low_rank_output_embedding_probe": {
+    "tested_ranks": [4, 8, 12, 16, 24, 32, 48, 63],
+    "best_generation_matches_out_of_96": 58,
+    "best_variant": "mean-centered rank 63",
+    "decision": "rejected; low-energy embedding directions still affect argmax ranking"
+  },
+  "feedback_bit_width_sweep": {
+    "prompts": 3,
+    "generated_tokens_per_prompt": 32,
+    "total_decisions": 96,
+    "matching_decisions": {
+      "8_bit_3_per_pack": 96,
+      "7_bit_3_per_pack": 93,
+      "6_bit_4_per_pack": 96,
+      "5_bit_4_per_pack": 75,
+      "4_bit_6_per_pack": 60,
+      "3_bit_8_per_pack": 43
+    },
+    "warning": "The 6-bit offline result still diverged in Chromium at generated token 6; offline decision matches are not sufficient validation."
   }
 }

@@ -198,20 +198,39 @@ def page() -> str:
 """
 
 
-def streaming_page(packed_feedback: bool = False) -> str:
+def streaming_page(
+    packed_feedback: bool = False,
+    wide_feedback: bool = False,
+) -> str:
     head_name = (
+        "clustered-256-embedding-packed8x6-untyped-shared-runtime.css"
+        if wide_feedback
+        else
         "clustered-256-embedding-packed8-shared-runtime.css"
         if packed_feedback
         else "clustered-256-embedding-shared-runtime.css"
     )
-    suffix = " (packed 8-bit feedback)" if packed_feedback else ""
+    suffix = (
+        " (six-coordinate 48-bit feedback candidate)"
+        if wide_feedback
+        else " (packed 8-bit feedback)"
+        if packed_feedback
+        else ""
+    )
     median_milliseconds = sum(VISIBLE_BENCHMARK_MILLISECONDS) / len(
         VISIBLE_BENCHMARK_MILLISECONDS
     )
     visible_tokens_per_second = (
         VISIBLE_BENCHMARK_TOKENS * 1000 / median_milliseconds
     )
-    if packed_feedback:
+    if wide_feedback:
+        benchmark = (
+            "<strong>Measured visible throughput:</strong> 0.85 tokens/second "
+            "on Chromium 151 on this machine (15 tokens after Play in "
+            "17.649 seconds median). All 16 token IDs matched the reference, "
+            "but this is slower than the typed 24-bit page."
+        )
+    elif packed_feedback:
         benchmark = (
             "<strong>Measured visible throughput:</strong> "
             f"{visible_tokens_per_second:.2f} tokens/second on Chromium 151 "
@@ -262,6 +281,9 @@ def main() -> None:
     (OUT / "streaming.css").write_text(stream_css)
     (OUT / "streaming.html").write_text(streaming_page())
     (OUT / "streaming-packed8.html").write_text(streaming_page(True))
+    (OUT / "streaming-packed8x6.html").write_text(
+        streaming_page(True, wide_feedback=True)
+    )
     print(
         {
             "generations": GENERATIONS,

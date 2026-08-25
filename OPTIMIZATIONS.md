@@ -148,12 +148,20 @@ bytes in the shared design. Packing reduces parsed expression count, so it has
 a better chance of lowering renderer memory than merely shortening decimal
 strings.
 
-The 8-bit feedback packing experiment is now implemented. Chromium rounded a
-six-coordinate 48-bit pack, so the working form stores three coordinates per
-24-bit number. It reduced the head from 213,028,755 to 128,685,887 bytes and
-still generated `[11, 612, 373, 257]`. A clean process comparison reduced
-renderer RSS from 2,321,629,184 to 1,663,516,672 bytes (-28.35%). The remaining
-large target is the 83.9 MB token-dot table.
+The 8-bit feedback packing experiment is now implemented. The default stores
+three coordinates per typed 24-bit number. It reduced the head from
+213,028,755 to 128,685,887 bytes and matched all 16 browser reference tokens.
+A clean process comparison reduced renderer RSS from 2,321,629,184 to
+1,663,516,672 bytes (-28.35%).
+
+The original six-coordinate 48-bit failure came from typed CSS conversion, not
+from `calc()` arithmetic itself. Untyped custom properties and untyped CSS
+custom-function results preserve the tested 48-bit integer exactly. Using that
+path reduced the head again to 114,244,898 bytes and remained token-correct,
+but full painted generation slowed from 1.17 to 0.85 tokens/second. A typed
+four-coordinate/6-bit variant reached 118,812,255 bytes but changed the sixth
+generated token. The typed 24-bit/8-bit path therefore remains the practical
+default. The remaining large target is the 83.9 MB token-dot table.
 
 For a larger architectural reduction without removing vocabulary entries,
 train a checkpoint with a factorized vocabulary embedding: project the
