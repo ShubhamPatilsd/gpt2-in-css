@@ -87,8 +87,9 @@ about 1.28 GB of renderer RSS. Full measurements are in
 
 The first clustered feedback graph repeated the same token dot products in its
 maximum and winner-recovery functions. Defining one shared lazy dot function
-per token reduced the exact score/winner/embedding head from 291,925,867 to
-213,028,755 bytes (-27.0%). A complete transformer-plus-shared-head update took
+per token reduces the losslessly formatted exact score/winner/embedding head
+from 282,137,529 to 206,464,160 bytes (-26.8%). A complete
+transformer-plus-shared-head update took
 670–702 ms median with zero wrong winners in the browser tests.
 
 ### TinyStories incremental transformer and KV cache
@@ -150,18 +151,27 @@ strings.
 
 The 8-bit feedback packing experiment is now implemented. The default stores
 three coordinates per typed 24-bit number. It reduced the head from
-213,028,755 to 128,685,887 bytes and matched all 16 browser reference tokens.
+206,464,160 to 125,344,932 bytes after lossless number spelling and matched all
+16 browser reference tokens.
 A clean process comparison reduced renderer RSS from 2,321,629,184 to
 1,663,516,672 bytes (-28.35%).
 
 The original six-coordinate 48-bit failure came from typed CSS conversion, not
 from `calc()` arithmetic itself. Untyped custom properties and untyped CSS
 custom-function results preserve the tested 48-bit integer exactly. Using that
-path reduced the head again to 114,244,898 bytes and remained token-correct,
+path reduced the head again to 110,903,943 bytes and remained token-correct,
 but full painted generation slowed from 1.17 to 0.85 tokens/second. A typed
-four-coordinate/6-bit variant reached 118,812,255 bytes but changed the sixth
+four-coordinate/6-bit variant reached 115,471,300 bytes but changed the sixth
 generated token. The typed 24-bit/8-bit path therefore remains the practical
-default. The remaining large target is the 83.9 MB token-dot table.
+default. The remaining large target is the 80.6 MB token-dot table.
+
+The numeric emitter now selects the shortest CSS syntax that is exactly equal
+to its previous nine-decimal output: for example, `0.5` becomes `.5` and
+`0.000001` becomes `1e-6`. This reduced the complete recommended page from
+152,684,609 to 148,926,533 raw bytes (-2.46%) without changing any of the 16
+browser winners. Brotli level 9 is 28,928,806 bytes. A graph audit found zero
+duplicate output-function bodies and zero unused registered properties, so no
+additional exact removal was available from those two mechanical passes.
 
 For a larger architectural reduction without removing vocabulary entries,
 train a checkpoint with a factorized vocabulary embedding: project the

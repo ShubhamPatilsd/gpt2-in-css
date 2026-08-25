@@ -19,10 +19,10 @@ NumPy on all tested states.
 | Clustered functions | 83.6 MB CSS | 702 ms | maximum |
 | Clustered functions + winner | 170.6 MB CSS | 709–729 ms | maximum, token |
 | Clustered functions + embedding | 291.9 MB CSS | 743–755 ms | maximum, token, embedding |
-| Shared token functions + embedding | 213.0 MB CSS | used by full model | maximum, token, embedding |
-| Shared functions + packed 8-bit feedback | 128.7 MB CSS | used by compressed full model | maximum, token, quantized embedding |
-| Shared functions + untyped 48-bit feedback | 114.2 MB CSS | 0.85 painted tok/s | maximum, token, quantized embedding |
-| Shared functions + typed 6-bit feedback | 118.8 MB CSS | rejected: token 6 diverged | maximum, token, coarser embedding |
+| Shared token functions + embedding | 206.5 MB CSS | used by full model | maximum, token, embedding |
+| Shared functions + packed 8-bit feedback | 125.3 MB CSS | used by compressed full model | maximum, token, quantized embedding |
+| Shared functions + untyped 48-bit feedback | 110.9 MB CSS | 0.85 painted tok/s | maximum, token, quantized embedding |
+| Shared functions + typed 6-bit feedback | 115.5 MB CSS | rejected: token 6 diverged | maximum, token, coarser embedding |
 
 The final measurement used 35 real TinyStories hidden states selected because
 the cluster with the largest initial upper bound did **not** contain the true
@@ -109,11 +109,11 @@ shared version reduces the complete head from 291.9 MB to 213.0 MB (-27.0%).
 An additional recurrent-only variant quantizes the winning embedding feedback
 to 8 bits per coordinate and packs three coordinates into one 24-bit CSS
 number. It leaves the full-precision score functions and all 50,257 candidates
-unchanged. The head falls to 128,685,887 bytes and a fresh Chromium recurrent
+unchanged. The head falls to 125,344,932 bytes and a fresh Chromium recurrent
 run still produced `[11, 612, 373, 257]`. A later precision probe isolated the
 six-coordinate failure to typed `<number>` conversion. An untyped 48-bit
 variant preserved all six bytes and matched all 16 reference tokens, reducing
-the head to 114,244,898 bytes, but it rendered about 27% slower than the typed
+the head to 110,903,943 bytes, but it rendered about 27% slower than the typed
 24-bit version. A 6-bit typed variant was smaller but changed the sixth token.
 In clean process samples, the default packed streaming page reduced renderer
 RSS by 28.35%.

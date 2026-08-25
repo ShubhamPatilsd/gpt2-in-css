@@ -41,8 +41,41 @@ CSS_FUNCTIONS = """@function --gelu(--x <number>) returns <number> {
 
 
 def css_number(value: float) -> str:
-    text = f"{float(value):.9f}".rstrip("0").rstrip(".")
-    return "0" if text in {"", "-0"} else text
+    """Return the shortest CSS spelling of the existing nine-decimal value."""
+    fixed = f"{float(value):.9f}".rstrip("0").rstrip(".")
+    if fixed in {"", "-0"}:
+        return "0"
+
+    candidates = [fixed]
+    if fixed.startswith("0."):
+        candidates.append(fixed[1:])
+    elif fixed.startswith("-0."):
+        candidates.append("-" + fixed[2:])
+
+    sign = "-" if fixed.startswith("-") else ""
+    unsigned = fixed.removeprefix("-")
+    integer, separator, fraction = unsigned.partition(".")
+    digits = (integer + fraction).lstrip("0")
+    decimal_exponent = -len(fraction) if separator else 0
+    if digits:
+        trailing_zeroes = len(digits) - len(digits.rstrip("0"))
+        if trailing_zeroes:
+            digits = digits[:-trailing_zeroes]
+            decimal_exponent += trailing_zeroes
+        for decimal_position in range(len(digits) + 1):
+            if decimal_position == 0:
+                mantissa = "." + digits
+            elif decimal_position == len(digits):
+                mantissa = digits
+            else:
+                mantissa = digits[:decimal_position] + "." + digits[decimal_position:]
+            exponent = decimal_exponent + len(digits) - decimal_position
+            if exponent:
+                candidates.append(f"{sign}{mantissa}e{exponent}")
+            else:
+                candidates.append(sign + mantissa)
+
+    return min(candidates, key=len)
 
 
 def css_string(value: str) -> str:

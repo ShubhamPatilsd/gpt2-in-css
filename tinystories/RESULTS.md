@@ -80,7 +80,8 @@ tokens tested across three prompts; three decimals changed one token. This is
 not ready to ship: the clustered search bounds must be rebuilt or inflated and
 the four-decimal graph must still pass Chromium comparison tests.
 
-The shared 213,028,755-byte head breaks down more usefully by generated
+Before lossless numeric spelling, the shared 213,028,755-byte head broke down
+more usefully by generated
 section: 83,862,579 bytes of token dot functions, 1,552,076 bytes of cluster
 maximum functions, 5,662,448 bytes of winner recovery, 120,588,798 bytes of
 embedding-feedback lookup functions, and 1,362,854 bytes of registrations and
@@ -100,25 +101,38 @@ registered `<number>`, registered `<integer>`, and a typed custom-function
 return lose information. See `css-number-precision-test.html`.
 
 An untyped six-coordinate implementation therefore works and matches all 16
-reference winners. Its head is 114,244,898 bytes, 14,440,989 bytes (11.22%)
+reference winners. After lossless number spelling, its head is 110,903,943
+bytes, 14,440,989 bytes (11.52%)
 smaller than the typed 24-bit head. It is not the default because two full-paint
 runs took 17.386 and 17.911 seconds for the 15 post-Play tokens, versus 12.828
 and 12.891 seconds for the typed version. The smaller source rendered about 27%
 slower in this measurement.
 
 A second experiment used four 6-bit coordinates per typed 24-bit pack. It
-reduced the head to 118,812,255 bytes, but browser generation diverged at token
+reduced the head to 115,471,300 bytes, but browser generation diverged at token
 six: reference token `2576` became `2933`. The resulting sequence was
 `[11, 612, 373, 257, 1310, 2933, 3706, 5045, 13, 5045, 373, 6507, 13, 679,
 2227, 284]`. This is a concrete example of why a quantization sweep over a
 limited set of hidden states is not an end-to-end correctness test.
 
-The packed head is 128,685,887 bytes, 84,342,868 bytes (-39.59%) smaller than
-the original head. The current 16-stage streaming page is 152,684,609 bytes raw
-and 33,694,759 bytes under gzip level 9. In clean renderer-process samples,
+The packed head is 125,344,932 bytes, 81,119,228 bytes (-39.29%) smaller than
+the equivalently formatted shared head. The current 16-stage streaming page is
+148,926,533 bytes raw, 33,524,024 bytes under gzip level 9, and 28,928,806
+bytes under Brotli level 9. In clean renderer-process samples,
 the original streaming page used 2,321,629,184 bytes RSS and the packed page
 used 1,663,516,672 bytes: a 658,112,512-byte (-28.35%) reduction. RSS is a
 process-level observation, not a portable browser guarantee.
+
+The source reduction is lossless relative to the compiler's previous numeric
+values. Leading zeroes are omitted and exponent notation is used only when it
+represents exactly the same nine-decimal value in fewer characters. The
+browser still produced all 16 reference IDs. The output-head audit found no
+identical function bodies and no unused registered properties left to remove.
+
+Greedy generation remains intentional. Chromium 151 reports the draft CSS
+`random()` function as unsupported, and exact cluster pruning is designed to
+find one maximum rather than construct a full sampling distribution. The
+zero-script probe is `css-random-test.html`.
 
 The recurrent graph has an eight-token sliding window and stores the key and
 value vectors for every layer. It computes only the newest token's transformer
@@ -150,9 +164,9 @@ That is an observed process value rather than a portable memory guarantee.
 ## Source deduplication
 
 The original exact score/winner/embedding head repeated token dot products in
-multiple graphs and occupied 291,925,867 bytes. The shared-dot head defines
+multiple graphs and now occupies 282,137,529 bytes. The shared-dot head defines
 each token score once and reuses it for maximum and winner recovery. It is
-213,028,755 bytes, a 27.0% reduction, and remained exact in the browser tests.
+206,464,160 bytes, a 26.8% reduction, and remained exact in the browser tests.
 
 ## Tighter exact search result
 
@@ -191,7 +205,7 @@ make clustered-output-head
 make tinystories-step
 make tinystories-recurrent
 make tinystories-nested
-python3 -m http.server 4173
+make serve-tinystories
 ```
 
 Open `tinystories/step-with-shared-head.html` for the static full-token test or

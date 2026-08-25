@@ -154,8 +154,8 @@ the output-search experiments.
 For the strict zero-JavaScript version, build and open the nested page:
 
 ```sh
-make tinystories-nested
-python3 -m http.server 4173
+make tinystories-all
+make serve-tinystories
 ```
 
 Open `http://localhost:4173/tinystories/nested.html`. It contains no
@@ -183,17 +183,31 @@ text.
 compressed experiment. It quantizes only the embedding fed from one generated
 token into the next and packs three 8-bit coordinates into each 24-bit CSS
 number. It preserves all 50,257 output candidates. The expanded 16-token run
-matched all 16 rolling-window reference IDs. The complete page is 152,684,609
-bytes raw and 33,694,759 bytes with gzip level 9, versus 236,991,550 raw for
-the earlier four-token
-uncompressed streaming page.
+matched all 16 rolling-window reference IDs. The complete page is 148,926,533
+bytes raw, 33,524,024 bytes with gzip level 9, and 28,928,806 bytes with
+Brotli level 9, versus 236,991,550 raw for the earlier four-token uncompressed
+streaming page.
 A clean renderer comparison measured about 1.66 GB RSS packed versus 2.32 GB
 unpacked. Two full-paint measurements took 12.828 and 12.891 seconds for the
 15 tokens generated after Play: 1.17 visible tokens/second median. The first
 token is prepared while paused, and stylesheet loading is excluded.
 
+The compiler writes the same nine-decimal values using their shortest
+equivalent CSS spelling. All 16 browser token IDs remain unchanged. Run
+`make precompress-tinystories` to create deterministic `.gz` and `.br` files;
+the HTTP server must select them and send the matching `Content-Encoding`.
+For local testing, `make serve-tinystories` serves those precompressed static
+files at `http://127.0.0.1:4173` with immutable caching on versioned CSS. The
+server performs no inference and adds no client-side code.
+
 `streaming-packed8x6.html` is a smaller experimental alternative. It packs six
 8-bit coordinates into an untyped 48-bit CSS value. All 16 token IDs match, and
-the complete raw page is 138,243,681 bytes, but painted generation slowed to
+the rebuilt complete raw page is 134,485,605 bytes, but painted generation
+slowed to
 0.85 tokens/second in the measured runs. The typed 24-bit page remains the
 recommended balance of size, correctness, and speed.
+
+Greedy generation remains the reference mode. Chromium 151 does not implement
+the draft CSS `random()` function (`tinystories/css-random-test.html` reports
+`unsupported`), and full-vocabulary sampling would require substantially more
+output-head work than exact argmax. No JavaScript fallback is used.

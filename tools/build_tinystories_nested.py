@@ -249,10 +249,10 @@ def streaming_page(
 <head>
   <meta charset="utf-8">
   <title>Streaming CSS-only TinyStories generation{suffix}</title>
-  <link rel="stylesheet" href="../output-head-benchmark/generated/{head_name}?v=ts-streaming-1">
-  <link rel="stylesheet" href="recurrent.css?v=ts-streaming-1">
-  <link rel="stylesheet" href="nested-runtime.css?v=ts-streaming-1">
-  <link rel="stylesheet" href="streaming.css?v=ts-streaming-1">
+  <link rel="stylesheet" href="../output-head-benchmark/generated/{head_name}?v=ts-streaming-2">
+  <link rel="stylesheet" href="recurrent.css?v=ts-streaming-2">
+  <link rel="stylesheet" href="nested-runtime.css?v=ts-streaming-2">
+  <link rel="stylesheet" href="streaming.css?v=ts-streaming-2">
 </head>
 <body class="streaming-page">
   <h1>Streaming CSS-only TinyStories generation{suffix}</h1>

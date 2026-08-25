@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS random() support probe</title>
+  <style>
+    @property --sample {
+      syntax: "<number>";
+      inherits: false;
+      initial-value: -1;
+    }
+    #probe {
+      --sample: random(--inference-sample element-scoped, 0, 1000000, 1);
+      counter-reset: sample var(--sample);
+    }
+    #probe::after {
+      content: "unsupported";
+      font-family: ui-monospace, monospace;
+    }
+    @supports (opacity: random(0, 1)) {
+      #probe::after { content: "supported; sample = " counter(sample); }
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS <code>random()</code> support probe</h1>
+  <p id="probe">Result: </p>
+</body>
+</html>

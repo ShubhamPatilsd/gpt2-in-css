@@ -1,6 +1,7 @@
 {
   "date": "2026-08-24",
-  "current_linked_css_bytes": 236988204,
+  "current_linked_css_bytes": 230039792,
+  "previous_linked_css_bytes_before_shortest_numbers": 236988204,
   "decimal_literals": 6911520,
   "decimal_precision_source_estimates": [
     {
@@ -39,7 +40,21 @@
     "four_decimal_browser_validation": false,
     "note": "The four-decimal result is an empirical candidate, not a correctness proof. Cluster bounds must be rebuilt or conservatively inflated before browser use."
   },
+  "four_decimal_extended_probe": {
+    "prompts": 12,
+    "generated_tokens_per_prompt": 24,
+    "teacher_forced_top1_matches": 287,
+    "total_decisions": 288,
+    "top1_match_percent": 99.65,
+    "prompts_with_no_changed_decision": 11,
+    "maximum_absolute_logit_change": 0.0450371936700682,
+    "mean_kl_nats": 0.000006623871223612337,
+    "maximum_kl_nats": 0.000042402151475482634,
+    "first_autoregressive_divergence_example": "A long time ago, token 18",
+    "decision": "not used by the exact checkpoint path; no fine-tuning"
+  },
   "shared_output_head_segments_bytes": {
+    "measurement": "before shortest-equivalent numeric spelling",
     "token_dot_functions": 83862579,
     "cluster_maximum_functions": 1552076,
     "winner_recovery_functions": 5662448,
@@ -52,11 +67,12 @@
     "coordinates_per_pack": 3,
     "packs_per_embedding": 22,
     "largest_pack_bits": 24,
-    "output_head_bytes": 128685887,
-    "complete_page_raw_bytes": 152684609,
-    "complete_page_gzip_bytes": 33694759,
-    "output_head_reduction_bytes": 84342868,
-    "output_head_reduction_percent": 39.59,
+    "output_head_bytes": 125344932,
+    "complete_page_raw_bytes": 148926533,
+    "complete_page_gzip_bytes": 33524024,
+    "complete_page_brotli_bytes": 28928806,
+    "output_head_reduction_bytes": 81119228,
+    "output_head_reduction_percent": 39.29,
     "maximum_embedding_error": 0.003100044849350697,
     "browser_output_token_ids": [11, 612, 373, 257, 1310, 2576, 3706, 20037, 13, 1375, 6151, 284, 711, 351, 607, 14958],
     "browser_wrong_tokens": 0,
@@ -86,10 +102,10 @@
     "coordinates_per_pack": 6,
     "packs_per_embedding": 11,
     "largest_pack_bits": 48,
-    "output_head_bytes": 114244898,
-    "complete_page_raw_bytes": 138243681,
+    "output_head_bytes": 110903943,
+    "complete_page_raw_bytes": 134485605,
     "output_head_reduction_from_packed8_bytes": 14440989,
-    "output_head_reduction_from_packed8_percent": 11.22,
+    "output_head_reduction_from_packed8_percent": 11.52,
     "browser_output_token_ids": [11, 612, 373, 257, 1310, 2576, 3706, 20037, 13, 1375, 6151, 284, 711, 351, 607, 14958],
     "browser_wrong_tokens": 0,
     "full_paint_milliseconds": [17386, 17911],
@@ -101,7 +117,7 @@
     "coordinates_per_pack": 4,
     "packs_per_embedding": 16,
     "largest_pack_bits": 24,
-    "output_head_bytes": 118812255,
+    "output_head_bytes": 115471300,
     "maximum_embedding_error": 0.012700240458211609,
     "reference_token_ids": [11, 612, 373, 257, 1310, 2576, 3706, 20037, 13, 1375, 6151, 284, 711, 351, 607, 14958],
     "browser_output_token_ids": [11, 612, 373, 257, 1310, 2933, 3706, 5045, 13, 5045, 373, 6507, 13, 679, 2227, 284],
@@ -127,5 +143,29 @@
       "3_bit_8_per_pack": 43
     },
     "warning": "The 6-bit offline result still diverged in Chromium at generated token 6; offline decision matches are not sufficient validation."
+  },
+  "lossless_numeric_spelling": {
+    "semantic_change": false,
+    "previous_complete_page_raw_bytes": 152684609,
+    "complete_page_raw_bytes": 148926533,
+    "raw_reduction_bytes": 3758076,
+    "raw_reduction_percent": 2.46,
+    "complete_page_gzip_bytes": 33524024,
+    "complete_page_brotli_bytes": 28928806,
+    "browser_output_token_ids": [11, 612, 373, 257, 1310, 2576, 3706, 20037, 13, 1375, 6151, 284, 711, 351, 607, 14958],
+    "browser_wrong_tokens": 0,
+    "examples": ["0.5 -> .5", "0.000001 -> 1e-6"]
+  },
+  "exact_graph_deduplication_audit": {
+    "output_head_functions": 56401,
+    "duplicate_function_bodies": 0,
+    "unused_registered_properties": 0,
+    "token_dot_function_bytes": 80638875
+  },
+  "sampling_probe": {
+    "browser": "Chromium 151",
+    "css_random_supported": false,
+    "page": "css-random-test.html",
+    "decision": "retain deterministic greedy generation"
   }
 }

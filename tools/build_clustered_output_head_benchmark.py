@@ -655,7 +655,7 @@ def main() -> None:
     packed_shared_css, feedback_packs, reconstructed_embeddings = (
         build_packed_feedback(FEEDBACK_COORDINATES_PER_PACK, True)
     )
-    if write_full_benchmark:
+    if write_full_benchmark or args.packed_candidates_only:
         (OUT / "clustered-256-embedding-packed8-shared-runtime.css").write_text(
             packed_shared_css
         )
@@ -675,10 +675,6 @@ def main() -> None:
             COMPACT_FEEDBACK_BITS,
         )
     )
-    if args.packed_candidates_only:
-        (
-            OUT / "clustered-256-embedding-packed6x4-shared-runtime.css"
-        ).write_text(compact_packed_shared_css)
 
     expected_active = []
     for query, reference in zip(hidden_vectors, reference_maximums):
