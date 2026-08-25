@@ -272,7 +272,8 @@ def stage_css() -> str:
         lines.append(
             f'.streaming-page .handoff.to-stage-{child_stage}'
             f'{{--continue-stream:{continue_expression};'
-            'display:if(style(--continue-stream:1):inline-block;else:none)!important}'
+            'display:if(style(--continue-stream:1):'
+            'if(style(--gate-open:1):inline;else:inline-block);else:none)!important}'
         )
     return "\n".join(lines) + "\n"
 
@@ -338,7 +339,7 @@ def page() -> str:
   <link rel="stylesheet" href="dynamic-recurrent.css?v=ts-dynamic-2">
   <link rel="stylesheet" href="nested-runtime.css?v=ts-dynamic-2">
   <link rel="stylesheet" href="streaming.css?v=ts-dynamic-2">
-  <link rel="stylesheet" href="dynamic-prompt.css?v=ts-dynamic-7">
+  <link rel="stylesheet" href="dynamic-prompt.css?v=ts-dynamic-8">
 </head>
 <body class="prompt-source streaming-page">
   {tokenizer_chain()}
