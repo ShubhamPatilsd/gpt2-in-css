@@ -39,7 +39,7 @@ class SafeTensors:
         )
 
 
-def forward_one_token(token_id: int, tensors: SafeTensors) -> np.ndarray:
+def final_hidden_one_token(token_id: int, tensors: SafeTensors) -> np.ndarray:
     x = np.asarray(
         tensors.tensor("wte.weight")[token_id] + tensors.tensor("wpe.weight")[0],
         dtype=np.float32,
@@ -75,10 +75,13 @@ def forward_one_token(token_id: int, tensors: SafeTensors) -> np.ndarray:
             + hidden @ tensors.tensor(f"{prefix}.mlp.c_proj.weight")
             + tensors.tensor(f"{prefix}.mlp.c_proj.bias")
         )
-    final = layer_norm(
+    return layer_norm(
         x, tensors.tensor("ln_f.weight"), tensors.tensor("ln_f.bias")
     )
-    return tensors.tensor("wte.weight") @ final
+
+
+def forward_one_token(token_id: int, tensors: SafeTensors) -> np.ndarray:
+    return tensors.tensor("wte.weight") @ final_hidden_one_token(token_id, tensors)
 
 
 def main() -> None:
