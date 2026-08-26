@@ -1,0 +1,35 @@
+@property --gate-open{syntax:"<integer>";inherits:false;initial-value:0}
+@keyframes ts-open-gate{to{--gate-open:1;display:inline}}
+.streaming-page .handoff{
+  --gate-open:0;
+  display:inline-block;
+  content-visibility:if(style(--gate-open:1):visible;else:hidden);
+  contain-intrinsic-size:auto 1lh;
+}
+.streaming-page .story{white-space:pre-wrap}
+
+#pause-generation:checked ~ .story .handoff{animation-play-state:paused}
+.generation-controls{display:flex;align-items:center;gap:.75rem;margin:1.5rem 0}
+#pause-generation,#show-token-ids{position:absolute;inline-size:1px;block-size:1px;opacity:0}
+.generation-controls label{
+  display:inline-block;
+  min-inline-size:4rem;
+  padding:.45rem .8rem;
+  border:1px solid #777;
+  border-radius:.4rem;
+  cursor:pointer;
+  text-align:center;
+  font-weight:700;
+}
+.generation-controls .pause-control::after{content:"Pause"}
+#pause-generation:checked + .generation-controls .pause-control::after{content:"Play"}
+#pause-generation:focus-visible + .generation-controls .pause-control{outline:3px solid Highlight;outline-offset:3px}
+.generation-controls .control-status::after{content:"Generation is running"}
+#pause-generation:checked + .generation-controls .control-status::after{content:"Generation is paused before the next stage"}
+#show-token-ids:checked ~ .story .token-output{counter-reset:ts-token-id var(--winner-id)}
+#show-token-ids:checked ~ .story .token-output::before{
+  content:"[" counter(ts-token-id) "]";
+  margin-inline:.25rem .1rem;
+  color:#666;
+  font:600 .75rem/1 system-ui,sans-serif;
+}
