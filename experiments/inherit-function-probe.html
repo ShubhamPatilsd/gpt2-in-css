@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>CSS inherit() function probe</title>
+<style>
+  .parent {
+    --axis-list: "A000" 1;
+  }
+
+  .child {
+    --axis-list: inherit(--axis-list), "A001" 2;
+  }
+
+  .grandchild {
+    --axis-list: inherit(--axis-list), "A002" 3;
+    font-variation-settings: var(--axis-list);
+  }
+</style>
+
+<div class="parent"><div class="child"><output id="result" class="grandchild"></output></div></div>
