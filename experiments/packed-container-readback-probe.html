@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Packed container readback probe</title>
+<style>
+  @property --a { syntax: "<number>"; inherits: true; initial-value: 0; }
+  @property --b { syntax: "<number>"; inherits: true; initial-value: 0; }
+  @property --c { syntax: "<number>"; inherits: true; initial-value: 0; }
+  @property --d { syntax: "<number>"; inherits: true; initial-value: 0; }
+
+  .probe {
+    position: fixed;
+    inset: 0 auto auto 0;
+    width: calc(((12345 + 60000) + (-23456 + 60000) * 120001) * 0.002px);
+    height: calc(((54321 + 60000) + (-11111 + 60000) * 120001) * 0.002px);
+    container: packed / size;
+  }
+
+  @container packed (width > 0px) {
+    output {
+      --packed-x: calc(100cqi / 0.002px);
+      --a: calc(mod(var(--packed-x), 120001) - 60000);
+      --b: calc(round(down, var(--packed-x) / 120001, 1) - 60000);
+    }
+  }
+
+  @container packed (height > 0px) {
+    output {
+      --packed-y: calc(100cqb / 0.002px);
+      --c: calc(mod(var(--packed-y), 120001) - 60000);
+      --d: calc(round(down, var(--packed-y) / 120001, 1) - 60000);
+    }
+  }
+</style>
+
+<div class="probe"><output id="result"></output></div>

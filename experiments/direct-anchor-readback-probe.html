@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Direct anchor-size readback probe</title>
+<style>
+  @property --raw {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: -999;
+  }
+  .metric {
+    position: fixed;
+    width: 37px;
+    height: 1px;
+    anchor-name: --metric;
+  }
+  .consumer {
+    position: fixed;
+    position-anchor: --metric;
+    --raw: calc(anchor-size(--metric width) / 1px);
+    width: calc(var(--raw) * 1px);
+    height: 1px;
+    font-variation-settings: "A000" calc(anchor-size(--metric width) / 1px);
+  }
+</style>
+<div class="metric"></div>
+<output id="result" class="consumer"></output>
