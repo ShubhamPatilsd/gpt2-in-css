@@ -1,0 +1,66 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>CSS counter shadow escape probe</title>
+<style>
+  @property --raw {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+
+  .scope {
+    counter-reset: escaped 0;
+  }
+
+  .counter-source {
+    counter-set: escaped round(nearest, calc(var(--raw) + 100), 1);
+  }
+
+  output {
+    position: fixed;
+    inset: 0 auto auto 0;
+    display: inline-block;
+    width: max-content;
+    white-space: pre;
+    font: 10px/1 monospace;
+  }
+
+  output::before {
+    content: counter(escaped);
+  }
+</style>
+
+<div class="scope">
+  <counter-stage>
+    <template shadowrootmode="open">
+      <style>
+        .metric,
+        .probe {
+          position: fixed;
+          inset: 0 auto auto 0;
+          height: 1px;
+        }
+
+        .metric {
+          width: 37px;
+          anchor-name: --metric;
+        }
+
+        .probe {
+          width: anchor-size(--metric width);
+          container: measured / size;
+        }
+
+        @container measured (width > 0px) {
+          slot {
+            --raw: calc(100cqi / 1px);
+          }
+        }
+      </style>
+      <i class="metric"></i>
+      <div class="probe"><slot></slot></div>
+    </template>
+    <i class="counter-source"></i>
+  </counter-stage>
+  <output id="escaped"></output>
+</div>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>CSS anchor width merge probe</title>
+<style>
+  @property --merged { syntax:"<number>"; inherits:true; initial-value:0 }
+  .stage { position:relative }
+  .source { position:absolute; height:1px }
+  .branch { position:absolute; width:5px; height:1px }
+  .a { width:37px; anchor-name:--a }
+  .b { width:19px; anchor-name:--b }
+  .merged {
+    position:absolute;
+    width:calc(anchor-size(--a width) + anchor-size(--b width));
+    height:1px;
+    container:merged/inline-size;
+  }
+  @container merged (width > 0px) {
+    .result { --merged:calc(100cqi / 1px) }
+  }
+</style>
+<body>
+  <div class="stage">
+    <div class="branch"><i class="source a"></i><i class="source b"></i></div>
+    <div class="merged"><output class="result" id="result"></output></div>
+  </div>
+</body>
+</html>

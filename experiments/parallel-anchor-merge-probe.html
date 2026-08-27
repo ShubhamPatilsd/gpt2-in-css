@@ -1,0 +1,85 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parallel contained anchor merge probe</title>
+<style>
+  @property --sum {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+
+  html {
+    font: 16px ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  body {
+    margin: 2rem;
+  }
+
+  .branch {
+    position: relative;
+    height: 1px;
+    container-type: size;
+  }
+
+  .left {
+    width: 37px;
+    container-name: left;
+  }
+
+  .right {
+    width: 41px;
+    container-name: right;
+  }
+
+  .metric,
+  .merge {
+    position: fixed;
+    inset: 0 auto auto 0;
+    height: 1px;
+  }
+
+  @container left (width > 0px) {
+    .metric-left {
+      width: 100cqi;
+      anchor-name: --left-partial;
+    }
+  }
+
+  @container right (width > 0px) {
+    .metric-right {
+      width: 100cqi;
+      anchor-name: --right-partial;
+    }
+  }
+
+  .merge {
+    width: calc(
+      anchor-size(--left-partial width) +
+      anchor-size(--right-partial width)
+    );
+    container: merged / size;
+  }
+
+  @container merged (width > 0px) {
+    output {
+      --sum: calc(100cqi / 1px);
+    }
+  }
+
+  output {
+    display: block;
+    margin-top: 2rem;
+    counter-reset: result var(--sum);
+  }
+
+  output::before {
+    content: "Expected 78; browser returned " counter(result) ".";
+  }
+</style>
+
+<h1>Parallel contained anchor merge</h1>
+<div class="branch left"><i class="metric metric-left"></i></div>
+<div class="branch right"><i class="metric metric-right"></i></div>
+<div class="merge"><output id="result"></output></div>

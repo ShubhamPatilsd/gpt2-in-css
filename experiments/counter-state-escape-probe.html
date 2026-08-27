@@ -1,0 +1,47 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>CSS counter state escape probe</title>
+<style>
+  .scope {
+    counter-reset: state 0;
+  }
+
+  .deep-source {
+    counter-set: state 37;
+  }
+
+  .same-level-source {
+    counter-set: sibling-state 37;
+  }
+
+  .same-level {
+    counter-reset: sibling-state 0;
+  }
+
+  .counter-output {
+    position: fixed;
+    inset: 0 auto auto 0;
+    display: inline-block;
+    width: max-content;
+    white-space: pre;
+    font: 10px/1 monospace;
+  }
+
+  #deep-output::before {
+    content: counter(state);
+  }
+
+  #same-output::before {
+    content: counter(sibling-state);
+  }
+</style>
+
+<div class="scope">
+  <div class="stage"><div><div class="deep-source"></div></div></div>
+  <output id="deep-output" class="counter-output"></output>
+</div>
+
+<div class="same-level">
+  <div class="same-level-source"></div>
+  <output id="same-output" class="counter-output"></output>
+</div>

@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Slotted anchor visibility probe</title>
+<style>
+  .slotted-anchor,
+  part-host::part(metric),
+  .probe {
+    position: fixed;
+    inset: 0 auto auto 0;
+    height: 1px;
+  }
+
+  .slotted-anchor {
+    width: 37px;
+    anchor-name: --slotted-anchor;
+  }
+
+  part-host::part(metric) {
+    width: 41px;
+    anchor-name: --part-anchor;
+  }
+
+  .slotted-probe {
+    width: anchor-size(--slotted-anchor width);
+  }
+
+  .part-probe {
+    width: anchor-size(--part-anchor width);
+  }
+</style>
+
+<slot-host>
+  <template shadowrootmode="open"><slot></slot></template>
+  <i class="slotted-anchor"></i>
+</slot-host>
+<div id="slotted" class="probe slotted-probe"></div>
+
+<part-host>
+  <template shadowrootmode="open"><i part="metric"></i></template>
+</part-host>
+<div id="part" class="probe part-probe"></div>
