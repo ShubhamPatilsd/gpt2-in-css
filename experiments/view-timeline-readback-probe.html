@@ -1,0 +1,224 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>View-timeline sibling readback probe</title>
+
+<style>
+  @font-face {
+    font-family: MatrixVF;
+    src: url("matrix-scaling/64/variable-matvec.woff2?v=4") format("woff2");
+  }
+
+  @property --sample-a {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: -1;
+  }
+
+  @property --sample-b {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: -1;
+  }
+
+  @property --recovered-a {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: -1;
+  }
+
+  @property --recovered-b {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: -1;
+  }
+
+  @property --hvar-a {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: -1;
+  }
+
+  @property --hvar-b {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: -1;
+  }
+
+  @property --hvar-recovered-a {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: -999;
+  }
+
+  @property --hvar-recovered-b {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: -999;
+  }
+
+  @keyframes sample-a {
+    from { --sample-a: 0; }
+    to { --sample-a: 1; }
+  }
+
+  @keyframes sample-b {
+    from { --sample-b: 0; }
+    to { --sample-b: 1; }
+  }
+
+  @keyframes sample-hvar-a {
+    from { --hvar-a: 0; }
+    to { --hvar-a: 1; }
+  }
+
+  @keyframes sample-hvar-b {
+    from { --hvar-b: 0; }
+    to { --hvar-b: 1; }
+  }
+
+  :root {
+    font: 16px/1.4 ui-monospace, monospace;
+  }
+
+  body {
+    margin: 2rem;
+  }
+
+  .scope {
+    timeline-scope: --width-a, --width-b;
+  }
+
+  .scroller {
+    position: fixed;
+    left: -10000px;
+    top: 0;
+    width: 100px;
+    height: 1px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .track {
+    width: 300px;
+    height: 1px;
+  }
+
+  .metric-a,
+  .metric-b {
+    height: 1px;
+  }
+
+  .metric-a {
+    width: 37px;
+    view-timeline: --width-a inline;
+  }
+
+  .metric-b {
+    width: 41px;
+    view-timeline: --width-b inline;
+  }
+
+  .consumer {
+    animation-name: sample-a, sample-b;
+    animation-duration: 1s, 1s;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: both, both;
+    animation-timeline: --width-a, --width-b;
+    animation-range: cover, cover;
+
+    /* At scroll offset zero: progress = viewport / (viewport + metric). */
+    --recovered-a: calc(100 / var(--sample-a) - 100);
+    --recovered-b: calc(100 / var(--sample-b) - 100);
+  }
+
+  .hvar-scope {
+    timeline-scope: --hvar-width-a, --hvar-width-b;
+  }
+
+  .hvar-scroller {
+    position: fixed;
+    left: -10000px;
+    top: 2px;
+    width: 256px;
+    height: 1px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .hvar-track {
+    width: 1000px;
+    height: 1px;
+  }
+
+  .hvar-metric {
+    display: inline-block;
+    width: max-content;
+    height: 1px;
+    overflow: hidden;
+    white-space: pre;
+    font: 32px/1 MatrixVF;
+    font-kerning: none;
+    font-variation-settings: "X000" .5, "X001" .25, "X002" .5, "X003" .5, "X004" 0, "X005" .5, "X006" .75, "X007" 0, "X008" 0, "X009" .25, "X010" 0, "X011" 0, "X012" 1, "X013" 1, "X014" 1, "X015" .25, "X016" .75, "X017" .25, "X018" .5, "X019" .25, "X020" .75, "X021" 1, "X022" 0, "X023" .5, "X024" 1, "X025" .5, "X026" 0, "X027" .25, "X028" .5, "X029" .5, "X030" .5, "X031" .75, "X032" .75, "X033" 1, "X034" .5, "X035" 0, "X036" .25, "X037" 1, "X038" 1, "X039" 1, "X040" 0, "X041" .75, "X042" .5, "X043" 0, "X044" .25, "X045" .5, "X046" .75, "X047" .75, "X048" 1, "X049" .25, "X050" .5, "X051" 0, "X052" .5, "X053" 1, "X054" .5, "X055" 1, "X056" .5, "X057" 0, "X058" 0, "X059" .75, "X060" 0, "X061" 0, "X062" 1, "X063" .75;
+  }
+
+  .hvar-metric-a {
+    view-timeline: --hvar-width-a inline;
+  }
+
+  .hvar-metric-a::before {
+    content: "\e000";
+  }
+
+  .hvar-metric-b {
+    view-timeline: --hvar-width-b inline;
+  }
+
+  .hvar-metric-b::before {
+    content: "\e001";
+  }
+
+  .hvar-consumer {
+    animation-name: sample-hvar-a, sample-hvar-b;
+    animation-duration: 1s, 1s;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: both, both;
+    animation-timeline: --hvar-width-a, --hvar-width-b;
+    animation-range: cover, cover;
+
+    --hvar-recovered-a: calc((256 / var(--hvar-a) - 256) * 1000 / 32 - 8000);
+    --hvar-recovered-b: calc((256 / var(--hvar-b) - 256) * 1000 / 32 - 8000);
+  }
+</style>
+
+<h1>View-timeline sibling readback probe</h1>
+<p>Expected recovered values: 37 and 41.</p>
+
+<div class="scope">
+  <div class="scroller">
+    <div class="track"><div class="metric-a"></div></div>
+  </div>
+
+  <div class="scroller">
+    <div class="track"><div class="metric-b"></div></div>
+  </div>
+
+  <div class="consumer">Both independent timelines terminate on this one sibling.</div>
+</div>
+
+<h2>HVAR-backed widths</h2>
+<p>Expected matrix outputs: -109.75 and 69.25.</p>
+
+<div class="hvar-scope">
+  <div class="hvar-scroller">
+    <div class="hvar-track"><i class="hvar-metric hvar-metric-a"></i></div>
+  </div>
+
+  <div class="hvar-scroller">
+    <div class="hvar-track"><i class="hvar-metric hvar-metric-b"></i></div>
+  </div>
+
+  <div class="hvar-consumer">
+    Both HVAR dot products terminate on this one sibling.
+    <span class="hvar-child">A child inherits both timeline values.</span>
+  </div>
+</div>
