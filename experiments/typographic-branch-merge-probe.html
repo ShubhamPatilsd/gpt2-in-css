@@ -1,0 +1,86 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Typographic branch merge probe</title>
+<style>
+  @property --value {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+
+  body {
+    font: 14px ui-monospace, monospace;
+  }
+
+  .control,
+  #merge {
+    display: inline-flex;
+    width: max-content;
+    height: 1px;
+  }
+
+  .control > i:nth-child(1) { width: 37px; }
+  .control > i:nth-child(2) { width: 41px; }
+  .control > i:nth-child(3) { width: 43px; }
+  .control > i:nth-child(4) { width: 47px; }
+
+  merge-branch,
+  .result {
+    display: contents;
+  }
+
+  .partial {
+    display: inline-block;
+    width: calc(var(--value) * 1px);
+    height: 1px;
+  }
+</style>
+
+<div class="control" id="control"><i></i><i></i><i></i><i></i></div>
+
+<div id="merge">
+  <merge-branch style="--source:37">
+    <template shadowrootmode="open">
+      <style>
+        :host { display: contents; }
+        .source { position: fixed; width: calc(var(--source) * 1px); height: 1px; container: branch / size; }
+        @container branch (width > 0px) { slot { --value: calc(100cqi / 1px); } }
+      </style>
+      <div class="source"><slot></slot></div>
+    </template>
+    <span class="result"><i class="partial"></i></span>
+  </merge-branch>
+  <merge-branch style="--source:41">
+    <template shadowrootmode="open">
+      <style>
+        :host { display: contents; }
+        .source { position: fixed; width: calc(var(--source) * 1px); height: 1px; container: branch / size; }
+        @container branch (width > 0px) { slot { --value: calc(100cqi / 1px); } }
+      </style>
+      <div class="source"><slot></slot></div>
+    </template>
+    <span class="result"><i class="partial"></i></span>
+  </merge-branch>
+  <merge-branch style="--source:43">
+    <template shadowrootmode="open">
+      <style>
+        :host { display: contents; }
+        .source { position: fixed; width: calc(var(--source) * 1px); height: 1px; container: branch / size; }
+        @container branch (width > 0px) { slot { --value: calc(100cqi / 1px); } }
+      </style>
+      <div class="source"><slot></slot></div>
+    </template>
+    <span class="result"><i class="partial"></i></span>
+  </merge-branch>
+  <merge-branch style="--source:47">
+    <template shadowrootmode="open">
+      <style>
+        :host { display: contents; }
+        .source { position: fixed; width: calc(var(--source) * 1px); height: 1px; container: branch / size; }
+        @container branch (width > 0px) { slot { --value: calc(100cqi / 1px); } }
+      </style>
+      <div class="source"><slot></slot></div>
+    </template>
+    <span class="result"><i class="partial"></i></span>
+  </merge-branch>
+</div>
