@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  @property --answer {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: -1;
+  }
+
+  @function --gelu(--z <number>) returns <number> {
+    --t: calc(.797884561 * (var(--z) + .044715 * pow(var(--z), 3)));
+    result: calc(.5 * var(--z) * (1 + (exp(2 * var(--t)) - 1) / (exp(2 * var(--t)) + 1)));
+  }
+
+  #result {
+    --answer: --gelu(1);
+  }
+</style>
+<output id="result"></output>
