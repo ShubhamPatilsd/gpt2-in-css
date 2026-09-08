@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SVG filtered element chaining probe</title>
+<style>html,body{margin:0;background:black}svg{display:block}</style>
+<svg width="8" height="3" viewBox="0 0 8 3" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="green" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"
+            x="0" y="0" width="4" height="1" color-interpolation-filters="sRGB">
+      <feColorMatrix values="0 0 0 0 0  1 0 0 0 0  0 0 0 0 0  0 0 0 0 1"/>
+    </filter>
+    <filter id="blue-from-stage" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"
+            x="4" y="0" width="4" height="1" color-interpolation-filters="sRGB">
+      <feImage href="#stage-one" x="4" y="0" width="4" height="1"
+               preserveAspectRatio="none" result="previous"/>
+      <feColorMatrix in="previous"
+        values="0 0 0 0 0  0 0 0 0 0  0 1 0 0 0  0 0 0 0 1"/>
+    </filter>
+  </defs>
+  <rect id="stage-one" x="0" y="0" width="4" height="1" fill="red" filter="url(#green)"/>
+  <rect x="4" y="0" width="4" height="1" fill="white" filter="url(#blue-from-stage)"/>
+</svg>
