@@ -1,0 +1,34 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Four-output font-metric matvec</title>
+<style>
+@font-face{font-family:MetricVector;src:url("metric-vector.woff2?v=2") format("woff2")}
+@property --o0{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --o1{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --o2{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --o3{syntax:"<number>";inherits:true;initial-value:-99999}
+html{font:14px ui-monospace,SFMono-Regular,Menlo,monospace}
+body{margin:2rem;max-width:52rem}
+.producer{
+  font-family:MetricVector;
+  font-size:512px;
+  font-variation-settings:"X000" 1,"X001" 0.25,"X002" 0,"X003" 0,"X004" -0.5,"X005" 1,"X006" 1,"X007" -0.25,"X008" -1,"X009" -0.75,"X010" 1,"X011" -1,"X012" -1,"X013" 0,"X014" -0.5,"X015" -1,"X016" 0.5,"X017" -0.75,"X018" 0.5,"X019" -1,"X020" 0,"X021" 0,"X022" 1,"X023" 0.5,"X024" 0.5,"X025" 0,"X026" -0.75,"X027" 0.5,"X028" 0.75,"X029" 0.25,"X030" -0.5,"X031" -0.75,"X032" 0.75,"X033" -0.5,"X034" -0.5,"X035" 0,"X036" -0.75,"X037" 0.25,"X038" -0.25,"X039" 0.75,"X040" 1,"X041" -0.75,"X042" -1,"X043" -1,"X044" 1,"X045" 0,"X046" -0.75,"X047" 0.25,"X048" 1,"X049" 0.25,"X050" -1,"X051" -0.5,"X052" -0.5,"X053" -0.75,"X054" -1,"X055" 0,"X056" 0.5,"X057" 1,"X058" -0.25,"X059" 0.75,"X060" 0.75,"X061" 0.25,"X062" 0.75,"X063" 0.75;
+  --o0:calc(1ex / 1px * 1000 / 512 - 2000);
+  --o1:calc(1cap / 1px * 1000 / 512 - 2000);
+  --o2:calc(1ch / 1px * 1000 / 512 - 2000);
+  --o3:calc(1ic / 1px * 1000 / 512 - 2000);
+}
+.result{font:14px ui-monospace,SFMono-Regular,Menlo,monospace}
+.bar{height:1rem;background:#222;margin:.35rem 0;width:calc((var(--value) + 1000) * .25px)}
+</style>
+<h1>Four matrix outputs from one variable-font instance</h1>
+<p>Expected: -67, -75.5, -84.5, 58.5</p>
+<div class="producer">
+  <div class="result" id="result">
+    <div class="bar" style="--value:var(--o0)"></div>
+    <div class="bar" style="--value:var(--o1)"></div>
+    <div class="bar" style="--value:var(--o2)"></div>
+    <div class="bar" style="--value:var(--o3)"></div>
+  </div>
+</div>

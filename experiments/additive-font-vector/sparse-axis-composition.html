@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Sparse font-axis additive composition probe</title>
+<style>
+@keyframes x-axis{from{font-variation-settings:"X000" 0}to{font-variation-settings:"X000" 1}}
+@keyframes y-axis{from{font-variation-settings:"X001" 0}to{font-variation-settings:"X001" 1}}
+#probe{
+  font-variation-settings:"X000" 0,"X001" 0;
+  animation-name:x-axis,y-axis;
+  animation-duration:1s;
+  animation-delay:-.5s;
+  animation-play-state:paused;
+  animation-timing-function:linear;
+  animation-composition:add;
+}
+</style>
+<output id="probe">Sparse-axis composition probe</output>
