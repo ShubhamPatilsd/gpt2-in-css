@@ -1,0 +1,55 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Two values from one view timeline</title>
+<style>
+@property --cover { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --entry { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --decoded-width { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --decoded-left { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --cover-one { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --entry-one { syntax: "<number>"; inherits: true; initial-value: -1; }
+@keyframes read-cover { from { --cover: 0; } to { --cover: 1; } }
+@keyframes read-entry { from { --entry: 0; } to { --entry: 1; } }
+@keyframes read-both {
+  cover 0% { --cover-one: 0; --entry-one: 0; }
+  entry 100% { --entry-one: 1; }
+  cover 100% { --cover-one: 1; --entry-one: 1; }
+}
+.scope { timeline-scope: --pair; }
+.scroller {
+  position: fixed;
+  left: 0;
+  top: -1000px;
+  width: 100px;
+  height: 1px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.track { position: relative; width: 300px; height: 1px; }
+.subject {
+  position: absolute;
+  left: 80px;
+  width: 40px;
+  height: 1px;
+  view-timeline: --pair inline;
+}
+.result {
+  animation-name: read-cover, read-entry;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: --pair, --pair;
+  animation-range: cover, entry;
+  --decoded-width: calc(var(--cover) * 100 / (var(--entry) - var(--cover)));
+  --decoded-left: calc(100 - var(--entry) * var(--decoded-width));
+}
+.result-one {
+  animation: read-both 1s linear both;
+  animation-timeline: --pair;
+}
+</style>
+<div class="scope">
+  <div class="scroller"><div class="track"><i class="subject"></i></div></div>
+  <div class="result" id="result"></div>
+  <div class="result-one" id="result-one"></div>
+</div>

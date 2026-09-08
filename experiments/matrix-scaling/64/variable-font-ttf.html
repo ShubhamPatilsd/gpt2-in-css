@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Variable-font 64×64 matvec</title>
+  <style>
+    @font-face{font-family:MatrixVF;src:url("variable-matvec.ttf?v=1") format("truetype")}
+    @property --vf-y-000{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-001{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-002{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-003{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-004{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-005{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-006{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-007{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-008{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-009{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-010{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-011{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-012{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-013{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-014{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-015{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-016{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-017{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-018{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-019{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-020{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-021{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-022{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-023{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-024{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-025{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-026{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-027{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-028{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-029{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-030{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-031{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-032{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-033{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-034{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-035{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-036{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-037{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-038{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-039{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-040{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-041{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-042{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-043{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-044{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-045{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-046{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-047{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-048{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-049{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-050{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-051{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-052{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-053{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-054{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-055{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-056{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-057{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-058{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-059{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-060{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-061{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-062{syntax:"<number>";inherits:true;initial-value:0}
+@property --vf-y-063{syntax:"<number>";inherits:true;initial-value:0}
+    html{font:14px ui-monospace,SFMono-Regular,Menlo,monospace}
+    body{margin:2rem;max-width:52rem}
+    h1{font:600 1.25rem system-ui,sans-serif}
+    .metrics{position:relative;min-height:1px}
+    .metric{position:absolute;display:inline-block;width:max-content;height:1px;
+      overflow:hidden;white-space:pre;font-family:MatrixVF;font-size:32px;
+      font-variation-settings:"X000" 0.5,"X001" 0.25,"X002" 0.5,"X003" 0.5,"X004" 0,"X005" 0.5,"X006" 0.75,"X007" 0,"X008" 0,"X009" 0.25,"X010" 0,"X011" 0,"X012" 1,"X013" 1,"X014" 1,"X015" 0.25,"X016" 0.75,"X017" 0.25,"X018" 0.5,"X019" 0.25,"X020" 0.75,"X021" 1,"X022" 0,"X023" 0.5,"X024" 1,"X025" 0.5,"X026" 0,"X027" 0.25,"X028" 0.5,"X029" 0.5,"X030" 0.5,"X031" 0.75,"X032" 0.75,"X033" 1,"X034" 0.5,"X035" 0,"X036" 0.25,"X037" 1,"X038" 1,"X039" 1,"X040" 0,"X041" 0.75,"X042" 0.5,"X043" 0,"X044" 0.25,"X045" 0.5,"X046" 0.75,"X047" 0.75,"X048" 1,"X049" 0.25,"X050" 0.5,"X051" 0,"X052" 0.5,"X053" 1,"X054" 0.5,"X055" 1,"X056" 0.5,"X057" 0,"X058" 0,"X059" 0.75,"X060" 0,"X061" 0,"X062" 1,"X063" 0.75;font-kerning:none}
+    .probe{position:absolute;inset:0 auto auto 0;height:1px}
+    .metric-000{anchor-name:--metric-000}.metric-000::before{content:"\e000"}
+.metric-001{anchor-name:--metric-001}.metric-001::before{content:"\e001"}
+.metric-002{anchor-name:--metric-002}.metric-002::before{content:"\e002"}
+.metric-003{anchor-name:--metric-003}.metric-003::before{content:"\e003"}
+.metric-004{anchor-name:--metric-004}.metric-004::before{content:"\e004"}
+.metric-005{anchor-name:--metric-005}.metric-005::before{content:"\e005"}
+.metric-006{anchor-name:--metric-006}.metric-006::before{content:"\e006"}
+.metric-007{anchor-name:--metric-007}.metric-007::before{content:"\e007"}
+.metric-008{anchor-name:--metric-008}.metric-008::before{content:"\e008"}
+.metric-009{anchor-name:--metric-009}.metric-009::before{content:"\e009"}
+.metric-010{anchor-name:--metric-010}.metric-010::before{content:"\e00a"}
+.metric-011{anchor-name:--metric-011}.metric-011::before{content:"\e00b"}
+.metric-012{anchor-name:--metric-012}.metric-012::before{content:"\e00c"}
+.metric-013{anchor-name:--metric-013}.metric-013::before{content:"\e00d"}
+.metric-014{anchor-name:--metric-014}.metric-014::before{content:"\e00e"}
+.metric-015{anchor-name:--metric-015}.metric-015::before{content:"\e00f"}
+.metric-016{anchor-name:--metric-016}.metric-016::before{content:"\e010"}
+.metric-017{anchor-name:--metric-017}.metric-017::before{content:"\e011"}
+.metric-018{anchor-name:--metric-018}.metric-018::before{content:"\e012"}
+.metric-019{anchor-name:--metric-019}.metric-019::before{content:"\e013"}
+.metric-020{anchor-name:--metric-020}.metric-020::before{content:"\e014"}
+.metric-021{anchor-name:--metric-021}.metric-021::before{content:"\e015"}
+.metric-022{anchor-name:--metric-022}.metric-022::before{content:"\e016"}
+.metric-023{anchor-name:--metric-023}.metric-023::before{content:"\e017"}
+.metric-024{anchor-name:--metric-024}.metric-024::before{content:"\e018"}
+.metric-025{anchor-name:--metric-025}.metric-025::before{content:"\e019"}
+.metric-026{anchor-name:--metric-026}.metric-026::before{content:"\e01a"}
+.metric-027{anchor-name:--metric-027}.metric-027::before{content:"\e01b"}
+.metric-028{anchor-name:--metric-028}.metric-028::before{content:"\e01c"}
+.metric-029{anchor-name:--metric-029}.metric-029::before{content:"\e01d"}
+.metric-030{anchor-name:--metric-030}.metric-030::before{content:"\e01e"}
+.metric-031{anchor-name:--metric-031}.metric-031::before{content:"\e01f"}
+.metric-032{anchor-name:--metric-032}.metric-032::before{content:"\e020"}
+.metric-033{anchor-name:--metric-033}.metric-033::before{content:"\e021"}
+.metric-034{anchor-name:--metric-034}.metric-034::before{content:"\e022"}
+.metric-035{anchor-name:--metric-035}.metric-035::before{content:"\e023"}
+.metric-036{anchor-name:--metric-036}.metric-036::before{content:"\e024"}
+.metric-037{anchor-name:--metric-037}.metric-037::before{content:"\e025"}
+.metric-038{anchor-name:--metric-038}.metric-038::before{content:"\e026"}
+.metric-039{anchor-name:--metric-039}.metric-039::before{content:"\e027"}
+.metric-040{anchor-name:--metric-040}.metric-040::before{content:"\e028"}
+.metric-041{anchor-name:--metric-041}.metric-041::before{content:"\e029"}
+.metric-042{anchor-name:--metric-042}.metric-042::before{content:"\e02a"}
+.metric-043{anchor-name:--metric-043}.metric-043::before{content:"\e02b"}
+.metric-044{anchor-name:--metric-044}.metric-044::before{content:"\e02c"}
+.metric-045{anchor-name:--metric-045}.metric-045::before{content:"\e02d"}
+.metric-046{anchor-name:--metric-046}.metric-046::before{content:"\e02e"}
+.metric-047{anchor-name:--metric-047}.metric-047::before{content:"\e02f"}
+.metric-048{anchor-name:--metric-048}.metric-048::before{content:"\e030"}
+.metric-049{anchor-name:--metric-049}.metric-049::before{content:"\e031"}
+.metric-050{anchor-name:--metric-050}.metric-050::before{content:"\e032"}
+.metric-051{anchor-name:--metric-051}.metric-051::before{content:"\e033"}
+.metric-052{anchor-name:--metric-052}.metric-052::before{content:"\e034"}
+.metric-053{anchor-name:--metric-053}.metric-053::before{content:"\e035"}
+.metric-054{anchor-name:--metric-054}.metric-054::before{content:"\e036"}
+.metric-055{anchor-name:--metric-055}.metric-055::before{content:"\e037"}
+.metric-056{anchor-name:--metric-056}.metric-056::before{content:"\e038"}
+.metric-057{anchor-name:--metric-057}.metric-057::before{content:"\e039"}
+.metric-058{anchor-name:--metric-058}.metric-058::before{content:"\e03a"}
+.metric-059{anchor-name:--metric-059}.metric-059::before{content:"\e03b"}
+.metric-060{anchor-name:--metric-060}.metric-060::before{content:"\e03c"}
+.metric-061{anchor-name:--metric-061}.metric-061::before{content:"\e03d"}
+.metric-062{anchor-name:--metric-062}.metric-062::before{content:"\e03e"}
+.metric-063{anchor-name:--metric-063}.metric-063::before{content:"\e03f"}
+    .probe-000{position-anchor:--metric-000;container:y000/inline-size;width:anchor-size(--metric-000 width)}
+.probe-001{position-anchor:--metric-001;container:y001/inline-size;width:anchor-size(--metric-001 width)}
+.probe-002{position-anchor:--metric-002;container:y002/inline-size;width:anchor-size(--metric-002 width)}
+.probe-003{position-anchor:--metric-003;container:y003/inline-size;width:anchor-size(--metric-003 width)}
+.probe-004{position-anchor:--metric-004;container:y004/inline-size;width:anchor-size(--metric-004 width)}
+.probe-005{position-anchor:--metric-005;container:y005/inline-size;width:anchor-size(--metric-005 width)}
+.probe-006{position-anchor:--metric-006;container:y006/inline-size;width:anchor-size(--metric-006 width)}
+.probe-007{position-anchor:--metric-007;container:y007/inline-size;width:anchor-size(--metric-007 width)}
+.probe-008{position-anchor:--metric-008;container:y008/inline-size;width:anchor-size(--metric-008 width)}
+.probe-009{position-anchor:--metric-009;container:y009/inline-size;width:anchor-size(--metric-009 width)}
+.probe-010{position-anchor:--metric-010;container:y010/inline-size;width:anchor-size(--metric-010 width)}
+.probe-011{position-anchor:--metric-011;container:y011/inline-size;width:anchor-size(--metric-011 width)}
+.probe-012{position-anchor:--metric-012;container:y012/inline-size;width:anchor-size(--metric-012 width)}
+.probe-013{position-anchor:--metric-013;container:y013/inline-size;width:anchor-size(--metric-013 width)}
+.probe-014{position-anchor:--metric-014;container:y014/inline-size;width:anchor-size(--metric-014 width)}
+.probe-015{position-anchor:--metric-015;container:y015/inline-size;width:anchor-size(--metric-015 width)}
+.probe-016{position-anchor:--metric-016;container:y016/inline-size;width:anchor-size(--metric-016 width)}
+.probe-017{position-anchor:--metric-017;container:y017/inline-size;width:anchor-size(--metric-017 width)}
+.probe-018{position-anchor:--metric-018;container:y018/inline-size;width:anchor-size(--metric-018 width)}
+.probe-019{position-anchor:--metric-019;container:y019/inline-size;width:anchor-size(--metric-019 width)}
+.probe-020{position-anchor:--metric-020;container:y020/inline-size;width:anchor-size(--metric-020 width)}
+.probe-021{position-anchor:--metric-021;container:y021/inline-size;width:anchor-size(--metric-021 width)}
+.probe-022{position-anchor:--metric-022;container:y022/inline-size;width:anchor-size(--metric-022 width)}
+.probe-023{position-anchor:--metric-023;container:y023/inline-size;width:anchor-size(--metric-023 width)}
+.probe-024{position-anchor:--metric-024;container:y024/inline-size;width:anchor-size(--metric-024 width)}
+.probe-025{position-anchor:--metric-025;container:y025/inline-size;width:anchor-size(--metric-025 width)}
+.probe-026{position-anchor:--metric-026;container:y026/inline-size;width:anchor-size(--metric-026 width)}
+.probe-027{position-anchor:--metric-027;container:y027/inline-size;width:anchor-size(--metric-027 width)}
+.probe-028{position-anchor:--metric-028;container:y028/inline-size;width:anchor-size(--metric-028 width)}
+.probe-029{position-anchor:--metric-029;container:y029/inline-size;width:anchor-size(--metric-029 width)}
+.probe-030{position-anchor:--metric-030;container:y030/inline-size;width:anchor-size(--metric-030 width)}
+.probe-031{position-anchor:--metric-031;container:y031/inline-size;width:anchor-size(--metric-031 width)}
+.probe-032{position-anchor:--metric-032;container:y032/inline-size;width:anchor-size(--metric-032 width)}
+.probe-033{position-anchor:--metric-033;container:y033/inline-size;width:anchor-size(--metric-033 width)}
+.probe-034{position-anchor:--metric-034;container:y034/inline-size;width:anchor-size(--metric-034 width)}
+.probe-035{position-anchor:--metric-035;container:y035/inline-size;width:anchor-size(--metric-035 width)}
+.probe-036{position-anchor:--metric-036;container:y036/inline-size;width:anchor-size(--metric-036 width)}
+.probe-037{position-anchor:--metric-037;container:y037/inline-size;width:anchor-size(--metric-037 width)}
+.probe-038{position-anchor:--metric-038;container:y038/inline-size;width:anchor-size(--metric-038 width)}
+.probe-039{position-anchor:--metric-039;container:y039/inline-size;width:anchor-size(--metric-039 width)}
+.probe-040{position-anchor:--metric-040;container:y040/inline-size;width:anchor-size(--metric-040 width)}
+.probe-041{position-anchor:--metric-041;container:y041/inline-size;width:anchor-size(--metric-041 width)}
+.probe-042{position-anchor:--metric-042;container:y042/inline-size;width:anchor-size(--metric-042 width)}
+.probe-043{position-anchor:--metric-043;container:y043/inline-size;width:anchor-size(--metric-043 width)}
+.probe-044{position-anchor:--metric-044;container:y044/inline-size;width:anchor-size(--metric-044 width)}
+.probe-045{position-anchor:--metric-045;container:y045/inline-size;width:anchor-size(--metric-045 width)}
+.probe-046{position-anchor:--metric-046;container:y046/inline-size;width:anchor-size(--metric-046 width)}
+.probe-047{position-anchor:--metric-047;container:y047/inline-size;width:anchor-size(--metric-047 width)}
+.probe-048{position-anchor:--metric-048;container:y048/inline-size;width:anchor-size(--metric-048 width)}
+.probe-049{position-anchor:--metric-049;container:y049/inline-size;width:anchor-size(--metric-049 width)}
+.probe-050{position-anchor:--metric-050;container:y050/inline-size;width:anchor-size(--metric-050 width)}
+.probe-051{position-anchor:--metric-051;container:y051/inline-size;width:anchor-size(--metric-051 width)}
+.probe-052{position-anchor:--metric-052;container:y052/inline-size;width:anchor-size(--metric-052 width)}
+.probe-053{position-anchor:--metric-053;container:y053/inline-size;width:anchor-size(--metric-053 width)}
+.probe-054{position-anchor:--metric-054;container:y054/inline-size;width:anchor-size(--metric-054 width)}
+.probe-055{position-anchor:--metric-055;container:y055/inline-size;width:anchor-size(--metric-055 width)}
+.probe-056{position-anchor:--metric-056;container:y056/inline-size;width:anchor-size(--metric-056 width)}
+.probe-057{position-anchor:--metric-057;container:y057/inline-size;width:anchor-size(--metric-057 width)}
+.probe-058{position-anchor:--metric-058;container:y058/inline-size;width:anchor-size(--metric-058 width)}
+.probe-059{position-anchor:--metric-059;container:y059/inline-size;width:anchor-size(--metric-059 width)}
+.probe-060{position-anchor:--metric-060;container:y060/inline-size;width:anchor-size(--metric-060 width)}
+.probe-061{position-anchor:--metric-061;container:y061/inline-size;width:anchor-size(--metric-061 width)}
+.probe-062{position-anchor:--metric-062;container:y062/inline-size;width:anchor-size(--metric-062 width)}
+.probe-063{position-anchor:--metric-063;container:y063/inline-size;width:anchor-size(--metric-063 width)}
+    @container y000 (width > 0px){.probe-001{--vf-y-000:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y001 (width > 0px){.probe-002{--vf-y-001:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y002 (width > 0px){.probe-003{--vf-y-002:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y003 (width > 0px){.probe-004{--vf-y-003:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y004 (width > 0px){.probe-005{--vf-y-004:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y005 (width > 0px){.probe-006{--vf-y-005:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y006 (width > 0px){.probe-007{--vf-y-006:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y007 (width > 0px){.probe-008{--vf-y-007:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y008 (width > 0px){.probe-009{--vf-y-008:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y009 (width > 0px){.probe-010{--vf-y-009:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y010 (width > 0px){.probe-011{--vf-y-010:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y011 (width > 0px){.probe-012{--vf-y-011:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y012 (width > 0px){.probe-013{--vf-y-012:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y013 (width > 0px){.probe-014{--vf-y-013:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y014 (width > 0px){.probe-015{--vf-y-014:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y015 (width > 0px){.probe-016{--vf-y-015:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y016 (width > 0px){.probe-017{--vf-y-016:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y017 (width > 0px){.probe-018{--vf-y-017:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y018 (width > 0px){.probe-019{--vf-y-018:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y019 (width > 0px){.probe-020{--vf-y-019:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y020 (width > 0px){.probe-021{--vf-y-020:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y021 (width > 0px){.probe-022{--vf-y-021:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y022 (width > 0px){.probe-023{--vf-y-022:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y023 (width > 0px){.probe-024{--vf-y-023:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y024 (width > 0px){.probe-025{--vf-y-024:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y025 (width > 0px){.probe-026{--vf-y-025:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y026 (width > 0px){.probe-027{--vf-y-026:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y027 (width > 0px){.probe-028{--vf-y-027:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y028 (width > 0px){.probe-029{--vf-y-028:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y029 (width > 0px){.probe-030{--vf-y-029:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y030 (width > 0px){.probe-031{--vf-y-030:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y031 (width > 0px){.probe-032{--vf-y-031:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y032 (width > 0px){.probe-033{--vf-y-032:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y033 (width > 0px){.probe-034{--vf-y-033:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y034 (width > 0px){.probe-035{--vf-y-034:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y035 (width > 0px){.probe-036{--vf-y-035:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y036 (width > 0px){.probe-037{--vf-y-036:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y037 (width > 0px){.probe-038{--vf-y-037:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y038 (width > 0px){.probe-039{--vf-y-038:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y039 (width > 0px){.probe-040{--vf-y-039:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y040 (width > 0px){.probe-041{--vf-y-040:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y041 (width > 0px){.probe-042{--vf-y-041:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y042 (width > 0px){.probe-043{--vf-y-042:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y043 (width > 0px){.probe-044{--vf-y-043:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y044 (width > 0px){.probe-045{--vf-y-044:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y045 (width > 0px){.probe-046{--vf-y-045:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y046 (width > 0px){.probe-047{--vf-y-046:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y047 (width > 0px){.probe-048{--vf-y-047:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y048 (width > 0px){.probe-049{--vf-y-048:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y049 (width > 0px){.probe-050{--vf-y-049:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y050 (width > 0px){.probe-051{--vf-y-050:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y051 (width > 0px){.probe-052{--vf-y-051:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y052 (width > 0px){.probe-053{--vf-y-052:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y053 (width > 0px){.probe-054{--vf-y-053:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y054 (width > 0px){.probe-055{--vf-y-054:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y055 (width > 0px){.probe-056{--vf-y-055:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y056 (width > 0px){.probe-057{--vf-y-056:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y057 (width > 0px){.probe-058{--vf-y-057:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y058 (width > 0px){.probe-059{--vf-y-058:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y059 (width > 0px){.probe-060{--vf-y-059:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y060 (width > 0px){.probe-061{--vf-y-060:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y061 (width > 0px){.probe-062{--vf-y-061:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y062 (width > 0px){.probe-063{--vf-y-062:calc(100cqi / 1px * 1000 / 32 - 8000)}}@container y063 (width > 0px){.vf-result{--vf-y-063:calc(100cqi / 1px * 1000 / 32 - 8000)}}
+    .status{padding:1rem;border:1px solid #aaa}
+  </style>
+</head>
+<body>
+  <h1>Variable-font 64×64 matrix–vector multiplication</h1>
+  <p class="status" data-expected="-109.75,69.25,-90.75,-56.25,-94.75,-36.25,-57.75,-10.75,-105.25,-8.5,25.25,12.5,-71.25,-7,129.5,18,-25,80.25,80.25,-3.75,-126.5,-33.5,-18,-59.5,-5.25,50.25,116.25,-76.75,-49,51.25,-40.75,-95.5,-12,-94,31.75,-17.75,-116.5,-8.75,47.25,-168.25,-43.25,40.75,37.75,192,51,18,-1.5,-136.5,-145.75,113.25,42.25,-60.75,-168,16.25,-33.75,-31.5,74.25,16,134,89,34.75,-44.5,-70.75,128.25">No JavaScript. Expected first outputs: -109.75, 69.25, -90.75, -56.25, -94.75, -36.25, -57.75, -10.75</p>
+  <div class="metrics"><i class="metric metric-000" aria-hidden="true"></i><div class="probe probe-000"><i class="metric metric-001" aria-hidden="true"></i><div class="probe probe-001"><i class="metric metric-002" aria-hidden="true"></i><div class="probe probe-002"><i class="metric metric-003" aria-hidden="true"></i><div class="probe probe-003"><i class="metric metric-004" aria-hidden="true"></i><div class="probe probe-004"><i class="metric metric-005" aria-hidden="true"></i><div class="probe probe-005"><i class="metric metric-006" aria-hidden="true"></i><div class="probe probe-006"><i class="metric metric-007" aria-hidden="true"></i><div class="probe probe-007"><i class="metric metric-008" aria-hidden="true"></i><div class="probe probe-008"><i class="metric metric-009" aria-hidden="true"></i><div class="probe probe-009"><i class="metric metric-010" aria-hidden="true"></i><div class="probe probe-010"><i class="metric metric-011" aria-hidden="true"></i><div class="probe probe-011"><i class="metric metric-012" aria-hidden="true"></i><div class="probe probe-012"><i class="metric metric-013" aria-hidden="true"></i><div class="probe probe-013"><i class="metric metric-014" aria-hidden="true"></i><div class="probe probe-014"><i class="metric metric-015" aria-hidden="true"></i><div class="probe probe-015"><i class="metric metric-016" aria-hidden="true"></i><div class="probe probe-016"><i class="metric metric-017" aria-hidden="true"></i><div class="probe probe-017"><i class="metric metric-018" aria-hidden="true"></i><div class="probe probe-018"><i class="metric metric-019" aria-hidden="true"></i><div class="probe probe-019"><i class="metric metric-020" aria-hidden="true"></i><div class="probe probe-020"><i class="metric metric-021" aria-hidden="true"></i><div class="probe probe-021"><i class="metric metric-022" aria-hidden="true"></i><div class="probe probe-022"><i class="metric metric-023" aria-hidden="true"></i><div class="probe probe-023"><i class="metric metric-024" aria-hidden="true"></i><div class="probe probe-024"><i class="metric metric-025" aria-hidden="true"></i><div class="probe probe-025"><i class="metric metric-026" aria-hidden="true"></i><div class="probe probe-026"><i class="metric metric-027" aria-hidden="true"></i><div class="probe probe-027"><i class="metric metric-028" aria-hidden="true"></i><div class="probe probe-028"><i class="metric metric-029" aria-hidden="true"></i><div class="probe probe-029"><i class="metric metric-030" aria-hidden="true"></i><div class="probe probe-030"><i class="metric metric-031" aria-hidden="true"></i><div class="probe probe-031"><i class="metric metric-032" aria-hidden="true"></i><div class="probe probe-032"><i class="metric metric-033" aria-hidden="true"></i><div class="probe probe-033"><i class="metric metric-034" aria-hidden="true"></i><div class="probe probe-034"><i class="metric metric-035" aria-hidden="true"></i><div class="probe probe-035"><i class="metric metric-036" aria-hidden="true"></i><div class="probe probe-036"><i class="metric metric-037" aria-hidden="true"></i><div class="probe probe-037"><i class="metric metric-038" aria-hidden="true"></i><div class="probe probe-038"><i class="metric metric-039" aria-hidden="true"></i><div class="probe probe-039"><i class="metric metric-040" aria-hidden="true"></i><div class="probe probe-040"><i class="metric metric-041" aria-hidden="true"></i><div class="probe probe-041"><i class="metric metric-042" aria-hidden="true"></i><div class="probe probe-042"><i class="metric metric-043" aria-hidden="true"></i><div class="probe probe-043"><i class="metric metric-044" aria-hidden="true"></i><div class="probe probe-044"><i class="metric metric-045" aria-hidden="true"></i><div class="probe probe-045"><i class="metric metric-046" aria-hidden="true"></i><div class="probe probe-046"><i class="metric metric-047" aria-hidden="true"></i><div class="probe probe-047"><i class="metric metric-048" aria-hidden="true"></i><div class="probe probe-048"><i class="metric metric-049" aria-hidden="true"></i><div class="probe probe-049"><i class="metric metric-050" aria-hidden="true"></i><div class="probe probe-050"><i class="metric metric-051" aria-hidden="true"></i><div class="probe probe-051"><i class="metric metric-052" aria-hidden="true"></i><div class="probe probe-052"><i class="metric metric-053" aria-hidden="true"></i><div class="probe probe-053"><i class="metric metric-054" aria-hidden="true"></i><div class="probe probe-054"><i class="metric metric-055" aria-hidden="true"></i><div class="probe probe-055"><i class="metric metric-056" aria-hidden="true"></i><div class="probe probe-056"><i class="metric metric-057" aria-hidden="true"></i><div class="probe probe-057"><i class="metric metric-058" aria-hidden="true"></i><div class="probe probe-058"><i class="metric metric-059" aria-hidden="true"></i><div class="probe probe-059"><i class="metric metric-060" aria-hidden="true"></i><div class="probe probe-060"><i class="metric metric-061" aria-hidden="true"></i><div class="probe probe-061"><i class="metric metric-062" aria-hidden="true"></i><div class="probe probe-062"><i class="metric metric-063" aria-hidden="true"></i><div class="probe probe-063"><div class="vf-result" id="vf-result"></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</body>
+</html>

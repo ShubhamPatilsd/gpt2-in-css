@@ -1,0 +1,38 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Anchor width to font transport probe</title>
+<style>
+  .source {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 37px;
+    height: 1px;
+    anchor-name: --source-width;
+  }
+  .direct,
+  .through-length {
+    position: fixed;
+    position-anchor: --source-width;
+    left: 0;
+    font-family: monospace;
+    line-height: 1;
+  }
+  .direct {
+    top: 20px;
+    font-size: anchor-size(--source-width width);
+  }
+  .through-length {
+    top: 80px;
+    --activation-length: anchor-size(--source-width width);
+    font-size: var(--activation-length);
+  }
+  .em-box {
+    display: block;
+    width: 1em;
+    height: 1px;
+  }
+</style>
+<div class="source"></div>
+<output id="direct" class="direct"><span class="em-box"></span></output>
+<output id="through-length" class="through-length"><span class="em-box"></span></output>
