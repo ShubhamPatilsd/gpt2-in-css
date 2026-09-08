@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Intrinsic width integer packing probe</title>
+<style>
+  .stage { position: fixed; inset: 0 auto auto 0; font-size: 16px }
+  .packed { display: inline-flex }
+  .digit { display: inline-block; overflow: hidden; height: 1px }
+  .low { width: calc-size(max-content, round(nearest, size, 1px)) }
+  .high { width: calc-size(max-content, round(nearest, size, 1px) * 256) }
+  .a::before { content: ""; display: inline-block; width: 37.3px }
+  .b::before { content: ""; display: inline-block; width: 41.4px }
+</style>
+<div class="stage">
+  <div id="packed" class="packed">
+    <i id="low" class="digit low a"></i><i id="high" class="digit high b"></i>
+  </div>
+</div>
