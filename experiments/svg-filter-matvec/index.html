@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SVG filter 4×4 matrix-vector probe</title>
+<style>
+  html, body { margin: 0; background: black; }
+  svg { display: block; width: 4px; height: 4px; image-rendering: pixelated; }
+</style>
+<svg viewBox="0 0 4 4" xmlns="http://www.w3.org/2000/svg">
+  <filter id="matvec" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"
+          x="0" y="0" width="4" height="4" color-interpolation-filters="sRGB">
+    <feImage href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAQElEQVR42gXBQREAIQwEweHqnqyArICoQS4GEBA1EQDdw/aNCCIC2/yZSVXR3Ujim3MiCUnsvRmS7lqLcw6ZyQPmUA9gIFf+ZwAAAABJRU5ErkJggg==" x="0" y="0" width="4" height="4"
+             preserveAspectRatio="none" result="weights"/>
+    <feImage href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGElEQVR42mM0Njb+b2xszADDTAxogLAAANCEA2sT/fHNAAAAAElFTkSuQmCC" x="0" y="0" width="4" height="4"
+             preserveAspectRatio="none" result="vector"/>
+    <feComposite in="weights" in2="vector" operator="arithmetic"
+                 k1="1" k2="0" k3="0" k4="0" result="products"/>
+    <feConvolveMatrix in="products" order="4 1" kernelMatrix="1 1 1 1"
+                      divisor="1" targetX="3" targetY="0" edgeMode="none"
+                      kernelUnitLength="1 1" preserveAlpha="true"
+                      x="3" y="0" width="1" height="4" result="sums"/>
+  </filter>
+  <rect width="4" height="4" fill="white" filter="url(#matvec)"/>
+</svg>

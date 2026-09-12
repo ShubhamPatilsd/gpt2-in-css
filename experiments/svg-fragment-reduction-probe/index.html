@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SVG fragment reduction probe</title>
+<style>html,body{margin:0;background:#000}svg{display:block;image-rendering:pixelated}</style>
+<svg width="64" height="64" viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="vector">
+      <rect x="0" y="0" width="1" height="1" fill="rgb(0 0 0)"/>
+      <rect x="0" y="1" width="1" height="1" fill="rgb(32 32 32)"/>
+      <rect x="0" y="2" width="1" height="1" fill="rgb(64 64 64)"/>
+      <rect x="0" y="3" width="1" height="1" fill="rgb(96 96 96)"/>
+      <rect x="0" y="4" width="1" height="1" fill="rgb(128 128 128)"/>
+      <rect x="0" y="5" width="1" height="1" fill="rgb(160 160 160)"/>
+      <rect x="0" y="6" width="1" height="1" fill="rgb(192 192 192)"/>
+      <rect x="0" y="7" width="1" height="1" fill="rgb(224 224 224)"/>
+    </g>
+    <filter id="reduce" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"
+            x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
+      <feImage href="#vector" x="0" y="0" width="1" height="1"
+               preserveAspectRatio="none" result="reduced"/>
+      <feComposite in="reduced" in2="reduced" operator="arithmetic"
+                   k1="0" k2="1" k3="0" k4="0"/>
+    </filter>
+  </defs>
+  <rect width="1" height="1" fill="black" filter="url(#reduce)"/>
+</svg>

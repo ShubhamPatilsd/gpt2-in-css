@@ -1,0 +1,13 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SVG 768-row Gaussian normalization probe</title>
+<style>html,body{margin:0;background:#000}svg{display:block}</style>
+<svg width="1" height="768" viewBox="0 0 1 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blur-reduce" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"
+            x="0" y="0" width="1" height="768" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0 3072" edgeMode="none"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="1" height="768" fill="white" filter="url(#blur-reduce)"/>
+</svg>

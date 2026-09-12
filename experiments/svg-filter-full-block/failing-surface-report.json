@@ -1,0 +1,291 @@
+{
+  "reports": [
+    {
+      "token_id": 40,
+      "token": "I",
+      "target_block": 1,
+      "expected_winner": 13,
+      "first_failing_surface": "block_output",
+      "stages": [
+        {
+          "stage": "layer_norm_1",
+          "downstream_winner": 13,
+          "primary_rmse": 0.0166072284954862,
+          "primary_max_error": 0.09396920803186604
+        },
+        {
+          "stage": "attention_residual",
+          "downstream_winner": 13,
+          "primary_rmse": 0.18838927719193513,
+          "primary_max_error": 1.9916913235364504
+        },
+        {
+          "stage": "layer_norm_2",
+          "downstream_winner": 13,
+          "primary_rmse": 0.04922345208139364,
+          "primary_max_error": 0.34494951001664576
+        },
+        {
+          "stage": "mlp_hidden",
+          "downstream_winner": 13,
+          "primary_rmse": 0.09903239472583279,
+          "primary_max_error": 2.5985709843532554
+        },
+        {
+          "stage": "block_output",
+          "downstream_winner": 11,
+          "primary_rmse": 1.311525035626549,
+          "primary_max_error": 29.13253904263408
+        }
+      ],
+      "correction_screen": {
+        "surface": "block_output",
+        "component": "output",
+        "attempts": [
+          {
+            "dimensions": 1,
+            "winner": 11
+          },
+          {
+            "dimensions": 2,
+            "winner": 13
+          }
+        ],
+        "selected_dimensions": [
+          138,
+          378
+        ]
+      }
+    },
+    {
+      "token_id": 257,
+      "token": " a",
+      "target_block": 8,
+      "expected_winner": 262,
+      "first_failing_surface": "block_output",
+      "stages": [
+        {
+          "stage": "layer_norm_1",
+          "downstream_winner": 262,
+          "primary_rmse": 0.003650691025753648,
+          "primary_max_error": 0.04173973474723236
+        },
+        {
+          "stage": "attention_residual",
+          "downstream_winner": 262,
+          "primary_rmse": 9.233999572768727,
+          "primary_max_error": 183.0774552262094
+        },
+        {
+          "stage": "layer_norm_2",
+          "downstream_winner": 262,
+          "primary_rmse": 0.026849942476811665,
+          "primary_max_error": 0.7408993378365185
+        },
+        {
+          "stage": "mlp_hidden",
+          "downstream_winner": 262,
+          "primary_rmse": 0.030719478733753164,
+          "primary_max_error": 0.291602678459057
+        },
+        {
+          "stage": "block_output",
+          "downstream_winner": 257,
+          "primary_rmse": 8.59631290903925,
+          "primary_max_error": 185.97360992499875
+        }
+      ],
+      "correction_screen": {
+        "surface": "block_output",
+        "component": "output",
+        "attempts": [
+          {
+            "dimensions": 1,
+            "winner": 262
+          }
+        ],
+        "selected_dimensions": [
+          138
+        ]
+      }
+    },
+    {
+      "token_id": 770,
+      "token": " This",
+      "target_block": 1,
+      "expected_winner": 318,
+      "first_failing_surface": "mlp_hidden",
+      "stages": [
+        {
+          "stage": "layer_norm_1",
+          "downstream_winner": 318,
+          "primary_rmse": 0.015690930060228706,
+          "primary_max_error": 0.14620582425193462
+        },
+        {
+          "stage": "attention_residual",
+          "downstream_winner": 318,
+          "primary_rmse": 0.14594227497397422,
+          "primary_max_error": 1.791478094074204
+        },
+        {
+          "stage": "layer_norm_2",
+          "downstream_winner": 318,
+          "primary_rmse": 0.0456064752623664,
+          "primary_max_error": 0.2993174569175068
+        },
+        {
+          "stage": "mlp_hidden",
+          "downstream_winner": 11,
+          "primary_rmse": 0.11778009518778589,
+          "primary_max_error": 3.300049059976873
+        },
+        {
+          "stage": "block_output",
+          "downstream_winner": 11,
+          "primary_rmse": 1.4931090204195439,
+          "primary_max_error": 32.42959712788989
+        }
+      ],
+      "correction_screen": {
+        "surface": "mlp_hidden",
+        "component": "hidden",
+        "attempts": [
+          {
+            "dimensions": 1,
+            "winner": 11
+          },
+          {
+            "dimensions": 2,
+            "winner": 11
+          },
+          {
+            "dimensions": 4,
+            "winner": 318
+          }
+        ],
+        "selected_dimensions": [
+          1612,
+          2549,
+          1102,
+          291
+        ]
+      }
+    },
+    {
+      "token_id": 1212,
+      "token": "This",
+      "target_block": 1,
+      "expected_winner": 318,
+      "first_failing_surface": "layer_norm_2",
+      "stages": [
+        {
+          "stage": "layer_norm_1",
+          "downstream_winner": 318,
+          "primary_rmse": 0.015007827199755776,
+          "primary_max_error": 0.11402193165308583
+        },
+        {
+          "stage": "attention_residual",
+          "downstream_winner": 318,
+          "primary_rmse": 0.14069780829520223,
+          "primary_max_error": 1.6905687702117635
+        },
+        {
+          "stage": "layer_norm_2",
+          "downstream_winner": 11,
+          "primary_rmse": 0.04521204487902111,
+          "primary_max_error": 0.28533637954845537
+        },
+        {
+          "stage": "mlp_hidden",
+          "downstream_winner": 11,
+          "primary_rmse": 0.10437724404420619,
+          "primary_max_error": 2.9875718281917027
+        },
+        {
+          "stage": "block_output",
+          "downstream_winner": 11,
+          "primary_rmse": 1.137903483006986,
+          "primary_max_error": 24.495591769458926
+        }
+      ],
+      "correction_screen": {
+        "surface": "layer_norm_2",
+        "component": "normalized",
+        "attempts": [
+          {
+            "dimensions": 1,
+            "winner": 11
+          },
+          {
+            "dimensions": 2,
+            "winner": 11
+          },
+          {
+            "dimensions": 4,
+            "winner": 318
+          }
+        ],
+        "selected_dimensions": [
+          674,
+          300,
+          540,
+          194
+        ]
+      }
+    },
+    {
+      "token_id": 1310,
+      "token": " little",
+      "target_block": 5,
+      "expected_winner": 11,
+      "first_failing_surface": "block_output",
+      "stages": [
+        {
+          "stage": "layer_norm_1",
+          "downstream_winner": 11,
+          "primary_rmse": 0.0026885571137236714,
+          "primary_max_error": 0.032438970369895626
+        },
+        {
+          "stage": "attention_residual",
+          "downstream_winner": 11,
+          "primary_rmse": 5.240349892249549,
+          "primary_max_error": 143.63431621053132
+        },
+        {
+          "stage": "layer_norm_2",
+          "downstream_winner": 11,
+          "primary_rmse": 0.0380224116706337,
+          "primary_max_error": 1.0376319696717538
+        },
+        {
+          "stage": "mlp_hidden",
+          "downstream_winner": 11,
+          "primary_rmse": 0.06553748965477806,
+          "primary_max_error": 0.7245883505908401
+        },
+        {
+          "stage": "block_output",
+          "downstream_winner": 284,
+          "primary_rmse": 3.8631547364586494,
+          "primary_max_error": 103.98094179940063
+        }
+      ],
+      "correction_screen": {
+        "surface": "block_output",
+        "component": "output",
+        "attempts": [
+          {
+            "dimensions": 1,
+            "winner": 11
+          }
+        ],
+        "selected_dimensions": [
+          447
+        ]
+      }
+    }
+  ]
+}

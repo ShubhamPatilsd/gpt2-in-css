@@ -1,0 +1,26 @@
+<!doctype html><meta charset="utf-8"><title>SVG product dithering</title>
+<style>html,body{margin:0;background:#000}svg{display:block;image-rendering:pixelated}</style>
+<svg width="2" height="64" viewBox="0 0 2 64" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="probe" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"
+ x="0" y="0" width="64" height="64" color-interpolation-filters="sRGB">
+<feImage href="input.png" x="0" y="0" width="64" height="1" result="input"/>
+<feTile in="input" x="0" y="0" width="64" height="64" result="input-tile"/>
+<feImage href="weights.png" x="0" y="0" width="64" height="64" result="weights"/>
+<feComposite in="weights" in2="input-tile" operator="arithmetic" k1="2" k2="-1.003921568627451" k3="-1.003921568627451" k4="1.00458285275" result="product-0"/><feComposite in="weights" in2="input-tile" operator="arithmetic" k1="2" k2="-1.003921568627451" k3="-1.003921568627451" k4="1.00589004229" result="product-1"/><feComposite in="weights" in2="input-tile" operator="arithmetic" k1="2" k2="-1.003921568627451" k3="-1.003921568627451" k4="1.00719723183" result="product-2"/>
+<feConvolveMatrix in="product-1" order="64 1" kernelMatrix="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"
+ divisor="3.190805357784136" bias="-9.566183960932682" targetX="63" targetY="0"
+ edgeMode="none" preserveAlpha="true" x="63" y="0" width="1" height="64"
+ result="baseline-sum"/>
+<feColorMatrix in="baseline-sum" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="baseline-common"/>
+<feOffset in="baseline-common" dx="-63" x="0" y="0" width="1" height="64" result="baseline"/>
+<feColorMatrix in="product-0" values="1 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1" result="lane-0"/><feColorMatrix in="product-1" values="0.0 0.0 0.0 0.0 0.0 1 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1" result="lane-1"/><feColorMatrix in="product-2" values="0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1" result="lane-2"/>
+<feBlend in="lane-0" in2="lane-1" mode="screen" result="lanes-01"/>
+<feBlend in="lanes-01" in2="lane-2" mode="screen" result="lanes"/>
+<feConvolveMatrix in="lanes" order="64 1" kernelMatrix="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"
+ divisor="3.190805357784136" bias="-9.566183960932682" targetX="63" targetY="0"
+ edgeMode="none" preserveAlpha="true" x="63" y="0" width="1" height="64"
+ result="dither-sums"/>
+<feColorMatrix in="dither-sums" values="0.333333333333 0.333333333333 0.333333333333 0 0  0.333333333333 0.333333333333 0.333333333333 0 0  0.333333333333 0.333333333333 0.333333333333 0 0  0 0 0 0 1" result="dither-common"/>
+<feOffset in="dither-common" dx="-62" x="1" y="0" width="1" height="64" result="dither"/>
+<feMerge><feMergeNode in="baseline"/><feMergeNode in="dither"/></feMerge>
+</filter></defs><rect width="64" height="64" fill="white" filter="url(#probe)"/></svg>

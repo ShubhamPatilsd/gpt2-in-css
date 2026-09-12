@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SVG filter 4×4 matrix-vector probe</title>
+<style>
+  html, body { margin: 0; background: black; }
+  svg { display: block; width: 16px; height: 16px; image-rendering: pixelated; }
+</style>
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <filter id="matvec" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"
+          x="0" y="0" width="16" height="16" color-interpolation-filters="sRGB">
+    <feImage href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADl0lEQVR42gXBTUiTcQDA4d9edYrbMNyadZhOWZaI4UwblB/MLxBdRQORXLEog4loJx0WZJcWUofEi+ImiqDoRVBUypMka9AaWkQHB9KkzSbM1MjtRf49j0Kj0QitVsvjx4/59esXk5OTDAwMEI1GKS0txev1otfr0el03L17F7fbjc/nY3R0FLvdjmJtbU28fPmSWCxGMpnEaDTy48cP6urq+Pz5M3q9nps3b7K4uIgsy/h8Pt6/f084HCY/Px/F+fPnxfPnz8nMzMRgMNDd3c3CwgIrKyskEgnq6+vJzMwkNzeXubk5ysvLefPmDePj49y6dYs0tVo9FIlE2N/f5+3bt7S1tWEymfB6vRQVFZGXl0dPTw+FhYVsbGwwNjbG8fExfr8fi8WCYnh4WGxtbSHLMjqdjs3NTWw2G7W1tajVakZGRtjd3eXLly88ffqU3Nxcqqur+fbtG+np6aQfHR1RWVmJ2+0mKyuLnJwctre3MRqNqFQqkskkg4ODnJ2dMTExwblz56ioqGB6ehq73Q5jY2OisbFR3L9/XwDC6/WKCxcuiPX1dXHt2jVx/fp18ezZM2EymURVVZXIyMgQOp1OlJWVCa1WK9KAoby8PGZnZzEYDFy5coVQKEQ0GmVnZwelUsnDhw9RKBR8//6d9vZ2fv/+TUFBAalUirSTk5Ohg4MDbDYb//79o6CgAL/fT3FxMcFgkNHRUVZXV7Hb7ajVapLJJLdv30aSJBwOB+n19fW4XC7W19fp6uqiqamJR48e8enTJywWC5FIhI2NDbRaLVtbW3z48AGr1cre3h5KpZJ0pVJJLBbDaDTidrs5PT1Fo9HQ1dXFpUuXkGWZnJwcWltbef36Na2trZhMJiRJ4s+fP0idnZ1MT0/T29uL0+lkamqKo6Mj9Ho9qVSKk5MTzs7OuHHjBvfu3SMrKwuDwUB2djZCCBRXr14VDQ0NJBIJampqmJmZwWazkUqlePfuHSqVCkmSKCsro7OzE6fTyeXLl2lububw8JC0+fn5of7+fuLxOJIk8fXrV5aXl9FoNLx69Qqz2cze3h5ms5m/f//S0tLC0tIS5eXlBAIBFFNTU2JnZ4fj42NSqRR37twhGAyiUqn4+PEjsizjcDjweDxYrVbC4TBPnjwhEAjg8XiQLl68yMrKCvF4nJKSEkKhEIeHhxQXFyPLMg8ePCAUCtHX10cikaCjo4OfP3/y4sULXC4X/wGXQYG6Z7PemgAAAABJRU5ErkJggg==" x="0" y="0" width="16" height="16"
+             preserveAspectRatio="none" result="weights"/>
+    <feImage href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVUlEQVR42u3MIRUAIRBAQd4ZNBkIAR1WbQqK8YiARW0TEuBW/Qtx5gQTYIKZMedEVdl7U2ultUaMEREh58xai9475xzGGKSUcHdKKTzhoxvc4AZ/CV50vygPd9oK3QAAAABJRU5ErkJggg==" x="0" y="0" width="16" height="16"
+             preserveAspectRatio="none" result="vector"/>
+    <feComposite in="weights" in2="vector" operator="arithmetic"
+                 k1="1" k2="0" k3="0" k4="0" result="products"/>
+    <feConvolveMatrix in="products" order="16 1" kernelMatrix="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"
+                      divisor="16" targetX="15" targetY="0" edgeMode="none"
+                      kernelUnitLength="1 1" preserveAlpha="true" result="sums"/>
+  </filter>
+  <rect width="16" height="16" fill="white" filter="url(#matvec)"/>
+</svg>

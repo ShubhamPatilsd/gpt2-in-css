@@ -1,0 +1,1718 @@
+{
+  "source": "http://127.0.0.1:4178/experiments/svg-filter-full-block/bucket-chain-12blocks-final-ln.html?isolated=1789225116484",
+  "trials": 4,
+  "byStage": {
+    "ln1": {
+      "medianMilliseconds": 6.34266700000444,
+      "summedMilliseconds": 73.53108499998416,
+      "shareOfSummedStageTime": 0.08535613981373887,
+      "primitiveCount": 1404
+    },
+    "attention": {
+      "medianMilliseconds": 0.13270899999770336,
+      "summedMilliseconds": 58.637126999998145,
+      "shareOfSummedStageTime": 0.06806697889047716,
+      "primitiveCount": 1140
+    },
+    "ln2": {
+      "medianMilliseconds": 0.6010819999974046,
+      "summedMilliseconds": 39.76895600000353,
+      "shareOfSummedStageTime": 0.04616448361374596,
+      "primitiveCount": 1404
+    },
+    "fc": {
+      "medianMilliseconds": 63.816417,
+      "summedMilliseconds": 649.5149559999836,
+      "shareOfSummedStageTime": 0.7539680584811308,
+      "primitiveCount": 2088
+    },
+    "projection": {
+      "medianMilliseconds": 2.198416000006546,
+      "summedMilliseconds": 40.01004100000682,
+      "shareOfSummedStageTime": 0.04644433920090724,
+      "primitiveCount": 1932
+    }
+  },
+  "measurements": [
+    {
+      "block": 1,
+      "stage": "ln1",
+      "filterId": "bucket-k0-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        86.640625,
+        74.23274999999967,
+        83.40895899999987,
+        83.15387499999997
+      ],
+      "baselineWarmMedianMilliseconds": 83.15387499999997,
+      "samples": [
+        83.329792,
+        107.21649999999954,
+        81.82291600000008,
+        77.68654200000037
+      ],
+      "warmMedianMilliseconds": 81.82291600000008,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        330294,
+        341184
+      ]
+    },
+    {
+      "block": 1,
+      "stage": "attention",
+      "filterId": "bucket-k0-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        76.19791700000042,
+        67.07775000000038,
+        82.92966699999943,
+        85.36716699999943
+      ],
+      "baselineWarmMedianMilliseconds": 82.92966699999943,
+      "samples": [
+        98.00874999999996,
+        75.28454099999999,
+        76.73412499999995,
+        97.0034999999998
+      ],
+      "warmMedianMilliseconds": 76.73412499999995,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        246558,
+        247766
+      ]
+    },
+    {
+      "block": 1,
+      "stage": "ln2",
+      "filterId": "bucket-k0-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        69.38875000000007,
+        66.79791699999987,
+        82.76979200000005,
+        98.96479199999976
+      ],
+      "baselineWarmMedianMilliseconds": 82.76979200000005,
+      "samples": [
+        88.09429199999977,
+        87.28479200000038,
+        75.04045900000074,
+        77.89787500000057
+      ],
+      "warmMedianMilliseconds": 77.89787500000057,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        380007,
+        382432
+      ]
+    },
+    {
+      "block": 1,
+      "stage": "fc",
+      "filterId": "bucket-k0-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        74.24974999999995,
+        80.73754199999985,
+        93.99391699999978,
+        78.96287500000017
+      ],
+      "baselineWarmMedianMilliseconds": 80.73754199999985,
+      "samples": [
+        99.07933300000059,
+        102.23441600000024,
+        109.15712499999972,
+        119.60700000000088
+      ],
+      "warmMedianMilliseconds": 109.15712499999972,
+      "netWarmMedianMilliseconds": 28.419582999999875,
+      "outputChecksums": [
+        1505871,
+        1437566
+      ]
+    },
+    {
+      "block": 1,
+      "stage": "projection",
+      "filterId": "bucket-k0-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        83.43420900000001,
+        82.86074999999983,
+        88.65437499999916,
+        78.4477080000006
+      ],
+      "baselineWarmMedianMilliseconds": 82.86074999999983,
+      "samples": [
+        83.20933399999922,
+        74.09433399999944,
+        92.35304200000064,
+        87.12699999999859
+      ],
+      "warmMedianMilliseconds": 87.12699999999859,
+      "netWarmMedianMilliseconds": 4.266249999998763,
+      "outputChecksums": [
+        246353,
+        251530
+      ]
+    },
+    {
+      "block": 2,
+      "stage": "ln1",
+      "filterId": "bucket-k1-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        84.87795799999913,
+        83.16687499999898,
+        88.20666700000038,
+        74.29741699999977
+      ],
+      "baselineWarmMedianMilliseconds": 83.16687499999898,
+      "samples": [
+        89.24391699999978,
+        91.21262500000012,
+        69.87212499999987,
+        76.21404199999961
+      ],
+      "warmMedianMilliseconds": 76.21404199999961,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        369836,
+        386832
+      ]
+    },
+    {
+      "block": 2,
+      "stage": "attention",
+      "filterId": "bucket-k1-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        98.4287919999988,
+        73.81875000000036,
+        84.30816700000105,
+        84.14345800000046
+      ],
+      "baselineWarmMedianMilliseconds": 84.14345800000046,
+      "samples": [
+        100.05816699999923,
+        99.75029100000029,
+        99.40858399999888,
+        73.50679200000013
+      ],
+      "warmMedianMilliseconds": 99.40858399999888,
+      "netWarmMedianMilliseconds": 15.265125999998418,
+      "outputChecksums": [
+        214090,
+        212123
+      ]
+    },
+    {
+      "block": 2,
+      "stage": "ln2",
+      "filterId": "bucket-k1-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        91.11124999999993,
+        90.71566699999858,
+        83.37191699999858,
+        75.25608300000022
+      ],
+      "baselineWarmMedianMilliseconds": 83.37191699999858,
+      "samples": [
+        97.94300000000112,
+        70.31208400000105,
+        81.10770799999955,
+        90.60687499999949
+      ],
+      "warmMedianMilliseconds": 81.10770799999955,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        333119,
+        339062
+      ]
+    },
+    {
+      "block": 2,
+      "stage": "fc",
+      "filterId": "bucket-k1-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        87.89091699999881,
+        75.96358300000065,
+        86.58404200000041,
+        83.37762500000099
+      ],
+      "baselineWarmMedianMilliseconds": 83.37762500000099,
+      "samples": [
+        220.85679100000016,
+        141.1321250000001,
+        147.194042000001,
+        195.4344170000004
+      ],
+      "warmMedianMilliseconds": 147.194042000001,
+      "netWarmMedianMilliseconds": 63.816417,
+      "outputChecksums": [
+        2937684,
+        3028932
+      ]
+    },
+    {
+      "block": 2,
+      "stage": "projection",
+      "filterId": "bucket-k1-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        76.79741599999943,
+        83.69254200000069,
+        97.51704100000097,
+        74.07145799999853
+      ],
+      "baselineWarmMedianMilliseconds": 83.69254200000069,
+      "samples": [
+        78.88883300000089,
+        66.74741600000016,
+        71.64829099999952,
+        81.70912500000122
+      ],
+      "warmMedianMilliseconds": 71.64829099999952,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        218939,
+        211482
+      ]
+    },
+    {
+      "block": 3,
+      "stage": "ln1",
+      "filterId": "bucket-k2-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        83.79970800000046,
+        66.2033330000013,
+        83.70012500000121,
+        97.22099999999955
+      ],
+      "baselineWarmMedianMilliseconds": 83.70012500000121,
+      "samples": [
+        82.2986660000006,
+        85.30120799999895,
+        87.113292,
+        74.70475000000079
+      ],
+      "warmMedianMilliseconds": 85.30120799999895,
+      "netWarmMedianMilliseconds": 1.6010829999977432,
+      "outputChecksums": [
+        339687,
+        322486
+      ]
+    },
+    {
+      "block": 3,
+      "stage": "attention",
+      "filterId": "bucket-k2-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        86.97808299999997,
+        89.91899999999987,
+        84.195334,
+        87.13679100000081
+      ],
+      "baselineWarmMedianMilliseconds": 87.13679100000081,
+      "samples": [
+        77.21999999999935,
+        97.45437499999935,
+        96.343832999999,
+        88.22920899999917
+      ],
+      "warmMedianMilliseconds": 96.343832999999,
+      "netWarmMedianMilliseconds": 9.207041999998182,
+      "outputChecksums": [
+        253614,
+        239944
+      ]
+    },
+    {
+      "block": 3,
+      "stage": "ln2",
+      "filterId": "bucket-k2-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        70.16241699999955,
+        66.06758400000035,
+        68.36012500000288,
+        64.52516599999944
+      ],
+      "baselineWarmMedianMilliseconds": 66.06758400000035,
+      "samples": [
+        68.28833300000042,
+        66.63745799999742,
+        66.66866599999776,
+        83.28754200000185
+      ],
+      "warmMedianMilliseconds": 66.66866599999776,
+      "netWarmMedianMilliseconds": 0.6010819999974046,
+      "outputChecksums": [
+        366547,
+        380500
+      ]
+    },
+    {
+      "block": 3,
+      "stage": "fc",
+      "filterId": "bucket-k2-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        75.37770799999998,
+        78.79595899999913,
+        91.03095900000335,
+        73.24300000000221
+      ],
+      "baselineWarmMedianMilliseconds": 78.79595899999913,
+      "samples": [
+        124.82945800000016,
+        100.07758299999841,
+        93.06291699999929,
+        110.06041600000026
+      ],
+      "warmMedianMilliseconds": 100.07758299999841,
+      "netWarmMedianMilliseconds": 21.281623999999283,
+      "outputChecksums": [
+        1431444,
+        1428873
+      ]
+    },
+    {
+      "block": 3,
+      "stage": "projection",
+      "filterId": "bucket-k2-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        87.40370899999834,
+        73.5243330000012,
+        88.88799999999901,
+        92.22258299999885
+      ],
+      "baselineWarmMedianMilliseconds": 88.88799999999901,
+      "samples": [
+        79.10237499999857,
+        68.4544590000005,
+        81.20258300000205,
+        83.6777089999996
+      ],
+      "warmMedianMilliseconds": 81.20258300000205,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        251980,
+        242727
+      ]
+    },
+    {
+      "block": 4,
+      "stage": "ln1",
+      "filterId": "bucket-k3-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        73.09570900000108,
+        92.0369580000006,
+        74.28345900000204,
+        76.96150000000125
+      ],
+      "baselineWarmMedianMilliseconds": 76.96150000000125,
+      "samples": [
+        79.48362500000076,
+        77.585833000001,
+        89.00324999999793,
+        88.64312499999869
+      ],
+      "warmMedianMilliseconds": 88.64312499999869,
+      "netWarmMedianMilliseconds": 11.681624999997439,
+      "outputChecksums": [
+        362254,
+        370596
+      ]
+    },
+    {
+      "block": 4,
+      "stage": "attention",
+      "filterId": "bucket-k3-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        82.09954099999959,
+        73.62816600000224,
+        77.7366669999974,
+        97.10366599999907
+      ],
+      "baselineWarmMedianMilliseconds": 77.7366669999974,
+      "samples": [
+        74.68083299999853,
+        88.00025000000096,
+        76.67041700000118,
+        93.62104099999851
+      ],
+      "warmMedianMilliseconds": 88.00025000000096,
+      "netWarmMedianMilliseconds": 10.263583000003564,
+      "outputChecksums": [
+        214415,
+        216417
+      ]
+    },
+    {
+      "block": 4,
+      "stage": "ln2",
+      "filterId": "bucket-k3-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        73.03287500000079,
+        88.84425000000192,
+        74.42525000000023,
+        86.83074999999735
+      ],
+      "baselineWarmMedianMilliseconds": 86.83074999999735,
+      "samples": [
+        76.62645899999916,
+        86.6885829999992,
+        94.59995899999922,
+        74.35133300000234
+      ],
+      "warmMedianMilliseconds": 86.6885829999992,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        329790,
+        327850
+      ]
+    },
+    {
+      "block": 4,
+      "stage": "fc",
+      "filterId": "bucket-k3-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        90.99604199999885,
+        88.32400000000052,
+        75.33000000000175,
+        77.10370800000237
+      ],
+      "baselineWarmMedianMilliseconds": 77.10370800000237,
+      "samples": [
+        192.2768750000032,
+        169.95087499999863,
+        130.12970799999675,
+        174.60366599999907
+      ],
+      "warmMedianMilliseconds": 169.95087499999863,
+      "netWarmMedianMilliseconds": 92.84716699999626,
+      "outputChecksums": [
+        2671712,
+        2450386
+      ]
+    },
+    {
+      "block": 4,
+      "stage": "projection",
+      "filterId": "bucket-k3-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        84.60791600000084,
+        77.55858299999818,
+        66.61650000000009,
+        83.05320899999788
+      ],
+      "baselineWarmMedianMilliseconds": 77.55858299999818,
+      "samples": [
+        84.013082999998,
+        83.49262499999895,
+        77.88462500000242,
+        83.11612500000047
+      ],
+      "warmMedianMilliseconds": 83.11612500000047,
+      "netWarmMedianMilliseconds": 5.557542000002286,
+      "outputChecksums": [
+        214474,
+        210816
+      ]
+    },
+    {
+      "block": 5,
+      "stage": "ln1",
+      "filterId": "bucket-k4-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        98.96670799999993,
+        67.90300000000207,
+        66.69774999999936,
+        76.40033399999811
+      ],
+      "baselineWarmMedianMilliseconds": 67.90300000000207,
+      "samples": [
+        83.0603340000016,
+        97.75291599999764,
+        74.07062500000029,
+        89.24754200000098
+      ],
+      "warmMedianMilliseconds": 89.24754200000098,
+      "netWarmMedianMilliseconds": 21.34454199999891,
+      "outputChecksums": [
+        336203,
+        310238
+      ]
+    },
+    {
+      "block": 5,
+      "stage": "attention",
+      "filterId": "bucket-k4-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        83.37458400000105,
+        83.28291600000011,
+        90.24395899999945,
+        73.10966700000063
+      ],
+      "baselineWarmMedianMilliseconds": 83.28291600000011,
+      "samples": [
+        84.40204099999755,
+        78.65625,
+        85.40858300000036,
+        77.42620799999713
+      ],
+      "warmMedianMilliseconds": 78.65625,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        249129,
+        240202
+      ]
+    },
+    {
+      "block": 5,
+      "stage": "ln2",
+      "filterId": "bucket-k4-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        97.92858400000114,
+        69.65770799999882,
+        65.42462499999965,
+        87.02129199999763
+      ],
+      "baselineWarmMedianMilliseconds": 69.65770799999882,
+      "samples": [
+        76.75683299999946,
+        80.31575000000157,
+        75.51945799999885,
+        83.83466699999917
+      ],
+      "warmMedianMilliseconds": 80.31575000000157,
+      "netWarmMedianMilliseconds": 10.658042000002752,
+      "outputChecksums": [
+        375139,
+        391474
+      ]
+    },
+    {
+      "block": 5,
+      "stage": "fc",
+      "filterId": "bucket-k4-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        99.33974999999919,
+        74.78825000000143,
+        76.5245840000025,
+        76.84712500000023
+      ],
+      "baselineWarmMedianMilliseconds": 76.5245840000025,
+      "samples": [
+        112.36737499999799,
+        95.9083329999994,
+        112.17883299999812,
+        102.84049999999843
+      ],
+      "warmMedianMilliseconds": 102.84049999999843,
+      "netWarmMedianMilliseconds": 26.315915999995923,
+      "outputChecksums": [
+        1492210,
+        1510586
+      ]
+    },
+    {
+      "block": 5,
+      "stage": "projection",
+      "filterId": "bucket-k4-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        66.52479200000016,
+        83.44204199999876,
+        72.05145800000173,
+        87.91474999999991
+      ],
+      "baselineWarmMedianMilliseconds": 83.44204199999876,
+      "samples": [
+        81.60699999999997,
+        88.88824999999997,
+        89.14566600000035,
+        74.72895900000003
+      ],
+      "warmMedianMilliseconds": 88.88824999999997,
+      "netWarmMedianMilliseconds": 5.4462080000012065,
+      "outputChecksums": [
+        250386,
+        246737
+      ]
+    },
+    {
+      "block": 6,
+      "stage": "ln1",
+      "filterId": "bucket-k5-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        91.67204200000197,
+        68.47170800000094,
+        73.0030829999996,
+        86.4780000000028
+      ],
+      "baselineWarmMedianMilliseconds": 73.0030829999996,
+      "samples": [
+        78.00595799999792,
+        83.06183399999645,
+        72.1571249999979,
+        88.2222920000022
+      ],
+      "warmMedianMilliseconds": 83.06183399999645,
+      "netWarmMedianMilliseconds": 10.058750999996846,
+      "outputChecksums": [
+        368135,
+        375600
+      ]
+    },
+    {
+      "block": 6,
+      "stage": "attention",
+      "filterId": "bucket-k5-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        85.89445800000249,
+        63.981582999997045,
+        66.68708300000071,
+        77.83525000000009
+      ],
+      "baselineWarmMedianMilliseconds": 66.68708300000071,
+      "samples": [
+        86.38762499999939,
+        63.55400000000009,
+        97.12154200000077,
+        83.54270800000086
+      ],
+      "warmMedianMilliseconds": 83.54270800000086,
+      "netWarmMedianMilliseconds": 16.855625000000146,
+      "outputChecksums": [
+        217137,
+        209472
+      ]
+    },
+    {
+      "block": 6,
+      "stage": "ln2",
+      "filterId": "bucket-k5-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        85.46629199999734,
+        76.3864590000012,
+        77.21933400000125,
+        83.49066699999821
+      ],
+      "baselineWarmMedianMilliseconds": 77.21933400000125,
+      "samples": [
+        84.87475000000268,
+        83.06516700000066,
+        76.00245800000266,
+        76.45804199999839
+      ],
+      "warmMedianMilliseconds": 76.45804199999839,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        326987,
+        327333
+      ]
+    },
+    {
+      "block": 6,
+      "stage": "fc",
+      "filterId": "bucket-k5-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        75.88699999999517,
+        81.36541600000055,
+        82.40712500000518,
+        81.52391699999862
+      ],
+      "baselineWarmMedianMilliseconds": 81.52391699999862,
+      "samples": [
+        191.97791699999652,
+        191.90374999999767,
+        175.26545800000167,
+        149.47175000000425
+      ],
+      "warmMedianMilliseconds": 175.26545800000167,
+      "netWarmMedianMilliseconds": 93.74154100000305,
+      "outputChecksums": [
+        2579022,
+        2717483
+      ]
+    },
+    {
+      "block": 6,
+      "stage": "projection",
+      "filterId": "bucket-k5-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        66.4655000000057,
+        89.3761250000025,
+        82.46837499999674,
+        82.96166600000288
+      ],
+      "baselineWarmMedianMilliseconds": 82.96166600000288,
+      "samples": [
+        86.75004200000694,
+        83.66445799999929,
+        66.41854199999943,
+        85.71029099999578
+      ],
+      "warmMedianMilliseconds": 83.66445799999929,
+      "netWarmMedianMilliseconds": 0.702791999996407,
+      "outputChecksums": [
+        212939,
+        213858
+      ]
+    },
+    {
+      "block": 7,
+      "stage": "ln1",
+      "filterId": "bucket-k6-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        86.6207080000022,
+        80.55345900000248,
+        66.49358399999619,
+        86.63091700000223
+      ],
+      "baselineWarmMedianMilliseconds": 80.55345900000248,
+      "samples": [
+        80.75400000000081,
+        88.15804199999548,
+        102.94108399999823,
+        81.5775000000067
+      ],
+      "warmMedianMilliseconds": 88.15804199999548,
+      "netWarmMedianMilliseconds": 7.604582999992999,
+      "outputChecksums": [
+        334199,
+        315935
+      ]
+    },
+    {
+      "block": 7,
+      "stage": "attention",
+      "filterId": "bucket-k6-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        97.98954200000298,
+        68.80170799999905,
+        66.60808299999917,
+        94.76287500000035
+      ],
+      "baselineWarmMedianMilliseconds": 68.80170799999905,
+      "samples": [
+        92.59020900000178,
+        75.71474999999919,
+        71.54899999999907,
+        86.19974999999977
+      ],
+      "warmMedianMilliseconds": 75.71474999999919,
+      "netWarmMedianMilliseconds": 6.913042000000132,
+      "outputChecksums": [
+        249745,
+        238050
+      ]
+    },
+    {
+      "block": 7,
+      "stage": "ln2",
+      "filterId": "bucket-k6-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        89.4820830000026,
+        73.29287499999919,
+        94.68270900000061,
+        81.3312919999953
+      ],
+      "baselineWarmMedianMilliseconds": 81.3312919999953,
+      "samples": [
+        72.29770800000551,
+        93.41833400000178,
+        88.57858299999498,
+        71.15641699999833
+      ],
+      "warmMedianMilliseconds": 88.57858299999498,
+      "netWarmMedianMilliseconds": 7.247290999999677,
+      "outputChecksums": [
+        372177,
+        392217
+      ]
+    },
+    {
+      "block": 7,
+      "stage": "fc",
+      "filterId": "bucket-k6-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        89.4028330000001,
+        76.02633300000161,
+        78.6777080000029,
+        98.68791700000293
+      ],
+      "baselineWarmMedianMilliseconds": 78.6777080000029,
+      "samples": [
+        97.16104199999972,
+        79.26766700000007,
+        112.64291700000467,
+        95.6565000000046
+      ],
+      "warmMedianMilliseconds": 95.6565000000046,
+      "netWarmMedianMilliseconds": 16.978792000001704,
+      "outputChecksums": [
+        1487168,
+        1506291
+      ]
+    },
+    {
+      "block": 7,
+      "stage": "projection",
+      "filterId": "bucket-k6-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        83.00954099999944,
+        80.15141600000061,
+        67.53691699999763,
+        83.6574580000015
+      ],
+      "baselineWarmMedianMilliseconds": 80.15141600000061,
+      "samples": [
+        66.82412499999919,
+        66.38920800000051,
+        67.04945800000132,
+        66.46816599999875
+      ],
+      "warmMedianMilliseconds": 66.46816599999875,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        249383,
+        246166
+      ]
+    },
+    {
+      "block": 8,
+      "stage": "ln1",
+      "filterId": "bucket-k7-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        89.46879099999933,
+        74.39187500000116,
+        76.87370799999917,
+        89.97833399999945
+      ],
+      "baselineWarmMedianMilliseconds": 76.87370799999917,
+      "samples": [
+        76.1352079999997,
+        77.60175000000163,
+        85.07824999999866,
+        83.21637500000361
+      ],
+      "warmMedianMilliseconds": 83.21637500000361,
+      "netWarmMedianMilliseconds": 6.34266700000444,
+      "outputChecksums": [
+        370661,
+        381144
+      ]
+    },
+    {
+      "block": 8,
+      "stage": "attention",
+      "filterId": "bucket-k7-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        85.04270800000086,
+        83.65337500000169,
+        83.57745799999975,
+        81.03479099999822
+      ],
+      "baselineWarmMedianMilliseconds": 83.57745799999975,
+      "samples": [
+        63.37308299999859,
+        66.43399999999383,
+        66.7530839999963,
+        66.80912499999977
+      ],
+      "warmMedianMilliseconds": 66.7530839999963,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        214029,
+        217095
+      ]
+    },
+    {
+      "block": 8,
+      "stage": "ln2",
+      "filterId": "bucket-k7-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        66.80991699999868,
+        66.86979199999769,
+        66.10625000000437,
+        66.6932500000039
+      ],
+      "baselineWarmMedianMilliseconds": 66.6932500000039,
+      "samples": [
+        67.05191599999671,
+        65.99029200000223,
+        67.14624999999796,
+        71.99658400000044
+      ],
+      "warmMedianMilliseconds": 67.14624999999796,
+      "netWarmMedianMilliseconds": 0.4529999999940628,
+      "outputChecksums": [
+        335619,
+        327210
+      ]
+    },
+    {
+      "block": 8,
+      "stage": "fc",
+      "filterId": "bucket-k7-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        66.02429200000188,
+        75.74562499999593,
+        84.08849999999802,
+        86.69345800000156
+      ],
+      "baselineWarmMedianMilliseconds": 84.08849999999802,
+      "samples": [
+        179.64441699999588,
+        131.61612500000047,
+        188.2684999999983,
+        178.55058299999655
+      ],
+      "warmMedianMilliseconds": 178.55058299999655,
+      "netWarmMedianMilliseconds": 94.46208299999853,
+      "outputChecksums": [
+        2626941,
+        2621940
+      ]
+    },
+    {
+      "block": 8,
+      "stage": "projection",
+      "filterId": "bucket-k7-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        71.42008399999759,
+        78.56537499999831,
+        66.58950000000186,
+        66.61908399999811
+      ],
+      "baselineWarmMedianMilliseconds": 66.61908399999811,
+      "samples": [
+        66.33533300000272,
+        69.28641700000298,
+        63.842291999993904,
+        98.11362500000541
+      ],
+      "warmMedianMilliseconds": 69.28641700000298,
+      "netWarmMedianMilliseconds": 2.6673330000048736,
+      "outputChecksums": [
+        218534,
+        217479
+      ]
+    },
+    {
+      "block": 9,
+      "stage": "ln1",
+      "filterId": "bucket-k8-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        85.71375000000262,
+        64.08487500000047,
+        85.96958300000551,
+        69.203207999999
+      ],
+      "baselineWarmMedianMilliseconds": 69.203207999999,
+      "samples": [
+        69.63933299999917,
+        82.83679200000188,
+        83.2019999999975,
+        83.78679199999897
+      ],
+      "warmMedianMilliseconds": 83.2019999999975,
+      "netWarmMedianMilliseconds": 13.998791999998502,
+      "outputChecksums": [
+        343051,
+        316231
+      ]
+    },
+    {
+      "block": 9,
+      "stage": "attention",
+      "filterId": "bucket-k8-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        70.54899999999907,
+        80.44887500000186,
+        68.38524999999936,
+        89.76966700000048
+      ],
+      "baselineWarmMedianMilliseconds": 80.44887500000186,
+      "samples": [
+        68.75149999999849,
+        66.9989590000041,
+        69.57791599999473,
+        63.829165999995894
+      ],
+      "warmMedianMilliseconds": 66.9989590000041,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        249098,
+        235600
+      ]
+    },
+    {
+      "block": 9,
+      "stage": "ln2",
+      "filterId": "bucket-k8-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        82.54045899999619,
+        84.67233300000225,
+        80.63508300000103,
+        82.23099999999977
+      ],
+      "baselineWarmMedianMilliseconds": 82.23099999999977,
+      "samples": [
+        84.83912500000588,
+        83.65862500000367,
+        85.4108750000014,
+        83.0682500000039
+      ],
+      "warmMedianMilliseconds": 83.65862500000367,
+      "netWarmMedianMilliseconds": 1.4276250000039,
+      "outputChecksums": [
+        377564,
+        381223
+      ]
+    },
+    {
+      "block": 9,
+      "stage": "fc",
+      "filterId": "bucket-k8-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        75.73595799999748,
+        85.88550000000396,
+        66.55504199999996,
+        83.3818750000064
+      ],
+      "baselineWarmMedianMilliseconds": 83.3818750000064,
+      "samples": [
+        85.13991700000042,
+        97.91983299999993,
+        82.97941599999467,
+        99.78766600000381
+      ],
+      "warmMedianMilliseconds": 97.91983299999993,
+      "netWarmMedianMilliseconds": 14.537957999993523,
+      "outputChecksums": [
+        1432238,
+        1433615
+      ]
+    },
+    {
+      "block": 9,
+      "stage": "projection",
+      "filterId": "bucket-k8-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        82.99733399999968,
+        77.77683300000353,
+        66.37862499999756,
+        66.78529200000048
+      ],
+      "baselineWarmMedianMilliseconds": 66.78529200000048,
+      "samples": [
+        66.80608399999619,
+        68.98370800000703,
+        80.90787499999715,
+        66.72233299999789
+      ],
+      "warmMedianMilliseconds": 68.98370800000703,
+      "netWarmMedianMilliseconds": 2.198416000006546,
+      "outputChecksums": [
+        252453,
+        231994
+      ]
+    },
+    {
+      "block": 10,
+      "stage": "ln1",
+      "filterId": "bucket-k9-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        74.17379100000107,
+        83.83008400000108,
+        77.49208299999736,
+        72.06537499999831
+      ],
+      "baselineWarmMedianMilliseconds": 77.49208299999736,
+      "samples": [
+        68.8839169999992,
+        64.05825000000186,
+        66.57870800000092,
+        66.65229099999851
+      ],
+      "warmMedianMilliseconds": 66.57870800000092,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        381447,
+        369747
+      ]
+    },
+    {
+      "block": 10,
+      "stage": "attention",
+      "filterId": "bucket-k9-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        82.99099999999453,
+        87.76566699999967,
+        79.24379100000078,
+        76.22066600000107
+      ],
+      "baselineWarmMedianMilliseconds": 79.24379100000078,
+      "samples": [
+        94.8434169999964,
+        72.01237499999843,
+        94.88916700000118,
+        72.32991700000275
+      ],
+      "warmMedianMilliseconds": 72.32991700000275,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        208492,
+        212272
+      ]
+    },
+    {
+      "block": 10,
+      "stage": "ln2",
+      "filterId": "bucket-k9-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        88.38249999999971,
+        95.12579200000619,
+        68.81166700000176,
+        64.85258299999987
+      ],
+      "baselineWarmMedianMilliseconds": 68.81166700000176,
+      "samples": [
+        83.46824999999808,
+        74.10341600000538,
+        82.4155000000028,
+        84.15912499999831
+      ],
+      "warmMedianMilliseconds": 82.4155000000028,
+      "netWarmMedianMilliseconds": 13.603833000001032,
+      "outputChecksums": [
+        342404,
+        334221
+      ]
+    },
+    {
+      "block": 10,
+      "stage": "fc",
+      "filterId": "bucket-k9-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        77.67575000000215,
+        65.96458300000086,
+        80.55225000000064,
+        99.45237500000076
+      ],
+      "baselineWarmMedianMilliseconds": 80.55225000000064,
+      "samples": [
+        166.0890830000062,
+        172.78783299999486,
+        180.54929200000333,
+        178.83591700000397
+      ],
+      "warmMedianMilliseconds": 178.83591700000397,
+      "netWarmMedianMilliseconds": 98.28366700000333,
+      "outputChecksums": [
+        2624565,
+        2578296
+      ]
+    },
+    {
+      "block": 10,
+      "stage": "projection",
+      "filterId": "bucket-k9-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        83.24104200000147,
+        82.80475000000297,
+        81.48179199999868,
+        85.60462499999994
+      ],
+      "baselineWarmMedianMilliseconds": 82.80475000000297,
+      "samples": [
+        80.43274999999994,
+        68.88299999999435,
+        83.95462499999849,
+        79.92250000000058
+      ],
+      "warmMedianMilliseconds": 79.92250000000058,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        216488,
+        206412
+      ]
+    },
+    {
+      "block": 11,
+      "stage": "ln1",
+      "filterId": "bucket-k10-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        68.54462500000227,
+        85.19704199999978,
+        64.54308299999684,
+        98.52616600000329
+      ],
+      "baselineWarmMedianMilliseconds": 85.19704199999978,
+      "samples": [
+        77.12883300000249,
+        84.80966700000135,
+        65.34391699999833,
+        81.2121249999982
+      ],
+      "warmMedianMilliseconds": 81.2121249999982,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        337453,
+        313406
+      ]
+    },
+    {
+      "block": 11,
+      "stage": "attention",
+      "filterId": "bucket-k10-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        84.06687500000407,
+        83.55929099999776,
+        83.7060829999973,
+        83.3310829999973
+      ],
+      "baselineWarmMedianMilliseconds": 83.55929099999776,
+      "samples": [
+        89.13058399999863,
+        83.69199999999546,
+        83.90841699999874,
+        83.06758300000365
+      ],
+      "warmMedianMilliseconds": 83.69199999999546,
+      "netWarmMedianMilliseconds": 0.13270899999770336,
+      "outputChecksums": [
+        250237,
+        226524
+      ]
+    },
+    {
+      "block": 11,
+      "stage": "ln2",
+      "filterId": "bucket-k10-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        84.4979170000006,
+        92.46912500000326,
+        84.25033299999632,
+        82.64008399999875
+      ],
+      "baselineWarmMedianMilliseconds": 84.25033299999632,
+      "samples": [
+        83.49491700000362,
+        83.32624999999825,
+        66.82895799999824,
+        83.06395799999882
+      ],
+      "warmMedianMilliseconds": 83.06395799999882,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        383888,
+        365110
+      ]
+    },
+    {
+      "block": 11,
+      "stage": "fc",
+      "filterId": "bucket-k10-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        66.5915410000016,
+        90.46720899999491,
+        76.27012500000274,
+        88.0056670000049
+      ],
+      "baselineWarmMedianMilliseconds": 88.0056670000049,
+      "samples": [
+        100.84408400000393,
+        107.59683300000324,
+        112.88862499999959,
+        99.41687500000262
+      ],
+      "warmMedianMilliseconds": 107.59683300000324,
+      "netWarmMedianMilliseconds": 19.59116599999834,
+      "outputChecksums": [
+        1454388,
+        1409778
+      ]
+    },
+    {
+      "block": 11,
+      "stage": "projection",
+      "filterId": "bucket-k10-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        74.62958300000173,
+        78.2757089999941,
+        69.30025000000023,
+        94.09066700000403
+      ],
+      "baselineWarmMedianMilliseconds": 78.2757089999941,
+      "samples": [
+        74.45112500000687,
+        68.92345899999782,
+        80.63233300000138,
+        75.60074999999779
+      ],
+      "warmMedianMilliseconds": 75.60074999999779,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        247017,
+        224882
+      ]
+    },
+    {
+      "block": 12,
+      "stage": "ln1",
+      "filterId": "bucket-k11-ln1",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        75.46362500000396,
+        78.07645800000319,
+        73.3703749999986,
+        91.84304199999315
+      ],
+      "baselineWarmMedianMilliseconds": 78.07645800000319,
+      "samples": [
+        77.59308299999975,
+        76.7557089999973,
+        86.01958300000115,
+        78.97550000000047
+      ],
+      "warmMedianMilliseconds": 78.97550000000047,
+      "netWarmMedianMilliseconds": 0.8990419999972801,
+      "outputChecksums": [
+        383095,
+        360545
+      ]
+    },
+    {
+      "block": 12,
+      "stage": "attention",
+      "filterId": "bucket-k11-attention",
+      "primitiveCount": 95,
+      "workingPixels": 589824,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        73.77183300000615,
+        76.96383400000195,
+        73.45616700000392,
+        86.5436669999981
+      ],
+      "baselineWarmMedianMilliseconds": 76.96383400000195,
+      "samples": [
+        74.0259170000063,
+        73.638082999998,
+        98.40725000000384,
+        68.0623329999944
+      ],
+      "warmMedianMilliseconds": 73.638082999998,
+      "netWarmMedianMilliseconds": 0,
+      "outputChecksums": [
+        214891,
+        190529
+      ]
+    },
+    {
+      "block": 12,
+      "stage": "ln2",
+      "filterId": "bucket-k11-ln2",
+      "primitiveCount": 117,
+      "workingPixels": 196608,
+      "visiblePixels": 768,
+      "boundaryPixels": 1536,
+      "baselineSamples": [
+        66.50237499999639,
+        66.65908299999865,
+        74.31691699999647,
+        74.5345840000009
+      ],
+      "baselineWarmMedianMilliseconds": 74.31691699999647,
+      "samples": [
+        69.79891700000007,
+        80.17404199999874,
+        72.49083399999654,
+        80.09500000000116
+      ],
+      "warmMedianMilliseconds": 80.09500000000116,
+      "netWarmMedianMilliseconds": 5.778083000004699,
+      "outputChecksums": [
+        343739,
+        312012
+      ]
+    },
+    {
+      "block": 12,
+      "stage": "fc",
+      "filterId": "bucket-k11-fc",
+      "primitiveCount": 174,
+      "workingPixels": 2360064,
+      "visiblePixels": 3072,
+      "boundaryPixels": 2360064,
+      "baselineSamples": [
+        79.50933299999451,
+        84.01687499999389,
+        75.51666700000351,
+        77.85350000000471
+      ],
+      "baselineWarmMedianMilliseconds": 77.85350000000471,
+      "samples": [
+        193.14512499999546,
+        157.0925419999985,
+        125.83420800000022,
+        173.58258300001035
+      ],
+      "warmMedianMilliseconds": 157.0925419999985,
+      "netWarmMedianMilliseconds": 79.23904199999379,
+      "outputChecksums": [
+        2770221,
+        2581927
+      ]
+    },
+    {
+      "block": 12,
+      "stage": "projection",
+      "filterId": "bucket-k11-projection",
+      "primitiveCount": 161,
+      "workingPixels": 2360064,
+      "visiblePixels": 768,
+      "boundaryPixels": 768,
+      "baselineSamples": [
+        69.05379200000607,
+        80.91683299999568,
+        66.33329199999571,
+        66.45237500000803
+      ],
+      "baselineWarmMedianMilliseconds": 66.45237500000803,
+      "samples": [
+        82.645417000007,
+        87.39700000001176,
+        77.12516600001254,
+        85.62387500000477
+      ],
+      "warmMedianMilliseconds": 85.62387500000477,
+      "netWarmMedianMilliseconds": 19.17149999999674,
+      "outputChecksums": [
+        220405,
+        191637
+      ]
+    }
+  ]
+}

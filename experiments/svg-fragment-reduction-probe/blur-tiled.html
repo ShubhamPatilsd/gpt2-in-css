@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SVG tiled Gaussian reduction probe</title>
+<style>html,body{margin:0;background:#000}svg{display:block}</style>
+<svg width="128" height="64" viewBox="0 131.5 2 1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blur-reduce" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"
+            x="0" y="0" width="2" height="264" color-interpolation-filters="sRGB">
+      <feComposite in="SourceGraphic" in2="SourceGraphic" operator="in"
+                   x="0" y="0" width="2" height="8" result="cell"/>
+      <feTile in="cell" x="0" y="0" width="2" height="264" result="tiled"/>
+      <feGaussianBlur in="tiled" stdDeviation="0 32" edgeMode="none"/>
+    </filter>
+  </defs>
+  <g filter="url(#blur-reduce)">
+    <rect x="1" y="0" width="1" height="8" fill="white"/>
+    <rect x="0" y="0" width="1" height="1" fill="rgb(0 0 0)"/>
+    <rect x="0" y="1" width="1" height="1" fill="rgb(32 32 32)"/>
+    <rect x="0" y="2" width="1" height="1" fill="rgb(64 64 64)"/>
+    <rect x="0" y="3" width="1" height="1" fill="rgb(96 96 96)"/>
+    <rect x="0" y="4" width="1" height="1" fill="rgb(128 128 128)"/>
+    <rect x="0" y="5" width="1" height="1" fill="rgb(160 160 160)"/>
+    <rect x="0" y="6" width="1" height="1" fill="rgb(192 192 192)"/>
+    <rect x="0" y="7" width="1" height="1" fill="rgb(224 224 224)"/>
+  </g>
+</svg>
