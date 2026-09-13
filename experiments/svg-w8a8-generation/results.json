@@ -1,0 +1,469 @@
+{
+  "model": "/Users/shubhampatil/Documents/programming/gpt2-css/data/gpt2/model.safetensors",
+  "activationBits": 8,
+  "weightQuantization": "9-bit signed rows followed by 8-bit normalized PNG",
+  "groups": 32,
+  "headroom": 1.1,
+  "calibrationPrompts": [
+    "Once upon a time",
+    "The dog ran through the",
+    "In a small village",
+    "The scientist discovered",
+    "I think that",
+    "The meaning of life",
+    "Alice walked into",
+    "The weather today"
+  ],
+  "evaluationPrompts": [
+    "Hello, my name is",
+    "The quick brown fox",
+    "Once upon a time there was",
+    "In the future, computers",
+    "The capital of France is",
+    "She opened the door and"
+  ],
+  "generatedTokensPerPrompt": 8,
+  "teacherForcedMatches": 28,
+  "teacherForcedSteps": 48,
+  "teacherForcedMatchFraction": 0.5833333333333334,
+  "meanFirstFreeRunDivergence": 2.0,
+  "calibrationOutputs": [
+    {
+      "prompt": "Once upon a time",
+      "generatedTokenIds": [
+        11,
+        262,
+        995,
+        373,
+        257,
+        1295,
+        286,
+        1049
+      ]
+    },
+    {
+      "prompt": "The dog ran through the",
+      "generatedTokenIds": [
+        16479,
+        290,
+        656,
+        262,
+        16479,
+        13,
+        679,
+        373
+      ]
+    },
+    {
+      "prompt": "In a small village",
+      "generatedTokenIds": [
+        287,
+        262,
+        5093,
+        286,
+        262,
+        1499,
+        11,
+        257
+      ]
+    },
+    {
+      "prompt": "The scientist discovered",
+      "generatedTokenIds": [
+        326,
+        262,
+        11492,
+        547,
+        1498,
+        284,
+        1663,
+        287
+      ]
+    },
+    {
+      "prompt": "I think that",
+      "generatedTokenIds": [
+        338,
+        257,
+        922,
+        1517,
+        13,
+        314,
+        892,
+        326
+      ]
+    },
+    {
+      "prompt": "The meaning of life",
+      "generatedTokenIds": [
+        318,
+        407,
+        262,
+        976,
+        355,
+        262,
+        3616,
+        286
+      ]
+    },
+    {
+      "prompt": "Alice walked into",
+      "generatedTokenIds": [
+        262,
+        2119,
+        290,
+        3114,
+        379,
+        262,
+        8801,
+        13
+      ]
+    },
+    {
+      "prompt": "The weather today",
+      "generatedTokenIds": [
+        318,
+        845,
+        922,
+        11,
+        290,
+        356,
+        821,
+        1016
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "prompt": "Hello, my name is",
+      "promptTokenIds": [
+        15496,
+        11,
+        616,
+        1438,
+        318
+      ],
+      "exactTokenIds": [
+        1757,
+        13,
+        314,
+        1101,
+        257,
+        6260,
+        11,
+        290
+      ],
+      "quantizedTokenIds": [
+        407,
+        616,
+        1438,
+        13,
+        314,
+        716,
+        407,
+        257
+      ],
+      "teacherForcedPredictedTokenIds": [
+        407,
+        13,
+        314,
+        1101,
+        257,
+        582,
+        11,
+        290
+      ],
+      "teacherForcedMatches": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "firstFreeRunDivergence": 0,
+      "exactText": "Hello, my name is John. I'm a writer, and",
+      "quantizedText": "Hello, my name is not my name. I am not a",
+      "teacherClippedValues": 7968,
+      "freeRunClippedValues": 7627
+    },
+    {
+      "prompt": "The quick brown fox",
+      "promptTokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "exactTokenIds": [
+        274,
+        389,
+        257,
+        1049,
+        835,
+        284,
+        651,
+        257
+      ],
+      "quantizedTokenIds": [
+        11,
+        508,
+        373,
+        287,
+        262,
+        3504,
+        286,
+        262
+      ],
+      "teacherForcedPredictedTokenIds": [
+        11,
+        11,
+        257,
+        1643,
+        835,
+        284,
+        651,
+        534
+      ],
+      "teacherForcedMatches": [
+        false,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "firstFreeRunDivergence": 0,
+      "exactText": "The quick brown foxes are a great way to get a",
+      "quantizedText": "The quick brown fox, who was in the middle of the",
+      "teacherClippedValues": 6766,
+      "freeRunClippedValues": 6120
+    },
+    {
+      "prompt": "Once upon a time there was",
+      "promptTokenIds": [
+        7454,
+        2402,
+        257,
+        640,
+        612,
+        373
+      ],
+      "exactTokenIds": [
+        257,
+        1049,
+        1730,
+        286,
+        10802,
+        546,
+        262,
+        3616
+      ],
+      "quantizedTokenIds": [
+        257,
+        582,
+        508,
+        373,
+        257,
+        582,
+        11,
+        290
+      ],
+      "teacherForcedPredictedTokenIds": [
+        257,
+        582,
+        1730,
+        286,
+        661,
+        11,
+        262,
+        3450
+      ],
+      "teacherForcedMatches": [
+        true,
+        false,
+        true,
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "firstFreeRunDivergence": 1,
+      "exactText": "Once upon a time there was a great deal of confusion about the meaning",
+      "quantizedText": "Once upon a time there was a man who was a man, and",
+      "teacherClippedValues": 4027,
+      "freeRunClippedValues": 4476
+    },
+    {
+      "prompt": "In the future, computers",
+      "promptTokenIds": [
+        818,
+        262,
+        2003,
+        11,
+        9061
+      ],
+      "exactTokenIds": [
+        481,
+        307,
+        1498,
+        284,
+        466,
+        1243,
+        588,
+        3758
+      ],
+      "quantizedTokenIds": [
+        481,
+        307,
+        1498,
+        284,
+        779,
+        262,
+        1366,
+        287
+      ],
+      "teacherForcedPredictedTokenIds": [
+        481,
+        307,
+        1498,
+        284,
+        779,
+        1243,
+        326,
+        428
+      ],
+      "teacherForcedMatches": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        false
+      ],
+      "firstFreeRunDivergence": 4,
+      "exactText": "In the future, computers will be able to do things like send",
+      "quantizedText": "In the future, computers will be able to use the data in",
+      "teacherClippedValues": 6317,
+      "freeRunClippedValues": 5848
+    },
+    {
+      "prompt": "The capital of France is",
+      "promptTokenIds": [
+        464,
+        3139,
+        286,
+        4881,
+        318
+      ],
+      "exactTokenIds": [
+        262,
+        3139,
+        286,
+        262,
+        4141,
+        2066,
+        11,
+        290
+      ],
+      "quantizedTokenIds": [
+        262,
+        3139,
+        286,
+        4881,
+        13,
+        632,
+        318,
+        262
+      ],
+      "teacherForcedPredictedTokenIds": [
+        262,
+        3139,
+        286,
+        4881,
+        4141,
+        11,
+        13,
+        290
+      ],
+      "teacherForcedMatches": [
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        false,
+        true
+      ],
+      "firstFreeRunDivergence": 3,
+      "exactText": "The capital of France is the capital of the French Republic, and",
+      "quantizedText": "The capital of France is the capital of France. It is the",
+      "teacherClippedValues": 8618,
+      "freeRunClippedValues": 7742
+    },
+    {
+      "prompt": "She opened the door and",
+      "promptTokenIds": [
+        3347,
+        4721,
+        262,
+        3420,
+        290
+      ],
+      "exactTokenIds": [
+        2497,
+        257,
+        582,
+        287,
+        257,
+        2330,
+        10147,
+        290
+      ],
+      "quantizedTokenIds": [
+        2497,
+        257,
+        582,
+        287,
+        262,
+        32439,
+        13,
+        679
+      ],
+      "teacherForcedPredictedTokenIds": [
+        2497,
+        257,
+        582,
+        287,
+        262,
+        27181,
+        5719,
+        11
+      ],
+      "teacherForcedMatches": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "firstFreeRunDivergence": 4,
+      "exactText": "She opened the door and saw a man in a white shirt and",
+      "quantizedText": "She opened the door and saw a man in the doorway. He",
+      "teacherClippedValues": 7729,
+      "freeRunClippedValues": 7020
+    }
+  ],
+  "scope": "full 12-block multi-token causal attention with KV caches; offline SVG numerical screen"
+}

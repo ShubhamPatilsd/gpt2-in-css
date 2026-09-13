@@ -1,0 +1,339 @@
+{
+  "model": "/Users/shubhampatil/Documents/programming/gpt2-css/data/gpt2/model.safetensors",
+  "calibrationCases": 256,
+  "evaluationCases": 512,
+  "naturalCases": 64,
+  "scope": "12 one-token GPT-2-small blocks with every SVG-like activation surface materialized to 8 bits",
+  "note": "Offline screen; finalists require a Chromium SVG implementation",
+  "results": [
+    {
+      "name": "symmetric-32",
+      "groups": 32,
+      "asymmetric": false,
+      "headroom": 1.1,
+      "asymmetricStages": "all",
+      "clustering": "span-uniform",
+      "winnerMatches": 482,
+      "winnerMatchFraction": 0.94140625,
+      "naturalWinnerMatches": 53,
+      "naturalWinnerMatchFraction": 0.828125,
+      "finalHiddenRmse": 0.2253650573371684,
+      "maxError": 11.80112949755259,
+      "clippedValues": 9332,
+      "meanGroupsUsed": 21.045454545454547
+    },
+    {
+      "name": "asymmetric-state-16",
+      "groups": 16,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": [
+        "state"
+      ],
+      "clustering": "span-uniform",
+      "winnerMatches": 477,
+      "winnerMatchFraction": 0.931640625,
+      "naturalWinnerMatches": 57,
+      "naturalWinnerMatchFraction": 0.890625,
+      "finalHiddenRmse": 0.09553470814971499,
+      "maxError": 10.20785589488425,
+      "clippedValues": 9650,
+      "meanGroupsUsed": 12.39090909090909
+    },
+    {
+      "name": "asymmetric-state-32",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.0,
+      "asymmetricStages": [
+        "state"
+      ],
+      "clustering": "span-uniform",
+      "winnerMatches": 481,
+      "winnerMatchFraction": 0.939453125,
+      "naturalWinnerMatches": 53,
+      "naturalWinnerMatchFraction": 0.828125,
+      "finalHiddenRmse": 0.10124580864702956,
+      "maxError": 12.222442485107576,
+      "clippedValues": 35685,
+      "meanGroupsUsed": 21.445454545454545
+    },
+    {
+      "name": "asymmetric-state-32",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": [
+        "state"
+      ],
+      "clustering": "span-uniform",
+      "winnerMatches": 480,
+      "winnerMatchFraction": 0.9375,
+      "naturalWinnerMatches": 56,
+      "naturalWinnerMatchFraction": 0.875,
+      "finalHiddenRmse": 0.09637686881215109,
+      "maxError": 11.180247200103137,
+      "clippedValues": 14114,
+      "meanGroupsUsed": 21.445454545454545
+    },
+    {
+      "name": "asymmetric-state-32",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.1,
+      "asymmetricStages": [
+        "state"
+      ],
+      "clustering": "span-uniform",
+      "winnerMatches": 483,
+      "winnerMatchFraction": 0.943359375,
+      "naturalWinnerMatches": 56,
+      "naturalWinnerMatchFraction": 0.875,
+      "finalHiddenRmse": 0.09183272521235476,
+      "maxError": 10.108071239937017,
+      "clippedValues": 8888,
+      "meanGroupsUsed": 21.445454545454545
+    },
+    {
+      "name": "asymmetric-state-64",
+      "groups": 64,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": [
+        "state"
+      ],
+      "clustering": "span-uniform",
+      "winnerMatches": 480,
+      "winnerMatchFraction": 0.9375,
+      "naturalWinnerMatches": 53,
+      "naturalWinnerMatchFraction": 0.828125,
+      "finalHiddenRmse": 0.10267157339700854,
+      "maxError": 11.561266695609762,
+      "clippedValues": 19524,
+      "meanGroupsUsed": 36.63636363636363
+    },
+    {
+      "name": "asymmetric-state-32-kmeans",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.0,
+      "asymmetricStages": [
+        "state"
+      ],
+      "clustering": "range-kmeans",
+      "winnerMatches": 488,
+      "winnerMatchFraction": 0.953125,
+      "naturalWinnerMatches": 56,
+      "naturalWinnerMatchFraction": 0.875,
+      "finalHiddenRmse": 0.09965265540765637,
+      "maxError": 11.113724096804983,
+      "clippedValues": 35837,
+      "meanGroupsUsed": 24.645454545454545
+    },
+    {
+      "name": "asymmetric-state-32-kmeans",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": [
+        "state"
+      ],
+      "clustering": "range-kmeans",
+      "winnerMatches": 489,
+      "winnerMatchFraction": 0.955078125,
+      "naturalWinnerMatches": 54,
+      "naturalWinnerMatchFraction": 0.84375,
+      "finalHiddenRmse": 0.0971377300677834,
+      "maxError": 10.714585477016048,
+      "clippedValues": 14184,
+      "meanGroupsUsed": 24.645454545454545
+    },
+    {
+      "name": "asymmetric-state-32-kmeans",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.1,
+      "asymmetricStages": [
+        "state"
+      ],
+      "clustering": "range-kmeans",
+      "winnerMatches": 487,
+      "winnerMatchFraction": 0.951171875,
+      "naturalWinnerMatches": 55,
+      "naturalWinnerMatchFraction": 0.859375,
+      "finalHiddenRmse": 0.08985665138659649,
+      "maxError": 11.06937536127288,
+      "clippedValues": 8939,
+      "meanGroupsUsed": 24.645454545454545
+    },
+    {
+      "name": "asymmetric-all-32-kmeans",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": "all",
+      "clustering": "range-kmeans",
+      "winnerMatches": 487,
+      "winnerMatchFraction": 0.951171875,
+      "naturalWinnerMatches": 55,
+      "naturalWinnerMatchFraction": 0.859375,
+      "finalHiddenRmse": 0.0727107673588247,
+      "maxError": 10.888004217873835,
+      "clippedValues": 10075,
+      "meanGroupsUsed": 32.0
+    },
+    {
+      "name": "asymmetric-hidden-32",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": [
+        "hidden"
+      ],
+      "clustering": "span-uniform",
+      "winnerMatches": 479,
+      "winnerMatchFraction": 0.935546875,
+      "naturalWinnerMatches": 55,
+      "naturalWinnerMatchFraction": 0.859375,
+      "finalHiddenRmse": 0.20782356729727658,
+      "maxError": 12.151432289164056,
+      "clippedValues": 15247,
+      "meanGroupsUsed": 21.081818181818182
+    },
+    {
+      "name": "asymmetric-affine-32",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": [
+        "affine"
+      ],
+      "clustering": "span-uniform",
+      "winnerMatches": 484,
+      "winnerMatchFraction": 0.9453125,
+      "naturalWinnerMatches": 53,
+      "naturalWinnerMatchFraction": 0.828125,
+      "finalHiddenRmse": 0.21242301125843063,
+      "maxError": 12.736771584604135,
+      "clippedValues": 9790,
+      "meanGroupsUsed": 20.427272727272726
+    },
+    {
+      "name": "asymmetric-normalized-32",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": [
+        "normalized"
+      ],
+      "clustering": "span-uniform",
+      "winnerMatches": 483,
+      "winnerMatchFraction": 0.943359375,
+      "naturalWinnerMatches": 53,
+      "naturalWinnerMatchFraction": 0.828125,
+      "finalHiddenRmse": 0.2257726058143111,
+      "maxError": 13.609336291368884,
+      "clippedValues": 19633,
+      "meanGroupsUsed": 20.60909090909091
+    },
+    {
+      "name": "asymmetric-hidden-affine-32",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": [
+        "affine",
+        "hidden"
+      ],
+      "clustering": "span-uniform",
+      "winnerMatches": 484,
+      "winnerMatchFraction": 0.9453125,
+      "naturalWinnerMatches": 55,
+      "naturalWinnerMatchFraction": 0.859375,
+      "finalHiddenRmse": 0.21629229041701467,
+      "maxError": 12.217504030205127,
+      "clippedValues": 9453,
+      "meanGroupsUsed": 20.463636363636365
+    },
+    {
+      "name": "asymmetric-16",
+      "groups": 16,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": "all",
+      "clustering": "span-uniform",
+      "winnerMatches": 480,
+      "winnerMatchFraction": 0.9375,
+      "naturalWinnerMatches": 55,
+      "naturalWinnerMatchFraction": 0.859375,
+      "finalHiddenRmse": 0.07768403531215885,
+      "maxError": 6.28971769568323,
+      "clippedValues": 3649,
+      "meanGroupsUsed": 12.027272727272727
+    },
+    {
+      "name": "asymmetric-32",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.0,
+      "asymmetricStages": "all",
+      "clustering": "span-uniform",
+      "winnerMatches": 478,
+      "winnerMatchFraction": 0.93359375,
+      "naturalWinnerMatches": 57,
+      "naturalWinnerMatchFraction": 0.890625,
+      "finalHiddenRmse": 0.07194905029464325,
+      "maxError": 8.209303542944475,
+      "clippedValues": 11787,
+      "meanGroupsUsed": 20.427272727272726
+    },
+    {
+      "name": "asymmetric-32",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": "all",
+      "clustering": "span-uniform",
+      "winnerMatches": 484,
+      "winnerMatchFraction": 0.9453125,
+      "naturalWinnerMatches": 54,
+      "naturalWinnerMatchFraction": 0.84375,
+      "finalHiddenRmse": 0.07364375249530906,
+      "maxError": 8.680165024509684,
+      "clippedValues": 5213,
+      "meanGroupsUsed": 20.427272727272726
+    },
+    {
+      "name": "asymmetric-32",
+      "groups": 32,
+      "asymmetric": true,
+      "headroom": 1.1,
+      "asymmetricStages": "all",
+      "clustering": "span-uniform",
+      "winnerMatches": 481,
+      "winnerMatchFraction": 0.939453125,
+      "naturalWinnerMatches": 54,
+      "naturalWinnerMatchFraction": 0.84375,
+      "finalHiddenRmse": 0.07045523406152604,
+      "maxError": 7.924891204391505,
+      "clippedValues": 3850,
+      "meanGroupsUsed": 20.427272727272726
+    },
+    {
+      "name": "asymmetric-per-channel",
+      "groups": 3072,
+      "asymmetric": true,
+      "headroom": 1.05,
+      "asymmetricStages": "all",
+      "clustering": "span-uniform",
+      "winnerMatches": 488,
+      "winnerMatchFraction": 0.953125,
+      "naturalWinnerMatches": 55,
+      "naturalWinnerMatchFraction": 0.859375,
+      "finalHiddenRmse": 0.0800573934496262,
+      "maxError": 12.082477431917031,
+      "clippedValues": 102847,
+      "meanGroupsUsed": 1522.0363636363636
+    }
+  ]
+}
