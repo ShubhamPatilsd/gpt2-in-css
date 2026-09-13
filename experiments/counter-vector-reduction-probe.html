@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>CSS counter vector reduction probe</title>
+<style>
+@property --q{syntax:"<number>";inherits:true;initial-value:0}
+.scope{display:grid;grid-template-columns:3px 5px 7px;grid-template-rows:1px 1px;width:max-content}
+.metric{grid-row:1;min-width:0}
+.transport{counter-reset:y0 100 y1 0;display:grid;grid-template-columns:subgrid;grid-column:1/-1;grid-row:2}
+.cell{container-type:inline-size;min-width:0}
+.increment{display:block;--q:calc(100cqi / 1px);counter-increment:y0 round(nearest,calc(var(--q) * var(--w0)),1) y1 round(nearest,calc(var(--q) * var(--w1)),1)}
+.result{position:fixed;left:0;width:max-content}
+.r0{top:20px}.r1{top:50px}
+.result::before{white-space:pre;font:16px/1 monospace}
+.r0::before{content:counter(y0)}
+.r1::before{content:counter(y1)}
+</style>
+<div class="scope">
+  <i class="metric"></i><i class="metric"></i><i class="metric"></i>
+  <div class="transport">
+    <i class="cell"><b class="increment" style="--w0:2;--w1:-1"></b></i>
+    <i class="cell"><b class="increment" style="--w0:3;--w1:4"></b></i>
+    <i class="cell"><b class="increment" style="--w0:-1;--w1:2"></b></i>
+    <output class="result r0"></output>
+    <output class="result r1"></output>
+  </div>
+</div>

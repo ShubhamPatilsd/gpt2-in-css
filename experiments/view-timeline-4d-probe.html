@@ -1,0 +1,60 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Four values from one two-axis view-timeline subject</title>
+<style>
+@property --xc { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --xe { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --yc { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --ye { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --x { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --y { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --w { syntax: "<number>"; inherits: true; initial-value: -1; }
+@property --h { syntax: "<number>"; inherits: true; initial-value: -1; }
+
+@keyframes read-x {
+  cover 0% { --xc: 0; --xe: 0; }
+  entry 100% { --xe: 1; }
+  cover 100% { --xc: 1; --xe: 1; }
+}
+@keyframes read-y {
+  cover 0% { --yc: 0; --ye: 0; }
+  entry 100% { --ye: 1; }
+  cover 100% { --yc: 1; --ye: 1; }
+}
+
+.scope { timeline-scope: --tx, --ty; }
+.scroller {
+  position: fixed;
+  left: 0;
+  top: -1000px;
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+}
+.track { position: relative; width: 300px; height: 300px; }
+.subject {
+  position: absolute;
+  /* The leading-edge gaps encode 23 and 29; each stays below its size. */
+  left: 77px;
+  top: 71px;
+  width: 37px;
+  height: 41px;
+  view-timeline-name: --tx, --ty;
+  view-timeline-axis: inline, block;
+}
+.result {
+  animation-name: read-x, read-y;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: --tx, --ty;
+  --w: calc(var(--xc) * 100 / (var(--xe) - var(--xc)));
+  --x: calc(var(--xe) * var(--w));
+  --h: calc(var(--yc) * 100 / (var(--ye) - var(--yc)));
+  --y: calc(var(--ye) * var(--h));
+}
+</style>
+<div class="scope">
+  <div class="scroller"><div class="track"><i class="subject"></i></div></div>
+  <output class="result" id="result"></output>
+</div>

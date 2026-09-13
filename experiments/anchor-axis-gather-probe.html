@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Anchor width to font variation axis</title>
+<style>
+@font-face{font-family:GatherMatrix;src:url("matrix-scaling/256/variable-matvec.woff2?v=4") format("woff2")}
+.source{position:fixed;left:0;top:0;width:50px;height:1px;anchor-name:--source}
+.sample{position:fixed;left:0;top:2px;font:32px/1 GatherMatrix;font-kerning:none;font-style:normal;white-space:pre}
+.anchor{position-anchor:--source;font-variation-settings:"X000" calc(anchor-size(--source width) / 100px)}
+.static{top:40px;font-variation-settings:"X000" .5}
+.zero{top:80px;font-variation-settings:"X000" 0}
+</style>
+<div class="source"></div>
+<i id="anchor" class="sample anchor">&#xE000;</i>
+<i id="static" class="sample static">&#xE000;</i>
+<i id="zero" class="sample zero">&#xE000;</i>

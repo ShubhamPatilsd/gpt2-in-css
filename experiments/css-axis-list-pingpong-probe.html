@@ -1,0 +1,25 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>CSS axis-list ping-pong transport</title>
+<style>
+@property --a { syntax: "*"; inherits: true; }
+@property --b { syntax: "*"; inherits: true; }
+.box { container-type: inline-size; height: 1px; }
+.l0 { width: 11px; }
+.l1 { width: 22px; --a: "a000" calc(100cqi / 1px); }
+.l2 { width: 33px; --b: var(--a), "a001" calc(100cqi / 1px); }
+.l3 { width: 44px; --a: var(--b), "a002" calc(100cqi / 1px); }
+.result {
+  --b: var(--a), "a003" calc(100cqi / 1px);
+  font-variation-settings: var(--b);
+}
+</style>
+<div class="box l0">
+  <div class="box l1">
+    <div class="box l2">
+      <div class="box l3">
+        <output class="result" id="result"></output>
+      </div>
+    </div>
+  </div>
+</div>
