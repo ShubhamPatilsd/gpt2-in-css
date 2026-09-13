@@ -1,0 +1,153 @@
+{
+  "empirical_baseline": {
+    "source": "experiments/matrix-scaling/RESULTS.md",
+    "terms": 5252351,
+    "raw_css_bytes": 94323192,
+    "same_page_recompute_ms_range": [
+      2480,
+      2660
+    ]
+  },
+  "estimates": [
+    {
+      "family": "low_rank",
+      "rank": 32,
+      "sparsity": null,
+      "residual_sparsity": null,
+      "terms": 344064,
+      "estimated_raw_css_bytes": 6178798,
+      "estimated_same_page_recompute_ms": 168,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "low_rank",
+      "rank": 64,
+      "sparsity": null,
+      "residual_sparsity": null,
+      "terms": 688128,
+      "estimated_raw_css_bytes": 12357596,
+      "estimated_same_page_recompute_ms": 337,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "low_rank",
+      "rank": 128,
+      "sparsity": null,
+      "residual_sparsity": null,
+      "terms": 1376256,
+      "estimated_raw_css_bytes": 24715191,
+      "estimated_same_page_recompute_ms": 673,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "low_rank",
+      "rank": 256,
+      "sparsity": null,
+      "residual_sparsity": null,
+      "terms": 2752512,
+      "estimated_raw_css_bytes": 49430382,
+      "estimated_same_page_recompute_ms": 1347,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "low_rank",
+      "rank": 384,
+      "sparsity": null,
+      "residual_sparsity": null,
+      "terms": 4128768,
+      "estimated_raw_css_bytes": 74145573,
+      "estimated_same_page_recompute_ms": 2020,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "magnitude_sparse",
+      "rank": null,
+      "sparsity": 0.5,
+      "residual_sparsity": null,
+      "terms": 2949120,
+      "estimated_raw_css_bytes": 52961124,
+      "estimated_same_page_recompute_ms": 1443,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "magnitude_sparse",
+      "rank": null,
+      "sparsity": 0.75,
+      "residual_sparsity": null,
+      "terms": 1474560,
+      "estimated_raw_css_bytes": 26480562,
+      "estimated_same_page_recompute_ms": 722,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "magnitude_sparse",
+      "rank": null,
+      "sparsity": 0.9,
+      "residual_sparsity": null,
+      "terms": 590592,
+      "estimated_raw_css_bytes": 10606017,
+      "estimated_same_page_recompute_ms": 289,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "low_rank_plus_sparse_residual",
+      "rank": 32,
+      "sparsity": null,
+      "residual_sparsity": 0.9,
+      "terms": 934656,
+      "estimated_raw_css_bytes": 16784815,
+      "estimated_same_page_recompute_ms": 457,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "low_rank_plus_sparse_residual",
+      "rank": 64,
+      "sparsity": null,
+      "residual_sparsity": 0.9,
+      "terms": 1278720,
+      "estimated_raw_css_bytes": 22963612,
+      "estimated_same_page_recompute_ms": 626,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "low_rank_plus_sparse_residual",
+      "rank": 128,
+      "sparsity": null,
+      "residual_sparsity": 0.9,
+      "terms": 1966848,
+      "estimated_raw_css_bytes": 35321208,
+      "estimated_same_page_recompute_ms": 962,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "low_rank_plus_sparse_residual",
+      "rank": 64,
+      "sparsity": null,
+      "residual_sparsity": 0.95,
+      "terms": 981504,
+      "estimated_raw_css_bytes": 17626124,
+      "estimated_same_page_recompute_ms": 480,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "low_rank_plus_sparse_residual",
+      "rank": 128,
+      "sparsity": null,
+      "residual_sparsity": 0.95,
+      "terms": 1669632,
+      "estimated_raw_css_bytes": 29983720,
+      "estimated_same_page_recompute_ms": 817,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    },
+    {
+      "family": "low_rank_plus_sparse_residual",
+      "rank": 128,
+      "sparsity": null,
+      "residual_sparsity": 0.975,
+      "terms": 1522944,
+      "estimated_raw_css_bytes": 27349455,
+      "estimated_same_page_recompute_ms": 745,
+      "warning": "Linear extrapolation only; low-rank introduces extra dependency stages."
+    }
+  ]
+}

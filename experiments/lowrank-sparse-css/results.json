@@ -1,0 +1,404 @@
+{
+  "checkpoint": "openai-community/gpt2",
+  "block": 0,
+  "sequence_length": 1,
+  "token_ids": [
+    0,
+    11,
+    13,
+    40,
+    198,
+    220,
+    257,
+    262,
+    286,
+    318,
+    373,
+    464,
+    612,
+    995,
+    15496,
+    30000,
+    40000,
+    50256
+  ],
+  "sample_count": 18,
+  "dense_terms": 5898240,
+  "exact_output": {
+    "rms": 5.107320208095927,
+    "mean_absolute": 1.0532580542814785,
+    "max_absolute": 120.54723185685712
+  },
+  "matrix_stats": {
+    "value": {
+      "shape": [
+        768,
+        768
+      ],
+      "dense_terms": 589824,
+      "top_rank_energy_fraction": {
+        "32": 0.2994068512910069,
+        "64": 0.42968792830811375,
+        "128": 0.6098927222773876,
+        "256": 0.8270422892662794,
+        "384": 0.9373017219844562
+      }
+    },
+    "attention_projection": {
+      "shape": [
+        768,
+        768
+      ],
+      "dense_terms": 589824,
+      "top_rank_energy_fraction": {
+        "32": 0.4422003629464834,
+        "64": 0.6092582561564354,
+        "128": 0.8233222370485531,
+        "256": 0.9847048340627323,
+        "384": 0.9966764858987437
+      }
+    },
+    "feed_forward_expansion": {
+      "shape": [
+        3072,
+        768
+      ],
+      "dense_terms": 2359296,
+      "top_rank_energy_fraction": {
+        "32": 0.1779603321148995,
+        "64": 0.2720535134203054,
+        "128": 0.42413479820620686,
+        "256": 0.6483099331621074,
+        "384": 0.8033809064843744
+      }
+    },
+    "feed_forward_projection": {
+      "shape": [
+        768,
+        3072
+      ],
+      "dense_terms": 2359296,
+      "top_rank_energy_fraction": {
+        "32": 0.22981367540964195,
+        "64": 0.3092691118251995,
+        "128": 0.44006767952401477,
+        "256": 0.6439108618246572,
+        "384": 0.7938887217260244
+      }
+    }
+  },
+  "low_rank": [
+    {
+      "rank": 32,
+      "terms": 344064,
+      "term_fraction": 0.058333333333333334,
+      "compression": 17.142857142857142,
+      "intermediate_css_numbers": 128,
+      "rmse": 3.1875969438599205,
+      "relative_rmse": 0.6241231828008482,
+      "mae": 0.9337386834122943,
+      "max_absolute_error": 83.86702848046585,
+      "mean_cosine": 0.8877579318533805,
+      "worst_cosine": 0.8124546206388451,
+      "worst_token_rmse": 3.8958797739759983,
+      "worst_token_id": 13
+    },
+    {
+      "rank": 64,
+      "terms": 688128,
+      "term_fraction": 0.11666666666666667,
+      "compression": 8.571428571428571,
+      "intermediate_css_numbers": 256,
+      "rmse": 2.4996471716033306,
+      "relative_rmse": 0.48942440844828694,
+      "mae": 0.8800589560793812,
+      "max_absolute_error": 64.7012758751111,
+      "mean_cosine": 0.9430632890993684,
+      "worst_cosine": 0.9223029423113889,
+      "worst_token_rmse": 2.9939610422778165,
+      "worst_token_id": 11
+    },
+    {
+      "rank": 128,
+      "terms": 1376256,
+      "term_fraction": 0.23333333333333334,
+      "compression": 4.285714285714286,
+      "intermediate_css_numbers": 512,
+      "rmse": 1.879691403656206,
+      "relative_rmse": 0.36803868311929844,
+      "mae": 0.8301712755451616,
+      "max_absolute_error": 47.6553767888427,
+      "mean_cosine": 0.9639875539814666,
+      "worst_cosine": 0.9520040271142634,
+      "worst_token_rmse": 2.2615304082619323,
+      "worst_token_id": 13
+    },
+    {
+      "rank": 256,
+      "terms": 2752512,
+      "term_fraction": 0.4666666666666667,
+      "compression": 2.142857142857143,
+      "intermediate_css_numbers": 1024,
+      "rmse": 1.011171068683273,
+      "relative_rmse": 0.19798466269657497,
+      "mae": 0.6599408279817488,
+      "max_absolute_error": 19.140156438566464,
+      "mean_cosine": 0.9846450151989069,
+      "worst_cosine": 0.9802554198671425,
+      "worst_token_rmse": 1.2141047917476804,
+      "worst_token_id": 198
+    },
+    {
+      "rank": 384,
+      "terms": 4128768,
+      "term_fraction": 0.7,
+      "compression": 1.4285714285714286,
+      "intermediate_css_numbers": 1536,
+      "rmse": 0.6983361083159743,
+      "relative_rmse": 0.1367323919124943,
+      "mae": 0.528656484642315,
+      "max_absolute_error": 6.996185952598452,
+      "mean_cosine": 0.9908866650195467,
+      "worst_cosine": 0.9881356188738181,
+      "worst_token_rmse": 0.7820078121494629,
+      "worst_token_id": 15496
+    }
+  ],
+  "rowwise_magnitude_sparsity": [
+    {
+      "sparsity": 0.5,
+      "terms": 2949120,
+      "term_fraction": 0.5,
+      "compression": 2.0,
+      "rmse": 0.7795686193453399,
+      "relative_rmse": 0.15263750608579385,
+      "mae": 0.40919428759800125,
+      "max_absolute_error": 21.06469867529424,
+      "mean_cosine": 0.9947704750442897,
+      "worst_cosine": 0.9934123027929719,
+      "worst_token_rmse": 1.0133856329993618,
+      "worst_token_id": 13
+    },
+    {
+      "sparsity": 0.75,
+      "terms": 1474560,
+      "term_fraction": 0.25,
+      "compression": 4.0,
+      "rmse": 2.6836114484546476,
+      "relative_rmse": 0.5254441349106505,
+      "mae": 0.7072144960504559,
+      "max_absolute_error": 74.00189082840961,
+      "mean_cosine": 0.9529285514971862,
+      "worst_cosine": 0.9361099536908313,
+      "worst_token_rmse": 3.4303284433333725,
+      "worst_token_id": 50256
+    },
+    {
+      "sparsity": 0.9,
+      "terms": 590592,
+      "term_fraction": 0.10013020833333333,
+      "compression": 9.98699609882965,
+      "rmse": 3.901101359088495,
+      "relative_rmse": 0.7638254897166267,
+      "mae": 0.9141283827182833,
+      "max_absolute_error": 96.98801555167216,
+      "mean_cosine": 0.8287161313350454,
+      "worst_cosine": 0.723100844631828,
+      "worst_token_rmse": 4.554607823485264,
+      "worst_token_id": 50256
+    }
+  ],
+  "low_rank_plus_sparse_residual": [
+    {
+      "rank": 32,
+      "residual_sparsity": 0.9,
+      "rank_terms": 344064,
+      "residual_terms": 590592,
+      "terms": 934656,
+      "term_fraction": 0.15846354166666668,
+      "compression": 6.3105998356614625,
+      "intermediate_css_numbers": 128,
+      "rmse": 1.9803721447076084,
+      "relative_rmse": 0.38775171009806647,
+      "mae": 0.8304520791034823,
+      "max_absolute_error": 53.197880306999814,
+      "mean_cosine": 0.9657940427362062,
+      "worst_cosine": 0.9562590639726825,
+      "worst_token_rmse": 2.48337414840252,
+      "worst_token_id": 13
+    },
+    {
+      "rank": 64,
+      "residual_sparsity": 0.9,
+      "rank_terms": 688128,
+      "residual_terms": 590592,
+      "terms": 1278720,
+      "term_fraction": 0.216796875,
+      "compression": 4.612612612612613,
+      "intermediate_css_numbers": 256,
+      "rmse": 1.6045034022440483,
+      "relative_rmse": 0.3141575888859781,
+      "mae": 0.7847132848252832,
+      "max_absolute_error": 43.73260014791772,
+      "mean_cosine": 0.9748998090499345,
+      "worst_cosine": 0.9709390733884063,
+      "worst_token_rmse": 2.0784131417199463,
+      "worst_token_id": 13
+    },
+    {
+      "rank": 128,
+      "residual_sparsity": 0.9,
+      "rank_terms": 1376256,
+      "residual_terms": 590592,
+      "terms": 1966848,
+      "term_fraction": 0.33346354166666664,
+      "compression": 2.998828582584928,
+      "intermediate_css_numbers": 512,
+      "rmse": 1.3842454444689412,
+      "relative_rmse": 0.27103165418817654,
+      "mae": 0.718293080936059,
+      "max_absolute_error": 36.39268520115296,
+      "mean_cosine": 0.979260130530665,
+      "worst_cosine": 0.9758201237813721,
+      "worst_token_rmse": 1.7396480539224644,
+      "worst_token_id": 13
+    },
+    {
+      "rank": 64,
+      "residual_sparsity": 0.95,
+      "rank_terms": 688128,
+      "residual_terms": 293376,
+      "terms": 981504,
+      "term_fraction": 0.16640625,
+      "compression": 6.009389671361502,
+      "intermediate_css_numbers": 256,
+      "rmse": 2.0795770690307362,
+      "relative_rmse": 0.40717577600368016,
+      "mae": 0.8496866048302686,
+      "max_absolute_error": 51.12339341516304,
+      "mean_cosine": 0.9624315419724068,
+      "worst_cosine": 0.9556964609026978,
+      "worst_token_rmse": 2.421968399721569,
+      "worst_token_id": 257
+    },
+    {
+      "rank": 128,
+      "residual_sparsity": 0.95,
+      "rank_terms": 1376256,
+      "residual_terms": 293376,
+      "terms": 1669632,
+      "term_fraction": 0.2830729166666667,
+      "compression": 3.532658693652254,
+      "intermediate_css_numbers": 512,
+      "rmse": 1.7817566033378665,
+      "relative_rmse": 0.34886330418709494,
+      "mae": 0.7882036450925085,
+      "max_absolute_error": 44.04945158975997,
+      "mean_cosine": 0.9693198594272485,
+      "worst_cosine": 0.9622389191314176,
+      "worst_token_rmse": 2.1084832349984914,
+      "worst_token_id": 13
+    },
+    {
+      "rank": 128,
+      "residual_sparsity": 0.975,
+      "rank_terms": 1376256,
+      "residual_terms": 146688,
+      "terms": 1522944,
+      "term_fraction": 0.258203125,
+      "compression": 3.8729198184568836,
+      "intermediate_css_numbers": 512,
+      "rmse": 1.813537618769928,
+      "relative_rmse": 0.3550859442678331,
+      "mae": 0.8166237109646624,
+      "max_absolute_error": 42.626197780344455,
+      "mean_cosine": 0.9667847399510003,
+      "worst_cosine": 0.9584620372834133,
+      "worst_token_rmse": 2.134408337056398,
+      "worst_token_id": 15496
+    }
+  ],
+  "sparse_matrix_stats": {
+    "value": {
+      "0.5": {
+        "terms": 294912,
+        "retained_weight_energy_fraction": 0.9351935847929843,
+        "weight_rmse": 0.014795140599466725
+      },
+      "0.75": {
+        "terms": 147456,
+        "retained_weight_energy_fraction": 0.7416416520609052,
+        "weight_rmse": 0.029540738389882113
+      },
+      "0.9": {
+        "terms": 59136,
+        "retained_weight_energy_fraction": 0.46351257258424156,
+        "weight_rmse": 0.04256864942558357
+      }
+    },
+    "attention_projection": {
+      "0.5": {
+        "terms": 294912,
+        "retained_weight_energy_fraction": 0.9444881354955902,
+        "weight_rmse": 0.03474330947504049
+      },
+      "0.75": {
+        "terms": 147456,
+        "retained_weight_energy_fraction": 0.7747405106670208,
+        "weight_rmse": 0.0699873943979885
+      },
+      "0.9": {
+        "terms": 59136,
+        "retained_weight_energy_fraction": 0.5140336196298187,
+        "weight_rmse": 0.10279722481142803
+      }
+    },
+    "feed_forward_expansion": {
+      "0.5": {
+        "terms": 1179648,
+        "retained_weight_energy_fraction": 0.9447326916832602,
+        "weight_rmse": 0.033187950288523275
+      },
+      "0.75": {
+        "terms": 589824,
+        "retained_weight_energy_fraction": 0.7680068647489994,
+        "weight_rmse": 0.06799607451592285
+      },
+      "0.9": {
+        "terms": 236544,
+        "retained_weight_energy_fraction": 0.49484981831472774,
+        "weight_rmse": 0.10033594164212623
+      }
+    },
+    "feed_forward_projection": {
+      "0.5": {
+        "terms": 1179648,
+        "retained_weight_energy_fraction": 0.944393878602632,
+        "weight_rmse": 0.020743092149417053
+      },
+      "0.75": {
+        "terms": 589824,
+        "retained_weight_energy_fraction": 0.7800267043701574,
+        "weight_rmse": 0.04125695540291827
+      },
+      "0.9": {
+        "terms": 235776,
+        "retained_weight_energy_fraction": 0.5423658280888962,
+        "weight_rmse": 0.05950746063301458
+      }
+    }
+  },
+  "factorization_seconds": {
+    "value": 0.05390408402308822,
+    "attention_projection": 0.04887200001394376,
+    "feed_forward_expansion": 0.0573003749595955,
+    "feed_forward_projection": 0.05928770900936797
+  },
+  "analysis_seconds": 1.141206709027756,
+  "notes": [
+    "Term counts cover only the four dense matrix multiplies in one one-token block.",
+    "Bias, LayerNorm, GELU, and residual arithmetic are exact float64 in every variant.",
+    "A rank-r direct-CSS matrix needs r*(inputs+outputs) multiply terms and r reusable intermediate CSS numbers.",
+    "Sparsity is enforced independently per output row so every output retains equal fan-in."
+  ]
+}
