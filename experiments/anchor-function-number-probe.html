@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Anchor-size through typed CSS function</title>
+<style>
+  @property --a0 { syntax: "<number>"; inherits: false; initial-value: -999; }
+  @property --a1 { syntax: "<number>"; inherits: false; initial-value: -999; }
+  @function --length-number(--value <length>) returns <number> {
+    result: calc(var(--value) / 1px);
+  }
+  .source { position: fixed; height: 1px; }
+  #source-0 { width: 37px; anchor-name: --source-0; }
+  #source-1 { width: 53px; top: 2px; anchor-name: --source-1; }
+  #consumer {
+    position: fixed;
+    position-anchor: --source-0;
+    --a0: --length-number(anchor-size(--source-0 width));
+    --a1: --length-number(anchor-size(--source-1 width));
+    width: calc((var(--a0) + var(--a1)) * 1px);
+    height: 1px;
+    font-variation-settings: "A000" var(--a0), "A001" var(--a1);
+  }
+  #direct-length {
+    position: fixed;
+    position-anchor: --source-0;
+    width: calc(--length-number(anchor-size(--source-0 width)) * 1px);
+    height: 1px;
+  }
+</style>
+<div id="source-0" class="source"></div>
+<div id="source-1" class="source"></div>
+<output id="consumer"></output>
+<output id="direct-length"></output>

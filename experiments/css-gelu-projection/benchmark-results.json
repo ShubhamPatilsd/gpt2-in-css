@@ -1,0 +1,1622 @@
+{
+  "generatedAt": "2026-09-13T17:55:38.913Z",
+  "chrome": "153.0.8010.36",
+  "freshVectors": 16,
+  "localControlFreshVectors": 1,
+  "runtimeContainsJavaScript": false,
+  "methodology": "Each timed sample uses a fresh page/layout graph and a never-before-used interpolation of browser-captured block-1 vectors. HTTP, browser, and font caches stay warm. The external harness inserts the vector rule before timing; timing begins at the selector mutation and ends after forcing the terminal output width.",
+  "topologyVerification": {
+    "inherited": {
+      "expectedOwner": "#state",
+      "state": [
+        {
+          "name": "--g-0000",
+          "constructor": "CSSUnitValue",
+          "value": 0.0247276,
+          "serialized": "0.0247276"
+        },
+        {
+          "name": "--g-0001",
+          "constructor": "CSSUnitValue",
+          "value": -0.00805145,
+          "serialized": "-0.00805145"
+        },
+        {
+          "name": "--g-0042",
+          "constructor": "CSSUnitValue",
+          "value": -0.00630007,
+          "serialized": "-0.00630007"
+        },
+        {
+          "name": "--g-3071",
+          "constructor": "CSSUnitValue",
+          "value": 0.000987273,
+          "serialized": "0.000987273"
+        }
+      ],
+      "bank": [
+        {
+          "name": "--g-0000",
+          "constructor": "CSSUnitValue",
+          "value": 0.0247276,
+          "serialized": "0.0247276"
+        },
+        {
+          "name": "--g-0001",
+          "constructor": "CSSUnitValue",
+          "value": -0.00805145,
+          "serialized": "-0.00805145"
+        },
+        {
+          "name": "--g-0042",
+          "constructor": "CSSUnitValue",
+          "value": -0.00630007,
+          "serialized": "-0.00630007"
+        },
+        {
+          "name": "--g-3071",
+          "constructor": "CSSUnitValue",
+          "value": 0.000987273,
+          "serialized": "0.000987273"
+        }
+      ],
+      "output": [
+        {
+          "name": "--g-0000",
+          "constructor": "CSSUnitValue",
+          "value": 0.0247276,
+          "serialized": "0.0247276"
+        },
+        {
+          "name": "--g-0001",
+          "constructor": "CSSUnitValue",
+          "value": -0.00805145,
+          "serialized": "-0.00805145"
+        },
+        {
+          "name": "--g-0042",
+          "constructor": "CSSUnitValue",
+          "value": -0.00630007,
+          "serialized": "-0.00630007"
+        },
+        {
+          "name": "--g-3071",
+          "constructor": "CSSUnitValue",
+          "value": 0.000987273,
+          "serialized": "0.000987273"
+        }
+      ],
+      "bankAxisCount": 3072,
+      "outputAxisCount": 3072
+    },
+    "outputLocal": {
+      "expectedOwner": ".output",
+      "state": [
+        {
+          "name": "--g-0000",
+          "constructor": "CSSUnitValue",
+          "value": 0,
+          "serialized": "0"
+        },
+        {
+          "name": "--g-0001",
+          "constructor": "CSSUnitValue",
+          "value": 0,
+          "serialized": "0"
+        },
+        {
+          "name": "--g-0042",
+          "constructor": "CSSUnitValue",
+          "value": 0,
+          "serialized": "0"
+        },
+        {
+          "name": "--g-3071",
+          "constructor": "CSSUnitValue",
+          "value": 0,
+          "serialized": "0"
+        }
+      ],
+      "bank": [
+        {
+          "name": "--g-0000",
+          "constructor": "CSSUnitValue",
+          "value": 0,
+          "serialized": "0"
+        },
+        {
+          "name": "--g-0001",
+          "constructor": "CSSUnitValue",
+          "value": 0,
+          "serialized": "0"
+        },
+        {
+          "name": "--g-0042",
+          "constructor": "CSSUnitValue",
+          "value": 0,
+          "serialized": "0"
+        },
+        {
+          "name": "--g-3071",
+          "constructor": "CSSUnitValue",
+          "value": 0,
+          "serialized": "0"
+        }
+      ],
+      "output": [
+        {
+          "name": "--g-0000",
+          "constructor": "CSSUnitValue",
+          "value": 0.0247276,
+          "serialized": "0.0247276"
+        },
+        {
+          "name": "--g-0001",
+          "constructor": "CSSUnitValue",
+          "value": -0.00805145,
+          "serialized": "-0.00805145"
+        },
+        {
+          "name": "--g-0042",
+          "constructor": "CSSUnitValue",
+          "value": -0.00630007,
+          "serialized": "-0.00630007"
+        },
+        {
+          "name": "--g-3071",
+          "constructor": "CSSUnitValue",
+          "value": 0.000987273,
+          "serialized": "0.000987273"
+        }
+      ],
+      "bankAxisCount": 0,
+      "outputAxisCount": 3072
+    }
+  },
+  "results": [
+    {
+      "name": "avar2-projection-oracle",
+      "url": "http://127.0.0.1:4178/experiments/hvar-vector-oracle/oracle-b1-projection-only.html",
+      "kind": "avar",
+      "topology": "GELU avar2 remapping occurs inside each of 768 output runs",
+      "freshVector": {
+        "medianMs": 460.89999997615814,
+        "p10Ms": 454.19999998807907,
+        "p90Ms": 468.30000001192093,
+        "minMs": 453.10000002384186,
+        "maxMs": 477,
+        "distinctVectors": 16,
+        "elements": 783,
+        "runtimeScripts": 0,
+        "samples": [
+          {
+            "sample": 0,
+            "milliseconds": 454.19999998807907,
+            "terminalWidth": 207922.84375,
+            "checksum": 159785379.15625
+          },
+          {
+            "sample": 1,
+            "milliseconds": 460.80000001192093,
+            "terminalWidth": 207928.5625,
+            "checksum": 159787017.5
+          },
+          {
+            "sample": 2,
+            "milliseconds": 460.39999997615814,
+            "terminalWidth": 208009.921875,
+            "checksum": 159787515.171875
+          },
+          {
+            "sample": 3,
+            "milliseconds": 453.10000002384186,
+            "terminalWidth": 208042.765625,
+            "checksum": 159786576.09375
+          },
+          {
+            "sample": 4,
+            "milliseconds": 468.30000001192093,
+            "terminalWidth": 207923.359375,
+            "checksum": 159785801.359375
+          },
+          {
+            "sample": 5,
+            "milliseconds": 460.89999997615814,
+            "terminalWidth": 207947.890625,
+            "checksum": 159787190.796875
+          },
+          {
+            "sample": 6,
+            "milliseconds": 465.19999998807907,
+            "terminalWidth": 208029.78125,
+            "checksum": 159787341.84375
+          },
+          {
+            "sample": 7,
+            "milliseconds": 463.2999999523163,
+            "terminalWidth": 208006.046875,
+            "checksum": 159786202.9375
+          },
+          {
+            "sample": 8,
+            "milliseconds": 477,
+            "terminalWidth": 207922.875,
+            "checksum": 159786156.796875
+          },
+          {
+            "sample": 9,
+            "milliseconds": 454.19999998807907,
+            "terminalWidth": 207963.21875,
+            "checksum": 159787279.78125
+          },
+          {
+            "sample": 10,
+            "milliseconds": 463,
+            "terminalWidth": 208050.671875,
+            "checksum": 159787157.859375
+          },
+          {
+            "sample": 11,
+            "milliseconds": 458.7000000476837,
+            "terminalWidth": 207968.359375,
+            "checksum": 159785720.59375
+          },
+          {
+            "sample": 12,
+            "milliseconds": 462.69999998807907,
+            "terminalWidth": 207921.390625,
+            "checksum": 159786509.3125
+          },
+          {
+            "sample": 13,
+            "milliseconds": 463.2000000476837,
+            "terminalWidth": 207981.53125,
+            "checksum": 159787469.046875
+          },
+          {
+            "sample": 14,
+            "milliseconds": 469.0999999642372,
+            "terminalWidth": 208071.53125,
+            "checksum": 159787005
+          },
+          {
+            "sample": 15,
+            "milliseconds": 455.9000000357628,
+            "terminalWidth": 207933.640625,
+            "checksum": 159785455.265625
+          }
+        ],
+        "accuracy": {
+          "maximumRmse": 0.0520314330525599,
+          "maximumAbsError": 0.9703462572079786,
+          "minimumCosine": 0.9999973371811979,
+          "samples": [
+            {
+              "sample": 0,
+              "outputs": 768,
+              "rmse": 0.049959494564311716,
+              "maxAbsError": 0.9538587587185532,
+              "cosine": 0.9999975026323243
+            },
+            {
+              "sample": 1,
+              "outputs": 768,
+              "rmse": 0.04598193518871647,
+              "maxAbsError": 0.7392843026554203,
+              "cosine": 0.9999980214533025
+            },
+            {
+              "sample": 2,
+              "outputs": 768,
+              "rmse": 0.044823399289250644,
+              "maxAbsError": 0.7249052727734693,
+              "cosine": 0.999998107022809
+            },
+            {
+              "sample": 3,
+              "outputs": 768,
+              "rmse": 0.04706710173183024,
+              "maxAbsError": 0.7892107579019694,
+              "cosine": 0.9999978483577843
+            },
+            {
+              "sample": 4,
+              "outputs": 768,
+              "rmse": 0.0520314330525599,
+              "maxAbsError": 0.9703462572079786,
+              "cosine": 0.9999973371811979
+            },
+            {
+              "sample": 5,
+              "outputs": 768,
+              "rmse": 0.04755440926755774,
+              "maxAbsError": 0.8035674184208688,
+              "cosine": 0.999997888193013
+            },
+            {
+              "sample": 6,
+              "outputs": 768,
+              "rmse": 0.045665478768224924,
+              "maxAbsError": 0.7775489291990993,
+              "cosine": 0.9999980191323232
+            },
+            {
+              "sample": 7,
+              "outputs": 768,
+              "rmse": 0.0466859049791698,
+              "maxAbsError": 0.7952270355345945,
+              "cosine": 0.9999978587376188
+            },
+            {
+              "sample": 8,
+              "outputs": 768,
+              "rmse": 0.04988089957802328,
+              "maxAbsError": 0.8672574613478048,
+              "cosine": 0.9999975950983055
+            },
+            {
+              "sample": 9,
+              "outputs": 768,
+              "rmse": 0.04601328241779263,
+              "maxAbsError": 0.7717587622116469,
+              "cosine": 0.9999980049966999
+            },
+            {
+              "sample": 10,
+              "outputs": 768,
+              "rmse": 0.04482140413607287,
+              "maxAbsError": 0.7280149884817888,
+              "cosine": 0.9999980814941218
+            },
+            {
+              "sample": 11,
+              "outputs": 768,
+              "rmse": 0.05000691262572233,
+              "maxAbsError": 0.9072142730720145,
+              "cosine": 0.9999975271856627
+            },
+            {
+              "sample": 12,
+              "outputs": 768,
+              "rmse": 0.04832706672910585,
+              "maxAbsError": 0.8257369524215505,
+              "cosine": 0.9999977893450058
+            },
+            {
+              "sample": 13,
+              "outputs": 768,
+              "rmse": 0.04634577482972447,
+              "maxAbsError": 0.7381035157075075,
+              "cosine": 0.9999979737185213
+            },
+            {
+              "sample": 14,
+              "outputs": 768,
+              "rmse": 0.04492707942095278,
+              "maxAbsError": 0.7436465552901836,
+              "cosine": 0.9999980654849508
+            },
+            {
+              "sample": 15,
+              "outputs": 768,
+              "rmse": 0.04775385389705016,
+              "maxAbsError": 0.9032859731503038,
+              "cosine": 0.9999977295299557
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "exact-css-inherited",
+      "url": "http://127.0.0.1:4178/experiments/css-gelu-projection/exact-inherited.html",
+      "kind": "preactivation",
+      "topology": "3,072 typed GELU values computed on #state, inherited into one #bank axis list",
+      "freshVector": {
+        "medianMs": 108.60000002384186,
+        "p10Ms": 106.30000001192093,
+        "p90Ms": 111.89999997615814,
+        "minMs": 105.69999998807907,
+        "maxMs": 113,
+        "distinctVectors": 16,
+        "elements": 777,
+        "runtimeScripts": 0,
+        "samples": [
+          {
+            "sample": 0,
+            "milliseconds": 111.89999997615814,
+            "terminalWidth": 208004,
+            "checksum": 159779241.5
+          },
+          {
+            "sample": 1,
+            "milliseconds": 109.5,
+            "terminalWidth": 208012,
+            "checksum": 159780828.25
+          },
+          {
+            "sample": 2,
+            "milliseconds": 111.09999996423721,
+            "terminalWidth": 207992,
+            "checksum": 159780715.3125
+          },
+          {
+            "sample": 3,
+            "milliseconds": 108,
+            "terminalWidth": 207980,
+            "checksum": 159780309.3125
+          },
+          {
+            "sample": 4,
+            "milliseconds": 107.39999997615814,
+            "terminalWidth": 208008,
+            "checksum": 159779680.4375
+          },
+          {
+            "sample": 5,
+            "milliseconds": 107.40000003576279,
+            "terminalWidth": 208004,
+            "checksum": 159780818.4375
+          },
+          {
+            "sample": 6,
+            "milliseconds": 110.10000002384186,
+            "terminalWidth": 207988,
+            "checksum": 159780711.0625
+          },
+          {
+            "sample": 7,
+            "milliseconds": 111.30000001192093,
+            "terminalWidth": 207988,
+            "checksum": 159779932.625
+          },
+          {
+            "sample": 8,
+            "milliseconds": 108.60000002384186,
+            "terminalWidth": 208008,
+            "checksum": 159780057.9375
+          },
+          {
+            "sample": 9,
+            "milliseconds": 106.30000001192093,
+            "terminalWidth": 208000,
+            "checksum": 159780834.125
+          },
+          {
+            "sample": 10,
+            "milliseconds": 113,
+            "terminalWidth": 207980,
+            "checksum": 159780628
+          },
+          {
+            "sample": 11,
+            "milliseconds": 110.39999997615814,
+            "terminalWidth": 207992,
+            "checksum": 159779574.3125
+          },
+          {
+            "sample": 12,
+            "milliseconds": 112.19999998807907,
+            "terminalWidth": 208012,
+            "checksum": 159780466.3125
+          },
+          {
+            "sample": 13,
+            "milliseconds": 106.80000001192093,
+            "terminalWidth": 208000,
+            "checksum": 159780735.8125
+          },
+          {
+            "sample": 14,
+            "milliseconds": 105.69999998807907,
+            "terminalWidth": 207976,
+            "checksum": 159780527
+          },
+          {
+            "sample": 15,
+            "milliseconds": 108.09999996423721,
+            "terminalWidth": 208000,
+            "checksum": 159779225.3125
+          }
+        ],
+        "accuracy": {
+          "maximumRmse": 0.018023750531400838,
+          "maximumAbsError": 0.05147724693093281,
+          "minimumCosine": 0.9999996866102959,
+          "samples": [
+            {
+              "sample": 0,
+              "outputs": 768,
+              "rmse": 0.01758993954590684,
+              "maxAbsError": 0.04363899170209662,
+              "cosine": 0.9999996866102959
+            },
+            {
+              "sample": 1,
+              "outputs": 768,
+              "rmse": 0.01750251221635925,
+              "maxAbsError": 0.044660147662492405,
+              "cosine": 0.9999997110633182
+            },
+            {
+              "sample": 2,
+              "outputs": 768,
+              "rmse": 0.01699221938719723,
+              "maxAbsError": 0.05147724693093281,
+              "cosine": 0.9999997251077795
+            },
+            {
+              "sample": 3,
+              "outputs": 768,
+              "rmse": 0.017362189082862124,
+              "maxAbsError": 0.04404119009117419,
+              "cosine": 0.999999704833512
+            },
+            {
+              "sample": 4,
+              "outputs": 768,
+              "rmse": 0.017284396307979014,
+              "maxAbsError": 0.043467671070974545,
+              "cosine": 0.9999997032288581
+            },
+            {
+              "sample": 5,
+              "outputs": 768,
+              "rmse": 0.017287973869225984,
+              "maxAbsError": 0.0403277054261868,
+              "cosine": 0.9999997178092399
+            },
+            {
+              "sample": 6,
+              "outputs": 768,
+              "rmse": 0.017278119687390785,
+              "maxAbsError": 0.04334698799528758,
+              "cosine": 0.9999997143753376
+            },
+            {
+              "sample": 7,
+              "outputs": 768,
+              "rmse": 0.01674303924299967,
+              "maxAbsError": 0.04336775659328396,
+              "cosine": 0.99999972214085
+            },
+            {
+              "sample": 8,
+              "outputs": 768,
+              "rmse": 0.01726203728530491,
+              "maxAbsError": 0.04383150257848023,
+              "cosine": 0.9999997088056813
+            },
+            {
+              "sample": 9,
+              "outputs": 768,
+              "rmse": 0.017308769743701834,
+              "maxAbsError": 0.04354927944640807,
+              "cosine": 0.9999997170412651
+            },
+            {
+              "sample": 10,
+              "outputs": 768,
+              "rmse": 0.017415793579001738,
+              "maxAbsError": 0.04291147276889573,
+              "cosine": 0.9999997097126233
+            },
+            {
+              "sample": 11,
+              "outputs": 768,
+              "rmse": 0.017010284863970784,
+              "maxAbsError": 0.040586417688112775,
+              "cosine": 0.9999997096566454
+            },
+            {
+              "sample": 12,
+              "outputs": 768,
+              "rmse": 0.01722524780778818,
+              "maxAbsError": 0.04248157929629026,
+              "cosine": 0.9999997168498451
+            },
+            {
+              "sample": 13,
+              "outputs": 768,
+              "rmse": 0.017410756144769016,
+              "maxAbsError": 0.04072972108153855,
+              "cosine": 0.9999997129189211
+            },
+            {
+              "sample": 14,
+              "outputs": 768,
+              "rmse": 0.018023750531400838,
+              "maxAbsError": 0.04461266804616382,
+              "cosine": 0.9999996868827369
+            },
+            {
+              "sample": 15,
+              "outputs": 768,
+              "rmse": 0.016746472579315063,
+              "maxAbsError": 0.04534854807533861,
+              "cosine": 0.9999997155209469
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "hinge-8-inherited",
+      "url": "http://127.0.0.1:4178/experiments/css-gelu-projection/hinge-8-inherited.html",
+      "kind": "preactivation",
+      "topology": "8-knot max()/calc() GELU values computed on #state and inherited",
+      "freshVector": {
+        "medianMs": 120.69999998807907,
+        "p10Ms": 119.69999998807907,
+        "p90Ms": 124.80000001192093,
+        "minMs": 119.40000003576279,
+        "maxMs": 128.60000002384186,
+        "distinctVectors": 16,
+        "elements": 777,
+        "runtimeScripts": 0,
+        "samples": [
+          {
+            "sample": 0,
+            "milliseconds": 119.69999998807907,
+            "terminalWidth": 207988,
+            "checksum": 159780321.25
+          },
+          {
+            "sample": 1,
+            "milliseconds": 119.80000001192093,
+            "terminalWidth": 208004,
+            "checksum": 159782156
+          },
+          {
+            "sample": 2,
+            "milliseconds": 119.40000003576279,
+            "terminalWidth": 207992,
+            "checksum": 159782002.4375
+          },
+          {
+            "sample": 3,
+            "milliseconds": 125.60000002384186,
+            "terminalWidth": 207984,
+            "checksum": 159781495.8125
+          },
+          {
+            "sample": 4,
+            "milliseconds": 124.80000001192093,
+            "terminalWidth": 207992,
+            "checksum": 159780840.25
+          },
+          {
+            "sample": 5,
+            "milliseconds": 122.69999998807907,
+            "terminalWidth": 208004,
+            "checksum": 159782145.9375
+          },
+          {
+            "sample": 6,
+            "milliseconds": 119.90000003576279,
+            "terminalWidth": 207988,
+            "checksum": 159781927.875
+          },
+          {
+            "sample": 7,
+            "milliseconds": 119.90000003576279,
+            "terminalWidth": 207984,
+            "checksum": 159781101.6875
+          },
+          {
+            "sample": 8,
+            "milliseconds": 119.89999997615814,
+            "terminalWidth": 208000,
+            "checksum": 159781332.25
+          },
+          {
+            "sample": 9,
+            "milliseconds": 121.40000003576279,
+            "terminalWidth": 208000,
+            "checksum": 159782067
+          },
+          {
+            "sample": 10,
+            "milliseconds": 120.10000002384186,
+            "terminalWidth": 207988,
+            "checksum": 159781942.3125
+          },
+          {
+            "sample": 11,
+            "milliseconds": 121,
+            "terminalWidth": 207984,
+            "checksum": 159780695
+          },
+          {
+            "sample": 12,
+            "milliseconds": 120.69999998807907,
+            "terminalWidth": 208004,
+            "checksum": 159781783.625
+          },
+          {
+            "sample": 13,
+            "milliseconds": 128.60000002384186,
+            "terminalWidth": 207996,
+            "checksum": 159782017.8125
+          },
+          {
+            "sample": 14,
+            "milliseconds": 121.19999998807907,
+            "terminalWidth": 207984,
+            "checksum": 159781851.8125
+          },
+          {
+            "sample": 15,
+            "milliseconds": 122.19999998807907,
+            "terminalWidth": 207988,
+            "checksum": 159780352.125
+          }
+        ],
+        "accuracy": {
+          "maximumRmse": 1.2047732713370092,
+          "maximumAbsError": 21.90332921012029,
+          "minimumCosine": 0.9985919720811691,
+          "samples": [
+            {
+              "sample": 0,
+              "outputs": 768,
+              "rmse": 1.1948080026154226,
+              "maxAbsError": 21.73234338386095,
+              "cosine": 0.9985920754851305
+            },
+            {
+              "sample": 1,
+              "outputs": 768,
+              "rmse": 1.177153272510703,
+              "maxAbsError": 21.04827403373386,
+              "cosine": 0.9987227418319805
+            },
+            {
+              "sample": 2,
+              "outputs": 768,
+              "rmse": 1.1285237914502078,
+              "maxAbsError": 19.38481058026427,
+              "cosine": 0.9988118306480538
+            },
+            {
+              "sample": 3,
+              "outputs": 768,
+              "rmse": 1.1726473756014808,
+              "maxAbsError": 20.79505437778505,
+              "cosine": 0.9986854925060208
+            },
+            {
+              "sample": 4,
+              "outputs": 768,
+              "rmse": 1.2024590561834947,
+              "maxAbsError": 21.900233345680533,
+              "cosine": 0.9985979042439105
+            },
+            {
+              "sample": 5,
+              "outputs": 768,
+              "rmse": 1.1697965254167628,
+              "maxAbsError": 20.748569245638834,
+              "cosine": 0.9987349236644404
+            },
+            {
+              "sample": 6,
+              "outputs": 768,
+              "rmse": 1.1410903574728455,
+              "maxAbsError": 19.70734903133811,
+              "cosine": 0.9987803906191862
+            },
+            {
+              "sample": 7,
+              "outputs": 768,
+              "rmse": 1.1845427135301239,
+              "maxAbsError": 21.19488290810844,
+              "cosine": 0.9986433453506566
+            },
+            {
+              "sample": 8,
+              "outputs": 768,
+              "rmse": 1.2047732713370092,
+              "maxAbsError": 21.90332921012029,
+              "cosine": 0.9986164893140258
+            },
+            {
+              "sample": 9,
+              "outputs": 768,
+              "rmse": 1.1508606538624337,
+              "maxAbsError": 20.141124958296444,
+              "cosine": 0.9987721881468193
+            },
+            {
+              "sample": 10,
+              "outputs": 768,
+              "rmse": 1.1563735108066857,
+              "maxAbsError": 20.082175399672423,
+              "cosine": 0.9987433536074761
+            },
+            {
+              "sample": 11,
+              "outputs": 768,
+              "rmse": 1.190521049759221,
+              "maxAbsError": 21.473172928639656,
+              "cosine": 0.9986146230117999
+            },
+            {
+              "sample": 12,
+              "outputs": 768,
+              "rmse": 1.1937343917091858,
+              "maxAbsError": 21.604120255433344,
+              "cosine": 0.9986652992118794
+            },
+            {
+              "sample": 13,
+              "outputs": 768,
+              "rmse": 1.133159285961074,
+              "maxAbsError": 19.54674885338636,
+              "cosine": 0.9988072038088618
+            },
+            {
+              "sample": 14,
+              "outputs": 768,
+              "rmse": 1.1576904019592336,
+              "maxAbsError": 20.219136972502156,
+              "cosine": 0.9987358962482746
+            },
+            {
+              "sample": 15,
+              "outputs": 768,
+              "rmse": 1.1941100255293413,
+              "maxAbsError": 21.681712184438993,
+              "cosine": 0.9985919720811691
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "hinge-16-inherited",
+      "url": "http://127.0.0.1:4178/experiments/css-gelu-projection/hinge-16-inherited.html",
+      "kind": "preactivation",
+      "topology": "16-knot max()/calc() GELU values computed on #state and inherited",
+      "freshVector": {
+        "medianMs": 259.19999998807907,
+        "p10Ms": 256.9000000357628,
+        "p90Ms": 263.19999998807907,
+        "minMs": 256.19999998807907,
+        "maxMs": 271.30000001192093,
+        "distinctVectors": 16,
+        "elements": 777,
+        "runtimeScripts": 0,
+        "samples": [
+          {
+            "sample": 0,
+            "milliseconds": 256.19999998807907,
+            "terminalWidth": 208000,
+            "checksum": 159779539.125
+          },
+          {
+            "sample": 1,
+            "milliseconds": 257.80000001192093,
+            "terminalWidth": 208008,
+            "checksum": 159781067.3125
+          },
+          {
+            "sample": 2,
+            "milliseconds": 263.19999998807907,
+            "terminalWidth": 207992,
+            "checksum": 159781058.0625
+          },
+          {
+            "sample": 3,
+            "milliseconds": 256.9000000357628,
+            "terminalWidth": 207976,
+            "checksum": 159780574.6875
+          },
+          {
+            "sample": 4,
+            "milliseconds": 271.30000001192093,
+            "terminalWidth": 208000,
+            "checksum": 159779958.625
+          },
+          {
+            "sample": 5,
+            "milliseconds": 260.30000001192093,
+            "terminalWidth": 208004,
+            "checksum": 159781128.1875
+          },
+          {
+            "sample": 6,
+            "milliseconds": 258.60000002384186,
+            "terminalWidth": 207984,
+            "checksum": 159781031.5625
+          },
+          {
+            "sample": 7,
+            "milliseconds": 261.2999999523163,
+            "terminalWidth": 207984,
+            "checksum": 159780247.5625
+          },
+          {
+            "sample": 8,
+            "milliseconds": 259.19999998807907,
+            "terminalWidth": 208004,
+            "checksum": 159780329.0625
+          },
+          {
+            "sample": 9,
+            "milliseconds": 257.0999999642372,
+            "terminalWidth": 208000,
+            "checksum": 159781098
+          },
+          {
+            "sample": 10,
+            "milliseconds": 259.19999998807907,
+            "terminalWidth": 207980,
+            "checksum": 159780999.8125
+          },
+          {
+            "sample": 11,
+            "milliseconds": 265.10000002384186,
+            "terminalWidth": 207992,
+            "checksum": 159779937.25
+          },
+          {
+            "sample": 12,
+            "milliseconds": 262.30000001192093,
+            "terminalWidth": 208008,
+            "checksum": 159780749.125
+          },
+          {
+            "sample": 13,
+            "milliseconds": 259.19999998807907,
+            "terminalWidth": 208000,
+            "checksum": 159781118.9375
+          },
+          {
+            "sample": 14,
+            "milliseconds": 259.10000002384186,
+            "terminalWidth": 207976,
+            "checksum": 159780866.25
+          },
+          {
+            "sample": 15,
+            "milliseconds": 261.80000001192093,
+            "terminalWidth": 208000,
+            "checksum": 159779578.875
+          }
+        ],
+        "accuracy": {
+          "maximumRmse": 0.14617777585372096,
+          "maximumAbsError": 2.809324254771468,
+          "minimumCosine": 0.999978781122697,
+          "samples": [
+            {
+              "sample": 0,
+              "outputs": 768,
+              "rmse": 0.14506777050022712,
+              "maxAbsError": 2.762646414163953,
+              "cosine": 0.9999789936646301
+            },
+            {
+              "sample": 1,
+              "outputs": 768,
+              "rmse": 0.13993245898124224,
+              "maxAbsError": 2.563425548885391,
+              "cosine": 0.9999818035746795
+            },
+            {
+              "sample": 2,
+              "outputs": 768,
+              "rmse": 0.134631783588946,
+              "maxAbsError": 2.442703020406327,
+              "cosine": 0.9999829554933263
+            },
+            {
+              "sample": 3,
+              "outputs": 768,
+              "rmse": 0.13305137324442695,
+              "maxAbsError": 2.3708119535426135,
+              "cosine": 0.999982860657168
+            },
+            {
+              "sample": 4,
+              "outputs": 768,
+              "rmse": 0.14617777585372096,
+              "maxAbsError": 2.809324254771468,
+              "cosine": 0.9999790876102218
+            },
+            {
+              "sample": 5,
+              "outputs": 768,
+              "rmse": 0.13827561737982128,
+              "maxAbsError": 2.5667510638206466,
+              "cosine": 0.9999821716883419
+            },
+            {
+              "sample": 6,
+              "outputs": 768,
+              "rmse": 0.1310771810311019,
+              "maxAbsError": 2.3740156980047686,
+              "cosine": 0.9999837566494892
+            },
+            {
+              "sample": 7,
+              "outputs": 768,
+              "rmse": 0.13585290977605832,
+              "maxAbsError": 2.5282162414417826,
+              "cosine": 0.9999819425838533
+            },
+            {
+              "sample": 8,
+              "outputs": 768,
+              "rmse": 0.14324082246117437,
+              "maxAbsError": 2.691207997999072,
+              "cosine": 0.9999802353595402
+            },
+            {
+              "sample": 9,
+              "outputs": 768,
+              "rmse": 0.13727883487903797,
+              "maxAbsError": 2.5047613219328184,
+              "cosine": 0.9999824000147463
+            },
+            {
+              "sample": 10,
+              "outputs": 768,
+              "rmse": 0.13019381819493972,
+              "maxAbsError": 2.324599642096672,
+              "cosine": 0.9999839218618337
+            },
+            {
+              "sample": 11,
+              "outputs": 768,
+              "rmse": 0.14187109133265718,
+              "maxAbsError": 2.6852941407608455,
+              "cosine": 0.9999801122547833
+            },
+            {
+              "sample": 12,
+              "outputs": 768,
+              "rmse": 0.13952106159706507,
+              "maxAbsError": 2.5738172251303126,
+              "cosine": 0.9999815953403319
+            },
+            {
+              "sample": 13,
+              "outputs": 768,
+              "rmse": 0.13797097995895596,
+              "maxAbsError": 2.516445823083359,
+              "cosine": 0.9999821880364214
+            },
+            {
+              "sample": 14,
+              "outputs": 768,
+              "rmse": 0.12982405229792446,
+              "maxAbsError": 2.2797430331082182,
+              "cosine": 0.9999839270709278
+            },
+            {
+              "sample": 15,
+              "outputs": 768,
+              "rmse": 0.145825547271462,
+              "maxAbsError": 2.772621275348058,
+              "cosine": 0.999978781122697
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "hinge-32-inherited",
+      "url": "http://127.0.0.1:4178/experiments/css-gelu-projection/hinge-32-inherited.html",
+      "kind": "preactivation",
+      "topology": "32-knot max()/calc() GELU values computed on #state and inherited",
+      "freshVector": {
+        "medianMs": 323.10000002384186,
+        "p10Ms": 316.4000000357628,
+        "p90Ms": 325.7999999523163,
+        "minMs": 314.0999999642372,
+        "maxMs": 330.89999997615814,
+        "distinctVectors": 16,
+        "elements": 777,
+        "runtimeScripts": 0,
+        "samples": [
+          {
+            "sample": 0,
+            "milliseconds": 318.5999999642372,
+            "terminalWidth": 208004,
+            "checksum": 159779287
+          },
+          {
+            "sample": 1,
+            "milliseconds": 330.89999997615814,
+            "terminalWidth": 208012,
+            "checksum": 159780869.6875
+          },
+          {
+            "sample": 2,
+            "milliseconds": 324.39999997615814,
+            "terminalWidth": 207992,
+            "checksum": 159780737
+          },
+          {
+            "sample": 3,
+            "milliseconds": 317.60000002384186,
+            "terminalWidth": 207980,
+            "checksum": 159780299.125
+          },
+          {
+            "sample": 4,
+            "milliseconds": 323.10000002384186,
+            "terminalWidth": 208008,
+            "checksum": 159779714.5
+          },
+          {
+            "sample": 5,
+            "milliseconds": 316.4000000357628,
+            "terminalWidth": 208004,
+            "checksum": 159780811.25
+          },
+          {
+            "sample": 6,
+            "milliseconds": 329.60000002384186,
+            "terminalWidth": 207984,
+            "checksum": 159780710.75
+          },
+          {
+            "sample": 7,
+            "milliseconds": 325.69999998807907,
+            "terminalWidth": 207988,
+            "checksum": 159779949.8125
+          },
+          {
+            "sample": 8,
+            "milliseconds": 320.9000000357628,
+            "terminalWidth": 208008,
+            "checksum": 159780098.25
+          },
+          {
+            "sample": 9,
+            "milliseconds": 323.89999997615814,
+            "terminalWidth": 208000,
+            "checksum": 159780897.375
+          },
+          {
+            "sample": 10,
+            "milliseconds": 321.39999997615814,
+            "terminalWidth": 207980,
+            "checksum": 159780676.625
+          },
+          {
+            "sample": 11,
+            "milliseconds": 324.10000002384186,
+            "terminalWidth": 207996,
+            "checksum": 159779641.3125
+          },
+          {
+            "sample": 12,
+            "milliseconds": 325.5,
+            "terminalWidth": 208008,
+            "checksum": 159780523.25
+          },
+          {
+            "sample": 13,
+            "milliseconds": 318.19999998807907,
+            "terminalWidth": 208000,
+            "checksum": 159780800.375
+          },
+          {
+            "sample": 14,
+            "milliseconds": 325.7999999523163,
+            "terminalWidth": 207976,
+            "checksum": 159780615.75
+          },
+          {
+            "sample": 15,
+            "milliseconds": 314.0999999642372,
+            "terminalWidth": 208000,
+            "checksum": 159779319.8125
+          }
+        ],
+        "accuracy": {
+          "maximumRmse": 0.03730576491750821,
+          "maximumAbsError": 0.6259734431449147,
+          "minimumCosine": 0.9999986463215634,
+          "samples": [
+            {
+              "sample": 0,
+              "outputs": 768,
+              "rmse": 0.03615605888689655,
+              "maxAbsError": 0.5808282323457661,
+              "cosine": 0.9999986850607935
+            },
+            {
+              "sample": 1,
+              "outputs": 768,
+              "rmse": 0.034710395630647796,
+              "maxAbsError": 0.563425548885391,
+              "cosine": 0.9999988749813719
+            },
+            {
+              "sample": 2,
+              "outputs": 768,
+              "rmse": 0.03452280976208151,
+              "maxAbsError": 0.5639151416184518,
+              "cosine": 0.9999988793249347
+            },
+            {
+              "sample": 3,
+              "outputs": 768,
+              "rmse": 0.03730576491750821,
+              "maxAbsError": 0.6132361959668629,
+              "cosine": 0.9999986463215634
+            },
+            {
+              "sample": 4,
+              "outputs": 768,
+              "rmse": 0.03642851443225462,
+              "maxAbsError": 0.5669000123472188,
+              "cosine": 0.9999986916290653
+            },
+            {
+              "sample": 5,
+              "outputs": 768,
+              "rmse": 0.03481831755210143,
+              "maxAbsError": 0.5667510638206466,
+              "cosine": 0.9999988617943305
+            },
+            {
+              "sample": 6,
+              "outputs": 768,
+              "rmse": 0.036130222905288445,
+              "maxAbsError": 0.5558338798229556,
+              "cosine": 0.9999987644800303
+            },
+            {
+              "sample": 7,
+              "outputs": 768,
+              "rmse": 0.03555305393563367,
+              "maxAbsError": 0.5888223020478449,
+              "cosine": 0.9999987623815949
+            },
+            {
+              "sample": 8,
+              "outputs": 768,
+              "rmse": 0.03621720491451335,
+              "maxAbsError": 0.5699958767869475,
+              "cosine": 0.9999987344403131
+            },
+            {
+              "sample": 9,
+              "outputs": 768,
+              "rmse": 0.03692596729227201,
+              "maxAbsError": 0.6259734431449147,
+              "cosine": 0.9999987238646952
+            },
+            {
+              "sample": 10,
+              "outputs": 768,
+              "rmse": 0.03618917920878512,
+              "maxAbsError": 0.5670238845209212,
+              "cosine": 0.999998752977057
+            },
+            {
+              "sample": 11,
+              "outputs": 768,
+              "rmse": 0.03608918738502509,
+              "maxAbsError": 0.5640820195487208,
+              "cosine": 0.9999987086148879
+            },
+            {
+              "sample": 12,
+              "outputs": 768,
+              "rmse": 0.03616787003247169,
+              "maxAbsError": 0.5738172251303126,
+              "cosine": 0.9999987582843652
+            },
+            {
+              "sample": 13,
+              "outputs": 768,
+              "rmse": 0.03423166364793627,
+              "maxAbsError": 0.5164458230833588,
+              "cosine": 0.9999988951755747
+            },
+            {
+              "sample": 14,
+              "outputs": 768,
+              "rmse": 0.036653357936691465,
+              "maxAbsError": 0.5827733361385299,
+              "cosine": 0.9999987137579623
+            },
+            {
+              "sample": 15,
+              "outputs": 768,
+              "rmse": 0.03572202240402291,
+              "maxAbsError": 0.5908030935298711,
+              "cosine": 0.9999987231515914
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ideal-post-gelu",
+      "url": "http://127.0.0.1:4178/experiments/css-gelu-projection/ideal-post-gelu.html",
+      "kind": "post-gelu",
+      "topology": "Exact post-GELU vector supplied directly to the pure projection",
+      "freshVector": {
+        "medianMs": 86.89999997615814,
+        "p10Ms": 84.10000002384186,
+        "p90Ms": 90.39999997615814,
+        "minMs": 83.60000002384186,
+        "maxMs": 94.19999998807907,
+        "distinctVectors": 16,
+        "elements": 777,
+        "runtimeScripts": 0,
+        "samples": [
+          {
+            "sample": 0,
+            "milliseconds": 86.80000001192093,
+            "terminalWidth": 208004,
+            "checksum": 159779241.3125
+          },
+          {
+            "sample": 1,
+            "milliseconds": 84.10000002384186,
+            "terminalWidth": 208012,
+            "checksum": 159780828.25
+          },
+          {
+            "sample": 2,
+            "milliseconds": 87.19999998807907,
+            "terminalWidth": 207992,
+            "checksum": 159780715.125
+          },
+          {
+            "sample": 3,
+            "milliseconds": 89.19999998807907,
+            "terminalWidth": 207980,
+            "checksum": 159780305.3125
+          },
+          {
+            "sample": 4,
+            "milliseconds": 89.5,
+            "terminalWidth": 208008,
+            "checksum": 159779680.4375
+          },
+          {
+            "sample": 5,
+            "milliseconds": 94.19999998807907,
+            "terminalWidth": 208004,
+            "checksum": 159780822.875
+          },
+          {
+            "sample": 6,
+            "milliseconds": 90.39999997615814,
+            "terminalWidth": 207988,
+            "checksum": 159780711.0625
+          },
+          {
+            "sample": 7,
+            "milliseconds": 92,
+            "terminalWidth": 207988,
+            "checksum": 159779938.625
+          },
+          {
+            "sample": 8,
+            "milliseconds": 87.90000003576279,
+            "terminalWidth": 208008,
+            "checksum": 159780058.8125
+          },
+          {
+            "sample": 9,
+            "milliseconds": 86,
+            "terminalWidth": 208000,
+            "checksum": 159780834.125
+          },
+          {
+            "sample": 10,
+            "milliseconds": 86.69999998807907,
+            "terminalWidth": 207980,
+            "checksum": 159780628
+          },
+          {
+            "sample": 11,
+            "milliseconds": 86.89999997615814,
+            "terminalWidth": 207992,
+            "checksum": 159779574.3125
+          },
+          {
+            "sample": 12,
+            "milliseconds": 83.60000002384186,
+            "terminalWidth": 208012,
+            "checksum": 159780466.3125
+          },
+          {
+            "sample": 13,
+            "milliseconds": 86.19999998807907,
+            "terminalWidth": 208000,
+            "checksum": 159780738.6875
+          },
+          {
+            "sample": 14,
+            "milliseconds": 86.70000004768372,
+            "terminalWidth": 207976,
+            "checksum": 159780529
+          },
+          {
+            "sample": 15,
+            "milliseconds": 87.19999998807907,
+            "terminalWidth": 208000,
+            "checksum": 159779217.1875
+          }
+        ],
+        "accuracy": {
+          "maximumRmse": 0.01802066236845489,
+          "maximumAbsError": 0.05147724693093281,
+          "minimumCosine": 0.9999996865965669,
+          "samples": [
+            {
+              "sample": 0,
+              "outputs": 768,
+              "rmse": 0.017590318976248156,
+              "maxAbsError": 0.04363899170209662,
+              "cosine": 0.9999996865965669
+            },
+            {
+              "sample": 1,
+              "outputs": 768,
+              "rmse": 0.01750251221635925,
+              "maxAbsError": 0.044660147662492405,
+              "cosine": 0.9999997110633182
+            },
+            {
+              "sample": 2,
+              "outputs": 768,
+              "rmse": 0.016992171435619582,
+              "maxAbsError": 0.05147724693093281,
+              "cosine": 0.99999972510939
+            },
+            {
+              "sample": 3,
+              "outputs": 768,
+              "rmse": 0.017338308081674234,
+              "maxAbsError": 0.04404119009117419,
+              "cosine": 0.9999997056444029
+            },
+            {
+              "sample": 4,
+              "outputs": 768,
+              "rmse": 0.017284396307979014,
+              "maxAbsError": 0.043467671070974545,
+              "cosine": 0.9999997032288581
+            },
+            {
+              "sample": 5,
+              "outputs": 768,
+              "rmse": 0.01728507409941663,
+              "maxAbsError": 0.0403277054261868,
+              "cosine": 0.99999971790394
+            },
+            {
+              "sample": 6,
+              "outputs": 768,
+              "rmse": 0.017278119687390785,
+              "maxAbsError": 0.04334698799528758,
+              "cosine": 0.9999997143753376
+            },
+            {
+              "sample": 7,
+              "outputs": 768,
+              "rmse": 0.0166855193527555,
+              "maxAbsError": 0.04336775659328396,
+              "cosine": 0.9999997240490058
+            },
+            {
+              "sample": 8,
+              "outputs": 768,
+              "rmse": 0.017282650615264083,
+              "maxAbsError": 0.04383150257848023,
+              "cosine": 0.9999997081032415
+            },
+            {
+              "sample": 9,
+              "outputs": 768,
+              "rmse": 0.017308769743701834,
+              "maxAbsError": 0.04354927944640807,
+              "cosine": 0.9999997170412651
+            },
+            {
+              "sample": 10,
+              "outputs": 768,
+              "rmse": 0.017415793579001738,
+              "maxAbsError": 0.04291147276889573,
+              "cosine": 0.9999997097126233
+            },
+            {
+              "sample": 11,
+              "outputs": 768,
+              "rmse": 0.017010284863970784,
+              "maxAbsError": 0.040586417688112775,
+              "cosine": 0.9999997096566454
+            },
+            {
+              "sample": 12,
+              "outputs": 768,
+              "rmse": 0.01722524780778818,
+              "maxAbsError": 0.04248157929629026,
+              "cosine": 0.9999997168498451
+            },
+            {
+              "sample": 13,
+              "outputs": 768,
+              "rmse": 0.0174146545519189,
+              "maxAbsError": 0.04072972108153855,
+              "cosine": 0.9999997127871888
+            },
+            {
+              "sample": 14,
+              "outputs": 768,
+              "rmse": 0.01802066236845489,
+              "maxAbsError": 0.04461266804616382,
+              "cosine": 0.9999996869924836
+            },
+            {
+              "sample": 15,
+              "outputs": 768,
+              "rmse": 0.016750048291617765,
+              "maxAbsError": 0.04534854807533861,
+              "cosine": 0.9999997153959864
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "exact-css-output-local-control",
+      "url": "http://127.0.0.1:4178/experiments/css-gelu-projection/exact-output-local.html",
+      "kind": "preactivation",
+      "topology": "Control: every output owns the 3,072 GELU expressions and axis list",
+      "freshVector": {
+        "medianMs": 20648.19999998808,
+        "p10Ms": 20648.19999998808,
+        "p90Ms": 20648.19999998808,
+        "minMs": 20648.19999998808,
+        "maxMs": 20648.19999998808,
+        "distinctVectors": 1,
+        "elements": 777,
+        "runtimeScripts": 0,
+        "samples": [
+          {
+            "sample": 0,
+            "milliseconds": 20648.19999998808,
+            "terminalWidth": 208004,
+            "checksum": 159779241.5
+          }
+        ],
+        "accuracy": {
+          "maximumRmse": 0.01758993954590684,
+          "maximumAbsError": 0.04363899170209662,
+          "minimumCosine": 0.9999996866102959,
+          "samples": [
+            {
+              "sample": 0,
+              "outputs": 768,
+              "rmse": 0.01758993954590684,
+              "maxAbsError": 0.04363899170209662,
+              "cosine": 0.9999996866102959
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "comparisons": {
+    "exactInheritedVsAvar2Speedup": 4.244014731813747,
+    "exactInheritedOverIdealMs": 21.700000047683716,
+    "hinge8OverIdealMs": 33.80000001192093,
+    "hinge16OverIdealMs": 172.30000001192093,
+    "hinge32OverIdealMs": 236.20000004768372,
+    "outputLocalVsInheritedSlowdown": 190.13075502260597
+  }
+}

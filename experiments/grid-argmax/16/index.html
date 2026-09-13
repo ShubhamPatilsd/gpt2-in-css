@@ -1,0 +1,50 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Grid argmax 16</title>
+<style>
+@property --mode { syntax:"<number>"; inherits:true; initial-value:0 }
+@property --encoded { syntax:"<number>"; inherits:true; initial-value:0 }
+@property --tie { syntax:"<number>"; inherits:true; initial-value:0 }
+@property --winner { syntax:"<number>"; inherits:true; initial-value:0 }
+@property --score { syntax:"<number>"; inherits:true; initial-value:0 }
+* { box-sizing:border-box }
+html,body { margin:0; overflow:clip }
+.bank {
+  --mode:0;
+  position:fixed;
+  inset:0 auto auto 0;
+  display:grid;
+  grid-template-columns:max-content;
+  grid-template-rows:1px;
+  width:max-content;
+  height:1px;
+  anchor-name:--argmax-bank;
+}
+.candidate { grid-area:1/1; height:1px }
+.candidate {
+  display:block;
+  justify-self:start;
+  width:calc((var(--a) + var(--mode) * var(--d)) / 64 * 1px);
+}
+.reader {
+  position:fixed;
+  position-anchor:--argmax-bank;
+  inset:2px auto auto 0;
+  width:anchor-size(--argmax-bank width);
+  height:1px;
+  container:argmax/inline-size;
+}
+@container argmax (width >= 0px) {
+  .result {
+    --encoded:round(nearest, 100cqi / 1px * 64, 1);
+    --tie:round(nearest, mod(100cqi, 1024px) / 1px * 64, 1);
+    --winner:calc(65535 - var(--tie));
+    --score:round(down, 100cqi / 1024px, 1);
+    display:block;
+    width:calc(var(--winner) * 1px);
+    height:calc(var(--score) * 1px);
+  }
+}
+</style>
+<main id="bank" class="bank"><i class="candidate" style="--a:6881279;--d:6881280"></i><i class="candidate" style="--a:14876670;--d:-13172736"></i><i class="candidate" style="--a:12582909;--d:-5832704"></i><i class="candidate" style="--a:15335420;--d:-7405568"></i><i class="candidate" style="--a:1114107;--d:8650752"></i><i class="candidate" style="--a:1769466;--d:10944512"></i><i class="candidate" style="--a:12910585;--d:-10878976"></i><i class="candidate" style="--a:16711672;--d:-14286848"></i><i class="candidate" style="--a:15138807;--d:-6684672"></i><i class="candidate" style="--a:4915190;--d:11862016"></i><i class="candidate" style="--a:2555893;--d:9175040"></i><i class="candidate" style="--a:15663092;--d:-4849664"></i><i class="candidate" style="--a:5439475;--d:10223616"></i><i class="candidate" style="--a:1179634;--d:4521984"></i><i class="candidate" style="--a:13434865;--d:-5701632"></i><i class="candidate" style="--a:10747888;--d:2293760"></i></main>
+<div class="reader"><output id="result" class="result"></output></div>

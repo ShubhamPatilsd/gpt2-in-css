@@ -1,0 +1,10 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  @property --group { syntax: "<number>"; inherits: true; initial-value: 0; }
+  #probe {
+    --picked: if(style(--group: 0): "zero"; style(--group: 1): "one"; else: "other");
+  }
+  #probe::before { content: var(--picked); }
+</style>
+<div id="probe" style="--group:1"></div>

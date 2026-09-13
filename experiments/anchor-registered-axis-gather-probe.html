@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Registered anchor-size to font-axis gather</title>
+<style>
+  @property --a0 { syntax: "<number>"; inherits: false; initial-value: -999; }
+  @property --a1 { syntax: "<number>"; inherits: false; initial-value: -999; }
+  .source { position: fixed; height: 1px; }
+  #source-0 { width: 37px; anchor-name: --source-0; }
+  #source-1 { width: 53px; top: 2px; anchor-name: --source-1; }
+  #consumer {
+    position: fixed;
+    position-anchor: --source-0;
+    --a0: calc(anchor-size(--source-0 width) / 1px);
+    --a1: calc(anchor-size(--source-1 width) / 1px);
+    width: calc((var(--a0) + var(--a1)) * 1px);
+    font-variation-settings: "A000" var(--a0), "A001" var(--a1);
+  }
+</style>
+<div id="source-0" class="source"></div>
+<div id="source-1" class="source"></div>
+<output id="consumer"></output>

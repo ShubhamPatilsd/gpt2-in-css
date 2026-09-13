@@ -1,0 +1,89 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Hierarchical Grid argmax 256</title>
+<style>
+@property --mode { syntax:"<number>"; inherits:true; initial-value:0 }
+@property --group { syntax:"<number>"; inherits:true; initial-value:0 }
+@property --local { syntax:"<number>"; inherits:true; initial-value:0 }
+@property --winner { syntax:"<number>"; inherits:true; initial-value:0 }
+@property --score { syntax:"<number>"; inherits:true; initial-value:0 }
+@property --flag { syntax:"<number>"; inherits:true; initial-value:0 }
+* { box-sizing:border-box }
+html,body { margin:0; overflow:clip }
+body { anchor-scope:all }
+.outer {
+  --mode:0;
+  position:fixed;
+  inset:0 auto auto 0;
+  display:grid;
+  grid-template-columns:max-content;
+  grid-template-rows:1px;
+  width:max-content;
+  height:1px;
+  anchor-name:--outer-winner;
+}
+.group-wrapper {
+  grid-area:1/1;
+  display:block;
+  width:calc-size(max-content,calc(
+    round(down,size,4px) + var(--group-tie) / 64 * 1px
+  ));
+}
+.group-grid {
+  display:grid;
+  grid-template-columns:max-content;
+  grid-template-rows:1px;
+  width:max-content;
+  height:1px;
+}
+.candidate {
+  grid-area:1/1;
+  display:block;
+  justify-self:start;
+  width:calc((var(--a) + var(--mode) * var(--d)) / 64 * 1px);
+  height:1px;
+}
+.group-0{anchor-name:--group-0}
+.outer-reader {
+  position:fixed;
+  position-anchor:--outer-winner;
+  inset:2px auto auto 0;
+  width:anchor-size(--outer-winner width);
+  height:1px;
+  container:outer-result/inline-size;
+}
+@container outer-result (width >= 0px) {
+  .selection {
+    --group:calc(255 - round(nearest,
+      mod(100cqi,4px) / 1px * 64,1));
+    --score:round(down,100cqi / 4px,1);
+  }
+}
+.carrier,.selected,.selected-reader { position:fixed; height:1px }
+.carrier-0{--flag:clamp(0,1 - abs(var(--group) - 0),1);position-anchor:--group-0;anchor-name:--carrier-0;width:calc(anchor-size(--group-0 width) * var(--flag))}
+.selected {
+  position-anchor:--carrier-0;
+  anchor-name:--selected-group;
+  width:max(anchor-size(--carrier-0 width));
+}
+.selected-reader {
+  position-anchor:--selected-group;
+  width:anchor-size(--selected-group width);
+  container:selected-result/inline-size;
+}
+@container selected-result (width >= 0px) {
+  .result {
+    --local:calc(255 - round(nearest,
+      mod(100cqi,4px) / 1px * 64,1));
+    --winner:calc(var(--group) * 256 + var(--local));
+    display:block;
+    width:calc(var(--winner) * 1px);
+    height:1px;
+  }
+}
+</style>
+<main id="bank" class="outer"><section class="group-wrapper" style="--group-tie:255"><div class="group-grid group-0"><i class="candidate" style="--a:10693119;--d:-6286336"></i><i class="candidate" style="--a:1174526;--d:1203456"></i><i class="candidate" style="--a:6849533;--d:3900160"></i><i class="candidate" style="--a:12811004;--d:-1776896"></i><i class="candidate" style="--a:6713595;--d:5697024"></i><i class="candidate" style="--a:3815930;--d:10190080"></i><i class="candidate" style="--a:9546233;--d:-3828736"></i><i class="candidate" style="--a:4520440;--d:5880064"></i><i class="candidate" style="--a:5928951;--d:8049408"></i><i class="candidate" style="--a:4020214;--d:-1114112"></i><i class="candidate" style="--a:9717749;--d:-7558144"></i><i class="candidate" style="--a:3197940;--d:11303168"></i><i class="candidate" style="--a:14154995;--d:-5756160"></i><i class="candidate" style="--a:8103922;--d:-622336"></i><i class="candidate" style="--a:11633905;--d:-10572288"></i><i class="candidate" style="--a:11154672;--d:800512"></i><i class="candidate" style="--a:9774575;--d:3375872"></i><i class="candidate" style="--a:11415278;--d:1757184"></i><i class="candidate" style="--a:14280429;--d:-11582976"></i><i class="candidate" style="--a:12689900;--d:-11904512"></i><i class="candidate" style="--a:6164459;--d:5894912"></i><i class="candidate" style="--a:9429226;--d:3044352"></i><i class="candidate" style="--a:3907817;--d:9589760"></i><i class="candidate" style="--a:3335400;--d:1543680"></i><i class="candidate" style="--a:3136743;--d:7419392"></i><i class="candidate" style="--a:5864422;--d:-4646144"></i><i class="candidate" style="--a:1352677;--d:-991744"></i><i class="candidate" style="--a:9369572;--d:324096"></i><i class="candidate" style="--a:8148963;--d:33280"></i><i class="candidate" style="--a:1742818;--d:7240704"></i><i class="candidate" style="--a:9260257;--d:1714688"></i><i class="candidate" style="--a:14459616;--d:-6798336"></i><i class="candidate" style="--a:3092959;--d:11737600"></i><i class="candidate" style="--a:13586654;--d:-7809024"></i><i class="candidate" style="--a:8170973;--d:3677440"></i><i class="candidate" style="--a:1305564;--d:2157824"></i><i class="candidate" style="--a:5007835;--d:5139712"></i><i class="candidate" style="--a:11008474;--d:-8148736"></i><i class="candidate" style="--a:2411225;--d:351488"></i><i class="candidate" style="--a:8695000;--d:-5803008"></i><i class="candidate" style="--a:13681111;--d:-8922880"></i><i class="candidate" style="--a:10907350;--d:-8350464"></i><i class="candidate" style="--a:13726165;--d:-8414464"></i><i class="candidate" style="--a:1127380;--d:10332928"></i><i class="candidate" style="--a:13495507;--d:-429312"></i><i class="candidate" style="--a:6400722;--d:-5755136"></i><i class="candidate" style="--a:7751889;--d:-5114368"></i><i class="candidate" style="--a:7147472;--d:5121280"></i><i class="candidate" style="--a:3440079;--d:695296"></i><i class="candidate" style="--a:9879502;--d:399616"></i><i class="candidate" style="--a:10362317;--d:3197184"></i><i class="candidate" style="--a:10894540;--d:-8533248"></i><i class="candidate" style="--a:825803;--d:1229824"></i><i class="candidate" style="--a:6563018;--d:2453504"></i><i class="candidate" style="--a:2273993;--d:7299840"></i><i class="candidate" style="--a:3634376;--d:11125248"></i><i class="candidate" style="--a:3758279;--d:1651712"></i><i class="candidate" style="--a:13432518;--d:-11264256"></i><i class="candidate" style="--a:6161861;--d:210688"></i><i class="candidate" style="--a:1746116;--d:8157440"></i><i class="candidate" style="--a:8089283;--d:-4263168"></i><i class="candidate" style="--a:900290;--d:13530368"></i><i class="candidate" style="--a:14633153;--d:-4927744"></i><i class="candidate" style="--a:9460928;--d:4525312"></i><i class="candidate" style="--a:841151;--d:2194432"></i><i class="candidate" style="--a:4771518;--d:4645120"></i><i class="candidate" style="--a:8839357;--d:5805056"></i><i class="candidate" style="--a:7563964;--d:3051776"></i><i class="candidate" style="--a:11942075;--d:-2246400"></i><i class="candidate" style="--a:4733114;--d:1912576"></i><i class="candidate" style="--a:1584057;--d:7129600"></i><i class="candidate" style="--a:954552;--d:5098496"></i><i class="candidate" style="--a:4105655;--d:7735040"></i><i class="candidate" style="--a:6212790;--d:-2417408"></i><i class="candidate" style="--a:13295541;--d:-10883072"></i><i class="candidate" style="--a:7858612;--d:6230272"></i><i class="candidate" style="--a:6385587;--d:5670144"></i><i class="candidate" style="--a:12415410;--d:-10016512"></i><i class="candidate" style="--a:12385713;--d:-1052928"></i><i class="candidate" style="--a:10898864;--d:-2952448"></i><i class="candidate" style="--a:3111343;--d:6279168"></i><i class="candidate" style="--a:8112814;--d:-6550784"></i><i class="candidate" style="--a:916397;--d:10598656"></i><i class="candidate" style="--a:11762604;--d:-1527552"></i><i class="candidate" style="--a:8211627;--d:4592128"></i><i class="candidate" style="--a:9635242;--d:-4528128"></i><i class="candidate" style="--a:11413161;--d:1291008"></i><i class="candidate" style="--a:14433192;--d:-11240192"></i><i class="candidate" style="--a:4826535;--d:-545280"></i><i class="candidate" style="--a:2552230;--d:823296"></i><i class="candidate" style="--a:9009829;--d:-6995200"></i><i class="candidate" style="--a:9313188;--d:-6614016"></i><i class="candidate" style="--a:2666147;--d:1479680"></i><i class="candidate" style="--a:1431458;--d:9708288"></i><i class="candidate" style="--a:6452897;--d:-2157312"></i><i class="candidate" style="--a:3712672;--d:8414464"></i><i class="candidate" style="--a:6619807;--d:-3084032"></i><i class="candidate" style="--a:9669534;--d:239360"></i><i class="candidate" style="--a:5245597;--d:6400000"></i><i class="candidate" style="--a:11435676;--d:2338560"></i><i class="candidate" style="--a:9094043;--d:-6637056"></i><i class="candidate" style="--a:6214554;--d:-1696256"></i><i class="candidate" style="--a:7074201;--d:1359360"></i><i class="candidate" style="--a:7308440;--d:1187840"></i><i class="candidate" style="--a:2418071;--d:11805952"></i><i class="candidate" style="--a:16384150;--d:-12562944"></i><i class="candidate" style="--a:7341973;--d:-1174272"></i><i class="candidate" style="--a:7373972;--d:4439040"></i><i class="candidate" style="--a:2118291;--d:8610560"></i><i class="candidate" style="--a:10411410;--d:-1407232"></i><i class="candidate" style="--a:7839889;--d:493056"></i><i class="candidate" style="--a:4880016;--d:5925376"></i><i class="candidate" style="--a:3821199;--d:6100992"></i><i class="candidate" style="--a:4075406;--d:5056000"></i><i class="candidate" style="--a:5006989;--d:-4758272"></i><i class="candidate" style="--a:13553548;--d:-4009984"></i><i class="candidate" style="--a:13399691;--d:-5105408"></i><i class="candidate" style="--a:7124874;--d:1007616"></i><i class="candidate" style="--a:9036169;--d:-8927232"></i><i class="candidate" style="--a:10540168;--d:-3897088"></i><i class="candidate" style="--a:3438471;--d:4351744"></i><i class="candidate" style="--a:10621062;--d:4130048"></i><i class="candidate" style="--a:7074437;--d:3713024"></i><i class="candidate" style="--a:6194820;--d:1318144"></i><i class="candidate" style="--a:1896323;--d:982272"></i><i class="candidate" style="--a:2944130;--d:10107392"></i><i class="candidate" style="--a:8258689;--d:-5346560"></i><i class="candidate" style="--a:6808448;--d:-539136"></i><i class="candidate" style="--a:3289983;--d:7724032"></i><i class="candidate" style="--a:6040702;--d:4457728"></i><i class="candidate" style="--a:3294077;--d:9888000"></i><i class="candidate" style="--a:4035964;--d:3186944"></i><i class="candidate" style="--a:3741563;--d:-858368"></i><i class="candidate" style="--a:54394;--d:5621504"></i><i class="candidate" style="--a:908921;--d:10738432"></i><i class="candidate" style="--a:533112;--d:-359168"></i><i class="candidate" style="--a:6021495;--d:6459392"></i><i class="candidate" style="--a:5501302;--d:6631680"></i><i class="candidate" style="--a:11244149;--d:3163648"></i><i class="candidate" style="--a:11421556;--d:-10142464"></i><i class="candidate" style="--a:4838771;--d:-3020544"></i><i class="candidate" style="--a:11457138;--d:-5538304"></i><i class="candidate" style="--a:10771057;--d:-7954944"></i><i class="candidate" style="--a:10138736;--d:4348928"></i><i class="candidate" style="--a:1450351;--d:2150144"></i><i class="candidate" style="--a:5469550;--d:9288704"></i><i class="candidate" style="--a:4150893;--d:-2053632"></i><i class="candidate" style="--a:10973804;--d:-2939136"></i><i class="candidate" style="--a:11674731;--d:4965376"></i><i class="candidate" style="--a:9467754;--d:3699456"></i><i class="candidate" style="--a:1116521;--d:2544640"></i><i class="candidate" style="--a:7274856;--d:-1396224"></i><i class="candidate" style="--a:13061735;--d:-1518848"></i><i class="candidate" style="--a:13442406;--d:-11727872"></i><i class="candidate" style="--a:10335845;--d:-6668800"></i><i class="candidate" style="--a:6984036;--d:-1393664"></i><i class="candidate" style="--a:8000099;--d:6077440"></i><i class="candidate" style="--a:7337314;--d:-5657600"></i><i class="candidate" style="--a:12479073;--d:-10782976"></i><i class="candidate" style="--a:10268512;--d:-7400448"></i><i class="candidate" style="--a:2335839;--d:8781056"></i><i class="candidate" style="--a:3789150;--d:-3118080"></i><i class="candidate" style="--a:1924189;--d:6297856"></i><i class="candidate" style="--a:9254236;--d:-5176832"></i><i class="candidate" style="--a:9594971;--d:-728064"></i><i class="candidate" style="--a:11161434;--d:-3168768"></i><i class="candidate" style="--a:13866585;--d:-1919488"></i><i class="candidate" style="--a:10337112;--d:-8151296"></i><i class="candidate" style="--a:4193111;--d:8187136"></i><i class="candidate" style="--a:1217878;--d:84736"></i><i class="candidate" style="--a:9537621;--d:-7429120"></i><i class="candidate" style="--a:8199252;--d:-1200896"></i><i class="candidate" style="--a:10398547;--d:123904"></i><i class="candidate" style="--a:9075538;--d:698112"></i><i class="candidate" style="--a:2344273;--d:8492032"></i><i class="candidate" style="--a:11923536;--d:-9652736"></i><i class="candidate" style="--a:403791;--d:13436416"></i><i class="candidate" style="--a:9843790;--d:-2004224"></i><i class="candidate" style="--a:2716493;--d:-1294080"></i><i class="candidate" style="--a:3405900;--d:4369920"></i><i class="candidate" style="--a:7322187;--d:-6572800"></i><i class="candidate" style="--a:10574154;--d:-9738496"></i><i class="candidate" style="--a:3594569;--d:-474368"></i><i class="candidate" style="--a:10216008;--d:-1627904"></i><i class="candidate" style="--a:336455;--d:13118720"></i><i class="candidate" style="--a:12458566;--d:-10329600"></i><i class="candidate" style="--a:10584133;--d:-7127296"></i><i class="candidate" style="--a:514628;--d:640256"></i><i class="candidate" style="--a:6555459;--d:-1242624"></i><i class="candidate" style="--a:3555906;--d:4825856"></i><i class="candidate" style="--a:9343809;--d:-5065216"></i><i class="candidate" style="--a:1452608;--d:4884736"></i><i class="candidate" style="--a:932159;--d:3453440"></i><i class="candidate" style="--a:4431934;--d:1112832"></i><i class="candidate" style="--a:735805;--d:4956672"></i><i class="candidate" style="--a:12123708;--d:-3355648"></i><i class="candidate" style="--a:4638779;--d:3630336"></i><i class="candidate" style="--a:5165882;--d:4455424"></i><i class="candidate" style="--a:7777081;--d:-4913664"></i><i class="candidate" style="--a:11275064;--d:-2486016"></i><i class="candidate" style="--a:13974071;--d:-12828928"></i><i class="candidate" style="--a:4008502;--d:-594944"></i><i class="candidate" style="--a:9096501;--d:-5194752"></i><i class="candidate" style="--a:583220;--d:4701184"></i><i class="candidate" style="--a:1234995;--d:6679040"></i><i class="candidate" style="--a:3586354;--d:-1197568"></i><i class="candidate" style="--a:1081137;--d:5003264"></i><i class="candidate" style="--a:12257584;--d:-1237504"></i><i class="candidate" style="--a:1589807;--d:5642496"></i><i class="candidate" style="--a:3872302;--d:849920"></i><i class="candidate" style="--a:7125037;--d:986624"></i><i class="candidate" style="--a:11065132;--d:-7288064"></i><i class="candidate" style="--a:9669675;--d:-3581184"></i><i class="candidate" style="--a:1281322;--d:78848"></i><i class="candidate" style="--a:4127785;--d:-898304"></i><i class="candidate" style="--a:13569576;--d:-249600"></i><i class="candidate" style="--a:14355495;--d:-4253696"></i><i class="candidate" style="--a:1295142;--d:6518272"></i><i class="candidate" style="--a:1279269;--d:5501952"></i><i class="candidate" style="--a:11195172;--d:-8369152"></i><i class="candidate" style="--a:2419747;--d:1615872"></i><i class="candidate" style="--a:13109538;--d:-1941760"></i><i class="candidate" style="--a:10445857;--d:2386432"></i><i class="candidate" style="--a:11947552;--d:-5366784"></i><i class="candidate" style="--a:14847263;--d:-1902848"></i><i class="candidate" style="--a:11050526;--d:-6263296"></i><i class="candidate" style="--a:9794845;--d:-6359808"></i><i class="candidate" style="--a:13416732;--d:-12956160"></i><i class="candidate" style="--a:13134107;--d:-1376000"></i><i class="candidate" style="--a:7363354;--d:-4610560"></i><i class="candidate" style="--a:8014873;--d:4868096"></i><i class="candidate" style="--a:13333016;--d:1100544"></i><i class="candidate" style="--a:4073495;--d:5430272"></i><i class="candidate" style="--a:9757974;--d:616192"></i><i class="candidate" style="--a:5562901;--d:145408"></i><i class="candidate" style="--a:9102356;--d:-8441088"></i><i class="candidate" style="--a:4005139;--d:-804096"></i><i class="candidate" style="--a:811026;--d:9013248"></i><i class="candidate" style="--a:6339857;--d:1111296"></i><i class="candidate" style="--a:1708048;--d:3041792"></i><i class="candidate" style="--a:7320335;--d:-4132352"></i><i class="candidate" style="--a:4812558;--d:5988352"></i><i class="candidate" style="--a:2896397;--d:608512"></i><i class="candidate" style="--a:8587532;--d:5633024"></i><i class="candidate" style="--a:4426763;--d:-3800832"></i><i class="candidate" style="--a:13927434;--d:-7388160"></i><i class="candidate" style="--a:2498313;--d:209408"></i><i class="candidate" style="--a:9615880;--d:2369024"></i><i class="candidate" style="--a:10115847;--d:3228928"></i><i class="candidate" style="--a:4028678;--d:9436672"></i><i class="candidate" style="--a:2526213;--d:908032"></i><i class="candidate" style="--a:475652;--d:4765696"></i><i class="candidate" style="--a:2675715;--d:8896256"></i><i class="candidate" style="--a:12725250;--d:-11132160"></i><i class="candidate" style="--a:7269121;--d:-2679040"></i><i class="candidate" style="--a:9258496;--d:-4218624"></i></div></section></main>
+<div class="outer-reader"><div class="selection">
+<i class="carrier carrier-0"></i><i class="selected"></i>
+<div class="selected-reader"><output id="result" class="result"></output></div>
+</div></div>

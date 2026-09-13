@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>nested counter matrix 4</title>
+<style>
+@font-face{font-family:CounterWidth;src:url("counter-width.woff2") format("woff2")}
+@counter-style binary-width{system:additive;
+additive-symbols:16384 "\e30e",8192 "\e30d",4096 "\e30c",2048 "\e30b",1024 "\e30a",512 "\e309",256 "\e308",128 "\e307",64 "\e306",32 "\e305",16 "\e304",8 "\e303",4 "\e302",2 "\e301",1 "\e300";fallback:decimal}
+html,body{margin:0}
+input{position:fixed;left:-10000px}
+.matrix{position:relative;counter-reset:y0 1028 y1 1076 y2 1164 y3 1014}
+.source,.bridge{position:absolute;left:0;top:0;height:1px}
+.source{display:block}
+.increment{display:block;position:relative;width:1px;height:1px}
+.bridge{container-type:inline-size}
+.result{position:absolute;left:0;top:0;display:inline-block;width:max-content;
+  white-space:pre;font-family:CounterWidth;font-size:10px;line-height:1;
+  font-kerning:none;letter-spacing:0}
+body:has(#case-0:checked) .s0{width:1023px}body:has(#case-0:checked) .s1{width:1004px}body:has(#case-0:checked) .s2{width:1013px}body:has(#case-0:checked) .s3{width:1002px}body:has(#case-1:checked) .s0{width:1026px}body:has(#case-1:checked) .s1{width:1016px}body:has(#case-1:checked) .s2{width:1014px}body:has(#case-1:checked) .s3{width:1026px}
+.s0{anchor-name:--x0}.s1{anchor-name:--x1}.s2{anchor-name:--x2}.s3{anchor-name:--x3}
+.i0{counter-increment:y0 calc((100cqi / 1px - 1000) * -3) y1 calc((100cqi / 1px - 1000) * 2) y2 calc((100cqi / 1px - 1000) * -3) y3 calc((100cqi / 1px - 1000) * -2)}.i1{counter-increment:y1 calc((100cqi / 1px - 1000) * -3) y2 calc((100cqi / 1px - 1000) * -2) y3 calc((100cqi / 1px - 1000) * 1)}.i2{counter-increment:y0 calc((100cqi / 1px - 1000) * 3) y1 calc((100cqi / 1px - 1000) * -2) y2 calc((100cqi / 1px - 1000) * -2) y3 calc((100cqi / 1px - 1000) * 2)}.i3{counter-increment:y0 calc((100cqi / 1px - 1000) * 1) y1 calc((100cqi / 1px - 1000) * -2) y2 calc((100cqi / 1px - 1000) * -1) y3 calc((100cqi / 1px - 1000) * 1)}
+.r0::before{content:counter(y0,binary-width)}.r1::before{content:counter(y1,binary-width)}.r2::before{content:counter(y2,binary-width)}.r3::before{content:counter(y3,binary-width)}
+</style></head><body>
+<input id="case-0" name="case" type="radio" checked="checked" />
+<input id="case-1" name="case" type="radio" />
+<main class="matrix" data-size="4"><i class="source s0"></i><i class="bridge" style="position-anchor:--x0;width:anchor-size(--x0 width)"><i class="increment i0"><i class="source s1"></i><i class="bridge" style="position-anchor:--x1;width:anchor-size(--x1 width)"><i class="increment i1"><i class="source s2"></i><i class="bridge" style="position-anchor:--x2;width:anchor-size(--x2 width)"><i class="increment i2"><i class="source s3"></i><i class="bridge" style="position-anchor:--x3;width:anchor-size(--x3 width)"><i class="increment i3"><i class="result r0" data-output="0"></i><i class="result r1" data-output="1"></i><i class="result r2" data-output="2"></i><i class="result r3" data-output="3"></i></i></i></i></i></i></i></i></i></main>
+</body></html>
