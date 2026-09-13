@@ -1,0 +1,115 @@
+{
+  "metric_payload_bits": 16,
+  "weight_bits": 9,
+  "method": "Quantize each normalized activation to a signed integer, evaluate the integer dot product, and count the signed bits required by adjacent pairs.",
+  "matrices": {
+    "v_weight": {
+      "outputs": 768,
+      "inputs": 768,
+      "activation_quantization": {
+        "4": {
+          "single_bits_median": 12.0,
+          "single_bits_p99": 14.0,
+          "single_bits_max": 15,
+          "pair_bits_median": 23.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.0234375
+        },
+        "6": {
+          "single_bits_median": 14.0,
+          "single_bits_p99": 16.0,
+          "single_bits_max": 17,
+          "pair_bits_median": 27.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.0
+        },
+        "8": {
+          "single_bits_median": 16.0,
+          "single_bits_p99": 18.0,
+          "single_bits_max": 19,
+          "pair_bits_median": 31.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.0
+        }
+      }
+    },
+    "attn_proj_weight": {
+      "outputs": 768,
+      "inputs": 768,
+      "activation_quantization": {
+        "4": {
+          "single_bits_median": 11.0,
+          "single_bits_p99": 14.0,
+          "single_bits_max": 15,
+          "pair_bits_median": 23.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.013020833333333334
+        },
+        "6": {
+          "single_bits_median": 14.0,
+          "single_bits_p99": 16.0,
+          "single_bits_max": 18,
+          "pair_bits_median": 27.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.0
+        },
+        "8": {
+          "single_bits_median": 16.0,
+          "single_bits_p99": 18.0,
+          "single_bits_max": 20,
+          "pair_bits_median": 31.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.0
+        }
+      }
+    },
+    "fc_weight": {
+      "outputs": 3072,
+      "inputs": 768,
+      "activation_quantization": {
+        "4": {
+          "single_bits_median": 12.0,
+          "single_bits_p99": 14.0,
+          "single_bits_max": 14,
+          "pair_bits_median": 23.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.01171875
+        },
+        "6": {
+          "single_bits_median": 14.0,
+          "single_bits_p99": 16.0,
+          "single_bits_max": 17,
+          "pair_bits_median": 28.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.0013020833333333333
+        },
+        "8": {
+          "single_bits_median": 16.0,
+          "single_bits_p99": 18.0,
+          "single_bits_max": 19,
+          "pair_bits_median": 32.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.0
+        }
+      }
+    },
+    "mlp_proj_weight": {
+      "outputs": 768,
+      "inputs": 3072,
+      "activation_quantization": {
+        "4": {
+          "single_bits_median": 9.0,
+          "single_bits_p99": 12.0,
+          "single_bits_max": 13,
+          "pair_bits_median": 18.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.23697916666666666
+        },
+        "6": {
+          "single_bits_median": 12.0,
+          "single_bits_p99": 14.0,
+          "single_bits_max": 15,
+          "pair_bits_median": 23.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.026041666666666668
+        },
+        "8": {
+          "single_bits_median": 14.0,
+          "single_bits_p99": 16.0,
+          "single_bits_max": 17,
+          "pair_bits_median": 27.0,
+          "pairs_fitting_one_16bit_metric_fraction": 0.0
+        }
+      }
+    }
+  }
+}

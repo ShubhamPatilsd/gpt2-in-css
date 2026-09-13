@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><title>CSS extra font metrics</title>
+<style>
+@font-face{font-family:ExtraMetrics;src:url("extra-metrics.ttf") format("truetype")}
+@property --vheight{syntax:"<number>";inherits:true;initial-value:-99999}
+.probe{font-family:ExtraMetrics;font-size:512px;font-size-adjust:ic-height 1;
+--vheight:calc(2000 * 512 / (1ch / 1px) - 2000)}
+.p0{font-variation-settings:"X000" -1;}.p1{font-variation-settings:"X000" -0.5;}.p2{font-variation-settings:"X000" 0;}.p3{font-variation-settings:"X000" 0.5;}.p4{font-variation-settings:"X000" 1;}
+.sink{font:14px monospace}
+</style><div class="probe p0" id="p0"><div class="sink">probe</div></div><div class="probe p1" id="p1"><div class="sink">probe</div></div><div class="probe p2" id="p2"><div class="sink">probe</div></div><div class="probe p3" id="p3"><div class="sink">probe</div></div><div class="probe p4" id="p4"><div class="sink">probe</div></div>

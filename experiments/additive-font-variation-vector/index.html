@@ -1,0 +1,83 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Additive font-variation vector probe</title>
+<style>
+  @keyframes v0 {
+    from { font-variation-settings: "A000" 0, "A001" 0, "A002" 0; }
+    to { font-variation-settings: "A000" 1, "A001" 2, "A002" 3; }
+  }
+  @keyframes v1 {
+    from { font-variation-settings: "A000" 0, "A001" 0, "A002" 0; }
+    to { font-variation-settings: "A000" 4, "A001" 5, "A002" 6; }
+  }
+  @keyframes v2 {
+    from { font-variation-settings: "A000" 0, "A001" 0, "A002" 0; }
+    to { font-variation-settings: "A000" -1, "A001" 1, "A002" 2; }
+  }
+  @keyframes s0 {
+    from { font-variation-settings: "A000" 0; }
+    to { font-variation-settings: "A000" 1; }
+  }
+  @keyframes s1 {
+    from { font-variation-settings: "A001" 0; }
+    to { font-variation-settings: "A001" 5; }
+  }
+  @keyframes s2 {
+    from { font-variation-settings: "A002" 0; }
+    to { font-variation-settings: "A002" 2; }
+  }
+  .probe {
+    font-variation-settings: "A000" 0, "A001" 0, "A002" 0;
+    animation-name: v0, v1, v2;
+    animation-duration: 1s;
+    animation-delay: -.25s, -.5s, -.75s;
+    animation-play-state: paused;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+  }
+  #replace { animation-composition: replace; }
+  #add { animation-composition: add; }
+  #accumulate { animation-composition: accumulate; }
+  #sparse {
+    font-variation-settings: normal;
+    animation-name: s0, s1, s2;
+    animation-delay: -.25s, -.5s, -.75s;
+    animation-composition: add;
+  }
+  .nested-carrier {
+    container-type: inline-size;
+    position: relative;
+    height: 1px;
+  }
+  #nc0 { width: 25px; }
+  #nc1 { width: 50px; }
+  #nc2 { width: 75px; }
+  .nested-contribution {
+    position: absolute;
+    animation-duration: 1s;
+    animation-delay: calc(-1s * (100cqi / 100px));
+    animation-play-state: paused;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-composition: add;
+  }
+  #nv0 { animation-name: v0; }
+  #nv1 { animation-name: v1; }
+  #nv2 { animation-name: v2; }
+  #nested-root {
+    font-variation-settings: "A000" 0, "A001" 0, "A002" 0;
+  }
+</style>
+<output id="replace" class="probe">replace</output>
+<output id="add" class="probe">add</output>
+<output id="accumulate" class="probe">accumulate</output>
+<output id="sparse" class="probe">sparse add</output>
+<div id="nested-root">
+  <div id="nc0" class="nested-carrier"><div id="nv0" class="nested-contribution">
+    <div id="nc1" class="nested-carrier"><div id="nv1" class="nested-contribution">
+      <div id="nc2" class="nested-carrier"><div id="nv2" class="nested-contribution">
+        <output id="nested">nested container add</output>
+      </div></div>
+    </div></div>
+  </div></div>
+</div>

@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><style>
+@font-face{font-family:Asc;src:url("line-parts.ttf");descent-override:0%;line-gap-override:0%}
+@font-face{font-family:Desc;src:url("line-parts.ttf");ascent-override:0%;line-gap-override:0%}
+@font-face{font-family:Gap;src:url("line-parts.ttf");ascent-override:0%;descent-override:0%}
+@property --asc{syntax:"<number>";inherits:true;initial-value:-99999}@property --desc{syntax:"<number>";inherits:true;initial-value:-99999}@property --gap{syntax:"<number>";inherits:true;initial-value:-99999}
+.a{font:512px/normal Asc;font-variation-settings:"X000" 0,"X001" 0.25,"X002" 1,"X003" -1,"X004" 0.5,"X005" 0.25,"X006" 0.5,"X007" -1;--asc:calc(1lh / 1px * 1000 / 512 - 1000)}
+.d{font:512px/normal Desc;font-variation-settings:"X000" 0,"X001" 0.25,"X002" 1,"X003" -1,"X004" 0.5,"X005" 0.25,"X006" 0.5,"X007" -1;--desc:calc(500 - 1lh / 1px * 1000 / 512)}
+.g{font:512px/normal Gap;font-variation-settings:"X000" 0,"X001" 0.25,"X002" 1,"X003" -1,"X004" 0.5,"X005" 0.25,"X006" 0.5,"X007" -1;--gap:calc(1lh / 1px * 1000 / 512 - 500)}
+#result{font:14px monospace}
+</style><div class="a"><div class="d"><div class="g"><div id="result">ready</div></div></div></div>

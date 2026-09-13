@@ -1,0 +1,708 @@
+{
+  "comparison": "packed-direct-versus-cached",
+  "chrome": "153.0.8010.36",
+  "noJavaScript": true,
+  "rounds": 6,
+  "assets": {
+    "htmlBytes": 1171345,
+    "cssBytes": 4894412,
+    "fontBytes": 6588248,
+    "timelines": 5568,
+    "packed": {
+      "timelines": 3264,
+      "html_bytes": 1166209,
+      "isolated_html_bytes": 621965,
+      "css_bytes": 5784305,
+      "font_bytes": 6588248,
+      "cached": {
+        "timelines": 3264,
+        "html_bytes": 1166216,
+        "isolated_html_bytes": 621979,
+        "css_bytes": 6134513,
+        "font_bytes": 6588248
+      }
+    }
+  },
+  "summary": {
+    "packed-connected": {
+      "warmMedianMilliseconds": 4106.815084000002,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "finite": 768,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        }
+      }
+    },
+    "packed-isolated": {
+      "warmMedianMilliseconds": 1246.3367080000007,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "finite": 768,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        }
+      }
+    },
+    "packed-cached-connected": {
+      "warmMedianMilliseconds": 4299.676624999993,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "finite": 768,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.011028819208193241,
+          "maxError": 0.061821954632833465
+        }
+      }
+    },
+    "packed-cached-isolated": {
+      "warmMedianMilliseconds": 1414.049583,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "finite": 768,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.009989379928496038,
+          "maxError": 0.05151864667435585
+        }
+      }
+    }
+  },
+  "trials": [
+    {
+      "name": "packed-connected",
+      "round": 0,
+      "milliseconds": 4572.5299589999995,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        }
+      }
+    },
+    {
+      "name": "packed-isolated",
+      "round": 0,
+      "milliseconds": 1484.1527919999999,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        }
+      }
+    },
+    {
+      "name": "packed-cached-connected",
+      "round": 0,
+      "milliseconds": 4988.324125,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.011028819208193241,
+          "maxError": 0.061821954632833465
+        }
+      }
+    },
+    {
+      "name": "packed-cached-isolated",
+      "round": 0,
+      "milliseconds": 1333.22725,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.009989379928496038,
+          "maxError": 0.05151864667435585
+        }
+      }
+    },
+    {
+      "name": "packed-isolated",
+      "round": 1,
+      "milliseconds": 1246.3367080000007,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        }
+      }
+    },
+    {
+      "name": "packed-cached-connected",
+      "round": 1,
+      "milliseconds": 5076.957333,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.011028819208193241,
+          "maxError": 0.061821954632833465
+        }
+      }
+    },
+    {
+      "name": "packed-cached-isolated",
+      "round": 1,
+      "milliseconds": 1414.049583,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.009989379928496038,
+          "maxError": 0.05151864667435585
+        }
+      }
+    },
+    {
+      "name": "packed-connected",
+      "round": 1,
+      "milliseconds": 3988.777333000002,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        }
+      }
+    },
+    {
+      "name": "packed-cached-connected",
+      "round": 2,
+      "milliseconds": 3934.4402080000036,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.011028819208193241,
+          "maxError": 0.061821954632833465
+        }
+      }
+    },
+    {
+      "name": "packed-cached-isolated",
+      "round": 2,
+      "milliseconds": 1379.5269169999992,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.009989379928496038,
+          "maxError": 0.05151864667435585
+        }
+      }
+    },
+    {
+      "name": "packed-connected",
+      "round": 2,
+      "milliseconds": 4252.4021250000005,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        }
+      }
+    },
+    {
+      "name": "packed-isolated",
+      "round": 2,
+      "milliseconds": 1239.9192079999993,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        }
+      }
+    },
+    {
+      "name": "packed-cached-isolated",
+      "round": 3,
+      "milliseconds": 1365.1107499999998,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.009989379928496038,
+          "maxError": 0.05151864667435585
+        }
+      }
+    },
+    {
+      "name": "packed-connected",
+      "round": 3,
+      "milliseconds": 3511.7035840000026,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        }
+      }
+    },
+    {
+      "name": "packed-isolated",
+      "round": 3,
+      "milliseconds": 2171.673707999995,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        }
+      }
+    },
+    {
+      "name": "packed-cached-connected",
+      "round": 3,
+      "milliseconds": 3889.986208999995,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.011028819208193241,
+          "maxError": 0.061821954632833465
+        }
+      }
+    },
+    {
+      "name": "packed-connected",
+      "round": 4,
+      "milliseconds": 4106.815084000002,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        }
+      }
+    },
+    {
+      "name": "packed-isolated",
+      "round": 4,
+      "milliseconds": 1275.2326669999966,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        }
+      }
+    },
+    {
+      "name": "packed-cached-connected",
+      "round": 4,
+      "milliseconds": 4976.735166999999,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.011028819208193241,
+          "maxError": 0.061821954632833465
+        }
+      }
+    },
+    {
+      "name": "packed-cached-isolated",
+      "round": 4,
+      "milliseconds": 1415.0688749999972,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.009989379928496038,
+          "maxError": 0.05151864667435585
+        }
+      }
+    },
+    {
+      "name": "packed-isolated",
+      "round": 5,
+      "milliseconds": 1156.2224590000042,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        }
+      }
+    },
+    {
+      "name": "packed-cached-connected",
+      "round": 5,
+      "milliseconds": 4299.676624999993,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.011028819208193241,
+          "maxError": 0.061821954632833465
+        }
+      }
+    },
+    {
+      "name": "packed-cached-isolated",
+      "round": 5,
+      "milliseconds": 1426.8922080000048,
+      "finite": 768,
+      "rmse": 0.04434102766950811,
+      "maxError": 0.33822104299201783,
+      "modelRmse": 0.04558132684090895,
+      "modelMaxError": 0.25471456559478156,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.0005525303215745197,
+          "maxError": 0.0038181610875938077
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.000020322286305479012,
+          "maxError": 0.00014603684316405463
+        },
+        "hidden": {
+          "finite": 3072,
+          "rmse": 0.009989379928496038,
+          "maxError": 0.05151864667435585
+        }
+      }
+    },
+    {
+      "name": "packed-connected",
+      "round": 5,
+      "milliseconds": 4368.6882500000065,
+      "finite": 768,
+      "rmse": 0.057445705500333274,
+      "maxError": 0.44152470047622216,
+      "modelRmse": 0.05490171303930161,
+      "modelMaxError": 0.3849021652450375,
+      "checkpoints": {
+        "attention": {
+          "finite": 768,
+          "rmse": 0.03825819364400448,
+          "maxError": 0.1913181226881875
+        },
+        "normalized": {
+          "finite": 768,
+          "rmse": 0.001479141428909513,
+          "maxError": 0.006245159159975854
+        }
+      }
+    }
+  ]
+}

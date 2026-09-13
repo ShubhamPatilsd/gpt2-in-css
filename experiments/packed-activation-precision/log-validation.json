@@ -1,0 +1,258 @@
+{
+  "calibrationCases": 256,
+  "evaluationCases": 1024,
+  "naturalCases": 64,
+  "scope": "All 12 GPT-2-small blocks; only post-GELU hidden vectors quantized",
+  "results": [
+    {
+      "scheme": "linear-asymmetric",
+      "headroom": 1.1,
+      "winnerMatches": 981,
+      "winnerMatchFraction": 0.9580078125,
+      "naturalWinnerMatches": 57,
+      "naturalWinnerMatchFraction": 0.890625,
+      "finalHiddenRmse": 0.060939133221987796,
+      "clippedFraction": 0.0005637274848090278
+    },
+    {
+      "scheme": "importance-asym-566",
+      "headroom": 1.1,
+      "winnerMatches": 973,
+      "winnerMatchFraction": 0.9501953125,
+      "naturalWinnerMatches": 57,
+      "naturalWinnerMatchFraction": 0.890625,
+      "finalHiddenRmse": 0.05998209768277069,
+      "clippedFraction": 0.0005682574378119574
+    },
+    {
+      "scheme": "log-asymmetric-0.5",
+      "headroom": 1.1,
+      "winnerMatches": 980,
+      "winnerMatchFraction": 0.95703125,
+      "naturalWinnerMatches": 57,
+      "naturalWinnerMatchFraction": 0.890625,
+      "finalHiddenRmse": 0.06274780112193651,
+      "clippedFraction": 0.0005611578623453776
+    },
+    {
+      "scheme": "log-asymmetric-15",
+      "headroom": 1.5,
+      "winnerMatches": 980,
+      "winnerMatchFraction": 0.95703125,
+      "naturalWinnerMatches": 61,
+      "naturalWinnerMatchFraction": 0.953125,
+      "finalHiddenRmse": 0.15519357440783024,
+      "clippedFraction": 0.00027871131896972656
+    },
+    {
+      "scheme": "log-asymmetric-4",
+      "headroom": 2.0,
+      "winnerMatches": 990,
+      "winnerMatchFraction": 0.966796875,
+      "naturalWinnerMatches": 58,
+      "naturalWinnerMatchFraction": 0.90625,
+      "finalHiddenRmse": 0.07007432703055394,
+      "clippedFraction": 0.00016766124301486544
+    },
+    {
+      "scheme": "importance-asym-468",
+      "headroom": 1.1,
+      "winnerMatches": 962,
+      "winnerMatchFraction": 0.939453125,
+      "naturalWinnerMatches": 56,
+      "naturalWinnerMatchFraction": 0.875,
+      "finalHiddenRmse": 0.05762635503433386,
+      "clippedFraction": 0.0005815294053819445
+    },
+    {
+      "scheme": "importance-asym-567",
+      "headroom": 1.1,
+      "winnerMatches": 976,
+      "winnerMatchFraction": 0.953125,
+      "naturalWinnerMatches": 57,
+      "naturalWinnerMatchFraction": 0.890625,
+      "finalHiddenRmse": 0.05808205845759137,
+      "clippedFraction": 0.0005581114027235243
+    },
+    {
+      "scheme": "importance-asym-477",
+      "headroom": 1.1,
+      "winnerMatches": 966,
+      "winnerMatchFraction": 0.943359375,
+      "naturalWinnerMatches": 56,
+      "naturalWinnerMatchFraction": 0.875,
+      "finalHiddenRmse": 0.05853612525683697,
+      "clippedFraction": 0.0005792776743570963
+    },
+    {
+      "scheme": "sensitivity-asym-468",
+      "headroom": 1.1,
+      "winnerMatches": 981,
+      "winnerMatchFraction": 0.9580078125,
+      "naturalWinnerMatches": 56,
+      "naturalWinnerMatchFraction": 0.875,
+      "finalHiddenRmse": 0.05669894981731074,
+      "clippedFraction": 0.0005526012844509549
+    },
+    {
+      "scheme": "sensitivity-asym-567",
+      "headroom": 1.1,
+      "winnerMatches": 978,
+      "winnerMatchFraction": 0.955078125,
+      "naturalWinnerMatches": 56,
+      "naturalWinnerMatchFraction": 0.875,
+      "finalHiddenRmse": 0.05844542376301008,
+      "clippedFraction": 0.0005521774291992188
+    },
+    {
+      "scheme": "sensitivity-asym-477",
+      "headroom": 1.1,
+      "winnerMatches": 980,
+      "winnerMatchFraction": 0.95703125,
+      "naturalWinnerMatches": 58,
+      "naturalWinnerMatchFraction": 0.90625,
+      "finalHiddenRmse": 0.059047995041653575,
+      "clippedFraction": 0.0005525483025444879
+    },
+    {
+      "scheme": "importance-asym-3456",
+      "headroom": 1.1,
+      "winnerMatches": 942,
+      "winnerMatchFraction": 0.919921875,
+      "naturalWinnerMatches": 53,
+      "naturalWinnerMatchFraction": 0.828125,
+      "finalHiddenRmse": 0.07411154727147358,
+      "clippedFraction": 0.0006543795267740885
+    },
+    {
+      "scheme": "importance-asym-3555",
+      "headroom": 1.1,
+      "winnerMatches": 936,
+      "winnerMatchFraction": 0.9140625,
+      "naturalWinnerMatches": 53,
+      "naturalWinnerMatchFraction": 0.828125,
+      "finalHiddenRmse": 0.07987287503674215,
+      "clippedFraction": 0.0006666713290744358
+    },
+    {
+      "scheme": "importance-asym-4455",
+      "headroom": 1.1,
+      "winnerMatches": 966,
+      "winnerMatchFraction": 0.943359375,
+      "naturalWinnerMatches": 57,
+      "naturalWinnerMatchFraction": 0.890625,
+      "finalHiddenRmse": 0.06796707003740746,
+      "clippedFraction": 0.0006232791476779514
+    },
+    {
+      "scheme": "sensitivity-asym-3456",
+      "headroom": 1.1,
+      "winnerMatches": 974,
+      "winnerMatchFraction": 0.951171875,
+      "naturalWinnerMatches": 57,
+      "naturalWinnerMatchFraction": 0.890625,
+      "finalHiddenRmse": 0.06235968889066784,
+      "clippedFraction": 0.0005687607659233941
+    },
+    {
+      "scheme": "tiergroup-sensitivity-asym-3456",
+      "headroom": 1.1,
+      "winnerMatches": 731,
+      "winnerMatchFraction": 0.7138671875,
+      "naturalWinnerMatches": 44,
+      "naturalWinnerMatchFraction": 0.6875,
+      "finalHiddenRmse": 0.24151762734986568,
+      "clippedFraction": 9.3433592054579e-05
+    },
+    {
+      "scheme": "tiergroup-sensitivity-asym-3456",
+      "headroom": 1.5,
+      "winnerMatches": 297,
+      "winnerMatchFraction": 0.2900390625,
+      "naturalWinnerMatches": 21,
+      "naturalWinnerMatchFraction": 0.328125,
+      "finalHiddenRmse": 0.5667547456928445,
+      "clippedFraction": 0.00019809934828016494
+    },
+    {
+      "scheme": "tiergroup-sensitivity-asym-3456",
+      "headroom": 2.0,
+      "winnerMatches": 50,
+      "winnerMatchFraction": 0.048828125,
+      "naturalWinnerMatches": 5,
+      "naturalWinnerMatchFraction": 0.078125,
+      "finalHiddenRmse": 1.8601433508430565,
+      "clippedFraction": 0.0007122357686360677
+    },
+    {
+      "scheme": "tiercluster2-sensitivity-asym-3456",
+      "headroom": 1.1,
+      "winnerMatches": 824,
+      "winnerMatchFraction": 0.8046875,
+      "naturalWinnerMatches": 47,
+      "naturalWinnerMatchFraction": 0.734375,
+      "finalHiddenRmse": 0.17967181948700173,
+      "clippedFraction": 0.00013433562384711372
+    },
+    {
+      "scheme": "tiercluster4-sensitivity-asym-3456",
+      "headroom": 1.1,
+      "winnerMatches": 862,
+      "winnerMatchFraction": 0.841796875,
+      "naturalWinnerMatches": 49,
+      "naturalWinnerMatchFraction": 0.765625,
+      "finalHiddenRmse": 0.12267098195958855,
+      "clippedFraction": 0.0001640584733751085
+    },
+    {
+      "scheme": "tiercluster8-sensitivity-asym-3456",
+      "headroom": 1.1,
+      "winnerMatches": 902,
+      "winnerMatchFraction": 0.880859375,
+      "naturalWinnerMatches": 53,
+      "naturalWinnerMatchFraction": 0.828125,
+      "finalHiddenRmse": 0.10358700925510578,
+      "clippedFraction": 0.00020326508416069878
+    },
+    {
+      "scheme": "tiercluster16-sensitivity-asym-3456",
+      "headroom": 1.1,
+      "winnerMatches": 941,
+      "winnerMatchFraction": 0.9189453125,
+      "naturalWinnerMatches": 53,
+      "naturalWinnerMatchFraction": 0.828125,
+      "finalHiddenRmse": 0.08960571961540412,
+      "clippedFraction": 0.00023706754048665365
+    },
+    {
+      "scheme": "tiercluster32-sensitivity-asym-3456",
+      "headroom": 1.1,
+      "winnerMatches": 948,
+      "winnerMatchFraction": 0.92578125,
+      "naturalWinnerMatches": 54,
+      "naturalWinnerMatchFraction": 0.84375,
+      "finalHiddenRmse": 0.07639336413747716,
+      "clippedFraction": 0.0002722740173339844
+    },
+    {
+      "scheme": "sensitivity-asym-3555",
+      "headroom": 1.1,
+      "winnerMatches": 967,
+      "winnerMatchFraction": 0.9443359375,
+      "naturalWinnerMatches": 56,
+      "naturalWinnerMatchFraction": 0.875,
+      "finalHiddenRmse": 0.06535410061463266,
+      "clippedFraction": 0.0006008148193359375
+    },
+    {
+      "scheme": "sensitivity-asym-4455",
+      "headroom": 1.1,
+      "winnerMatches": 967,
+      "winnerMatchFraction": 0.9443359375,
+      "naturalWinnerMatches": 56,
+      "naturalWinnerMatchFraction": 0.875,
+      "finalHiddenRmse": 0.06476861127647353,
+      "clippedFraction": 0.0006038347880045573
+    }
+  ]
+}

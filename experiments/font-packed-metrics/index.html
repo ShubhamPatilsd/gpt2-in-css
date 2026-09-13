@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8"><title>Packed font metrics</title>
+<style>
+@font-face{font-family:PackedMetrics;src:url("packed-metrics.ttf") format("truetype")}
+@property --p0{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --p1{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --o0{syntax:"<number>";inherits:true;initial-value:-99999}@property --o1{syntax:"<number>";inherits:true;initial-value:-99999}@property --o2{syntax:"<number>";inherits:true;initial-value:-99999}@property --o3{syntax:"<number>";inherits:true;initial-value:-99999}
+.producer{font-family:PackedMetrics;font-size:64px;font-variation-settings:"X000" -1,"X001" 1,"X002" 1,"X003" 1,"X004" -1,"X005" 1,"X006" 1,"X007" -1,"X008" -1,"X009" 1,"X010" 1,"X011" 1,"X012" 1,"X013" -1,"X014" -1,"X015" 1;
+--p0:round(nearest,calc(1ch / 1px * 1000 / 64),1);
+--p1:round(nearest,calc(1ic / 1px * 1000 / 64),1);
+--o0:calc(mod(var(--p0),256) - 128);
+--o1:calc((var(--p0) - mod(var(--p0),256)) / 256 - 128);
+--o2:calc(mod(var(--p1),256) - 128);
+--o3:calc((var(--p1) - mod(var(--p1),256)) / 256 - 128)}
+#result{font:14px monospace}
+</style><div class="producer"><output id="result">ready</output></div>

@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Variable-font multimetric probe</title>
+<style>
+@font-face{font-family:MultiMetric;src:url("multi-metric.ttf") format("truetype")}
+@property --o0{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --o1{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --o2{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --o3{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --o4{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --o5{syntax:"<number>";inherits:true;initial-value:-99999}
+@property --o6{syntax:"<number>";inherits:true;initial-value:-99999}
+.producer{font-family:MultiMetric;font-size:512px;font-variation-settings:"X000" -0.25,"X001" -0.25,"X002" 0.25,"X003" -0.25,"X004" -0.25,"X005" -0.75,"X006" 0.5,"X007" 0.25,"X008" -0.5,"X009" 0.75,"X010" -1,"X011" -1,"X012" -1,"X013" -0.75,"X014" 0.25,"X015" 0.25,"X016" 1,"X017" 0,"X018" -1,"X019" 1,"X020" 0.5,"X021" 0,"X022" -0.75,"X023" 0,"X024" 0.75,"X025" 1,"X026" 0,"X027" 0.5,"X028" 1,"X029" -0.75,"X030" -0.75,"X031" -0.25;line-height:normal;
+--o0:calc(1ex / 1px * 1000 / 512 - 2000);
+--o1:calc(1cap / 1px * 1000 / 512 - 2000);
+--o2:calc(1ch / 1px * 1000 / 512 - 2000);
+--o3:calc(1ic / 1px * 1000 / 512 - 2000);
+--o4:calc(1lh / 1px * 1000 / 512 - 2000);}
+.vertical{writing-mode:vertical-rl;
+--o5:calc(1ch / 1px * 1000 / 512 - 2000);
+--o6:calc(1ic / 1px * 1000 / 512 - 2000);}
+.upright{text-orientation:upright}
+.result{font:16px monospace;writing-mode:horizontal-tb}
+.vglyph{position:fixed;visibility:hidden;white-space:nowrap}
+</style>
+<p>Expected: -14.75, -51.25, -50.5, -22.5, -40.5, 40.75, -12.5</p>
+<div class="producer"><div class="vertical" id="mixed">
+  <span class="vglyph" id="vzero">0</span><span class="vglyph" id="vwater">水</span>
+  <div class="result" id="result">probe</div>
+</div><div class="vertical upright" id="upright"><div class="result" id="upright-result">probe</div></div></div>
