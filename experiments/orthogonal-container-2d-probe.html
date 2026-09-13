@@ -1,0 +1,43 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Orthogonal container-unit transport probe</title>
+<style>
+html,body{margin:0}
+.outer{
+  position:fixed;
+  left:0;
+  top:0;
+  width:137px;
+  height:200px;
+  writing-mode:horizontal-tb;
+  container-type:inline-size;
+}
+.inner{
+  position:relative;
+  width:11px;
+  height:83px;
+  writing-mode:vertical-rl;
+  container-type:inline-size;
+}
+.probe{
+  position:absolute;
+  left:0;
+  top:0;
+  height:1px;
+  writing-mode:horizontal-tb;
+}
+.qw{width:100cqw}
+.qh{width:100cqh}
+.qi{width:100cqi}
+.qb{width:100cqb}
+.product{width:calc(1000px + (100cqw / 1px) * (100cqh / 1px) * 1px)}
+</style>
+<div class="outer">
+  <div class="inner">
+    <i class="probe qw"></i>
+    <i class="probe qh"></i>
+    <i class="probe qi"></i>
+    <i class="probe qb"></i>
+    <i class="probe product"></i>
+  </div>
+</div>
