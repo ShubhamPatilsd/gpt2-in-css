@@ -1,0 +1,31 @@
+{
+  "fontSize": 40,
+  "unitsPerEm": 1000,
+  "cases": [
+    {
+      "a": 0,
+      "b": 0,
+      "fallbackRunWidth": 40.0,
+      "chWidth": 20.0
+    },
+    {
+      "a": 1,
+      "b": 0,
+      "fallbackRunWidth": 48.0,
+      "chWidth": 28.0
+    },
+    {
+      "a": 0,
+      "b": 1,
+      "fallbackRunWidth": 52.0,
+      "chWidth": 20.0
+    },
+    {
+      "a": 1,
+      "b": 1,
+      "fallbackRunWidth": 60.0,
+      "chWidth": 28.0
+    }
+  ],
+  "structuralPoint": "fallback shaping sums both face advances; 1ch observes only shard A. The aggregate becomes reusable only after #bridge materializes it as a CSS sizing/container boundary."
+}

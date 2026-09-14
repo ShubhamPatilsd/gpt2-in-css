@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:COLRVector;src:url("i64-o64.woff2?v=3cd12eef7ac7") format("woff2")}
+html,body{margin:0;background:transparent}
+svg{display:block;overflow:visible}
+#vector{font-family:COLRVector;font-size:1000px;line-height:1;
+font-variation-settings:"A000" -0.00713176861,"A001" 0.0889516648,"A002" -0.238408009,"A003" 0.614160311,"A004" -0.472985066,"A005" 0.424545559,"A006" -0.689530599,"A007" -0.631454031,"A008" -0.422676307,"A009" 0.302632618,"A010" 0.426660934,"A011" -0.291767085,"A012" 0.362101978,"A013" 0.336812569,"A014" 0.140662024,"A015" -0.384078391,"A016" 0.521249207,"A017" -0.0304382998,"A018" 0.413104137,"A019" -0.0673234084,"A020" 0.18613045,"A021" 0.189684253,"A022" -0.110116246,"A023" 0.368264217,"A024" -0.580051788,"A025" 0.55952447,"A026" -0.116806573,"A027" -0.163763322,"A028" -0.254627121,"A029" 0.141793909,"A030" 0.531993429,"A031" 0.397367836,"A032" -0.574266656,"A033" 0.657167707,"A034" -0.288514099,"A035" -0.268804167,"A036" 0.224496976,"A037" -0.308989262,"A038" -0.529573072,"A039" -0.556212811,"A040" 0.0169865883,"A041" 0.249031688,"A042" -0.236791886,"A043" 0.597993381,"A044" 0.697642351,"A045" -0.632371054,"A046" 0.64850018,"A047" -0.478464609,"A048" -0.465848605,"A049" 0.594488083,"A050" 0.525065431,"A051" -0.0860675902,"A052" -0.584260402,"A053" -0.659028429,"A054" -0.494008542,"A055" -0.44716562,"A056" -0.00711343248,"A057" -0.582700791,"A058" 0.117137626,"A059" -0.306818708,"A060" -0.486239441,"A061" -0.183973426,"B062" 0.341064011,"B063" -0.173829856}
+</style>
+<svg id="surface" width="256" height="64" viewBox="0 0 256 64"
+ xmlns="http://www.w3.org/2000/svg">
+ <defs><filter id="consume" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse"
+  x="0" y="0" width="256" height="64" color-interpolation-filters="sRGB">
+  <feConvolveMatrix in="SourceGraphic" order="256 1" targetX="255"
+   kernelMatrix="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" divisor="256" edgeMode="none"
+   preserveAlpha="false" result="vector-alpha"/>
+  <feColorMatrix in="vector-alpha" values="0 0 0 1 0  0 0 0 1 0  0 0 0 1 0  0 0 0 0 1"
+   result="vector"/>
+  <feComponentTransfer in="vector" result="mapped">
+   <feFuncR type="table" tableValues="0 .25 1"/>
+   <feFuncG type="table" tableValues="0 .25 1"/>
+   <feFuncB type="table" tableValues="0 .25 1"/>
+  </feComponentTransfer>
+  <feOffset in="mapped" dx="-255" result="vector-at-zero"/>
+  <feConvolveMatrix in="vector-at-zero" order="1 64" targetY="63"
+   kernelMatrix="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" divisor="64" edgeMode="none"
+   preserveAlpha="false" result="mean"/>
+  <feOffset in="mean" dx="1" dy="-63" result="mean-at-one"/>
+  <feMerge><feMergeNode in="vector-at-zero"/><feMergeNode in="mean-at-one"/></feMerge>
+ </filter></defs>
+ <g filter="url(#consume)"><text id="vector" x="0" y="64">&#xE000;</text></g>
+</svg>

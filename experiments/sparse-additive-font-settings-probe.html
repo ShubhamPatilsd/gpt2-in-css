@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Sparse additive font settings probe</title>
+<style>
+@keyframes a0{from{font-variation-settings:"X000" 0}to{font-variation-settings:"X000" 1}}
+@keyframes a1{from{font-variation-settings:"X001" 0}to{font-variation-settings:"X001" 1}}
+@keyframes a2{from{font-variation-settings:"X002" 0}to{font-variation-settings:"X002" 1}}
+@keyframes a3{from{font-variation-settings:"X003" 0}to{font-variation-settings:"X003" 1}}
+#probe{
+  font-variation-settings:"X000" 0,"X001" 0,"X002" 0,"X003" 0;
+  animation-name:a0,a1,a2,a3;
+  animation-duration:1s;
+  animation-delay:-.2s,-.3s,-.4s,-.5s;
+  animation-play-state:paused;
+  animation-timing-function:linear;
+  animation-fill-mode:both;
+  animation-composition:add;
+}
+</style>
+<output id="probe">probe</output>

@@ -1,0 +1,618 @@
+{
+  "generatedAt": "2026-09-13T18:13:22.731Z",
+  "chrome": "153.0.8010.36",
+  "rounds": 6,
+  "methodology": "Warm browser/font/HTTP caches, fresh page graph per case-0 to non-default mutation, force all 768 final widths.",
+  "runtimeContainsJavaScript": false,
+  "summaries": [
+    {
+      "name": "baseline-exact-gelu-two-blocks",
+      "pageFile": "connected-two-block-exact-css-gelu-layoutless.html",
+      "realStages": [
+        "block0",
+        "block0-state-transport",
+        "block1-attention",
+        "block1-fc",
+        "block1-preactivation-transport",
+        "block1-gelu",
+        "block1-projection"
+      ],
+      "elements": 23528,
+      "runtimeScripts": 0,
+      "minimumMilliseconds": 1676.199999988079,
+      "medianMilliseconds": 1710.5999999642372,
+      "p90Milliseconds": 1781.699999988079,
+      "maximumMilliseconds": 1906.199999988079,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 23528,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 1763.5,
+          "checksum": 159787108
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 23528,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 1695.8999999761581,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 23528,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 1676.199999988079,
+          "checksum": 159787186.703125
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 23528,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 1710.5999999642372,
+          "checksum": 159787108
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 23528,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 1781.699999988079,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 5,
+          "mode": 3,
+          "elements": 23528,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 1906.199999988079,
+          "checksum": 159787186.703125
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    },
+    {
+      "name": "oracle-block0-handoff",
+      "pageFile": "oracle-block0-handoff.html",
+      "realStages": [
+        "block1-attention",
+        "block1-fc",
+        "block1-preactivation-transport",
+        "block1-gelu",
+        "block1-projection"
+      ],
+      "elements": 6598,
+      "runtimeScripts": 0,
+      "minimumMilliseconds": 775.6999999880791,
+      "medianMilliseconds": 786.6999999880791,
+      "p90Milliseconds": 787.3000000119209,
+      "maximumMilliseconds": 804.9000000357628,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 6598,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 804.9000000357628,
+          "checksum": 159787108
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 6598,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 786.6999999880791,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 6598,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 787.3000000119209,
+          "checksum": 159787186.703125
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 6598,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 785.3999999761581,
+          "checksum": 159787108
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 6598,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 775.6999999880791,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 5,
+          "mode": 3,
+          "elements": 6598,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 786.7000000476837,
+          "checksum": 159787186.703125
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    },
+    {
+      "name": "oracle-b1-fc-preactivation",
+      "pageFile": "oracle-b1-fc-preactivation.html",
+      "realStages": [
+        "block0",
+        "block0-state-transport",
+        "block1-attention",
+        "block1-gelu",
+        "block1-projection"
+      ],
+      "elements": 18870,
+      "runtimeScripts": 0,
+      "minimumMilliseconds": 881.3000000119209,
+      "medianMilliseconds": 950,
+      "p90Milliseconds": 1015.1999999880791,
+      "maximumMilliseconds": 1050,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 18870,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 978.1999999880791,
+          "checksum": 159787108
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 18870,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 922.8999999761581,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 18870,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 881.3000000119209,
+          "checksum": 159787186.703125
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 18870,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 1050,
+          "checksum": 159787108
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 18870,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 950,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 5,
+          "mode": 3,
+          "elements": 18870,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 1015.1999999880791,
+          "checksum": 159787186.703125
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    },
+    {
+      "name": "oracle-block0-and-b1-fc",
+      "pageFile": "oracle-block0-and-b1-fc.html",
+      "realStages": [
+        "block1-attention",
+        "block1-gelu",
+        "block1-projection"
+      ],
+      "elements": 1939,
+      "runtimeScripts": 0,
+      "minimumMilliseconds": 178.79999995231628,
+      "medianMilliseconds": 180.39999997615814,
+      "p90Milliseconds": 181.29999995231628,
+      "maximumMilliseconds": 182.5,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 1939,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 181.29999995231628,
+          "checksum": 159787108
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 1939,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 178.79999995231628,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 1939,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 180.39999997615814,
+          "checksum": 159787186.703125
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 1939,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 180.19999998807907,
+          "checksum": 159787108
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 1939,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 182.5,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 5,
+          "mode": 3,
+          "elements": 1939,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 181.0999999642372,
+          "checksum": 159787186.703125
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    },
+    {
+      "name": "oracle-b1-gelu-and-projection",
+      "pageFile": "oracle-b1-gelu-and-projection.html",
+      "realStages": [
+        "block1-gelu",
+        "block1-projection"
+      ],
+      "elements": 783,
+      "runtimeScripts": 0,
+      "minimumMilliseconds": 87.39999997615814,
+      "medianMilliseconds": 88.59999996423721,
+      "p90Milliseconds": 89.69999998807907,
+      "maximumMilliseconds": 91.69999998807907,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 87.39999997615814,
+          "checksum": 159787108
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 88.39999997615814,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 89.69999998807907,
+          "checksum": 159787186.703125
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 88.59999996423721,
+          "checksum": 159787108
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 88.69999998807907,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 5,
+          "mode": 3,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 91.69999998807907,
+          "checksum": 159787186.703125
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    },
+    {
+      "name": "oracle-b1-pure-projection",
+      "pageFile": "oracle-b1-pure-projection.html",
+      "realStages": [
+        "block1-projection"
+      ],
+      "elements": 783,
+      "runtimeScripts": 0,
+      "minimumMilliseconds": 62.30000001192093,
+      "medianMilliseconds": 64.19999998807907,
+      "p90Milliseconds": 64.80000001192093,
+      "maximumMilliseconds": 67.69999998807907,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 64.80000001192093,
+          "checksum": 159787108
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 64.80000001192093,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 67.69999998807907,
+          "checksum": 159787186.703125
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 62.30000001192093,
+          "checksum": 159787108
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 64,
+          "checksum": 159787817.0625
+        },
+        {
+          "round": 5,
+          "mode": 3,
+          "elements": 783,
+          "outputs": 768,
+          "runtimeScripts": 0,
+          "milliseconds": 64.19999998807907,
+          "checksum": 159787186.703125
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    }
+  ],
+  "differentialEstimates": {
+    "block0AndStateHandoffMilliseconds": 923.8999999761581,
+    "block1FcAndPreactivationWithLiveBlock0Milliseconds": 760.5999999642372,
+    "block1FcAndPreactivationWithOracleHandoffMilliseconds": 606.3000000119209,
+    "block1AttentionAndLnMilliseconds": 91.80000001192093,
+    "exactGeluOnceMilliseconds": 24.399999976158142,
+    "pureProjectionMilliseconds": 64.19999998807907,
+    "allVectorBoundariesFreeSpeedup": 26.64485981747459
+  },
+  "note": "Deltas compare different dependency graphs and are architectural upper bounds, not additive profiler attribution."
+}

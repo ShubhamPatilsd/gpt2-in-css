@@ -1,0 +1,25 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Cross-shard font composition probe</title>
+<style>
+@font-face{font-family:ShardA;src:url("shard-a.woff2") format("woff2");unicode-range:U+0030,U+E000}
+@font-face{font-family:ShardB;src:url("shard-b.woff2") format("woff2");unicode-range:U+E001}
+html,body{margin:0}
+body{font:16px system-ui}
+input{position:fixed;left:-10000px}
+label{display:inline-block;margin:.5rem;padding:.35rem .55rem;border:1px solid}
+.font-stack{font-family:ShardA,ShardB;font-size:40px;font-kerning:none;line-height:1}
+#sum{display:inline-block;width:max-content;white-space:pre;anchor-name:--sum}
+#single-face-metric{display:block;width:1ch;height:4px;background:#e55}
+#bridge{position:absolute;left:0;top:140px;position-anchor:--sum;
+width:anchor-size(--sum width);container-type:inline-size}
+#bridge-value{font-size:100cqi;line-height:1}
+body:has(#case-0:checked) .font-stack{font-variation-settings:"A000" 0,"B000" 0}body:has(#case-1:checked) .font-stack{font-variation-settings:"A000" 1,"B000" 0}body:has(#case-2:checked) .font-stack{font-variation-settings:"A000" 0,"B000" 1}body:has(#case-3:checked) .font-stack{font-variation-settings:"A000" 1,"B000" 1}
+</style>
+<input type="radio" name="case" id="case-0" checked><input type="radio" name="case" id="case-1"><input type="radio" name="case" id="case-2"><input type="radio" name="case" id="case-3">
+<nav><label for="case-0">A=0, B=0</label><label for="case-1">A=1, B=0</label><label for="case-2">A=0, B=1</label><label for="case-3">A=1, B=1</label></nav>
+<main class="font-stack">
+  <span id="sum">&#xE000;&#xE001;</span>
+  <span id="single-face-metric"></span>
+  <div id="bridge"><span id="bridge-value">.</span></div>
+</main>
