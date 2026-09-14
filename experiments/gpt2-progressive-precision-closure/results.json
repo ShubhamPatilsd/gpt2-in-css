@@ -1,0 +1,1113 @@
+{
+  "model": "openai-community/gpt2",
+  "architectureAndWeightsChanged": false,
+  "checkpointChanged": false,
+  "states": 1024,
+  "target": "browser-realized global-int16 q16 buckets with lower-token ties",
+  "productionInputRange": 266.2483969116211,
+  "axisSteps": 16384,
+  "algorithm": [
+    "global rowwise-q10 lower/upper intervals",
+    "rowwise-q12 scores only for q10-competitive contiguous blocks",
+    "global-int16 q16 scores only for q12-competitive contiguous blocks",
+    "one final exact argmax"
+  ],
+  "variants": [
+    {
+      "allowanceBucketsPerPrecision": 1,
+      "blockSize": 1,
+      "staticBlockGates": 50257,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 56,
+        "p95": 355,
+        "p99": 615,
+        "maximum": 1207,
+        "mean": 100.755859375
+      },
+      "q12Rows": {
+        "minimum": 1,
+        "median": 56,
+        "p95": 355,
+        "p99": 615,
+        "maximum": 1207,
+        "mean": 100.755859375
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 13,
+        "p99": 23,
+        "maximum": 34,
+        "mean": 5.009765625
+      },
+      "q16Rows": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 13,
+        "p99": 23,
+        "maximum": 34,
+        "mean": 5.009765625
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 18,
+        "median": 384,
+        "p95": 2256,
+        "p99": 3870,
+        "maximum": 7554,
+        "mean": 664.65234375
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 12,
+        "median": 672,
+        "p95": 4260,
+        "p99": 7380,
+        "maximum": 14484,
+        "mean": 1209.0703125
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.09006129319105691,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5497218291430012,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 1,
+      "blockSize": 2,
+      "staticBlockGates": 25129,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 56,
+        "p95": 355,
+        "p99": 615,
+        "maximum": 1207,
+        "mean": 100.755859375
+      },
+      "q12Rows": {
+        "minimum": 2,
+        "median": 106,
+        "p95": 630,
+        "p99": 1102,
+        "maximum": 2186,
+        "mean": 186.50390625
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 13,
+        "p99": 23,
+        "maximum": 34,
+        "mean": 5.009765625
+      },
+      "q16Rows": {
+        "minimum": 2,
+        "median": 6,
+        "p95": 26,
+        "p99": 44,
+        "maximum": 66,
+        "mean": 9.40234375
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 36,
+        "median": 720,
+        "p95": 4008,
+        "p99": 7140,
+        "maximum": 13668,
+        "mean": 1231.8515625
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 24,
+        "median": 1272,
+        "p95": 7560,
+        "p99": 13224,
+        "maximum": 26232,
+        "mean": 2238.046875
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.16691755589430896,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5504136558801969,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 1,
+      "blockSize": 4,
+      "staticBlockGates": 12565,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 56,
+        "p95": 355,
+        "p99": 615,
+        "maximum": 1207,
+        "mean": 100.755859375
+      },
+      "q12Rows": {
+        "minimum": 4,
+        "median": 192,
+        "p95": 1140,
+        "p99": 2000,
+        "maximum": 4008,
+        "mean": 341.48046875
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 13,
+        "p99": 23,
+        "maximum": 34,
+        "mean": 5.009765625
+      },
+      "q16Rows": {
+        "minimum": 4,
+        "median": 12,
+        "p95": 48,
+        "p99": 80,
+        "maximum": 132,
+        "mean": 17.89453125
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 72,
+        "median": 1344,
+        "p95": 7368,
+        "p99": 13032,
+        "maximum": 24600,
+        "mean": 2263.6171875
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 48,
+        "median": 2304,
+        "p95": 13680,
+        "p99": 24000,
+        "maximum": 48096,
+        "mean": 4097.765625
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.30672319613821136,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5524027957309052,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 1,
+      "blockSize": 8,
+      "staticBlockGates": 6283,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 56,
+        "p95": 355,
+        "p99": 615,
+        "maximum": 1207,
+        "mean": 100.755859375
+      },
+      "q12Rows": {
+        "minimum": 8,
+        "median": 344,
+        "p95": 2056,
+        "p99": 3616,
+        "maximum": 6928,
+        "mean": 608.203125
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 13,
+        "p99": 23,
+        "maximum": 34,
+        "mean": 5.009765625
+      },
+      "q16Rows": {
+        "minimum": 8,
+        "median": 24,
+        "p95": 80,
+        "p99": 144,
+        "maximum": 256,
+        "mean": 31.671875
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 144,
+        "median": 2400,
+        "p95": 13584,
+        "p99": 23184,
+        "maximum": 42864,
+        "mean": 4029.28125
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 96,
+        "median": 4128,
+        "p95": 24672,
+        "p99": 43392,
+        "maximum": 83136,
+        "mean": 7298.4375
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.5459730691056911,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5520745022479127,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 1,
+      "blockSize": 16,
+      "staticBlockGates": 3142,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 56,
+        "p95": 355,
+        "p99": 615,
+        "maximum": 1207,
+        "mean": 100.755859375
+      },
+      "q12Rows": {
+        "minimum": 16,
+        "median": 608,
+        "p95": 3776,
+        "p99": 6320,
+        "maximum": 11696,
+        "mean": 1072.8125
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 13,
+        "p99": 23,
+        "maximum": 34,
+        "mean": 5.009765625
+      },
+      "q16Rows": {
+        "minimum": 16,
+        "median": 48,
+        "p95": 160,
+        "p99": 240,
+        "maximum": 512,
+        "mean": 60.828125
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 288,
+        "median": 4320,
+        "p95": 24288,
+        "p99": 42144,
+        "maximum": 73056,
+        "mean": 7166.8125
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 192,
+        "median": 7296,
+        "p95": 45312,
+        "p99": 75840,
+        "maximum": 140352,
+        "mean": 12873.75
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.9711128048780487,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5566996795805418,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 4,
+      "blockSize": 1,
+      "staticBlockGates": 50257,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 58,
+        "p95": 364,
+        "p99": 631,
+        "maximum": 1238,
+        "mean": 103.1484375
+      },
+      "q12Rows": {
+        "minimum": 1,
+        "median": 58,
+        "p95": 364,
+        "p99": 631,
+        "maximum": 1238,
+        "mean": 103.1484375
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 14,
+        "p99": 24,
+        "maximum": 36,
+        "mean": 5.125
+      },
+      "q16Rows": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 14,
+        "p99": 24,
+        "maximum": 36,
+        "mean": 5.125
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 18,
+        "median": 396,
+        "p95": 2298,
+        "p99": 4020,
+        "maximum": 7740,
+        "mean": 680.390625
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 12,
+        "median": 696,
+        "p95": 4368,
+        "p99": 7572,
+        "maximum": 14856,
+        "mean": 1237.78125
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.09219385162601626,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5496856774975384,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 4,
+      "blockSize": 2,
+      "staticBlockGates": 25129,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 58,
+        "p95": 364,
+        "p99": 631,
+        "maximum": 1238,
+        "mean": 103.1484375
+      },
+      "q12Rows": {
+        "minimum": 2,
+        "median": 106,
+        "p95": 642,
+        "p99": 1148,
+        "maximum": 2244,
+        "mean": 190.9453125
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 14,
+        "p99": 24,
+        "maximum": 36,
+        "mean": 5.125
+      },
+      "q16Rows": {
+        "minimum": 2,
+        "median": 6,
+        "p95": 26,
+        "p99": 44,
+        "maximum": 70,
+        "mean": 9.611328125
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 36,
+        "median": 732,
+        "p95": 4188,
+        "p99": 7416,
+        "maximum": 14016,
+        "mean": 1261.0078125
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 24,
+        "median": 1272,
+        "p95": 7704,
+        "p99": 13776,
+        "maximum": 26928,
+        "mean": 2291.34375
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.17086826727642276,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5503355018207111,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 4,
+      "blockSize": 4,
+      "staticBlockGates": 12565,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 58,
+        "p95": 364,
+        "p99": 631,
+        "maximum": 1238,
+        "mean": 103.1484375
+      },
+      "q12Rows": {
+        "minimum": 4,
+        "median": 196,
+        "p95": 1164,
+        "p99": 2068,
+        "maximum": 4116,
+        "mean": 349.6484375
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 14,
+        "p99": 24,
+        "maximum": 36,
+        "mean": 5.125
+      },
+      "q16Rows": {
+        "minimum": 4,
+        "median": 12,
+        "p95": 48,
+        "p99": 80,
+        "maximum": 140,
+        "mean": 18.28125
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 72,
+        "median": 1392,
+        "p95": 7536,
+        "p99": 13632,
+        "maximum": 25248,
+        "mean": 2317.265625
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 48,
+        "median": 2352,
+        "p95": 13968,
+        "p99": 24816,
+        "maximum": 49392,
+        "mean": 4195.78125
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.3139926321138211,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5522846609317394,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 4,
+      "blockSize": 8,
+      "staticBlockGates": 6283,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 58,
+        "p95": 364,
+        "p99": 631,
+        "maximum": 1238,
+        "mean": 103.1484375
+      },
+      "q12Rows": {
+        "minimum": 8,
+        "median": 352,
+        "p95": 2160,
+        "p99": 3728,
+        "maximum": 7096,
+        "mean": 622.6328125
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 14,
+        "p99": 24,
+        "maximum": 36,
+        "mean": 5.125
+      },
+      "q16Rows": {
+        "minimum": 8,
+        "median": 24,
+        "p95": 88,
+        "p99": 144,
+        "maximum": 272,
+        "mean": 32.359375
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 144,
+        "median": 2400,
+        "p95": 13824,
+        "p99": 23568,
+        "maximum": 43776,
+        "mean": 4124.109375
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 96,
+        "median": 4224,
+        "p95": 25920,
+        "p99": 44736,
+        "maximum": 85152,
+        "mean": 7471.59375
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.5588224085365854,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5519718433567136,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 4,
+      "blockSize": 16,
+      "staticBlockGates": 3142,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 58,
+        "p95": 364,
+        "p99": 631,
+        "maximum": 1238,
+        "mean": 103.1484375
+      },
+      "q12Rows": {
+        "minimum": 16,
+        "median": 624,
+        "p95": 3840,
+        "p99": 6448,
+        "maximum": 11904,
+        "mean": 1097.53125
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 14,
+        "p99": 24,
+        "maximum": 36,
+        "mean": 5.125
+      },
+      "q16Rows": {
+        "minimum": 16,
+        "median": 48,
+        "p95": 160,
+        "p99": 240,
+        "maximum": 544,
+        "mean": 62.0
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 288,
+        "median": 4416,
+        "p95": 24576,
+        "p99": 42720,
+        "maximum": 74304,
+        "mean": 7329.1875
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 192,
+        "median": 7488,
+        "p95": 46080,
+        "p99": 77376,
+        "maximum": 142848,
+        "mean": 13170.375
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.993114837398374,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5564904188377324,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 27,
+      "blockSize": 1,
+      "staticBlockGates": 50257,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 66,
+        "p95": 430,
+        "p99": 820,
+        "maximum": 1525,
+        "mean": 123.1025390625
+      },
+      "q12Rows": {
+        "minimum": 1,
+        "median": 66,
+        "p95": 430,
+        "p99": 820,
+        "maximum": 1525,
+        "mean": 123.1025390625
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 17,
+        "p99": 33,
+        "maximum": 53,
+        "mean": 6.2431640625
+      },
+      "q16Rows": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 17,
+        "p99": 33,
+        "maximum": 53,
+        "mean": 6.2431640625
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 18,
+        "median": 456,
+        "p95": 2742,
+        "p99": 5052,
+        "maximum": 9642,
+        "mean": 813.533203125
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 12,
+        "median": 792,
+        "p95": 5160,
+        "p99": 9840,
+        "maximum": 18300,
+        "mean": 1477.23046875
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.11023485137195121,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5507151526690307,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 27,
+      "blockSize": 2,
+      "staticBlockGates": 25129,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 66,
+        "p95": 430,
+        "p99": 820,
+        "maximum": 1525,
+        "mean": 123.1025390625
+      },
+      "q12Rows": {
+        "minimum": 2,
+        "median": 124,
+        "p95": 792,
+        "p99": 1472,
+        "maximum": 2766,
+        "mean": 228.083984375
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 17,
+        "p99": 33,
+        "maximum": 53,
+        "mean": 6.2431640625
+      },
+      "q16Rows": {
+        "minimum": 2,
+        "median": 8,
+        "p95": 32,
+        "p99": 58,
+        "maximum": 104,
+        "mean": 11.693359375
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 36,
+        "median": 852,
+        "p95": 5160,
+        "p99": 9504,
+        "maximum": 17460,
+        "mean": 1508.82421875
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 24,
+        "median": 1488,
+        "p95": 9504,
+        "p99": 17664,
+        "maximum": 33192,
+        "mean": 2737.0078125
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.20444772611788617,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5512677793096361,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 27,
+      "blockSize": 4,
+      "staticBlockGates": 12565,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 66,
+        "p95": 430,
+        "p99": 820,
+        "maximum": 1525,
+        "mean": 123.1025390625
+      },
+      "q12Rows": {
+        "minimum": 4,
+        "median": 228,
+        "p95": 1476,
+        "p99": 2624,
+        "maximum": 5040,
+        "mean": 417.703125
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 17,
+        "p99": 33,
+        "maximum": 53,
+        "mean": 6.2431640625
+      },
+      "q16Rows": {
+        "minimum": 4,
+        "median": 16,
+        "p95": 56,
+        "p99": 104,
+        "maximum": 204,
+        "mean": 22.0625
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 72,
+        "median": 1584,
+        "p95": 9336,
+        "p99": 17424,
+        "maximum": 31200,
+        "mean": 2770.96875
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 48,
+        "median": 2736,
+        "p95": 17712,
+        "p99": 31488,
+        "maximum": 60480,
+        "mean": 5012.4375
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.37547002032520327,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5528186136984252,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 27,
+      "blockSize": 8,
+      "staticBlockGates": 6283,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 66,
+        "p95": 430,
+        "p99": 820,
+        "maximum": 1525,
+        "mean": 123.1025390625
+      },
+      "q12Rows": {
+        "minimum": 8,
+        "median": 416,
+        "p95": 2680,
+        "p99": 4552,
+        "maximum": 8552,
+        "mean": 744.0390625
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 17,
+        "p99": 33,
+        "maximum": 53,
+        "mean": 6.2431640625
+      },
+      "q16Rows": {
+        "minimum": 8,
+        "median": 24,
+        "p95": 104,
+        "p99": 184,
+        "maximum": 392,
+        "mean": 39.15625
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 144,
+        "median": 2832,
+        "p95": 16944,
+        "p99": 29568,
+        "maximum": 53472,
+        "mean": 4934.109375
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 96,
+        "median": 4992,
+        "p95": 32160,
+        "p99": 54624,
+        "maximum": 102624,
+        "mean": 8928.46875
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 0.668578506097561,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5526266052059599,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    },
+    {
+      "allowanceBucketsPerPrecision": 27,
+      "blockSize": 16,
+      "staticBlockGates": 3142,
+      "q10ActiveTokens": {
+        "minimum": 1,
+        "median": 66,
+        "p95": 430,
+        "p99": 820,
+        "maximum": 1525,
+        "mean": 123.1025390625
+      },
+      "q12Rows": {
+        "minimum": 16,
+        "median": 720,
+        "p95": 4656,
+        "p99": 8032,
+        "maximum": 14416,
+        "mean": 1305.40625
+      },
+      "q12ActiveTokens": {
+        "minimum": 1,
+        "median": 4,
+        "p95": 17,
+        "p99": 33,
+        "maximum": 53,
+        "mean": 6.2431640625
+      },
+      "q16Rows": {
+        "minimum": 16,
+        "median": 48,
+        "p95": 192,
+        "p99": 336,
+        "maximum": 784,
+        "mean": 74.5625
+      },
+      "progressiveDynamicGlyphs": {
+        "minimum": 288,
+        "median": 5088,
+        "p95": 29760,
+        "p99": 50592,
+        "maximum": 89952,
+        "mean": 8727.1875
+      },
+      "directQ10ToQ16ClosureGlyphs": {
+        "minimum": 192,
+        "median": 8640,
+        "p95": 55872,
+        "p99": 96384,
+        "maximum": 172992,
+        "mean": 15664.875
+      },
+      "serialExactRows": {
+        "minimum": 256,
+        "median": 512,
+        "p95": 1792,
+        "p99": 3584,
+        "maximum": 5888,
+        "mean": 615.0
+      },
+      "serialExactGlyphs": {
+        "minimum": 3072,
+        "median": 6144,
+        "p95": 21504,
+        "p99": 43008,
+        "maximum": 70656,
+        "mean": 7380.0
+      },
+      "meanDynamicGlyphRatioVersusSerialExact": 1.1825457317073171,
+      "meanDynamicGlyphRatioVersusDirectClosure": 0.5571182342661528,
+      "winnerRetainedStates": 1024,
+      "dependentPrecisionWaves": 2
+    }
+  ],
+  "seconds": 8.540775917004794
+}

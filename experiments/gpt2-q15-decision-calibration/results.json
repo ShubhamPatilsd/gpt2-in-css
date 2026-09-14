@@ -1,0 +1,205 @@
+{
+  "model": "openai-community/gpt2",
+  "modelArchitectureChanged": false,
+  "checkpointChanged": false,
+  "quantizedRepresentationCalibrated": true,
+  "scope": "two integer-code adjustments to the q15 output-head representation",
+  "states": 1024,
+  "productionInputRange": 266.2483969116211,
+  "scoreGain": 0.5082061049039431,
+  "q15Scale": 0.0001089639558333992,
+  "nearestQ15": {
+    "floatWinnerMatches": 1023,
+    "floatWinnerMismatchStates": [
+      547
+    ],
+    "roundedFloatBucketWinnerMatches": 1023,
+    "originalFloatWinnerMatchesAfterBucketing": 1022,
+    "originalFloatWinnerMismatchStatesAfterBucketing": [
+      493,
+      547
+    ],
+    "margins": {
+      "minimum": 0.00018946705364442096,
+      "median": 0.5648189939699506,
+      "p95": 3.229765180239937,
+      "maximum": 9.906492071504886,
+      "mean": 1.0660928291354643
+    }
+  },
+  "search": {
+    "singleCodeCandidatesThatCorrectMismatch": 4,
+    "candidatesPreservingAllFloatWinners": 4,
+    "candidates": [
+      {
+        "token": 15,
+        "dimension": 430,
+        "codeDelta": 1,
+        "oldCode": -2357,
+        "newCode": -2356,
+        "direction": "raise-desired",
+        "mismatchState": 547,
+        "nearestQ15Deficit": 0.009999256557520653,
+        "stateLogitImprovement": 0.016997142499672484,
+        "stateCorrectedMargin": 0.006997885942183757,
+        "floatWinnerMismatchStates": [],
+        "roundedFloatBucketWinnerMismatchStates": [],
+        "corpusLogitDeltaRms": 0.009748055703454453,
+        "corpusLogitDeltaMaximum": 0.02574804136761512
+      },
+      {
+        "token": 15,
+        "dimension": 496,
+        "codeDelta": 1,
+        "oldCode": -1887,
+        "newCode": -1886,
+        "direction": "raise-desired",
+        "mismatchState": 547,
+        "nearestQ15Deficit": 0.009999256557520653,
+        "stateLogitImprovement": 0.024722794414045964,
+        "stateCorrectedMargin": 0.014723537856568214,
+        "floatWinnerMismatchStates": [],
+        "roundedFloatBucketWinnerMismatchStates": [],
+        "corpusLogitDeltaRms": 0.01937204961433923,
+        "corpusLogitDeltaMaximum": 0.0287246219012071,
+        "radix128Digits": {
+          "old": {
+            "high": -14,
+            "residual": -95
+          },
+          "new": {
+            "high": -14,
+            "residual": -94
+          },
+          "highPlaneChanged": false
+        }
+      },
+      {
+        "token": 405,
+        "dimension": 430,
+        "codeDelta": -1,
+        "oldCode": -2353,
+        "newCode": -2354,
+        "direction": "lower-incumbent",
+        "mismatchState": 547,
+        "nearestQ15Deficit": 0.009999256557520653,
+        "stateLogitImprovement": 0.016997142499672484,
+        "stateCorrectedMargin": 0.006997885942197968,
+        "floatWinnerMismatchStates": [],
+        "roundedFloatBucketWinnerMismatchStates": [],
+        "corpusLogitDeltaRms": 0.009748055703454453,
+        "corpusLogitDeltaMaximum": 0.02574804136761512
+      },
+      {
+        "token": 405,
+        "dimension": 496,
+        "codeDelta": -1,
+        "oldCode": -1888,
+        "newCode": -1889,
+        "direction": "lower-incumbent",
+        "mismatchState": 547,
+        "nearestQ15Deficit": 0.009999256557520653,
+        "stateLogitImprovement": 0.024722794414045964,
+        "stateCorrectedMargin": 0.014723537856568214,
+        "floatWinnerMismatchStates": [],
+        "roundedFloatBucketWinnerMismatchStates": [],
+        "corpusLogitDeltaRms": 0.01937204961433923,
+        "corpusLogitDeltaMaximum": 0.0287246219012071
+      }
+    ]
+  },
+  "selectedCalibration": {
+    "token": 15,
+    "dimension": 496,
+    "codeDelta": 1,
+    "oldCode": -1887,
+    "newCode": -1886,
+    "direction": "raise-desired",
+    "mismatchState": 547,
+    "nearestQ15Deficit": 0.009999256557520653,
+    "stateLogitImprovement": 0.024722794414045964,
+    "stateCorrectedMargin": 0.014723537856568214,
+    "floatWinnerMismatchStates": [],
+    "roundedFloatBucketWinnerMismatchStates": [],
+    "corpusLogitDeltaRms": 0.01937204961433923,
+    "corpusLogitDeltaMaximum": 0.0287246219012071,
+    "radix128Digits": {
+      "old": {
+        "high": -14,
+        "residual": -95
+      },
+      "new": {
+        "high": -14,
+        "residual": -94
+      },
+      "highPlaneChanged": false
+    }
+  },
+  "productionBucketCalibration": {
+    "target": "global-q16 production buckets",
+    "initialMismatchStates": [
+      493
+    ],
+    "stateLocalCandidates": 6,
+    "fullVocabularyCandidatesVerified": 1,
+    "selectedCalibration": {
+      "token": 82,
+      "dimension": 36,
+      "codeDelta": 1,
+      "oldCode": -2913,
+      "newCode": -2912,
+      "direction": "raise-desired",
+      "mismatchState": 493,
+      "desiredToken": 82,
+      "incumbentToken": 17,
+      "corpusLogitDeltaRms": 0.007151807966630206,
+      "corpusLogitDeltaMaximum": 0.02055451923494095,
+      "radix128Digits": {
+        "old": {
+          "high": -22,
+          "residual": -97
+        },
+        "new": {
+          "high": -22,
+          "residual": -96
+        },
+        "highPlaneChanged": false
+      }
+    }
+  },
+  "calibratedQ15": {
+    "floatWinnerMatches": 1024,
+    "floatWinnerMismatchStates": [],
+    "roundedFloatBucketWinnerMatches": 1023,
+    "roundedFloatBucketWinnerMismatchStates": [
+      493
+    ],
+    "originalFloatWinnerMatchesAfterBucketing": 1024,
+    "originalFloatWinnerMismatchStatesAfterBucketing": [],
+    "globalQ16BucketMatches": 1024,
+    "globalQ16BucketMismatchStates": [],
+    "margins": {
+      "minimum": 0.00018946705364442096,
+      "median": 0.5648189939699506,
+      "p95": 3.229765180239937,
+      "maximum": 9.906492071504886,
+      "mean": 1.0662100857380972
+    },
+    "weightRmse": 3.146274820173476e-05,
+    "nearestQ15WeightRmse": 3.1462745370604e-05
+  },
+  "floatReference": {
+    "margins": {
+      "minimum": 0.0014978876472611091,
+      "median": 0.5690120464862964,
+      "p95": 3.2263634920069464,
+      "maximum": 9.924900612753788,
+      "mean": 1.0665636450478528
+    },
+    "originalFloatWinnerMatchesAfterBucketing": 1023,
+    "originalFloatWinnerMismatchStatesAfterBucketing": [
+      493
+    ]
+  },
+  "seconds": 7.11466200009454
+}

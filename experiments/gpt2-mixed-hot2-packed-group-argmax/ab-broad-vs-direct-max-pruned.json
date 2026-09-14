@@ -1,0 +1,1915 @@
+{
+  "experiment": "gpt2-mixed-hot2-packed-group-argmax",
+  "control": "gpt2-mixed-hot2-direct-outer-max-pruned",
+  "chromeVersion": "153.0.8010.36",
+  "rounds": 3,
+  "fixtureLimit": 10,
+  "semanticsPass": true,
+  "checksPassed": 30,
+  "checksTotal": 30,
+  "decision": "retain",
+  "comparison": {
+    "candidate": {
+      "count": 30,
+      "minimum": 1849.226708000002,
+      "median": 3065.2964999999967,
+      "p90": 3916.7492080000084,
+      "maximum": 4072.550042000017,
+      "mean": 3064.201284700002
+    },
+    "control": {
+      "count": 30,
+      "minimum": 1501.5547080000397,
+      "median": 3003.3648749999993,
+      "p90": 4755.573665999982,
+      "maximum": 5061.10812499997,
+      "mean": 3090.896769399998
+    },
+    "retainedMixedHot2": {
+      "count": 30,
+      "minimum": 1501.5547080000397,
+      "median": 3003.3648749999993,
+      "p90": 4755.573665999982,
+      "maximum": 5061.10812499997,
+      "mean": 3090.896769399998
+    },
+    "meanRatio": 0.9913631911087156,
+    "medianRatio": 1.0206207462554804,
+    "meanSpeedupPercent": 0.8636808891284375
+  },
+  "loads": {
+    "candidateMilliseconds": 57389.0965,
+    "controlMilliseconds": 50879.61570799999
+  },
+  "diagnostics": {
+    "pageErrors": [],
+    "requestFailures": [],
+    "httpErrors": []
+  },
+  "checks": [
+    {
+      "round": 0,
+      "fixture": 0,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 1,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 2,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 3,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 4,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 5,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 6,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 7,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 8,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 9,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 1,
+      "fixture": 0,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 1,
+      "fixture": 1,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 1,
+      "fixture": 2,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 1,
+      "fixture": 3,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 1,
+      "fixture": 4,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 1,
+      "fixture": 5,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 1,
+      "fixture": 6,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 1,
+      "fixture": 7,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 1,
+      "fixture": 8,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 1,
+      "fixture": 9,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 2,
+      "fixture": 0,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 2,
+      "fixture": 1,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 2,
+      "fixture": 2,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 2,
+      "fixture": 3,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 2,
+      "fixture": 4,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 2,
+      "fixture": 5,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 2,
+      "fixture": 6,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 2,
+      "fixture": 7,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 2,
+      "fixture": 8,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    },
+    {
+      "round": 2,
+      "fixture": 9,
+      "routeMatchesControl": true,
+      "routeMatchesGenerated": true,
+      "bucketMatchesControl": true,
+      "winnerMatchesControl": true,
+      "winnerMatchesOracle": true,
+      "pass": true
+    }
+  ],
+  "candidateSamples": [
+    {
+      "round": 0,
+      "fixture": 0,
+      "milliseconds": 2649.024166999996,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4946,
+            "fineWinner": 11,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 4946
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 1,
+      "milliseconds": 3916.7492080000084,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 5,
+            "fineBucket": 12440,
+            "fineWinner": 1351,
+            "bestBucket": 12440,
+            "bestWinner": 1351,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 12620,
+            "fineWinner": 477,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 0,
+            "fineBucket": 12552,
+            "fineWinner": 11,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 1
+          }
+        ],
+        "groups": [
+          5,
+          1,
+          0
+        ],
+        "finalWinner": 477,
+        "finalBucket": 12620
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 2,
+      "milliseconds": 2770.450542000006,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5137,
+            "fineWinner": 198,
+            "bestBucket": 5137,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5137
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 3,
+      "milliseconds": 3416.790500000003,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4577,
+            "fineWinner": 198,
+            "bestBucket": 4577,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4577
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 4,
+      "milliseconds": 2610.814584000007,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4440,
+            "fineWinner": 262,
+            "bestBucket": 4440,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4440
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 5,
+      "milliseconds": 2992.5464159999974,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5190,
+            "fineWinner": 198,
+            "bestBucket": 5190,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5190
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 6,
+      "milliseconds": 3269.006584000017,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4074,
+            "fineWinner": 262,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "fineBucket": 4036,
+            "fineWinner": 11,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1,
+          0
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4074
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 7,
+      "milliseconds": 3065.2964999999967,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4132,
+            "fineWinner": 198,
+            "bestBucket": 4132,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4132
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 8,
+      "milliseconds": 3353.395499999984,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5488,
+            "fineWinner": 13,
+            "bestBucket": 5488,
+            "bestWinner": 13,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 13,
+        "finalBucket": 5488
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 9,
+      "milliseconds": 3024.3162500000035,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5026,
+            "fineWinner": 11,
+            "bestBucket": 5026,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 5026
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 0,
+      "milliseconds": 3119.157583000022,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4946,
+            "fineWinner": 11,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 4946
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 1,
+      "milliseconds": 3608.7424579999933,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 5,
+            "fineBucket": 12440,
+            "fineWinner": 1351,
+            "bestBucket": 12440,
+            "bestWinner": 1351,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 12620,
+            "fineWinner": 477,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 0,
+            "fineBucket": 12552,
+            "fineWinner": 11,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 1
+          }
+        ],
+        "groups": [
+          5,
+          1,
+          0
+        ],
+        "finalWinner": 477,
+        "finalBucket": 12620
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 2,
+      "milliseconds": 2890.1583329999994,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5137,
+            "fineWinner": 198,
+            "bestBucket": 5137,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5137
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 3,
+      "milliseconds": 1849.226708000002,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4577,
+            "fineWinner": 198,
+            "bestBucket": 4577,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4577
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 4,
+      "milliseconds": 3672.2396249999874,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4440,
+            "fineWinner": 262,
+            "bestBucket": 4440,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4440
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 5,
+      "milliseconds": 3677.8154159999976,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5190,
+            "fineWinner": 198,
+            "bestBucket": 5190,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5190
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 6,
+      "milliseconds": 3480.3226250000007,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4074,
+            "fineWinner": 262,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "fineBucket": 4036,
+            "fineWinner": 11,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1,
+          0
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4074
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 7,
+      "milliseconds": 2694.781958000007,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4132,
+            "fineWinner": 198,
+            "bestBucket": 4132,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4132
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 8,
+      "milliseconds": 2581.9299579999933,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5488,
+            "fineWinner": 13,
+            "bestBucket": 5488,
+            "bestWinner": 13,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 13,
+        "finalBucket": 5488
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 9,
+      "milliseconds": 1927.3104999999923,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5026,
+            "fineWinner": 11,
+            "bestBucket": 5026,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 5026
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 0,
+      "milliseconds": 3549.5336670000106,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4946,
+            "fineWinner": 11,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 4946
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 1,
+      "milliseconds": 4072.550042000017,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 5,
+            "fineBucket": 12440,
+            "fineWinner": 1351,
+            "bestBucket": 12440,
+            "bestWinner": 1351,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 12620,
+            "fineWinner": 477,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 0,
+            "fineBucket": 12552,
+            "fineWinner": 11,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 1
+          }
+        ],
+        "groups": [
+          5,
+          1,
+          0
+        ],
+        "finalWinner": 477,
+        "finalBucket": 12620
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 2,
+      "milliseconds": 2945.495708000002,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5137,
+            "fineWinner": 198,
+            "bestBucket": 5137,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5137
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 3,
+      "milliseconds": 3385.438792000001,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4577,
+            "fineWinner": 198,
+            "bestBucket": 4577,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4577
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 4,
+      "milliseconds": 1940.685792000033,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4440,
+            "fineWinner": 262,
+            "bestBucket": 4440,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4440
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 5,
+      "milliseconds": 2414.628583999991,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5190,
+            "fineWinner": 198,
+            "bestBucket": 5190,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5190
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 6,
+      "milliseconds": 3960.820833000005,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4074,
+            "fineWinner": 262,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "fineBucket": 4036,
+            "fineWinner": 11,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1,
+          0
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4074
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 7,
+      "milliseconds": 3020.268166999973,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4132,
+            "fineWinner": 198,
+            "bestBucket": 4132,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4132
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 8,
+      "milliseconds": 2735.2439160000067,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5488,
+            "fineWinner": 13,
+            "bestBucket": 5488,
+            "bestWinner": 13,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 13,
+        "finalBucket": 5488
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 9,
+      "milliseconds": 3331.2976250000065,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5026,
+            "fineWinner": 11,
+            "bestBucket": 5026,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 5026
+      }
+    }
+  ],
+  "controlSamples": [
+    {
+      "round": 0,
+      "fixture": 0,
+      "milliseconds": 2531.565834000008,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4946,
+            "fineWinner": 11,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 4946
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 1,
+      "milliseconds": 3628.4123339999933,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 5,
+            "fineBucket": 12440,
+            "fineWinner": 1351,
+            "bestBucket": 12440,
+            "bestWinner": 1351,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 12620,
+            "fineWinner": 477,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 0,
+            "fineBucket": 12552,
+            "fineWinner": 11,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 1
+          }
+        ],
+        "groups": [
+          5,
+          1,
+          0
+        ],
+        "finalWinner": 477,
+        "finalBucket": 12620
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 2,
+      "milliseconds": 2889.489082999993,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5137,
+            "fineWinner": 198,
+            "bestBucket": 5137,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5137
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 3,
+      "milliseconds": 2594.420416000008,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4577,
+            "fineWinner": 198,
+            "bestBucket": 4577,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4577
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 4,
+      "milliseconds": 3193.212041999999,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4440,
+            "fineWinner": 262,
+            "bestBucket": 4440,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4440
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 5,
+      "milliseconds": 2675.1152090000105,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5190,
+            "fineWinner": 198,
+            "bestBucket": 5190,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5190
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 6,
+      "milliseconds": 5027.487334000005,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4074,
+            "fineWinner": 262,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "fineBucket": 4036,
+            "fineWinner": 11,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1,
+          0
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4074
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 7,
+      "milliseconds": 3194.858082999999,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4132,
+            "fineWinner": 198,
+            "bestBucket": 4132,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4132
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 8,
+      "milliseconds": 3321.0110410000198,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5488,
+            "fineWinner": 13,
+            "bestBucket": 5488,
+            "bestWinner": 13,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 13,
+        "finalBucket": 5488
+      }
+    },
+    {
+      "round": 0,
+      "fixture": 9,
+      "milliseconds": 2710.904125000001,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5026,
+            "fineWinner": 11,
+            "bestBucket": 5026,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 5026
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 0,
+      "milliseconds": 3050.1828749999986,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4946,
+            "fineWinner": 11,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 4946
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 1,
+      "milliseconds": 3003.3648749999993,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 5,
+            "fineBucket": 12440,
+            "fineWinner": 1351,
+            "bestBucket": 12440,
+            "bestWinner": 1351,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 12620,
+            "fineWinner": 477,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 0,
+            "fineBucket": 12552,
+            "fineWinner": 11,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 1
+          }
+        ],
+        "groups": [
+          5,
+          1,
+          0
+        ],
+        "finalWinner": 477,
+        "finalBucket": 12620
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 2,
+      "milliseconds": 3262.9003749999974,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5137,
+            "fineWinner": 198,
+            "bestBucket": 5137,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5137
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 3,
+      "milliseconds": 2805.2697500000068,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4577,
+            "fineWinner": 198,
+            "bestBucket": 4577,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4577
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 4,
+      "milliseconds": 2593.2235420000216,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4440,
+            "fineWinner": 262,
+            "bestBucket": 4440,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4440
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 5,
+      "milliseconds": 3110.617540999985,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5190,
+            "fineWinner": 198,
+            "bestBucket": 5190,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5190
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 6,
+      "milliseconds": 2976.3727089999884,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4074,
+            "fineWinner": 262,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "fineBucket": 4036,
+            "fineWinner": 11,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1,
+          0
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4074
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 7,
+      "milliseconds": 1891.1299160000053,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4132,
+            "fineWinner": 198,
+            "bestBucket": 4132,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4132
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 8,
+      "milliseconds": 3628.534458000009,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5488,
+            "fineWinner": 13,
+            "bestBucket": 5488,
+            "bestWinner": 13,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 13,
+        "finalBucket": 5488
+      }
+    },
+    {
+      "round": 1,
+      "fixture": 9,
+      "milliseconds": 2942.1646670000046,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5026,
+            "fineWinner": 11,
+            "bestBucket": 5026,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 5026
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 0,
+      "milliseconds": 3873.4196250000095,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4946,
+            "fineWinner": 11,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 4946
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 1,
+      "milliseconds": 3671.6264579999843,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 5,
+            "fineBucket": 12440,
+            "fineWinner": 1351,
+            "bestBucket": 12440,
+            "bestWinner": 1351,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 12620,
+            "fineWinner": 477,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 0,
+            "fineBucket": 12552,
+            "fineWinner": 11,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "done": 1
+          }
+        ],
+        "groups": [
+          5,
+          1,
+          0
+        ],
+        "finalWinner": 477,
+        "finalBucket": 12620
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 2,
+      "milliseconds": 2044.1054169999843,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5137,
+            "fineWinner": 198,
+            "bestBucket": 5137,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5137
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 3,
+      "milliseconds": 1922.7634580000013,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4577,
+            "fineWinner": 198,
+            "bestBucket": 4577,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4577
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 4,
+      "milliseconds": 4755.573665999982,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4440,
+            "fineWinner": 262,
+            "bestBucket": 4440,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4440
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 5,
+      "milliseconds": 5061.10812499997,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5190,
+            "fineWinner": 198,
+            "bestBucket": 5190,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 5190
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 6,
+      "milliseconds": 4075.574957999983,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4074,
+            "fineWinner": 262,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "fineBucket": 4036,
+            "fineWinner": 11,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "done": 1
+          }
+        ],
+        "groups": [
+          1,
+          0
+        ],
+        "finalWinner": 262,
+        "finalBucket": 4074
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 7,
+      "milliseconds": 2821.302457999962,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4132,
+            "fineWinner": 198,
+            "bestBucket": 4132,
+            "bestWinner": 198,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 198,
+        "finalBucket": 4132
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 8,
+      "milliseconds": 1969.6379999999772,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5488,
+            "fineWinner": 13,
+            "bestBucket": 5488,
+            "bestWinner": 13,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 13,
+        "finalBucket": 5488
+      }
+    },
+    {
+      "round": 2,
+      "fixture": 9,
+      "milliseconds": 1501.5547080000397,
+      "output": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5026,
+            "fineWinner": 11,
+            "bestBucket": 5026,
+            "bestWinner": 11,
+            "done": 1
+          }
+        ],
+        "groups": [
+          0
+        ],
+        "finalWinner": 11,
+        "finalBucket": 5026
+      }
+    }
+  ]
+}

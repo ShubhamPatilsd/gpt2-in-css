@@ -1,0 +1,7226 @@
+{
+  "model": "openai-community/gpt2",
+  "vocabularyRows": 50257,
+  "weightsChanged": false,
+  "architectureChanged": false,
+  "corpus": {
+    "states": 1024,
+    "path": "experiments/gpt2-supervised-group-router/states.npz",
+    "hiddenSha256": "10a2ae6579d995c6036008e67617950e4ba4bd8f5c789e5d844de360adbb74e3",
+    "split": {
+      "train": 512,
+      "validation": 256,
+      "test": 256
+    }
+  },
+  "oracle": {
+    "method": "float32 hidden @ unchanged float32 wte.weight.T",
+    "savedWinnerMatches": 1024,
+    "savedWinnerFraction": 1.0,
+    "minimumTop1Margin": 0.000701904296875,
+    "winnerSha256": "0e6cb4dda9fb5bea32941800f16563c487951ff222c0a99327ece72e1076f2f1"
+  },
+  "standardHnsw": {
+    "available": true,
+    "library": "hnswlib",
+    "version": "0.8.0",
+    "distance": "space=ip (1 - raw inner product)",
+    "distanceEvaluationCountsAvailable": false,
+    "fixedHopTraceAvailable": false,
+    "parallelConstructionMayNotBeBitDeterministic": true,
+    "selectionRule": "highest validation recall; ties choose lower efSearch then lower M; test recall is not used for selection",
+    "validationSelected": {
+      "space": "ip",
+      "M": 32,
+      "efConstruction": 200,
+      "efSearch": 1024,
+      "randomSeed": 20260914,
+      "threads": 8,
+      "buildSeconds": 39.67518999997992,
+      "querySecondsFor1024": 1.0878042080439627,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 511,
+          "top1Recall": 0.998046875
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 256,
+          "top1Recall": 1.0
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 254,
+          "top1Recall": 0.9921875
+        }
+      },
+      "uniqueScoredRows": null
+    },
+    "configurations": [
+      {
+        "space": "ip",
+        "M": 16,
+        "efConstruction": 100,
+        "efSearch": 16,
+        "randomSeed": 20260914,
+        "threads": 8,
+        "buildSeconds": 15.09684966597706,
+        "querySecondsFor1024": 0.0343711250461638,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 389,
+            "top1Recall": 0.759765625
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 198,
+            "top1Recall": 0.7734375
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 186,
+            "top1Recall": 0.7265625
+          }
+        },
+        "uniqueScoredRows": null
+      },
+      {
+        "space": "ip",
+        "M": 16,
+        "efConstruction": 100,
+        "efSearch": 32,
+        "randomSeed": 20260914,
+        "threads": 8,
+        "buildSeconds": 15.09684966597706,
+        "querySecondsFor1024": 0.05042350001167506,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 444,
+            "top1Recall": 0.8671875
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 226,
+            "top1Recall": 0.8828125
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 216,
+            "top1Recall": 0.84375
+          }
+        },
+        "uniqueScoredRows": null
+      },
+      {
+        "space": "ip",
+        "M": 16,
+        "efConstruction": 100,
+        "efSearch": 64,
+        "randomSeed": 20260914,
+        "threads": 8,
+        "buildSeconds": 15.09684966597706,
+        "querySecondsFor1024": 0.08283333398867399,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 476,
+            "top1Recall": 0.9296875
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 243,
+            "top1Recall": 0.94921875
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 236,
+            "top1Recall": 0.921875
+          }
+        },
+        "uniqueScoredRows": null
+      },
+      {
+        "space": "ip",
+        "M": 16,
+        "efConstruction": 100,
+        "efSearch": 128,
+        "randomSeed": 20260914,
+        "threads": 8,
+        "buildSeconds": 15.09684966597706,
+        "querySecondsFor1024": 0.15268391696736217,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 494,
+            "top1Recall": 0.96484375
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 250,
+            "top1Recall": 0.9765625
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 242,
+            "top1Recall": 0.9453125
+          }
+        },
+        "uniqueScoredRows": null
+      },
+      {
+        "space": "ip",
+        "M": 16,
+        "efConstruction": 100,
+        "efSearch": 256,
+        "randomSeed": 20260914,
+        "threads": 8,
+        "buildSeconds": 15.09684966597706,
+        "querySecondsFor1024": 0.255139583023265,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 501,
+            "top1Recall": 0.978515625
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 253,
+            "top1Recall": 0.98828125
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 245,
+            "top1Recall": 0.95703125
+          }
+        },
+        "uniqueScoredRows": null
+      },
+      {
+        "space": "ip",
+        "M": 16,
+        "efConstruction": 100,
+        "efSearch": 512,
+        "randomSeed": 20260914,
+        "threads": 8,
+        "buildSeconds": 15.09684966597706,
+        "querySecondsFor1024": 0.4627804580377415,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 503,
+            "top1Recall": 0.982421875
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 254,
+            "top1Recall": 0.9921875
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 248,
+            "top1Recall": 0.96875
+          }
+        },
+        "uniqueScoredRows": null
+      },
+      {
+        "space": "ip",
+        "M": 32,
+        "efConstruction": 200,
+        "efSearch": 128,
+        "randomSeed": 20260914,
+        "threads": 8,
+        "buildSeconds": 39.67518999997992,
+        "querySecondsFor1024": 0.20290862501133233,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 503,
+            "top1Recall": 0.982421875
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 250,
+            "top1Recall": 0.9765625
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 244,
+            "top1Recall": 0.953125
+          }
+        },
+        "uniqueScoredRows": null
+      },
+      {
+        "space": "ip",
+        "M": 32,
+        "efConstruction": 200,
+        "efSearch": 256,
+        "randomSeed": 20260914,
+        "threads": 8,
+        "buildSeconds": 39.67518999997992,
+        "querySecondsFor1024": 0.36182387499138713,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 510,
+            "top1Recall": 0.99609375
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 254,
+            "top1Recall": 0.9921875
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 250,
+            "top1Recall": 0.9765625
+          }
+        },
+        "uniqueScoredRows": null
+      },
+      {
+        "space": "ip",
+        "M": 32,
+        "efConstruction": 200,
+        "efSearch": 512,
+        "randomSeed": 20260914,
+        "threads": 8,
+        "buildSeconds": 39.67518999997992,
+        "querySecondsFor1024": 0.645439583924599,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 511,
+            "top1Recall": 0.998046875
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 255,
+            "top1Recall": 0.99609375
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 253,
+            "top1Recall": 0.98828125
+          }
+        },
+        "uniqueScoredRows": null
+      },
+      {
+        "space": "ip",
+        "M": 32,
+        "efConstruction": 200,
+        "efSearch": 1024,
+        "randomSeed": 20260914,
+        "threads": 8,
+        "buildSeconds": 39.67518999997992,
+        "querySecondsFor1024": 1.0878042080439627,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 511,
+            "top1Recall": 0.998046875
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 256,
+            "top1Recall": 1.0
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 254,
+            "top1Recall": 0.9921875
+          }
+        },
+        "uniqueScoredRows": null
+      }
+    ]
+  },
+  "graph": {
+    "implementation": "deterministic partitioned kNN navigable graph",
+    "externalAnnLibraryUsed": false,
+    "metrics": [
+      "cosine",
+      "inner-product"
+    ],
+    "mipsFaithfulMetric": "inner-product",
+    "partitions": 256,
+    "entryRows": 256,
+    "localNeighborCapacity": 64,
+    "runtimeScoresOnlyOriginalVocabularyRows": true,
+    "weightsSha256": "e182e433b37dbdb47448e0413c840edf6965113c1fc8048c63b69795d8cf875a",
+    "labelsSha256": "f203b5d4f4f0491e06dfa850431ce36a83d7997164c7104fbc884bc4c3d863dc"
+  },
+  "selection": {
+    "tieBreak": "fewer validation mean rows, then smaller degree/beam/hops",
+    "fixedRule": "highest validation recall with theoretical fixed score cap <= 2048",
+    "selectedByValidationUnderFixed2048": {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 354,
+          "top1Recall": 0.69140625,
+          "uniqueScoredRows": {
+            "mean": 748.537109375,
+            "p95": 879.0,
+            "maximum": 1034,
+            "minimum": 497
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 197,
+          "top1Recall": 0.76953125,
+          "uniqueScoredRows": {
+            "mean": 747.91796875,
+            "p95": 878.0,
+            "maximum": 1010,
+            "minimum": 585
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 191,
+          "top1Recall": 0.74609375,
+          "uniqueScoredRows": {
+            "mean": 741.0078125,
+            "p95": 879.0,
+            "maximum": 1027,
+            "minimum": 545
+          }
+        }
+      }
+    },
+    "meanRule": "highest validation recall with validation mean unique rows <= 2000",
+    "selectedByValidationUnderMean2000": {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 32,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 438,
+          "top1Recall": 0.85546875,
+          "uniqueScoredRows": {
+            "mean": 1906.830078125,
+            "p95": 2386.0,
+            "maximum": 2801,
+            "minimum": 1108
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 228,
+          "top1Recall": 0.890625,
+          "uniqueScoredRows": {
+            "mean": 1908.9375,
+            "p95": 2367.0,
+            "maximum": 2911,
+            "minimum": 1133
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 222,
+          "top1Recall": 0.8671875,
+          "uniqueScoredRows": {
+            "mean": 1913.4765625,
+            "p95": 2329.0,
+            "maximum": 2697,
+            "minimum": 1093
+          }
+        }
+      }
+    }
+  },
+  "verdict": {
+    "criterion": "held-out top-1 recall >= 0.99 under fixed cap <= 2048 or mean unique rows <= 2000",
+    "go": false,
+    "fixedCapGo": false,
+    "meanBudgetGo": false,
+    "reason": "Neither validation-selected budget point reaches at least 99% held-out top-1 recall under the fixed 2,048-score or 2,000 mean unique-row screen."
+  },
+  "metricComparisons": {
+    "cosine": {
+      "selectedByValidationUnderFixed2048": {
+        "graphMetric": "cosine",
+        "degree": 16,
+        "beam": 16,
+        "hops": 6,
+        "theoreticalMaximumScoredRows": 1792,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 354,
+            "top1Recall": 0.69140625,
+            "uniqueScoredRows": {
+              "mean": 736.494140625,
+              "p95": 899.0,
+              "maximum": 995,
+              "minimum": 529
+            }
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 183,
+            "top1Recall": 0.71484375,
+            "uniqueScoredRows": {
+              "mean": 734.796875,
+              "p95": 885.0,
+              "maximum": 976,
+              "minimum": 552
+            }
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 185,
+            "top1Recall": 0.72265625,
+            "uniqueScoredRows": {
+              "mean": 732.45703125,
+              "p95": 880.0,
+              "maximum": 985,
+              "minimum": 532
+            }
+          }
+        }
+      },
+      "selectedByValidationUnderMean2000": {
+        "graphMetric": "cosine",
+        "degree": 32,
+        "beam": 32,
+        "hops": 8,
+        "theoreticalMaximumScoredRows": 8448,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 438,
+            "top1Recall": 0.85546875,
+            "uniqueScoredRows": {
+              "mean": 1906.830078125,
+              "p95": 2386.0,
+              "maximum": 2801,
+              "minimum": 1108
+            }
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 228,
+            "top1Recall": 0.890625,
+            "uniqueScoredRows": {
+              "mean": 1908.9375,
+              "p95": 2367.0,
+              "maximum": 2911,
+              "minimum": 1133
+            }
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 222,
+            "top1Recall": 0.8671875,
+            "uniqueScoredRows": {
+              "mean": 1913.4765625,
+              "p95": 2329.0,
+              "maximum": 2697,
+              "minimum": 1093
+            }
+          }
+        }
+      },
+      "highestValidationRecallTested": {
+        "graphMetric": "cosine",
+        "degree": 64,
+        "beam": 32,
+        "hops": 4,
+        "theoreticalMaximumScoredRows": 8448,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 439,
+            "top1Recall": 0.857421875,
+            "uniqueScoredRows": {
+              "mean": 2096.783203125,
+              "p95": 2549.0,
+              "maximum": 2786,
+              "minimum": 1373
+            }
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 230,
+            "top1Recall": 0.8984375,
+            "uniqueScoredRows": {
+              "mean": 2110.37109375,
+              "p95": 2572.0,
+              "maximum": 2905,
+              "minimum": 1619
+            }
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 229,
+            "top1Recall": 0.89453125,
+            "uniqueScoredRows": {
+              "mean": 2099.04296875,
+              "p95": 2564.0,
+              "maximum": 2850,
+              "minimum": 1486
+            }
+          }
+        }
+      }
+    },
+    "inner-product": {
+      "selectedByValidationUnderFixed2048": {
+        "graphMetric": "inner-product",
+        "degree": 16,
+        "beam": 16,
+        "hops": 6,
+        "theoreticalMaximumScoredRows": 1792,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 354,
+            "top1Recall": 0.69140625,
+            "uniqueScoredRows": {
+              "mean": 748.537109375,
+              "p95": 879.0,
+              "maximum": 1034,
+              "minimum": 497
+            }
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 197,
+            "top1Recall": 0.76953125,
+            "uniqueScoredRows": {
+              "mean": 747.91796875,
+              "p95": 878.0,
+              "maximum": 1010,
+              "minimum": 585
+            }
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 191,
+            "top1Recall": 0.74609375,
+            "uniqueScoredRows": {
+              "mean": 741.0078125,
+              "p95": 879.0,
+              "maximum": 1027,
+              "minimum": 545
+            }
+          }
+        }
+      },
+      "selectedByValidationUnderMean2000": {
+        "graphMetric": "inner-product",
+        "degree": 16,
+        "beam": 32,
+        "hops": 16,
+        "theoreticalMaximumScoredRows": 8448,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 436,
+            "top1Recall": 0.8515625,
+            "uniqueScoredRows": {
+              "mean": 1944.134765625,
+              "p95": 2285.0,
+              "maximum": 2598,
+              "minimum": 1278
+            }
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 227,
+            "top1Recall": 0.88671875,
+            "uniqueScoredRows": {
+              "mean": 1958.42578125,
+              "p95": 2318.0,
+              "maximum": 2771,
+              "minimum": 1415
+            }
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 222,
+            "top1Recall": 0.8671875,
+            "uniqueScoredRows": {
+              "mean": 1923.875,
+              "p95": 2245.0,
+              "maximum": 2627,
+              "minimum": 1264
+            }
+          }
+        }
+      },
+      "highestValidationRecallTested": {
+        "graphMetric": "inner-product",
+        "degree": 64,
+        "beam": 32,
+        "hops": 4,
+        "theoreticalMaximumScoredRows": 8448,
+        "splits": {
+          "train": {
+            "samples": 512,
+            "top1Matches": 443,
+            "top1Recall": 0.865234375,
+            "uniqueScoredRows": {
+              "mean": 2138.556640625,
+              "p95": 2565.0,
+              "maximum": 2763,
+              "minimum": 1353
+            }
+          },
+          "validation": {
+            "samples": 256,
+            "top1Matches": 231,
+            "top1Recall": 0.90234375,
+            "uniqueScoredRows": {
+              "mean": 2153.31640625,
+              "p95": 2568.0,
+              "maximum": 3124,
+              "minimum": 1401
+            }
+          },
+          "test": {
+            "samples": 256,
+            "top1Matches": 226,
+            "top1Recall": 0.8828125,
+            "uniqueScoredRows": {
+              "mean": 2148.1484375,
+              "p95": 2571.0,
+              "maximum": 2822,
+              "minimum": 1606
+            }
+          }
+        }
+      }
+    }
+  },
+  "validationParetoFrontier": [
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 4,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 384,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 62,
+          "top1Recall": 0.12109375,
+          "uniqueScoredRows": {
+            "mean": 316.68359375,
+            "p95": 329.0,
+            "maximum": 339,
+            "minimum": 282
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 32,
+          "top1Recall": 0.125,
+          "uniqueScoredRows": {
+            "mean": 317.1328125,
+            "p95": 330.0,
+            "maximum": 337,
+            "minimum": 282
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 40,
+          "top1Recall": 0.15625,
+          "uniqueScoredRows": {
+            "mean": 316.23046875,
+            "p95": 328.0,
+            "maximum": 331,
+            "minimum": 284
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 4,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 384,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 109,
+          "top1Recall": 0.212890625,
+          "uniqueScoredRows": {
+            "mean": 317.943359375,
+            "p95": 328.0,
+            "maximum": 337,
+            "minimum": 282
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 60,
+          "top1Recall": 0.234375,
+          "uniqueScoredRows": {
+            "mean": 318.7109375,
+            "p95": 330.0,
+            "maximum": 340,
+            "minimum": 282
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 62,
+          "top1Recall": 0.2421875,
+          "uniqueScoredRows": {
+            "mean": 317.96484375,
+            "p95": 329.0,
+            "maximum": 339,
+            "minimum": 284
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 4,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 512,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 184,
+          "top1Recall": 0.359375,
+          "uniqueScoredRows": {
+            "mean": 359.892578125,
+            "p95": 396.0,
+            "maximum": 422,
+            "minimum": 298
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 97,
+          "top1Recall": 0.37890625,
+          "uniqueScoredRows": {
+            "mean": 361.71875,
+            "p95": 400.0,
+            "maximum": 411,
+            "minimum": 310
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 97,
+          "top1Recall": 0.37890625,
+          "uniqueScoredRows": {
+            "mean": 359.69140625,
+            "p95": 397.0,
+            "maximum": 414,
+            "minimum": 311
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 4,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 512,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 192,
+          "top1Recall": 0.375,
+          "uniqueScoredRows": {
+            "mean": 363.732421875,
+            "p95": 396.0,
+            "maximum": 434,
+            "minimum": 298
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 110,
+          "top1Recall": 0.4296875,
+          "uniqueScoredRows": {
+            "mean": 366.7578125,
+            "p95": 402.0,
+            "maximum": 419,
+            "minimum": 305
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 105,
+          "top1Recall": 0.41015625,
+          "uniqueScoredRows": {
+            "mean": 363.3828125,
+            "p95": 397.0,
+            "maximum": 427,
+            "minimum": 308
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 4,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 640,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 225,
+          "top1Recall": 0.439453125,
+          "uniqueScoredRows": {
+            "mean": 404.673828125,
+            "p95": 461.0,
+            "maximum": 488,
+            "minimum": 315
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 131,
+          "top1Recall": 0.51171875,
+          "uniqueScoredRows": {
+            "mean": 408.140625,
+            "p95": 464.0,
+            "maximum": 500,
+            "minimum": 319
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 123,
+          "top1Recall": 0.48046875,
+          "uniqueScoredRows": {
+            "mean": 402.765625,
+            "p95": 460.0,
+            "maximum": 499,
+            "minimum": 320
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 4,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 247,
+          "top1Recall": 0.482421875,
+          "uniqueScoredRows": {
+            "mean": 442.892578125,
+            "p95": 520.0,
+            "maximum": 550,
+            "minimum": 326
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 139,
+          "top1Recall": 0.54296875,
+          "uniqueScoredRows": {
+            "mean": 444.6875,
+            "p95": 524.0,
+            "maximum": 563,
+            "minimum": 326
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 137,
+          "top1Recall": 0.53515625,
+          "uniqueScoredRows": {
+            "mean": 439.44140625,
+            "p95": 520.0,
+            "maximum": 570,
+            "minimum": 344
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 8,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 258,
+          "top1Recall": 0.50390625,
+          "uniqueScoredRows": {
+            "mean": 448.63671875,
+            "p95": 508.0,
+            "maximum": 554,
+            "minimum": 366
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 141,
+          "top1Recall": 0.55078125,
+          "uniqueScoredRows": {
+            "mean": 449.71484375,
+            "p95": 504.0,
+            "maximum": 545,
+            "minimum": 327
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 133,
+          "top1Recall": 0.51953125,
+          "uniqueScoredRows": {
+            "mean": 450.44140625,
+            "p95": 513.0,
+            "maximum": 543,
+            "minimum": 374
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 8,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 267,
+          "top1Recall": 0.521484375,
+          "uniqueScoredRows": {
+            "mean": 458.392578125,
+            "p95": 511.0,
+            "maximum": 560,
+            "minimum": 358
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 148,
+          "top1Recall": 0.578125,
+          "uniqueScoredRows": {
+            "mean": 458.625,
+            "p95": 506.0,
+            "maximum": 547,
+            "minimum": 327
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 140,
+          "top1Recall": 0.546875,
+          "uniqueScoredRows": {
+            "mean": 457.93359375,
+            "p95": 507.0,
+            "maximum": 574,
+            "minimum": 352
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 8,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1024,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 281,
+          "top1Recall": 0.548828125,
+          "uniqueScoredRows": {
+            "mean": 509.513671875,
+            "p95": 622.0,
+            "maximum": 679,
+            "minimum": 376
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 152,
+          "top1Recall": 0.59375,
+          "uniqueScoredRows": {
+            "mean": 511.8203125,
+            "p95": 616.0,
+            "maximum": 693,
+            "minimum": 385
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 143,
+          "top1Recall": 0.55859375,
+          "uniqueScoredRows": {
+            "mean": 510.2421875,
+            "p95": 641.0,
+            "maximum": 677,
+            "minimum": 401
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 8,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1024,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 295,
+          "top1Recall": 0.576171875,
+          "uniqueScoredRows": {
+            "mean": 526.712890625,
+            "p95": 612.0,
+            "maximum": 671,
+            "minimum": 370
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 167,
+          "top1Recall": 0.65234375,
+          "uniqueScoredRows": {
+            "mean": 526.55859375,
+            "p95": 601.0,
+            "maximum": 680,
+            "minimum": 370
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 158,
+          "top1Recall": 0.6171875,
+          "uniqueScoredRows": {
+            "mean": 526.8359375,
+            "p95": 623.0,
+            "maximum": 706,
+            "minimum": 406
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 8,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 308,
+          "top1Recall": 0.6015625,
+          "uniqueScoredRows": {
+            "mean": 585.630859375,
+            "p95": 705.0,
+            "maximum": 796,
+            "minimum": 383
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 171,
+          "top1Recall": 0.66796875,
+          "uniqueScoredRows": {
+            "mean": 584.1796875,
+            "p95": 704.0,
+            "maximum": 792,
+            "minimum": 443
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 165,
+          "top1Recall": 0.64453125,
+          "uniqueScoredRows": {
+            "mean": 586.52734375,
+            "p95": 719.0,
+            "maximum": 801,
+            "minimum": 415
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 16,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 312,
+          "top1Recall": 0.609375,
+          "uniqueScoredRows": {
+            "mean": 629.45703125,
+            "p95": 711.0,
+            "maximum": 787,
+            "minimum": 488
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 172,
+          "top1Recall": 0.671875,
+          "uniqueScoredRows": {
+            "mean": 627.41015625,
+            "p95": 704.0,
+            "maximum": 740,
+            "minimum": 471
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 163,
+          "top1Recall": 0.63671875,
+          "uniqueScoredRows": {
+            "mean": 627.3984375,
+            "p95": 714.0,
+            "maximum": 787,
+            "minimum": 511
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 320,
+          "top1Recall": 0.625,
+          "uniqueScoredRows": {
+            "mean": 638.35546875,
+            "p95": 713.0,
+            "maximum": 786,
+            "minimum": 496
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 180,
+          "top1Recall": 0.703125,
+          "uniqueScoredRows": {
+            "mean": 639.18359375,
+            "p95": 719.0,
+            "maximum": 782,
+            "minimum": 520
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 171,
+          "top1Recall": 0.66796875,
+          "uniqueScoredRows": {
+            "mean": 635.9453125,
+            "p95": 722.0,
+            "maximum": 810,
+            "minimum": 505
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 16,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 354,
+          "top1Recall": 0.69140625,
+          "uniqueScoredRows": {
+            "mean": 736.494140625,
+            "p95": 899.0,
+            "maximum": 995,
+            "minimum": 529
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 183,
+          "top1Recall": 0.71484375,
+          "uniqueScoredRows": {
+            "mean": 734.796875,
+            "p95": 885.0,
+            "maximum": 976,
+            "minimum": 552
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 185,
+          "top1Recall": 0.72265625,
+          "uniqueScoredRows": {
+            "mean": 732.45703125,
+            "p95": 880.0,
+            "maximum": 985,
+            "minimum": 532
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 354,
+          "top1Recall": 0.69140625,
+          "uniqueScoredRows": {
+            "mean": 748.537109375,
+            "p95": 879.0,
+            "maximum": 1034,
+            "minimum": 497
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 197,
+          "top1Recall": 0.76953125,
+          "uniqueScoredRows": {
+            "mean": 747.91796875,
+            "p95": 878.0,
+            "maximum": 1010,
+            "minimum": 585
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 191,
+          "top1Recall": 0.74609375,
+          "uniqueScoredRows": {
+            "mean": 741.0078125,
+            "p95": 879.0,
+            "maximum": 1027,
+            "minimum": 545
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 372,
+          "top1Recall": 0.7265625,
+          "uniqueScoredRows": {
+            "mean": 842.05859375,
+            "p95": 1035.0,
+            "maximum": 1228,
+            "minimum": 556
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 201,
+          "top1Recall": 0.78515625,
+          "uniqueScoredRows": {
+            "mean": 840.91015625,
+            "p95": 1008.0,
+            "maximum": 1185,
+            "minimum": 604
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 198,
+          "top1Recall": 0.7734375,
+          "uniqueScoredRows": {
+            "mean": 833.015625,
+            "p95": 1013.0,
+            "maximum": 1227,
+            "minimum": 613
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 382,
+          "top1Recall": 0.74609375,
+          "uniqueScoredRows": {
+            "mean": 1009.42578125,
+            "p95": 1271.0,
+            "maximum": 1495,
+            "minimum": 643
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 209,
+          "top1Recall": 0.81640625,
+          "uniqueScoredRows": {
+            "mean": 1006.91796875,
+            "p95": 1288.0,
+            "maximum": 1508,
+            "minimum": 614
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 204,
+          "top1Recall": 0.796875,
+          "uniqueScoredRows": {
+            "mean": 1000.15625,
+            "p95": 1244.0,
+            "maximum": 1531,
+            "minimum": 637
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 394,
+          "top1Recall": 0.76953125,
+          "uniqueScoredRows": {
+            "mean": 1169.158203125,
+            "p95": 1466.0,
+            "maximum": 1701,
+            "minimum": 753
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 211,
+          "top1Recall": 0.82421875,
+          "uniqueScoredRows": {
+            "mean": 1165.76171875,
+            "p95": 1462.0,
+            "maximum": 1859,
+            "minimum": 687
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 208,
+          "top1Recall": 0.8125,
+          "uniqueScoredRows": {
+            "mean": 1156.9140625,
+            "p95": 1445.0,
+            "maximum": 1766,
+            "minimum": 656
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 32,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 394,
+          "top1Recall": 0.76953125,
+          "uniqueScoredRows": {
+            "mean": 1174.95703125,
+            "p95": 1391.0,
+            "maximum": 1528,
+            "minimum": 936
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 216,
+          "top1Recall": 0.84375,
+          "uniqueScoredRows": {
+            "mean": 1176.2734375,
+            "p95": 1403.0,
+            "maximum": 1552,
+            "minimum": 826
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 209,
+          "top1Recall": 0.81640625,
+          "uniqueScoredRows": {
+            "mean": 1170.6015625,
+            "p95": 1398.0,
+            "maximum": 1521,
+            "minimum": 873
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 32,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 408,
+          "top1Recall": 0.796875,
+          "uniqueScoredRows": {
+            "mean": 1343.744140625,
+            "p95": 1641.0,
+            "maximum": 1812,
+            "minimum": 964
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 218,
+          "top1Recall": 0.8515625,
+          "uniqueScoredRows": {
+            "mean": 1337.21484375,
+            "p95": 1608.0,
+            "maximum": 1765,
+            "minimum": 1027
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 214,
+          "top1Recall": 0.8359375,
+          "uniqueScoredRows": {
+            "mean": 1340.30859375,
+            "p95": 1620.0,
+            "maximum": 1820,
+            "minimum": 917
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 32,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 410,
+          "top1Recall": 0.80078125,
+          "uniqueScoredRows": {
+            "mean": 1340.408203125,
+            "p95": 1616.0,
+            "maximum": 1799,
+            "minimum": 1024
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 221,
+          "top1Recall": 0.86328125,
+          "uniqueScoredRows": {
+            "mean": 1343.75390625,
+            "p95": 1643.0,
+            "maximum": 1831,
+            "minimum": 893
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 214,
+          "top1Recall": 0.8359375,
+          "uniqueScoredRows": {
+            "mean": 1336.796875,
+            "p95": 1602.0,
+            "maximum": 1768,
+            "minimum": 948
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 32,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 425,
+          "top1Recall": 0.830078125,
+          "uniqueScoredRows": {
+            "mean": 1656.30859375,
+            "p95": 1984.0,
+            "maximum": 2262,
+            "minimum": 1101
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 224,
+          "top1Recall": 0.875,
+          "uniqueScoredRows": {
+            "mean": 1657.7265625,
+            "p95": 2005.0,
+            "maximum": 2459,
+            "minimum": 1065
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 220,
+          "top1Recall": 0.859375,
+          "uniqueScoredRows": {
+            "mean": 1645.12109375,
+            "p95": 1936.0,
+            "maximum": 2109,
+            "minimum": 1135
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 32,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 424,
+          "top1Recall": 0.828125,
+          "uniqueScoredRows": {
+            "mean": 1703.2109375,
+            "p95": 2086.0,
+            "maximum": 2214,
+            "minimum": 998
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 225,
+          "top1Recall": 0.87890625,
+          "uniqueScoredRows": {
+            "mean": 1712.66015625,
+            "p95": 2058.0,
+            "maximum": 2329,
+            "minimum": 973
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 225,
+          "top1Recall": 0.87890625,
+          "uniqueScoredRows": {
+            "mean": 1696.4140625,
+            "p95": 2040.0,
+            "maximum": 2175,
+            "minimum": 956
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 32,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 438,
+          "top1Recall": 0.85546875,
+          "uniqueScoredRows": {
+            "mean": 1906.830078125,
+            "p95": 2386.0,
+            "maximum": 2801,
+            "minimum": 1108
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 228,
+          "top1Recall": 0.890625,
+          "uniqueScoredRows": {
+            "mean": 1908.9375,
+            "p95": 2367.0,
+            "maximum": 2911,
+            "minimum": 1133
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 222,
+          "top1Recall": 0.8671875,
+          "uniqueScoredRows": {
+            "mean": 1913.4765625,
+            "p95": 2329.0,
+            "maximum": 2697,
+            "minimum": 1093
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 32,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 426,
+          "top1Recall": 0.83203125,
+          "uniqueScoredRows": {
+            "mean": 1980.630859375,
+            "p95": 2425.0,
+            "maximum": 2669,
+            "minimum": 1211
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 229,
+          "top1Recall": 0.89453125,
+          "uniqueScoredRows": {
+            "mean": 2003.46875,
+            "p95": 2401.0,
+            "maximum": 3102,
+            "minimum": 1389
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 224,
+          "top1Recall": 0.875,
+          "uniqueScoredRows": {
+            "mean": 1976.9296875,
+            "p95": 2414.0,
+            "maximum": 2628,
+            "minimum": 1144
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 32,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 439,
+          "top1Recall": 0.857421875,
+          "uniqueScoredRows": {
+            "mean": 2096.783203125,
+            "p95": 2549.0,
+            "maximum": 2786,
+            "minimum": 1373
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 230,
+          "top1Recall": 0.8984375,
+          "uniqueScoredRows": {
+            "mean": 2110.37109375,
+            "p95": 2572.0,
+            "maximum": 2905,
+            "minimum": 1619
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 229,
+          "top1Recall": 0.89453125,
+          "uniqueScoredRows": {
+            "mean": 2099.04296875,
+            "p95": 2564.0,
+            "maximum": 2850,
+            "minimum": 1486
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 32,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 443,
+          "top1Recall": 0.865234375,
+          "uniqueScoredRows": {
+            "mean": 2138.556640625,
+            "p95": 2565.0,
+            "maximum": 2763,
+            "minimum": 1353
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 231,
+          "top1Recall": 0.90234375,
+          "uniqueScoredRows": {
+            "mean": 2153.31640625,
+            "p95": 2568.0,
+            "maximum": 3124,
+            "minimum": 1401
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 226,
+          "top1Recall": 0.8828125,
+          "uniqueScoredRows": {
+            "mean": 2148.1484375,
+            "p95": 2571.0,
+            "maximum": 2822,
+            "minimum": 1606
+          }
+        }
+      }
+    }
+  ],
+  "configurations": [
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 4,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 384,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 62,
+          "top1Recall": 0.12109375,
+          "uniqueScoredRows": {
+            "mean": 316.68359375,
+            "p95": 329.0,
+            "maximum": 339,
+            "minimum": 282
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 32,
+          "top1Recall": 0.125,
+          "uniqueScoredRows": {
+            "mean": 317.1328125,
+            "p95": 330.0,
+            "maximum": 337,
+            "minimum": 282
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 40,
+          "top1Recall": 0.15625,
+          "uniqueScoredRows": {
+            "mean": 316.23046875,
+            "p95": 328.0,
+            "maximum": 331,
+            "minimum": 284
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 4,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 512,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 184,
+          "top1Recall": 0.359375,
+          "uniqueScoredRows": {
+            "mean": 359.892578125,
+            "p95": 396.0,
+            "maximum": 422,
+            "minimum": 298
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 97,
+          "top1Recall": 0.37890625,
+          "uniqueScoredRows": {
+            "mean": 361.71875,
+            "p95": 400.0,
+            "maximum": 411,
+            "minimum": 310
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 97,
+          "top1Recall": 0.37890625,
+          "uniqueScoredRows": {
+            "mean": 359.69140625,
+            "p95": 397.0,
+            "maximum": 414,
+            "minimum": 311
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 4,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 640,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 204,
+          "top1Recall": 0.3984375,
+          "uniqueScoredRows": {
+            "mean": 395.1328125,
+            "p95": 457.0,
+            "maximum": 499,
+            "minimum": 327
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 109,
+          "top1Recall": 0.42578125,
+          "uniqueScoredRows": {
+            "mean": 399.53125,
+            "p95": 461.0,
+            "maximum": 501,
+            "minimum": 318
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 104,
+          "top1Recall": 0.40625,
+          "uniqueScoredRows": {
+            "mean": 395.9296875,
+            "p95": 465.0,
+            "maximum": 495,
+            "minimum": 328
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 4,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 224,
+          "top1Recall": 0.4375,
+          "uniqueScoredRows": {
+            "mean": 428.98046875,
+            "p95": 514.0,
+            "maximum": 560,
+            "minimum": 345
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 119,
+          "top1Recall": 0.46484375,
+          "uniqueScoredRows": {
+            "mean": 434.96484375,
+            "p95": 519.0,
+            "maximum": 567,
+            "minimum": 327
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 116,
+          "top1Recall": 0.453125,
+          "uniqueScoredRows": {
+            "mean": 430.55078125,
+            "p95": 530.0,
+            "maximum": 563,
+            "minimum": 346
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 4,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 1024,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 244,
+          "top1Recall": 0.4765625,
+          "uniqueScoredRows": {
+            "mean": 491.79296875,
+            "p95": 620.0,
+            "maximum": 689,
+            "minimum": 345
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 130,
+          "top1Recall": 0.5078125,
+          "uniqueScoredRows": {
+            "mean": 501.5234375,
+            "p95": 639.0,
+            "maximum": 700,
+            "minimum": 342
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 128,
+          "top1Recall": 0.5,
+          "uniqueScoredRows": {
+            "mean": 495.32421875,
+            "p95": 636.0,
+            "maximum": 705,
+            "minimum": 378
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 4,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 264,
+          "top1Recall": 0.515625,
+          "uniqueScoredRows": {
+            "mean": 549.45703125,
+            "p95": 717.0,
+            "maximum": 789,
+            "minimum": 346
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 141,
+          "top1Recall": 0.55078125,
+          "uniqueScoredRows": {
+            "mean": 562.296875,
+            "p95": 734.0,
+            "maximum": 811,
+            "minimum": 415
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 137,
+          "top1Recall": 0.53515625,
+          "uniqueScoredRows": {
+            "mean": 553.29296875,
+            "p95": 729.0,
+            "maximum": 817,
+            "minimum": 391
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 8,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 512,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 68,
+          "top1Recall": 0.1328125,
+          "uniqueScoredRows": {
+            "mean": 374.671875,
+            "p95": 392.0,
+            "maximum": 407,
+            "minimum": 326
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 39,
+          "top1Recall": 0.15234375,
+          "uniqueScoredRows": {
+            "mean": 374.90234375,
+            "p95": 391.0,
+            "maximum": 401,
+            "minimum": 322
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 43,
+          "top1Recall": 0.16796875,
+          "uniqueScoredRows": {
+            "mean": 374.1171875,
+            "p95": 392.0,
+            "maximum": 404,
+            "minimum": 329
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 8,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 258,
+          "top1Recall": 0.50390625,
+          "uniqueScoredRows": {
+            "mean": 448.63671875,
+            "p95": 508.0,
+            "maximum": 554,
+            "minimum": 366
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 141,
+          "top1Recall": 0.55078125,
+          "uniqueScoredRows": {
+            "mean": 449.71484375,
+            "p95": 504.0,
+            "maximum": 545,
+            "minimum": 327
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 133,
+          "top1Recall": 0.51953125,
+          "uniqueScoredRows": {
+            "mean": 450.44140625,
+            "p95": 513.0,
+            "maximum": 543,
+            "minimum": 374
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 8,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1024,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 281,
+          "top1Recall": 0.548828125,
+          "uniqueScoredRows": {
+            "mean": 509.513671875,
+            "p95": 622.0,
+            "maximum": 679,
+            "minimum": 376
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 152,
+          "top1Recall": 0.59375,
+          "uniqueScoredRows": {
+            "mean": 511.8203125,
+            "p95": 616.0,
+            "maximum": 693,
+            "minimum": 385
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 143,
+          "top1Recall": 0.55859375,
+          "uniqueScoredRows": {
+            "mean": 510.2421875,
+            "p95": 641.0,
+            "maximum": 677,
+            "minimum": 401
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 8,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 297,
+          "top1Recall": 0.580078125,
+          "uniqueScoredRows": {
+            "mean": 566.462890625,
+            "p95": 716.0,
+            "maximum": 792,
+            "minimum": 377
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 158,
+          "top1Recall": 0.6171875,
+          "uniqueScoredRows": {
+            "mean": 570.78515625,
+            "p95": 713.0,
+            "maximum": 804,
+            "minimum": 438
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 150,
+          "top1Recall": 0.5859375,
+          "uniqueScoredRows": {
+            "mean": 569.53515625,
+            "p95": 739.0,
+            "maximum": 810,
+            "minimum": 415
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 8,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 322,
+          "top1Recall": 0.62890625,
+          "uniqueScoredRows": {
+            "mean": 673.556640625,
+            "p95": 890.0,
+            "maximum": 994,
+            "minimum": 456
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 168,
+          "top1Recall": 0.65625,
+          "uniqueScoredRows": {
+            "mean": 678.05078125,
+            "p95": 890.0,
+            "maximum": 1009,
+            "minimum": 496
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 158,
+          "top1Recall": 0.6171875,
+          "uniqueScoredRows": {
+            "mean": 674.4453125,
+            "p95": 907.0,
+            "maximum": 1004,
+            "minimum": 483
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 8,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 335,
+          "top1Recall": 0.654296875,
+          "uniqueScoredRows": {
+            "mean": 770.28125,
+            "p95": 1028.0,
+            "maximum": 1129,
+            "minimum": 514
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 176,
+          "top1Recall": 0.6875,
+          "uniqueScoredRows": {
+            "mean": 771.32421875,
+            "p95": 1048.0,
+            "maximum": 1203,
+            "minimum": 593
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 169,
+          "top1Recall": 0.66015625,
+          "uniqueScoredRows": {
+            "mean": 768.78125,
+            "p95": 1042.0,
+            "maximum": 1142,
+            "minimum": 552
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 16,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 75,
+          "top1Recall": 0.146484375,
+          "uniqueScoredRows": {
+            "mean": 488.4609375,
+            "p95": 519.0,
+            "maximum": 542,
+            "minimum": 406
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 41,
+          "top1Recall": 0.16015625,
+          "uniqueScoredRows": {
+            "mean": 488.05078125,
+            "p95": 521.0,
+            "maximum": 544,
+            "minimum": 369
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 46,
+          "top1Recall": 0.1796875,
+          "uniqueScoredRows": {
+            "mean": 487.1328125,
+            "p95": 517.0,
+            "maximum": 539,
+            "minimum": 413
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 16,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 312,
+          "top1Recall": 0.609375,
+          "uniqueScoredRows": {
+            "mean": 629.45703125,
+            "p95": 711.0,
+            "maximum": 787,
+            "minimum": 488
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 172,
+          "top1Recall": 0.671875,
+          "uniqueScoredRows": {
+            "mean": 627.41015625,
+            "p95": 704.0,
+            "maximum": 740,
+            "minimum": 471
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 163,
+          "top1Recall": 0.63671875,
+          "uniqueScoredRows": {
+            "mean": 627.3984375,
+            "p95": 714.0,
+            "maximum": 787,
+            "minimum": 511
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 16,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 354,
+          "top1Recall": 0.69140625,
+          "uniqueScoredRows": {
+            "mean": 736.494140625,
+            "p95": 899.0,
+            "maximum": 995,
+            "minimum": 529
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 183,
+          "top1Recall": 0.71484375,
+          "uniqueScoredRows": {
+            "mean": 734.796875,
+            "p95": 885.0,
+            "maximum": 976,
+            "minimum": 552
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 185,
+          "top1Recall": 0.72265625,
+          "uniqueScoredRows": {
+            "mean": 732.45703125,
+            "p95": 880.0,
+            "maximum": 985,
+            "minimum": 532
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 16,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 362,
+          "top1Recall": 0.70703125,
+          "uniqueScoredRows": {
+            "mean": 832.58984375,
+            "p95": 1039.0,
+            "maximum": 1147,
+            "minimum": 567
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 190,
+          "top1Recall": 0.7421875,
+          "uniqueScoredRows": {
+            "mean": 826.42578125,
+            "p95": 1021.0,
+            "maximum": 1149,
+            "minimum": 593
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 193,
+          "top1Recall": 0.75390625,
+          "uniqueScoredRows": {
+            "mean": 824.26171875,
+            "p95": 1039.0,
+            "maximum": 1151,
+            "minimum": 598
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 16,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 378,
+          "top1Recall": 0.73828125,
+          "uniqueScoredRows": {
+            "mean": 1006.947265625,
+            "p95": 1312.0,
+            "maximum": 1483,
+            "minimum": 674
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 199,
+          "top1Recall": 0.77734375,
+          "uniqueScoredRows": {
+            "mean": 993.96875,
+            "p95": 1263.0,
+            "maximum": 1412,
+            "minimum": 689
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 201,
+          "top1Recall": 0.78515625,
+          "uniqueScoredRows": {
+            "mean": 990.00390625,
+            "p95": 1275.0,
+            "maximum": 1439,
+            "minimum": 704
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 16,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 394,
+          "top1Recall": 0.76953125,
+          "uniqueScoredRows": {
+            "mean": 1171.201171875,
+            "p95": 1527.0,
+            "maximum": 1775,
+            "minimum": 728
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 202,
+          "top1Recall": 0.7890625,
+          "uniqueScoredRows": {
+            "mean": 1163.02734375,
+            "p95": 1473.0,
+            "maximum": 1734,
+            "minimum": 695
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 207,
+          "top1Recall": 0.80859375,
+          "uniqueScoredRows": {
+            "mean": 1150.63671875,
+            "p95": 1468.0,
+            "maximum": 1798,
+            "minimum": 725
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 32,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 77,
+          "top1Recall": 0.150390625,
+          "uniqueScoredRows": {
+            "mean": 709.888671875,
+            "p95": 764.0,
+            "maximum": 802,
+            "minimum": 554
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 44,
+          "top1Recall": 0.171875,
+          "uniqueScoredRows": {
+            "mean": 709.8046875,
+            "p95": 764.0,
+            "maximum": 796,
+            "minimum": 538
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 46,
+          "top1Recall": 0.1796875,
+          "uniqueScoredRows": {
+            "mean": 708.24609375,
+            "p95": 762.0,
+            "maximum": 786,
+            "minimum": 573
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 32,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 340,
+          "top1Recall": 0.6640625,
+          "uniqueScoredRows": {
+            "mean": 988.873046875,
+            "p95": 1113.0,
+            "maximum": 1213,
+            "minimum": 741
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 187,
+          "top1Recall": 0.73046875,
+          "uniqueScoredRows": {
+            "mean": 990.7578125,
+            "p95": 1112.0,
+            "maximum": 1176,
+            "minimum": 788
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 177,
+          "top1Recall": 0.69140625,
+          "uniqueScoredRows": {
+            "mean": 989.59765625,
+            "p95": 1123.0,
+            "maximum": 1180,
+            "minimum": 752
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 32,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 387,
+          "top1Recall": 0.755859375,
+          "uniqueScoredRows": {
+            "mean": 1180.08203125,
+            "p95": 1383.0,
+            "maximum": 1540,
+            "minimum": 851
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 210,
+          "top1Recall": 0.8203125,
+          "uniqueScoredRows": {
+            "mean": 1180.7421875,
+            "p95": 1398.0,
+            "maximum": 1494,
+            "minimum": 899
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 205,
+          "top1Recall": 0.80078125,
+          "uniqueScoredRows": {
+            "mean": 1178.84765625,
+            "p95": 1397.0,
+            "maximum": 1531,
+            "minimum": 837
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 32,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 408,
+          "top1Recall": 0.796875,
+          "uniqueScoredRows": {
+            "mean": 1343.744140625,
+            "p95": 1641.0,
+            "maximum": 1812,
+            "minimum": 964
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 218,
+          "top1Recall": 0.8515625,
+          "uniqueScoredRows": {
+            "mean": 1337.21484375,
+            "p95": 1608.0,
+            "maximum": 1765,
+            "minimum": 1027
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 214,
+          "top1Recall": 0.8359375,
+          "uniqueScoredRows": {
+            "mean": 1340.30859375,
+            "p95": 1620.0,
+            "maximum": 1820,
+            "minimum": 917
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 32,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 419,
+          "top1Recall": 0.818359375,
+          "uniqueScoredRows": {
+            "mean": 1662.541015625,
+            "p95": 2074.0,
+            "maximum": 2334,
+            "minimum": 1065
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 224,
+          "top1Recall": 0.875,
+          "uniqueScoredRows": {
+            "mean": 1673.05078125,
+            "p95": 2059.0,
+            "maximum": 2450,
+            "minimum": 1160
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 219,
+          "top1Recall": 0.85546875,
+          "uniqueScoredRows": {
+            "mean": 1660.46875,
+            "p95": 1990.0,
+            "maximum": 2299,
+            "minimum": 1070
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 16,
+      "beam": 32,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 426,
+          "top1Recall": 0.83203125,
+          "uniqueScoredRows": {
+            "mean": 1980.630859375,
+            "p95": 2425.0,
+            "maximum": 2669,
+            "minimum": 1211
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 229,
+          "top1Recall": 0.89453125,
+          "uniqueScoredRows": {
+            "mean": 2003.46875,
+            "p95": 2401.0,
+            "maximum": 3102,
+            "minimum": 1389
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 224,
+          "top1Recall": 0.875,
+          "uniqueScoredRows": {
+            "mean": 1976.9296875,
+            "p95": 2414.0,
+            "maximum": 2628,
+            "minimum": 1144
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 4,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 512,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 163,
+          "top1Recall": 0.318359375,
+          "uniqueScoredRows": {
+            "mean": 368.72265625,
+            "p95": 396.0,
+            "maximum": 417,
+            "minimum": 298
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 84,
+          "top1Recall": 0.328125,
+          "uniqueScoredRows": {
+            "mean": 369.796875,
+            "p95": 397.0,
+            "maximum": 417,
+            "minimum": 298
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 89,
+          "top1Recall": 0.34765625,
+          "uniqueScoredRows": {
+            "mean": 368.4296875,
+            "p95": 397.0,
+            "maximum": 405,
+            "minimum": 292
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 4,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 203,
+          "top1Recall": 0.396484375,
+          "uniqueScoredRows": {
+            "mean": 436.82421875,
+            "p95": 518.0,
+            "maximum": 585,
+            "minimum": 314
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 111,
+          "top1Recall": 0.43359375,
+          "uniqueScoredRows": {
+            "mean": 442.3984375,
+            "p95": 523.0,
+            "maximum": 589,
+            "minimum": 323
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 106,
+          "top1Recall": 0.4140625,
+          "uniqueScoredRows": {
+            "mean": 436.1796875,
+            "p95": 524.0,
+            "maximum": 563,
+            "minimum": 324
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 4,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1024,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 228,
+          "top1Recall": 0.4453125,
+          "uniqueScoredRows": {
+            "mean": 497.568359375,
+            "p95": 638.0,
+            "maximum": 717,
+            "minimum": 363
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 122,
+          "top1Recall": 0.4765625,
+          "uniqueScoredRows": {
+            "mean": 505.2578125,
+            "p95": 636.0,
+            "maximum": 722,
+            "minimum": 323
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 120,
+          "top1Recall": 0.46875,
+          "uniqueScoredRows": {
+            "mean": 494.671875,
+            "p95": 636.0,
+            "maximum": 713,
+            "minimum": 331
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 4,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 240,
+          "top1Recall": 0.46875,
+          "uniqueScoredRows": {
+            "mean": 550.57421875,
+            "p95": 737.0,
+            "maximum": 830,
+            "minimum": 363
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 124,
+          "top1Recall": 0.484375,
+          "uniqueScoredRows": {
+            "mean": 560.01171875,
+            "p95": 747.0,
+            "maximum": 818,
+            "minimum": 334
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 126,
+          "top1Recall": 0.4921875,
+          "uniqueScoredRows": {
+            "mean": 549.51953125,
+            "p95": 745.0,
+            "maximum": 832,
+            "minimum": 376
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 4,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 258,
+          "top1Recall": 0.50390625,
+          "uniqueScoredRows": {
+            "mean": 640.849609375,
+            "p95": 896.0,
+            "maximum": 1014,
+            "minimum": 363
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 134,
+          "top1Recall": 0.5234375,
+          "uniqueScoredRows": {
+            "mean": 659.02734375,
+            "p95": 919.0,
+            "maximum": 1020,
+            "minimum": 350
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 139,
+          "top1Recall": 0.54296875,
+          "uniqueScoredRows": {
+            "mean": 642.44140625,
+            "p95": 910.0,
+            "maximum": 1010,
+            "minimum": 408
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 4,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 272,
+          "top1Recall": 0.53125,
+          "uniqueScoredRows": {
+            "mean": 720.677734375,
+            "p95": 1021.0,
+            "maximum": 1150,
+            "minimum": 364
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 145,
+          "top1Recall": 0.56640625,
+          "uniqueScoredRows": {
+            "mean": 745.95703125,
+            "p95": 1044.0,
+            "maximum": 1160,
+            "minimum": 489
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 144,
+          "top1Recall": 0.5625,
+          "uniqueScoredRows": {
+            "mean": 724.56640625,
+            "p95": 1041.0,
+            "maximum": 1126,
+            "minimum": 463
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 8,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 227,
+          "top1Recall": 0.443359375,
+          "uniqueScoredRows": {
+            "mean": 469.341796875,
+            "p95": 514.0,
+            "maximum": 560,
+            "minimum": 361
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 129,
+          "top1Recall": 0.50390625,
+          "uniqueScoredRows": {
+            "mean": 471.19140625,
+            "p95": 515.0,
+            "maximum": 561,
+            "minimum": 371
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 125,
+          "top1Recall": 0.48828125,
+          "uniqueScoredRows": {
+            "mean": 469.6953125,
+            "p95": 518.0,
+            "maximum": 544,
+            "minimum": 389
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 8,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 299,
+          "top1Recall": 0.583984375,
+          "uniqueScoredRows": {
+            "mean": 580.744140625,
+            "p95": 721.0,
+            "maximum": 790,
+            "minimum": 414
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 160,
+          "top1Recall": 0.625,
+          "uniqueScoredRows": {
+            "mean": 586.8515625,
+            "p95": 719.0,
+            "maximum": 839,
+            "minimum": 401
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 151,
+          "top1Recall": 0.58984375,
+          "uniqueScoredRows": {
+            "mean": 582.171875,
+            "p95": 730.0,
+            "maximum": 789,
+            "minimum": 407
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 8,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 321,
+          "top1Recall": 0.626953125,
+          "uniqueScoredRows": {
+            "mean": 679.115234375,
+            "p95": 903.0,
+            "maximum": 1016,
+            "minimum": 418
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 169,
+          "top1Recall": 0.66015625,
+          "uniqueScoredRows": {
+            "mean": 689.078125,
+            "p95": 888.0,
+            "maximum": 1048,
+            "minimum": 540
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 167,
+          "top1Recall": 0.65234375,
+          "uniqueScoredRows": {
+            "mean": 681.28515625,
+            "p95": 920.0,
+            "maximum": 1056,
+            "minimum": 472
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 8,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 328,
+          "top1Recall": 0.640625,
+          "uniqueScoredRows": {
+            "mean": 761.083984375,
+            "p95": 1046.0,
+            "maximum": 1238,
+            "minimum": 419
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 174,
+          "top1Recall": 0.6796875,
+          "uniqueScoredRows": {
+            "mean": 773.70703125,
+            "p95": 1032.0,
+            "maximum": 1191,
+            "minimum": 607
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 169,
+          "top1Recall": 0.66015625,
+          "uniqueScoredRows": {
+            "mean": 760.46875,
+            "p95": 1057.0,
+            "maximum": 1217,
+            "minimum": 490
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 8,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 345,
+          "top1Recall": 0.673828125,
+          "uniqueScoredRows": {
+            "mean": 902.498046875,
+            "p95": 1257.0,
+            "maximum": 1531,
+            "minimum": 538
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 179,
+          "top1Recall": 0.69921875,
+          "uniqueScoredRows": {
+            "mean": 917.89453125,
+            "p95": 1264.0,
+            "maximum": 1501,
+            "minimum": 626
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 176,
+          "top1Recall": 0.6875,
+          "uniqueScoredRows": {
+            "mean": 900.14453125,
+            "p95": 1271.0,
+            "maximum": 1505,
+            "minimum": 582
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 8,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 353,
+          "top1Recall": 0.689453125,
+          "uniqueScoredRows": {
+            "mean": 1028.794921875,
+            "p95": 1465.0,
+            "maximum": 1741,
+            "minimum": 627
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 181,
+          "top1Recall": 0.70703125,
+          "uniqueScoredRows": {
+            "mean": 1046.08203125,
+            "p95": 1458.0,
+            "maximum": 1835,
+            "minimum": 627
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 179,
+          "top1Recall": 0.69921875,
+          "uniqueScoredRows": {
+            "mean": 1024.9140625,
+            "p95": 1455.0,
+            "maximum": 1728,
+            "minimum": 683
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 16,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 263,
+          "top1Recall": 0.513671875,
+          "uniqueScoredRows": {
+            "mean": 673.05078125,
+            "p95": 740.0,
+            "maximum": 793,
+            "minimum": 506
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 157,
+          "top1Recall": 0.61328125,
+          "uniqueScoredRows": {
+            "mean": 674.453125,
+            "p95": 735.0,
+            "maximum": 788,
+            "minimum": 489
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 147,
+          "top1Recall": 0.57421875,
+          "uniqueScoredRows": {
+            "mean": 671.59765625,
+            "p95": 735.0,
+            "maximum": 790,
+            "minimum": 495
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 16,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 370,
+          "top1Recall": 0.72265625,
+          "uniqueScoredRows": {
+            "mean": 867.0234375,
+            "p95": 1052.0,
+            "maximum": 1179,
+            "minimum": 524
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 197,
+          "top1Recall": 0.76953125,
+          "uniqueScoredRows": {
+            "mean": 869.6953125,
+            "p95": 1055.0,
+            "maximum": 1191,
+            "minimum": 661
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 194,
+          "top1Recall": 0.7578125,
+          "uniqueScoredRows": {
+            "mean": 862.46875,
+            "p95": 1060.0,
+            "maximum": 1184,
+            "minimum": 606
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 16,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 392,
+          "top1Recall": 0.765625,
+          "uniqueScoredRows": {
+            "mean": 1018.955078125,
+            "p95": 1310.0,
+            "maximum": 1532,
+            "minimum": 680
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 204,
+          "top1Recall": 0.796875,
+          "uniqueScoredRows": {
+            "mean": 1024.27734375,
+            "p95": 1303.0,
+            "maximum": 1482,
+            "minimum": 776
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 205,
+          "top1Recall": 0.80078125,
+          "uniqueScoredRows": {
+            "mean": 1013.609375,
+            "p95": 1315.0,
+            "maximum": 1589,
+            "minimum": 674
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 16,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 402,
+          "top1Recall": 0.78515625,
+          "uniqueScoredRows": {
+            "mean": 1144.421875,
+            "p95": 1505.0,
+            "maximum": 1735,
+            "minimum": 733
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 209,
+          "top1Recall": 0.81640625,
+          "uniqueScoredRows": {
+            "mean": 1149.625,
+            "p95": 1490.0,
+            "maximum": 1707,
+            "minimum": 777
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 206,
+          "top1Recall": 0.8046875,
+          "uniqueScoredRows": {
+            "mean": 1137.67578125,
+            "p95": 1505.0,
+            "maximum": 1862,
+            "minimum": 738
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 16,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 410,
+          "top1Recall": 0.80078125,
+          "uniqueScoredRows": {
+            "mean": 1385.619140625,
+            "p95": 1846.0,
+            "maximum": 2131,
+            "minimum": 781
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 210,
+          "top1Recall": 0.8203125,
+          "uniqueScoredRows": {
+            "mean": 1390.48046875,
+            "p95": 1768.0,
+            "maximum": 2110,
+            "minimum": 808
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 211,
+          "top1Recall": 0.82421875,
+          "uniqueScoredRows": {
+            "mean": 1381.71875,
+            "p95": 1793.0,
+            "maximum": 2270,
+            "minimum": 818
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 16,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 415,
+          "top1Recall": 0.810546875,
+          "uniqueScoredRows": {
+            "mean": 1620.08203125,
+            "p95": 2137.0,
+            "maximum": 2535,
+            "minimum": 848
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 210,
+          "top1Recall": 0.8203125,
+          "uniqueScoredRows": {
+            "mean": 1623.3046875,
+            "p95": 2102.0,
+            "maximum": 2475,
+            "minimum": 813
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 215,
+          "top1Recall": 0.83984375,
+          "uniqueScoredRows": {
+            "mean": 1609.59375,
+            "p95": 2076.0,
+            "maximum": 2697,
+            "minimum": 840
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 32,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 282,
+          "top1Recall": 0.55078125,
+          "uniqueScoredRows": {
+            "mean": 1074.759765625,
+            "p95": 1187.0,
+            "maximum": 1306,
+            "minimum": 785
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 167,
+          "top1Recall": 0.65234375,
+          "uniqueScoredRows": {
+            "mean": 1075.09375,
+            "p95": 1177.0,
+            "maximum": 1280,
+            "minimum": 779
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 149,
+          "top1Recall": 0.58203125,
+          "uniqueScoredRows": {
+            "mean": 1073.0078125,
+            "p95": 1177.0,
+            "maximum": 1245,
+            "minimum": 738
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 32,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 415,
+          "top1Recall": 0.810546875,
+          "uniqueScoredRows": {
+            "mean": 1436.064453125,
+            "p95": 1703.0,
+            "maximum": 1829,
+            "minimum": 1016
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 217,
+          "top1Recall": 0.84765625,
+          "uniqueScoredRows": {
+            "mean": 1437.51171875,
+            "p95": 1721.0,
+            "maximum": 1870,
+            "minimum": 1052
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 211,
+          "top1Recall": 0.82421875,
+          "uniqueScoredRows": {
+            "mean": 1443.31640625,
+            "p95": 1712.0,
+            "maximum": 1874,
+            "minimum": 995
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 32,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 430,
+          "top1Recall": 0.83984375,
+          "uniqueScoredRows": {
+            "mean": 1682.404296875,
+            "p95": 2049.0,
+            "maximum": 2301,
+            "minimum": 1075
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 224,
+          "top1Recall": 0.875,
+          "uniqueScoredRows": {
+            "mean": 1683.33203125,
+            "p95": 2076.0,
+            "maximum": 2358,
+            "minimum": 1109
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 220,
+          "top1Recall": 0.859375,
+          "uniqueScoredRows": {
+            "mean": 1689.6796875,
+            "p95": 2049.0,
+            "maximum": 2372,
+            "minimum": 1054
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 32,
+      "beam": 32,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 438,
+          "top1Recall": 0.85546875,
+          "uniqueScoredRows": {
+            "mean": 1906.830078125,
+            "p95": 2386.0,
+            "maximum": 2801,
+            "minimum": 1108
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 228,
+          "top1Recall": 0.890625,
+          "uniqueScoredRows": {
+            "mean": 1908.9375,
+            "p95": 2367.0,
+            "maximum": 2911,
+            "minimum": 1133
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 222,
+          "top1Recall": 0.8671875,
+          "uniqueScoredRows": {
+            "mean": 1913.4765625,
+            "p95": 2329.0,
+            "maximum": 2697,
+            "minimum": 1093
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 4,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 191,
+          "top1Recall": 0.373046875,
+          "uniqueScoredRows": {
+            "mean": 459.455078125,
+            "p95": 521.0,
+            "maximum": 577,
+            "minimum": 298
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 98,
+          "top1Recall": 0.3828125,
+          "uniqueScoredRows": {
+            "mean": 462.4453125,
+            "p95": 519.0,
+            "maximum": 580,
+            "minimum": 323
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 95,
+          "top1Recall": 0.37109375,
+          "uniqueScoredRows": {
+            "mean": 458.0859375,
+            "p95": 523.0,
+            "maximum": 566,
+            "minimum": 296
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 4,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 225,
+          "top1Recall": 0.439453125,
+          "uniqueScoredRows": {
+            "mean": 566.134765625,
+            "p95": 741.0,
+            "maximum": 855,
+            "minimum": 330
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 114,
+          "top1Recall": 0.4453125,
+          "uniqueScoredRows": {
+            "mean": 577.875,
+            "p95": 747.0,
+            "maximum": 874,
+            "minimum": 323
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 113,
+          "top1Recall": 0.44140625,
+          "uniqueScoredRows": {
+            "mean": 562.00390625,
+            "p95": 738.0,
+            "maximum": 839,
+            "minimum": 331
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 4,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 237,
+          "top1Recall": 0.462890625,
+          "uniqueScoredRows": {
+            "mean": 651.48828125,
+            "p95": 920.0,
+            "maximum": 1057,
+            "minimum": 362
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 120,
+          "top1Recall": 0.46875,
+          "uniqueScoredRows": {
+            "mean": 666.90234375,
+            "p95": 918.0,
+            "maximum": 1067,
+            "minimum": 323
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 121,
+          "top1Recall": 0.47265625,
+          "uniqueScoredRows": {
+            "mean": 645.8828125,
+            "p95": 910.0,
+            "maximum": 1065,
+            "minimum": 331
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 4,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 249,
+          "top1Recall": 0.486328125,
+          "uniqueScoredRows": {
+            "mean": 721.763671875,
+            "p95": 1033.0,
+            "maximum": 1271,
+            "minimum": 401
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 126,
+          "top1Recall": 0.4921875,
+          "uniqueScoredRows": {
+            "mean": 740.625,
+            "p95": 1057.0,
+            "maximum": 1220,
+            "minimum": 334
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 129,
+          "top1Recall": 0.50390625,
+          "uniqueScoredRows": {
+            "mean": 717.47265625,
+            "p95": 1039.0,
+            "maximum": 1219,
+            "minimum": 431
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 4,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 262,
+          "top1Recall": 0.51171875,
+          "uniqueScoredRows": {
+            "mean": 832.958984375,
+            "p95": 1223.0,
+            "maximum": 1570,
+            "minimum": 401
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 130,
+          "top1Recall": 0.5078125,
+          "uniqueScoredRows": {
+            "mean": 859.7734375,
+            "p95": 1253.0,
+            "maximum": 1486,
+            "minimum": 366
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 138,
+          "top1Recall": 0.5390625,
+          "uniqueScoredRows": {
+            "mean": 835.36328125,
+            "p95": 1201.0,
+            "maximum": 1541,
+            "minimum": 431
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 4,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 274,
+          "top1Recall": 0.53515625,
+          "uniqueScoredRows": {
+            "mean": 929.13671875,
+            "p95": 1337.0,
+            "maximum": 1740,
+            "minimum": 402
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 143,
+          "top1Recall": 0.55859375,
+          "uniqueScoredRows": {
+            "mean": 963.2578125,
+            "p95": 1394.0,
+            "maximum": 1708,
+            "minimum": 573
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 146,
+          "top1Recall": 0.5703125,
+          "uniqueScoredRows": {
+            "mean": 932.04296875,
+            "p95": 1356.0,
+            "maximum": 1735,
+            "minimum": 585
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 8,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 267,
+          "top1Recall": 0.521484375,
+          "uniqueScoredRows": {
+            "mean": 629.48046875,
+            "p95": 739.0,
+            "maximum": 798,
+            "minimum": 412
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 143,
+          "top1Recall": 0.55859375,
+          "uniqueScoredRows": {
+            "mean": 634.59375,
+            "p95": 740.0,
+            "maximum": 788,
+            "minimum": 407
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 137,
+          "top1Recall": 0.53515625,
+          "uniqueScoredRows": {
+            "mean": 629.67578125,
+            "p95": 736.0,
+            "maximum": 819,
+            "minimum": 437
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 8,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 329,
+          "top1Recall": 0.642578125,
+          "uniqueScoredRows": {
+            "mean": 799.376953125,
+            "p95": 1068.0,
+            "maximum": 1213,
+            "minimum": 429
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 170,
+          "top1Recall": 0.6640625,
+          "uniqueScoredRows": {
+            "mean": 809.16015625,
+            "p95": 1053.0,
+            "maximum": 1231,
+            "minimum": 504
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 164,
+          "top1Recall": 0.640625,
+          "uniqueScoredRows": {
+            "mean": 800.80078125,
+            "p95": 1077.0,
+            "maximum": 1284,
+            "minimum": 468
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 8,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 339,
+          "top1Recall": 0.662109375,
+          "uniqueScoredRows": {
+            "mean": 925.462890625,
+            "p95": 1310.0,
+            "maximum": 1554,
+            "minimum": 504
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 173,
+          "top1Recall": 0.67578125,
+          "uniqueScoredRows": {
+            "mean": 939.015625,
+            "p95": 1286.0,
+            "maximum": 1606,
+            "minimum": 699
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 170,
+          "top1Recall": 0.6640625,
+          "uniqueScoredRows": {
+            "mean": 925.71484375,
+            "p95": 1282.0,
+            "maximum": 1583,
+            "minimum": 577
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 8,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 340,
+          "top1Recall": 0.6640625,
+          "uniqueScoredRows": {
+            "mean": 1027.3515625,
+            "p95": 1465.0,
+            "maximum": 1776,
+            "minimum": 505
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 175,
+          "top1Recall": 0.68359375,
+          "uniqueScoredRows": {
+            "mean": 1044.375,
+            "p95": 1441.0,
+            "maximum": 1769,
+            "minimum": 749
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 172,
+          "top1Recall": 0.671875,
+          "uniqueScoredRows": {
+            "mean": 1022.7265625,
+            "p95": 1464.0,
+            "maximum": 1828,
+            "minimum": 657
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 8,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 352,
+          "top1Recall": 0.6875,
+          "uniqueScoredRows": {
+            "mean": 1208.33984375,
+            "p95": 1709.0,
+            "maximum": 2001,
+            "minimum": 736
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 179,
+          "top1Recall": 0.69921875,
+          "uniqueScoredRows": {
+            "mean": 1227.01953125,
+            "p95": 1717.0,
+            "maximum": 2160,
+            "minimum": 774
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 181,
+          "top1Recall": 0.70703125,
+          "uniqueScoredRows": {
+            "mean": 1201.96875,
+            "p95": 1692.0,
+            "maximum": 2150,
+            "minimum": 757
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 8,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 359,
+          "top1Recall": 0.701171875,
+          "uniqueScoredRows": {
+            "mean": 1358.287109375,
+            "p95": 1909.0,
+            "maximum": 2273,
+            "minimum": 773
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 180,
+          "top1Recall": 0.703125,
+          "uniqueScoredRows": {
+            "mean": 1390.58984375,
+            "p95": 1938.0,
+            "maximum": 2559,
+            "minimum": 779
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 184,
+          "top1Recall": 0.71875,
+          "uniqueScoredRows": {
+            "mean": 1357.18359375,
+            "p95": 1912.0,
+            "maximum": 2443,
+            "minimum": 796
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 16,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 316,
+          "top1Recall": 0.6171875,
+          "uniqueScoredRows": {
+            "mean": 970.666015625,
+            "p95": 1131.0,
+            "maximum": 1236,
+            "minimum": 704
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 170,
+          "top1Recall": 0.6640625,
+          "uniqueScoredRows": {
+            "mean": 978.140625,
+            "p95": 1133.0,
+            "maximum": 1254,
+            "minimum": 650
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 169,
+          "top1Recall": 0.66015625,
+          "uniqueScoredRows": {
+            "mean": 965.390625,
+            "p95": 1120.0,
+            "maximum": 1278,
+            "minimum": 717
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 16,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 396,
+          "top1Recall": 0.7734375,
+          "uniqueScoredRows": {
+            "mean": 1238.3984375,
+            "p95": 1594.0,
+            "maximum": 1811,
+            "minimum": 705
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 208,
+          "top1Recall": 0.8125,
+          "uniqueScoredRows": {
+            "mean": 1248.58203125,
+            "p95": 1548.0,
+            "maximum": 1855,
+            "minimum": 992
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 209,
+          "top1Recall": 0.81640625,
+          "uniqueScoredRows": {
+            "mean": 1234.765625,
+            "p95": 1580.0,
+            "maximum": 2057,
+            "minimum": 847
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 16,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 406,
+          "top1Recall": 0.79296875,
+          "uniqueScoredRows": {
+            "mean": 1429.138671875,
+            "p95": 1884.0,
+            "maximum": 2168,
+            "minimum": 868
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 211,
+          "top1Recall": 0.82421875,
+          "uniqueScoredRows": {
+            "mean": 1431.33203125,
+            "p95": 1894.0,
+            "maximum": 2369,
+            "minimum": 1011
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 215,
+          "top1Recall": 0.83984375,
+          "uniqueScoredRows": {
+            "mean": 1418.3515625,
+            "p95": 1871.0,
+            "maximum": 2562,
+            "minimum": 942
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 16,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 410,
+          "top1Recall": 0.80078125,
+          "uniqueScoredRows": {
+            "mean": 1594.017578125,
+            "p95": 2055.0,
+            "maximum": 2485,
+            "minimum": 1013
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 214,
+          "top1Recall": 0.8359375,
+          "uniqueScoredRows": {
+            "mean": 1598.08203125,
+            "p95": 2059.0,
+            "maximum": 2810,
+            "minimum": 1012
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 216,
+          "top1Recall": 0.84375,
+          "uniqueScoredRows": {
+            "mean": 1578.5859375,
+            "p95": 2093.0,
+            "maximum": 2803,
+            "minimum": 1036
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 32,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 347,
+          "top1Recall": 0.677734375,
+          "uniqueScoredRows": {
+            "mean": 1650.263671875,
+            "p95": 1897.0,
+            "maximum": 2109,
+            "minimum": 1151
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 186,
+          "top1Recall": 0.7265625,
+          "uniqueScoredRows": {
+            "mean": 1661.125,
+            "p95": 1884.0,
+            "maximum": 2066,
+            "minimum": 1071
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 176,
+          "top1Recall": 0.6875,
+          "uniqueScoredRows": {
+            "mean": 1647.25390625,
+            "p95": 1866.0,
+            "maximum": 2081,
+            "minimum": 1246
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "cosine",
+      "degree": 64,
+      "beam": 32,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 439,
+          "top1Recall": 0.857421875,
+          "uniqueScoredRows": {
+            "mean": 2096.783203125,
+            "p95": 2549.0,
+            "maximum": 2786,
+            "minimum": 1373
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 230,
+          "top1Recall": 0.8984375,
+          "uniqueScoredRows": {
+            "mean": 2110.37109375,
+            "p95": 2572.0,
+            "maximum": 2905,
+            "minimum": 1619
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 229,
+          "top1Recall": 0.89453125,
+          "uniqueScoredRows": {
+            "mean": 2099.04296875,
+            "p95": 2564.0,
+            "maximum": 2850,
+            "minimum": 1486
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 4,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 384,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 109,
+          "top1Recall": 0.212890625,
+          "uniqueScoredRows": {
+            "mean": 317.943359375,
+            "p95": 328.0,
+            "maximum": 337,
+            "minimum": 282
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 60,
+          "top1Recall": 0.234375,
+          "uniqueScoredRows": {
+            "mean": 318.7109375,
+            "p95": 330.0,
+            "maximum": 340,
+            "minimum": 282
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 62,
+          "top1Recall": 0.2421875,
+          "uniqueScoredRows": {
+            "mean": 317.96484375,
+            "p95": 329.0,
+            "maximum": 339,
+            "minimum": 284
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 4,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 512,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 192,
+          "top1Recall": 0.375,
+          "uniqueScoredRows": {
+            "mean": 363.732421875,
+            "p95": 396.0,
+            "maximum": 434,
+            "minimum": 298
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 110,
+          "top1Recall": 0.4296875,
+          "uniqueScoredRows": {
+            "mean": 366.7578125,
+            "p95": 402.0,
+            "maximum": 419,
+            "minimum": 305
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 105,
+          "top1Recall": 0.41015625,
+          "uniqueScoredRows": {
+            "mean": 363.3828125,
+            "p95": 397.0,
+            "maximum": 427,
+            "minimum": 308
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 4,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 640,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 225,
+          "top1Recall": 0.439453125,
+          "uniqueScoredRows": {
+            "mean": 404.673828125,
+            "p95": 461.0,
+            "maximum": 488,
+            "minimum": 315
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 131,
+          "top1Recall": 0.51171875,
+          "uniqueScoredRows": {
+            "mean": 408.140625,
+            "p95": 464.0,
+            "maximum": 500,
+            "minimum": 319
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 123,
+          "top1Recall": 0.48046875,
+          "uniqueScoredRows": {
+            "mean": 402.765625,
+            "p95": 460.0,
+            "maximum": 499,
+            "minimum": 320
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 4,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 247,
+          "top1Recall": 0.482421875,
+          "uniqueScoredRows": {
+            "mean": 442.892578125,
+            "p95": 520.0,
+            "maximum": 550,
+            "minimum": 326
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 139,
+          "top1Recall": 0.54296875,
+          "uniqueScoredRows": {
+            "mean": 444.6875,
+            "p95": 524.0,
+            "maximum": 563,
+            "minimum": 326
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 137,
+          "top1Recall": 0.53515625,
+          "uniqueScoredRows": {
+            "mean": 439.44140625,
+            "p95": 520.0,
+            "maximum": 570,
+            "minimum": 344
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 4,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 1024,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 271,
+          "top1Recall": 0.529296875,
+          "uniqueScoredRows": {
+            "mean": 509.548828125,
+            "p95": 617.0,
+            "maximum": 708,
+            "minimum": 349
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 151,
+          "top1Recall": 0.58984375,
+          "uniqueScoredRows": {
+            "mean": 512.97265625,
+            "p95": 627.0,
+            "maximum": 690,
+            "minimum": 342
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 147,
+          "top1Recall": 0.57421875,
+          "uniqueScoredRows": {
+            "mean": 507.7421875,
+            "p95": 624.0,
+            "maximum": 710,
+            "minimum": 374
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 4,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 288,
+          "top1Recall": 0.5625,
+          "uniqueScoredRows": {
+            "mean": 568.05859375,
+            "p95": 711.0,
+            "maximum": 817,
+            "minimum": 352
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 161,
+          "top1Recall": 0.62890625,
+          "uniqueScoredRows": {
+            "mean": 570.93359375,
+            "p95": 721.0,
+            "maximum": 787,
+            "minimum": 430
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 158,
+          "top1Recall": 0.6171875,
+          "uniqueScoredRows": {
+            "mean": 567.78515625,
+            "p95": 712.0,
+            "maximum": 820,
+            "minimum": 397
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 8,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 512,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 153,
+          "top1Recall": 0.298828125,
+          "uniqueScoredRows": {
+            "mean": 377.828125,
+            "p95": 398.0,
+            "maximum": 412,
+            "minimum": 317
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 89,
+          "top1Recall": 0.34765625,
+          "uniqueScoredRows": {
+            "mean": 377.9375,
+            "p95": 400.0,
+            "maximum": 410,
+            "minimum": 314
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 84,
+          "top1Recall": 0.328125,
+          "uniqueScoredRows": {
+            "mean": 377.4921875,
+            "p95": 398.0,
+            "maximum": 407,
+            "minimum": 320
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 8,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 267,
+          "top1Recall": 0.521484375,
+          "uniqueScoredRows": {
+            "mean": 458.392578125,
+            "p95": 511.0,
+            "maximum": 560,
+            "minimum": 358
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 148,
+          "top1Recall": 0.578125,
+          "uniqueScoredRows": {
+            "mean": 458.625,
+            "p95": 506.0,
+            "maximum": 547,
+            "minimum": 327
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 140,
+          "top1Recall": 0.546875,
+          "uniqueScoredRows": {
+            "mean": 457.93359375,
+            "p95": 507.0,
+            "maximum": 574,
+            "minimum": 352
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 8,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1024,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 295,
+          "top1Recall": 0.576171875,
+          "uniqueScoredRows": {
+            "mean": 526.712890625,
+            "p95": 612.0,
+            "maximum": 671,
+            "minimum": 370
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 167,
+          "top1Recall": 0.65234375,
+          "uniqueScoredRows": {
+            "mean": 526.55859375,
+            "p95": 601.0,
+            "maximum": 680,
+            "minimum": 370
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 158,
+          "top1Recall": 0.6171875,
+          "uniqueScoredRows": {
+            "mean": 526.8359375,
+            "p95": 623.0,
+            "maximum": 706,
+            "minimum": 406
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 8,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 308,
+          "top1Recall": 0.6015625,
+          "uniqueScoredRows": {
+            "mean": 585.630859375,
+            "p95": 705.0,
+            "maximum": 796,
+            "minimum": 383
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 171,
+          "top1Recall": 0.66796875,
+          "uniqueScoredRows": {
+            "mean": 584.1796875,
+            "p95": 704.0,
+            "maximum": 792,
+            "minimum": 443
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 165,
+          "top1Recall": 0.64453125,
+          "uniqueScoredRows": {
+            "mean": 586.52734375,
+            "p95": 719.0,
+            "maximum": 801,
+            "minimum": 415
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 8,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 329,
+          "top1Recall": 0.642578125,
+          "uniqueScoredRows": {
+            "mean": 689.32421875,
+            "p95": 881.0,
+            "maximum": 985,
+            "minimum": 450
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 178,
+          "top1Recall": 0.6953125,
+          "uniqueScoredRows": {
+            "mean": 687.01953125,
+            "p95": 862.0,
+            "maximum": 1001,
+            "minimum": 524
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 173,
+          "top1Recall": 0.67578125,
+          "uniqueScoredRows": {
+            "mean": 689.03515625,
+            "p95": 864.0,
+            "maximum": 983,
+            "minimum": 507
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 8,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 342,
+          "top1Recall": 0.66796875,
+          "uniqueScoredRows": {
+            "mean": 780.2890625,
+            "p95": 1027.0,
+            "maximum": 1168,
+            "minimum": 507
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 182,
+          "top1Recall": 0.7109375,
+          "uniqueScoredRows": {
+            "mean": 776.76171875,
+            "p95": 1009.0,
+            "maximum": 1138,
+            "minimum": 546
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 178,
+          "top1Recall": 0.6953125,
+          "uniqueScoredRows": {
+            "mean": 783.078125,
+            "p95": 991.0,
+            "maximum": 1193,
+            "minimum": 515
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 179,
+          "top1Recall": 0.349609375,
+          "uniqueScoredRows": {
+            "mean": 493.5546875,
+            "p95": 529.0,
+            "maximum": 550,
+            "minimum": 380
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 104,
+          "top1Recall": 0.40625,
+          "uniqueScoredRows": {
+            "mean": 493.62890625,
+            "p95": 530.0,
+            "maximum": 555,
+            "minimum": 351
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 98,
+          "top1Recall": 0.3828125,
+          "uniqueScoredRows": {
+            "mean": 492.984375,
+            "p95": 530.0,
+            "maximum": 550,
+            "minimum": 398
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 320,
+          "top1Recall": 0.625,
+          "uniqueScoredRows": {
+            "mean": 638.35546875,
+            "p95": 713.0,
+            "maximum": 786,
+            "minimum": 496
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 180,
+          "top1Recall": 0.703125,
+          "uniqueScoredRows": {
+            "mean": 639.18359375,
+            "p95": 719.0,
+            "maximum": 782,
+            "minimum": 520
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 171,
+          "top1Recall": 0.66796875,
+          "uniqueScoredRows": {
+            "mean": 635.9453125,
+            "p95": 722.0,
+            "maximum": 810,
+            "minimum": 505
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 354,
+          "top1Recall": 0.69140625,
+          "uniqueScoredRows": {
+            "mean": 748.537109375,
+            "p95": 879.0,
+            "maximum": 1034,
+            "minimum": 497
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 197,
+          "top1Recall": 0.76953125,
+          "uniqueScoredRows": {
+            "mean": 747.91796875,
+            "p95": 878.0,
+            "maximum": 1010,
+            "minimum": 585
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 191,
+          "top1Recall": 0.74609375,
+          "uniqueScoredRows": {
+            "mean": 741.0078125,
+            "p95": 879.0,
+            "maximum": 1027,
+            "minimum": 545
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 372,
+          "top1Recall": 0.7265625,
+          "uniqueScoredRows": {
+            "mean": 842.05859375,
+            "p95": 1035.0,
+            "maximum": 1228,
+            "minimum": 556
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 201,
+          "top1Recall": 0.78515625,
+          "uniqueScoredRows": {
+            "mean": 840.91015625,
+            "p95": 1008.0,
+            "maximum": 1185,
+            "minimum": 604
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 198,
+          "top1Recall": 0.7734375,
+          "uniqueScoredRows": {
+            "mean": 833.015625,
+            "p95": 1013.0,
+            "maximum": 1227,
+            "minimum": 613
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 382,
+          "top1Recall": 0.74609375,
+          "uniqueScoredRows": {
+            "mean": 1009.42578125,
+            "p95": 1271.0,
+            "maximum": 1495,
+            "minimum": 643
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 209,
+          "top1Recall": 0.81640625,
+          "uniqueScoredRows": {
+            "mean": 1006.91796875,
+            "p95": 1288.0,
+            "maximum": 1508,
+            "minimum": 614
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 204,
+          "top1Recall": 0.796875,
+          "uniqueScoredRows": {
+            "mean": 1000.15625,
+            "p95": 1244.0,
+            "maximum": 1531,
+            "minimum": 637
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 16,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 394,
+          "top1Recall": 0.76953125,
+          "uniqueScoredRows": {
+            "mean": 1169.158203125,
+            "p95": 1466.0,
+            "maximum": 1701,
+            "minimum": 753
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 211,
+          "top1Recall": 0.82421875,
+          "uniqueScoredRows": {
+            "mean": 1165.76171875,
+            "p95": 1462.0,
+            "maximum": 1859,
+            "minimum": 687
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 208,
+          "top1Recall": 0.8125,
+          "uniqueScoredRows": {
+            "mean": 1156.9140625,
+            "p95": 1445.0,
+            "maximum": 1766,
+            "minimum": 656
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 32,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 185,
+          "top1Recall": 0.361328125,
+          "uniqueScoredRows": {
+            "mean": 721.01171875,
+            "p95": 781.0,
+            "maximum": 832,
+            "minimum": 553
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 106,
+          "top1Recall": 0.4140625,
+          "uniqueScoredRows": {
+            "mean": 721.21484375,
+            "p95": 783.0,
+            "maximum": 821,
+            "minimum": 558
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 98,
+          "top1Recall": 0.3828125,
+          "uniqueScoredRows": {
+            "mean": 719.32421875,
+            "p95": 781.0,
+            "maximum": 812,
+            "minimum": 579
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 32,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 350,
+          "top1Recall": 0.68359375,
+          "uniqueScoredRows": {
+            "mean": 993.04296875,
+            "p95": 1122.0,
+            "maximum": 1239,
+            "minimum": 741
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 195,
+          "top1Recall": 0.76171875,
+          "uniqueScoredRows": {
+            "mean": 996.015625,
+            "p95": 1121.0,
+            "maximum": 1201,
+            "minimum": 685
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 182,
+          "top1Recall": 0.7109375,
+          "uniqueScoredRows": {
+            "mean": 991.1796875,
+            "p95": 1117.0,
+            "maximum": 1241,
+            "minimum": 759
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 32,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 394,
+          "top1Recall": 0.76953125,
+          "uniqueScoredRows": {
+            "mean": 1174.95703125,
+            "p95": 1391.0,
+            "maximum": 1528,
+            "minimum": 936
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 216,
+          "top1Recall": 0.84375,
+          "uniqueScoredRows": {
+            "mean": 1176.2734375,
+            "p95": 1403.0,
+            "maximum": 1552,
+            "minimum": 826
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 209,
+          "top1Recall": 0.81640625,
+          "uniqueScoredRows": {
+            "mean": 1170.6015625,
+            "p95": 1398.0,
+            "maximum": 1521,
+            "minimum": 873
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 32,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 410,
+          "top1Recall": 0.80078125,
+          "uniqueScoredRows": {
+            "mean": 1340.408203125,
+            "p95": 1616.0,
+            "maximum": 1799,
+            "minimum": 1024
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 221,
+          "top1Recall": 0.86328125,
+          "uniqueScoredRows": {
+            "mean": 1343.75390625,
+            "p95": 1643.0,
+            "maximum": 1831,
+            "minimum": 893
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 214,
+          "top1Recall": 0.8359375,
+          "uniqueScoredRows": {
+            "mean": 1336.796875,
+            "p95": 1602.0,
+            "maximum": 1768,
+            "minimum": 948
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 32,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 425,
+          "top1Recall": 0.830078125,
+          "uniqueScoredRows": {
+            "mean": 1656.30859375,
+            "p95": 1984.0,
+            "maximum": 2262,
+            "minimum": 1101
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 224,
+          "top1Recall": 0.875,
+          "uniqueScoredRows": {
+            "mean": 1657.7265625,
+            "p95": 2005.0,
+            "maximum": 2459,
+            "minimum": 1065
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 220,
+          "top1Recall": 0.859375,
+          "uniqueScoredRows": {
+            "mean": 1645.12109375,
+            "p95": 1936.0,
+            "maximum": 2109,
+            "minimum": 1135
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 16,
+      "beam": 32,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 436,
+          "top1Recall": 0.8515625,
+          "uniqueScoredRows": {
+            "mean": 1944.134765625,
+            "p95": 2285.0,
+            "maximum": 2598,
+            "minimum": 1278
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 227,
+          "top1Recall": 0.88671875,
+          "uniqueScoredRows": {
+            "mean": 1958.42578125,
+            "p95": 2318.0,
+            "maximum": 2771,
+            "minimum": 1415
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 222,
+          "top1Recall": 0.8671875,
+          "uniqueScoredRows": {
+            "mean": 1923.875,
+            "p95": 2245.0,
+            "maximum": 2627,
+            "minimum": 1264
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 4,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 512,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 149,
+          "top1Recall": 0.291015625,
+          "uniqueScoredRows": {
+            "mean": 371.953125,
+            "p95": 399.0,
+            "maximum": 421,
+            "minimum": 290
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 79,
+          "top1Recall": 0.30859375,
+          "uniqueScoredRows": {
+            "mean": 373.80078125,
+            "p95": 401.0,
+            "maximum": 426,
+            "minimum": 298
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 85,
+          "top1Recall": 0.33203125,
+          "uniqueScoredRows": {
+            "mean": 372.03125,
+            "p95": 401.0,
+            "maximum": 423,
+            "minimum": 292
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 4,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 206,
+          "top1Recall": 0.40234375,
+          "uniqueScoredRows": {
+            "mean": 452.37109375,
+            "p95": 525.0,
+            "maximum": 573,
+            "minimum": 314
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 112,
+          "top1Recall": 0.4375,
+          "uniqueScoredRows": {
+            "mean": 456.8046875,
+            "p95": 529.0,
+            "maximum": 572,
+            "minimum": 323
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 113,
+          "top1Recall": 0.44140625,
+          "uniqueScoredRows": {
+            "mean": 449.984375,
+            "p95": 532.0,
+            "maximum": 595,
+            "minimum": 324
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 4,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1024,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 234,
+          "top1Recall": 0.45703125,
+          "uniqueScoredRows": {
+            "mean": 515.943359375,
+            "p95": 632.0,
+            "maximum": 700,
+            "minimum": 364
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 121,
+          "top1Recall": 0.47265625,
+          "uniqueScoredRows": {
+            "mean": 521.71484375,
+            "p95": 630.0,
+            "maximum": 688,
+            "minimum": 323
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 130,
+          "top1Recall": 0.5078125,
+          "uniqueScoredRows": {
+            "mean": 512.3359375,
+            "p95": 649.0,
+            "maximum": 728,
+            "minimum": 331
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 4,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 245,
+          "top1Recall": 0.478515625,
+          "uniqueScoredRows": {
+            "mean": 570.73828125,
+            "p95": 732.0,
+            "maximum": 813,
+            "minimum": 370
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 126,
+          "top1Recall": 0.4921875,
+          "uniqueScoredRows": {
+            "mean": 578.23046875,
+            "p95": 728.0,
+            "maximum": 825,
+            "minimum": 334
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 137,
+          "top1Recall": 0.53515625,
+          "uniqueScoredRows": {
+            "mean": 568.01953125,
+            "p95": 729.0,
+            "maximum": 889,
+            "minimum": 383
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 4,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 265,
+          "top1Recall": 0.517578125,
+          "uniqueScoredRows": {
+            "mean": 665.154296875,
+            "p95": 879.0,
+            "maximum": 1019,
+            "minimum": 370
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 141,
+          "top1Recall": 0.55078125,
+          "uniqueScoredRows": {
+            "mean": 679.5234375,
+            "p95": 898.0,
+            "maximum": 1018,
+            "minimum": 350
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 144,
+          "top1Recall": 0.5625,
+          "uniqueScoredRows": {
+            "mean": 666.44140625,
+            "p95": 899.0,
+            "maximum": 1125,
+            "minimum": 406
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 4,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 283,
+          "top1Recall": 0.552734375,
+          "uniqueScoredRows": {
+            "mean": 745.25,
+            "p95": 1023.0,
+            "maximum": 1132,
+            "minimum": 370
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 147,
+          "top1Recall": 0.57421875,
+          "uniqueScoredRows": {
+            "mean": 763.2421875,
+            "p95": 1034.0,
+            "maximum": 1173,
+            "minimum": 491
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 151,
+          "top1Recall": 0.58984375,
+          "uniqueScoredRows": {
+            "mean": 750.75390625,
+            "p95": 1034.0,
+            "maximum": 1279,
+            "minimum": 476
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 8,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 205,
+          "top1Recall": 0.400390625,
+          "uniqueScoredRows": {
+            "mean": 479.59375,
+            "p95": 525.0,
+            "maximum": 564,
+            "minimum": 361
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 121,
+          "top1Recall": 0.47265625,
+          "uniqueScoredRows": {
+            "mean": 482.9296875,
+            "p95": 530.0,
+            "maximum": 550,
+            "minimum": 343
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 120,
+          "top1Recall": 0.46875,
+          "uniqueScoredRows": {
+            "mean": 478.12109375,
+            "p95": 532.0,
+            "maximum": 570,
+            "minimum": 370
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 8,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 290,
+          "top1Recall": 0.56640625,
+          "uniqueScoredRows": {
+            "mean": 609.525390625,
+            "p95": 711.0,
+            "maximum": 814,
+            "minimum": 416
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 151,
+          "top1Recall": 0.58984375,
+          "uniqueScoredRows": {
+            "mean": 613.75390625,
+            "p95": 712.0,
+            "maximum": 828,
+            "minimum": 405
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 157,
+          "top1Recall": 0.61328125,
+          "uniqueScoredRows": {
+            "mean": 606.65625,
+            "p95": 732.0,
+            "maximum": 862,
+            "minimum": 406
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 8,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 313,
+          "top1Recall": 0.611328125,
+          "uniqueScoredRows": {
+            "mean": 706.44140625,
+            "p95": 882.0,
+            "maximum": 1028,
+            "minimum": 425
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 167,
+          "top1Recall": 0.65234375,
+          "uniqueScoredRows": {
+            "mean": 716.421875,
+            "p95": 861.0,
+            "maximum": 1104,
+            "minimum": 510
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 165,
+          "top1Recall": 0.64453125,
+          "uniqueScoredRows": {
+            "mean": 705.9921875,
+            "p95": 913.0,
+            "maximum": 1145,
+            "minimum": 470
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 8,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 323,
+          "top1Recall": 0.630859375,
+          "uniqueScoredRows": {
+            "mean": 788.662109375,
+            "p95": 1025.0,
+            "maximum": 1185,
+            "minimum": 425
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 171,
+          "top1Recall": 0.66796875,
+          "uniqueScoredRows": {
+            "mean": 799.66796875,
+            "p95": 1025.0,
+            "maximum": 1300,
+            "minimum": 593
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 167,
+          "top1Recall": 0.65234375,
+          "uniqueScoredRows": {
+            "mean": 790.046875,
+            "p95": 1035.0,
+            "maximum": 1356,
+            "minimum": 487
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 8,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 337,
+          "top1Recall": 0.658203125,
+          "uniqueScoredRows": {
+            "mean": 927.869140625,
+            "p95": 1231.0,
+            "maximum": 1406,
+            "minimum": 532
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 175,
+          "top1Recall": 0.68359375,
+          "uniqueScoredRows": {
+            "mean": 942.15234375,
+            "p95": 1263.0,
+            "maximum": 1589,
+            "minimum": 597
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 173,
+          "top1Recall": 0.67578125,
+          "uniqueScoredRows": {
+            "mean": 927.9921875,
+            "p95": 1227.0,
+            "maximum": 1674,
+            "minimum": 558
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 8,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 347,
+          "top1Recall": 0.677734375,
+          "uniqueScoredRows": {
+            "mean": 1052.927734375,
+            "p95": 1439.0,
+            "maximum": 1663,
+            "minimum": 608
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 181,
+          "top1Recall": 0.70703125,
+          "uniqueScoredRows": {
+            "mean": 1067.84765625,
+            "p95": 1461.0,
+            "maximum": 1776,
+            "minimum": 605
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 181,
+          "top1Recall": 0.70703125,
+          "uniqueScoredRows": {
+            "mean": 1050.234375,
+            "p95": 1418.0,
+            "maximum": 1819,
+            "minimum": 603
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 16,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 251,
+          "top1Recall": 0.490234375,
+          "uniqueScoredRows": {
+            "mean": 690.96875,
+            "p95": 767.0,
+            "maximum": 834,
+            "minimum": 483
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 147,
+          "top1Recall": 0.57421875,
+          "uniqueScoredRows": {
+            "mean": 696.41796875,
+            "p95": 771.0,
+            "maximum": 806,
+            "minimum": 425
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 146,
+          "top1Recall": 0.5703125,
+          "uniqueScoredRows": {
+            "mean": 689.27734375,
+            "p95": 764.0,
+            "maximum": 831,
+            "minimum": 495
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 16,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 361,
+          "top1Recall": 0.705078125,
+          "uniqueScoredRows": {
+            "mean": 900.388671875,
+            "p95": 1046.0,
+            "maximum": 1178,
+            "minimum": 531
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 193,
+          "top1Recall": 0.75390625,
+          "uniqueScoredRows": {
+            "mean": 908.69140625,
+            "p95": 1061.0,
+            "maximum": 1201,
+            "minimum": 638
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 194,
+          "top1Recall": 0.7578125,
+          "uniqueScoredRows": {
+            "mean": 903.203125,
+            "p95": 1073.0,
+            "maximum": 1276,
+            "minimum": 652
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 16,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 378,
+          "top1Recall": 0.73828125,
+          "uniqueScoredRows": {
+            "mean": 1049.04296875,
+            "p95": 1282.0,
+            "maximum": 1459,
+            "minimum": 647
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 202,
+          "top1Recall": 0.7890625,
+          "uniqueScoredRows": {
+            "mean": 1052.109375,
+            "p95": 1287.0,
+            "maximum": 1471,
+            "minimum": 721
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 202,
+          "top1Recall": 0.7890625,
+          "uniqueScoredRows": {
+            "mean": 1047.4609375,
+            "p95": 1295.0,
+            "maximum": 1628,
+            "minimum": 690
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 16,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 390,
+          "top1Recall": 0.76171875,
+          "uniqueScoredRows": {
+            "mean": 1176.755859375,
+            "p95": 1461.0,
+            "maximum": 1772,
+            "minimum": 731
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 205,
+          "top1Recall": 0.80078125,
+          "uniqueScoredRows": {
+            "mean": 1180.1640625,
+            "p95": 1481.0,
+            "maximum": 1781,
+            "minimum": 723
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 204,
+          "top1Recall": 0.796875,
+          "uniqueScoredRows": {
+            "mean": 1171.44921875,
+            "p95": 1474.0,
+            "maximum": 1939,
+            "minimum": 707
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 16,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 402,
+          "top1Recall": 0.78515625,
+          "uniqueScoredRows": {
+            "mean": 1406.43359375,
+            "p95": 1787.0,
+            "maximum": 2122,
+            "minimum": 861
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 207,
+          "top1Recall": 0.80859375,
+          "uniqueScoredRows": {
+            "mean": 1402.859375,
+            "p95": 1781.0,
+            "maximum": 2159,
+            "minimum": 829
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 212,
+          "top1Recall": 0.828125,
+          "uniqueScoredRows": {
+            "mean": 1392.77734375,
+            "p95": 1759.0,
+            "maximum": 2281,
+            "minimum": 848
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 16,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 404,
+          "top1Recall": 0.7890625,
+          "uniqueScoredRows": {
+            "mean": 1605.951171875,
+            "p95": 2028.0,
+            "maximum": 2354,
+            "minimum": 870
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 212,
+          "top1Recall": 0.828125,
+          "uniqueScoredRows": {
+            "mean": 1609.43359375,
+            "p95": 2025.0,
+            "maximum": 2355,
+            "minimum": 841
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 215,
+          "top1Recall": 0.83984375,
+          "uniqueScoredRows": {
+            "mean": 1594.6015625,
+            "p95": 2004.0,
+            "maximum": 2550,
+            "minimum": 859
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 32,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 270,
+          "top1Recall": 0.52734375,
+          "uniqueScoredRows": {
+            "mean": 1098.6953125,
+            "p95": 1219.0,
+            "maximum": 1331,
+            "minimum": 767
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 157,
+          "top1Recall": 0.61328125,
+          "uniqueScoredRows": {
+            "mean": 1102.81640625,
+            "p95": 1222.0,
+            "maximum": 1317,
+            "minimum": 728
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 153,
+          "top1Recall": 0.59765625,
+          "uniqueScoredRows": {
+            "mean": 1093.87109375,
+            "p95": 1215.0,
+            "maximum": 1271,
+            "minimum": 698
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 32,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 403,
+          "top1Recall": 0.787109375,
+          "uniqueScoredRows": {
+            "mean": 1463.203125,
+            "p95": 1728.0,
+            "maximum": 1900,
+            "minimum": 962
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 216,
+          "top1Recall": 0.84375,
+          "uniqueScoredRows": {
+            "mean": 1473.33984375,
+            "p95": 1715.0,
+            "maximum": 1871,
+            "minimum": 955
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 209,
+          "top1Recall": 0.81640625,
+          "uniqueScoredRows": {
+            "mean": 1461.81640625,
+            "p95": 1736.0,
+            "maximum": 1843,
+            "minimum": 912
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 32,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 424,
+          "top1Recall": 0.828125,
+          "uniqueScoredRows": {
+            "mean": 1703.2109375,
+            "p95": 2086.0,
+            "maximum": 2214,
+            "minimum": 998
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 225,
+          "top1Recall": 0.87890625,
+          "uniqueScoredRows": {
+            "mean": 1712.66015625,
+            "p95": 2058.0,
+            "maximum": 2329,
+            "minimum": 973
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 225,
+          "top1Recall": 0.87890625,
+          "uniqueScoredRows": {
+            "mean": 1696.4140625,
+            "p95": 2040.0,
+            "maximum": 2175,
+            "minimum": 956
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 32,
+      "beam": 32,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 436,
+          "top1Recall": 0.8515625,
+          "uniqueScoredRows": {
+            "mean": 1925.259765625,
+            "p95": 2368.0,
+            "maximum": 2603,
+            "minimum": 1135
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 226,
+          "top1Recall": 0.8828125,
+          "uniqueScoredRows": {
+            "mean": 1929.90625,
+            "p95": 2369.0,
+            "maximum": 2653,
+            "minimum": 1066
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 227,
+          "top1Recall": 0.88671875,
+          "uniqueScoredRows": {
+            "mean": 1910.7109375,
+            "p95": 2299.0,
+            "maximum": 2474,
+            "minimum": 1047
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 4,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 768,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 200,
+          "top1Recall": 0.390625,
+          "uniqueScoredRows": {
+            "mean": 466.26171875,
+            "p95": 529.0,
+            "maximum": 583,
+            "minimum": 298
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 102,
+          "top1Recall": 0.3984375,
+          "uniqueScoredRows": {
+            "mean": 470.8203125,
+            "p95": 538.0,
+            "maximum": 586,
+            "minimum": 323
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 101,
+          "top1Recall": 0.39453125,
+          "uniqueScoredRows": {
+            "mean": 465.3125,
+            "p95": 538.0,
+            "maximum": 568,
+            "minimum": 296
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 4,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 234,
+          "top1Recall": 0.45703125,
+          "uniqueScoredRows": {
+            "mean": 584.171875,
+            "p95": 746.0,
+            "maximum": 852,
+            "minimum": 330
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 116,
+          "top1Recall": 0.453125,
+          "uniqueScoredRows": {
+            "mean": 595.74609375,
+            "p95": 772.0,
+            "maximum": 862,
+            "minimum": 323
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 120,
+          "top1Recall": 0.46875,
+          "uniqueScoredRows": {
+            "mean": 582.0390625,
+            "p95": 754.0,
+            "maximum": 878,
+            "minimum": 331
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 4,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 1792,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 241,
+          "top1Recall": 0.470703125,
+          "uniqueScoredRows": {
+            "mean": 670.623046875,
+            "p95": 915.0,
+            "maximum": 1048,
+            "minimum": 362
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 123,
+          "top1Recall": 0.48046875,
+          "uniqueScoredRows": {
+            "mean": 688.5859375,
+            "p95": 941.0,
+            "maximum": 1065,
+            "minimum": 323
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 128,
+          "top1Recall": 0.5,
+          "uniqueScoredRows": {
+            "mean": 673.20703125,
+            "p95": 929.0,
+            "maximum": 1114,
+            "minimum": 331
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 4,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 252,
+          "top1Recall": 0.4921875,
+          "uniqueScoredRows": {
+            "mean": 741.748046875,
+            "p95": 1029.0,
+            "maximum": 1181,
+            "minimum": 402
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 127,
+          "top1Recall": 0.49609375,
+          "uniqueScoredRows": {
+            "mean": 765.328125,
+            "p95": 1057.0,
+            "maximum": 1216,
+            "minimum": 334
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 134,
+          "top1Recall": 0.5234375,
+          "uniqueScoredRows": {
+            "mean": 748.15234375,
+            "p95": 1049.0,
+            "maximum": 1316,
+            "minimum": 426
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 4,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 260,
+          "top1Recall": 0.5078125,
+          "uniqueScoredRows": {
+            "mean": 862.443359375,
+            "p95": 1207.0,
+            "maximum": 1487,
+            "minimum": 402
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 138,
+          "top1Recall": 0.5390625,
+          "uniqueScoredRows": {
+            "mean": 894.82421875,
+            "p95": 1277.0,
+            "maximum": 1506,
+            "minimum": 366
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 145,
+          "top1Recall": 0.56640625,
+          "uniqueScoredRows": {
+            "mean": 872.24609375,
+            "p95": 1231.0,
+            "maximum": 1544,
+            "minimum": 431
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 4,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 276,
+          "top1Recall": 0.5390625,
+          "uniqueScoredRows": {
+            "mean": 967.26171875,
+            "p95": 1337.0,
+            "maximum": 1689,
+            "minimum": 402
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 146,
+          "top1Recall": 0.5703125,
+          "uniqueScoredRows": {
+            "mean": 1005.80078125,
+            "p95": 1413.0,
+            "maximum": 1727,
+            "minimum": 560
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 151,
+          "top1Recall": 0.58984375,
+          "uniqueScoredRows": {
+            "mean": 979.046875,
+            "p95": 1394.0,
+            "maximum": 1759,
+            "minimum": 568
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 8,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 1280,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 287,
+          "top1Recall": 0.560546875,
+          "uniqueScoredRows": {
+            "mean": 646.330078125,
+            "p95": 732.0,
+            "maximum": 836,
+            "minimum": 412
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 149,
+          "top1Recall": 0.58203125,
+          "uniqueScoredRows": {
+            "mean": 651.04296875,
+            "p95": 740.0,
+            "maximum": 827,
+            "minimum": 407
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 146,
+          "top1Recall": 0.5703125,
+          "uniqueScoredRows": {
+            "mean": 646.73828125,
+            "p95": 764.0,
+            "maximum": 822,
+            "minimum": 474
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 8,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 330,
+          "top1Recall": 0.64453125,
+          "uniqueScoredRows": {
+            "mean": 826.16015625,
+            "p95": 1067.0,
+            "maximum": 1236,
+            "minimum": 429
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 167,
+          "top1Recall": 0.65234375,
+          "uniqueScoredRows": {
+            "mean": 833.78125,
+            "p95": 1076.0,
+            "maximum": 1298,
+            "minimum": 497
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 168,
+          "top1Recall": 0.65625,
+          "uniqueScoredRows": {
+            "mean": 834.5546875,
+            "p95": 1091.0,
+            "maximum": 1333,
+            "minimum": 505
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 8,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 3328,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 337,
+          "top1Recall": 0.658203125,
+          "uniqueScoredRows": {
+            "mean": 954.412109375,
+            "p95": 1269.0,
+            "maximum": 1480,
+            "minimum": 505
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 174,
+          "top1Recall": 0.6796875,
+          "uniqueScoredRows": {
+            "mean": 975.16796875,
+            "p95": 1297.0,
+            "maximum": 1514,
+            "minimum": 674
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 173,
+          "top1Recall": 0.67578125,
+          "uniqueScoredRows": {
+            "mean": 962.37109375,
+            "p95": 1327.0,
+            "maximum": 1744,
+            "minimum": 580
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 8,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 342,
+          "top1Recall": 0.66796875,
+          "uniqueScoredRows": {
+            "mean": 1061.03515625,
+            "p95": 1434.0,
+            "maximum": 1694,
+            "minimum": 505
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 174,
+          "top1Recall": 0.6796875,
+          "uniqueScoredRows": {
+            "mean": 1089.2265625,
+            "p95": 1467.0,
+            "maximum": 1746,
+            "minimum": 728
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 176,
+          "top1Recall": 0.6875,
+          "uniqueScoredRows": {
+            "mean": 1068.51171875,
+            "p95": 1461.0,
+            "maximum": 1940,
+            "minimum": 671
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 8,
+      "hops": 12,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 353,
+          "top1Recall": 0.689453125,
+          "uniqueScoredRows": {
+            "mean": 1241.734375,
+            "p95": 1677.0,
+            "maximum": 2011,
+            "minimum": 761
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 179,
+          "top1Recall": 0.69921875,
+          "uniqueScoredRows": {
+            "mean": 1268.0546875,
+            "p95": 1748.0,
+            "maximum": 2187,
+            "minimum": 820
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 183,
+          "top1Recall": 0.71484375,
+          "uniqueScoredRows": {
+            "mean": 1251.84765625,
+            "p95": 1693.0,
+            "maximum": 2200,
+            "minimum": 790
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 8,
+      "hops": 16,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 361,
+          "top1Recall": 0.705078125,
+          "uniqueScoredRows": {
+            "mean": 1391.998046875,
+            "p95": 1867.0,
+            "maximum": 2254,
+            "minimum": 810
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 182,
+          "top1Recall": 0.7109375,
+          "uniqueScoredRows": {
+            "mean": 1422.32421875,
+            "p95": 2009.0,
+            "maximum": 2414,
+            "minimum": 823
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 185,
+          "top1Recall": 0.72265625,
+          "uniqueScoredRows": {
+            "mean": 1398.609375,
+            "p95": 1891.0,
+            "maximum": 2447,
+            "minimum": 826
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 16,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 2304,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 340,
+          "top1Recall": 0.6640625,
+          "uniqueScoredRows": {
+            "mean": 999.318359375,
+            "p95": 1118.0,
+            "maximum": 1245,
+            "minimum": 699
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 180,
+          "top1Recall": 0.703125,
+          "uniqueScoredRows": {
+            "mean": 1006.2265625,
+            "p95": 1147.0,
+            "maximum": 1218,
+            "minimum": 703
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 177,
+          "top1Recall": 0.69140625,
+          "uniqueScoredRows": {
+            "mean": 1000.375,
+            "p95": 1164.0,
+            "maximum": 1296,
+            "minimum": 775
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 16,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 398,
+          "top1Recall": 0.77734375,
+          "uniqueScoredRows": {
+            "mean": 1274.939453125,
+            "p95": 1549.0,
+            "maximum": 1839,
+            "minimum": 705
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 208,
+          "top1Recall": 0.8125,
+          "uniqueScoredRows": {
+            "mean": 1286.7109375,
+            "p95": 1567.0,
+            "maximum": 1816,
+            "minimum": 883
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 211,
+          "top1Recall": 0.82421875,
+          "uniqueScoredRows": {
+            "mean": 1281.3359375,
+            "p95": 1602.0,
+            "maximum": 2133,
+            "minimum": 852
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 16,
+      "hops": 6,
+      "theoreticalMaximumScoredRows": 6400,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 407,
+          "top1Recall": 0.794921875,
+          "uniqueScoredRows": {
+            "mean": 1466.5703125,
+            "p95": 1821.0,
+            "maximum": 2331,
+            "minimum": 886
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 211,
+          "top1Recall": 0.82421875,
+          "uniqueScoredRows": {
+            "mean": 1474.90625,
+            "p95": 1850.0,
+            "maximum": 2241,
+            "minimum": 1019
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 214,
+          "top1Recall": 0.8359375,
+          "uniqueScoredRows": {
+            "mean": 1474.8984375,
+            "p95": 1875.0,
+            "maximum": 2552,
+            "minimum": 938
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 16,
+      "hops": 8,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 411,
+          "top1Recall": 0.802734375,
+          "uniqueScoredRows": {
+            "mean": 1620.36328125,
+            "p95": 2037.0,
+            "maximum": 2720,
+            "minimum": 1033
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 213,
+          "top1Recall": 0.83203125,
+          "uniqueScoredRows": {
+            "mean": 1627.03125,
+            "p95": 2082.0,
+            "maximum": 2466,
+            "minimum": 1058
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 216,
+          "top1Recall": 0.84375,
+          "uniqueScoredRows": {
+            "mean": 1626.09375,
+            "p95": 2096.0,
+            "maximum": 2812,
+            "minimum": 1039
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 32,
+      "hops": 2,
+      "theoreticalMaximumScoredRows": 4352,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 370,
+          "top1Recall": 0.72265625,
+          "uniqueScoredRows": {
+            "mean": 1695.25390625,
+            "p95": 1919.0,
+            "maximum": 2035,
+            "minimum": 1194
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 192,
+          "top1Recall": 0.75,
+          "uniqueScoredRows": {
+            "mean": 1707.44140625,
+            "p95": 1922.0,
+            "maximum": 2067,
+            "minimum": 1074
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 183,
+          "top1Recall": 0.71484375,
+          "uniqueScoredRows": {
+            "mean": 1699.74609375,
+            "p95": 1939.0,
+            "maximum": 2085,
+            "minimum": 1273
+          }
+        }
+      }
+    },
+    {
+      "graphMetric": "inner-product",
+      "degree": 64,
+      "beam": 32,
+      "hops": 4,
+      "theoreticalMaximumScoredRows": 8448,
+      "splits": {
+        "train": {
+          "samples": 512,
+          "top1Matches": 443,
+          "top1Recall": 0.865234375,
+          "uniqueScoredRows": {
+            "mean": 2138.556640625,
+            "p95": 2565.0,
+            "maximum": 2763,
+            "minimum": 1353
+          }
+        },
+        "validation": {
+          "samples": 256,
+          "top1Matches": 231,
+          "top1Recall": 0.90234375,
+          "uniqueScoredRows": {
+            "mean": 2153.31640625,
+            "p95": 2568.0,
+            "maximum": 3124,
+            "minimum": 1401
+          }
+        },
+        "test": {
+          "samples": 256,
+          "top1Matches": 226,
+          "top1Recall": 0.8828125,
+          "uniqueScoredRows": {
+            "mean": 2148.1484375,
+            "p95": 2571.0,
+            "maximum": 2822,
+            "minimum": 1606
+          }
+        }
+      }
+    }
+  ]
+}

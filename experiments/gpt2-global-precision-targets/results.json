@@ -1,0 +1,236 @@
+{
+  "model": "openai-community/gpt2",
+  "architectureAndWeightsChanged": false,
+  "checkpointChanged": false,
+  "states": 1024,
+  "productionInputRange": 266.2483969116211,
+  "floatMargins": {
+    "minimum": 0.0014978876472611091,
+    "median": 0.5690120464862964,
+    "p95": 3.2263634920069464,
+    "maximum": 9.924900612753788,
+    "mean": 1.0665636450478528
+  },
+  "precisions": [
+    {
+      "bits": 11,
+      "scale": 0.0017450210052967537,
+      "weightRmse": 0.0005034535963121163,
+      "floatWinnerMatches": 997,
+      "floatWinnerMatchFraction": 0.9736328125,
+      "mismatchStateIndices": [
+        48,
+        53,
+        128,
+        145,
+        190,
+        265,
+        325,
+        343,
+        382,
+        390,
+        409,
+        440,
+        442,
+        445,
+        459,
+        503,
+        505,
+        506,
+        535,
+        563,
+        609,
+        651,
+        777,
+        796,
+        835,
+        885,
+        985
+      ],
+      "margins": {
+        "minimum": 5.671497122250457e-05,
+        "median": 0.5743099785563928,
+        "p95": 3.187182887046113,
+        "maximum": 9.953449113114857,
+        "mean": 1.0708048563883024
+      }
+    },
+    {
+      "bits": 12,
+      "scale": 0.0008720842640051681,
+      "weightRmse": 0.00025178949406851053,
+      "floatWinnerMatches": 1007,
+      "floatWinnerMatchFraction": 0.9833984375,
+      "mismatchStateIndices": [
+        79,
+        125,
+        190,
+        292,
+        493,
+        505,
+        535,
+        547,
+        600,
+        612,
+        766,
+        821,
+        824,
+        835,
+        889,
+        928,
+        1021
+      ],
+      "margins": {
+        "minimum": 0.0007652780769404899,
+        "median": 0.5653846088631873,
+        "p95": 3.22782955390754,
+        "maximum": 9.907700966443173,
+        "mean": 1.0631587624497831
+      }
+    },
+    {
+      "bits": 13,
+      "scale": 0.00043593565040746745,
+      "weightRmse": 0.00012589774068045453,
+      "floatWinnerMatches": 1016,
+      "floatWinnerMatchFraction": 0.9921875,
+      "mismatchStateIndices": [
+        409,
+        474,
+        505,
+        547,
+        777,
+        824,
+        877,
+        885
+      ],
+      "margins": {
+        "minimum": 0.0002479462208384575,
+        "median": 0.5713495609261301,
+        "p95": 3.2033234900717247,
+        "maximum": 9.925039275162334,
+        "mean": 1.0677107690695342
+      }
+    },
+    {
+      "bits": 14,
+      "scale": 0.00021794121455482592,
+      "weightRmse": 6.293476524806736e-05,
+      "floatWinnerMatches": 1014,
+      "floatWinnerMatchFraction": 0.990234375,
+      "mismatchStateIndices": [
+        82,
+        127,
+        250,
+        391,
+        445,
+        474,
+        495,
+        821,
+        889,
+        992
+      ],
+      "margins": {
+        "minimum": 0.0009066640468092801,
+        "median": 0.5615650439964135,
+        "p95": 3.236702105720582,
+        "maximum": 9.949373542453941,
+        "mean": 1.0667261726055333
+      }
+    },
+    {
+      "bits": 15,
+      "scale": 0.0001089639558333992,
+      "weightRmse": 3.1462745370604e-05,
+      "floatWinnerMatches": 1023,
+      "floatWinnerMatchFraction": 0.9990234375,
+      "mismatchStateIndices": [
+        547
+      ],
+      "margins": {
+        "minimum": 0.00018946705364442096,
+        "median": 0.5648189939699506,
+        "p95": 3.229765180239937,
+        "maximum": 9.906492071504886,
+        "mean": 1.0660928291354643
+      }
+    },
+    {
+      "bits": 16,
+      "scale": 5.448031520794028e-05,
+      "weightRmse": 1.572844387737453e-05,
+      "floatWinnerMatches": 1024,
+      "floatWinnerMatchFraction": 1.0,
+      "mismatchStateIndices": [],
+      "margins": {
+        "minimum": 0.0012244155993669237,
+        "median": 0.5689167845230862,
+        "p95": 3.228380223708129,
+        "maximum": 9.921552039106615,
+        "mean": 1.0665454759646973
+      }
+    }
+  ],
+  "q15TransportCandidate": {
+    "decomposition": "code = high*128 + residual",
+    "radix": 128,
+    "shardDimensions": 256,
+    "shardsPerPlane": 3,
+    "planes": 2,
+    "glyphsPerRow": 6,
+    "currentGlobalQ16GlyphsPerRow": 12,
+    "planeReports": [
+      {
+        "plane": "high",
+        "codeAbsoluteMaximum": 127,
+        "shards": [
+          {
+            "shard": 0,
+            "maximumL1": 3190,
+            "maximumBaseAdvance": 3222,
+            "maximumShapedAdvance": 6412
+          },
+          {
+            "shard": 1,
+            "maximumL1": 3413,
+            "maximumBaseAdvance": 3445,
+            "maximumShapedAdvance": 6858
+          },
+          {
+            "shard": 2,
+            "maximumL1": 3255,
+            "maximumBaseAdvance": 3287,
+            "maximumShapedAdvance": 6542
+          }
+        ],
+        "allShapedAdvancesFitUint16": true
+      },
+      {
+        "plane": "residual",
+        "codeAbsoluteMaximum": 127,
+        "shards": [
+          {
+            "shard": 0,
+            "maximumL1": 18788,
+            "maximumBaseAdvance": 18820,
+            "maximumShapedAdvance": 37608
+          },
+          {
+            "shard": 1,
+            "maximumL1": 18452,
+            "maximumBaseAdvance": 18484,
+            "maximumShapedAdvance": 36936
+          },
+          {
+            "shard": 2,
+            "maximumL1": 18460,
+            "maximumBaseAdvance": 18492,
+            "maximumShapedAdvance": 36952
+          }
+        ],
+        "allShapedAdvancesFitUint16": true
+      }
+    ]
+  },
+  "seconds": 5.84196308394894
+}

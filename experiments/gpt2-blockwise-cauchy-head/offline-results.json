@@ -1,0 +1,536 @@
+{
+  "model": "openai-community/gpt2",
+  "architectureAndWeightsChanged": false,
+  "target": "original float GPT-2 tied output rows",
+  "samples": 1024,
+  "splits": {
+    "train": 512,
+    "validation": 256,
+    "test": 256
+  },
+  "vocabulary": 50257,
+  "width": 768,
+  "coarseEncoding": "row-wise symmetric signed int10",
+  "certificate": "h.w <= h.wq + sum_b l2(h_b)*l2((w-wq)_b); stored norms and floating interval endpoints rounded outward",
+  "freshOracleMatchesSaved": 1024,
+  "configurations": [
+    {
+      "blockCount": 1,
+      "blockWidth": 768,
+      "winnerRetained": 1024,
+      "candidateTokens": {
+        "train": {
+          "mean": 103.3203125,
+          "minimum": 1,
+          "median": 59,
+          "p95": 350,
+          "maximum": 1204
+        },
+        "validation": {
+          "mean": 92.5078125,
+          "minimum": 1,
+          "median": 53,
+          "p95": 312,
+          "maximum": 657
+        },
+        "test": {
+          "mean": 98.69921875,
+          "minimum": 1,
+          "median": 52,
+          "p95": 422,
+          "maximum": 693
+        }
+      },
+      "bestFirstExactGroups": {
+        "train": {
+          "mean": 4.9765625,
+          "minimum": 1,
+          "median": 3,
+          "p95": 16,
+          "maximum": 40
+        },
+        "validation": {
+          "mean": 4.484375,
+          "minimum": 1,
+          "median": 3,
+          "p95": 14,
+          "maximum": 28
+        },
+        "test": {
+          "mean": 4.5546875,
+          "minimum": 1,
+          "median": 3,
+          "p95": 14,
+          "maximum": 49
+        }
+      },
+      "bestFirstExactRows": {
+        "train": {
+          "mean": 1270.58203125,
+          "minimum": 256,
+          "median": 768,
+          "p95": 4096,
+          "maximum": 10240
+        },
+        "validation": {
+          "mean": 1143.8984375,
+          "minimum": 256,
+          "median": 768,
+          "p95": 3584,
+          "maximum": 7168
+        },
+        "test": {
+          "mean": 1163.94921875,
+          "minimum": 256,
+          "median": 768,
+          "p95": 3584,
+          "maximum": 12544
+        }
+      }
+    },
+    {
+      "blockCount": 3,
+      "blockWidth": 256,
+      "winnerRetained": 1024,
+      "candidateTokens": {
+        "train": {
+          "mean": 39.591796875,
+          "minimum": 1,
+          "median": 27,
+          "p95": 122,
+          "maximum": 380
+        },
+        "validation": {
+          "mean": 36.6015625,
+          "minimum": 1,
+          "median": 23,
+          "p95": 141,
+          "maximum": 256
+        },
+        "test": {
+          "mean": 36.37109375,
+          "minimum": 1,
+          "median": 23,
+          "p95": 117,
+          "maximum": 264
+        }
+      },
+      "bestFirstExactGroups": {
+        "train": {
+          "mean": 3.267578125,
+          "minimum": 1,
+          "median": 2,
+          "p95": 9,
+          "maximum": 24
+        },
+        "validation": {
+          "mean": 2.85546875,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 20
+        },
+        "test": {
+          "mean": 3.0234375,
+          "minimum": 1,
+          "median": 2,
+          "p95": 9,
+          "maximum": 21
+        }
+      },
+      "bestFirstExactRows": {
+        "train": {
+          "mean": 836.158203125,
+          "minimum": 256,
+          "median": 512,
+          "p95": 2304,
+          "maximum": 6144
+        },
+        "validation": {
+          "mean": 730.31640625,
+          "minimum": 256,
+          "median": 512,
+          "p95": 1792,
+          "maximum": 5120
+        },
+        "test": {
+          "mean": 774.0,
+          "minimum": 256,
+          "median": 512,
+          "p95": 2304,
+          "maximum": 5376
+        }
+      }
+    },
+    {
+      "blockCount": 6,
+      "blockWidth": 128,
+      "winnerRetained": 1024,
+      "candidateTokens": {
+        "train": {
+          "mean": 21.1015625,
+          "minimum": 1,
+          "median": 16,
+          "p95": 59,
+          "maximum": 194
+        },
+        "validation": {
+          "mean": 19.61328125,
+          "minimum": 1,
+          "median": 14,
+          "p95": 66,
+          "maximum": 142
+        },
+        "test": {
+          "mean": 19.3359375,
+          "minimum": 1,
+          "median": 12,
+          "p95": 59,
+          "maximum": 132
+        }
+      },
+      "bestFirstExactGroups": {
+        "train": {
+          "mean": 2.583984375,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 22
+        },
+        "validation": {
+          "mean": 2.1953125,
+          "minimum": 1,
+          "median": 2,
+          "p95": 5,
+          "maximum": 12
+        },
+        "test": {
+          "mean": 2.4296875,
+          "minimum": 1,
+          "median": 2,
+          "p95": 6,
+          "maximum": 15
+        }
+      },
+      "bestFirstExactRows": {
+        "train": {
+          "mean": 661.5,
+          "minimum": 256,
+          "median": 512,
+          "p95": 1792,
+          "maximum": 5632
+        },
+        "validation": {
+          "mean": 562.0,
+          "minimum": 256,
+          "median": 512,
+          "p95": 1280,
+          "maximum": 3072
+        },
+        "test": {
+          "mean": 622.0,
+          "minimum": 256,
+          "median": 512,
+          "p95": 1536,
+          "maximum": 3840
+        }
+      }
+    },
+    {
+      "blockCount": 12,
+      "blockWidth": 64,
+      "winnerRetained": 1024,
+      "candidateTokens": {
+        "train": {
+          "mean": 16.4921875,
+          "minimum": 1,
+          "median": 12,
+          "p95": 47,
+          "maximum": 108
+        },
+        "validation": {
+          "mean": 15.6796875,
+          "minimum": 1,
+          "median": 11,
+          "p95": 48,
+          "maximum": 110
+        },
+        "test": {
+          "mean": 15.28515625,
+          "minimum": 1,
+          "median": 11,
+          "p95": 45,
+          "maximum": 106
+        }
+      },
+      "bestFirstExactGroups": {
+        "train": {
+          "mean": 2.3671875,
+          "minimum": 1,
+          "median": 2,
+          "p95": 6,
+          "maximum": 19
+        },
+        "validation": {
+          "mean": 2.01953125,
+          "minimum": 1,
+          "median": 2,
+          "p95": 5,
+          "maximum": 10
+        },
+        "test": {
+          "mean": 2.234375,
+          "minimum": 1,
+          "median": 2,
+          "p95": 6,
+          "maximum": 13
+        }
+      },
+      "bestFirstExactRows": {
+        "train": {
+          "mean": 606.0,
+          "minimum": 256,
+          "median": 512,
+          "p95": 1536,
+          "maximum": 4864
+        },
+        "validation": {
+          "mean": 517.0,
+          "minimum": 256,
+          "median": 512,
+          "p95": 1280,
+          "maximum": 2560
+        },
+        "test": {
+          "mean": 572.0,
+          "minimum": 256,
+          "median": 512,
+          "p95": 1536,
+          "maximum": 3328
+        }
+      }
+    },
+    {
+      "blockCount": 24,
+      "blockWidth": 32,
+      "winnerRetained": 1024,
+      "candidateTokens": {
+        "train": {
+          "mean": 9.6484375,
+          "minimum": 1,
+          "median": 7,
+          "p95": 24,
+          "maximum": 93
+        },
+        "validation": {
+          "mean": 9.33203125,
+          "minimum": 1,
+          "median": 6,
+          "p95": 26,
+          "maximum": 53
+        },
+        "test": {
+          "mean": 9.05859375,
+          "minimum": 1,
+          "median": 6,
+          "p95": 26,
+          "maximum": 54
+        }
+      },
+      "bestFirstExactGroups": {
+        "train": {
+          "mean": 1.9921875,
+          "minimum": 1,
+          "median": 2,
+          "p95": 5,
+          "maximum": 12
+        },
+        "validation": {
+          "mean": 1.734375,
+          "minimum": 1,
+          "median": 1,
+          "p95": 4,
+          "maximum": 7
+        },
+        "test": {
+          "mean": 1.88671875,
+          "minimum": 1,
+          "median": 1,
+          "p95": 4,
+          "maximum": 11
+        }
+      },
+      "bestFirstExactRows": {
+        "train": {
+          "mean": 510.0,
+          "minimum": 256,
+          "median": 512,
+          "p95": 1280,
+          "maximum": 3072
+        },
+        "validation": {
+          "mean": 444.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 1024,
+          "maximum": 1792
+        },
+        "test": {
+          "mean": 483.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 1024,
+          "maximum": 2816
+        }
+      }
+    },
+    {
+      "blockCount": 48,
+      "blockWidth": 16,
+      "winnerRetained": 1024,
+      "candidateTokens": {
+        "train": {
+          "mean": 6.314453125,
+          "minimum": 1,
+          "median": 5,
+          "p95": 17,
+          "maximum": 62
+        },
+        "validation": {
+          "mean": 5.8359375,
+          "minimum": 1,
+          "median": 4,
+          "p95": 15,
+          "maximum": 34
+        },
+        "test": {
+          "mean": 5.890625,
+          "minimum": 1,
+          "median": 4,
+          "p95": 17,
+          "maximum": 31
+        }
+      },
+      "bestFirstExactGroups": {
+        "train": {
+          "mean": 1.71875,
+          "minimum": 1,
+          "median": 1,
+          "p95": 4,
+          "maximum": 8
+        },
+        "validation": {
+          "mean": 1.515625,
+          "minimum": 1,
+          "median": 1,
+          "p95": 3,
+          "maximum": 5
+        },
+        "test": {
+          "mean": 1.62109375,
+          "minimum": 1,
+          "median": 1,
+          "p95": 4,
+          "maximum": 9
+        }
+      },
+      "bestFirstExactRows": {
+        "train": {
+          "mean": 440.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 1024,
+          "maximum": 2048
+        },
+        "validation": {
+          "mean": 388.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 768,
+          "maximum": 1280
+        },
+        "test": {
+          "mean": 415.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 1024,
+          "maximum": 2304
+        }
+      }
+    },
+    {
+      "blockCount": 96,
+      "blockWidth": 8,
+      "winnerRetained": 1024,
+      "candidateTokens": {
+        "train": {
+          "mean": 4.306640625,
+          "minimum": 1,
+          "median": 3,
+          "p95": 12,
+          "maximum": 28
+        },
+        "validation": {
+          "mean": 4.03515625,
+          "minimum": 1,
+          "median": 3,
+          "p95": 11,
+          "maximum": 19
+        },
+        "test": {
+          "mean": 3.97265625,
+          "minimum": 1,
+          "median": 3,
+          "p95": 12,
+          "maximum": 23
+        }
+      },
+      "bestFirstExactGroups": {
+        "train": {
+          "mean": 1.533203125,
+          "minimum": 1,
+          "median": 1,
+          "p95": 3,
+          "maximum": 6
+        },
+        "validation": {
+          "mean": 1.33203125,
+          "minimum": 1,
+          "median": 1,
+          "p95": 2,
+          "maximum": 4
+        },
+        "test": {
+          "mean": 1.421875,
+          "minimum": 1,
+          "median": 1,
+          "p95": 3,
+          "maximum": 6
+        }
+      },
+      "bestFirstExactRows": {
+        "train": {
+          "mean": 392.5,
+          "minimum": 256,
+          "median": 256,
+          "p95": 768,
+          "maximum": 1536
+        },
+        "validation": {
+          "mean": 341.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 512,
+          "maximum": 1024
+        },
+        "test": {
+          "mean": 364.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 768,
+          "maximum": 1536
+        }
+      }
+    }
+  ]
+}

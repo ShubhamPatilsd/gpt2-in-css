@@ -1,0 +1,509 @@
+{
+  "model": "openai-community/gpt2",
+  "architectureAndWeightsChanged": false,
+  "checkpointChanged": false,
+  "target": "global-int16 tied output weights at production-range F2DOT14-realized hidden coordinates, 1/256 score buckets, lower token id on ties",
+  "targetMatchesOriginalFloatWinner": 1024,
+  "states": 1024,
+  "productionInputRange": 266.2483969116211,
+  "blockAxisRange": 753.064187745019,
+  "certificate": "max_i h.q16_i <= max_i h.q10_i + sum_b ||h_b||_2 max_i ||(q16_i-q10_i)_b||_2",
+  "winnerGroupsRetained": 1024,
+  "thresholds": {
+    "27": {
+      "bestFirstExactGroups": {
+        "train": {
+          "mean": 1.935546875,
+          "minimum": 1,
+          "median": 1,
+          "p95": 6,
+          "maximum": 22
+        },
+        "validation": {
+          "mean": 1.6640625,
+          "minimum": 1,
+          "median": 1,
+          "p95": 4,
+          "maximum": 10
+        },
+        "test": {
+          "mean": 1.8828125,
+          "minimum": 1,
+          "median": 1,
+          "p95": 5,
+          "maximum": 12
+        }
+      },
+      "bestFirstExactRows": {
+        "train": {
+          "mean": 495.5,
+          "minimum": 256,
+          "median": 256,
+          "p95": 1536,
+          "maximum": 5632
+        },
+        "validation": {
+          "mean": 426.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 1024,
+          "maximum": 2560
+        },
+        "test": {
+          "mean": 482.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 1280,
+          "maximum": 3072
+        }
+      },
+      "statesStoppingWithinSix": 990,
+      "statesStoppingWithinTwelve": 1021,
+      "overall": {
+        "mean": 1.8544921875,
+        "minimum": 1,
+        "median": 1,
+        "p95": 5,
+        "maximum": 22
+      },
+      "sixStageParallelClosure": {
+        "fallbackStates": 34,
+        "competitiveGroupsOverall": {
+          "mean": 0.1376953125,
+          "minimum": 0,
+          "median": 0,
+          "p95": 0,
+          "maximum": 17
+        },
+        "competitiveGroupsOnFallback": {
+          "mean": 4.147058823529412,
+          "minimum": 1,
+          "median": 3,
+          "p95": 16,
+          "maximum": 17
+        },
+        "totalRowsOnFallback": {
+          "mean": 2597.6470588235293,
+          "minimum": 1792,
+          "median": 2304,
+          "p95": 5632,
+          "maximum": 5888
+        }
+      }
+    },
+    "48": {
+      "bestFirstExactGroups": {
+        "train": {
+          "mean": 2.07421875,
+          "minimum": 1,
+          "median": 1,
+          "p95": 6,
+          "maximum": 22
+        },
+        "validation": {
+          "mean": 1.8046875,
+          "minimum": 1,
+          "median": 1,
+          "p95": 4,
+          "maximum": 10
+        },
+        "test": {
+          "mean": 2.03125,
+          "minimum": 1,
+          "median": 1,
+          "p95": 6,
+          "maximum": 14
+        }
+      },
+      "bestFirstExactRows": {
+        "train": {
+          "mean": 531.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 1536,
+          "maximum": 5632
+        },
+        "validation": {
+          "mean": 462.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 1024,
+          "maximum": 2560
+        },
+        "test": {
+          "mean": 520.0,
+          "minimum": 256,
+          "median": 256,
+          "p95": 1536,
+          "maximum": 3584
+        }
+      },
+      "statesStoppingWithinSix": 984,
+      "statesStoppingWithinTwelve": 1018,
+      "overall": {
+        "mean": 1.99609375,
+        "minimum": 1,
+        "median": 1,
+        "p95": 6,
+        "maximum": 22
+      },
+      "sixStageParallelClosure": {
+        "fallbackStates": 40,
+        "competitiveGroupsOverall": {
+          "mean": 0.1767578125,
+          "minimum": 0,
+          "median": 0,
+          "p95": 0,
+          "maximum": 21
+        },
+        "competitiveGroupsOnFallback": {
+          "mean": 4.525,
+          "minimum": 1,
+          "median": 3,
+          "p95": 16,
+          "maximum": 21
+        },
+        "totalRowsOnFallback": {
+          "mean": 2694.4,
+          "minimum": 1792,
+          "median": 2304,
+          "p95": 5632,
+          "maximum": 6912
+        }
+      }
+    }
+  },
+  "browserFixtureIndices": [
+    944,
+    270,
+    20,
+    7,
+    4,
+    0
+  ],
+  "browserFixtures": [
+    {
+      "stateIndex": 944,
+      "requiredGroupsAt48": 22,
+      "targetWinner": 1899
+    },
+    {
+      "stateIndex": 270,
+      "requiredGroupsAt48": 12,
+      "targetWinner": 4101
+    },
+    {
+      "stateIndex": 20,
+      "requiredGroupsAt48": 6,
+      "targetWinner": 1956
+    },
+    {
+      "stateIndex": 7,
+      "requiredGroupsAt48": 1,
+      "targetWinner": 13
+    },
+    {
+      "stateIndex": 4,
+      "requiredGroupsAt48": 1,
+      "targetWinner": 286
+    },
+    {
+      "stateIndex": 0,
+      "requiredGroupsAt48": 1,
+      "targetWinner": 856
+    }
+  ],
+  "productionFontFeasibility": {
+    "coefficientMaximum": 367,
+    "baseAdvanceMaximum": 28378,
+    "coefficientFitsInt16": true,
+    "baseFitsUint16BeforeZeroBaseRewrite": true
+  },
+  "homogeneousProductionRescale": {
+    "sourceInputRange": 135.30906073137402,
+    "scoreGain": 0.5082061049039431,
+    "stopGapBuckets": 49,
+    "upperTransportShortfallBuckets": 1,
+    "bestFirstExactGroups": {
+      "train": {
+        "mean": 2.509765625,
+        "minimum": 1,
+        "median": 2,
+        "p95": 8,
+        "maximum": 23
+      },
+      "validation": {
+        "mean": 2.2265625,
+        "minimum": 1,
+        "median": 1,
+        "p95": 7,
+        "maximum": 15
+      },
+      "test": {
+        "mean": 2.36328125,
+        "minimum": 1,
+        "median": 1,
+        "p95": 8,
+        "maximum": 20
+      }
+    },
+    "overall": {
+      "mean": 2.40234375,
+      "minimum": 1,
+      "median": 2,
+      "p95": 7,
+      "maximum": 23
+    },
+    "statesStoppingWithinSix": 961,
+    "statesStoppingWithinTwelve": 1007,
+    "statesStoppingWithinTwentyTwo": 1023,
+    "statesStoppingWithinTwentyThree": 1024,
+    "tailWaveSchedules": {
+      "serial23": {
+        "prefix": 23,
+        "waveSizes": [
+          1
+        ],
+        "boundaries": [
+          24
+        ],
+        "tailStates": 0,
+        "exactGroupsEvaluated": {
+          "mean": 2.40234375,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 23
+        },
+        "scoreMergeRounds": {
+          "mean": 2.40234375,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 23
+        },
+        "abstractCriticalLevels": {
+          "mean": 4.8046875,
+          "minimum": 2,
+          "median": 4,
+          "p95": 14,
+          "maximum": 46
+        },
+        "extraGroupsMean": 0.0,
+        "extraGroupsTotal": 0
+      },
+      "prefix12Then11": {
+        "prefix": 12,
+        "waveSizes": [
+          11
+        ],
+        "boundaries": [
+          23
+        ],
+        "tailStates": 17,
+        "exactGroupsEvaluated": {
+          "mean": 2.525390625,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 23
+        },
+        "scoreMergeRounds": {
+          "mean": 2.359375,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 13
+        },
+        "abstractCriticalLevels": {
+          "mean": 4.884765625,
+          "minimum": 2,
+          "median": 4,
+          "p95": 14,
+          "maximum": 36
+        },
+        "extraGroupsMean": 0.123046875,
+        "extraGroupsTotal": 126
+      },
+      "prefix8Then5Then10": {
+        "prefix": 8,
+        "waveSizes": [
+          5,
+          10
+        ],
+        "boundaries": [
+          13,
+          23
+        ],
+        "tailStates": 38,
+        "exactGroupsEvaluated": {
+          "mean": 2.525390625,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 23
+        },
+        "scoreMergeRounds": {
+          "mean": 2.2802734375,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 10
+        },
+        "abstractCriticalLevels": {
+          "mean": 4.8056640625,
+          "minimum": 2,
+          "median": 4,
+          "p95": 14,
+          "maximum": 33
+        },
+        "extraGroupsMean": 0.123046875,
+        "extraGroupsTotal": 126
+      },
+      "prefix7Then4Then12": {
+        "prefix": 7,
+        "waveSizes": [
+          4,
+          12
+        ],
+        "boundaries": [
+          11,
+          23
+        ],
+        "tailStates": 49,
+        "exactGroupsEvaluated": {
+          "mean": 2.6220703125,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 23
+        },
+        "scoreMergeRounds": {
+          "mean": 2.2529296875,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 9
+        },
+        "abstractCriticalLevels": {
+          "mean": 4.875,
+          "minimum": 2,
+          "median": 4,
+          "p95": 14,
+          "maximum": 32
+        },
+        "extraGroupsMean": 0.2197265625,
+        "extraGroupsTotal": 225
+      },
+      "prefix6Then2Then4Then8Then3": {
+        "prefix": 6,
+        "waveSizes": [
+          2,
+          4,
+          8,
+          3
+        ],
+        "boundaries": [
+          8,
+          12,
+          20,
+          23
+        ],
+        "tailStates": 63,
+        "exactGroupsEvaluated": {
+          "mean": 2.533203125,
+          "minimum": 1,
+          "median": 2,
+          "p95": 8,
+          "maximum": 23
+        },
+        "scoreMergeRounds": {
+          "mean": 2.240234375,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 10
+        },
+        "abstractCriticalLevels": {
+          "mean": 4.7734375,
+          "minimum": 2,
+          "median": 4,
+          "p95": 15,
+          "maximum": 33
+        },
+        "extraGroupsMean": 0.130859375,
+        "extraGroupsTotal": 134
+      },
+      "prefix6Then4Then6Then7": {
+        "prefix": 6,
+        "waveSizes": [
+          4,
+          6,
+          7
+        ],
+        "boundaries": [
+          10,
+          16,
+          23
+        ],
+        "tailStates": 63,
+        "exactGroupsEvaluated": {
+          "mean": 2.55078125,
+          "minimum": 1,
+          "median": 2,
+          "p95": 10,
+          "maximum": 23
+        },
+        "scoreMergeRounds": {
+          "mean": 2.2138671875,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 9
+        },
+        "abstractCriticalLevels": {
+          "mean": 4.7646484375,
+          "minimum": 2,
+          "median": 4,
+          "p95": 17,
+          "maximum": 32
+        },
+        "extraGroupsMean": 0.1484375,
+        "extraGroupsTotal": 152
+      },
+      "prefix6Then17": {
+        "prefix": 6,
+        "waveSizes": [
+          17
+        ],
+        "boundaries": [
+          23
+        ],
+        "tailStates": 63,
+        "exactGroupsEvaluated": {
+          "mean": 3.1689453125,
+          "minimum": 1,
+          "median": 2,
+          "p95": 23,
+          "maximum": 23
+        },
+        "scoreMergeRounds": {
+          "mean": 2.1845703125,
+          "minimum": 1,
+          "median": 2,
+          "p95": 7,
+          "maximum": 7
+        },
+        "abstractCriticalLevels": {
+          "mean": 5.353515625,
+          "minimum": 2,
+          "median": 4,
+          "p95": 30,
+          "maximum": 30
+        },
+        "extraGroupsMean": 0.7666015625,
+        "extraGroupsTotal": 785
+      }
+    }
+  }
+}
