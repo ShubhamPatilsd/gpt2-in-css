@@ -1,0 +1,438 @@
+{
+  "generatedAt": "2026-09-13T18:43:23.418Z",
+  "chrome": "153.0.8010.36",
+  "rounds": 8,
+  "runtimeContainsJavaScript": false,
+  "methodology": "Warm browser/font/HTTP caches, then a fresh page/layout graph for every case-0 to non-default case mutation. Every timing forces all 768 final widths. Variant order rotates by round.",
+  "resourceProfiles": {
+    "exact-serial": {
+      "requests": 56,
+      "totalBytes": 19819381,
+      "byContentType": {
+        "text/html": 3172411,
+        "text/css": 2814194,
+        "font/woff2": 13832776
+      },
+      "initial": {
+        "elements": 23528,
+        "outputs": 768,
+        "runtimeScripts": 0,
+        "checksum": 159785513.53125,
+        "b0ExactValue": "-0.00370004",
+        "b1ExactValue": "0.024098"
+      }
+    },
+    "exact-shadow-hybrid-1": {
+      "requests": 56,
+      "totalBytes": 19876933,
+      "byContentType": {
+        "text/html": 3188348,
+        "text/css": 2855809,
+        "font/woff2": 13832776
+      },
+      "initial": {
+        "elements": 23531,
+        "outputs": 768,
+        "runtimeScripts": 0,
+        "checksum": 159785513.53125,
+        "b0ExactValue": "-0.00370004",
+        "b1ExactValue": ""
+      }
+    }
+  },
+  "summaries": [
+    {
+      "name": "exact-serial",
+      "pageFile": "connected-two-block-exact-css-gelu-layoutless.html",
+      "elements": 23528,
+      "runtimeScripts": 0,
+      "medianMs": 1807.9000000357628,
+      "p10Ms": 1701,
+      "p90Ms": 1913.699999988079,
+      "minMs": 1701,
+      "maxMs": 1929,
+      "maximumRmseToExact": 0.037917785005894225,
+      "maximumAbsErrorToExact": 0.9151587316496261,
+      "maximumRmseToRepresented": 0.04884687343047261,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "milliseconds": 1881.6000000238419,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "milliseconds": 1701,
+          "checksum": 159787817.0625,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "milliseconds": 1807.9000000357628,
+          "checksum": 159787186.703125,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "milliseconds": 1859.699999988079,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "milliseconds": 1913.699999988079,
+          "checksum": 159787817.0625,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 5,
+          "mode": 3,
+          "milliseconds": 1770.6000000238419,
+          "checksum": 159787186.703125,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 6,
+          "mode": 1,
+          "milliseconds": 1804.300000011921,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 7,
+          "mode": 2,
+          "milliseconds": 1929,
+          "checksum": 159787817.0625,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "toExact": {
+            "rmse": 0.0369275004969338,
+            "maxAbsError": 0.8579323691291165
+          },
+          "toRepresented": {
+            "rmse": 0.04884687343047261,
+            "maxAbsError": 0.8058779731353525
+          }
+        },
+        {
+          "mode": 1,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          }
+        },
+        {
+          "mode": 2,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          }
+        },
+        {
+          "mode": 3,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          }
+        }
+      ]
+    },
+    {
+      "name": "exact-shadow-hybrid-1",
+      "pageFile": "connected-two-block-shadow-hybrid-1-exact-css-gelu-layoutless.html",
+      "elements": 23531,
+      "runtimeScripts": 0,
+      "medianMs": 1790.5,
+      "p10Ms": 1664,
+      "p90Ms": 1891.300000011921,
+      "minMs": 1664,
+      "maxMs": 1913,
+      "maximumRmseToExact": 0.037917785005894225,
+      "maximumAbsErrorToExact": 0.9151587316496261,
+      "maximumRmseToRepresented": 0.04884687343047261,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "milliseconds": 1725.199999988079,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23531,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "milliseconds": 1664,
+          "checksum": 159787817.0625,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          },
+          "elements": 23531,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "milliseconds": 1913,
+          "checksum": 159787186.703125,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          },
+          "elements": 23531,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "milliseconds": 1885.5,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23531,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "milliseconds": 1712.7000000476837,
+          "checksum": 159787817.0625,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          },
+          "elements": 23531,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 5,
+          "mode": 3,
+          "milliseconds": 1849.800000011921,
+          "checksum": 159787186.703125,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          },
+          "elements": 23531,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 6,
+          "mode": 1,
+          "milliseconds": 1891.300000011921,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23531,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 7,
+          "mode": 2,
+          "milliseconds": 1790.5,
+          "checksum": 159787817.0625,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          },
+          "elements": 23531,
+          "runtimeScripts": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "toExact": {
+            "rmse": 0.0369275004969338,
+            "maxAbsError": 0.8579323691291165
+          },
+          "toRepresented": {
+            "rmse": 0.04884687343047261,
+            "maxAbsError": 0.8058779731353525
+          }
+        },
+        {
+          "mode": 1,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          }
+        },
+        {
+          "mode": 2,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          }
+        },
+        {
+          "mode": 3,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          }
+        }
+      ]
+    }
+  ],
+  "speedups": {
+    "exactParallelOverExactSerial": null,
+    "exactParallelOverOldParallel": null,
+    "exactHybrid2OverExactSerial": null,
+    "exactHybrid3OverExactSerial": null,
+    "exactHybrid4OverExactSerial": null,
+    "exactHybrid5OverExactSerial": null,
+    "exactHybrid7OverExactSerial": null,
+    "exactShadowHybrid2OverExactSerial": null,
+    "exactShadowHybrid1OverExactSerial": 1.0097179558982199,
+    "exactShadowHybrid3OverExactSerial": null,
+    "exactShadowHybrid4OverExactSerial": null
+  }
+}

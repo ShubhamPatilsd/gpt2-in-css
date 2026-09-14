@@ -1,0 +1,52 @@
+{
+  "unitsPerEm": 1000,
+  "fontSize": 10,
+  "scale": 0.01,
+  "axes": 30,
+  "cases": [
+    {
+      "name": "small",
+      "codepoints": [
+        57856,
+        57857
+      ],
+      "base": 1000,
+      "positiveBias": 30000,
+      "negativeContribution": -20000,
+      "expected": 11000
+    },
+    {
+      "name": "crosses-uint16",
+      "codepoints": [
+        57858,
+        57859
+      ],
+      "base": 65000,
+      "positiveBias": 30000,
+      "negativeContribution": -50000,
+      "expected": 45000
+    },
+    {
+      "name": "virtual-301k",
+      "codepoints": [
+        57860,
+        57861
+      ],
+      "base": 1000,
+      "positiveBias": 300000,
+      "negativeContribution": -290000,
+      "expected": 11000
+    },
+    {
+      "name": "virtual-493k",
+      "codepoints": [
+        57862,
+        57863
+      ],
+      "base": 1000,
+      "positiveBias": 491505,
+      "negativeContribution": -450000,
+      "expected": 42505
+    }
+  ]
+}

@@ -1,0 +1,667 @@
+{
+  "chrome": "153.0.8010.36",
+  "experimentName": "gsub-indexed-fine-scorer/dummy-first-targeted",
+  "groups": [
+    0,
+    1,
+    2
+  ],
+  "fixtures": 3,
+  "candidateComparisons": 2304,
+  "gsubLoadMilliseconds": 1425.7054170000001,
+  "baselineLoadMilliseconds": 54442.089417,
+  "numberedFeature": "cv01",
+  "observedFeatureSettings": [
+    "\"cv01\" 2",
+    "\"cv01\" 3",
+    "\"cv01\" 4"
+  ],
+  "changedAcrossGroups": true,
+  "dynamicFeatureValid": true,
+  "outputMatches": false,
+  "maximumAbsoluteCandidateDelta": 12008,
+  "candidateDeltaHistogram": {
+    "0": 58,
+    "1": 834,
+    "2": 1299,
+    "3": 98,
+    "-12008": 1,
+    "-11937": 1,
+    "-11907": 1,
+    "-8694": 1,
+    "-4947": 1,
+    "-4553": 1,
+    "-4478": 1,
+    "-4466": 1,
+    "-4380": 1,
+    "-4321": 1,
+    "-4289": 1,
+    "-4285": 1,
+    "-482": 2,
+    "-481": 1
+  },
+  "oneBucketAllowanceCoversAll": false,
+  "winnerTokenMatches": 7,
+  "winnerTokenAgreement": 0.7777777777777778,
+  "winnerBucketMatches": 0,
+  "winnerBucketAgreement": 0,
+  "groupMaximumAbsoluteCandidateDelta": {
+    "0": 8694,
+    "1": 12008,
+    "2": 3
+  },
+  "hybridCertification": {
+    "empiricalOnly": true,
+    "portableBoundProved": false,
+    "empiricalCandidateDeltaBound": 3,
+    "winnerMarginThresholdBuckets": 6,
+    "certificationRule": "group > 1 and GSUB winner margin > 6 buckets",
+    "totalCases": 9,
+    "certifiableCases": 3,
+    "certifiableRate": 0.3333333333333333,
+    "fallbackCases": 6,
+    "fallbackRate": 0.6666666666666666,
+    "alwaysFallbackGroups": [
+      0,
+      1
+    ],
+    "alwaysFallbackCases": 6,
+    "nearTieFallbackCases": 0,
+    "winnerMarginBuckets": {
+      "minimum": 3,
+      "median": 102,
+      "p90": 279,
+      "p95": 279,
+      "maximum": 827,
+      "histogram": {
+        "3": 1,
+        "7": 1,
+        "40": 1,
+        "91": 1,
+        "102": 1,
+        "119": 1,
+        "167": 1,
+        "279": 1,
+        "827": 1
+      }
+    },
+    "expectedWeightedSwitchMilliseconds": 12.066666722297668,
+    "expectedSpeedupVsAllBaselineFraction": -0.058479528188876806,
+    "expectedSequentialFallbackMilliseconds": 12.066666722297668,
+    "expectedSequentialSpeedupVsAllBaselineFraction": -0.058479528188876806
+  },
+  "failures": [
+    {
+      "fixture": 0,
+      "group": 0,
+      "differingBuckets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "differingBucketCount": 244,
+      "maximumAbsoluteCandidateDelta": 4947,
+      "gsubWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 4754
+      },
+      "baselineWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 4946
+      },
+      "expectedWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 4948
+      }
+    },
+    {
+      "fixture": 0,
+      "group": 1,
+      "differingBuckets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "differingBucketCount": 252,
+      "maximumAbsoluteCandidateDelta": 4466,
+      "gsubWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4559
+      },
+      "baselineWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4558
+      },
+      "expectedWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4557
+      }
+    },
+    {
+      "fixture": 0,
+      "group": 2,
+      "differingBuckets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "differingBucketCount": 248,
+      "maximumAbsoluteCandidateDelta": 3,
+      "gsubWinner": {
+        "winnerLocal": 20,
+        "winnerBucket": 4172
+      },
+      "baselineWinner": {
+        "winnerLocal": 20,
+        "winnerBucket": 4171
+      },
+      "expectedWinner": {
+        "winnerLocal": 20,
+        "winnerBucket": 4171
+      }
+    },
+    {
+      "fixture": 1,
+      "group": 0,
+      "differingBuckets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "differingBucketCount": 251,
+      "maximumAbsoluteCandidateDelta": 8694,
+      "gsubWinner": {
+        "winnerLocal": 1,
+        "winnerBucket": 11628
+      },
+      "baselineWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 12552
+      },
+      "expectedWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 12555
+      }
+    },
+    {
+      "fixture": 1,
+      "group": 1,
+      "differingBuckets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "differingBucketCount": 251,
+      "maximumAbsoluteCandidateDelta": 12008,
+      "gsubWinner": {
+        "winnerLocal": 221,
+        "winnerBucket": 12623
+      },
+      "baselineWinner": {
+        "winnerLocal": 221,
+        "winnerBucket": 12620
+      },
+      "expectedWinner": {
+        "winnerLocal": 221,
+        "winnerBucket": 12623
+      }
+    },
+    {
+      "fixture": 1,
+      "group": 2,
+      "differingBuckets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "differingBucketCount": 250,
+      "maximumAbsoluteCandidateDelta": 3,
+      "gsubWinner": {
+        "winnerLocal": 224,
+        "winnerBucket": 11870
+      },
+      "baselineWinner": {
+        "winnerLocal": 224,
+        "winnerBucket": 11869
+      },
+      "expectedWinner": {
+        "winnerLocal": 224,
+        "winnerBucket": 11871
+      }
+    },
+    {
+      "fixture": 2,
+      "group": 0,
+      "differingBuckets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "differingBucketCount": 246,
+      "maximumAbsoluteCandidateDelta": 4553,
+      "gsubWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 5139
+      },
+      "baselineWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 5137
+      },
+      "expectedWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 5142
+      }
+    },
+    {
+      "fixture": 2,
+      "group": 1,
+      "differingBuckets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "differingBucketCount": 253,
+      "maximumAbsoluteCandidateDelta": 4478,
+      "gsubWinner": {
+        "winnerLocal": 58,
+        "winnerBucket": 4569
+      },
+      "baselineWinner": {
+        "winnerLocal": 58,
+        "winnerBucket": 4568
+      },
+      "expectedWinner": {
+        "winnerLocal": 58,
+        "winnerBucket": 4568
+      }
+    },
+    {
+      "fixture": 2,
+      "group": 2,
+      "differingBuckets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "differingBucketCount": 251,
+      "maximumAbsoluteCandidateDelta": 3,
+      "gsubWinner": {
+        "winnerLocal": 116,
+        "winnerBucket": 4381
+      },
+      "baselineWinner": {
+        "winnerLocal": 116,
+        "winnerBucket": 4379
+      },
+      "expectedWinner": {
+        "winnerLocal": 116,
+        "winnerBucket": 4383
+      }
+    }
+  ],
+  "timingRounds": 1,
+  "isolatedGroupSwitch": {
+    "gsubMedianMilliseconds": 13.399999976158142,
+    "baselineMedianMilliseconds": 11.400000095367432,
+    "speedupFraction": -0.1754385845666302,
+    "speedupPercent": -17.54385845666302,
+    "gatePercent": 25,
+    "gatePassed": false,
+    "gsubSamples": [
+      13.399999976158142,
+      11.899999976158142,
+      13.799999952316284
+    ],
+    "baselineSamples": [
+      10.899999976158142,
+      12.899999976158142,
+      11.400000095367432
+    ]
+  },
+  "sizes": {
+    "woff2Bytes": 5180784,
+    "expandedTtfBytes": 17192992,
+    "expandedToWoff2Ratio": 3.435877156840231,
+    "cssBytes": 33703,
+    "htmlBytes": 197588,
+    "baselineFineWoff2Bytes": 79431996,
+    "baselineDispatchCssBytes": 5001240
+  },
+  "hardGatePassed": false,
+  "decision": "reject: bounded-safety or speed gate failed",
+  "comparisons": [
+    {
+      "fixture": 0,
+      "group": 0,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 244,
+      "maximumAbsoluteCandidateDelta": 4947,
+      "gsubWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 4754
+      },
+      "gsubRunnerUp": {
+        "runnerLocal": 12,
+        "runnerBucket": 4587,
+        "winnerMarginBuckets": 167
+      },
+      "baselineWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 4946
+      },
+      "expectedWinnerLocal": 11,
+      "expectedWinnerBucket": 4948,
+      "modelOracleWinnerMatches": false
+    },
+    {
+      "fixture": 0,
+      "group": 1,
+      "feature": 3,
+      "validCandidates": 256,
+      "differingBucketCount": 252,
+      "maximumAbsoluteCandidateDelta": 4466,
+      "gsubWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4559
+      },
+      "gsubRunnerUp": {
+        "runnerLocal": 28,
+        "runnerBucket": 4556,
+        "winnerMarginBuckets": 3
+      },
+      "baselineWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4558
+      },
+      "expectedWinnerLocal": 34,
+      "expectedWinnerBucket": 4557,
+      "modelOracleWinnerMatches": false
+    },
+    {
+      "fixture": 0,
+      "group": 2,
+      "feature": 4,
+      "validCandidates": 256,
+      "differingBucketCount": 248,
+      "maximumAbsoluteCandidateDelta": 3,
+      "gsubWinner": {
+        "winnerLocal": 20,
+        "winnerBucket": 4172
+      },
+      "gsubRunnerUp": {
+        "runnerLocal": 41,
+        "runnerBucket": 4053,
+        "winnerMarginBuckets": 119
+      },
+      "baselineWinner": {
+        "winnerLocal": 20,
+        "winnerBucket": 4171
+      },
+      "expectedWinnerLocal": 20,
+      "expectedWinnerBucket": 4171,
+      "modelOracleWinnerMatches": false
+    },
+    {
+      "fixture": 1,
+      "group": 0,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 251,
+      "maximumAbsoluteCandidateDelta": 8694,
+      "gsubWinner": {
+        "winnerLocal": 1,
+        "winnerBucket": 11628
+      },
+      "gsubRunnerUp": {
+        "runnerLocal": 13,
+        "runnerBucket": 11621,
+        "winnerMarginBuckets": 7
+      },
+      "baselineWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 12552
+      },
+      "expectedWinnerLocal": 11,
+      "expectedWinnerBucket": 12555,
+      "modelOracleWinnerMatches": false
+    },
+    {
+      "fixture": 1,
+      "group": 1,
+      "feature": 3,
+      "validCandidates": 256,
+      "differingBucketCount": 251,
+      "maximumAbsoluteCandidateDelta": 12008,
+      "gsubWinner": {
+        "winnerLocal": 221,
+        "winnerBucket": 12623
+      },
+      "gsubRunnerUp": {
+        "runnerLocal": 30,
+        "runnerBucket": 12344,
+        "winnerMarginBuckets": 279
+      },
+      "baselineWinner": {
+        "winnerLocal": 221,
+        "winnerBucket": 12620
+      },
+      "expectedWinnerLocal": 221,
+      "expectedWinnerBucket": 12623,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 1,
+      "group": 2,
+      "feature": 4,
+      "validCandidates": 256,
+      "differingBucketCount": 250,
+      "maximumAbsoluteCandidateDelta": 3,
+      "gsubWinner": {
+        "winnerLocal": 224,
+        "winnerBucket": 11870
+      },
+      "gsubRunnerUp": {
+        "runnerLocal": 38,
+        "runnerBucket": 11768,
+        "winnerMarginBuckets": 102
+      },
+      "baselineWinner": {
+        "winnerLocal": 224,
+        "winnerBucket": 11869
+      },
+      "expectedWinnerLocal": 224,
+      "expectedWinnerBucket": 11871,
+      "modelOracleWinnerMatches": false
+    },
+    {
+      "fixture": 2,
+      "group": 0,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 246,
+      "maximumAbsoluteCandidateDelta": 4553,
+      "gsubWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 5139
+      },
+      "gsubRunnerUp": {
+        "runnerLocal": 12,
+        "runnerBucket": 4312,
+        "winnerMarginBuckets": 827
+      },
+      "baselineWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 5137
+      },
+      "expectedWinnerLocal": 198,
+      "expectedWinnerBucket": 5142,
+      "modelOracleWinnerMatches": false
+    },
+    {
+      "fixture": 2,
+      "group": 1,
+      "feature": 3,
+      "validCandidates": 256,
+      "differingBucketCount": 253,
+      "maximumAbsoluteCandidateDelta": 4478,
+      "gsubWinner": {
+        "winnerLocal": 58,
+        "winnerBucket": 4569
+      },
+      "gsubRunnerUp": {
+        "runnerLocal": 34,
+        "runnerBucket": 4529,
+        "winnerMarginBuckets": 40
+      },
+      "baselineWinner": {
+        "winnerLocal": 58,
+        "winnerBucket": 4568
+      },
+      "expectedWinnerLocal": 58,
+      "expectedWinnerBucket": 4568,
+      "modelOracleWinnerMatches": false
+    },
+    {
+      "fixture": 2,
+      "group": 2,
+      "feature": 4,
+      "validCandidates": 256,
+      "differingBucketCount": 251,
+      "maximumAbsoluteCandidateDelta": 3,
+      "gsubWinner": {
+        "winnerLocal": 116,
+        "winnerBucket": 4381
+      },
+      "gsubRunnerUp": {
+        "runnerLocal": 120,
+        "runnerBucket": 4290,
+        "winnerMarginBuckets": 91
+      },
+      "baselineWinner": {
+        "winnerLocal": 116,
+        "winnerBucket": 4379
+      },
+      "expectedWinnerLocal": 116,
+      "expectedWinnerBucket": 4383,
+      "modelOracleWinnerMatches": false
+    }
+  ]
+}

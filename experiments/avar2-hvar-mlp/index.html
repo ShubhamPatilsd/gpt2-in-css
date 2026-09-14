@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>avar2 plus nonlinear HVAR MLP probe</title>
+<style>
+@font-face{font-family:Avar2MLP;src:url("mlp.woff2") format("woff2")}
+html,body{margin:0}input{position:fixed;left:-10000px}
+.probe{position:fixed;left:0;top:0;display:inline-block;width:max-content;
+font-family:Avar2MLP;font-size:1000px;line-height:1;font-kerning:none}
+.output-1{top:2px}
+body:has(#case-0:checked) .probe{font-variation-settings:"X000" 0.4,"X001" 0.2}body:has(#case-1:checked) .probe{font-variation-settings:"X000" -0.4,"X001" 0.6}body:has(#case-2:checked) .probe{font-variation-settings:"X000" 0.75,"X001" -0.25}
+</style>
+<input type="radio" name="case" id="case-0" checked><input type="radio" name="case" id="case-1"><input type="radio" name="case" id="case-2">
+<i id="output-0" class="probe output-0">&#xE000;</i>
+<i id="output-1" class="probe output-1">&#xE001;</i>

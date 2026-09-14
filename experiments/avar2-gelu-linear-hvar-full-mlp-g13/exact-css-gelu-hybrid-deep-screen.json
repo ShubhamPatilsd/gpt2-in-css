@@ -1,0 +1,305 @@
+{
+  "generatedAt": "2026-09-13T18:34:06.671Z",
+  "chrome": "153.0.8010.36",
+  "rounds": 1,
+  "runtimeContainsJavaScript": false,
+  "methodology": "Warm browser/font/HTTP caches, then a fresh page/layout graph for every case-0 to non-default case mutation. Every timing forces all 768 final widths. Variant order rotates by round.",
+  "resourceProfiles": {
+    "exact-serial": {
+      "requests": 56,
+      "totalBytes": 19819381,
+      "byContentType": {
+        "text/html": 3172411,
+        "text/css": 2814194,
+        "font/woff2": 13832776
+      },
+      "initial": {
+        "elements": 23528,
+        "outputs": 768,
+        "runtimeScripts": 0,
+        "checksum": 159785513.53125,
+        "b0ExactValue": "-0.00370004",
+        "b1ExactValue": "0.024098"
+      }
+    },
+    "exact-hybrid-2": {
+      "requests": 30,
+      "totalBytes": 16739707,
+      "byContentType": {
+        "text/html": 3290860,
+        "text/css": 2784203,
+        "font/woff2": 10664644
+      },
+      "initial": {
+        "elements": 25043,
+        "outputs": 768,
+        "runtimeScripts": 0,
+        "checksum": 0,
+        "b0ExactValue": "-0.00370004",
+        "b1ExactValue": ""
+      }
+    },
+    "exact-hybrid-3": {
+      "requests": 38,
+      "totalBytes": 18793058,
+      "byContentType": {
+        "text/html": 3330024,
+        "text/css": 2850746,
+        "font/woff2": 12612288
+      },
+      "initial": {
+        "elements": 25813,
+        "outputs": 768,
+        "runtimeScripts": 0,
+        "checksum": 10712.640625,
+        "b0ExactValue": "-0.00370004",
+        "b1ExactValue": ""
+      }
+    }
+  },
+  "summaries": [
+    {
+      "name": "exact-serial",
+      "pageFile": "connected-two-block-exact-css-gelu-layoutless.html",
+      "elements": 23528,
+      "runtimeScripts": 0,
+      "medianMs": 1665,
+      "p10Ms": 1665,
+      "p90Ms": 1665,
+      "minMs": 1665,
+      "maxMs": 1665,
+      "maximumRmseToExact": 0.037917785005894225,
+      "maximumAbsErrorToExact": 0.9151587316496261,
+      "maximumRmseToRepresented": 0.04884687343047261,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "milliseconds": 1665,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "toExact": {
+            "rmse": 0.0369275004969338,
+            "maxAbsError": 0.8579323691291165
+          },
+          "toRepresented": {
+            "rmse": 0.04884687343047261,
+            "maxAbsError": 0.8058779731353525
+          }
+        },
+        {
+          "mode": 1,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          }
+        },
+        {
+          "mode": 2,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          }
+        },
+        {
+          "mode": 3,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          }
+        }
+      ]
+    },
+    {
+      "name": "exact-hybrid-2",
+      "pageFile": "connected-two-block-hybrid-2-exact-css-gelu-layoutless.html",
+      "elements": 25043,
+      "runtimeScripts": 0,
+      "medianMs": 1617.699999988079,
+      "p10Ms": 1617.699999988079,
+      "p90Ms": 1617.699999988079,
+      "minMs": 1617.699999988079,
+      "maxMs": 1617.699999988079,
+      "maximumRmseToExact": 244.3683187697201,
+      "maximumAbsErrorToExact": 860.2090712616098,
+      "maximumRmseToRepresented": 244.37090064616197,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "milliseconds": 1617.699999988079,
+          "checksum": 0,
+          "toExact": {
+            "rmse": 244.36196871340175,
+            "maxAbsError": 860.2090712616098
+          },
+          "toRepresented": {
+            "rmse": 244.36469319346298,
+            "maxAbsError": 860.1697988026385
+          },
+          "elements": 25043,
+          "runtimeScripts": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "toExact": {
+            "rmse": 244.2494005061107,
+            "maxAbsError": 834.51702327822
+          },
+          "toRepresented": {
+            "rmse": 244.25201451004665,
+            "maxAbsError": 834.4649688822262
+          }
+        },
+        {
+          "mode": 1,
+          "toExact": {
+            "rmse": 244.36196871340175,
+            "maxAbsError": 860.2090712616098
+          },
+          "toRepresented": {
+            "rmse": 244.36469319346298,
+            "maxAbsError": 860.1697988026385
+          }
+        },
+        {
+          "mode": 2,
+          "toExact": {
+            "rmse": 244.3683187697201,
+            "maxAbsError": 857.1604238831649
+          },
+          "toRepresented": {
+            "rmse": 244.37090064616197,
+            "maxAbsError": 857.0970106963969
+          }
+        },
+        {
+          "mode": 3,
+          "toExact": {
+            "rmse": 244.33587804274072,
+            "maxAbsError": 852.0380878549654
+          },
+          "toRepresented": {
+            "rmse": 244.33889465445324,
+            "maxAbsError": 851.9815848864282
+          }
+        }
+      ]
+    },
+    {
+      "name": "exact-hybrid-3",
+      "pageFile": "connected-two-block-hybrid-3-exact-css-gelu-layoutless.html",
+      "elements": 25813,
+      "runtimeScripts": 0,
+      "medianMs": 1803.699999988079,
+      "p10Ms": 1803.699999988079,
+      "p90Ms": 1803.699999988079,
+      "minMs": 1803.699999988079,
+      "maxMs": 1803.699999988079,
+      "maximumRmseToExact": 243.74353747042667,
+      "maximumAbsErrorToExact": 712.8333610343371,
+      "maximumRmseToRepresented": 243.74629978126003,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "milliseconds": 1803.699999988079,
+          "checksum": 9726.796875,
+          "toExact": {
+            "rmse": 243.74353747042667,
+            "maxAbsError": 712.8333610343371
+          },
+          "toRepresented": {
+            "rmse": 243.74629978126003,
+            "maxAbsError": 712.7940885753659
+          },
+          "elements": 25813,
+          "runtimeScripts": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "toExact": {
+            "rmse": 243.59665857801835,
+            "maxAbsError": 672.2042865357957
+          },
+          "toRepresented": {
+            "rmse": 243.59932474832442,
+            "maxAbsError": 672.152232139802
+          }
+        },
+        {
+          "mode": 1,
+          "toExact": {
+            "rmse": 243.74353747042667,
+            "maxAbsError": 712.8333610343371
+          },
+          "toRepresented": {
+            "rmse": 243.74629978126003,
+            "maxAbsError": 712.7940885753659
+          }
+        },
+        {
+          "mode": 2,
+          "toExact": {
+            "rmse": 243.67669032931366,
+            "maxAbsError": 689.5569674437709
+          },
+          "toRepresented": {
+            "rmse": 243.67933632524048,
+            "maxAbsError": 689.4935542570029
+          }
+        },
+        {
+          "mode": 3,
+          "toExact": {
+            "rmse": 243.7136988677603,
+            "maxAbsError": 701.970379521632
+          },
+          "toRepresented": {
+            "rmse": 243.71676848194747,
+            "maxAbsError": 701.9138765530948
+          }
+        }
+      ]
+    }
+  ],
+  "speedups": {
+    "exactParallelOverExactSerial": null,
+    "exactParallelOverOldParallel": null,
+    "exactHybrid2OverExactSerial": 1.0292390430934473,
+    "exactHybrid3OverExactSerial": 0.9231025115102314,
+    "exactHybrid4OverExactSerial": null,
+    "exactHybrid5OverExactSerial": null,
+    "exactHybrid7OverExactSerial": null
+  }
+}

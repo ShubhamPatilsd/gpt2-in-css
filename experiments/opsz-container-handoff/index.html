@@ -1,0 +1,26 @@
+<!doctype html><meta charset="utf-8"><title>opsz container handoff</title>
+<style>@font-face{font-family:OpszSource;src:url("source.woff2") format("woff2")}
+@font-face{font-family:OpszConsumer;src:url("consumer.woff2") format("woff2")}
+html,body{margin:0}
+body{font:14px system-ui}
+input{position:fixed;left:-10000px}
+.source{display:inline-block;width:max-content;white-space:pre;font-family:OpszSource;
+  font-size:100px;line-height:1;font-kerning:none}
+.bridge{position:absolute;container-type:inline-size;height:1px}
+.sink{display:inline-block;width:max-content;white-space:pre;font-family:OpszConsumer;
+  font-size:100cqi;line-height:1;font-kerning:none}
+.mode-none .sink{font-optical-sizing:none}
+.mode-auto .sink{font-optical-sizing:auto}
+.mode-explicit .sink{font-optical-sizing:none;
+  font-variation-settings:"opsz" clamp(60,calc(100cqi / 1px),100)}
+body:has(#case-0:checked) .source{font-variation-settings:"X000" 0.0}body:has(#case-1:checked) .source{font-variation-settings:"X000" 0.25}body:has(#case-2:checked) .source{font-variation-settings:"X000" 0.75}body:has(#case-3:checked) .source{font-variation-settings:"X000" 1.0}
+
+section{position:relative;height:90px;border-top:1px solid #ddd}
+section .bridge{left:0;top:55px;position-anchor:auto}
+section .source{position:absolute;left:0;top:28px}
+.flow-source{display:inline-block;width:77px;height:1px;anchor-name:--flow}
+.flow-bridge{display:inline-block;position:relative;position-anchor:--flow;width:anchor-size(--flow width);
+  height:1px;container-type:inline-size}
+.flow-value{display:block;width:100cqi;height:1px}
+</style><input id="case-0" name="case" type="radio" checked><input id="case-1" name="case" type="radio"><input id="case-2" name="case" type="radio"><input id="case-3" name="case" type="radio"><nav><label for="case-0">x=0.0</label><label for="case-1">x=0.25</label><label for="case-2">x=0.75</label><label for="case-3">x=1.0</label></nav><section data-mode="none"><h2>none</h2><span class="lane mode-none"><i class="source" id="source" style="anchor-name:--s0">&#xE000;</i><i class="bridge" id="bridge" style="position-anchor:--s0;width:anchor-size(--s0 width)"><i class="sink" id="sink">&#xE100;</i></i></span></section><section data-mode="auto"><h2>auto</h2><span class="lane mode-auto"><i class="source" id="source" style="anchor-name:--s1">&#xE000;</i><i class="bridge" id="bridge" style="position-anchor:--s1;width:anchor-size(--s1 width)"><i class="sink" id="sink">&#xE100;</i></i></span></section><section data-mode="explicit"><h2>explicit</h2><span class="lane mode-explicit"><i class="source" id="source" style="anchor-name:--s2">&#xE000;</i><i class="bridge" id="bridge" style="position-anchor:--s2;width:anchor-size(--s2 width)"><i class="sink" id="sink">&#xE100;</i></i></span></section><section id="flow-probe"><h2>normal-flow anchor-size</h2>
+<i class="flow-source"></i><i class="flow-bridge"><i class="flow-value"></i></i></section>

@@ -1,0 +1,7167 @@
+{
+  "generatedAt": "2026-09-14T01:23:30.624Z",
+  "server": "http://127.0.0.1:4178",
+  "chrome": "153.0.8010.36",
+  "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "headless": true,
+  "platform": "darwin 25.0.0 (arm64)",
+  "timing": {
+    "rounds": 7,
+    "warmupRounds": 2,
+    "acceptedCasesPerCell": 3,
+    "samplesPerCell": 21,
+    "boundary": "in-page performance.now(): first input style mutation through forced target.getBoundingClientRect().width",
+    "mutationCountPerSample": 770,
+    "includes": "768 hidden-vector custom properties, score offset, group, and synchronous final/readback geometry",
+    "excludes": "page load, fonts.ready, topology setup/removal, correctness scans, Playwright round trips"
+  },
+  "acceptedCases": [
+    {
+      "fixture": 0,
+      "group": 2,
+      "label": "clear-accept",
+      "boundedFeature": 3,
+      "fullFeature": 3,
+      "offlineWinnerLocal": 20,
+      "offlineRunnerLocal": 41,
+      "offlineMarginBuckets": 118,
+      "expectedToken": 532
+    },
+    {
+      "fixture": 0,
+      "group": 128,
+      "label": "clear-accept",
+      "boundedFeature": 7,
+      "fullFeature": 129,
+      "offlineWinnerLocal": 77,
+      "offlineRunnerLocal": 72,
+      "offlineMarginBuckets": 72,
+      "expectedToken": 32845
+    },
+    {
+      "fixture": 2,
+      "group": 195,
+      "label": "clear-accept",
+      "boundedFeature": 8,
+      "fullFeature": 196,
+      "offlineWinnerLocal": 24,
+      "offlineRunnerLocal": 33,
+      "offlineMarginBuckets": 14,
+      "expectedToken": 49944
+    }
+  ],
+  "variants": [
+    {
+      "id": "pure-one-grid",
+      "label": "Pure one-grid GSUB (existing baseline)",
+      "kind": "pure",
+      "setup": "pure",
+      "diagnostic": false
+    },
+    {
+      "id": "two-grid-no-exact-dom",
+      "label": "Two-grid top+runner; exact DOM removed",
+      "kind": "hybrid",
+      "setup": "remove-dom",
+      "diagnostic": false
+    },
+    {
+      "id": "two-grid-no-exact-assets",
+      "label": "Two-grid top+runner; exact DOM and stylesheet removed",
+      "kind": "hybrid",
+      "setup": "remove-assets",
+      "diagnostic": true
+    },
+    {
+      "id": "two-grid-hidden-exact-reset",
+      "label": "Two-grid; exact DOM hidden and input inheritance reset",
+      "kind": "hybrid",
+      "setup": "hidden-reset",
+      "diagnostic": true
+    },
+    {
+      "id": "two-grid-hidden-exact",
+      "label": "Two-grid; exact DOM forced hidden, direct final readback",
+      "kind": "hybrid",
+      "setup": "hidden",
+      "diagnostic": false
+    },
+    {
+      "id": "full-hybrid",
+      "label": "Current full hybrid",
+      "kind": "hybrid",
+      "setup": "full",
+      "diagnostic": false
+    }
+  ],
+  "setup": [
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "exactDomPresent": false,
+      "exactStylesheetPresent": false,
+      "exactDisplay": null,
+      "finalRule": "pure GSUB max-content stage geometry"
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "exactDomPresent": false,
+      "exactStylesheetPresent": true,
+      "exactDisplay": null,
+      "finalRule": "direct top-token width"
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "exactDomPresent": false,
+      "exactStylesheetPresent": false,
+      "exactDisplay": null,
+      "finalRule": "direct top-token width"
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "exactDomPresent": true,
+      "exactStylesheetPresent": true,
+      "exactDisplay": "none",
+      "finalRule": "direct top-token width"
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "exactDomPresent": true,
+      "exactStylesheetPresent": true,
+      "exactDisplay": "none",
+      "finalRule": "direct top-token width"
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "exactDomPresent": true,
+      "exactStylesheetPresent": true,
+      "exactDisplay": "grid",
+      "finalRule": "current conditional exact/top width"
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "exactDomPresent": false,
+      "exactStylesheetPresent": false,
+      "exactDisplay": null,
+      "finalRule": "pure GSUB max-content stage geometry"
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "exactDomPresent": false,
+      "exactStylesheetPresent": true,
+      "exactDisplay": null,
+      "finalRule": "direct top-token width"
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "exactDomPresent": false,
+      "exactStylesheetPresent": false,
+      "exactDisplay": null,
+      "finalRule": "direct top-token width"
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "exactDomPresent": true,
+      "exactStylesheetPresent": true,
+      "exactDisplay": "none",
+      "finalRule": "direct top-token width"
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "exactDomPresent": true,
+      "exactStylesheetPresent": true,
+      "exactDisplay": "none",
+      "finalRule": "direct top-token width"
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "exactDomPresent": true,
+      "exactStylesheetPresent": true,
+      "exactDisplay": "grid",
+      "finalRule": "current conditional exact/top width"
+    }
+  ],
+  "correctness": {
+    "checks": 36,
+    "passed": 36,
+    "allPassed": true,
+    "failures": [],
+    "observations": [
+      {
+        "bank": "bounded",
+        "variant": "pure-one-grid",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": null,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 16683.671875,
+          "top": {
+            "local": 20,
+            "width": 16683.671875,
+            "positive": 253
+          }
+        },
+        "topCorrect": true,
+        "runnerCorrect": null,
+        "finalCorrect": true,
+        "acceptedCorrect": null,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "pure-one-grid",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": null,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 10562.78125,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          }
+        },
+        "topCorrect": true,
+        "runnerCorrect": null,
+        "finalCorrect": true,
+        "acceptedCorrect": null,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "pure-one-grid",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": null,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 10467.609375,
+          "top": {
+            "local": 24,
+            "width": 10467.609375,
+            "positive": 232
+          }
+        },
+        "topCorrect": true,
+        "runnerCorrect": null,
+        "finalCorrect": true,
+        "acceptedCorrect": null,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-no-exact-dom",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": 41,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 532,
+          "finalWidth": 532,
+          "top": {
+            "local": 20,
+            "width": 16683.671875,
+            "positive": 253
+          },
+          "runner": {
+            "local": 41,
+            "width": 16207.34375,
+            "positive": 252
+          },
+          "topToken": 532,
+          "runnerToken": 41,
+          "marginBuckets": 119,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-no-exact-dom",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": 72,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 32845,
+          "finalWidth": 32845,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          },
+          "runner": {
+            "local": 72,
+            "width": 10278.859375,
+            "positive": 239
+          },
+          "topToken": 32845,
+          "runnerToken": 72,
+          "marginBuckets": 71,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-no-exact-dom",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": 33,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 49944,
+          "finalWidth": 49944,
+          "top": {
+            "local": 24,
+            "width": 10467.609375,
+            "positive": 232
+          },
+          "runner": {
+            "local": 33,
+            "width": 10427.46875,
+            "positive": 231
+          },
+          "topToken": 49944,
+          "runnerToken": 33,
+          "marginBuckets": 10,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-no-exact-assets",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": 41,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 532,
+          "finalWidth": 532,
+          "top": {
+            "local": 20,
+            "width": 16683.671875,
+            "positive": 253
+          },
+          "runner": {
+            "local": 41,
+            "width": 16207.34375,
+            "positive": 252
+          },
+          "topToken": 532,
+          "runnerToken": 41,
+          "marginBuckets": 119,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-no-exact-assets",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": 72,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 32845,
+          "finalWidth": 32845,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          },
+          "runner": {
+            "local": 72,
+            "width": 10278.859375,
+            "positive": 239
+          },
+          "topToken": 32845,
+          "runnerToken": 72,
+          "marginBuckets": 71,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-no-exact-assets",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": 33,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 49944,
+          "finalWidth": 49944,
+          "top": {
+            "local": 24,
+            "width": 10467.609375,
+            "positive": 232
+          },
+          "runner": {
+            "local": 33,
+            "width": 10427.46875,
+            "positive": 231
+          },
+          "topToken": 49944,
+          "runnerToken": 33,
+          "marginBuckets": 10,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-hidden-exact-reset",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": 41,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 532,
+          "finalWidth": 532,
+          "top": {
+            "local": 20,
+            "width": 16683.671875,
+            "positive": 253
+          },
+          "runner": {
+            "local": 41,
+            "width": 16207.34375,
+            "positive": 252
+          },
+          "topToken": 532,
+          "runnerToken": 41,
+          "marginBuckets": 119,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-hidden-exact-reset",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": 72,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 32845,
+          "finalWidth": 32845,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          },
+          "runner": {
+            "local": 72,
+            "width": 10278.859375,
+            "positive": 239
+          },
+          "topToken": 32845,
+          "runnerToken": 72,
+          "marginBuckets": 71,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-hidden-exact-reset",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": 33,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 49944,
+          "finalWidth": 49944,
+          "top": {
+            "local": 24,
+            "width": 10467.609375,
+            "positive": 232
+          },
+          "runner": {
+            "local": 33,
+            "width": 10427.46875,
+            "positive": 231
+          },
+          "topToken": 49944,
+          "runnerToken": 33,
+          "marginBuckets": 10,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-hidden-exact",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": 41,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 532,
+          "finalWidth": 532,
+          "top": {
+            "local": 20,
+            "width": 16683.671875,
+            "positive": 253
+          },
+          "runner": {
+            "local": 41,
+            "width": 16207.34375,
+            "positive": 252
+          },
+          "topToken": 532,
+          "runnerToken": 41,
+          "marginBuckets": 119,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-hidden-exact",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": 72,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 32845,
+          "finalWidth": 32845,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          },
+          "runner": {
+            "local": 72,
+            "width": 10278.859375,
+            "positive": 239
+          },
+          "topToken": 32845,
+          "runnerToken": 72,
+          "marginBuckets": 71,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "two-grid-hidden-exact",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": 33,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 49944,
+          "finalWidth": 49944,
+          "top": {
+            "local": 24,
+            "width": 10467.609375,
+            "positive": 232
+          },
+          "runner": {
+            "local": 33,
+            "width": 10427.46875,
+            "positive": 231
+          },
+          "topToken": 49944,
+          "runnerToken": 33,
+          "marginBuckets": 10,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "full-hybrid",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": 41,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 532,
+          "finalWidth": 532,
+          "top": {
+            "local": 20,
+            "width": 16683.671875,
+            "positive": 253
+          },
+          "runner": {
+            "local": 41,
+            "width": 16207.34375,
+            "positive": 252
+          },
+          "topToken": 532,
+          "runnerToken": 41,
+          "marginBuckets": 119,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "full-hybrid",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": 72,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 32845,
+          "finalWidth": 32845,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          },
+          "runner": {
+            "local": 72,
+            "width": 10278.859375,
+            "positive": 239
+          },
+          "topToken": 32845,
+          "runnerToken": 72,
+          "marginBuckets": 71,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "bounded",
+        "variant": "full-hybrid",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": 33,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 49944,
+          "finalWidth": 49944,
+          "top": {
+            "local": 24,
+            "width": 10467.609375,
+            "positive": 232
+          },
+          "runner": {
+            "local": 33,
+            "width": 10427.46875,
+            "positive": 231
+          },
+          "topToken": 49944,
+          "runnerToken": 33,
+          "marginBuckets": 10,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "pure-one-grid",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": null,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 16687.671875,
+          "top": {
+            "local": 20,
+            "width": 16687.671875,
+            "positive": 253
+          }
+        },
+        "topCorrect": true,
+        "runnerCorrect": null,
+        "finalCorrect": true,
+        "acceptedCorrect": null,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "pure-one-grid",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": null,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 10562.78125,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          }
+        },
+        "topCorrect": true,
+        "runnerCorrect": null,
+        "finalCorrect": true,
+        "acceptedCorrect": null,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "pure-one-grid",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": null,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 10471.609375,
+          "top": {
+            "local": 24,
+            "width": 10471.609375,
+            "positive": 232
+          }
+        },
+        "topCorrect": true,
+        "runnerCorrect": null,
+        "finalCorrect": true,
+        "acceptedCorrect": null,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-no-exact-dom",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": 41,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 532,
+          "finalWidth": 532,
+          "top": {
+            "local": 20,
+            "width": 16687.671875,
+            "positive": 253
+          },
+          "runner": {
+            "local": 41,
+            "width": 16207.34375,
+            "positive": 252
+          },
+          "topToken": 532,
+          "runnerToken": 41,
+          "marginBuckets": 120,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-no-exact-dom",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": 72,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 32845,
+          "finalWidth": 32845,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          },
+          "runner": {
+            "local": 72,
+            "width": 10278.859375,
+            "positive": 239
+          },
+          "topToken": 32845,
+          "runnerToken": 72,
+          "marginBuckets": 71,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-no-exact-dom",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": 33,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 49944,
+          "finalWidth": 49944,
+          "top": {
+            "local": 24,
+            "width": 10471.609375,
+            "positive": 232
+          },
+          "runner": {
+            "local": 33,
+            "width": 10431.46875,
+            "positive": 231
+          },
+          "topToken": 49944,
+          "runnerToken": 33,
+          "marginBuckets": 10,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-no-exact-assets",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": 41,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 532,
+          "finalWidth": 532,
+          "top": {
+            "local": 20,
+            "width": 16687.671875,
+            "positive": 253
+          },
+          "runner": {
+            "local": 41,
+            "width": 16207.34375,
+            "positive": 252
+          },
+          "topToken": 532,
+          "runnerToken": 41,
+          "marginBuckets": 120,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-no-exact-assets",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": 72,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 32845,
+          "finalWidth": 32845,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          },
+          "runner": {
+            "local": 72,
+            "width": 10278.859375,
+            "positive": 239
+          },
+          "topToken": 32845,
+          "runnerToken": 72,
+          "marginBuckets": 71,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-no-exact-assets",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": 33,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 49944,
+          "finalWidth": 49944,
+          "top": {
+            "local": 24,
+            "width": 10471.609375,
+            "positive": 232
+          },
+          "runner": {
+            "local": 33,
+            "width": 10431.46875,
+            "positive": 231
+          },
+          "topToken": 49944,
+          "runnerToken": 33,
+          "marginBuckets": 10,
+          "fallback": 0,
+          "exactDisplay": null,
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-hidden-exact-reset",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": 41,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 532,
+          "finalWidth": 532,
+          "top": {
+            "local": 20,
+            "width": 16687.671875,
+            "positive": 253
+          },
+          "runner": {
+            "local": 41,
+            "width": 16207.34375,
+            "positive": 252
+          },
+          "topToken": 532,
+          "runnerToken": 41,
+          "marginBuckets": 120,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-hidden-exact-reset",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": 72,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 32845,
+          "finalWidth": 32845,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          },
+          "runner": {
+            "local": 72,
+            "width": 10278.859375,
+            "positive": 239
+          },
+          "topToken": 32845,
+          "runnerToken": 72,
+          "marginBuckets": 71,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-hidden-exact-reset",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": 33,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 49944,
+          "finalWidth": 49944,
+          "top": {
+            "local": 24,
+            "width": 10471.609375,
+            "positive": 232
+          },
+          "runner": {
+            "local": 33,
+            "width": 10431.46875,
+            "positive": 231
+          },
+          "topToken": 49944,
+          "runnerToken": 33,
+          "marginBuckets": 10,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-hidden-exact",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": 41,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 532,
+          "finalWidth": 532,
+          "top": {
+            "local": 20,
+            "width": 16687.671875,
+            "positive": 253
+          },
+          "runner": {
+            "local": 41,
+            "width": 16207.34375,
+            "positive": 252
+          },
+          "topToken": 532,
+          "runnerToken": 41,
+          "marginBuckets": 120,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-hidden-exact",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": 72,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 32845,
+          "finalWidth": 32845,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          },
+          "runner": {
+            "local": 72,
+            "width": 10278.859375,
+            "positive": 239
+          },
+          "topToken": 32845,
+          "runnerToken": 72,
+          "marginBuckets": 71,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "two-grid-hidden-exact",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": 33,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 49944,
+          "finalWidth": 49944,
+          "top": {
+            "local": 24,
+            "width": 10471.609375,
+            "positive": 232
+          },
+          "runner": {
+            "local": 33,
+            "width": 10431.46875,
+            "positive": 231
+          },
+          "topToken": 49944,
+          "runnerToken": 33,
+          "marginBuckets": 10,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "full-hybrid",
+        "fixture": 0,
+        "group": 2,
+        "label": "clear-accept",
+        "expectedTopLocal": 20,
+        "expectedRunnerLocal": 41,
+        "expectedToken": 532,
+        "observed": {
+          "forcedGeometry": 532,
+          "finalWidth": 532,
+          "top": {
+            "local": 20,
+            "width": 16687.671875,
+            "positive": 253
+          },
+          "runner": {
+            "local": 41,
+            "width": 16207.34375,
+            "positive": 252
+          },
+          "topToken": 532,
+          "runnerToken": 41,
+          "marginBuckets": 120,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "full-hybrid",
+        "fixture": 0,
+        "group": 128,
+        "label": "clear-accept",
+        "expectedTopLocal": 77,
+        "expectedRunnerLocal": 72,
+        "expectedToken": 32845,
+        "observed": {
+          "forcedGeometry": 32845,
+          "finalWidth": 32845,
+          "top": {
+            "local": 77,
+            "width": 10562.78125,
+            "positive": 240
+          },
+          "runner": {
+            "local": 72,
+            "width": 10278.859375,
+            "positive": 239
+          },
+          "topToken": 32845,
+          "runnerToken": 72,
+          "marginBuckets": 71,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      },
+      {
+        "bank": "full",
+        "variant": "full-hybrid",
+        "fixture": 2,
+        "group": 195,
+        "label": "clear-accept",
+        "expectedTopLocal": 24,
+        "expectedRunnerLocal": 33,
+        "expectedToken": 49944,
+        "observed": {
+          "forcedGeometry": 49944,
+          "finalWidth": 49944,
+          "top": {
+            "local": 24,
+            "width": 10471.609375,
+            "positive": 232
+          },
+          "runner": {
+            "local": 33,
+            "width": 10431.46875,
+            "positive": 231
+          },
+          "topToken": 49944,
+          "runnerToken": 33,
+          "marginBuckets": 10,
+          "fallback": 0,
+          "exactDisplay": "none",
+          "accepted": true
+        },
+        "topCorrect": true,
+        "runnerCorrect": true,
+        "finalCorrect": true,
+        "acceptedCorrect": true,
+        "valid": true
+      }
+    ]
+  },
+  "medians": {
+    "bounded": {
+      "pure-one-grid": {
+        "milliseconds": 6.1,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 5.9,
+          "0:128": 5.9,
+          "2:195": 6.2
+        }
+      },
+      "two-grid-no-exact-dom": {
+        "milliseconds": 12.9,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 13.5,
+          "0:128": 13,
+          "2:195": 12.3
+        }
+      },
+      "two-grid-no-exact-assets": {
+        "milliseconds": 13.2,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 13.2,
+          "0:128": 14,
+          "2:195": 13.1
+        }
+      },
+      "two-grid-hidden-exact-reset": {
+        "milliseconds": 15,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 15.1,
+          "0:128": 15,
+          "2:195": 15.3
+        }
+      },
+      "two-grid-hidden-exact": {
+        "milliseconds": 14.8,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 14.4,
+          "0:128": 15.8,
+          "2:195": 14.8
+        }
+      },
+      "full-hybrid": {
+        "milliseconds": 14.5,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 14.3,
+          "0:128": 19.3,
+          "2:195": 14.1
+        }
+      }
+    },
+    "full": {
+      "pure-one-grid": {
+        "milliseconds": 9.1,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 9,
+          "0:128": 9.1,
+          "2:195": 9.2
+        }
+      },
+      "two-grid-no-exact-dom": {
+        "milliseconds": 20.2,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 20.8,
+          "0:128": 20.2,
+          "2:195": 20
+        }
+      },
+      "two-grid-no-exact-assets": {
+        "milliseconds": 21.1,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 20.7,
+          "0:128": 20.6,
+          "2:195": 21.3
+        }
+      },
+      "two-grid-hidden-exact-reset": {
+        "milliseconds": 21.5,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 21.5,
+          "0:128": 21.4,
+          "2:195": 21.8
+        }
+      },
+      "two-grid-hidden-exact": {
+        "milliseconds": 21.9,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 22.3,
+          "0:128": 21.8,
+          "2:195": 21.9
+        }
+      },
+      "full-hybrid": {
+        "milliseconds": 24.1,
+        "sampleCount": 21,
+        "perCaseMilliseconds": {
+          "0:2": 22.4,
+          "0:128": 26.5,
+          "2:195": 24.1
+        }
+      }
+    }
+  },
+  "attribution": {
+    "bounded": {
+      "secondGridAndReadback": 7.1,
+      "unusedExactStylesheet": -0.3,
+      "hiddenResetExactDom": 2.1,
+      "inheritedExactStyleInvalidation": -0.2,
+      "finalGating": -0.3,
+      "fullHybridOverPure": 8.4
+    },
+    "full": {
+      "secondGridAndReadback": 12,
+      "unusedExactStylesheet": -0.9,
+      "hiddenResetExactDom": 1.3,
+      "inheritedExactStyleInvalidation": 0.4,
+      "finalGating": 2.2,
+      "fullHybridOverPure": 15
+    }
+  },
+  "dominantPositiveComponent": {
+    "component": "second grid + readback",
+    "milliseconds": 12,
+    "bank": "full"
+  },
+  "adversarialMixedTransitionStress": {
+    "timing": {
+      "rounds": 7,
+      "warmupRounds": 2,
+      "referenceCasesPerRound": 10,
+      "samplesPerTarget": 70,
+      "order": "case order reverses on odd rounds and rotates by round; page order also reverses/rotates",
+      "boundary": "in-page performance.now(): 768 hidden-vector writes plus score offset/group through forced final/exact geometry",
+      "excludes": "page load, fonts.ready, warmup, correctness reads, and Playwright round trips",
+      "caseMixWarning": "The ten intentionally adversarial cases have 7/10 fallback and are not production-weighted."
+    },
+    "correctness": {
+      "hybridVsExactChecks": 20,
+      "hybridVsExactChecksPassed": 20,
+      "allPassed": true,
+      "failures": [],
+      "authoritativeBaseline": "separate exact CSS page geometry",
+      "offlineReferenceDiagnostic": {
+        "checks": 10,
+        "matches": 9,
+        "mismatches": [
+          {
+            "fixture": 9,
+            "group": 96,
+            "offlineExpectedWinner": 24794,
+            "authoritativeCssWinner": 24755
+          }
+        ],
+        "note": "fixture 9/group 96 exact CSS winner 24755 is authoritative; offline 24794 appears stale/incorrect"
+      },
+      "observations": [
+        {
+          "target": "exact-baseline",
+          "fixture": 0,
+          "group": 0,
+          "expectedWinner": 11,
+          "observedWinner": 11,
+          "valid": true
+        },
+        {
+          "target": "bounded-hybrid-vs-exact",
+          "bank": "bounded",
+          "fixture": 0,
+          "group": 0,
+          "label": "forced-group-0",
+          "exactWinner": 11,
+          "observedWinner": 11,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 46,
+          "valid": true
+        },
+        {
+          "target": "full-hybrid-vs-exact",
+          "bank": "full",
+          "fixture": 0,
+          "group": 0,
+          "label": "forced-group-0",
+          "exactWinner": 11,
+          "observedWinner": 11,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 167,
+          "valid": true
+        },
+        {
+          "target": "exact-baseline",
+          "fixture": 1,
+          "group": 1,
+          "expectedWinner": 477,
+          "observedWinner": 477,
+          "valid": true
+        },
+        {
+          "target": "bounded-hybrid-vs-exact",
+          "bank": "bounded",
+          "fixture": 1,
+          "group": 1,
+          "label": "forced-group-1",
+          "exactWinner": 477,
+          "observedWinner": 477,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 278,
+          "valid": true
+        },
+        {
+          "target": "full-hybrid-vs-exact",
+          "bank": "full",
+          "fixture": 1,
+          "group": 1,
+          "label": "forced-group-1",
+          "exactWinner": 477,
+          "observedWinner": 477,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 278,
+          "valid": true
+        },
+        {
+          "target": "exact-baseline",
+          "fixture": 0,
+          "group": 2,
+          "expectedWinner": 532,
+          "observedWinner": 532,
+          "valid": true
+        },
+        {
+          "target": "bounded-hybrid-vs-exact",
+          "bank": "bounded",
+          "fixture": 0,
+          "group": 2,
+          "label": "clear-accept",
+          "exactWinner": 532,
+          "observedWinner": 532,
+          "route": "accept",
+          "fallback": 0,
+          "exactDisplay": "none",
+          "marginBuckets": 119,
+          "valid": true
+        },
+        {
+          "target": "full-hybrid-vs-exact",
+          "bank": "full",
+          "fixture": 0,
+          "group": 2,
+          "label": "clear-accept",
+          "exactWinner": 532,
+          "observedWinner": 532,
+          "route": "accept",
+          "fallback": 0,
+          "exactDisplay": "none",
+          "marginBuckets": 120,
+          "valid": true
+        },
+        {
+          "target": "exact-baseline",
+          "fixture": 4,
+          "group": 17,
+          "expectedWinner": 4478,
+          "observedWinner": 4478,
+          "valid": true
+        },
+        {
+          "target": "bounded-hybrid-vs-exact",
+          "bank": "bounded",
+          "fixture": 4,
+          "group": 17,
+          "label": "small-accept",
+          "exactWinner": 4478,
+          "observedWinner": 4478,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 6,
+          "valid": true
+        },
+        {
+          "target": "full-hybrid-vs-exact",
+          "bank": "full",
+          "fixture": 4,
+          "group": 17,
+          "label": "small-accept",
+          "exactWinner": 4478,
+          "observedWinner": 4478,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 5,
+          "valid": true
+        },
+        {
+          "target": "exact-baseline",
+          "fixture": 0,
+          "group": 64,
+          "expectedWinner": 16393,
+          "observedWinner": 16393,
+          "valid": true
+        },
+        {
+          "target": "bounded-hybrid-vs-exact",
+          "bank": "bounded",
+          "fixture": 0,
+          "group": 64,
+          "label": "near-tie",
+          "exactWinner": 16393,
+          "observedWinner": 16393,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 6,
+          "valid": true
+        },
+        {
+          "target": "full-hybrid-vs-exact",
+          "bank": "full",
+          "fixture": 0,
+          "group": 64,
+          "label": "near-tie",
+          "exactWinner": 16393,
+          "observedWinner": 16393,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 6,
+          "valid": true
+        },
+        {
+          "target": "exact-baseline",
+          "fixture": 4,
+          "group": 64,
+          "expectedWinner": 16610,
+          "observedWinner": 16610,
+          "valid": true
+        },
+        {
+          "target": "bounded-hybrid-vs-exact",
+          "bank": "bounded",
+          "fixture": 4,
+          "group": 64,
+          "label": "near-tie",
+          "exactWinner": 16610,
+          "observedWinner": 16610,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 2,
+          "valid": true
+        },
+        {
+          "target": "full-hybrid-vs-exact",
+          "bank": "full",
+          "fixture": 4,
+          "group": 64,
+          "label": "near-tie",
+          "exactWinner": 16610,
+          "observedWinner": 16610,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 2,
+          "valid": true
+        },
+        {
+          "target": "exact-baseline",
+          "fixture": 0,
+          "group": 96,
+          "expectedWinner": 24755,
+          "observedWinner": 24755,
+          "valid": true
+        },
+        {
+          "target": "bounded-hybrid-vs-exact",
+          "bank": "bounded",
+          "fixture": 0,
+          "group": 96,
+          "label": "threshold",
+          "exactWinner": 24755,
+          "observedWinner": 24755,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 3,
+          "valid": true
+        },
+        {
+          "target": "full-hybrid-vs-exact",
+          "bank": "full",
+          "fixture": 0,
+          "group": 96,
+          "label": "threshold",
+          "exactWinner": 24755,
+          "observedWinner": 24755,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 2,
+          "valid": true
+        },
+        {
+          "target": "exact-baseline-offline-diagnostic",
+          "fixture": 9,
+          "group": 96,
+          "offlineExpectedWinner": 24794,
+          "authoritativeCssWinner": 24755,
+          "offlineReferenceMatches": false
+        },
+        {
+          "target": "bounded-hybrid-vs-exact",
+          "bank": "bounded",
+          "fixture": 9,
+          "group": 96,
+          "label": "near-tie-order",
+          "exactWinner": 24755,
+          "observedWinner": 24755,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 1,
+          "valid": true
+        },
+        {
+          "target": "full-hybrid-vs-exact",
+          "bank": "full",
+          "fixture": 9,
+          "group": 96,
+          "label": "near-tie-order",
+          "exactWinner": 24755,
+          "observedWinner": 24755,
+          "route": "fallback",
+          "fallback": 1,
+          "exactDisplay": "grid",
+          "marginBuckets": 0,
+          "valid": true
+        },
+        {
+          "target": "exact-baseline",
+          "fixture": 0,
+          "group": 128,
+          "expectedWinner": 32845,
+          "observedWinner": 32845,
+          "valid": true
+        },
+        {
+          "target": "bounded-hybrid-vs-exact",
+          "bank": "bounded",
+          "fixture": 0,
+          "group": 128,
+          "label": "clear-accept",
+          "exactWinner": 32845,
+          "observedWinner": 32845,
+          "route": "accept",
+          "fallback": 0,
+          "exactDisplay": "none",
+          "marginBuckets": 71,
+          "valid": true
+        },
+        {
+          "target": "full-hybrid-vs-exact",
+          "bank": "full",
+          "fixture": 0,
+          "group": 128,
+          "label": "clear-accept",
+          "exactWinner": 32845,
+          "observedWinner": 32845,
+          "route": "accept",
+          "fallback": 0,
+          "exactDisplay": "none",
+          "marginBuckets": 71,
+          "valid": true
+        },
+        {
+          "target": "exact-baseline",
+          "fixture": 2,
+          "group": 195,
+          "expectedWinner": 49944,
+          "observedWinner": 49944,
+          "valid": true
+        },
+        {
+          "target": "bounded-hybrid-vs-exact",
+          "bank": "bounded",
+          "fixture": 2,
+          "group": 195,
+          "label": "clear-accept",
+          "exactWinner": 49944,
+          "observedWinner": 49944,
+          "route": "accept",
+          "fallback": 0,
+          "exactDisplay": "none",
+          "marginBuckets": 10,
+          "valid": true
+        },
+        {
+          "target": "full-hybrid-vs-exact",
+          "bank": "full",
+          "fixture": 2,
+          "group": 195,
+          "label": "clear-accept",
+          "exactWinner": 49944,
+          "observedWinner": 49944,
+          "route": "accept",
+          "fallback": 0,
+          "exactDisplay": "none",
+          "marginBuckets": 10,
+          "valid": true
+        }
+      ]
+    },
+    "byBank": {
+      "bounded": {
+        "hybrid": {
+          "overall": {
+            "sampleCount": 70,
+            "medianMilliseconds": 285.75
+          },
+          "accepted": {
+            "sampleCount": 21,
+            "medianMilliseconds": 41
+          },
+          "fallback": {
+            "sampleCount": 49,
+            "medianMilliseconds": 440
+          },
+          "transitions": {
+            "accept->accept": {
+              "sampleCount": 8,
+              "medianMilliseconds": 30.7
+            },
+            "accept->fallback": {
+              "sampleCount": 14,
+              "medianMilliseconds": 456.8
+            },
+            "fallback->accept": {
+              "sampleCount": 13,
+              "medianMilliseconds": 224.7
+            },
+            "fallback->fallback": {
+              "sampleCount": 35,
+              "medianMilliseconds": 431.6
+            }
+          }
+        },
+        "exact": {
+          "overall": {
+            "sampleCount": 70,
+            "medianMilliseconds": 231.85
+          },
+          "accepted": {
+            "sampleCount": 21,
+            "medianMilliseconds": 233.3
+          },
+          "fallback": {
+            "sampleCount": 49,
+            "medianMilliseconds": 231.8
+          },
+          "transitions": {
+            "accept->accept": {
+              "sampleCount": 8,
+              "medianMilliseconds": 246.1
+            },
+            "accept->fallback": {
+              "sampleCount": 14,
+              "medianMilliseconds": 232.55
+            },
+            "fallback->accept": {
+              "sampleCount": 13,
+              "medianMilliseconds": 225.4
+            },
+            "fallback->fallback": {
+              "sampleCount": 35,
+              "medianMilliseconds": 230.7
+            }
+          }
+        },
+        "comparison": {
+          "overallHybridMinusExactMilliseconds": 53.9,
+          "acceptedHybridMinusExactMilliseconds": -192.3,
+          "fallbackHybridMinusExactMilliseconds": 208.2,
+          "hybridBeatsExactOverall": false
+        }
+      },
+      "full": {
+        "hybrid": {
+          "overall": {
+            "sampleCount": 70,
+            "medianMilliseconds": 288.75
+          },
+          "accepted": {
+            "sampleCount": 21,
+            "medianMilliseconds": 45.1
+          },
+          "fallback": {
+            "sampleCount": 49,
+            "medianMilliseconds": 452.7
+          },
+          "transitions": {
+            "accept->accept": {
+              "sampleCount": 8,
+              "medianMilliseconds": 38.1
+            },
+            "accept->fallback": {
+              "sampleCount": 14,
+              "medianMilliseconds": 446.5
+            },
+            "fallback->accept": {
+              "sampleCount": 13,
+              "medianMilliseconds": 232.4
+            },
+            "fallback->fallback": {
+              "sampleCount": 35,
+              "medianMilliseconds": 454.1
+            }
+          }
+        },
+        "exact": {
+          "overall": {
+            "sampleCount": 70,
+            "medianMilliseconds": 231.85
+          },
+          "accepted": {
+            "sampleCount": 21,
+            "medianMilliseconds": 233.3
+          },
+          "fallback": {
+            "sampleCount": 49,
+            "medianMilliseconds": 231.8
+          },
+          "transitions": {
+            "accept->accept": {
+              "sampleCount": 8,
+              "medianMilliseconds": 246.1
+            },
+            "accept->fallback": {
+              "sampleCount": 14,
+              "medianMilliseconds": 232.55
+            },
+            "fallback->accept": {
+              "sampleCount": 13,
+              "medianMilliseconds": 225.4
+            },
+            "fallback->fallback": {
+              "sampleCount": 35,
+              "medianMilliseconds": 230.7
+            }
+          }
+        },
+        "comparison": {
+          "overallHybridMinusExactMilliseconds": 56.9,
+          "acceptedHybridMinusExactMilliseconds": -188.2,
+          "fallbackHybridMinusExactMilliseconds": 220.9,
+          "hybridBeatsExactOverall": false
+        }
+      }
+    },
+    "decision": "The adversarial mixed-transition stress set does not favor the hybrid in either bank.",
+    "hybridSamples": [
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 0,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 424.09999990463257,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 0,
+        "pageOrder": 0,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 446.90000009536743,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 0,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 210.10000002384186,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 0,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 473.10000002384186,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 0,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 427.2999999523163,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 0,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 480.40000009536743,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 0,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 231.90000009536743,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 0,
+        "pageOrder": 0,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 282.09999990463257,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 0,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 246.30000007152557,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 0,
+        "pageOrder": 0,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 40.199999928474426,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 0,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 346.40000009536743,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 0,
+        "pageOrder": 1,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 468.2000000476837,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 0,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 220.79999995231628,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 0,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 464.2000000476837,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 0,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 439.09999990463257,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 0,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 454.10000002384186,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 0,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 232.20000004768372,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 0,
+        "pageOrder": 1,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 286.3000000715256,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 0,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 232.39999997615814,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 0,
+        "pageOrder": 1,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 41.700000047683716,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 1,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 22.799999952316284,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 1,
+        "pageOrder": 0,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 162.20000004768372,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 1,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 454.8000000715256,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 1,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 474,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 1,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 230.60000002384186,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 1,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 252.5,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 1,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 27.199999928474426,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 1,
+        "pageOrder": 0,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 450.89999997615814,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 1,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 454.10000002384186,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 1,
+        "pageOrder": 0,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 260.10000002384186,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 1,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 18.199999928474426,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 1,
+        "pageOrder": 1,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 225.10000002384186,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 1,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 455.2000000476837,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 1,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 485,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 1,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 224,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 1,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 254.39999997615814,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 1,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 18.799999952316284,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 1,
+        "pageOrder": 1,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 461.7999999523163,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 1,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 426.5,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 1,
+        "pageOrder": 1,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 257.60000002384186,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 2,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 19.200000047683716,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 2,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 486.2999999523163,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 2,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 445.10000002384186,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 2,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 462.60000002384186,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 2,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 226.19999992847443,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 2,
+        "pageOrder": 1,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 289.39999997615814,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 2,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 224.70000004768372,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 2,
+        "pageOrder": 1,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 38.799999952316284,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 2,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 448.3000000715256,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 2,
+        "pageOrder": 1,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 450.2000000476837,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 2,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 27.5,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 2,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 440.7999999523163,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 2,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 463.90000009536743,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 2,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 455.5,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 2,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 233.59999990463257,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 2,
+        "pageOrder": 2,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 289.5,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 2,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 230.70000004768372,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 2,
+        "pageOrder": 2,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 41.39999997615814,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 2,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 444.60000002384186,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 2,
+        "pageOrder": 2,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 452.7000000476837,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 3,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 459.7000000476837,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 3,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 474.60000002384186,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 3,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 250.89999997615814,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 3,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 241.69999992847443,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 3,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 27.399999976158142,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 3,
+        "pageOrder": 1,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 481.2000000476837,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 3,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 419.5,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 3,
+        "pageOrder": 1,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 271.7000000476837,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 3,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 26.299999952316284,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 3,
+        "pageOrder": 1,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 266.90000009536743,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 3,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 456.5,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 3,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 500,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 3,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 227.30000007152557,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 3,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 238.60000002384186,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 3,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 19.399999976158142,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 3,
+        "pageOrder": 2,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 484.39999997615814,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 3,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 415.10000002384186,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 3,
+        "pageOrder": 2,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 263,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 3,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 21.5,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 3,
+        "pageOrder": 2,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 264.39999997615814,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 4,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 455,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 4,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 468.7000000476837,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 4,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 270,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 4,
+        "pageOrder": 0,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 293.39999997615814,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 4,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 262.39999997615814,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 4,
+        "pageOrder": 0,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 45.10000002384186,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 4,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 433.5,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 4,
+        "pageOrder": 0,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 479.10000002384186,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 4,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 223,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 4,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 489.2000000476837,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 4,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 464.3000000715256,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 4,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 497.90000009536743,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 4,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 229.69999992847443,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 4,
+        "pageOrder": 2,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 269.5,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 4,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 230.59999990463257,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 4,
+        "pageOrder": 2,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 41,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 4,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 456.40000009536743,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 4,
+        "pageOrder": 2,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 461.60000002384186,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 4,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 216.39999997615814,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 4,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 496.8000000715256,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 5,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 433.5,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 5,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 148,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 5,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 18.800000071525574,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 5,
+        "pageOrder": 0,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 457.1999999284744,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 5,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 417.39999997615814,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 5,
+        "pageOrder": 0,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 266.2000000476837,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 5,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 22.600000023841858,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 5,
+        "pageOrder": 0,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 289.6999999284744,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 5,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 440,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 5,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 507.39999997615814,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 5,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 507.5,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 5,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 239.70000004768372,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 5,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 35.200000047683716,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 5,
+        "pageOrder": 2,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 483.10000002384186,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 5,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 477.10000002384186,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 5,
+        "pageOrder": 2,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 274.89999997615814,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 5,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 34.799999952316284,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 5,
+        "pageOrder": 2,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 288,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 5,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 488.60000002384186,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 5,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 507.1999999284744,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 6,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 233.29999995231628,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 6,
+        "pageOrder": 0,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 247.10000002384186,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 6,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 235.59999990463257,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 6,
+        "pageOrder": 0,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 40.5,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 6,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 426.60000002384186,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 6,
+        "pageOrder": 0,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 468.5,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 6,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 213.39999997615814,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 6,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 484.3000000715256,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 6,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 431.60000002384186,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "bounded-hybrid",
+        "bank": "bounded",
+        "round": 6,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 472.10000002384186,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 6,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 250.69999992847443,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 6,
+        "pageOrder": 1,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 265.3000000715256,
+        "forcedGeometry": 24755,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 6,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 252.5,
+        "forcedGeometry": 32845,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 6,
+        "pageOrder": 1,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 43.200000047683716,
+        "forcedGeometry": 49944,
+        "route": "accept",
+        "transition": "accept->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 6,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 448.39999997615814,
+        "forcedGeometry": 11,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 6,
+        "pageOrder": 1,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 479,
+        "forcedGeometry": 477,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 6,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 235.70000004768372,
+        "forcedGeometry": 532,
+        "route": "accept",
+        "transition": "fallback->accept"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 6,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 490.2000000476837,
+        "forcedGeometry": 4478,
+        "route": "fallback",
+        "transition": "accept->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 6,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 471.6999999284744,
+        "forcedGeometry": 16393,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      },
+      {
+        "target": "full-hybrid",
+        "bank": "full",
+        "round": 6,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 483.39999997615814,
+        "forcedGeometry": 16610,
+        "route": "fallback",
+        "transition": "fallback->fallback"
+      }
+    ],
+    "exactSamples": [
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 0,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 228.79999995231628,
+        "forcedGeometry": 11,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 0,
+        "pageOrder": 2,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 233.79999995231628,
+        "forcedGeometry": 477,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 0,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 219.5,
+        "forcedGeometry": 532,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 0,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 232.5,
+        "forcedGeometry": 4478,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 0,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 226.69999992847443,
+        "forcedGeometry": 16393,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 0,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 232.19999992847443,
+        "forcedGeometry": 16610,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 0,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 235.60000002384186,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 0,
+        "pageOrder": 2,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 245.70000004768372,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 0,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 240.39999997615814,
+        "forcedGeometry": 32845,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 0,
+        "pageOrder": 2,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 257.8000000715256,
+        "forcedGeometry": 49944,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 1,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 228.29999995231628,
+        "forcedGeometry": 32845,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 1,
+        "pageOrder": 2,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 246.10000002384186,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 1,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 229.10000002384186,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 1,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 244.10000002384186,
+        "forcedGeometry": 16610,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 1,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 223.39999997615814,
+        "forcedGeometry": 16393,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 1,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 225.5,
+        "forcedGeometry": 4478,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 1,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 214,
+        "forcedGeometry": 532,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 1,
+        "pageOrder": 2,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 231.89999997615814,
+        "forcedGeometry": 477,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 1,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 213.59999990463257,
+        "forcedGeometry": 11,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 1,
+        "pageOrder": 2,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 254,
+        "forcedGeometry": 49944,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 2,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 219,
+        "forcedGeometry": 532,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 2,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 232.60000002384186,
+        "forcedGeometry": 4478,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 2,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 229.60000002384186,
+        "forcedGeometry": 16393,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 2,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 231.19999992847443,
+        "forcedGeometry": 16610,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 2,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 231.79999995231628,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 2,
+        "pageOrder": 0,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 247.19999992847443,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 2,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 233.10000002384186,
+        "forcedGeometry": 32845,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 2,
+        "pageOrder": 0,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 260.39999997615814,
+        "forcedGeometry": 49944,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 2,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 219.19999992847443,
+        "forcedGeometry": 11,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 2,
+        "pageOrder": 0,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 231.79999995231628,
+        "forcedGeometry": 477,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 3,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 222.90000009536743,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 3,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 241.89999997615814,
+        "forcedGeometry": 16610,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 3,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 224,
+        "forcedGeometry": 16393,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 3,
+        "pageOrder": 0,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 226.40000009536743,
+        "forcedGeometry": 4478,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 3,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 215.10000002384186,
+        "forcedGeometry": 532,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 3,
+        "pageOrder": 0,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 232.70000004768372,
+        "forcedGeometry": 477,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 3,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 216.19999992847443,
+        "forcedGeometry": 11,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 3,
+        "pageOrder": 0,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 256.59999990463257,
+        "forcedGeometry": 49944,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 3,
+        "pageOrder": 0,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 233.29999995231628,
+        "forcedGeometry": 32845,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 3,
+        "pageOrder": 0,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 247.19999992847443,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 4,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 237.10000002384186,
+        "forcedGeometry": 16393,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 4,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 238.79999995231628,
+        "forcedGeometry": 16610,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 4,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 227.5,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 4,
+        "pageOrder": 1,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 243.5,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 4,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 225.39999997615814,
+        "forcedGeometry": 32845,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 4,
+        "pageOrder": 1,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 257.89999997615814,
+        "forcedGeometry": 49944,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 4,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 219.60000002384186,
+        "forcedGeometry": 11,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 4,
+        "pageOrder": 1,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 231.79999995231628,
+        "forcedGeometry": 477,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 4,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 214.39999997615814,
+        "forcedGeometry": 532,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 4,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 235.10000002384186,
+        "forcedGeometry": 4478,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 5,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 222.89999997615814,
+        "forcedGeometry": 16393,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 5,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 221,
+        "forcedGeometry": 4478,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 5,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 218,
+        "forcedGeometry": 532,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 5,
+        "pageOrder": 1,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 232.29999995231628,
+        "forcedGeometry": 477,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 5,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 215.39999997615814,
+        "forcedGeometry": 11,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 5,
+        "pageOrder": 1,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 259.39999997615814,
+        "forcedGeometry": 49944,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 5,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 234.39999997615814,
+        "forcedGeometry": 32845,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 5,
+        "pageOrder": 1,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 246.69999992847443,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 5,
+        "pageOrder": 1,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 230.19999992847443,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 5,
+        "pageOrder": 1,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 245.59999990463257,
+        "forcedGeometry": 16610,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 6,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 96,
+        "milliseconds": 227.79999995231628,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 6,
+        "pageOrder": 2,
+        "fixture": 9,
+        "group": 96,
+        "milliseconds": 247.30000007152557,
+        "forcedGeometry": 24755,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 6,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 128,
+        "milliseconds": 236.60000002384186,
+        "forcedGeometry": 32845,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 6,
+        "pageOrder": 2,
+        "fixture": 2,
+        "group": 195,
+        "milliseconds": 261.7000000476837,
+        "forcedGeometry": 49944,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 6,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 0,
+        "milliseconds": 221,
+        "forcedGeometry": 11,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 6,
+        "pageOrder": 2,
+        "fixture": 1,
+        "group": 1,
+        "milliseconds": 232.10000002384186,
+        "forcedGeometry": 477,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 6,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 2,
+        "milliseconds": 217,
+        "forcedGeometry": 532,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 6,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 17,
+        "milliseconds": 237.30000007152557,
+        "forcedGeometry": 4478,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 6,
+        "pageOrder": 2,
+        "fixture": 0,
+        "group": 64,
+        "milliseconds": 226.80000007152557,
+        "forcedGeometry": 16393,
+        "route": null,
+        "transition": null
+      },
+      {
+        "target": "exact-baseline",
+        "bank": null,
+        "round": 6,
+        "pageOrder": 2,
+        "fixture": 4,
+        "group": 64,
+        "milliseconds": 230.69999992847443,
+        "forcedGeometry": 16610,
+        "route": null,
+        "transition": null
+      }
+    ]
+  },
+  "fullScreenProjection": {
+    "source": "full 1,970-case screen",
+    "counts": {
+      "accepted": 1744,
+      "fallback": 226,
+      "total": 1970
+    },
+    "acceptRate": 0.885279,
+    "fallbackRate": 0.114721,
+    "independentRouteTransitionProbabilities": {
+      "accept->accept": 0.783719,
+      "accept->fallback": 0.10156,
+      "fallback->accept": 0.10156,
+      "fallback->fallback": 0.013161
+    },
+    "assumptions": [
+      "The full-screen accept/fallback rate transfers to runtime inputs.",
+      "The transition-weighted estimate assumes independent consecutive routes.",
+      "Stress-set transition and route medians transfer to the full-screen route mix.",
+      "This is a projection, not a direct 1,970-case timing run."
+    ],
+    "byBank": {
+      "bounded": {
+        "transitionWeightedIndependentRoutes": {
+          "estimatedMilliseconds": 98.954,
+          "exactBaselineMilliseconds": 231.85,
+          "projectedSpeedupVsExact": 2.343,
+          "projectedHybridBeatsExact": true
+        },
+        "routeWeightedMedians": {
+          "estimatedMilliseconds": 86.774,
+          "exactBaselineMilliseconds": 231.85,
+          "projectedSpeedupVsExact": 2.672,
+          "projectedHybridBeatsExact": true
+        }
+      },
+      "full": {
+        "transitionWeightedIndependentRoutes": {
+          "estimatedMilliseconds": 104.785,
+          "exactBaselineMilliseconds": 231.85,
+          "projectedSpeedupVsExact": 2.213,
+          "projectedHybridBeatsExact": true
+        },
+        "routeWeightedMedians": {
+          "estimatedMilliseconds": 91.86,
+          "exactBaselineMilliseconds": 231.85,
+          "projectedSpeedupVsExact": 2.524,
+          "projectedHybridBeatsExact": true
+        }
+      }
+    }
+  },
+  "samples": [
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 0,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.5,
+      "forcedGeometry": 16683.671875
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 0,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 6.300000071525574,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 0,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 5.5,
+      "forcedGeometry": 10467.609375
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 0,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.5999999046325684,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 0,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 13,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 0,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 12,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 0,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.6999999284744263,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 0,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14.700000047683716,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 0,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 12.5,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 0,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.5,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 0,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 15.5,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 0,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 14.899999976158142,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 0,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.6000000238418579,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 0,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 16.600000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 0,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 13.099999904632568,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 0,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.7000000476837158,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 0,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 19.5,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 0,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 14.399999976158142,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 1,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 15.800000071525574,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 1,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 15,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 1,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 18.90000009536743,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 1,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14.300000071525574,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 1,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 12.699999928474426,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 1,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14.5,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 1,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 12.399999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 1,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 12.299999952316284,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 1,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 13,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 1,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 12.5,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 1,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 11.600000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 1,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14.200000047683716,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 1,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 6.900000095367432,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 1,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 5.599999904632568,
+      "forcedGeometry": 10467.609375
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 1,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 6.900000095367432,
+      "forcedGeometry": 16683.671875
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 1,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14.399999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 1,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 12.799999952316284,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 1,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 15,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 2,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 13.100000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 2,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 15.200000047683716,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 2,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14.199999928474426,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 2,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 16.200000047683716,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 2,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 15.299999952316284,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 2,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14.200000047683716,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 2,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 16.899999976158142,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 2,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14.299999952316284,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 2,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 16.5,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 2,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 238.20000004768372,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 2,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 2,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 18.699999928474426,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 2,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 6.100000023841858,
+      "forcedGeometry": 10467.609375
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 2,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 6.299999952316284,
+      "forcedGeometry": 16683.671875
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 2,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 5.800000071525574,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 2,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 16.40000009536743,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 2,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14.800000071525574,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 2,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 16.399999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 3,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 16.700000047683716,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 3,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14.799999952316284,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 3,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 16.700000047683716,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 3,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14.399999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 3,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 11.899999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 3,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 13.600000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 3,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 6.799999952316284,
+      "forcedGeometry": 16683.671875
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 3,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 5,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 3,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 6.600000023841858,
+      "forcedGeometry": 10467.609375
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 3,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 17.5,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 3,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 19.600000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 3,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 13.899999976158142,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 3,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14.699999928474426,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 3,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 13.100000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 3,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 14.800000071525574,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 3,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 17.399999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 3,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 15,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 3,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 16.90000009536743,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 4,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 16.90000009536743,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 4,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 14.199999928474426,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 4,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 13.899999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 4,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14.5,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 4,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 14.100000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 4,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 4,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 5.299999952316284,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 4,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 6.399999976158142,
+      "forcedGeometry": 10467.609375
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 4,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 5.300000071525574,
+      "forcedGeometry": 16683.671875
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 4,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14.799999952316284,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 4,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 11.600000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 4,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 11.600000023841858,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 4,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 4,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 11.700000047683716,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 4,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 13.199999928474426,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 4,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14.600000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 4,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 14.199999928474426,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 4,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 15.100000023841858,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 5,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 6.799999952316284,
+      "forcedGeometry": 10467.609375
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 5,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 5.5,
+      "forcedGeometry": 16683.671875
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 5,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 6.600000023841858,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 5,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 22.09999990463257,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 5,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14.300000071525574,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 5,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 19.299999952316284,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 5,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 15.399999976158142,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 5,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14.400000095367432,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 5,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 14.699999928474426,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 5,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 16.699999928474426,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 5,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14.899999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 5,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 15,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 5,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 14.399999976158142,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 5,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 12.899999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 5,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 11.399999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 5,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 12.300000071525574,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 5,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 11.799999952316284,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 5,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 13.299999952316284,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 6,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 5.899999976158142,
+      "forcedGeometry": 16683.671875
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 6,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 5.899999976158142,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "bounded",
+      "variant": "pure-one-grid",
+      "round": 6,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 6.200000047683716,
+      "forcedGeometry": 10467.609375
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 6,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 13.5,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 6,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 12.600000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-dom",
+      "round": 6,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 12.899999976158142,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 6,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 15,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 6,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 13.899999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-no-exact-assets",
+      "round": 6,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 13.100000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 6,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 16.299999952316284,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 6,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 16,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 6,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 15.299999952316284,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 6,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 14.800000071525574,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 6,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 15.299999952316284,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "two-grid-hidden-exact",
+      "round": 6,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 14.5,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 6,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 15.799999952316284,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 6,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 20.300000071525574,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "bounded",
+      "variant": "full-hybrid",
+      "round": 6,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 14.099999904632568,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 0,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.5999999046325684,
+      "forcedGeometry": 16687.671875
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 0,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 9.400000095367432,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 0,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 9.399999976158142,
+      "forcedGeometry": 10471.609375
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 0,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.8000000715255737,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 0,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 24.5,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 0,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 24.399999976158142,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 0,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.6000000238418579,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 0,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 20.600000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 0,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 19.699999928474426,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 0,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.5,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 0,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 21.09999990463257,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 0,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 19.600000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 0,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.5999999046325684,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 0,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 24.90000009536743,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 0,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 22.699999928474426,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 0,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 0.6999999284744263,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 0,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 26.5,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 0,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 20.300000071525574,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 1,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 23.100000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 1,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 19.600000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 1,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 22.799999952316284,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 1,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 21.399999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 1,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 19.5,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 1,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 18.700000047683716,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 1,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 20.600000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 1,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 21.100000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 1,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 19.899999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 1,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 23.200000047683716,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 1,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 19.199999928474426,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 1,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 22,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 1,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 9.100000023841858,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 1,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 9.199999928474426,
+      "forcedGeometry": 10471.609375
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 1,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 8.399999976158142,
+      "forcedGeometry": 16687.671875
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 1,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 22.199999928474426,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 1,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 21.100000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 1,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 21.799999952316284,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 2,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 22.5,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 2,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 20.699999928474426,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 2,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 22.200000047683716,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 2,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 21.800000071525574,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 2,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 19.399999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 2,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 19.700000047683716,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 2,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 21.100000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 2,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 20.800000071525574,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 2,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 20.5,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 2,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 249.80000007152557,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 2,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 21.5,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 2,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 26.199999928474426,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 2,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 9.099999904632568,
+      "forcedGeometry": 10471.609375
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 2,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 10.300000071525574,
+      "forcedGeometry": 16687.671875
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 2,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 9.5,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 2,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 26.09999990463257,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 2,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 20.90000009536743,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 2,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 20.199999928474426,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 3,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 21.5,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 3,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 19.299999952316284,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 3,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 21.299999952316284,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 3,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 20.799999952316284,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 3,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 19,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 3,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 19.300000071525574,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 3,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 10.799999952316284,
+      "forcedGeometry": 16687.671875
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 3,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 9,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 3,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 10.600000023841858,
+      "forcedGeometry": 10471.609375
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 3,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 33.39999997615814,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 3,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 240.30000007152557,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 3,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 24.299999952316284,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 3,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 23.800000071525574,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 3,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 20.899999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 3,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 20.700000047683716,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 3,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 23.899999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 3,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 21.800000071525574,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 3,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 21.799999952316284,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 4,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 21.800000071525574,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 4,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 23.100000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 4,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 21.699999928474426,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 4,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 23,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 4,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 20.5,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 4,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 22.399999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 4,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 9.200000047683716,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 4,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 8.799999952316284,
+      "forcedGeometry": 10471.609375
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 4,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 9,
+      "forcedGeometry": 16687.671875
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 4,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 21.300000071525574,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 4,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 20,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 4,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 19,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 4,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 21.100000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 4,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 19.299999952316284,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 4,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 19.600000023841858,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 4,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 21.800000071525574,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 4,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 22.199999928474426,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 4,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 22.399999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 5,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 9.199999928474426,
+      "forcedGeometry": 10471.609375
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 5,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 8.800000071525574,
+      "forcedGeometry": 16687.671875
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 5,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 8.599999904632568,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 5,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 257.60000002384186,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 5,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 25.600000023841858,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 5,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 239.89999997615814,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 5,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 21.899999976158142,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 5,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 22.300000071525574,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 5,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 22.899999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 5,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 20.5,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 5,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 21.5,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 5,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 21.399999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 5,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 23.100000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 5,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 22.300000071525574,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 5,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 20.399999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 5,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 20.700000047683716,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 5,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 19.799999952316284,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 5,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 19.100000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 6,
+      "order": 0,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 9.800000071525574,
+      "forcedGeometry": 16687.671875
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 6,
+      "order": 0,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 8.5,
+      "forcedGeometry": 10562.78125
+    },
+    {
+      "bank": "full",
+      "variant": "pure-one-grid",
+      "round": 6,
+      "order": 0,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 8.899999976158142,
+      "forcedGeometry": 10471.609375
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 6,
+      "order": 1,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 22.399999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 6,
+      "order": 1,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 20.200000047683716,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-dom",
+      "round": 6,
+      "order": 1,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 19.600000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 6,
+      "order": 2,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 24.5,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 6,
+      "order": 2,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 21.899999976158142,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-no-exact-assets",
+      "round": 6,
+      "order": 2,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 22.199999928474426,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 6,
+      "order": 3,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 25.899999976158142,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 6,
+      "order": 3,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 27,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact-reset",
+      "round": 6,
+      "order": 3,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 24,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 6,
+      "order": 4,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 23,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 6,
+      "order": 4,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 21.300000071525574,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "two-grid-hidden-exact",
+      "round": 6,
+      "order": 4,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 22.100000023841858,
+      "forcedGeometry": 49944
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 6,
+      "order": 5,
+      "fixture": 0,
+      "group": 2,
+      "milliseconds": 24,
+      "forcedGeometry": 532
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 6,
+      "order": 5,
+      "fixture": 0,
+      "group": 128,
+      "milliseconds": 27.100000023841858,
+      "forcedGeometry": 32845
+    },
+    {
+      "bank": "full",
+      "variant": "full-hybrid",
+      "round": 6,
+      "order": 5,
+      "fixture": 2,
+      "group": 195,
+      "milliseconds": 24.100000023841858,
+      "forcedGeometry": 49944
+    }
+  ]
+}

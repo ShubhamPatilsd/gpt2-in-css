@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>HVAR virtual base probe</title>
+<style>
+@font-face{font-family:BiasFirst;src:url("bias-first.woff2?v=1") format("woff2")}
+@font-face{font-family:NegativeFirst;src:url("negative-first.woff2?v=1") format("woff2")}
+svg{display:block;width:700px;height:400px;overflow:visible}
+text{font-size:10px;font-kerning:none}
+.base{font-family:BiasFirst}
+.bias-first{font-family:BiasFirst;font-variation-settings:"V000" 1,"V001" 1,"V002" 1,"V003" 1,"V004" 1,"V005" 1,"V006" 1,"V007" 1,"V008" 1,"V009" 1,"V010" 1,"V011" 1,"V012" 1,"V013" 1,"V014" 1,"V015" 1,"V016" 1,"V017" 1,"V018" 1,"V019" 1,"V020" 1,"V021" 1,"V022" 1,"V023" 1,"V024" 1,"V025" 1,"V026" 1,"V027" 1,"V028" 1,"V029" 1}
+.negative-first{font-family:NegativeFirst;font-variation-settings:"V000" 1,"V001" 1,"V002" 1,"V003" 1,"V004" 1,"V005" 1,"V006" 1,"V007" 1,"V008" 1,"V009" 1,"V010" 1,"V011" 1,"V012" 1,"V013" 1,"V014" 1,"V015" 1,"V016" 1,"V017" 1,"V018" 1,"V019" 1,"V020" 1,"V021" 1,"V022" 1,"V023" 1,"V024" 1,"V025" 1,"V026" 1,"V027" 1,"V028" 1,"V029" 1}
+</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+<g data-case="small" transform="translate(0 0)"><text class="base" x="20" y="25"></text><text class="bias-first" x="20" y="55"></text><text class="negative-first" x="20" y="85"></text></g><g data-case="crosses-uint16" transform="translate(0 100)"><text class="base" x="20" y="25"></text><text class="bias-first" x="20" y="55"></text><text class="negative-first" x="20" y="85"></text></g><g data-case="virtual-301k" transform="translate(0 200)"><text class="base" x="20" y="25"></text><text class="bias-first" x="20" y="55"></text><text class="negative-first" x="20" y="85"></text></g><g data-case="virtual-493k" transform="translate(0 300)"><text class="base" x="20" y="25"></text><text class="bias-first" x="20" y="55"></text><text class="negative-first" x="20" y="85"></text></g>
+</svg>

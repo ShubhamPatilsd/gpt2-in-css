@@ -1,0 +1,465 @@
+{
+  "chrome": "153.0.8010.36",
+  "rounds": 5,
+  "methodology": "Fresh page graph per timed case-0 to non-default mutation; shared browser, HTTP, and font caches prewarmed.",
+  "runtimeContainsJavaScript": false,
+  "oracleSource": "captured-browser-boundaries",
+  "summaries": [
+    {
+      "name": "baseline-two-live-blocks",
+      "pageFile": "connected-two-block-serial-projection-layoutless.html",
+      "realStages": [
+        "block0",
+        "block0-state-transport",
+        "block1-attention",
+        "block1-fc",
+        "block1-preactivation-transport",
+        "block1-projection"
+      ],
+      "elements": 23528,
+      "minimumMilliseconds": 2374.5,
+      "medianMilliseconds": 2392,
+      "p90Milliseconds": 2415.899999976158,
+      "maximumMilliseconds": 2422.400000035763,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 23528,
+          "outputs": 768,
+          "milliseconds": 2374.5,
+          "terminalWidth": 207921.90625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 23528,
+          "outputs": 768,
+          "milliseconds": 2422.400000035763,
+          "terminalWidth": 207994.515625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 23528,
+          "outputs": 768,
+          "milliseconds": 2415.899999976158,
+          "terminalWidth": 208082.484375,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 23528,
+          "outputs": 768,
+          "milliseconds": 2392,
+          "terminalWidth": 207921.90625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 23528,
+          "outputs": 768,
+          "milliseconds": 2375.100000023842,
+          "terminalWidth": 207994.515625,
+          "terminalWidthError": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    },
+    {
+      "name": "oracle-block0-handoff",
+      "pageFile": "oracle-block0-handoff.html",
+      "realStages": [
+        "block1-attention",
+        "block1-fc",
+        "block1-preactivation-transport",
+        "block1-projection"
+      ],
+      "elements": 6598,
+      "minimumMilliseconds": 1060.199999988079,
+      "medianMilliseconds": 1068.6000000238419,
+      "p90Milliseconds": 1070.800000011921,
+      "maximumMilliseconds": 1116.1000000238419,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 6598,
+          "outputs": 768,
+          "milliseconds": 1070.800000011921,
+          "terminalWidth": 207921.90625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 6598,
+          "outputs": 768,
+          "milliseconds": 1060.199999988079,
+          "terminalWidth": 207994.515625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 6598,
+          "outputs": 768,
+          "milliseconds": 1116.1000000238419,
+          "terminalWidth": 208082.484375,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 6598,
+          "outputs": 768,
+          "milliseconds": 1068.6000000238419,
+          "terminalWidth": 207921.90625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 6598,
+          "outputs": 768,
+          "milliseconds": 1067.5999999642372,
+          "terminalWidth": 207994.515625,
+          "terminalWidthError": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    },
+    {
+      "name": "oracle-b1-fc-preactivation",
+      "pageFile": "oracle-b1-fc-preactivation.html",
+      "realStages": [
+        "block0",
+        "block0-state-transport",
+        "block1-attention",
+        "block1-projection"
+      ],
+      "elements": 18870,
+      "minimumMilliseconds": 1561.300000011921,
+      "medianMilliseconds": 1630.2000000476837,
+      "p90Milliseconds": 1637.199999988079,
+      "maximumMilliseconds": 1660.800000011921,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 18870,
+          "outputs": 768,
+          "milliseconds": 1660.800000011921,
+          "terminalWidth": 207921.90625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 18870,
+          "outputs": 768,
+          "milliseconds": 1630.2000000476837,
+          "terminalWidth": 207994.515625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 18870,
+          "outputs": 768,
+          "milliseconds": 1572.3999999761581,
+          "terminalWidth": 208082.484375,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 18870,
+          "outputs": 768,
+          "milliseconds": 1637.199999988079,
+          "terminalWidth": 207921.90625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 18870,
+          "outputs": 768,
+          "milliseconds": 1561.300000011921,
+          "terminalWidth": 207994.515625,
+          "terminalWidthError": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    },
+    {
+      "name": "oracle-block0-and-b1-fc",
+      "pageFile": "oracle-block0-and-b1-fc.html",
+      "realStages": [
+        "block1-attention",
+        "block1-projection"
+      ],
+      "elements": 1939,
+      "minimumMilliseconds": 521,
+      "medianMilliseconds": 539.3999999761581,
+      "p90Milliseconds": 540.5,
+      "maximumMilliseconds": 541.9000000357628,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 1939,
+          "outputs": 768,
+          "milliseconds": 541.9000000357628,
+          "terminalWidth": 207921.90625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 1939,
+          "outputs": 768,
+          "milliseconds": 539.3999999761581,
+          "terminalWidth": 207994.515625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 1939,
+          "outputs": 768,
+          "milliseconds": 521,
+          "terminalWidth": 208082.484375,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 1939,
+          "outputs": 768,
+          "milliseconds": 540.5,
+          "terminalWidth": 207921.90625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 1939,
+          "outputs": 768,
+          "milliseconds": 536.1999999880791,
+          "terminalWidth": 207994.515625,
+          "terminalWidthError": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    },
+    {
+      "name": "oracle-b1-projection-only",
+      "pageFile": "oracle-b1-projection-only.html",
+      "realStages": [
+        "block1-projection"
+      ],
+      "elements": 783,
+      "minimumMilliseconds": 468.60000002384186,
+      "medianMilliseconds": 476.5999999642372,
+      "p90Milliseconds": 480.89999997615814,
+      "maximumMilliseconds": 483.4000000357628,
+      "maximumWidthError": 0,
+      "maximumOutputRmse": 0,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "elements": 783,
+          "outputs": 768,
+          "milliseconds": 483.4000000357628,
+          "terminalWidth": 207921.90625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "elements": 783,
+          "outputs": 768,
+          "milliseconds": 480.89999997615814,
+          "terminalWidth": 207994.515625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "elements": 783,
+          "outputs": 768,
+          "milliseconds": 473.19999998807907,
+          "terminalWidth": 208082.484375,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "elements": 783,
+          "outputs": 768,
+          "milliseconds": 476.5999999642372,
+          "terminalWidth": 207921.90625,
+          "terminalWidthError": 0
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "elements": 783,
+          "outputs": 768,
+          "milliseconds": 468.60000002384186,
+          "terminalWidth": 207994.515625,
+          "terminalWidthError": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 1,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 2,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        },
+        {
+          "mode": 3,
+          "outputs": 768,
+          "maximumWidthError": 0,
+          "outputRmse": 0
+        }
+      ]
+    }
+  ],
+  "differentialEstimates": {
+    "block0AndStateHandoffMilliseconds": 1323.3999999761581,
+    "block1FcAndPreactivationWithLiveBlock0Milliseconds": 761.7999999523163,
+    "block1FcAndPreactivationWithOracleHandoffMilliseconds": 529.2000000476837,
+    "block1AttentionAndLnMilliseconds": 62.80000001192093,
+    "irreducibleProjectionMilliseconds": 476.5999999642372,
+    "allVectorBoundariesFreeSpeedup": 5.018883760343033
+  },
+  "note": "Deltas compare different layout graphs and are architectural upper bounds, not additive profiler attribution."
+}

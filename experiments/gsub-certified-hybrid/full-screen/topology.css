@@ -1,0 +1,47 @@
+@property --top-bucket{syntax:"<number>";inherits:true;initial-value:0}
+@property --top-local{syntax:"<number>";inherits:true;initial-value:0}
+@property --runner-bucket{syntax:"<number>";inherits:true;initial-value:0}
+@property --runner-local{syntax:"<number>";inherits:true;initial-value:0}
+@property --margin{syntax:"<number>";inherits:true;initial-value:0}
+@property --forced-fallback{syntax:"<number>";inherits:true;initial-value:0}
+@property --near-fallback{syntax:"<number>";inherits:true;initial-value:0}
+@property --fallback{syntax:"<number>";inherits:true;initial-value:0}
+*{box-sizing:border-box}
+html,body{margin:0;overflow:clip}
+.hybrid-root{--group:0;--score-offset:0px;anchor-scope:all}
+.gsub-stage{top:-90000px}
+#gsub-top{anchor-name:--gsub-top-winner}
+.top-reader,.runner-reader{position:fixed;left:0;height:1px}
+.top-reader{position-anchor:--gsub-top-winner;top:-89000px;
+ width:anchor-size(--gsub-top-winner width);container:gsub-top-readback/inline-size}
+@container gsub-top-readback (width >= 0px){
+ .top-decode{--top-bucket:round(down,100cqi/4px,1);
+  --top-local:calc(255 - round(nearest,mod(100cqi,4px)/1px*64,1))}
+}
+.probe-result{display:block;height:1px}
+.top-token{width:calc((var(--group)*256 + var(--top-local))*1px)}
+#gsub-runner{top:-88000px;anchor-name:--gsub-runner-winner}
+#gsub-runner .gsub-candidate{
+ --winner-mask:clamp(0,1 - abs(var(--top-local) - var(--local)),1)
+}
+.runner-reader{position-anchor:--gsub-runner-winner;top:-87000px;
+ width:anchor-size(--gsub-runner-winner width);
+ container:gsub-runner-readback/inline-size}
+@container gsub-runner-readback (width >= 0px){
+ .decision{--runner-bucket:round(down,100cqi/4px,1);
+  --runner-local:calc(255 - round(nearest,mod(100cqi,4px)/1px*64,1));
+  --margin:calc(var(--top-bucket) - var(--runner-bucket));
+  --forced-fallback:clamp(0,2 - var(--group),1);
+  --near-fallback:clamp(0,7 - var(--margin),1);
+  --fallback:max(var(--forced-fallback),var(--near-fallback))}
+}
+.top-bucket-result{width:calc(var(--top-bucket)*1px)}
+.runner-local-result{width:calc(var(--runner-local)*1px)}
+.runner-bucket-result{width:calc(var(--runner-bucket)*1px)}
+.margin-result{width:calc(var(--margin)*1px)}
+.fallback-result{width:calc(var(--fallback)*1px)}
+#exact-stage{display:if(style(--fallback:1):grid;else:none)}
+#exact-result{anchor-name:--exact-token}
+.final-stage{position:fixed;position-anchor:--exact-token;left:0;top:-50000px;
+ display:block;height:1px;width:if(style(--fallback:1):
+ anchor-size(--exact-token width);else:calc((var(--group)*256 + var(--top-local))*1px))}

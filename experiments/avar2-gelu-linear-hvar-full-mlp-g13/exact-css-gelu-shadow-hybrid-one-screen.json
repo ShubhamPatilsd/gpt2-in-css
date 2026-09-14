@@ -1,0 +1,309 @@
+{
+  "generatedAt": "2026-09-13T18:40:19.871Z",
+  "chrome": "153.0.8010.36",
+  "rounds": 1,
+  "runtimeContainsJavaScript": false,
+  "methodology": "Warm browser/font/HTTP caches, then a fresh page/layout graph for every case-0 to non-default case mutation. Every timing forces all 768 final widths. Variant order rotates by round.",
+  "resourceProfiles": {
+    "exact-serial": {
+      "requests": 56,
+      "totalBytes": 19819381,
+      "byContentType": {
+        "text/html": 3172411,
+        "text/css": 2814194,
+        "font/woff2": 13832776
+      },
+      "initial": {
+        "elements": 23528,
+        "outputs": 768,
+        "runtimeScripts": 0,
+        "checksum": 159785513.53125,
+        "b0ExactValue": "-0.00370004",
+        "b1ExactValue": "0.024098"
+      }
+    },
+    "exact-shadow-hybrid-1": {
+      "requests": 56,
+      "totalBytes": 19876933,
+      "byContentType": {
+        "text/html": 3188348,
+        "text/css": 2855809,
+        "font/woff2": 13832776
+      },
+      "initial": {
+        "elements": 23531,
+        "outputs": 768,
+        "runtimeScripts": 0,
+        "checksum": 159785513.53125,
+        "b0ExactValue": "-0.00370004",
+        "b1ExactValue": ""
+      }
+    },
+    "exact-shadow-hybrid-2": {
+      "requests": 56,
+      "totalBytes": 20066725,
+      "byContentType": {
+        "text/html": 3255050,
+        "text/css": 2978899,
+        "font/woff2": 13832776
+      },
+      "initial": {
+        "elements": 25069,
+        "outputs": 768,
+        "runtimeScripts": 0,
+        "checksum": 12329513.375,
+        "b0ExactValue": "-0.00370004",
+        "b1ExactValue": ""
+      }
+    }
+  },
+  "summaries": [
+    {
+      "name": "exact-serial",
+      "pageFile": "connected-two-block-exact-css-gelu-layoutless.html",
+      "elements": 23528,
+      "runtimeScripts": 0,
+      "medianMs": 1891.7000000476837,
+      "p10Ms": 1891.7000000476837,
+      "p90Ms": 1891.7000000476837,
+      "minMs": 1891.7000000476837,
+      "maxMs": 1891.7000000476837,
+      "maximumRmseToExact": 0.037917785005894225,
+      "maximumAbsErrorToExact": 0.9151587316496261,
+      "maximumRmseToRepresented": 0.04884687343047261,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "milliseconds": 1891.7000000476837,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "toExact": {
+            "rmse": 0.0369275004969338,
+            "maxAbsError": 0.8579323691291165
+          },
+          "toRepresented": {
+            "rmse": 0.04884687343047261,
+            "maxAbsError": 0.8058779731353525
+          }
+        },
+        {
+          "mode": 1,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          }
+        },
+        {
+          "mode": 2,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          }
+        },
+        {
+          "mode": 3,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          }
+        }
+      ]
+    },
+    {
+      "name": "exact-shadow-hybrid-1",
+      "pageFile": "connected-two-block-shadow-hybrid-1-exact-css-gelu-layoutless.html",
+      "elements": 23531,
+      "runtimeScripts": 0,
+      "medianMs": 1747,
+      "p10Ms": 1747,
+      "p90Ms": 1747,
+      "minMs": 1747,
+      "maxMs": 1747,
+      "maximumRmseToExact": 0.037917785005894225,
+      "maximumAbsErrorToExact": 0.9151587316496261,
+      "maximumRmseToRepresented": 0.04884687343047261,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "milliseconds": 1747,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23531,
+          "runtimeScripts": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "toExact": {
+            "rmse": 0.0369275004969338,
+            "maxAbsError": 0.8579323691291165
+          },
+          "toRepresented": {
+            "rmse": 0.04884687343047261,
+            "maxAbsError": 0.8058779731353525
+          }
+        },
+        {
+          "mode": 1,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          }
+        },
+        {
+          "mode": 2,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          }
+        },
+        {
+          "mode": 3,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          }
+        }
+      ]
+    },
+    {
+      "name": "exact-shadow-hybrid-2",
+      "pageFile": "connected-two-block-shadow-hybrid-2-exact-css-gelu-layoutless.html",
+      "elements": 25069,
+      "runtimeScripts": 0,
+      "medianMs": 1963.3999999761581,
+      "p10Ms": 1963.3999999761581,
+      "p90Ms": 1963.3999999761581,
+      "minMs": 1963.3999999761581,
+      "maxMs": 1963.3999999761581,
+      "maximumRmseToExact": 0.0379123079144352,
+      "maximumAbsErrorToExact": 0.9149219892253768,
+      "maximumRmseToRepresented": 0.04884952224560691,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "milliseconds": 1963.3999999761581,
+          "checksum": 12331107.21875,
+          "toExact": {
+            "rmse": 0.031324992975361086,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.04369314068983677,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 25069,
+          "runtimeScripts": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "toExact": {
+            "rmse": 0.036933981010545645,
+            "maxAbsError": 0.8581691115533658
+          },
+          "toRepresented": {
+            "rmse": 0.04884952224560691,
+            "maxAbsError": 0.8061147155596018
+          }
+        },
+        {
+          "mode": 1,
+          "toExact": {
+            "rmse": 0.031324992975361086,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.04369314068983677,
+            "maxAbsError": 0.6435203935476466
+          }
+        },
+        {
+          "mode": 2,
+          "toExact": {
+            "rmse": 0.0379123079144352,
+            "maxAbsError": 0.9149219892253768
+          },
+          "toRepresented": {
+            "rmse": 0.047543872055905115,
+            "maxAbsError": 0.8515088024573743
+          }
+        },
+        {
+          "mode": 3,
+          "toExact": {
+            "rmse": 0.03100796786327745,
+            "maxAbsError": 0.7071219458744054
+          },
+          "toRepresented": {
+            "rmse": 0.04410863628418216,
+            "maxAbsError": 0.6506189773372171
+          }
+        }
+      ]
+    }
+  ],
+  "speedups": {
+    "exactParallelOverExactSerial": null,
+    "exactParallelOverOldParallel": null,
+    "exactHybrid2OverExactSerial": null,
+    "exactHybrid3OverExactSerial": null,
+    "exactHybrid4OverExactSerial": null,
+    "exactHybrid5OverExactSerial": null,
+    "exactHybrid7OverExactSerial": null,
+    "exactShadowHybrid2OverExactSerial": 0.9634817154276535,
+    "exactShadowHybrid1OverExactSerial": 1.0828277046638144,
+    "exactShadowHybrid3OverExactSerial": null,
+    "exactShadowHybrid4OverExactSerial": null
+  }
+}

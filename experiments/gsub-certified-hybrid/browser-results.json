@@ -1,0 +1,1340 @@
+{
+  "chrome": "153.0.8010.36",
+  "thresholdBuckets": 6,
+  "casesPerBank": 10,
+  "comparisonCount": 20,
+  "acceptedCases": 6,
+  "fallbackCases": 14,
+  "finalWinnerMatches": 20,
+  "allFinalWinnersMatchExact": true,
+  "failures": [],
+  "loadMilliseconds": {
+    "boundedHybrid": 5696.411292,
+    "fullHybrid": 6532.2642080000005,
+    "exact": 4583.533375,
+    "boundedPureGsub": 3576.4852920000003,
+    "fullPureGsub": 5132.963
+  },
+  "timingRounds": 1,
+  "mutationMedians": {
+    "boundedHybridMilliseconds": 409.7832920000001,
+    "fullHybridMilliseconds": 421.4486250000009,
+    "exactMilliseconds": 228.58412499999758,
+    "boundedPureGsubMilliseconds": 41.76433399999951,
+    "fullPureGsubMilliseconds": 40.421000000002095,
+    "boundedAcceptedHybridMilliseconds": 219.18695900000057,
+    "fullAcceptedHybridMilliseconds": 225.05075000000215,
+    "boundedAcceptedPureGsubMilliseconds": 37.78608399999939,
+    "fullAcceptedPureGsubMilliseconds": 40.421000000002095,
+    "boundedFallbackHybridMilliseconds": 463.4565410000032,
+    "fullFallbackHybridMilliseconds": 470.0379999999968,
+    "boundedFallbackExactMilliseconds": 224.3961249999993,
+    "fullFallbackExactMilliseconds": 224.3961249999993,
+    "boundedTopologyOverheadMilliseconds": 181.40087500000118,
+    "fullTopologyOverheadMilliseconds": 184.62975000000006,
+    "boundedFallbackOverExactMilliseconds": 239.0604160000039,
+    "fullFallbackOverExactMilliseconds": 245.64187499999753
+  },
+  "topology": {
+    "gsubCandidateElements": 512,
+    "exactCandidateElementsWhenActive": 256,
+    "javascriptSelectsWinner": false,
+    "htmlBytes": {
+      "index.html": 179720,
+      "full.html": 179714,
+      "exact.html": 25606,
+      "pure-bounded.html": 76937,
+      "pure-full.html": 76931
+    },
+    "cssBytes": {
+      "bank-bounded.css": 32526,
+      "bank-full.css": 34139,
+      "topology.css": 2472
+    }
+  },
+  "resources": {
+    "boundedHybrid": [
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-certified-upper-int10-one-step/index.css",
+        "transferSize": 5001540,
+        "decodedBodySize": 5001240
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-certified-hybrid/bank-bounded.css",
+        "transferSize": 32826,
+        "decodedBodySize": 32526
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-certified-hybrid/topology.css",
+        "transferSize": 2772,
+        "decodedBodySize": 2472
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-h0.woff2",
+        "transferSize": 228028,
+        "decodedBodySize": 227728
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h0.woff2",
+        "transferSize": 4968956,
+        "decodedBodySize": 4968656
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-l0.woff2",
+        "transferSize": 380120,
+        "decodedBodySize": 379820
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l0.woff2",
+        "transferSize": 8287064,
+        "decodedBodySize": 8286764
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-h1.woff2",
+        "transferSize": 226700,
+        "decodedBodySize": 226400
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-l1.woff2",
+        "transferSize": 381992,
+        "decodedBodySize": 381692
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h1.woff2",
+        "transferSize": 4943232,
+        "decodedBodySize": 4942932
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-h2.woff2",
+        "transferSize": 228316,
+        "decodedBodySize": 228016
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l1.woff2",
+        "transferSize": 8296776,
+        "decodedBodySize": 8296476
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-l2.woff2",
+        "transferSize": 376764,
+        "decodedBodySize": 376464
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h2.woff2",
+        "transferSize": 4975632,
+        "decodedBodySize": 4975332
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-h3.woff2",
+        "transferSize": 226924,
+        "decodedBodySize": 226624
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l2.woff2",
+        "transferSize": 8295656,
+        "decodedBodySize": 8295356
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-l3.woff2",
+        "transferSize": 380864,
+        "decodedBodySize": 380564
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h3.woff2",
+        "transferSize": 4924144,
+        "decodedBodySize": 4923844
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-h4.woff2",
+        "transferSize": 226676,
+        "decodedBodySize": 226376
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l3.woff2",
+        "transferSize": 8283180,
+        "decodedBodySize": 8282880
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-l4.woff2",
+        "transferSize": 377084,
+        "decodedBodySize": 376784
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h4.woff2",
+        "transferSize": 4915696,
+        "decodedBodySize": 4915396
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-h5.woff2",
+        "transferSize": 227484,
+        "decodedBodySize": 227184
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/score-l5.woff2",
+        "transferSize": 381068,
+        "decodedBodySize": 380768
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l4.woff2",
+        "transferSize": 8296928,
+        "decodedBodySize": 8296628
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h5.woff2",
+        "transferSize": 4950940,
+        "decodedBodySize": 4950640
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l5.woff2",
+        "transferSize": 8297392,
+        "decodedBodySize": 8297092
+      }
+    ],
+    "fullHybrid": [
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-certified-upper-int10-one-step/index.css",
+        "transferSize": 5001540,
+        "decodedBodySize": 5001240
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-certified-hybrid/bank-full.css",
+        "transferSize": 34439,
+        "decodedBodySize": 34139
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-certified-hybrid/topology.css",
+        "transferSize": 2772,
+        "decodedBodySize": 2472
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-h0.woff2",
+        "transferSize": 161124,
+        "decodedBodySize": 160824
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h0.woff2",
+        "transferSize": 4968956,
+        "decodedBodySize": 4968656
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-h0.woff2",
+        "transferSize": 5064504,
+        "decodedBodySize": 5064204
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l0.woff2",
+        "transferSize": 8287064,
+        "decodedBodySize": 8286764
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-l0.woff2",
+        "transferSize": 181832,
+        "decodedBodySize": 181532
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h1.woff2",
+        "transferSize": 4943232,
+        "decodedBodySize": 4942932
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-l0.woff2",
+        "transferSize": 8367308,
+        "decodedBodySize": 8367008
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l1.woff2",
+        "transferSize": 8296776,
+        "decodedBodySize": 8296476
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-h1.woff2",
+        "transferSize": 160264,
+        "decodedBodySize": 159964
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-h1.woff2",
+        "transferSize": 5039360,
+        "decodedBodySize": 5039060
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h2.woff2",
+        "transferSize": 4975632,
+        "decodedBodySize": 4975332
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-l1.woff2",
+        "transferSize": 181436,
+        "decodedBodySize": 181136
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l2.woff2",
+        "transferSize": 8295656,
+        "decodedBodySize": 8295356
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-l1.woff2",
+        "transferSize": 8365592,
+        "decodedBodySize": 8365292
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h3.woff2",
+        "transferSize": 4924144,
+        "decodedBodySize": 4923844
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-h2.woff2",
+        "transferSize": 159096,
+        "decodedBodySize": 158796
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l3.woff2",
+        "transferSize": 8283180,
+        "decodedBodySize": 8282880
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-h2.woff2",
+        "transferSize": 5071980,
+        "decodedBodySize": 5071680
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-l2.woff2",
+        "transferSize": 182096,
+        "decodedBodySize": 181796
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h4.woff2",
+        "transferSize": 4915696,
+        "decodedBodySize": 4915396
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-l2.woff2",
+        "transferSize": 8365588,
+        "decodedBodySize": 8365288
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l4.woff2",
+        "transferSize": 8296928,
+        "decodedBodySize": 8296628
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-h3.woff2",
+        "transferSize": 161840,
+        "decodedBodySize": 161540
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-h3.woff2",
+        "transferSize": 5029192,
+        "decodedBodySize": 5028892
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h5.woff2",
+        "transferSize": 4950940,
+        "decodedBodySize": 4950640
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-l3.woff2",
+        "transferSize": 183108,
+        "decodedBodySize": 182808
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l5.woff2",
+        "transferSize": 8297392,
+        "decodedBodySize": 8297092
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-l3.woff2",
+        "transferSize": 8358712,
+        "decodedBodySize": 8358412
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-h4.woff2",
+        "transferSize": 160040,
+        "decodedBodySize": 159740
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-h4.woff2",
+        "transferSize": 5012852,
+        "decodedBodySize": 5012552
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-l4.woff2",
+        "transferSize": 171828,
+        "decodedBodySize": 171528
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-l4.woff2",
+        "transferSize": 8367560,
+        "decodedBodySize": 8367260
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-h5.woff2",
+        "transferSize": 161384,
+        "decodedBodySize": 161084
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-h5.woff2",
+        "transferSize": 5046212,
+        "decodedBodySize": 5045912
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/base-l5.woff2",
+        "transferSize": 185868,
+        "decodedBodySize": 185568
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gsub-indexed-fine-scorer/full/score-l5.woff2",
+        "transferSize": 8378708,
+        "decodedBodySize": 8378408
+      }
+    ],
+    "exact": [
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-certified-upper-int10-one-step/index.css",
+        "transferSize": 5001540,
+        "decodedBodySize": 5001240
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h0.woff2",
+        "transferSize": 4968956,
+        "decodedBodySize": 4968656
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l0.woff2",
+        "transferSize": 8287064,
+        "decodedBodySize": 8286764
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h1.woff2",
+        "transferSize": 4943232,
+        "decodedBodySize": 4942932
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l1.woff2",
+        "transferSize": 8296776,
+        "decodedBodySize": 8296476
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h2.woff2",
+        "transferSize": 4975632,
+        "decodedBodySize": 4975332
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l2.woff2",
+        "transferSize": 8295656,
+        "decodedBodySize": 8295356
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h3.woff2",
+        "transferSize": 4924144,
+        "decodedBodySize": 4923844
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l3.woff2",
+        "transferSize": 8283180,
+        "decodedBodySize": 8282880
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h4.woff2",
+        "transferSize": 4915696,
+        "decodedBodySize": 4915396
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l4.woff2",
+        "transferSize": 8296928,
+        "decodedBodySize": 8296628
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h5.woff2",
+        "transferSize": 4950940,
+        "decodedBodySize": 4950640
+      },
+      {
+        "name": "http://127.0.0.1:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l5.woff2",
+        "transferSize": 8297392,
+        "decodedBodySize": 8297092
+      }
+    ]
+  },
+  "comparisons": [
+    {
+      "fixture": 0,
+      "group": 0,
+      "label": "forced-group-0",
+      "boundedFeature": "\"cv01\"",
+      "fullFeature": 1,
+      "offlineWinnerLocal": 11,
+      "offlineRunnerLocal": 13,
+      "offlineMarginBuckets": 46,
+      "bank": "bounded",
+      "exactWinner": 11,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 19787.8125,
+      "runnerStageWidth": 19603.78125,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 19787.8125,
+        "positive": 248,
+        "distinct": 249,
+        "winnerLocal": 11,
+        "winnerWidth": 19787.8125
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 19603.78125,
+        "positive": 247,
+        "distinct": 248,
+        "winnerLocal": 13,
+        "winnerWidth": 19603.78125
+      },
+      "topToken": 11,
+      "runnerLocal": 13,
+      "marginBuckets": 46,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 11,
+      "finalComputedWidth": "11px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 0,
+      "group": 0,
+      "label": "forced-group-0",
+      "boundedFeature": "\"cv01\"",
+      "fullFeature": 1,
+      "offlineWinnerLocal": 11,
+      "offlineRunnerLocal": 13,
+      "offlineMarginBuckets": 46,
+      "bank": "full",
+      "exactWinner": 11,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 19012.890625,
+      "runnerStageWidth": 18347.796875,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 19012.890625,
+        "positive": 247,
+        "distinct": 248,
+        "winnerLocal": 198,
+        "winnerWidth": 19012.890625
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 18347.796875,
+        "positive": 246,
+        "distinct": 247,
+        "winnerLocal": 12,
+        "winnerWidth": 18347.796875
+      },
+      "topToken": 198,
+      "runnerLocal": 12,
+      "marginBuckets": 167,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 11,
+      "finalComputedWidth": "11px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 1,
+      "group": 1,
+      "label": "forced-group-1",
+      "boundedFeature": "\"cv01\" 2",
+      "fullFeature": 2,
+      "offlineWinnerLocal": 221,
+      "offlineRunnerLocal": 30,
+      "offlineMarginBuckets": 278,
+      "bank": "bounded",
+      "exactWinner": 477,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 50484.53125,
+      "runnerStageWidth": 49375.515625,
+      "topDistribution": {
+        "minimum": 22981.328125,
+        "maximum": 50484.53125,
+        "positive": 256,
+        "distinct": 256,
+        "winnerLocal": 221,
+        "winnerWidth": 50484.53125
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 49375.515625,
+        "positive": 255,
+        "distinct": 256,
+        "winnerLocal": 30,
+        "winnerWidth": 49375.515625
+      },
+      "topToken": 477,
+      "runnerLocal": 30,
+      "marginBuckets": 278,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 477,
+      "finalComputedWidth": "477px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 1,
+      "group": 1,
+      "label": "forced-group-1",
+      "boundedFeature": "\"cv01\" 2",
+      "fullFeature": 2,
+      "offlineWinnerLocal": 221,
+      "offlineRunnerLocal": 30,
+      "offlineMarginBuckets": 278,
+      "bank": "full",
+      "exactWinner": 477,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 50484.53125,
+      "runnerStageWidth": 49375.515625,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 50484.53125,
+        "positive": 253,
+        "distinct": 254,
+        "winnerLocal": 221,
+        "winnerWidth": 50484.53125
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 49375.515625,
+        "positive": 252,
+        "distinct": 253,
+        "winnerLocal": 30,
+        "winnerWidth": 49375.515625
+      },
+      "topToken": 477,
+      "runnerLocal": 30,
+      "marginBuckets": 278,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 477,
+      "finalComputedWidth": "477px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 0,
+      "group": 2,
+      "label": "clear-accept",
+      "boundedFeature": "\"cv01\" 3",
+      "fullFeature": 3,
+      "offlineWinnerLocal": 20,
+      "offlineRunnerLocal": 41,
+      "offlineMarginBuckets": 118,
+      "bank": "bounded",
+      "exactWinner": 767,
+      "expectedFallback": false,
+      "topologyHealthy": true,
+      "topStageWidth": 16683.671875,
+      "runnerStageWidth": 16207.34375,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 16683.671875,
+        "positive": 253,
+        "distinct": 254,
+        "winnerLocal": 20,
+        "winnerWidth": 16683.671875
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 16207.34375,
+        "positive": 252,
+        "distinct": 253,
+        "winnerLocal": 41,
+        "winnerWidth": 16207.34375
+      },
+      "topToken": 532,
+      "runnerLocal": 41,
+      "marginBuckets": 119,
+      "fallback": 0,
+      "exactDisplay": "none",
+      "finalWinner": 532,
+      "finalComputedWidth": "532px",
+      "finalInheritedFallback": "0",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 0,
+      "group": 2,
+      "label": "clear-accept",
+      "boundedFeature": "\"cv01\" 3",
+      "fullFeature": 3,
+      "offlineWinnerLocal": 20,
+      "offlineRunnerLocal": 41,
+      "offlineMarginBuckets": 118,
+      "bank": "full",
+      "exactWinner": 767,
+      "expectedFallback": false,
+      "topologyHealthy": true,
+      "topStageWidth": 16687.671875,
+      "runnerStageWidth": 16207.34375,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 16687.671875,
+        "positive": 253,
+        "distinct": 254,
+        "winnerLocal": 20,
+        "winnerWidth": 16687.671875
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 16207.34375,
+        "positive": 252,
+        "distinct": 253,
+        "winnerLocal": 41,
+        "winnerWidth": 16207.34375
+      },
+      "topToken": 532,
+      "runnerLocal": 41,
+      "marginBuckets": 120,
+      "fallback": 0,
+      "exactDisplay": "none",
+      "finalWinner": 532,
+      "finalComputedWidth": "532px",
+      "finalInheritedFallback": "0",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 4,
+      "group": 17,
+      "label": "small-accept",
+      "boundedFeature": "\"cv01\" 4",
+      "fullFeature": 18,
+      "offlineWinnerLocal": 126,
+      "offlineRunnerLocal": 23,
+      "offlineMarginBuckets": 9,
+      "bank": "bounded",
+      "exactWinner": 4478,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 12018.015625,
+      "runnerStageWidth": 11995.625,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 12018.015625,
+        "positive": 250,
+        "distinct": 251,
+        "winnerLocal": 126,
+        "winnerWidth": 12018.015625
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 11995.625,
+        "positive": 249,
+        "distinct": 250,
+        "winnerLocal": 23,
+        "winnerWidth": 11995.625
+      },
+      "topToken": 4478,
+      "runnerLocal": 23,
+      "marginBuckets": 6,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 4478,
+      "finalComputedWidth": "4478px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 4,
+      "group": 17,
+      "label": "small-accept",
+      "boundedFeature": "\"cv01\" 18",
+      "fullFeature": 18,
+      "offlineWinnerLocal": 126,
+      "offlineRunnerLocal": 23,
+      "offlineMarginBuckets": 9,
+      "bank": "full",
+      "exactWinner": 4478,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 12014.015625,
+      "runnerStageWidth": 11995.625,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 12014.015625,
+        "positive": 250,
+        "distinct": 251,
+        "winnerLocal": 126,
+        "winnerWidth": 12014.015625
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 11995.625,
+        "positive": 249,
+        "distinct": 250,
+        "winnerLocal": 23,
+        "winnerWidth": 11995.625
+      },
+      "topToken": 4478,
+      "runnerLocal": 23,
+      "marginBuckets": 5,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 4478,
+      "finalComputedWidth": "4478px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 0,
+      "group": 64,
+      "label": "near-tie",
+      "boundedFeature": "\"cv01\" 5",
+      "fullFeature": 65,
+      "offlineWinnerLocal": 9,
+      "offlineRunnerLocal": 197,
+      "offlineMarginBuckets": 4,
+      "bank": "bounded",
+      "exactWinner": 16393,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 10911.84375,
+      "runnerStageWidth": 10885.296875,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 10911.84375,
+        "positive": 243,
+        "distinct": 244,
+        "winnerLocal": 9,
+        "winnerWidth": 10911.84375
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 10885.296875,
+        "positive": 242,
+        "distinct": 243,
+        "winnerLocal": 172,
+        "winnerWidth": 10885.296875
+      },
+      "topToken": 16393,
+      "runnerLocal": 172,
+      "marginBuckets": 6,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 16393,
+      "finalComputedWidth": "16393px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 0,
+      "group": 64,
+      "label": "near-tie",
+      "boundedFeature": "\"cv01\" 65",
+      "fullFeature": 65,
+      "offlineWinnerLocal": 9,
+      "offlineRunnerLocal": 197,
+      "offlineMarginBuckets": 4,
+      "bank": "full",
+      "exactWinner": 16393,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 10911.84375,
+      "runnerStageWidth": 10885.296875,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 10911.84375,
+        "positive": 243,
+        "distinct": 244,
+        "winnerLocal": 9,
+        "winnerWidth": 10911.84375
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 10885.296875,
+        "positive": 242,
+        "distinct": 243,
+        "winnerLocal": 172,
+        "winnerWidth": 10885.296875
+      },
+      "topToken": 16393,
+      "runnerLocal": 172,
+      "marginBuckets": 6,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 16393,
+      "finalComputedWidth": "16393px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 4,
+      "group": 64,
+      "label": "near-tie",
+      "boundedFeature": "\"cv01\" 5",
+      "fullFeature": 65,
+      "offlineWinnerLocal": 226,
+      "offlineRunnerLocal": 237,
+      "offlineMarginBuckets": 1,
+      "bank": "bounded",
+      "exactWinner": 16610,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 9952.453125,
+      "runnerStageWidth": 9944.28125,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 9952.453125,
+        "positive": 243,
+        "distinct": 244,
+        "winnerLocal": 226,
+        "winnerWidth": 9952.453125
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 9944.28125,
+        "positive": 242,
+        "distinct": 243,
+        "winnerLocal": 237,
+        "winnerWidth": 9944.28125
+      },
+      "topToken": 16610,
+      "runnerLocal": 237,
+      "marginBuckets": 2,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 16610,
+      "finalComputedWidth": "16610px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 4,
+      "group": 64,
+      "label": "near-tie",
+      "boundedFeature": "\"cv01\" 65",
+      "fullFeature": 65,
+      "offlineWinnerLocal": 226,
+      "offlineRunnerLocal": 237,
+      "offlineMarginBuckets": 1,
+      "bank": "full",
+      "exactWinner": 16610,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 9952.453125,
+      "runnerStageWidth": 9944.28125,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 9952.453125,
+        "positive": 243,
+        "distinct": 244,
+        "winnerLocal": 226,
+        "winnerWidth": 9952.453125
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 9944.28125,
+        "positive": 242,
+        "distinct": 243,
+        "winnerLocal": 237,
+        "winnerWidth": 9944.28125
+      },
+      "topToken": 16610,
+      "runnerLocal": 237,
+      "marginBuckets": 2,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 16610,
+      "finalComputedWidth": "16610px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 0,
+      "group": 96,
+      "label": "threshold",
+      "boundedFeature": "\"cv01\" 6",
+      "fullFeature": 97,
+      "offlineWinnerLocal": 179,
+      "offlineRunnerLocal": 218,
+      "offlineMarginBuckets": 6,
+      "bank": "bounded",
+      "exactWinner": 24755,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 10829.1875,
+      "runnerStageWidth": 10816.578125,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 10829.1875,
+        "positive": 235,
+        "distinct": 236,
+        "winnerLocal": 179,
+        "winnerWidth": 10829.1875
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 10816.578125,
+        "positive": 234,
+        "distinct": 235,
+        "winnerLocal": 218,
+        "winnerWidth": 10816.578125
+      },
+      "topToken": 24755,
+      "runnerLocal": 218,
+      "marginBuckets": 3,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 24755,
+      "finalComputedWidth": "24755px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 0,
+      "group": 96,
+      "label": "threshold",
+      "boundedFeature": "\"cv01\" 97",
+      "fullFeature": 97,
+      "offlineWinnerLocal": 179,
+      "offlineRunnerLocal": 218,
+      "offlineMarginBuckets": 6,
+      "bank": "full",
+      "exactWinner": 24755,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 10825.1875,
+      "runnerStageWidth": 10816.578125,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 10825.1875,
+        "positive": 235,
+        "distinct": 236,
+        "winnerLocal": 179,
+        "winnerWidth": 10825.1875
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 10816.578125,
+        "positive": 234,
+        "distinct": 235,
+        "winnerLocal": 218,
+        "winnerWidth": 10816.578125
+      },
+      "topToken": 24755,
+      "runnerLocal": 218,
+      "marginBuckets": 2,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 24755,
+      "finalComputedWidth": "24755px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 9,
+      "group": 96,
+      "label": "near-tie-order",
+      "boundedFeature": "\"cv01\" 6",
+      "fullFeature": 97,
+      "offlineWinnerLocal": 218,
+      "offlineRunnerLocal": 179,
+      "offlineMarginBuckets": 1,
+      "bank": "bounded",
+      "exactWinner": 24755,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 11113.1875,
+      "runnerStageWidth": 11108.578125,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 11113.1875,
+        "positive": 235,
+        "distinct": 236,
+        "winnerLocal": 179,
+        "winnerWidth": 11113.1875
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 11108.578125,
+        "positive": 234,
+        "distinct": 235,
+        "winnerLocal": 218,
+        "winnerWidth": 11108.578125
+      },
+      "topToken": 24755,
+      "runnerLocal": 218,
+      "marginBuckets": 1,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 24755,
+      "finalComputedWidth": "24755px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 9,
+      "group": 96,
+      "label": "near-tie-order",
+      "boundedFeature": "\"cv01\" 97",
+      "fullFeature": 97,
+      "offlineWinnerLocal": 218,
+      "offlineRunnerLocal": 179,
+      "offlineMarginBuckets": 1,
+      "bank": "full",
+      "exactWinner": 24755,
+      "expectedFallback": true,
+      "topologyHealthy": true,
+      "topStageWidth": 11113.1875,
+      "runnerStageWidth": 11112.578125,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 11113.1875,
+        "positive": 235,
+        "distinct": 236,
+        "winnerLocal": 179,
+        "winnerWidth": 11113.1875
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 11112.578125,
+        "positive": 234,
+        "distinct": 235,
+        "winnerLocal": 218,
+        "winnerWidth": 11112.578125
+      },
+      "topToken": 24755,
+      "runnerLocal": 218,
+      "marginBuckets": 0,
+      "fallback": 1,
+      "exactDisplay": "grid",
+      "finalWinner": 24755,
+      "finalComputedWidth": "24755px",
+      "finalInheritedFallback": "1",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 0,
+      "group": 128,
+      "label": "clear-accept",
+      "boundedFeature": "\"cv01\" 7",
+      "fullFeature": 129,
+      "offlineWinnerLocal": 77,
+      "offlineRunnerLocal": 72,
+      "offlineMarginBuckets": 72,
+      "bank": "bounded",
+      "exactWinner": 33023,
+      "expectedFallback": false,
+      "topologyHealthy": true,
+      "topStageWidth": 10562.78125,
+      "runnerStageWidth": 10278.859375,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 10562.78125,
+        "positive": 240,
+        "distinct": 241,
+        "winnerLocal": 77,
+        "winnerWidth": 10562.78125
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 10278.859375,
+        "positive": 239,
+        "distinct": 240,
+        "winnerLocal": 72,
+        "winnerWidth": 10278.859375
+      },
+      "topToken": 32845,
+      "runnerLocal": 72,
+      "marginBuckets": 71,
+      "fallback": 0,
+      "exactDisplay": "none",
+      "finalWinner": 32845,
+      "finalComputedWidth": "32845px",
+      "finalInheritedFallback": "0",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 0,
+      "group": 128,
+      "label": "clear-accept",
+      "boundedFeature": "\"cv01\" 129",
+      "fullFeature": 129,
+      "offlineWinnerLocal": 77,
+      "offlineRunnerLocal": 72,
+      "offlineMarginBuckets": 72,
+      "bank": "full",
+      "exactWinner": 33023,
+      "expectedFallback": false,
+      "topologyHealthy": true,
+      "topStageWidth": 10562.78125,
+      "runnerStageWidth": 10278.859375,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 10562.78125,
+        "positive": 240,
+        "distinct": 241,
+        "winnerLocal": 77,
+        "winnerWidth": 10562.78125
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 10278.859375,
+        "positive": 239,
+        "distinct": 240,
+        "winnerLocal": 72,
+        "winnerWidth": 10278.859375
+      },
+      "topToken": 32845,
+      "runnerLocal": 72,
+      "marginBuckets": 71,
+      "fallback": 0,
+      "exactDisplay": "none",
+      "finalWinner": 32845,
+      "finalComputedWidth": "32845px",
+      "finalInheritedFallback": "0",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 2,
+      "group": 195,
+      "label": "clear-accept",
+      "boundedFeature": "\"cv01\" 8",
+      "fullFeature": 196,
+      "offlineWinnerLocal": 24,
+      "offlineRunnerLocal": 33,
+      "offlineMarginBuckets": 14,
+      "bank": "bounded",
+      "exactWinner": 50175,
+      "expectedFallback": false,
+      "topologyHealthy": true,
+      "topStageWidth": 10467.609375,
+      "runnerStageWidth": 10427.46875,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 10467.609375,
+        "positive": 232,
+        "distinct": 233,
+        "winnerLocal": 24,
+        "winnerWidth": 10467.609375
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 10427.46875,
+        "positive": 231,
+        "distinct": 232,
+        "winnerLocal": 33,
+        "winnerWidth": 10427.46875
+      },
+      "topToken": 49944,
+      "runnerLocal": 33,
+      "marginBuckets": 10,
+      "fallback": 0,
+      "exactDisplay": "none",
+      "finalWinner": 49944,
+      "finalComputedWidth": "49944px",
+      "finalInheritedFallback": "0",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    },
+    {
+      "fixture": 2,
+      "group": 195,
+      "label": "clear-accept",
+      "boundedFeature": "\"cv01\" 196",
+      "fullFeature": 196,
+      "offlineWinnerLocal": 24,
+      "offlineRunnerLocal": 33,
+      "offlineMarginBuckets": 14,
+      "bank": "full",
+      "exactWinner": 50175,
+      "expectedFallback": false,
+      "topologyHealthy": true,
+      "topStageWidth": 10471.609375,
+      "runnerStageWidth": 10431.46875,
+      "topDistribution": {
+        "minimum": 0,
+        "maximum": 10471.609375,
+        "positive": 232,
+        "distinct": 233,
+        "winnerLocal": 24,
+        "winnerWidth": 10471.609375
+      },
+      "runnerDistribution": {
+        "minimum": 0,
+        "maximum": 10431.46875,
+        "positive": 231,
+        "distinct": 232,
+        "winnerLocal": 33,
+        "winnerWidth": 10431.46875
+      },
+      "topToken": 49944,
+      "runnerLocal": 33,
+      "marginBuckets": 10,
+      "fallback": 0,
+      "exactDisplay": "none",
+      "finalWinner": 49944,
+      "finalComputedWidth": "49944px",
+      "finalInheritedFallback": "0",
+      "finalPositionAnchor": "--exact-token",
+      "exactAnchorName": "--exact-token",
+      "anchorSizeSupported": true,
+      "valid": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<!doctype html><meta charset="utf-8"><title>font-size metric carrier</title><style>@font-face{font-family:Producer;src:url("producer.ttf")}
+@font-face{font-family:Consumer;src:url("consumer.ttf")}
+@property --z{syntax:"<number>";inherits:true;initial-value:-999}
+.root{--x0:-.75;--x1:.25;--x2:.5;--x3:-.4;--x4:.8}
+.producer{font-family:Producer;font-size:256px;line-height:normal;
+font-variation-settings:"X000" var(--x0),"X001" var(--x1),"X002" var(--x2),"X003" var(--x3),"X004" var(--x4)}
+.consumer{font-family:Consumer;font-size:256px;line-height:normal}
+.carrier{font-size:1ch}.consumer{font-size:inherit;font-variation-settings:"Y000" calc((1em / 1px * 1000 / 256 - 8000) / 256);--z:calc((1ch / 1em * 1000 - 8000) / 256)}</style><div class="root"><div class="producer"><div class="carrier"><div id="result" class="consumer">ready</div></div></div></div>

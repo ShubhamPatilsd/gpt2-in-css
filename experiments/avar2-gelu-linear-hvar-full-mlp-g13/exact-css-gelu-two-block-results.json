@@ -1,0 +1,397 @@
+{
+  "generatedAt": "2026-09-13T18:05:56.845Z",
+  "chrome": "153.0.8010.36",
+  "rounds": 6,
+  "cases": [
+    1,
+    2,
+    3
+  ],
+  "runtimeContainsJavaScript": false,
+  "methodology": "Warm browser/font/HTTP caches, then a fresh page/layout graph for every case-0 to non-default case mutation. Each timing forces all 768 final widths. Variant order alternates by round.",
+  "resourceProfiles": {
+    "existing-avar2": {
+      "requests": 56,
+      "totalBytes": 19402983,
+      "byContentType": {
+        "text/html": 2937569,
+        "text/css": 2472318,
+        "font/woff2": 13993096
+      },
+      "initial": {
+        "elements": 23528,
+        "outputs": 768,
+        "runtimeScripts": 0,
+        "checksum": 159785287.859375,
+        "b0ExactValue": "",
+        "b1ExactValue": "",
+        "b1AxisCount": 3072
+      }
+    },
+    "exact-css-gelu-once": {
+      "requests": 56,
+      "totalBytes": 19819381,
+      "byContentType": {
+        "text/html": 3172411,
+        "text/css": 2814194,
+        "font/woff2": 13832776
+      },
+      "initial": {
+        "elements": 23528,
+        "outputs": 768,
+        "runtimeScripts": 0,
+        "checksum": 159785513.53125,
+        "b0ExactValue": "-0.00370004",
+        "b1ExactValue": "0.024098",
+        "b1AxisCount": 3072
+      }
+    }
+  },
+  "summaries": [
+    {
+      "name": "existing-avar2",
+      "pageFile": "connected-two-block-serial-projection-layoutless.html",
+      "elements": 23528,
+      "runtimeScripts": 0,
+      "medianMs": 2410.599999964237,
+      "p10Ms": 2379.2999999523163,
+      "p90Ms": 2490.800000011921,
+      "minMs": 2379.2999999523163,
+      "maxMs": 2504.7999999523163,
+      "maximumRmseToExact": 0.051130728811671314,
+      "maximumAbsErrorToExact": 0.9502805756863779,
+      "maximumRmseToRepresented": 0.021243630218673332,
+      "maximumAbsErrorToRepresented": 0.26899018945846365,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "milliseconds": 2438.7999999523163,
+          "checksum": 159786862.078125,
+          "toExact": {
+            "rmse": 0.047415672115330765,
+            "maxAbsError": 0.7829652771633278
+          },
+          "toRepresented": {
+            "rmse": 0.02013817365641957,
+            "maxAbsError": 0.1877912268810178
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "milliseconds": 2386.300000011921,
+          "checksum": 159787525.90625,
+          "toExact": {
+            "rmse": 0.047584634207771884,
+            "maxAbsError": 0.7418591840909698
+          },
+          "toRepresented": {
+            "rmse": 0.021243630218673332,
+            "maxAbsError": 0.2674652418513688
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "milliseconds": 2379.2999999523163,
+          "checksum": 159786927.75,
+          "toExact": {
+            "rmse": 0.04687564459442268,
+            "maxAbsError": 0.7541942694762724
+          },
+          "toRepresented": {
+            "rmse": 0.02121673689935987,
+            "maxAbsError": 0.26899018945846365
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "milliseconds": 2410.599999964237,
+          "checksum": 159786862.078125,
+          "toExact": {
+            "rmse": 0.047415672115330765,
+            "maxAbsError": 0.7829652771633278
+          },
+          "toRepresented": {
+            "rmse": 0.02013817365641957,
+            "maxAbsError": 0.1877912268810178
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "milliseconds": 2490.800000011921,
+          "checksum": 159787525.90625,
+          "toExact": {
+            "rmse": 0.047584634207771884,
+            "maxAbsError": 0.7418591840909698
+          },
+          "toRepresented": {
+            "rmse": 0.021243630218673332,
+            "maxAbsError": 0.2674652418513688
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 5,
+          "mode": 3,
+          "milliseconds": 2504.7999999523163,
+          "checksum": 159786927.75,
+          "toExact": {
+            "rmse": 0.04687564459442268,
+            "maxAbsError": 0.7541942694762724
+          },
+          "toRepresented": {
+            "rmse": 0.02121673689935987,
+            "maxAbsError": 0.26899018945846365
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "toExact": {
+            "rmse": 0.051130728811671314,
+            "maxAbsError": 0.9502805756863779
+          },
+          "toRepresented": {
+            "rmse": 0.02040459621557854,
+            "maxAbsError": 0.17614312465047988
+          }
+        },
+        {
+          "mode": 1,
+          "toExact": {
+            "rmse": 0.047415672115330765,
+            "maxAbsError": 0.7829652771633278
+          },
+          "toRepresented": {
+            "rmse": 0.02013817365641957,
+            "maxAbsError": 0.1877912268810178
+          }
+        },
+        {
+          "mode": 2,
+          "toExact": {
+            "rmse": 0.047584634207771884,
+            "maxAbsError": 0.7418591840909698
+          },
+          "toRepresented": {
+            "rmse": 0.021243630218673332,
+            "maxAbsError": 0.2674652418513688
+          }
+        },
+        {
+          "mode": 3,
+          "toExact": {
+            "rmse": 0.04687564459442268,
+            "maxAbsError": 0.7541942694762724
+          },
+          "toRepresented": {
+            "rmse": 0.02121673689935987,
+            "maxAbsError": 0.26899018945846365
+          }
+        }
+      ]
+    },
+    {
+      "name": "exact-css-gelu-once",
+      "pageFile": "connected-two-block-exact-css-gelu-layoutless.html",
+      "elements": 23528,
+      "runtimeScripts": 0,
+      "medianMs": 1810.800000011921,
+      "p10Ms": 1659.800000011921,
+      "p90Ms": 1840.3999999761581,
+      "minMs": 1659.800000011921,
+      "maxMs": 1900.5,
+      "maximumRmseToExact": 0.037917785005894225,
+      "maximumAbsErrorToExact": 0.9151587316496261,
+      "maximumRmseToRepresented": 0.04884687343047261,
+      "maximumAbsErrorToRepresented": 0.8517455448816236,
+      "samples": [
+        {
+          "round": 0,
+          "mode": 1,
+          "milliseconds": 1734.5,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 1,
+          "mode": 2,
+          "milliseconds": 1900.5,
+          "checksum": 159787817.0625,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 2,
+          "mode": 3,
+          "milliseconds": 1810.800000011921,
+          "checksum": 159787186.703125,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 3,
+          "mode": 1,
+          "milliseconds": 1840.3999999761581,
+          "checksum": 159787108,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 4,
+          "mode": 2,
+          "milliseconds": 1659.800000011921,
+          "checksum": 159787817.0625,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        },
+        {
+          "round": 5,
+          "mode": 3,
+          "milliseconds": 1821.5,
+          "checksum": 159787186.703125,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          },
+          "elements": 23528,
+          "runtimeScripts": 0
+        }
+      ],
+      "validation": [
+        {
+          "mode": 0,
+          "toExact": {
+            "rmse": 0.0369275004969338,
+            "maxAbsError": 0.8579323691291165
+          },
+          "toRepresented": {
+            "rmse": 0.04884687343047261,
+            "maxAbsError": 0.8058779731353525
+          }
+        },
+        {
+          "mode": 1,
+          "toExact": {
+            "rmse": 0.03133775934647018,
+            "maxAbsError": 0.6827928525189009
+          },
+          "toRepresented": {
+            "rmse": 0.043692402573442195,
+            "maxAbsError": 0.6435203935476466
+          }
+        },
+        {
+          "mode": 2,
+          "toExact": {
+            "rmse": 0.037917785005894225,
+            "maxAbsError": 0.9151587316496261
+          },
+          "toRepresented": {
+            "rmse": 0.04756967003776177,
+            "maxAbsError": 0.8517455448816236
+          }
+        },
+        {
+          "mode": 3,
+          "toExact": {
+            "rmse": 0.03099921239455392,
+            "maxAbsError": 0.706885203450156
+          },
+          "toRepresented": {
+            "rmse": 0.044110438710161105,
+            "maxAbsError": 0.6503822349129678
+          }
+        }
+      ]
+    }
+  ],
+  "directAgreement": {
+    "maximumRmse": 0.05032698447192511,
+    "maximumAbsError": 0.7133049242424079,
+    "samples": [
+      {
+        "mode": 0,
+        "rmse": 0.05032698447192511,
+        "maxAbsError": 0.7133049242424079
+      },
+      {
+        "mode": 1,
+        "rmse": 0.044394081335904986,
+        "maxAbsError": 0.5719696969696972
+      },
+      {
+        "mode": 2,
+        "rmse": 0.04609822790416254,
+        "maxAbsError": 0.5842803030302548
+      },
+      {
+        "mode": 3,
+        "rmse": 0.04284533991496797,
+        "maxAbsError": 0.5381155303030294
+      }
+    ]
+  },
+  "speedup": 1.3312348133136556
+}

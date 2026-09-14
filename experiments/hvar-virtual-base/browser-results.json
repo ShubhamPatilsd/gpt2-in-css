@@ -1,0 +1,80 @@
+{
+  "chrome": "153.0.8010.36",
+  "generatedAt": "2026-09-14T05:22:48.479Z",
+  "conclusion": "virtual-base-survives",
+  "toleranceDesignUnits": 2,
+  "measured": [
+    {
+      "name": "small",
+      "codepoints": [
+        57856,
+        57857
+      ],
+      "base": 1000,
+      "positiveBias": 30000,
+      "negativeContribution": -20000,
+      "expected": 11000,
+      "observed": {
+        "base": 1000,
+        "biasFirst": 11000,
+        "negativeFirst": 11000
+      },
+      "biasFirstError": 0,
+      "negativeFirstError": 0
+    },
+    {
+      "name": "crosses-uint16",
+      "codepoints": [
+        57858,
+        57859
+      ],
+      "base": 65000,
+      "positiveBias": 30000,
+      "negativeContribution": -50000,
+      "expected": 45000,
+      "observed": {
+        "base": 65000,
+        "biasFirst": 45000,
+        "negativeFirst": 45000
+      },
+      "biasFirstError": 0,
+      "negativeFirstError": 0
+    },
+    {
+      "name": "virtual-301k",
+      "codepoints": [
+        57860,
+        57861
+      ],
+      "base": 1000,
+      "positiveBias": 300000,
+      "negativeContribution": -290000,
+      "expected": 11000,
+      "observed": {
+        "base": 1000,
+        "biasFirst": 11000,
+        "negativeFirst": 11000
+      },
+      "biasFirstError": 0,
+      "negativeFirstError": 0
+    },
+    {
+      "name": "virtual-493k",
+      "codepoints": [
+        57862,
+        57863
+      ],
+      "base": 1000,
+      "positiveBias": 491505,
+      "negativeContribution": -450000,
+      "expected": 42505,
+      "observed": {
+        "base": 1000,
+        "biasFirst": 42504.688,
+        "negativeFirst": 42504.688
+      },
+      "biasFirstError": -0.31199999999807915,
+      "negativeFirstError": -0.31199999999807915
+    }
+  ]
+}

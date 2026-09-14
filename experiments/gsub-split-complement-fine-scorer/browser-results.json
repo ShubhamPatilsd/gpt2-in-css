@@ -1,0 +1,899 @@
+{
+  "chrome": "153.0.8010.36",
+  "experimentName": "gsub-split-complement-fine-scorer",
+  "groups": [
+    0,
+    1
+  ],
+  "fixtures": 10,
+  "candidateComparisons": 5120,
+  "expectedCandidateComparisons": 5120,
+  "gsubLoadMilliseconds": 1711.9036659999997,
+  "baselineLoadMilliseconds": 76683.297083,
+  "observedFeatureSettings": [
+    "\"cv01\"",
+    "\"cv01\" 2"
+  ],
+  "featureMappingValid": true,
+  "maximumAbsoluteCandidateDelta": 2,
+  "differingCandidateBuckets": 1781,
+  "differingCandidateRate": 0.3478515625,
+  "candidateDeltaHistogram": {
+    "0": 3339,
+    "1": 1424,
+    "2": 16,
+    "-1": 341
+  },
+  "groupMaximumAbsoluteCandidateDelta": {
+    "0": 2,
+    "1": 2
+  },
+  "winnerTokenMatches": 20,
+  "winnerTokenAgreement": 1,
+  "winnerBucketMatches": 14,
+  "winnerBucketAgreement": 0.7,
+  "modelOracleWinnerMatches": 20,
+  "modelOracleWinnerAgreement": 1,
+  "conservativeGate": {
+    "empiricalOnly": true,
+    "portableBoundProved": false,
+    "empiricalCandidateDeltaBound": 2,
+    "winnerMarginThresholdBuckets": 4,
+    "rule": "accept when split-GSUB winner margin > 4 buckets",
+    "acceptedCases": 19,
+    "acceptedRate": 0.95,
+    "fallbackCases": 1,
+    "fallbackRate": 0.05,
+    "unsafeAccepts": 0,
+    "finiteUsefulGate": true,
+    "accepted": [
+      {
+        "fixture": 0,
+        "group": 0
+      },
+      {
+        "fixture": 1,
+        "group": 0
+      },
+      {
+        "fixture": 1,
+        "group": 1
+      },
+      {
+        "fixture": 2,
+        "group": 0
+      },
+      {
+        "fixture": 2,
+        "group": 1
+      },
+      {
+        "fixture": 3,
+        "group": 0
+      },
+      {
+        "fixture": 3,
+        "group": 1
+      },
+      {
+        "fixture": 4,
+        "group": 0
+      },
+      {
+        "fixture": 4,
+        "group": 1
+      },
+      {
+        "fixture": 5,
+        "group": 0
+      },
+      {
+        "fixture": 5,
+        "group": 1
+      },
+      {
+        "fixture": 6,
+        "group": 0
+      },
+      {
+        "fixture": 6,
+        "group": 1
+      },
+      {
+        "fixture": 7,
+        "group": 0
+      },
+      {
+        "fixture": 7,
+        "group": 1
+      },
+      {
+        "fixture": 8,
+        "group": 0
+      },
+      {
+        "fixture": 8,
+        "group": 1
+      },
+      {
+        "fixture": 9,
+        "group": 0
+      },
+      {
+        "fixture": 9,
+        "group": 1
+      }
+    ],
+    "unsafe": []
+  },
+  "winnerMarginHistogram": {
+    "3": 1,
+    "6": 1,
+    "14": 1,
+    "15": 2,
+    "41": 1,
+    "45": 2,
+    "50": 1,
+    "52": 1,
+    "67": 1,
+    "86": 1,
+    "87": 1,
+    "109": 1,
+    "195": 1,
+    "278": 1,
+    "308": 1,
+    "449": 1,
+    "522": 1,
+    "713": 1
+  },
+  "winnerMargins": {
+    "minimum": 3,
+    "median": 52,
+    "p95": 522,
+    "maximum": 713
+  },
+  "switching": {
+    "timingRounds": 31,
+    "samplesPerBackend": 62,
+    "gsubMedianMilliseconds": 5.5,
+    "baselineMedianMilliseconds": 12.400000095367432,
+    "speedupFraction": 0.5564516163145218,
+    "speedupPercent": 55.645161631452176,
+    "gsubP95Milliseconds": 6.600000023841858,
+    "baselineP95Milliseconds": 13.099999904632568,
+    "gsubSamples": [
+      5.699999928474426,
+      6,
+      6.5,
+      5.900000095367432,
+      7.100000023841858,
+      5.399999976158142,
+      5.5,
+      5.100000023841858,
+      5.299999952316284,
+      8.100000023841858,
+      6,
+      6.200000047683716,
+      5.299999952316284,
+      5.200000047683716,
+      4.799999952316284,
+      5.399999976158142,
+      8.600000023841858,
+      6,
+      6.5,
+      5.300000071525574,
+      5.5,
+      5.199999928474426,
+      5.100000023841858,
+      6.5,
+      5.5,
+      6.299999952316284,
+      5.5,
+      5.200000047683716,
+      5.100000023841858,
+      5.199999928474426,
+      5.700000047683716,
+      5.399999976158142,
+      6,
+      4.799999952316284,
+      4.700000047683716,
+      5,
+      5.299999952316284,
+      5.799999952316284,
+      6.100000023841858,
+      6.600000023841858,
+      5.299999952316284,
+      5.5,
+      5,
+      4.700000047683716,
+      5.5,
+      6.199999928474426,
+      6.600000023841858,
+      5.600000023841858,
+      5.199999928474426,
+      5.100000023841858,
+      5.299999952316284,
+      5.600000023841858,
+      5.5,
+      6.100000023841858,
+      5.199999928474426,
+      4.899999976158142,
+      5.200000047683716,
+      5.399999976158142,
+      6.100000023841858,
+      6.100000023841858,
+      6.5,
+      5.300000071525574
+    ],
+    "baselineSamples": [
+      11.699999928474426,
+      12.300000071525574,
+      11.799999952316284,
+      12.300000071525574,
+      12.599999904632568,
+      12.400000095367432,
+      11.600000023841858,
+      11.899999976158142,
+      11.900000095367432,
+      12.199999928474426,
+      11.899999976158142,
+      11.700000047683716,
+      11,
+      12.5,
+      12.200000047683716,
+      12.599999904632568,
+      13,
+      11.900000095367432,
+      11.099999904632568,
+      11.700000047683716,
+      11.5,
+      12.299999952316284,
+      12.5,
+      11.800000071525574,
+      12.799999952316284,
+      12.800000071525574,
+      12.5,
+      11.699999928474426,
+      12.200000047683716,
+      13,
+      13,
+      12.100000023841858,
+      12.800000071525574,
+      12.299999952316284,
+      12.300000071525574,
+      12.5,
+      12.899999976158142,
+      13.100000023841858,
+      13.099999904632568,
+      13.300000071525574,
+      12.899999976158142,
+      12,
+      11.5,
+      11.600000023841858,
+      13.100000023841858,
+      12.899999976158142,
+      12.100000023841858,
+      12.899999976158142,
+      12.899999976158142,
+      12.600000023841858,
+      11.899999976158142,
+      13,
+      12.600000023841858,
+      12.699999928474426,
+      12.100000023841858,
+      12.700000047683716,
+      12.899999976158142,
+      12.600000023841858,
+      13,
+      12.599999904632568,
+      13.5,
+      12.200000047683716
+    ]
+  },
+  "advanceAudit": {
+    "passed": true,
+    "exactSplitChecks": 512,
+    "splitFormula": "floor(c/2) + (c - floor(c/2))",
+    "sourceCommonBasesMatchFullBank": true,
+    "originalOverflowingRows": [
+      {
+        "group": 0,
+        "local": 11,
+        "correction": 1298,
+        "adjustedPx": 33228.8
+      },
+      {
+        "group": 0,
+        "local": 13,
+        "correction": 1281,
+        "adjustedPx": 32793.6
+      },
+      {
+        "group": 1,
+        "local": 1,
+        "correction": 1308,
+        "adjustedPx": 33484.8
+      },
+      {
+        "group": 1,
+        "local": 6,
+        "correction": 1315,
+        "adjustedPx": 33664
+      },
+      {
+        "group": 1,
+        "local": 31,
+        "correction": 1317,
+        "adjustedPx": 33715.2
+      }
+    ],
+    "splitFace": {
+      "shard": 3,
+      "plane": 0,
+      "splitComplement": true,
+      "glyphPositionsPerCandidate": 3,
+      "rows": 2304,
+      "commonBase": 1847,
+      "fullBankCommonBase": 1847,
+      "commonBaseMatchesFullBank": true,
+      "maximumL1": 1279,
+      "maximumOriginalCorrection": 1317,
+      "maximumComplementComponent": 659,
+      "maximumSplitA": 658,
+      "maximumSplitB": 659,
+      "maximumAdjustedStaticComplementPx": 16870.4,
+      "adjustedAdvanceCapPx": 32768,
+      "complementComponentsIndependentlySafe": true
+    },
+    "allComplementsIndependentlySafe": true
+  },
+  "overhead": {
+    "fontFaces": 12,
+    "woff2Bytes": 963044,
+    "expandedTtfBytes": 10526528,
+    "cssBytes": 31731,
+    "htmlBytes": 74966,
+    "candidateElements": 256,
+    "glyphsPerCandidate": 13,
+    "unsplitGsubGlyphsPerCandidate": 12,
+    "extraGlyphsPerCandidate": 1,
+    "glyphInstanceIncreaseFraction": 0.08333333333333326,
+    "splitFaceRows": 2304,
+    "unsplitFocusedFaceRows": 1536,
+    "extraSplitFaceRows": 768,
+    "gsubPageTopology": {
+      "candidateElements": 256,
+      "descendantElements": 256,
+      "textCharacters": 6400
+    },
+    "exactBaselinePageTopology": {
+      "candidateElements": 256,
+      "descendantElements": 512,
+      "textCharacters": 0
+    }
+  },
+  "semanticTargetPassed": true,
+  "decision": "retain: split complement removes groups 0/1 overflow with bounded empirical error",
+  "comparisons": [
+    {
+      "fixture": 0,
+      "group": 0,
+      "feature": 1,
+      "validCandidates": 256,
+      "differingBucketCount": 95,
+      "maximumAbsoluteCandidateDelta": 1,
+      "gsubWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 4945,
+        "runnerLocal": 13,
+        "runnerBucket": 4900,
+        "marginBuckets": 45
+      },
+      "baselineWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 4946,
+        "runnerLocal": 13,
+        "runnerBucket": 4900,
+        "marginBuckets": 46
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": false,
+      "modelOracleWinnerLocal": 11,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 0,
+      "group": 1,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 92,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4557,
+        "runnerLocal": 28,
+        "runnerBucket": 4554,
+        "marginBuckets": 3
+      },
+      "baselineWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4558,
+        "runnerLocal": 28,
+        "runnerBucket": 4554,
+        "marginBuckets": 4
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": false,
+      "modelOracleWinnerLocal": 34,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 1,
+      "group": 0,
+      "feature": 1,
+      "validCandidates": 256,
+      "differingBucketCount": 93,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 12552,
+        "runnerLocal": 13,
+        "runnerBucket": 12103,
+        "marginBuckets": 449
+      },
+      "baselineWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 12552,
+        "runnerLocal": 13,
+        "runnerBucket": 12103,
+        "marginBuckets": 449
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 11,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 1,
+      "group": 1,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 81,
+      "maximumAbsoluteCandidateDelta": 1,
+      "gsubWinner": {
+        "winnerLocal": 221,
+        "winnerBucket": 12621,
+        "runnerLocal": 30,
+        "runnerBucket": 12343,
+        "marginBuckets": 278
+      },
+      "baselineWinner": {
+        "winnerLocal": 221,
+        "winnerBucket": 12620,
+        "runnerLocal": 30,
+        "runnerBucket": 12342,
+        "marginBuckets": 278
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": false,
+      "modelOracleWinnerLocal": 221,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 2,
+      "group": 0,
+      "feature": 1,
+      "validCandidates": 256,
+      "differingBucketCount": 96,
+      "maximumAbsoluteCandidateDelta": 1,
+      "gsubWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 5137,
+        "runnerLocal": 13,
+        "runnerBucket": 4615,
+        "marginBuckets": 522
+      },
+      "baselineWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 5137,
+        "runnerLocal": 13,
+        "runnerBucket": 4614,
+        "marginBuckets": 523
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 198,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 2,
+      "group": 1,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 91,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 58,
+        "winnerBucket": 4568,
+        "runnerLocal": 34,
+        "runnerBucket": 4527,
+        "marginBuckets": 41
+      },
+      "baselineWinner": {
+        "winnerLocal": 58,
+        "winnerBucket": 4568,
+        "runnerLocal": 34,
+        "runnerBucket": 4527,
+        "marginBuckets": 41
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 58,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 3,
+      "group": 0,
+      "feature": 1,
+      "validCandidates": 256,
+      "differingBucketCount": 79,
+      "maximumAbsoluteCandidateDelta": 1,
+      "gsubWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 4577,
+        "runnerLocal": 13,
+        "runnerBucket": 4269,
+        "marginBuckets": 308
+      },
+      "baselineWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 4577,
+        "runnerLocal": 13,
+        "runnerBucket": 4269,
+        "marginBuckets": 308
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 198,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 3,
+      "group": 1,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 92,
+      "maximumAbsoluteCandidateDelta": 1,
+      "gsubWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4383,
+        "runnerLocal": 28,
+        "runnerBucket": 4296,
+        "marginBuckets": 87
+      },
+      "baselineWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4382,
+        "runnerLocal": 28,
+        "runnerBucket": 4296,
+        "marginBuckets": 86
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": false,
+      "modelOracleWinnerLocal": 34,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 4,
+      "group": 0,
+      "feature": 1,
+      "validCandidates": 256,
+      "differingBucketCount": 89,
+      "maximumAbsoluteCandidateDelta": 1,
+      "gsubWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 4193,
+        "runnerLocal": 11,
+        "runnerBucket": 4084,
+        "marginBuckets": 109
+      },
+      "baselineWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 4193,
+        "runnerLocal": 11,
+        "runnerBucket": 4084,
+        "marginBuckets": 109
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 198,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 4,
+      "group": 1,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 84,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 6,
+        "winnerBucket": 4440,
+        "runnerLocal": 34,
+        "runnerBucket": 4425,
+        "marginBuckets": 15
+      },
+      "baselineWinner": {
+        "winnerLocal": 6,
+        "winnerBucket": 4440,
+        "runnerLocal": 34,
+        "runnerBucket": 4425,
+        "marginBuckets": 15
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 6,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 5,
+      "group": 0,
+      "feature": 1,
+      "validCandidates": 256,
+      "differingBucketCount": 79,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 5190,
+        "runnerLocal": 13,
+        "runnerBucket": 4477,
+        "marginBuckets": 713
+      },
+      "baselineWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 5190,
+        "runnerLocal": 13,
+        "runnerBucket": 4477,
+        "marginBuckets": 713
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 198,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 5,
+      "group": 1,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 84,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 127,
+        "winnerBucket": 4620,
+        "runnerLocal": 58,
+        "runnerBucket": 4553,
+        "marginBuckets": 67
+      },
+      "baselineWinner": {
+        "winnerLocal": 127,
+        "winnerBucket": 4620,
+        "runnerLocal": 58,
+        "runnerBucket": 4553,
+        "marginBuckets": 67
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 127,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 6,
+      "group": 0,
+      "feature": 1,
+      "validCandidates": 256,
+      "differingBucketCount": 75,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 4036,
+        "runnerLocal": 13,
+        "runnerBucket": 4021,
+        "marginBuckets": 15
+      },
+      "baselineWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 4036,
+        "runnerLocal": 13,
+        "runnerBucket": 4020,
+        "marginBuckets": 16
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 11,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 6,
+      "group": 1,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 104,
+      "maximumAbsoluteCandidateDelta": 1,
+      "gsubWinner": {
+        "winnerLocal": 6,
+        "winnerBucket": 4075,
+        "runnerLocal": 1,
+        "runnerBucket": 4030,
+        "marginBuckets": 45
+      },
+      "baselineWinner": {
+        "winnerLocal": 6,
+        "winnerBucket": 4074,
+        "runnerLocal": 1,
+        "runnerBucket": 4030,
+        "marginBuckets": 44
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": false,
+      "modelOracleWinnerLocal": 6,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 7,
+      "group": 0,
+      "feature": 1,
+      "validCandidates": 256,
+      "differingBucketCount": 90,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 4132,
+        "runnerLocal": 11,
+        "runnerBucket": 3937,
+        "marginBuckets": 195
+      },
+      "baselineWinner": {
+        "winnerLocal": 198,
+        "winnerBucket": 4132,
+        "runnerLocal": 11,
+        "runnerBucket": 3936,
+        "marginBuckets": 196
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 198,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 7,
+      "group": 1,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 87,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 6,
+        "winnerBucket": 4055,
+        "runnerLocal": 110,
+        "runnerBucket": 4003,
+        "marginBuckets": 52
+      },
+      "baselineWinner": {
+        "winnerLocal": 6,
+        "winnerBucket": 4055,
+        "runnerLocal": 110,
+        "runnerBucket": 4004,
+        "marginBuckets": 51
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 6,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 8,
+      "group": 0,
+      "feature": 1,
+      "validCandidates": 256,
+      "differingBucketCount": 97,
+      "maximumAbsoluteCandidateDelta": 1,
+      "gsubWinner": {
+        "winnerLocal": 13,
+        "winnerBucket": 5488,
+        "runnerLocal": 11,
+        "runnerBucket": 5474,
+        "marginBuckets": 14
+      },
+      "baselineWinner": {
+        "winnerLocal": 13,
+        "winnerBucket": 5488,
+        "runnerLocal": 11,
+        "runnerBucket": 5474,
+        "marginBuckets": 14
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 13,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 8,
+      "group": 1,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 93,
+      "maximumAbsoluteCandidateDelta": 1,
+      "gsubWinner": {
+        "winnerLocal": 62,
+        "winnerBucket": 5389,
+        "runnerLocal": 28,
+        "runnerBucket": 5303,
+        "marginBuckets": 86
+      },
+      "baselineWinner": {
+        "winnerLocal": 62,
+        "winnerBucket": 5388,
+        "runnerLocal": 28,
+        "runnerBucket": 5302,
+        "marginBuckets": 86
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": false,
+      "modelOracleWinnerLocal": 62,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 9,
+      "group": 0,
+      "feature": 1,
+      "validCandidates": 256,
+      "differingBucketCount": 98,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 5026,
+        "runnerLocal": 13,
+        "runnerBucket": 4976,
+        "marginBuckets": 50
+      },
+      "baselineWinner": {
+        "winnerLocal": 11,
+        "winnerBucket": 5026,
+        "runnerLocal": 13,
+        "runnerBucket": 4975,
+        "marginBuckets": 51
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 11,
+      "modelOracleWinnerMatches": true
+    },
+    {
+      "fixture": 9,
+      "group": 1,
+      "feature": 2,
+      "validCandidates": 256,
+      "differingBucketCount": 82,
+      "maximumAbsoluteCandidateDelta": 2,
+      "gsubWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4626,
+        "runnerLocal": 28,
+        "runnerBucket": 4620,
+        "marginBuckets": 6
+      },
+      "baselineWinner": {
+        "winnerLocal": 34,
+        "winnerBucket": 4626,
+        "runnerLocal": 28,
+        "runnerBucket": 4620,
+        "marginBuckets": 6
+      },
+      "winnerTokenMatches": true,
+      "winnerBucketMatches": true,
+      "modelOracleWinnerLocal": 34,
+      "modelOracleWinnerMatches": true
+    }
+  ]
+}

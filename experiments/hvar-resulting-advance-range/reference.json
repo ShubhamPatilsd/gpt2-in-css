@@ -1,0 +1,501 @@
+{
+  "unitsPerEm": 1000,
+  "fontSizePx": 64,
+  "scale": 0.064,
+  "axisTag": "TEST",
+  "axisValues": [
+    -1,
+    0,
+    1
+  ],
+  "cases": [
+    {
+      "name": "negative-mild",
+      "codepoints": [
+        57600,
+        57601,
+        57602
+      ],
+      "base": 1000,
+      "deltaAtMin": 2000,
+      "deltaAtMax": -2000,
+      "compensator": 5000,
+      "predictions": {
+        "-1": {
+          "target": {
+            "unclamped": 3000,
+            "clamp0To65535": 3000,
+            "uint16Wrap": 3000
+          },
+          "run": {
+            "unclamped": 8001,
+            "perGlyphClamp0To65535": 8001,
+            "perGlyphUint16Wrap": 8001,
+            "runClamp0To65535": 8001,
+            "runUint16Wrap": 8001
+          }
+        },
+        "0": {
+          "target": {
+            "unclamped": 1000,
+            "clamp0To65535": 1000,
+            "uint16Wrap": 1000
+          },
+          "run": {
+            "unclamped": 6001,
+            "perGlyphClamp0To65535": 6001,
+            "perGlyphUint16Wrap": 6001,
+            "runClamp0To65535": 6001,
+            "runUint16Wrap": 6001
+          }
+        },
+        "1": {
+          "target": {
+            "unclamped": -1000,
+            "clamp0To65535": 0,
+            "uint16Wrap": 64536
+          },
+          "run": {
+            "unclamped": 4001,
+            "perGlyphClamp0To65535": 5001,
+            "perGlyphUint16Wrap": 69537,
+            "runClamp0To65535": 4001,
+            "runUint16Wrap": 4001
+          }
+        }
+      }
+    },
+    {
+      "name": "negative-large",
+      "codepoints": [
+        57603,
+        57604,
+        57605
+      ],
+      "base": 1000,
+      "deltaAtMin": 11000,
+      "deltaAtMax": -11000,
+      "compensator": 15000,
+      "predictions": {
+        "-1": {
+          "target": {
+            "unclamped": 12000,
+            "clamp0To65535": 12000,
+            "uint16Wrap": 12000
+          },
+          "run": {
+            "unclamped": 27001,
+            "perGlyphClamp0To65535": 27001,
+            "perGlyphUint16Wrap": 27001,
+            "runClamp0To65535": 27001,
+            "runUint16Wrap": 27001
+          }
+        },
+        "0": {
+          "target": {
+            "unclamped": 1000,
+            "clamp0To65535": 1000,
+            "uint16Wrap": 1000
+          },
+          "run": {
+            "unclamped": 16001,
+            "perGlyphClamp0To65535": 16001,
+            "perGlyphUint16Wrap": 16001,
+            "runClamp0To65535": 16001,
+            "runUint16Wrap": 16001
+          }
+        },
+        "1": {
+          "target": {
+            "unclamped": -10000,
+            "clamp0To65535": 0,
+            "uint16Wrap": 55536
+          },
+          "run": {
+            "unclamped": 5001,
+            "perGlyphClamp0To65535": 15001,
+            "perGlyphUint16Wrap": 70537,
+            "runClamp0To65535": 5001,
+            "runUint16Wrap": 5001
+          }
+        }
+      }
+    },
+    {
+      "name": "above-mild",
+      "codepoints": [
+        57606,
+        57607,
+        57608
+      ],
+      "base": 65000,
+      "deltaAtMin": -2000,
+      "deltaAtMax": 2000,
+      "compensator": 1000,
+      "predictions": {
+        "-1": {
+          "target": {
+            "unclamped": 63000,
+            "clamp0To65535": 63000,
+            "uint16Wrap": 63000
+          },
+          "run": {
+            "unclamped": 64001,
+            "perGlyphClamp0To65535": 64001,
+            "perGlyphUint16Wrap": 64001,
+            "runClamp0To65535": 64001,
+            "runUint16Wrap": 64001
+          }
+        },
+        "0": {
+          "target": {
+            "unclamped": 65000,
+            "clamp0To65535": 65000,
+            "uint16Wrap": 65000
+          },
+          "run": {
+            "unclamped": 66001,
+            "perGlyphClamp0To65535": 66001,
+            "perGlyphUint16Wrap": 66001,
+            "runClamp0To65535": 65535,
+            "runUint16Wrap": 465
+          }
+        },
+        "1": {
+          "target": {
+            "unclamped": 67000,
+            "clamp0To65535": 65535,
+            "uint16Wrap": 1464
+          },
+          "run": {
+            "unclamped": 68001,
+            "perGlyphClamp0To65535": 66536,
+            "perGlyphUint16Wrap": 2465,
+            "runClamp0To65535": 65535,
+            "runUint16Wrap": 2465
+          }
+        }
+      }
+    },
+    {
+      "name": "above-large",
+      "codepoints": [
+        57609,
+        57610,
+        57611
+      ],
+      "base": 65000,
+      "deltaAtMin": -30000,
+      "deltaAtMax": 30000,
+      "compensator": 1000,
+      "predictions": {
+        "-1": {
+          "target": {
+            "unclamped": 35000,
+            "clamp0To65535": 35000,
+            "uint16Wrap": 35000
+          },
+          "run": {
+            "unclamped": 36001,
+            "perGlyphClamp0To65535": 36001,
+            "perGlyphUint16Wrap": 36001,
+            "runClamp0To65535": 36001,
+            "runUint16Wrap": 36001
+          }
+        },
+        "0": {
+          "target": {
+            "unclamped": 65000,
+            "clamp0To65535": 65000,
+            "uint16Wrap": 65000
+          },
+          "run": {
+            "unclamped": 66001,
+            "perGlyphClamp0To65535": 66001,
+            "perGlyphUint16Wrap": 66001,
+            "runClamp0To65535": 65535,
+            "runUint16Wrap": 465
+          }
+        },
+        "1": {
+          "target": {
+            "unclamped": 95000,
+            "clamp0To65535": 65535,
+            "uint16Wrap": 29464
+          },
+          "run": {
+            "unclamped": 96001,
+            "perGlyphClamp0To65535": 66536,
+            "perGlyphUint16Wrap": 30465,
+            "runClamp0To65535": 65535,
+            "runUint16Wrap": 30465
+          }
+        }
+      }
+    },
+    {
+      "name": "control-low",
+      "codepoints": [
+        57612,
+        57613,
+        57614
+      ],
+      "base": 1000,
+      "deltaAtMin": 900,
+      "deltaAtMax": -900,
+      "compensator": 5000,
+      "predictions": {
+        "-1": {
+          "target": {
+            "unclamped": 1900,
+            "clamp0To65535": 1900,
+            "uint16Wrap": 1900
+          },
+          "run": {
+            "unclamped": 6901,
+            "perGlyphClamp0To65535": 6901,
+            "perGlyphUint16Wrap": 6901,
+            "runClamp0To65535": 6901,
+            "runUint16Wrap": 6901
+          }
+        },
+        "0": {
+          "target": {
+            "unclamped": 1000,
+            "clamp0To65535": 1000,
+            "uint16Wrap": 1000
+          },
+          "run": {
+            "unclamped": 6001,
+            "perGlyphClamp0To65535": 6001,
+            "perGlyphUint16Wrap": 6001,
+            "runClamp0To65535": 6001,
+            "runUint16Wrap": 6001
+          }
+        },
+        "1": {
+          "target": {
+            "unclamped": 100,
+            "clamp0To65535": 100,
+            "uint16Wrap": 100
+          },
+          "run": {
+            "unclamped": 5101,
+            "perGlyphClamp0To65535": 5101,
+            "perGlyphUint16Wrap": 5101,
+            "runClamp0To65535": 5101,
+            "runUint16Wrap": 5101
+          }
+        }
+      }
+    },
+    {
+      "name": "control-high",
+      "codepoints": [
+        57615,
+        57616,
+        57617
+      ],
+      "base": 65000,
+      "deltaAtMin": -500,
+      "deltaAtMax": 500,
+      "compensator": 1000,
+      "predictions": {
+        "-1": {
+          "target": {
+            "unclamped": 64500,
+            "clamp0To65535": 64500,
+            "uint16Wrap": 64500
+          },
+          "run": {
+            "unclamped": 65501,
+            "perGlyphClamp0To65535": 65501,
+            "perGlyphUint16Wrap": 65501,
+            "runClamp0To65535": 65501,
+            "runUint16Wrap": 65501
+          }
+        },
+        "0": {
+          "target": {
+            "unclamped": 65000,
+            "clamp0To65535": 65000,
+            "uint16Wrap": 65000
+          },
+          "run": {
+            "unclamped": 66001,
+            "perGlyphClamp0To65535": 66001,
+            "perGlyphUint16Wrap": 66001,
+            "runClamp0To65535": 65535,
+            "runUint16Wrap": 465
+          }
+        },
+        "1": {
+          "target": {
+            "unclamped": 65500,
+            "clamp0To65535": 65500,
+            "uint16Wrap": 65500
+          },
+          "run": {
+            "unclamped": 66501,
+            "perGlyphClamp0To65535": 66501,
+            "perGlyphUint16Wrap": 66501,
+            "runClamp0To65535": 65535,
+            "runUint16Wrap": 965
+          }
+        }
+      }
+    },
+    {
+      "name": "control-zero",
+      "codepoints": [
+        57618,
+        57619,
+        57620
+      ],
+      "base": 1000,
+      "deltaAtMin": 1000,
+      "deltaAtMax": -1000,
+      "compensator": 5000,
+      "predictions": {
+        "-1": {
+          "target": {
+            "unclamped": 2000,
+            "clamp0To65535": 2000,
+            "uint16Wrap": 2000
+          },
+          "run": {
+            "unclamped": 7001,
+            "perGlyphClamp0To65535": 7001,
+            "perGlyphUint16Wrap": 7001,
+            "runClamp0To65535": 7001,
+            "runUint16Wrap": 7001
+          }
+        },
+        "0": {
+          "target": {
+            "unclamped": 1000,
+            "clamp0To65535": 1000,
+            "uint16Wrap": 1000
+          },
+          "run": {
+            "unclamped": 6001,
+            "perGlyphClamp0To65535": 6001,
+            "perGlyphUint16Wrap": 6001,
+            "runClamp0To65535": 6001,
+            "runUint16Wrap": 6001
+          }
+        },
+        "1": {
+          "target": {
+            "unclamped": 0,
+            "clamp0To65535": 0,
+            "uint16Wrap": 0
+          },
+          "run": {
+            "unclamped": 5001,
+            "perGlyphClamp0To65535": 5001,
+            "perGlyphUint16Wrap": 5001,
+            "runClamp0To65535": 5001,
+            "runUint16Wrap": 5001
+          }
+        }
+      }
+    }
+  ],
+  "fontValidation": {
+    "basesAreUint16": true,
+    "deltasAreInt16": true,
+    "serializedHvarRows": {
+      ".notdef": [
+        0,
+        0
+      ],
+      "target0": [
+        2000,
+        -2000
+      ],
+      "compensator0": [
+        0,
+        0
+      ],
+      "sentinel0": [
+        0,
+        0
+      ],
+      "target1": [
+        11000,
+        -11000
+      ],
+      "compensator1": [
+        0,
+        0
+      ],
+      "sentinel1": [
+        0,
+        0
+      ],
+      "target2": [
+        -2000,
+        2000
+      ],
+      "compensator2": [
+        0,
+        0
+      ],
+      "sentinel2": [
+        0,
+        0
+      ],
+      "target3": [
+        -30000,
+        30000
+      ],
+      "compensator3": [
+        0,
+        0
+      ],
+      "sentinel3": [
+        0,
+        0
+      ],
+      "target4": [
+        900,
+        -900
+      ],
+      "compensator4": [
+        0,
+        0
+      ],
+      "sentinel4": [
+        0,
+        0
+      ],
+      "target5": [
+        -500,
+        500
+      ],
+      "compensator5": [
+        0,
+        0
+      ],
+      "sentinel5": [
+        0,
+        0
+      ],
+      "target6": [
+        1000,
+        -1000
+      ],
+      "compensator6": [
+        0,
+        0
+      ],
+      "sentinel6": [
+        0,
+        0
+      ]
+    },
+    "ttfBytes": 2280,
+    "woff2Bytes": 676
+  }
+}
