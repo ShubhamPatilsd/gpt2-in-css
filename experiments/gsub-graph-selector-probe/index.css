@@ -1,0 +1,88 @@
+@font-face{
+  font-family:GraphSelectorProbe;
+  src:url("graph-selector-50257.woff2") format("woff2"),url("graph-selector-50257.ttf") format("truetype");
+  font-display:block;
+}
+@property --input-node{syntax:"<number>";inherits:true;initial-value:0}
+@property --input-slot{syntax:"<number>";inherits:true;initial-value:0}
+@property --current-node{syntax:"<integer>";inherits:true;initial-value:0}
+@property --edge-slot{syntax:"<integer>";inherits:true;initial-value:0}
+@property --low{syntax:"<integer>";inherits:true;initial-value:0}
+@property --high{syntax:"<integer>";inherits:true;initial-value:0}
+@property --next-node{syntax:"<integer>";inherits:true;initial-value:0}
+@property --next-low{syntax:"<integer>";inherits:true;initial-value:0}
+@property --next-high{syntax:"<integer>";inherits:true;initial-value:0}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:system-ui,sans-serif}
+#probe{
+  --input-node:0;
+  --input-slot:0;
+  --current-node:round(nearest,var(--input-node),1);
+  --edge-slot:round(nearest,var(--input-slot),1);
+  --low:mod(var(--current-node),255);
+  --high:round(down,var(--current-node) / 255,1);
+  position:relative;
+}
+.hop{position:fixed;left:0;top:-2000px;width:1px;height:1px}
+.identity{
+  position:absolute;
+  display:block;
+  width:max-content;
+  height:1px;
+  overflow:visible;
+  font-family:GraphSelectorProbe;
+  font-size:500px;
+  font-style:normal;
+  font-weight:400;
+  line-height:1;
+  font-kerning:none;
+  font-feature-settings:normal;
+}
+.direct-slot{font-feature-settings:"cv00" calc(var(--current-node) + 1)}
+.hop1-slot{font-feature-settings:"cv01" calc(var(--low) + 1),"cv02" calc(var(--high) + 1)}
+.hop2-slot{font-feature-settings:"cv01" calc(var(--next-low) + 1),"cv02" calc(var(--next-high) + 1)}
+#hop1-slot-00{anchor-name:--hop1-s00}
+#hop1-slot-01{anchor-name:--hop1-s01}
+#hop1-slot-02{anchor-name:--hop1-s02}
+#hop1-slot-03{anchor-name:--hop1-s03}
+#hop1-slot-04{anchor-name:--hop1-s04}
+#hop1-slot-05{anchor-name:--hop1-s05}
+#hop1-slot-06{anchor-name:--hop1-s06}
+#hop1-slot-07{anchor-name:--hop1-s07}
+#hop1-slot-08{anchor-name:--hop1-s08}
+#hop1-slot-09{anchor-name:--hop1-s09}
+#hop1-slot-10{anchor-name:--hop1-s10}
+#hop1-slot-11{anchor-name:--hop1-s11}
+#hop1-slot-12{anchor-name:--hop1-s12}
+#hop1-slot-13{anchor-name:--hop1-s13}
+#hop1-slot-14{anchor-name:--hop1-s14}
+#hop1-slot-15{anchor-name:--hop1-s15}
+#hop2-slot-00{anchor-name:--hop2-s00}
+#hop2-slot-01{anchor-name:--hop2-s01}
+#hop2-slot-02{anchor-name:--hop2-s02}
+#hop2-slot-03{anchor-name:--hop2-s03}
+#hop2-slot-04{anchor-name:--hop2-s04}
+#hop2-slot-05{anchor-name:--hop2-s05}
+#hop2-slot-06{anchor-name:--hop2-s06}
+#hop2-slot-07{anchor-name:--hop2-s07}
+#hop2-slot-08{anchor-name:--hop2-s08}
+#hop2-slot-09{anchor-name:--hop2-s09}
+#hop2-slot-10{anchor-name:--hop2-s10}
+#hop2-slot-11{anchor-name:--hop2-s11}
+#hop2-slot-12{anchor-name:--hop2-s12}
+#hop2-slot-13{anchor-name:--hop2-s13}
+#hop2-slot-14{anchor-name:--hop2-s14}
+#hop2-slot-15{anchor-name:--hop2-s15}
+#selected-slot-reader{
+  position:fixed;
+  left:0;
+  top:-1000px;
+  height:1px;
+  width:if(style(--edge-slot:0):anchor-size(--hop1-s00 width);style(--edge-slot:1):anchor-size(--hop1-s01 width);style(--edge-slot:2):anchor-size(--hop1-s02 width);style(--edge-slot:3):anchor-size(--hop1-s03 width);style(--edge-slot:4):anchor-size(--hop1-s04 width);style(--edge-slot:5):anchor-size(--hop1-s05 width);style(--edge-slot:6):anchor-size(--hop1-s06 width);style(--edge-slot:7):anchor-size(--hop1-s07 width);style(--edge-slot:8):anchor-size(--hop1-s08 width);style(--edge-slot:9):anchor-size(--hop1-s09 width);style(--edge-slot:10):anchor-size(--hop1-s10 width);style(--edge-slot:11):anchor-size(--hop1-s11 width);style(--edge-slot:12):anchor-size(--hop1-s12 width);style(--edge-slot:13):anchor-size(--hop1-s13 width);style(--edge-slot:14):anchor-size(--hop1-s14 width);style(--edge-slot:15):anchor-size(--hop1-s15 width);else:0px);
+  container:selected-slot/inline-size;
+}
+#chain{--next-node:0;--next-low:mod(var(--next-node),255);--next-high:round(down,var(--next-node) / 255,1);position:fixed;left:0;top:0;width:1px;height:1px}
+@container selected-slot (width >= 0px){
+  #chain{--next-node:calc(round(nearest,100cqi * 2 / 1px,1) - 1)}
+}
+#runtime-contract{display:block;margin:1rem;font:14px/1.4 system-ui,sans-serif}
