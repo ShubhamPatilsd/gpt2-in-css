@@ -1,0 +1,126 @@
+{
+  "status": "prepared-not-run",
+  "browserLaunchedByBuilder": false,
+  "candidateK": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "controlDirectory": "gpt2-hvar-grid-output-head-certified-int10-unrolled6-gated",
+  "pairedHarness": "tools/test_mixed_precision_hotk_upper_probe.mjs",
+  "candidates": [
+    {
+      "k": 1,
+      "directory": "experiments/gpt2-mixed-precision-hotk-sweep/k1",
+      "hotGroups": [
+        0
+      ],
+      "rowsAdded": 0,
+      "rowsReplaced": 256,
+      "fixtureFinalExactWinners": 10,
+      "fixtureCount": 10,
+      "generatedBytes": {
+        "index.html": 8248643,
+        "topology.css": 704463,
+        "reference.json": 239511
+      },
+      "staticTransportChecks": {
+        "exactHotCandidateCount": 256,
+        "expectedExactHotCandidateCount": 256,
+        "allHotAnchorsReused": true,
+        "allHotRoutesSuppressDynamicGrid": true,
+        "allowanceAfterGroupMaximum": true,
+        "standardExactTie": true,
+        "rowsAdded": 0
+      }
+    },
+    {
+      "k": 2,
+      "directory": "experiments/gpt2-mixed-precision-hotk-sweep/k2",
+      "hotGroups": [
+        0,
+        1
+      ],
+      "rowsAdded": 0,
+      "rowsReplaced": 512,
+      "fixtureFinalExactWinners": 10,
+      "fixtureCount": 10,
+      "generatedBytes": {
+        "index.html": 8247842,
+        "topology.css": 704901,
+        "reference.json": 239526
+      },
+      "staticTransportChecks": {
+        "exactHotCandidateCount": 512,
+        "expectedExactHotCandidateCount": 512,
+        "allHotAnchorsReused": true,
+        "allHotRoutesSuppressDynamicGrid": true,
+        "allowanceAfterGroupMaximum": true,
+        "standardExactTie": true,
+        "rowsAdded": 0
+      }
+    },
+    {
+      "k": 4,
+      "directory": "experiments/gpt2-mixed-precision-hotk-sweep/k4",
+      "hotGroups": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rowsAdded": 0,
+      "rowsReplaced": 1024,
+      "fixtureFinalExactWinners": 10,
+      "fixtureCount": 10,
+      "generatedBytes": {
+        "index.html": 8246219,
+        "topology.css": 705777,
+        "reference.json": 239563
+      },
+      "staticTransportChecks": {
+        "exactHotCandidateCount": 1024,
+        "expectedExactHotCandidateCount": 1024,
+        "allHotAnchorsReused": true,
+        "allHotRoutesSuppressDynamicGrid": true,
+        "allowanceAfterGroupMaximum": true,
+        "standardExactTie": true,
+        "rowsAdded": 0
+      }
+    },
+    {
+      "k": 8,
+      "directory": "experiments/gpt2-mixed-precision-hotk-sweep/k8",
+      "hotGroups": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "rowsAdded": 0,
+      "rowsReplaced": 2048,
+      "fixtureFinalExactWinners": 10,
+      "fixtureCount": 10,
+      "generatedBytes": {
+        "index.html": 8242968,
+        "topology.css": 707529,
+        "reference.json": 239647
+      },
+      "staticTransportChecks": {
+        "exactHotCandidateCount": 2048,
+        "expectedExactHotCandidateCount": 2048,
+        "allHotAnchorsReused": true,
+        "allHotRoutesSuppressDynamicGrid": true,
+        "allowanceAfterGroupMaximum": true,
+        "standardExactTie": true,
+        "rowsAdded": 0
+      }
+    }
+  ],
+  "buildSeconds": 2.1246727909892797
+}

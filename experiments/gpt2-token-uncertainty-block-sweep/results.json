@@ -1,0 +1,553 @@
+{
+  "model": "openai-community/gpt2",
+  "group": 0,
+  "groupSize": 256,
+  "blockSizes": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "scoreScale": 256,
+  "totalOutwardAllowanceBuckets": 27,
+  "screens": [
+    {
+      "name": "1,024-state snapped router corpus",
+      "states": 1024,
+      "tokenGateActiveRows": {
+        "minimum": 1,
+        "median": 22.0,
+        "p95": 77.0,
+        "maximum": 103,
+        "mean": 30.5703125
+      },
+      "exactWinnerRetainedStates": 1024,
+      "variants": [
+        {
+          "blockSize": 1,
+          "gateCount": 256,
+          "activeBlocks": {
+            "minimum": 1,
+            "median": 22.0,
+            "p95": 77.0,
+            "maximum": 103,
+            "mean": 30.5703125
+          },
+          "shapedRows": {
+            "minimum": 1,
+            "median": 22.0,
+            "p95": 77.0,
+            "maximum": 103,
+            "mean": 30.5703125
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 0.0,
+            "maximum": 0,
+            "mean": 0.0
+          },
+          "meanRowInflation": 1.0,
+          "meanExactGlyphs": 366.84375,
+          "winnerRetainedStates": 1024
+        },
+        {
+          "blockSize": 2,
+          "gateCount": 128,
+          "activeBlocks": {
+            "minimum": 1,
+            "median": 17.5,
+            "p95": 45.0,
+            "maximum": 55,
+            "mean": 21.23828125
+          },
+          "shapedRows": {
+            "minimum": 2,
+            "median": 35.0,
+            "p95": 90.0,
+            "maximum": 110,
+            "mean": 42.4765625
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 1,
+            "median": 12.0,
+            "p95": 20.0,
+            "maximum": 26,
+            "mean": 11.90625
+          },
+          "meanRowInflation": 1.389470994122157,
+          "meanExactGlyphs": 509.71875,
+          "winnerRetainedStates": 1024
+        },
+        {
+          "blockSize": 4,
+          "gateCount": 64,
+          "activeBlocks": {
+            "minimum": 1,
+            "median": 12.0,
+            "p95": 25.0,
+            "maximum": 31,
+            "mean": 13.78515625
+          },
+          "shapedRows": {
+            "minimum": 4,
+            "median": 48.0,
+            "p95": 100.0,
+            "maximum": 124,
+            "mean": 55.140625
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 3,
+            "median": 24.0,
+            "p95": 39.0,
+            "maximum": 50,
+            "mean": 24.5703125
+          },
+          "meanRowInflation": 1.803731152568362,
+          "meanExactGlyphs": 661.6875,
+          "winnerRetainedStates": 1024
+        },
+        {
+          "blockSize": 8,
+          "gateCount": 32,
+          "activeBlocks": {
+            "minimum": 1,
+            "median": 8.0,
+            "p95": 14.0,
+            "maximum": 19,
+            "mean": 8.5400390625
+          },
+          "shapedRows": {
+            "minimum": 8,
+            "median": 64.0,
+            "p95": 112.0,
+            "maximum": 152,
+            "mean": 68.3203125
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 5,
+            "median": 38.0,
+            "p95": 59.0,
+            "maximum": 78,
+            "mean": 37.75
+          },
+          "meanRowInflation": 2.2348581650907233,
+          "meanExactGlyphs": 819.84375,
+          "winnerRetainedStates": 1024
+        },
+        {
+          "blockSize": 16,
+          "gateCount": 16,
+          "activeBlocks": {
+            "minimum": 1,
+            "median": 6.0,
+            "p95": 8.0,
+            "maximum": 12,
+            "mean": 5.7197265625
+          },
+          "shapedRows": {
+            "minimum": 16,
+            "median": 96.0,
+            "p95": 128.0,
+            "maximum": 192,
+            "mean": 91.515625
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 12,
+            "median": 62.0,
+            "p95": 90.0,
+            "maximum": 146,
+            "mean": 60.9453125
+          },
+          "meanRowInflation": 2.993611040122668,
+          "meanExactGlyphs": 1098.1875,
+          "winnerRetainedStates": 1024
+        },
+        {
+          "blockSize": 32,
+          "gateCount": 8,
+          "activeBlocks": {
+            "minimum": 1,
+            "median": 4.0,
+            "p95": 4.0,
+            "maximum": 8,
+            "mean": 3.5498046875
+          },
+          "shapedRows": {
+            "minimum": 32,
+            "median": 128.0,
+            "p95": 128.0,
+            "maximum": 256,
+            "mean": 113.59375
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 15,
+            "median": 82.0,
+            "p95": 112.0,
+            "maximum": 178,
+            "mean": 83.0234375
+          },
+          "meanRowInflation": 3.715819064656274,
+          "meanExactGlyphs": 1363.125,
+          "winnerRetainedStates": 1024
+        },
+        {
+          "blockSize": 64,
+          "gateCount": 4,
+          "activeBlocks": {
+            "minimum": 1,
+            "median": 3.0,
+            "p95": 3.0,
+            "maximum": 4,
+            "mean": 2.6611328125
+          },
+          "shapedRows": {
+            "minimum": 64,
+            "median": 192.0,
+            "p95": 192.0,
+            "maximum": 256,
+            "mean": 170.3125
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 30,
+            "median": 142.0,
+            "p95": 178.0,
+            "maximum": 232,
+            "mean": 139.7421875
+          },
+          "meanRowInflation": 5.571173013033478,
+          "meanExactGlyphs": 2043.75,
+          "winnerRetainedStates": 1024
+        },
+        {
+          "blockSize": 128,
+          "gateCount": 2,
+          "activeBlocks": {
+            "minimum": 1,
+            "median": 2.0,
+            "p95": 2.0,
+            "maximum": 2,
+            "mean": 1.9189453125
+          },
+          "shapedRows": {
+            "minimum": 128,
+            "median": 256.0,
+            "p95": 256.0,
+            "maximum": 256,
+            "mean": 245.625
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 47,
+            "median": 229.0,
+            "p95": 246.0,
+            "maximum": 254,
+            "mean": 215.0546875
+          },
+          "meanRowInflation": 8.034755941732685,
+          "meanExactGlyphs": 2947.5,
+          "winnerRetainedStates": 1024
+        },
+        {
+          "blockSize": 256,
+          "gateCount": 1,
+          "activeBlocks": {
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 1.0,
+            "maximum": 1,
+            "mean": 1.0
+          },
+          "shapedRows": {
+            "minimum": 256,
+            "median": 256.0,
+            "p95": 256.0,
+            "maximum": 256,
+            "mean": 256.0
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 153,
+            "median": 234.0,
+            "p95": 250.0,
+            "maximum": 255,
+            "mean": 225.4296875
+          },
+          "meanRowInflation": 8.37413749041656,
+          "meanExactGlyphs": 3072.0,
+          "winnerRetainedStates": 1024
+        }
+      ]
+    },
+    {
+      "name": "ten browser fixtures",
+      "states": 10,
+      "tokenGateActiveRows": {
+        "minimum": 3,
+        "median": 6.5,
+        "p95": 15.0,
+        "maximum": 15,
+        "mean": 7.6
+      },
+      "exactWinnerRetainedStates": 10,
+      "variants": [
+        {
+          "blockSize": 1,
+          "gateCount": 256,
+          "activeBlocks": {
+            "minimum": 3,
+            "median": 6.5,
+            "p95": 15.0,
+            "maximum": 15,
+            "mean": 7.6
+          },
+          "shapedRows": {
+            "minimum": 3,
+            "median": 6.5,
+            "p95": 15.0,
+            "maximum": 15,
+            "mean": 7.6
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 0.0,
+            "maximum": 0,
+            "mean": 0.0
+          },
+          "meanRowInflation": 1.0,
+          "meanExactGlyphs": 91.19999999999999,
+          "winnerRetainedStates": 10
+        },
+        {
+          "blockSize": 2,
+          "gateCount": 128,
+          "activeBlocks": {
+            "minimum": 3,
+            "median": 5.5,
+            "p95": 13.0,
+            "maximum": 13,
+            "mean": 6.5
+          },
+          "shapedRows": {
+            "minimum": 6,
+            "median": 11.0,
+            "p95": 26.0,
+            "maximum": 26,
+            "mean": 13.0
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 3,
+            "median": 4.5,
+            "p95": 11.0,
+            "maximum": 11,
+            "mean": 5.4
+          },
+          "meanRowInflation": 1.7105263157894737,
+          "meanExactGlyphs": 156.0,
+          "winnerRetainedStates": 10
+        },
+        {
+          "blockSize": 4,
+          "gateCount": 64,
+          "activeBlocks": {
+            "minimum": 3,
+            "median": 4.5,
+            "p95": 10.0,
+            "maximum": 10,
+            "mean": 5.1
+          },
+          "shapedRows": {
+            "minimum": 12,
+            "median": 18.0,
+            "p95": 40.0,
+            "maximum": 40,
+            "mean": 20.4
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 9,
+            "median": 12.0,
+            "p95": 25.0,
+            "maximum": 25,
+            "mean": 12.8
+          },
+          "meanRowInflation": 2.6842105263157894,
+          "meanExactGlyphs": 244.79999999999998,
+          "winnerRetainedStates": 10
+        },
+        {
+          "blockSize": 8,
+          "gateCount": 32,
+          "activeBlocks": {
+            "minimum": 2,
+            "median": 3.5,
+            "p95": 7.0,
+            "maximum": 7,
+            "mean": 3.6
+          },
+          "shapedRows": {
+            "minimum": 16,
+            "median": 28.0,
+            "p95": 56.0,
+            "maximum": 56,
+            "mean": 28.8
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 13,
+            "median": 20.0,
+            "p95": 41.0,
+            "maximum": 41,
+            "mean": 21.2
+          },
+          "meanRowInflation": 3.7894736842105265,
+          "meanExactGlyphs": 345.6,
+          "winnerRetainedStates": 10
+        },
+        {
+          "blockSize": 16,
+          "gateCount": 16,
+          "activeBlocks": {
+            "minimum": 2,
+            "median": 3.0,
+            "p95": 5.0,
+            "maximum": 5,
+            "mean": 3.0
+          },
+          "shapedRows": {
+            "minimum": 32,
+            "median": 48.0,
+            "p95": 80.0,
+            "maximum": 80,
+            "mean": 48.0
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 29,
+            "median": 39.5,
+            "p95": 65.0,
+            "maximum": 65,
+            "mean": 40.4
+          },
+          "meanRowInflation": 6.315789473684211,
+          "meanExactGlyphs": 576.0,
+          "winnerRetainedStates": 10
+        },
+        {
+          "blockSize": 32,
+          "gateCount": 8,
+          "activeBlocks": {
+            "minimum": 2,
+            "median": 2.0,
+            "p95": 4.0,
+            "maximum": 4,
+            "mean": 2.2
+          },
+          "shapedRows": {
+            "minimum": 64,
+            "median": 64.0,
+            "p95": 128.0,
+            "maximum": 128,
+            "mean": 70.4
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 53,
+            "median": 58.5,
+            "p95": 113.0,
+            "maximum": 113,
+            "mean": 62.8
+          },
+          "meanRowInflation": 9.263157894736842,
+          "meanExactGlyphs": 844.8000000000001,
+          "winnerRetainedStates": 10
+        },
+        {
+          "blockSize": 64,
+          "gateCount": 4,
+          "activeBlocks": {
+            "minimum": 2,
+            "median": 2.0,
+            "p95": 3.0,
+            "maximum": 3,
+            "mean": 2.1
+          },
+          "shapedRows": {
+            "minimum": 128,
+            "median": 128.0,
+            "p95": 192.0,
+            "maximum": 192,
+            "mean": 134.4
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 117,
+            "median": 122.5,
+            "p95": 177.0,
+            "maximum": 177,
+            "mean": 126.8
+          },
+          "meanRowInflation": 17.68421052631579,
+          "meanExactGlyphs": 1612.8000000000002,
+          "winnerRetainedStates": 10
+        },
+        {
+          "blockSize": 128,
+          "gateCount": 2,
+          "activeBlocks": {
+            "minimum": 2,
+            "median": 2.0,
+            "p95": 2.0,
+            "maximum": 2,
+            "mean": 2.0
+          },
+          "shapedRows": {
+            "minimum": 256,
+            "median": 256.0,
+            "p95": 256.0,
+            "maximum": 256,
+            "mean": 256.0
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 241,
+            "median": 249.5,
+            "p95": 253.0,
+            "maximum": 253,
+            "mean": 248.4
+          },
+          "meanRowInflation": 33.68421052631579,
+          "meanExactGlyphs": 3072.0,
+          "winnerRetainedStates": 10
+        },
+        {
+          "blockSize": 256,
+          "gateCount": 1,
+          "activeBlocks": {
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 1.0,
+            "maximum": 1,
+            "mean": 1.0
+          },
+          "shapedRows": {
+            "minimum": 256,
+            "median": 256.0,
+            "p95": 256.0,
+            "maximum": 256,
+            "mean": 256.0
+          },
+          "extraRowsVersusTokenGate": {
+            "minimum": 241,
+            "median": 249.5,
+            "p95": 253.0,
+            "maximum": 253,
+            "mean": 248.4
+          },
+          "meanRowInflation": 33.68421052631579,
+          "meanExactGlyphs": 3072.0,
+          "winnerRetainedStates": 10
+        }
+      ]
+    }
+  ],
+  "runtimeSeconds": 0.04995679098647088
+}

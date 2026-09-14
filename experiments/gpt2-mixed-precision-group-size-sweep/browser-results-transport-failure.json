@@ -1,0 +1,308 @@
+{
+  "chromeVersion": "fresh isolated Chromium process per variant",
+  "rounds": 1,
+  "fixtureCount": 2,
+  "isolatedPerVariant": true,
+  "control": "gpt2-mixed-precision-hotk-sweep/k2",
+  "loadOrderAlternated": true,
+  "robustRepeatPerformed": false,
+  "longLivedCursorMcpTerminated": false,
+  "offlineResultsPreserved": true,
+  "allSemanticsPass": false,
+  "results": [
+    {
+      "variant": "g128-s4",
+      "isolatedFreshBrowser": true,
+      "loadOrder": [
+        "candidate",
+        "retained-g256-k2"
+      ],
+      "fixtureOrder": [
+        0,
+        1
+      ],
+      "warmupFixture": 1,
+      "requestFailures": {
+        "candidate": [],
+        "control": []
+      },
+      "cold": {
+        "candidateLoadMilliseconds": 54432.926791,
+        "controlLoadMilliseconds": 34492.3515,
+        "loadRatio": 1.5781158553657904
+      },
+      "semanticsPass": false,
+      "decision": "reject-transport",
+      "comparison": {
+        "candidate": {
+          "count": 2,
+          "minimum": 1929.8072079999984,
+          "median": 2824.6101250000065,
+          "p90": 2824.6101250000065,
+          "maximum": 2824.6101250000065,
+          "mean": 2377.2086665000024
+        },
+        "retainedG256K2": {
+          "count": 2,
+          "minimum": 2379.218792000014,
+          "median": 3253.607250000001,
+          "p90": 3253.607250000001,
+          "maximum": 3253.607250000001,
+          "mean": 2816.4130210000076
+        },
+        "normalizedWarmMeanRatio": 0.8440554168635184,
+        "warmSpeedupPercent": 15.594458313648163
+      },
+      "work": {
+        "candidate": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 2,
+          "reusedExactUpper": 1,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 128
+        },
+        "retainedG256K2": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 4,
+          "reusedExactUpper": 3,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 256
+        },
+        "normalized": {
+          "activeStageVisits": 0.5,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 0.5
+        }
+      },
+      "shadows": {
+        "requested": 2,
+        "present": 2,
+        "source": "candidate variant's forced dynamic exact grid"
+      },
+      "candidateChecks": [
+        {
+          "fixture": 0,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 1,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": true,
+          "finalDenseWinnerMatchesFixture": false,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": true,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        }
+      ],
+      "controlChecks": [
+        {
+          "fixture": 0,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 1,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        }
+      ],
+      "candidateSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 2824.6101250000065,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 170,
+                "nextUpperBucket": 4776,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 175100.203125,
+                "totalUnits": 11206413,
+                "tieUnits": 13,
+                "fineBucket": 43775,
+                "fineLocal": 114,
+                "fineWinner": 114,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 1929.8072079999984,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 10,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 6,
+                "fineBucket": 49667,
+                "fineWinner": 1286,
+                "bestBucket": 49667,
+                "bestWinner": 1286,
+                "certificateGap": 37023,
+                "nextUpperBucket": 12644,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 0,
+            "dynamicFineGrids": 1,
+            "finalWinner": 1286,
+            "finalBucket": 49667,
+            "exactShadows": [
+              {
+                "group": 10,
+                "width": 198669.890625,
+                "totalUnits": 12714873,
+                "tieUnits": 121,
+                "fineBucket": 49667,
+                "fineLocal": 6,
+                "fineWinner": 1286,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        }
+      ],
+      "controlSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 3253.607250000001,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 364,
+                "nextUpperBucket": 4582,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 2379.218792000014,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 5,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 119,
+                "fineBucket": 3845,
+                "fineWinner": 1399,
+                "bestBucket": 3845,
+                "bestWinner": 1399,
+                "certificateGap": -8799,
+                "nextUpperBucket": 12644,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 221,
+                "fineBucket": 12620,
+                "fineWinner": 477,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 44,
+                "nextUpperBucket": 12576,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 12552,
+                "fineWinner": 11,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 249,
+                "nextUpperBucket": 12371,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        }
+      ]
+    }
+  ]
+}

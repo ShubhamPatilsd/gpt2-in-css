@@ -1,0 +1,3289 @@
+{
+  "experiment": "gpt2-hvar-grid-output-head-certified-int10-unrolled6-gated-hot2-precomputed",
+  "baseline": "gpt2-hvar-grid-output-head-certified-int10-unrolled6-gated",
+  "chromeVersion": "153.0.8010.36",
+  "rounds": 1,
+  "fixtureLimit": 10,
+  "semanticOnly": true,
+  "semanticsPass": true,
+  "decision": "reject-scaling",
+  "semanticGuards": {
+    "allTenFixtures": true,
+    "allChecksPass": true,
+    "fixture4GroupOneThenZero": true,
+    "fixture1ActiveDynamicGroup5": true
+  },
+  "checks": [
+    {
+      "fixture": 0,
+      "expectedActive": 2,
+      "activeStagesMatch": true,
+      "finalWinnerMatches": true,
+      "finalBucketMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        },
+        {
+          "stage": 1,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "cacheChecks": [
+        {
+          "group": 0,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        },
+        {
+          "group": 1,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "fixture": 1,
+      "expectedActive": 3,
+      "activeStagesMatch": true,
+      "finalWinnerMatches": true,
+      "finalBucketMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        },
+        {
+          "stage": 1,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        },
+        {
+          "stage": 2,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "cacheChecks": [
+        {
+          "group": 0,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        },
+        {
+          "group": 1,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "fixture": 2,
+      "expectedActive": 1,
+      "activeStagesMatch": true,
+      "finalWinnerMatches": true,
+      "finalBucketMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "cacheChecks": [
+        {
+          "group": 0,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        },
+        {
+          "group": 1,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "fixture": 3,
+      "expectedActive": 2,
+      "activeStagesMatch": true,
+      "finalWinnerMatches": true,
+      "finalBucketMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        },
+        {
+          "stage": 1,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "cacheChecks": [
+        {
+          "group": 0,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        },
+        {
+          "group": 1,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "fixture": 4,
+      "expectedActive": 2,
+      "activeStagesMatch": true,
+      "finalWinnerMatches": true,
+      "finalBucketMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        },
+        {
+          "stage": 1,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "cacheChecks": [
+        {
+          "group": 0,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        },
+        {
+          "group": 1,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "fixture": 5,
+      "expectedActive": 1,
+      "activeStagesMatch": true,
+      "finalWinnerMatches": true,
+      "finalBucketMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "cacheChecks": [
+        {
+          "group": 0,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        },
+        {
+          "group": 1,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "fixture": 6,
+      "expectedActive": 2,
+      "activeStagesMatch": true,
+      "finalWinnerMatches": true,
+      "finalBucketMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        },
+        {
+          "stage": 1,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "cacheChecks": [
+        {
+          "group": 0,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        },
+        {
+          "group": 1,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "fixture": 7,
+      "expectedActive": 2,
+      "activeStagesMatch": true,
+      "finalWinnerMatches": true,
+      "finalBucketMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        },
+        {
+          "stage": 1,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "cacheChecks": [
+        {
+          "group": 0,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        },
+        {
+          "group": 1,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "fixture": 8,
+      "expectedActive": 2,
+      "activeStagesMatch": true,
+      "finalWinnerMatches": true,
+      "finalBucketMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        },
+        {
+          "stage": 1,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "cacheChecks": [
+        {
+          "group": 0,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        },
+        {
+          "group": 1,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "fixture": 9,
+      "expectedActive": 1,
+      "activeStagesMatch": true,
+      "finalWinnerMatches": true,
+      "finalBucketMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "baselineStagePresent": true,
+          "groupMatches": true,
+          "fixtureFineWinnerMatches": true,
+          "fineWinnerMatches": true,
+          "fineBucketMatches": true,
+          "fixtureBestWinnerMatches": true,
+          "bestWinnerMatches": true,
+          "bestBucketMatches": true,
+          "gapMatches": true,
+          "doneMatches": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "cacheChecks": [
+        {
+          "group": 0,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        },
+        {
+          "group": 1,
+          "visible": true,
+          "fixedGroup": true,
+          "winnerMatches": true,
+          "bucketMatches": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "semanticScreen": [
+    {
+      "fixture": 0,
+      "check": {
+        "fixture": 0,
+        "expectedActive": 2,
+        "activeStagesMatch": true,
+        "finalWinnerMatches": true,
+        "finalBucketMatches": true,
+        "stageChecks": [
+          {
+            "stage": 0,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          },
+          {
+            "stage": 1,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          }
+        ],
+        "cacheChecks": [
+          {
+            "group": 0,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          },
+          {
+            "group": 1,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          }
+        ],
+        "pass": true
+      },
+      "variant": {
+        "hotCaches": [
+          {
+            "group": 0,
+            "gridDisplay": "grid",
+            "groupProperty": 0,
+            "fineBucket": 4946,
+            "fineLocal": 11,
+            "fineWinner": 11
+          },
+          {
+            "group": 1,
+            "gridDisplay": "grid",
+            "groupProperty": 1,
+            "fineBucket": 4558,
+            "fineLocal": 34,
+            "fineWinner": 290
+          }
+        ],
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "hot-cache-0",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 0,
+            "choiceGroup": 0,
+            "fineBucket": 4946,
+            "fineLocal": 11,
+            "fineWinner": 11,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "certificateGap": 46,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "route": "hot-cache-1",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 1,
+            "choiceGroup": 1,
+            "fineBucket": 4558,
+            "fineLocal": 34,
+            "fineWinner": 290,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "certificateGap": 558,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "hotCacheHits": 2,
+        "nonHotDynamicStages": 0,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      },
+      "baseline": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4946,
+            "fineWinner": 11,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "certificateGap": 46,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 4558,
+            "fineWinner": 290,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "certificateGap": 558,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      }
+    },
+    {
+      "fixture": 1,
+      "check": {
+        "fixture": 1,
+        "expectedActive": 3,
+        "activeStagesMatch": true,
+        "finalWinnerMatches": true,
+        "finalBucketMatches": true,
+        "stageChecks": [
+          {
+            "stage": 0,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          },
+          {
+            "stage": 1,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          },
+          {
+            "stage": 2,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          }
+        ],
+        "cacheChecks": [
+          {
+            "group": 0,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          },
+          {
+            "group": 1,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          }
+        ],
+        "pass": true
+      },
+      "variant": {
+        "hotCaches": [
+          {
+            "group": 0,
+            "gridDisplay": "grid",
+            "groupProperty": 0,
+            "fineBucket": 12552,
+            "fineLocal": 11,
+            "fineWinner": 11
+          },
+          {
+            "group": 1,
+            "gridDisplay": "grid",
+            "groupProperty": 1,
+            "fineBucket": 12620,
+            "fineLocal": 221,
+            "fineWinner": 477
+          }
+        ],
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "hot-cache-0",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 0,
+            "choiceGroup": 0,
+            "fineBucket": 12552,
+            "fineLocal": 11,
+            "fineWinner": 11,
+            "bestBucket": 12552,
+            "bestWinner": 11,
+            "certificateGap": -516,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "route": "hot-cache-1",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 1,
+            "choiceGroup": 1,
+            "fineBucket": 12620,
+            "fineLocal": 221,
+            "fineWinner": 477,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "certificateGap": -181,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 5,
+            "route": "dynamic-exact",
+            "dynamicDisplay": "grid",
+            "dynamicGroup": 5,
+            "choiceGroup": 5,
+            "fineBucket": 12440,
+            "fineLocal": 71,
+            "fineWinner": 1351,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "certificateGap": 249,
+            "done": 1
+          }
+        ],
+        "activeStages": 3,
+        "hotCacheHits": 2,
+        "nonHotDynamicStages": 1,
+        "finalWinner": 477,
+        "finalBucket": 12620
+      },
+      "baseline": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 12552,
+            "fineWinner": 11,
+            "bestBucket": 12552,
+            "bestWinner": 11,
+            "certificateGap": -516,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 12620,
+            "fineWinner": 477,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "certificateGap": -181,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 5,
+            "fineBucket": 12440,
+            "fineWinner": 1351,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "certificateGap": 249,
+            "done": 1
+          }
+        ],
+        "activeStages": 3,
+        "finalWinner": 477,
+        "finalBucket": 12620
+      }
+    },
+    {
+      "fixture": 2,
+      "check": {
+        "fixture": 2,
+        "expectedActive": 1,
+        "activeStagesMatch": true,
+        "finalWinnerMatches": true,
+        "finalBucketMatches": true,
+        "stageChecks": [
+          {
+            "stage": 0,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          }
+        ],
+        "cacheChecks": [
+          {
+            "group": 0,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          },
+          {
+            "group": 1,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          }
+        ],
+        "pass": true
+      },
+      "variant": {
+        "hotCaches": [
+          {
+            "group": 0,
+            "gridDisplay": "grid",
+            "groupProperty": 0,
+            "fineBucket": 5137,
+            "fineLocal": 198,
+            "fineWinner": 198
+          },
+          {
+            "group": 1,
+            "gridDisplay": "grid",
+            "groupProperty": 1,
+            "fineBucket": 4568,
+            "fineLocal": 58,
+            "fineWinner": 314
+          }
+        ],
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "hot-cache-0",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 0,
+            "choiceGroup": 0,
+            "fineBucket": 5137,
+            "fineLocal": 198,
+            "fineWinner": 198,
+            "bestBucket": 5137,
+            "bestWinner": 198,
+            "certificateGap": 353,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "hotCacheHits": 1,
+        "nonHotDynamicStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 5137
+      },
+      "baseline": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5137,
+            "fineWinner": 198,
+            "bestBucket": 5137,
+            "bestWinner": 198,
+            "certificateGap": 353,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5137
+      }
+    },
+    {
+      "fixture": 3,
+      "check": {
+        "fixture": 3,
+        "expectedActive": 2,
+        "activeStagesMatch": true,
+        "finalWinnerMatches": true,
+        "finalBucketMatches": true,
+        "stageChecks": [
+          {
+            "stage": 0,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          },
+          {
+            "stage": 1,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          }
+        ],
+        "cacheChecks": [
+          {
+            "group": 0,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          },
+          {
+            "group": 1,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          }
+        ],
+        "pass": true
+      },
+      "variant": {
+        "hotCaches": [
+          {
+            "group": 0,
+            "gridDisplay": "grid",
+            "groupProperty": 0,
+            "fineBucket": 4577,
+            "fineLocal": 198,
+            "fineWinner": 198
+          },
+          {
+            "group": 1,
+            "gridDisplay": "grid",
+            "groupProperty": 1,
+            "fineBucket": 4382,
+            "fineLocal": 34,
+            "fineWinner": 290
+          }
+        ],
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "hot-cache-0",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 0,
+            "choiceGroup": 0,
+            "fineBucket": 4577,
+            "fineLocal": 198,
+            "fineWinner": 198,
+            "bestBucket": 4577,
+            "bestWinner": 198,
+            "certificateGap": -35,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "route": "hot-cache-1",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 1,
+            "choiceGroup": 1,
+            "fineBucket": 4382,
+            "fineLocal": 34,
+            "fineWinner": 290,
+            "bestBucket": 4577,
+            "bestWinner": 198,
+            "certificateGap": 526,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "hotCacheHits": 2,
+        "nonHotDynamicStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 4577
+      },
+      "baseline": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4577,
+            "fineWinner": 198,
+            "bestBucket": 4577,
+            "bestWinner": 198,
+            "certificateGap": -35,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 4382,
+            "fineWinner": 290,
+            "bestBucket": 4577,
+            "bestWinner": 198,
+            "certificateGap": 526,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4577
+      }
+    },
+    {
+      "fixture": 4,
+      "check": {
+        "fixture": 4,
+        "expectedActive": 2,
+        "activeStagesMatch": true,
+        "finalWinnerMatches": true,
+        "finalBucketMatches": true,
+        "stageChecks": [
+          {
+            "stage": 0,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          },
+          {
+            "stage": 1,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          }
+        ],
+        "cacheChecks": [
+          {
+            "group": 0,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          },
+          {
+            "group": 1,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          }
+        ],
+        "pass": true
+      },
+      "variant": {
+        "hotCaches": [
+          {
+            "group": 0,
+            "gridDisplay": "grid",
+            "groupProperty": 0,
+            "fineBucket": 4193,
+            "fineLocal": 198,
+            "fineWinner": 198
+          },
+          {
+            "group": 1,
+            "gridDisplay": "grid",
+            "groupProperty": 1,
+            "fineBucket": 4440,
+            "fineLocal": 6,
+            "fineWinner": 262
+          }
+        ],
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "route": "hot-cache-1",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 1,
+            "choiceGroup": 1,
+            "fineBucket": 4440,
+            "fineLocal": 6,
+            "fineWinner": 262,
+            "bestBucket": 4440,
+            "bestWinner": 262,
+            "certificateGap": -186,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "route": "hot-cache-0",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 0,
+            "choiceGroup": 0,
+            "fineBucket": 4193,
+            "fineLocal": 198,
+            "fineWinner": 198,
+            "bestBucket": 4440,
+            "bestWinner": 262,
+            "certificateGap": 281,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "hotCacheHits": 2,
+        "nonHotDynamicStages": 0,
+        "finalWinner": 262,
+        "finalBucket": 4440
+      },
+      "baseline": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "fineBucket": 4440,
+            "fineWinner": 262,
+            "bestBucket": 4440,
+            "bestWinner": 262,
+            "certificateGap": -186,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "fineBucket": 4193,
+            "fineWinner": 198,
+            "bestBucket": 4440,
+            "bestWinner": 262,
+            "certificateGap": 281,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4440
+      }
+    },
+    {
+      "fixture": 5,
+      "check": {
+        "fixture": 5,
+        "expectedActive": 1,
+        "activeStagesMatch": true,
+        "finalWinnerMatches": true,
+        "finalBucketMatches": true,
+        "stageChecks": [
+          {
+            "stage": 0,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          }
+        ],
+        "cacheChecks": [
+          {
+            "group": 0,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          },
+          {
+            "group": 1,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          }
+        ],
+        "pass": true
+      },
+      "variant": {
+        "hotCaches": [
+          {
+            "group": 0,
+            "gridDisplay": "grid",
+            "groupProperty": 0,
+            "fineBucket": 5190,
+            "fineLocal": 198,
+            "fineWinner": 198
+          },
+          {
+            "group": 1,
+            "gridDisplay": "grid",
+            "groupProperty": 1,
+            "fineBucket": 4620,
+            "fineLocal": 127,
+            "fineWinner": 383
+          }
+        ],
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "hot-cache-0",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 0,
+            "choiceGroup": 0,
+            "fineBucket": 5190,
+            "fineLocal": 198,
+            "fineWinner": 198,
+            "bestBucket": 5190,
+            "bestWinner": 198,
+            "certificateGap": 379,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "hotCacheHits": 1,
+        "nonHotDynamicStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 5190
+      },
+      "baseline": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5190,
+            "fineWinner": 198,
+            "bestBucket": 5190,
+            "bestWinner": 198,
+            "certificateGap": 379,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5190
+      }
+    },
+    {
+      "fixture": 6,
+      "check": {
+        "fixture": 6,
+        "expectedActive": 2,
+        "activeStagesMatch": true,
+        "finalWinnerMatches": true,
+        "finalBucketMatches": true,
+        "stageChecks": [
+          {
+            "stage": 0,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          },
+          {
+            "stage": 1,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          }
+        ],
+        "cacheChecks": [
+          {
+            "group": 0,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          },
+          {
+            "group": 1,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          }
+        ],
+        "pass": true
+      },
+      "variant": {
+        "hotCaches": [
+          {
+            "group": 0,
+            "gridDisplay": "grid",
+            "groupProperty": 0,
+            "fineBucket": 4036,
+            "fineLocal": 11,
+            "fineWinner": 11
+          },
+          {
+            "group": 1,
+            "gridDisplay": "grid",
+            "groupProperty": 1,
+            "fineBucket": 4074,
+            "fineLocal": 6,
+            "fineWinner": 262
+          }
+        ],
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "hot-cache-0",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 0,
+            "choiceGroup": 0,
+            "fineBucket": 4036,
+            "fineLocal": 11,
+            "fineWinner": 11,
+            "bestBucket": 4036,
+            "bestWinner": 11,
+            "certificateGap": -310,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "route": "hot-cache-1",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 1,
+            "choiceGroup": 1,
+            "fineBucket": 4074,
+            "fineLocal": 6,
+            "fineWinner": 262,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "certificateGap": 50,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "hotCacheHits": 2,
+        "nonHotDynamicStages": 0,
+        "finalWinner": 262,
+        "finalBucket": 4074
+      },
+      "baseline": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4036,
+            "fineWinner": 11,
+            "bestBucket": 4036,
+            "bestWinner": 11,
+            "certificateGap": -310,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 4074,
+            "fineWinner": 262,
+            "bestBucket": 4074,
+            "bestWinner": 262,
+            "certificateGap": 50,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4074
+      }
+    },
+    {
+      "fixture": 7,
+      "check": {
+        "fixture": 7,
+        "expectedActive": 2,
+        "activeStagesMatch": true,
+        "finalWinnerMatches": true,
+        "finalBucketMatches": true,
+        "stageChecks": [
+          {
+            "stage": 0,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          },
+          {
+            "stage": 1,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          }
+        ],
+        "cacheChecks": [
+          {
+            "group": 0,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          },
+          {
+            "group": 1,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          }
+        ],
+        "pass": true
+      },
+      "variant": {
+        "hotCaches": [
+          {
+            "group": 0,
+            "gridDisplay": "grid",
+            "groupProperty": 0,
+            "fineBucket": 4132,
+            "fineLocal": 198,
+            "fineWinner": 198
+          },
+          {
+            "group": 1,
+            "gridDisplay": "grid",
+            "groupProperty": 1,
+            "fineBucket": 4055,
+            "fineLocal": 6,
+            "fineWinner": 262
+          }
+        ],
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "hot-cache-0",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 0,
+            "choiceGroup": 0,
+            "fineBucket": 4132,
+            "fineLocal": 198,
+            "fineWinner": 198,
+            "bestBucket": 4132,
+            "bestWinner": 198,
+            "certificateGap": -197,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "route": "hot-cache-1",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 1,
+            "choiceGroup": 1,
+            "fineBucket": 4055,
+            "fineLocal": 6,
+            "fineWinner": 262,
+            "bestBucket": 4132,
+            "bestWinner": 198,
+            "certificateGap": 112,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "hotCacheHits": 2,
+        "nonHotDynamicStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 4132
+      },
+      "baseline": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 4132,
+            "fineWinner": 198,
+            "bestBucket": 4132,
+            "bestWinner": 198,
+            "certificateGap": -197,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 4055,
+            "fineWinner": 262,
+            "bestBucket": 4132,
+            "bestWinner": 198,
+            "certificateGap": 112,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4132
+      }
+    },
+    {
+      "fixture": 8,
+      "check": {
+        "fixture": 8,
+        "expectedActive": 2,
+        "activeStagesMatch": true,
+        "finalWinnerMatches": true,
+        "finalBucketMatches": true,
+        "stageChecks": [
+          {
+            "stage": 0,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          },
+          {
+            "stage": 1,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          }
+        ],
+        "cacheChecks": [
+          {
+            "group": 0,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          },
+          {
+            "group": 1,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          }
+        ],
+        "pass": true
+      },
+      "variant": {
+        "hotCaches": [
+          {
+            "group": 0,
+            "gridDisplay": "grid",
+            "groupProperty": 0,
+            "fineBucket": 5488,
+            "fineLocal": 13,
+            "fineWinner": 13
+          },
+          {
+            "group": 1,
+            "gridDisplay": "grid",
+            "groupProperty": 1,
+            "fineBucket": 5388,
+            "fineLocal": 62,
+            "fineWinner": 318
+          }
+        ],
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "hot-cache-0",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 0,
+            "choiceGroup": 0,
+            "fineBucket": 5488,
+            "fineLocal": 13,
+            "fineWinner": 13,
+            "bestBucket": 5488,
+            "bestWinner": 13,
+            "certificateGap": -373,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "route": "hot-cache-1",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 1,
+            "choiceGroup": 1,
+            "fineBucket": 5388,
+            "fineLocal": 62,
+            "fineWinner": 318,
+            "bestBucket": 5488,
+            "bestWinner": 13,
+            "certificateGap": 299,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "hotCacheHits": 2,
+        "nonHotDynamicStages": 0,
+        "finalWinner": 13,
+        "finalBucket": 5488
+      },
+      "baseline": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5488,
+            "fineWinner": 13,
+            "bestBucket": 5488,
+            "bestWinner": 13,
+            "certificateGap": -373,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "fineBucket": 5388,
+            "fineWinner": 318,
+            "bestBucket": 5488,
+            "bestWinner": 13,
+            "certificateGap": 299,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 13,
+        "finalBucket": 5488
+      }
+    },
+    {
+      "fixture": 9,
+      "check": {
+        "fixture": 9,
+        "expectedActive": 1,
+        "activeStagesMatch": true,
+        "finalWinnerMatches": true,
+        "finalBucketMatches": true,
+        "stageChecks": [
+          {
+            "stage": 0,
+            "baselineStagePresent": true,
+            "groupMatches": true,
+            "fixtureFineWinnerMatches": true,
+            "fineWinnerMatches": true,
+            "fineBucketMatches": true,
+            "fixtureBestWinnerMatches": true,
+            "bestWinnerMatches": true,
+            "bestBucketMatches": true,
+            "gapMatches": true,
+            "doneMatches": true,
+            "routeDisplayMatches": true
+          }
+        ],
+        "cacheChecks": [
+          {
+            "group": 0,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          },
+          {
+            "group": 1,
+            "visible": true,
+            "fixedGroup": true,
+            "winnerMatches": true,
+            "bucketMatches": true
+          }
+        ],
+        "pass": true
+      },
+      "variant": {
+        "hotCaches": [
+          {
+            "group": 0,
+            "gridDisplay": "grid",
+            "groupProperty": 0,
+            "fineBucket": 5026,
+            "fineLocal": 11,
+            "fineWinner": 11
+          },
+          {
+            "group": 1,
+            "gridDisplay": "grid",
+            "groupProperty": 1,
+            "fineBucket": 4626,
+            "fineLocal": 34,
+            "fineWinner": 290
+          }
+        ],
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "hot-cache-0",
+            "dynamicDisplay": "none",
+            "dynamicGroup": 0,
+            "choiceGroup": 0,
+            "fineBucket": 5026,
+            "fineLocal": 11,
+            "fineWinner": 11,
+            "bestBucket": 5026,
+            "bestWinner": 11,
+            "certificateGap": 56,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "hotCacheHits": 1,
+        "nonHotDynamicStages": 0,
+        "finalWinner": 11,
+        "finalBucket": 5026
+      },
+      "baseline": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "fineBucket": 5026,
+            "fineWinner": 11,
+            "bestBucket": 5026,
+            "bestWinner": 11,
+            "certificateGap": 56,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "finalWinner": 11,
+        "finalBucket": 5026
+      }
+    }
+  ],
+  "corpusCoverage": {
+    "fixture4GroupOneThenZero": true,
+    "fixture1ActiveDynamicGroup5": true,
+    "hotCacheHits": 17,
+    "nonHotDynamicStages": 1,
+    "activeStages": 18
+  },
+  "cleanSingleFixtureDiagnostic": {
+    "fixtureLimit": 1,
+    "comparison": {
+      "variant": {
+        "count": 1,
+        "minimum": 932.0782499999914,
+        "median": 932.0782499999914,
+        "p90": 932.0782499999914,
+        "maximum": 932.0782499999914,
+        "mean": 932.0782499999914
+      },
+      "baseline": {
+        "count": 1,
+        "minimum": 519.6771670000016,
+        "median": 519.6771670000016,
+        "p90": 519.6771670000016,
+        "maximum": 519.6771670000016,
+        "mean": 519.6771670000016
+      },
+      "meanDeltaMilliseconds": 412.40108299998974,
+      "meanRatio": 1.7935716810124707,
+      "meanSpeedupPercent": -79.35716810124707
+    },
+    "cold": {
+      "variantLoadMilliseconds": 50683.620749999995,
+      "baselineLoadMilliseconds": 61193.872,
+      "variantFirstEvaluationMilliseconds": 3961.7867499999993,
+      "baselineFirstEvaluationMilliseconds": 3158.0403750000114,
+      "variantLoadAndFirstEvaluationMilliseconds": 54645.407499999994,
+      "baselineLoadAndFirstEvaluationMilliseconds": 64351.912375000014
+    },
+    "note": "clean fixture-0 diagnostic collected before the contaminated full run"
+  },
+  "fullTimingStatus": "not reported: the completed full timing pass overlapped another Chrome test briefly and then failed in post-processing before persistence; it was not repeated because the clean fixture-0 diagnostic was already 1.79x slower",
+  "roundsDetail": [
+    {
+      "round": 0,
+      "cold": {
+        "variantLoadMilliseconds": 51238.579417,
+        "baselineLoadMilliseconds": 59114.078292,
+        "variantFirstEvaluationMilliseconds": 3478.3906669999997,
+        "baselineFirstEvaluationMilliseconds": 2819.2341659999947,
+        "variantLoadAndFirstEvaluationMilliseconds": 54716.970084,
+        "baselineLoadAndFirstEvaluationMilliseconds": 61933.31245799999
+      },
+      "requestFailures": {
+        "variant": [],
+        "baseline": []
+      },
+      "semanticGuards": {
+        "allTenFixtures": true,
+        "allChecksPass": true,
+        "fixture4GroupOneThenZero": true,
+        "fixture1ActiveDynamicGroup5": true
+      },
+      "semanticScreen": [
+        {
+          "fixture": 0,
+          "check": {
+            "fixture": 0,
+            "expectedActive": 2,
+            "activeStagesMatch": true,
+            "finalWinnerMatches": true,
+            "finalBucketMatches": true,
+            "stageChecks": [
+              {
+                "stage": 0,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              },
+              {
+                "stage": 1,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              }
+            ],
+            "cacheChecks": [
+              {
+                "group": 0,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              },
+              {
+                "group": 1,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              }
+            ],
+            "pass": true
+          },
+          "variant": {
+            "hotCaches": [
+              {
+                "group": 0,
+                "gridDisplay": "grid",
+                "groupProperty": 0,
+                "fineBucket": 4946,
+                "fineLocal": 11,
+                "fineWinner": 11
+              },
+              {
+                "group": 1,
+                "gridDisplay": "grid",
+                "groupProperty": 1,
+                "fineBucket": 4558,
+                "fineLocal": 34,
+                "fineWinner": 290
+              }
+            ],
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "hot-cache-0",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 0,
+                "choiceGroup": 0,
+                "fineBucket": 4946,
+                "fineLocal": 11,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 46,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "hot-cache-1",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 1,
+                "choiceGroup": 1,
+                "fineBucket": 4558,
+                "fineLocal": 34,
+                "fineWinner": 290,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 558,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "hotCacheHits": 2,
+            "nonHotDynamicStages": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          },
+          "baseline": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 46,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "fineBucket": 4558,
+                "fineWinner": 290,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 558,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "check": {
+            "fixture": 1,
+            "expectedActive": 3,
+            "activeStagesMatch": true,
+            "finalWinnerMatches": true,
+            "finalBucketMatches": true,
+            "stageChecks": [
+              {
+                "stage": 0,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              },
+              {
+                "stage": 1,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              },
+              {
+                "stage": 2,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              }
+            ],
+            "cacheChecks": [
+              {
+                "group": 0,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              },
+              {
+                "group": 1,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              }
+            ],
+            "pass": true
+          },
+          "variant": {
+            "hotCaches": [
+              {
+                "group": 0,
+                "gridDisplay": "grid",
+                "groupProperty": 0,
+                "fineBucket": 12552,
+                "fineLocal": 11,
+                "fineWinner": 11
+              },
+              {
+                "group": 1,
+                "gridDisplay": "grid",
+                "groupProperty": 1,
+                "fineBucket": 12620,
+                "fineLocal": 221,
+                "fineWinner": 477
+              }
+            ],
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "hot-cache-0",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 0,
+                "choiceGroup": 0,
+                "fineBucket": 12552,
+                "fineLocal": 11,
+                "fineWinner": 11,
+                "bestBucket": 12552,
+                "bestWinner": 11,
+                "certificateGap": -516,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "hot-cache-1",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 1,
+                "choiceGroup": 1,
+                "fineBucket": 12620,
+                "fineLocal": 221,
+                "fineWinner": 477,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": -181,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 5,
+                "route": "dynamic-exact",
+                "dynamicDisplay": "grid",
+                "dynamicGroup": 5,
+                "choiceGroup": 5,
+                "fineBucket": 12440,
+                "fineLocal": 71,
+                "fineWinner": 1351,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 249,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "hotCacheHits": 2,
+            "nonHotDynamicStages": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          },
+          "baseline": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 12552,
+                "fineWinner": 11,
+                "bestBucket": 12552,
+                "bestWinner": 11,
+                "certificateGap": -516,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "fineBucket": 12620,
+                "fineWinner": 477,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": -181,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 5,
+                "fineBucket": 12440,
+                "fineWinner": 1351,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 249,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        },
+        {
+          "fixture": 2,
+          "check": {
+            "fixture": 2,
+            "expectedActive": 1,
+            "activeStagesMatch": true,
+            "finalWinnerMatches": true,
+            "finalBucketMatches": true,
+            "stageChecks": [
+              {
+                "stage": 0,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              }
+            ],
+            "cacheChecks": [
+              {
+                "group": 0,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              },
+              {
+                "group": 1,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              }
+            ],
+            "pass": true
+          },
+          "variant": {
+            "hotCaches": [
+              {
+                "group": 0,
+                "gridDisplay": "grid",
+                "groupProperty": 0,
+                "fineBucket": 5137,
+                "fineLocal": 198,
+                "fineWinner": 198
+              },
+              {
+                "group": 1,
+                "gridDisplay": "grid",
+                "groupProperty": 1,
+                "fineBucket": 4568,
+                "fineLocal": 58,
+                "fineWinner": 314
+              }
+            ],
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "hot-cache-0",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 0,
+                "choiceGroup": 0,
+                "fineBucket": 5137,
+                "fineLocal": 198,
+                "fineWinner": 198,
+                "bestBucket": 5137,
+                "bestWinner": 198,
+                "certificateGap": 353,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "hotCacheHits": 1,
+            "nonHotDynamicStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          },
+          "baseline": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 5137,
+                "fineWinner": 198,
+                "bestBucket": 5137,
+                "bestWinner": 198,
+                "certificateGap": 353,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "check": {
+            "fixture": 3,
+            "expectedActive": 2,
+            "activeStagesMatch": true,
+            "finalWinnerMatches": true,
+            "finalBucketMatches": true,
+            "stageChecks": [
+              {
+                "stage": 0,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              },
+              {
+                "stage": 1,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              }
+            ],
+            "cacheChecks": [
+              {
+                "group": 0,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              },
+              {
+                "group": 1,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              }
+            ],
+            "pass": true
+          },
+          "variant": {
+            "hotCaches": [
+              {
+                "group": 0,
+                "gridDisplay": "grid",
+                "groupProperty": 0,
+                "fineBucket": 4577,
+                "fineLocal": 198,
+                "fineWinner": 198
+              },
+              {
+                "group": 1,
+                "gridDisplay": "grid",
+                "groupProperty": 1,
+                "fineBucket": 4382,
+                "fineLocal": 34,
+                "fineWinner": 290
+              }
+            ],
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "hot-cache-0",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 0,
+                "choiceGroup": 0,
+                "fineBucket": 4577,
+                "fineLocal": 198,
+                "fineWinner": 198,
+                "bestBucket": 4577,
+                "bestWinner": 198,
+                "certificateGap": -35,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "hot-cache-1",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 1,
+                "choiceGroup": 1,
+                "fineBucket": 4382,
+                "fineLocal": 34,
+                "fineWinner": 290,
+                "bestBucket": 4577,
+                "bestWinner": 198,
+                "certificateGap": 526,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "hotCacheHits": 2,
+            "nonHotDynamicStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          },
+          "baseline": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 4577,
+                "fineWinner": 198,
+                "bestBucket": 4577,
+                "bestWinner": 198,
+                "certificateGap": -35,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "fineBucket": 4382,
+                "fineWinner": 290,
+                "bestBucket": 4577,
+                "bestWinner": 198,
+                "certificateGap": 526,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "check": {
+            "fixture": 4,
+            "expectedActive": 2,
+            "activeStagesMatch": true,
+            "finalWinnerMatches": true,
+            "finalBucketMatches": true,
+            "stageChecks": [
+              {
+                "stage": 0,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              },
+              {
+                "stage": 1,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              }
+            ],
+            "cacheChecks": [
+              {
+                "group": 0,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              },
+              {
+                "group": 1,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              }
+            ],
+            "pass": true
+          },
+          "variant": {
+            "hotCaches": [
+              {
+                "group": 0,
+                "gridDisplay": "grid",
+                "groupProperty": 0,
+                "fineBucket": 4193,
+                "fineLocal": 198,
+                "fineWinner": 198
+              },
+              {
+                "group": 1,
+                "gridDisplay": "grid",
+                "groupProperty": 1,
+                "fineBucket": 4440,
+                "fineLocal": 6,
+                "fineWinner": 262
+              }
+            ],
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "hot-cache-1",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 1,
+                "choiceGroup": 1,
+                "fineBucket": 4440,
+                "fineLocal": 6,
+                "fineWinner": 262,
+                "bestBucket": 4440,
+                "bestWinner": 262,
+                "certificateGap": -186,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 0,
+                "route": "hot-cache-0",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 0,
+                "choiceGroup": 0,
+                "fineBucket": 4193,
+                "fineLocal": 198,
+                "fineWinner": 198,
+                "bestBucket": 4440,
+                "bestWinner": 262,
+                "certificateGap": 281,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "hotCacheHits": 2,
+            "nonHotDynamicStages": 0,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          },
+          "baseline": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "fineBucket": 4440,
+                "fineWinner": 262,
+                "bestBucket": 4440,
+                "bestWinner": 262,
+                "certificateGap": -186,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 0,
+                "fineBucket": 4193,
+                "fineWinner": 198,
+                "bestBucket": 4440,
+                "bestWinner": 262,
+                "certificateGap": 281,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "check": {
+            "fixture": 5,
+            "expectedActive": 1,
+            "activeStagesMatch": true,
+            "finalWinnerMatches": true,
+            "finalBucketMatches": true,
+            "stageChecks": [
+              {
+                "stage": 0,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              }
+            ],
+            "cacheChecks": [
+              {
+                "group": 0,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              },
+              {
+                "group": 1,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              }
+            ],
+            "pass": true
+          },
+          "variant": {
+            "hotCaches": [
+              {
+                "group": 0,
+                "gridDisplay": "grid",
+                "groupProperty": 0,
+                "fineBucket": 5190,
+                "fineLocal": 198,
+                "fineWinner": 198
+              },
+              {
+                "group": 1,
+                "gridDisplay": "grid",
+                "groupProperty": 1,
+                "fineBucket": 4620,
+                "fineLocal": 127,
+                "fineWinner": 383
+              }
+            ],
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "hot-cache-0",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 0,
+                "choiceGroup": 0,
+                "fineBucket": 5190,
+                "fineLocal": 198,
+                "fineWinner": 198,
+                "bestBucket": 5190,
+                "bestWinner": 198,
+                "certificateGap": 379,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "hotCacheHits": 1,
+            "nonHotDynamicStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          },
+          "baseline": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 5190,
+                "fineWinner": 198,
+                "bestBucket": 5190,
+                "bestWinner": 198,
+                "certificateGap": 379,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "check": {
+            "fixture": 6,
+            "expectedActive": 2,
+            "activeStagesMatch": true,
+            "finalWinnerMatches": true,
+            "finalBucketMatches": true,
+            "stageChecks": [
+              {
+                "stage": 0,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              },
+              {
+                "stage": 1,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              }
+            ],
+            "cacheChecks": [
+              {
+                "group": 0,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              },
+              {
+                "group": 1,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              }
+            ],
+            "pass": true
+          },
+          "variant": {
+            "hotCaches": [
+              {
+                "group": 0,
+                "gridDisplay": "grid",
+                "groupProperty": 0,
+                "fineBucket": 4036,
+                "fineLocal": 11,
+                "fineWinner": 11
+              },
+              {
+                "group": 1,
+                "gridDisplay": "grid",
+                "groupProperty": 1,
+                "fineBucket": 4074,
+                "fineLocal": 6,
+                "fineWinner": 262
+              }
+            ],
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "hot-cache-0",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 0,
+                "choiceGroup": 0,
+                "fineBucket": 4036,
+                "fineLocal": 11,
+                "fineWinner": 11,
+                "bestBucket": 4036,
+                "bestWinner": 11,
+                "certificateGap": -310,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "hot-cache-1",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 1,
+                "choiceGroup": 1,
+                "fineBucket": 4074,
+                "fineLocal": 6,
+                "fineWinner": 262,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 50,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "hotCacheHits": 2,
+            "nonHotDynamicStages": 0,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          },
+          "baseline": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 4036,
+                "fineWinner": 11,
+                "bestBucket": 4036,
+                "bestWinner": 11,
+                "certificateGap": -310,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "fineBucket": 4074,
+                "fineWinner": 262,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 50,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "check": {
+            "fixture": 7,
+            "expectedActive": 2,
+            "activeStagesMatch": true,
+            "finalWinnerMatches": true,
+            "finalBucketMatches": true,
+            "stageChecks": [
+              {
+                "stage": 0,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              },
+              {
+                "stage": 1,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              }
+            ],
+            "cacheChecks": [
+              {
+                "group": 0,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              },
+              {
+                "group": 1,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              }
+            ],
+            "pass": true
+          },
+          "variant": {
+            "hotCaches": [
+              {
+                "group": 0,
+                "gridDisplay": "grid",
+                "groupProperty": 0,
+                "fineBucket": 4132,
+                "fineLocal": 198,
+                "fineWinner": 198
+              },
+              {
+                "group": 1,
+                "gridDisplay": "grid",
+                "groupProperty": 1,
+                "fineBucket": 4055,
+                "fineLocal": 6,
+                "fineWinner": 262
+              }
+            ],
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "hot-cache-0",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 0,
+                "choiceGroup": 0,
+                "fineBucket": 4132,
+                "fineLocal": 198,
+                "fineWinner": 198,
+                "bestBucket": 4132,
+                "bestWinner": 198,
+                "certificateGap": -197,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "hot-cache-1",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 1,
+                "choiceGroup": 1,
+                "fineBucket": 4055,
+                "fineLocal": 6,
+                "fineWinner": 262,
+                "bestBucket": 4132,
+                "bestWinner": 198,
+                "certificateGap": 112,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "hotCacheHits": 2,
+            "nonHotDynamicStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          },
+          "baseline": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 4132,
+                "fineWinner": 198,
+                "bestBucket": 4132,
+                "bestWinner": 198,
+                "certificateGap": -197,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "fineBucket": 4055,
+                "fineWinner": 262,
+                "bestBucket": 4132,
+                "bestWinner": 198,
+                "certificateGap": 112,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "check": {
+            "fixture": 8,
+            "expectedActive": 2,
+            "activeStagesMatch": true,
+            "finalWinnerMatches": true,
+            "finalBucketMatches": true,
+            "stageChecks": [
+              {
+                "stage": 0,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              },
+              {
+                "stage": 1,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              }
+            ],
+            "cacheChecks": [
+              {
+                "group": 0,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              },
+              {
+                "group": 1,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              }
+            ],
+            "pass": true
+          },
+          "variant": {
+            "hotCaches": [
+              {
+                "group": 0,
+                "gridDisplay": "grid",
+                "groupProperty": 0,
+                "fineBucket": 5488,
+                "fineLocal": 13,
+                "fineWinner": 13
+              },
+              {
+                "group": 1,
+                "gridDisplay": "grid",
+                "groupProperty": 1,
+                "fineBucket": 5388,
+                "fineLocal": 62,
+                "fineWinner": 318
+              }
+            ],
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "hot-cache-0",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 0,
+                "choiceGroup": 0,
+                "fineBucket": 5488,
+                "fineLocal": 13,
+                "fineWinner": 13,
+                "bestBucket": 5488,
+                "bestWinner": 13,
+                "certificateGap": -373,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "hot-cache-1",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 1,
+                "choiceGroup": 1,
+                "fineBucket": 5388,
+                "fineLocal": 62,
+                "fineWinner": 318,
+                "bestBucket": 5488,
+                "bestWinner": 13,
+                "certificateGap": 299,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "hotCacheHits": 2,
+            "nonHotDynamicStages": 0,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          },
+          "baseline": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 5488,
+                "fineWinner": 13,
+                "bestBucket": 5488,
+                "bestWinner": 13,
+                "certificateGap": -373,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "fineBucket": 5388,
+                "fineWinner": 318,
+                "bestBucket": 5488,
+                "bestWinner": 13,
+                "certificateGap": 299,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "check": {
+            "fixture": 9,
+            "expectedActive": 1,
+            "activeStagesMatch": true,
+            "finalWinnerMatches": true,
+            "finalBucketMatches": true,
+            "stageChecks": [
+              {
+                "stage": 0,
+                "baselineStagePresent": true,
+                "groupMatches": true,
+                "fixtureFineWinnerMatches": true,
+                "fineWinnerMatches": true,
+                "fineBucketMatches": true,
+                "fixtureBestWinnerMatches": true,
+                "bestWinnerMatches": true,
+                "bestBucketMatches": true,
+                "gapMatches": true,
+                "doneMatches": true,
+                "routeDisplayMatches": true
+              }
+            ],
+            "cacheChecks": [
+              {
+                "group": 0,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              },
+              {
+                "group": 1,
+                "visible": true,
+                "fixedGroup": true,
+                "winnerMatches": true,
+                "bucketMatches": true
+              }
+            ],
+            "pass": true
+          },
+          "variant": {
+            "hotCaches": [
+              {
+                "group": 0,
+                "gridDisplay": "grid",
+                "groupProperty": 0,
+                "fineBucket": 5026,
+                "fineLocal": 11,
+                "fineWinner": 11
+              },
+              {
+                "group": 1,
+                "gridDisplay": "grid",
+                "groupProperty": 1,
+                "fineBucket": 4626,
+                "fineLocal": 34,
+                "fineWinner": 290
+              }
+            ],
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "hot-cache-0",
+                "dynamicDisplay": "none",
+                "dynamicGroup": 0,
+                "choiceGroup": 0,
+                "fineBucket": 5026,
+                "fineLocal": 11,
+                "fineWinner": 11,
+                "bestBucket": 5026,
+                "bestWinner": 11,
+                "certificateGap": 56,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "hotCacheHits": 1,
+            "nonHotDynamicStages": 0,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          },
+          "baseline": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 5026,
+                "fineWinner": 11,
+                "bestBucket": 5026,
+                "bestWinner": 11,
+                "certificateGap": 56,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        }
+      ],
+      "variantSamples": [],
+      "baselineSamples": []
+    }
+  ],
+  "generatedBytes": {
+    "index.html": 8300395,
+    "topology.css": 703990,
+    "reference.json": 236721
+  },
+  "reusedAssets": {
+    "fontDirectory": "../gpt2-hvar-grid-output-head-global16-twoplane",
+    "fontFiles": [
+      "score-h0.woff2",
+      "score-h1.woff2",
+      "score-h2.woff2",
+      "score-h3.woff2",
+      "score-h4.woff2",
+      "score-h5.woff2",
+      "score-l0.woff2",
+      "score-l1.woff2",
+      "score-l2.woff2",
+      "score-l3.woff2",
+      "score-l4.woff2",
+      "score-l5.woff2"
+    ],
+    "fontWoff2Bytes": 79431996,
+    "fontsCopiedOrRebuilt": false
+  },
+  "wallMilliseconds": 218939.148625
+}

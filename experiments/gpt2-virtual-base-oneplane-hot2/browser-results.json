@@ -1,0 +1,287 @@
+{
+  "experiment": "gpt2-virtual-base-oneplane-hot2",
+  "control": "gpt2-mixed-precision-hot2-upper",
+  "chromeVersion": "153.0.8010.36",
+  "rounds": 1,
+  "fixtureLimit": 2,
+  "semanticsPass": false,
+  "decision": "reject-transport",
+  "comparison": {
+    "onePlane": {
+      "count": 2,
+      "minimum": 3641.636208000011,
+      "median": 3883.6942909999925,
+      "p90": 3883.6942909999925,
+      "maximum": 3883.6942909999925,
+      "mean": 3762.6652495000017
+    },
+    "twoPlane": {
+      "count": 2,
+      "minimum": 2673.2065409999923,
+      "median": 3861.2774590000045,
+      "p90": 3861.2774590000045,
+      "maximum": 3861.2774590000045,
+      "mean": 3267.2419999999984
+    },
+    "meanRatio": 1.1516334723598691,
+    "meanSpeedupPercent": -15.163347235986912,
+    "perRound": [
+      {
+        "round": 0,
+        "candidateMean": 3762.6652495000017,
+        "controlMean": 3267.2419999999984,
+        "ratio": 1.1516334723598691
+      }
+    ]
+  },
+  "checks": [
+    {
+      "round": 0,
+      "fixture": 0,
+      "sameStages": true,
+      "finalDenseWinner": true,
+      "candidate": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "reused-upper-row",
+            "dynamicDisplay": "none",
+            "fineCode": 11,
+            "fineLocal": 11,
+            "fineBucket": 4946,
+            "fineWinner": 11,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "certificateGap": 364,
+            "nextUpperBucket": 4582,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      },
+      "control": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "route": "reused-upper-row",
+            "dynamicDisplay": "none",
+            "fineCode": 11,
+            "fineLocal": 11,
+            "fineBucket": 4946,
+            "fineWinner": 11,
+            "bestBucket": 4946,
+            "bestWinner": 11,
+            "certificateGap": 364,
+            "nextUpperBucket": 4582,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      },
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 1,
+      "sameStages": false,
+      "finalDenseWinner": true,
+      "candidate": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 5,
+            "route": "dynamic-exact-grid",
+            "dynamicDisplay": "grid",
+            "fineCode": 71,
+            "fineLocal": 71,
+            "fineBucket": 12440,
+            "fineWinner": 1351,
+            "bestBucket": 12440,
+            "bestWinner": 1351,
+            "certificateGap": -205,
+            "nextUpperBucket": 12645,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "route": "reused-upper-row",
+            "dynamicDisplay": "none",
+            "fineCode": 221,
+            "fineLocal": 221,
+            "fineBucket": 12621,
+            "fineWinner": 477,
+            "bestBucket": 12621,
+            "bestWinner": 477,
+            "certificateGap": 45,
+            "nextUpperBucket": 12576,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 0,
+            "route": "reused-upper-row",
+            "dynamicDisplay": "none",
+            "fineCode": 11,
+            "fineLocal": 11,
+            "fineBucket": 12552,
+            "fineWinner": 11,
+            "bestBucket": 12621,
+            "bestWinner": 477,
+            "certificateGap": 250,
+            "nextUpperBucket": 12371,
+            "done": 1
+          }
+        ],
+        "activeStages": 3,
+        "finalWinner": 477,
+        "finalBucket": 12621
+      },
+      "control": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 5,
+            "route": "dynamic-exact-grid",
+            "dynamicDisplay": "grid",
+            "fineCode": 71,
+            "fineLocal": 71,
+            "fineBucket": 12440,
+            "fineWinner": 1351,
+            "bestBucket": 12440,
+            "bestWinner": 1351,
+            "certificateGap": -204,
+            "nextUpperBucket": 12644,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "route": "reused-upper-row",
+            "dynamicDisplay": "none",
+            "fineCode": 221,
+            "fineLocal": 221,
+            "fineBucket": 12620,
+            "fineWinner": 477,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "certificateGap": 44,
+            "nextUpperBucket": 12576,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 0,
+            "route": "reused-upper-row",
+            "dynamicDisplay": "none",
+            "fineCode": 11,
+            "fineLocal": 11,
+            "fineBucket": 12552,
+            "fineWinner": 11,
+            "bestBucket": 12620,
+            "bestWinner": 477,
+            "certificateGap": 249,
+            "nextUpperBucket": 12371,
+            "done": 1
+          }
+        ],
+        "activeStages": 3,
+        "finalWinner": 477,
+        "finalBucket": 12620
+      },
+      "pass": false
+    }
+  ],
+  "cold": [
+    {
+      "round": 0,
+      "candidate": 57820.011292,
+      "control": 59814.756541999996
+    }
+  ],
+  "requestFailures": [
+    {
+      "round": 0,
+      "candidate": [],
+      "control": []
+    }
+  ],
+  "assets": {
+    "coarseFontFiles": 5,
+    "coarseFontWoff2Bytes": 51181024,
+    "exactFontFiles": 6,
+    "exactFontWoff2Bytes": 909368,
+    "fontsCopiedOrRebuilt": true,
+    "exactFontsAreCurrentlyFullVocabulary": false,
+    "onePlaneFontFiles": 6,
+    "onePlaneFontWoff2Bytes": 909368
+  },
+  "virtualBase": {
+    "physicalBaseMaximum": 32767,
+    "biasDeltaMaximum": 32767,
+    "safetyBase": 32,
+    "maximumBiasAxes": 11,
+    "shards": [
+      {
+        "shard": 0,
+        "biasAxes": 11,
+        "maximumL1": 365669,
+        "maximumVirtualBase": 365701,
+        "minimumSafetyAdvance": 32,
+        "regions": 267,
+        "axes": 139
+      },
+      {
+        "shard": 1,
+        "biasAxes": 10,
+        "maximumL1": 349340,
+        "maximumVirtualBase": 349372,
+        "minimumSafetyAdvance": 32,
+        "regions": 266,
+        "axes": 138
+      },
+      {
+        "shard": 2,
+        "biasAxes": 11,
+        "maximumL1": 374517,
+        "maximumVirtualBase": 374549,
+        "minimumSafetyAdvance": 32,
+        "regions": 267,
+        "axes": 139
+      },
+      {
+        "shard": 3,
+        "biasAxes": 10,
+        "maximumL1": 343691,
+        "maximumVirtualBase": 343723,
+        "minimumSafetyAdvance": 32,
+        "regions": 266,
+        "axes": 138
+      },
+      {
+        "shard": 4,
+        "biasAxes": 10,
+        "maximumL1": 345949,
+        "maximumVirtualBase": 345981,
+        "minimumSafetyAdvance": 32,
+        "regions": 266,
+        "axes": 138
+      },
+      {
+        "shard": 5,
+        "biasAxes": 11,
+        "maximumL1": 362306,
+        "maximumVirtualBase": 362338,
+        "minimumSafetyAdvance": 32,
+        "regions": 267,
+        "axes": 139
+      }
+    ]
+  }
+}

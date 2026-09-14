@@ -1,0 +1,3973 @@
+{
+  "chromeVersion": "153.0.8010.36",
+  "rounds": 1,
+  "screeningOnly": true,
+  "robustRepeatPerformed": false,
+  "benchmarkCaveat": "Long-lived Cursor MCP load was present, as in prior paired benchmarks, and was intentionally not terminated.",
+  "candidateK": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "offlineParetoK": [
+    0,
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "allSemanticsPass": true,
+  "candidates": [
+    {
+      "k": 1,
+      "hotGroups": [
+        0
+      ],
+      "fixtureLimit": 10,
+      "semanticsPass": true,
+      "decision": "candidate-win",
+      "comparison": {
+        "candidate": {
+          "count": 10,
+          "minimum": 3391.1887080000015,
+          "median": 4154.548208000007,
+          "p90": 5969.840208000009,
+          "maximum": 5969.840208000009,
+          "mean": 4316.089091700005
+        },
+        "control": {
+          "count": 10,
+          "minimum": 3981.8077080000076,
+          "median": 5422.127666999993,
+          "p90": 6898.611290999979,
+          "maximum": 6898.611290999979,
+          "mean": 5355.797949799993
+        },
+        "meanRatio": 0.8058722775121091,
+        "meanSpeedupPercent": 19.41277224878909
+      },
+      "work": {
+        "upperRowsAdded": 0,
+        "upperRowsReplacedWithGlobalInt16": 256,
+        "activeStageVisits": 17,
+        "reusedHotRows": 9,
+        "dynamicFineGrids": 8
+      },
+      "checks": [
+        {
+          "round": 0,
+          "fixture": 0,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 1,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 2,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 2,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 3,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 4,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 5,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 6,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 7,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 8,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 9,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        }
+      ],
+      "roundsDetail": [
+        {
+          "round": 0,
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "loadOrder": [
+            "candidate",
+            "control"
+          ],
+          "cold": {
+            "candidateLoadMilliseconds": 53184.474875,
+            "controlLoadMilliseconds": 55577.4835
+          },
+          "requestFailures": {
+            "candidate": [],
+            "control": []
+          },
+          "candidateSamples": [
+            {
+              "fixture": 0,
+              "milliseconds": 4154.548208000007,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "bestBucket": 4946,
+                    "bestWinner": 11,
+                    "certificateGap": 46,
+                    "nextUpperBucket": 4900,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "route": "dynamic-exact-grid",
+                    "dynamicDisplay": "grid",
+                    "fineCode": 34,
+                    "fineBucket": 4558,
+                    "fineWinner": 290,
+                    "bestBucket": 4946,
+                    "bestWinner": 11,
+                    "certificateGap": 558,
+                    "nextUpperBucket": 4388,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 2,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 1,
+                "finalWinner": 11
+              }
+            },
+            {
+              "fixture": 1,
+              "milliseconds": 5443.322207999998,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "dynamic-exact-grid",
+                    "dynamicDisplay": "grid",
+                    "fineCode": 221,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "bestBucket": 12620,
+                    "bestWinner": 477,
+                    "certificateGap": -181,
+                    "nextUpperBucket": 12801,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 5,
+                    "route": "dynamic-exact-grid",
+                    "dynamicDisplay": "grid",
+                    "fineCode": 71,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "bestBucket": 12620,
+                    "bestWinner": 477,
+                    "certificateGap": 44,
+                    "nextUpperBucket": 12576,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "bestBucket": 12620,
+                    "bestWinner": 477,
+                    "certificateGap": 249,
+                    "nextUpperBucket": 12371,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 3,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 2,
+                "finalWinner": 477
+              }
+            },
+            {
+              "fixture": 2,
+              "milliseconds": 3421.554333999986,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "bestBucket": 5137,
+                    "bestWinner": 198,
+                    "certificateGap": 353,
+                    "nextUpperBucket": 4784,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 3,
+              "milliseconds": 4750.540999999997,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "dynamic-exact-grid",
+                    "dynamicDisplay": "grid",
+                    "fineCode": 34,
+                    "fineBucket": 4382,
+                    "fineWinner": 290,
+                    "bestBucket": 4382,
+                    "bestWinner": 290,
+                    "certificateGap": -219,
+                    "nextUpperBucket": 4601,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "bestBucket": 4577,
+                    "bestWinner": 198,
+                    "certificateGap": 526,
+                    "nextUpperBucket": 4051,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 2,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 1,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 4,
+              "milliseconds": 3391.1887080000015,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "dynamic-exact-grid",
+                    "dynamicDisplay": "grid",
+                    "fineCode": 6,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "bestBucket": 4440,
+                    "bestWinner": 262,
+                    "certificateGap": 223,
+                    "nextUpperBucket": 4217,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 0,
+                "dynamicFineGrids": 1,
+                "finalWinner": 262
+              }
+            },
+            {
+              "fixture": 5,
+              "milliseconds": 3726.1758340000233,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "bestBucket": 5190,
+                    "bestWinner": 198,
+                    "certificateGap": 379,
+                    "nextUpperBucket": 4811,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 6,
+              "milliseconds": 4100.204209000018,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "dynamic-exact-grid",
+                    "dynamicDisplay": "grid",
+                    "fineCode": 6,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "bestBucket": 4074,
+                    "bestWinner": 262,
+                    "certificateGap": 14,
+                    "nextUpperBucket": 4060,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "bestBucket": 4074,
+                    "bestWinner": 262,
+                    "certificateGap": 50,
+                    "nextUpperBucket": 4024,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 2,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 1,
+                "finalWinner": 262
+              }
+            },
+            {
+              "fixture": 7,
+              "milliseconds": 5969.840208000009,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "dynamic-exact-grid",
+                    "dynamicDisplay": "grid",
+                    "fineCode": 6,
+                    "fineBucket": 4055,
+                    "fineWinner": 262,
+                    "bestBucket": 4055,
+                    "bestWinner": 262,
+                    "certificateGap": -101,
+                    "nextUpperBucket": 4156,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "bestBucket": 4132,
+                    "bestWinner": 198,
+                    "certificateGap": 112,
+                    "nextUpperBucket": 4020,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 2,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 1,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 8,
+              "milliseconds": 4525.720208000013,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "dynamic-exact-grid",
+                    "dynamicDisplay": "grid",
+                    "fineCode": 62,
+                    "fineBucket": 5388,
+                    "fineWinner": 318,
+                    "bestBucket": 5388,
+                    "bestWinner": 318,
+                    "certificateGap": -124,
+                    "nextUpperBucket": 5512,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 13,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "bestBucket": 5488,
+                    "bestWinner": 13,
+                    "certificateGap": 299,
+                    "nextUpperBucket": 5189,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 2,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 1,
+                "finalWinner": 13
+              }
+            },
+            {
+              "fixture": 9,
+              "milliseconds": 3677.796000000002,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "bestBucket": 5026,
+                    "bestWinner": 11,
+                    "certificateGap": 56,
+                    "nextUpperBucket": 4970,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 11
+              }
+            }
+          ],
+          "controlSamples": [
+            {
+              "fixture": 0,
+              "milliseconds": 6562.817582999996,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4558,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4558,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 1,
+              "milliseconds": 4490.0580000000045,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 5,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 5,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 2,
+              "milliseconds": 4712.211707999988,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 3,
+              "milliseconds": 5422.127666999993,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4382,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4382,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 4,
+              "milliseconds": 6488.332040999987,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "fineBucket": 4193,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "fineBucket": 4193,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 5,
+              "milliseconds": 3981.8077080000076,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 6,
+              "milliseconds": 6209.942582999996,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 7,
+              "milliseconds": 6898.611290999979,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4055,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4055,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 8,
+              "milliseconds": 4540.824708,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 5388,
+                    "fineWinner": 318,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 5388,
+                    "fineWinner": 318,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 9,
+              "milliseconds": 4251.246208999975,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "done": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "k": 2,
+      "hotGroups": [
+        0,
+        1
+      ],
+      "fixtureLimit": 10,
+      "semanticsPass": true,
+      "decision": "candidate-win",
+      "comparison": {
+        "candidate": {
+          "count": 10,
+          "minimum": 2958.527791999979,
+          "median": 3504.885416999983,
+          "p90": 4330.096250000002,
+          "maximum": 4330.096250000002,
+          "mean": 3495.5390667999864
+        },
+        "control": {
+          "count": 10,
+          "minimum": 4079.3724999999977,
+          "median": 5664.749499999976,
+          "p90": 7377.430416000017,
+          "maximum": 7377.430416000017,
+          "mean": 5455.352666599996
+        },
+        "meanRatio": 0.6407540044479934,
+        "meanSpeedupPercent": 35.924599555200665
+      },
+      "work": {
+        "upperRowsAdded": 0,
+        "upperRowsReplacedWithGlobalInt16": 512,
+        "activeStageVisits": 13,
+        "reusedHotRows": 12,
+        "dynamicFineGrids": 1
+      },
+      "checks": [
+        {
+          "round": 0,
+          "fixture": 0,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 1,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 2,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 2,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 3,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 4,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 5,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 6,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 7,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 8,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 9,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        }
+      ],
+      "roundsDetail": [
+        {
+          "round": 0,
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "loadOrder": [
+            "control",
+            "candidate"
+          ],
+          "cold": {
+            "candidateLoadMilliseconds": 58594.90141600004,
+            "controlLoadMilliseconds": 58923.36141699998
+          },
+          "requestFailures": {
+            "candidate": [],
+            "control": []
+          },
+          "candidateSamples": [
+            {
+              "fixture": 0,
+              "milliseconds": 2958.527791999979,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "bestBucket": 4946,
+                    "bestWinner": 11,
+                    "certificateGap": 364,
+                    "nextUpperBucket": 4582,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 11
+              }
+            },
+            {
+              "fixture": 1,
+              "milliseconds": 4330.096250000002,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 5,
+                    "route": "dynamic-exact-grid",
+                    "dynamicDisplay": "grid",
+                    "fineCode": 71,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "bestBucket": 12440,
+                    "bestWinner": 1351,
+                    "certificateGap": -204,
+                    "nextUpperBucket": 12644,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 221,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "bestBucket": 12620,
+                    "bestWinner": 477,
+                    "certificateGap": 44,
+                    "nextUpperBucket": 12576,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "bestBucket": 12620,
+                    "bestWinner": 477,
+                    "certificateGap": 249,
+                    "nextUpperBucket": 12371,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 3,
+                "reusedHotRows": 2,
+                "dynamicFineGrids": 1,
+                "finalWinner": 477
+              }
+            },
+            {
+              "fixture": 2,
+              "milliseconds": 3203.0919169999543,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "bestBucket": 5137,
+                    "bestWinner": 198,
+                    "certificateGap": 516,
+                    "nextUpperBucket": 4621,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 3,
+              "milliseconds": 4141.625624999986,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "bestBucket": 4577,
+                    "bestWinner": 198,
+                    "certificateGap": 171,
+                    "nextUpperBucket": 4406,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 4,
+              "milliseconds": 2978.3669169999775,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 6,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "bestBucket": 4440,
+                    "bestWinner": 262,
+                    "certificateGap": 223,
+                    "nextUpperBucket": 4217,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 262
+              }
+            },
+            {
+              "fixture": 5,
+              "milliseconds": 3000.8246660000295,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "bestBucket": 5190,
+                    "bestWinner": 198,
+                    "certificateGap": 545,
+                    "nextUpperBucket": 4645,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 6,
+              "milliseconds": 3499.6815419999766,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 6,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "bestBucket": 4074,
+                    "bestWinner": 262,
+                    "certificateGap": 14,
+                    "nextUpperBucket": 4060,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "bestBucket": 4074,
+                    "bestWinner": 262,
+                    "certificateGap": 50,
+                    "nextUpperBucket": 4024,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 2,
+                "reusedHotRows": 2,
+                "dynamicFineGrids": 0,
+                "finalWinner": 262
+              }
+            },
+            {
+              "fixture": 7,
+              "milliseconds": 3772.6755419999827,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "bestBucket": 4132,
+                    "bestWinner": 198,
+                    "certificateGap": 53,
+                    "nextUpperBucket": 4079,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 8,
+              "milliseconds": 3504.885416999983,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 13,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "bestBucket": 5488,
+                    "bestWinner": 13,
+                    "certificateGap": 76,
+                    "nextUpperBucket": 5412,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 13
+              }
+            },
+            {
+              "fixture": 9,
+              "milliseconds": 3565.6149999999907,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "bestBucket": 5026,
+                    "bestWinner": 11,
+                    "certificateGap": 376,
+                    "nextUpperBucket": 4650,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 11
+              }
+            }
+          ],
+          "controlSamples": [
+            {
+              "fixture": 0,
+              "milliseconds": 5664.749499999976,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4558,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4558,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 1,
+              "milliseconds": 4643.1775420000195,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 5,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 5,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 2,
+              "milliseconds": 4901.310624999984,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 3,
+              "milliseconds": 6099.3500420000055,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4382,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4382,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 4,
+              "milliseconds": 6345.705374999961,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "fineBucket": 4193,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "fineBucket": 4193,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 5,
+              "milliseconds": 4079.3724999999977,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 6,
+              "milliseconds": 6328.320958000026,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 7,
+              "milliseconds": 7377.430416000017,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4055,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4055,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 8,
+              "milliseconds": 4868.223375000001,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 5388,
+                    "fineWinner": 318,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 5388,
+                    "fineWinner": 318,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 9,
+              "milliseconds": 4245.886332999973,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "done": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "k": 4,
+      "hotGroups": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fixtureLimit": 10,
+      "semanticsPass": true,
+      "decision": "candidate-win",
+      "comparison": {
+        "candidate": {
+          "count": 10,
+          "minimum": 2472.2397499999497,
+          "median": 3879.5470839999616,
+          "p90": 7581.444416999933,
+          "maximum": 7581.444416999933,
+          "mean": 4131.010637800011
+        },
+        "control": {
+          "count": 10,
+          "minimum": 3451.6515839999774,
+          "median": 5825.550749999937,
+          "p90": 8461.127332999953,
+          "maximum": 8461.127332999953,
+          "mean": 5666.9778792999805
+        },
+        "meanRatio": 0.7289618427644716,
+        "meanSpeedupPercent": 27.103815723552838
+      },
+      "work": {
+        "upperRowsAdded": 0,
+        "upperRowsReplacedWithGlobalInt16": 1024,
+        "activeStageVisits": 13,
+        "reusedHotRows": 12,
+        "dynamicFineGrids": 1
+      },
+      "checks": [
+        {
+          "round": 0,
+          "fixture": 0,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 1,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 2,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 2,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 3,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 4,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 5,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 6,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 7,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 8,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 9,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        }
+      ],
+      "roundsDetail": [
+        {
+          "round": 0,
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "loadOrder": [
+            "candidate",
+            "control"
+          ],
+          "cold": {
+            "candidateLoadMilliseconds": 39610.959040999995,
+            "controlLoadMilliseconds": 57611.025166999956
+          },
+          "requestFailures": {
+            "candidate": [],
+            "control": []
+          },
+          "candidateSamples": [
+            {
+              "fixture": 0,
+              "milliseconds": 3225.717459000065,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "bestBucket": 4946,
+                    "bestWinner": 11,
+                    "certificateGap": 364,
+                    "nextUpperBucket": 4582,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 11
+              }
+            },
+            {
+              "fixture": 1,
+              "milliseconds": 4630.097250000108,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 5,
+                    "route": "dynamic-exact-grid",
+                    "dynamicDisplay": "grid",
+                    "fineCode": 71,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "bestBucket": 12440,
+                    "bestWinner": 1351,
+                    "certificateGap": -204,
+                    "nextUpperBucket": 12644,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 221,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "bestBucket": 12620,
+                    "bestWinner": 477,
+                    "certificateGap": 44,
+                    "nextUpperBucket": 12576,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "bestBucket": 12620,
+                    "bestWinner": 477,
+                    "certificateGap": 249,
+                    "nextUpperBucket": 12371,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 3,
+                "reusedHotRows": 2,
+                "dynamicFineGrids": 1,
+                "finalWinner": 477
+              }
+            },
+            {
+              "fixture": 2,
+              "milliseconds": 3152.734124999959,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "bestBucket": 5137,
+                    "bestWinner": 198,
+                    "certificateGap": 516,
+                    "nextUpperBucket": 4621,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 3,
+              "milliseconds": 5309.240250000032,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "bestBucket": 4577,
+                    "bestWinner": 198,
+                    "certificateGap": 171,
+                    "nextUpperBucket": 4406,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 4,
+              "milliseconds": 3280.983959000092,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 6,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "bestBucket": 4440,
+                    "bestWinner": 262,
+                    "certificateGap": 223,
+                    "nextUpperBucket": 4217,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 262
+              }
+            },
+            {
+              "fixture": 5,
+              "milliseconds": 3174.8789170000236,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "bestBucket": 5190,
+                    "bestWinner": 198,
+                    "certificateGap": 545,
+                    "nextUpperBucket": 4645,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 6,
+              "milliseconds": 3879.5470839999616,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 6,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "bestBucket": 4074,
+                    "bestWinner": 262,
+                    "certificateGap": 14,
+                    "nextUpperBucket": 4060,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "bestBucket": 4074,
+                    "bestWinner": 262,
+                    "certificateGap": 180,
+                    "nextUpperBucket": 3894,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 2,
+                "reusedHotRows": 2,
+                "dynamicFineGrids": 0,
+                "finalWinner": 262
+              }
+            },
+            {
+              "fixture": 7,
+              "milliseconds": 7581.444416999933,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "bestBucket": 4132,
+                    "bestWinner": 198,
+                    "certificateGap": 53,
+                    "nextUpperBucket": 4079,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 8,
+              "milliseconds": 2472.2397499999497,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 13,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "bestBucket": 5488,
+                    "bestWinner": 13,
+                    "certificateGap": 76,
+                    "nextUpperBucket": 5412,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 13
+              }
+            },
+            {
+              "fixture": 9,
+              "milliseconds": 4603.223166999989,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "bestBucket": 5026,
+                    "bestWinner": 11,
+                    "certificateGap": 376,
+                    "nextUpperBucket": 4650,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 11
+              }
+            }
+          ],
+          "controlSamples": [
+            {
+              "fixture": 0,
+              "milliseconds": 6024.5663330000825,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4558,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4558,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 1,
+              "milliseconds": 4500.143833999988,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 5,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 5,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 2,
+              "milliseconds": 4574.315166999935,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 3,
+              "milliseconds": 7013.321958999964,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4382,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4382,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 4,
+              "milliseconds": 5825.550749999937,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "fineBucket": 4193,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "fineBucket": 4193,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 5,
+              "milliseconds": 3451.6515839999774,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 6,
+              "milliseconds": 8461.127332999953,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 7,
+              "milliseconds": 7461.349833999993,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4055,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4055,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 8,
+              "milliseconds": 4001.298582999967,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 5388,
+                    "fineWinner": 318,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 5388,
+                    "fineWinner": 318,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 9,
+              "milliseconds": 5356.453416000004,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "done": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "k": 8,
+      "hotGroups": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "fixtureLimit": 10,
+      "semanticsPass": true,
+      "decision": "candidate-win",
+      "comparison": {
+        "candidate": {
+          "count": 10,
+          "minimum": 2381.1028749999823,
+          "median": 3699.7760830000043,
+          "p90": 6806.545916000032,
+          "maximum": 6806.545916000032,
+          "mean": 3744.6970332999945
+        },
+        "control": {
+          "count": 10,
+          "minimum": 3168.827500000014,
+          "median": 5587.26787500002,
+          "p90": 7884.024042000063,
+          "maximum": 7884.024042000063,
+          "mean": 5268.819241700042
+        },
+        "meanRatio": 0.7107279376112602,
+        "meanSpeedupPercent": 28.927206238873982
+      },
+      "work": {
+        "upperRowsAdded": 0,
+        "upperRowsReplacedWithGlobalInt16": 2048,
+        "activeStageVisits": 12,
+        "reusedHotRows": 12,
+        "dynamicFineGrids": 0
+      },
+      "checks": [
+        {
+          "round": 0,
+          "fixture": 0,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 1,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 2,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 3,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 4,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 5,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 6,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 7,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 8,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        },
+        {
+          "round": 0,
+          "fixture": 9,
+          "pass": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOffline": true,
+              "exactShadowPresent": true,
+              "winnerMatchesExactShadow": true,
+              "bucketMatchesExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesGap": true,
+              "routeDisplayMatches": true,
+              "standardTieDecoderNotStuckAt255": true
+            }
+          ]
+        }
+      ],
+      "roundsDetail": [
+        {
+          "round": 0,
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "loadOrder": [
+            "control",
+            "candidate"
+          ],
+          "cold": {
+            "candidateLoadMilliseconds": 45296.82633399998,
+            "controlLoadMilliseconds": 57492.71216700005
+          },
+          "requestFailures": {
+            "candidate": [],
+            "control": []
+          },
+          "candidateSamples": [
+            {
+              "fixture": 0,
+              "milliseconds": 3002.867542000022,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "bestBucket": 4946,
+                    "bestWinner": 11,
+                    "certificateGap": 364,
+                    "nextUpperBucket": 4582,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 11
+              }
+            },
+            {
+              "fixture": 1,
+              "milliseconds": 3642.293207999901,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 221,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "bestBucket": 12620,
+                    "bestWinner": 477,
+                    "certificateGap": 44,
+                    "nextUpperBucket": 12576,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "bestBucket": 12620,
+                    "bestWinner": 477,
+                    "certificateGap": 156,
+                    "nextUpperBucket": 12464,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 2,
+                "reusedHotRows": 2,
+                "dynamicFineGrids": 0,
+                "finalWinner": 477
+              }
+            },
+            {
+              "fixture": 2,
+              "milliseconds": 2909.958374999929,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "bestBucket": 5137,
+                    "bestWinner": 198,
+                    "certificateGap": 516,
+                    "nextUpperBucket": 4621,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 3,
+              "milliseconds": 3754.2735000000102,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "bestBucket": 4577,
+                    "bestWinner": 198,
+                    "certificateGap": 171,
+                    "nextUpperBucket": 4406,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 4,
+              "milliseconds": 3337.389959000051,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 6,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "bestBucket": 4440,
+                    "bestWinner": 262,
+                    "certificateGap": 223,
+                    "nextUpperBucket": 4217,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 262
+              }
+            },
+            {
+              "fixture": 5,
+              "milliseconds": 3817.766500000027,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "bestBucket": 5190,
+                    "bestWinner": 198,
+                    "certificateGap": 545,
+                    "nextUpperBucket": 4645,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 6,
+              "milliseconds": 4094.996374999988,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 6,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "bestBucket": 4074,
+                    "bestWinner": 262,
+                    "certificateGap": 14,
+                    "nextUpperBucket": 4060,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "bestBucket": 4074,
+                    "bestWinner": 262,
+                    "certificateGap": 180,
+                    "nextUpperBucket": 3894,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 2,
+                "reusedHotRows": 2,
+                "dynamicFineGrids": 0,
+                "finalWinner": 262
+              }
+            },
+            {
+              "fixture": 7,
+              "milliseconds": 6806.545916000032,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 198,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "bestBucket": 4132,
+                    "bestWinner": 198,
+                    "certificateGap": 53,
+                    "nextUpperBucket": 4079,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 198
+              }
+            },
+            {
+              "fixture": 8,
+              "milliseconds": 2381.1028749999823,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 13,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "bestBucket": 5488,
+                    "bestWinner": 13,
+                    "certificateGap": 76,
+                    "nextUpperBucket": 5412,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 13
+              }
+            },
+            {
+              "fixture": 9,
+              "milliseconds": 3699.7760830000043,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "route": "reused-upper-row",
+                    "dynamicDisplay": "none",
+                    "fineCode": 11,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "bestBucket": 5026,
+                    "bestWinner": 11,
+                    "certificateGap": 376,
+                    "nextUpperBucket": 4650,
+                    "done": 1
+                  }
+                ],
+                "activeStages": 1,
+                "reusedHotRows": 1,
+                "dynamicFineGrids": 0,
+                "finalWinner": 11
+              }
+            }
+          ],
+          "controlSamples": [
+            {
+              "fixture": 0,
+              "milliseconds": 5675.842708000098,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4558,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4946,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4558,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 1,
+              "milliseconds": 4669.8436249999795,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 5,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 12552,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 12620,
+                    "fineWinner": 477,
+                    "done": 0
+                  },
+                  {
+                    "stage": 2,
+                    "group": 5,
+                    "fineBucket": 12440,
+                    "fineWinner": 1351,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 2,
+              "milliseconds": 4769.580416000099,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5137,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 3,
+              "milliseconds": 5587.26787500002,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4382,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4577,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4382,
+                    "fineWinner": 290,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 4,
+              "milliseconds": 6573.947374999989,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "fineBucket": 4193,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 1,
+                    "fineBucket": 4440,
+                    "fineWinner": 262,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 0,
+                    "fineBucket": 4193,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 5,
+              "milliseconds": 4082.3729590000585,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5190,
+                    "fineWinner": 198,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 6,
+              "milliseconds": 6145.612542000017,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4036,
+                    "fineWinner": 11,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4074,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 7,
+              "milliseconds": 7884.024042000063,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4055,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 4132,
+                    "fineWinner": 198,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 4055,
+                    "fineWinner": 262,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 8,
+              "milliseconds": 4130.873375000083,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 5388,
+                    "fineWinner": 318,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5488,
+                    "fineWinner": 13,
+                    "done": 0
+                  },
+                  {
+                    "stage": 1,
+                    "group": 1,
+                    "fineBucket": 5388,
+                    "fineWinner": 318,
+                    "done": 1
+                  }
+                ]
+              }
+            },
+            {
+              "fixture": 9,
+              "milliseconds": 3168.827500000014,
+              "output": {
+                "stages": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "done": 1
+                  }
+                ],
+                "exactShadows": [
+                  {
+                    "stage": 0,
+                    "group": 0,
+                    "fineBucket": 5026,
+                    "fineWinner": 11,
+                    "done": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

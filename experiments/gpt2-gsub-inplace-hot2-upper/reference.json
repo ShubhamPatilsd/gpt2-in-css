@@ -1,0 +1,93 @@
+{
+  "experiment": "gpt2-gsub-inplace-hot2-upper",
+  "decision": "reject-offline-topology",
+  "browserGate": false,
+  "browserLaunched": false,
+  "browserArtifactBuilt": false,
+  "sourceRetained": "gpt2-mixed-precision-hot2-upper",
+  "sourceSplitGsub": "gsub-split-complement-fine-scorer",
+  "hotGroups": [
+    0,
+    1
+  ],
+  "groupSize": 256,
+  "topologyProof": {
+    "gsubPerformsArgmax": false,
+    "argmaxMechanism": "one CSS Grid element per candidate",
+    "featureSelectionIsSingleValuedPerScorer": true,
+    "simultaneousGroupMaximaRequiredByRouter": 2,
+    "splitCandidatesPerGrid": 256,
+    "retainedHotUpperCandidateElements": 512,
+    "minimumGsubTopCandidateElements": 512,
+    "upperCandidateElementsRemoved": 0,
+    "requestedUpperCandidateElementsRemoved": 512,
+    "removalShortfall": 512,
+    "sameTopAnchorCanCarryBucketAndWinner": true,
+    "topAnchorAloneCanCarryRunnerMargin": false,
+    "runnerGridRequiredForMargin": true
+  },
+  "glyphWork": {
+    "retainedGlyphsPerCandidate": 12,
+    "splitGlyphsPerCandidate": 13,
+    "retainedMarkupCodepointsPerCandidate": 12,
+    "splitMarkupCodepointsPerCandidate": 25,
+    "perCandidateIncrease": 1,
+    "perCandidateIncreasePercent": 8.333333333333325,
+    "retainedHotUpperGlyphInstances": 6144,
+    "minimumGsubTopGlyphInstances": 6656,
+    "minimumTopIncrease": 512,
+    "minimumTopIncreasePercent": 8.333333333333325
+  },
+  "lazyRunner": {
+    "additionalCandidateElementsPerSelectedHotVisit": 256,
+    "additionalGlyphInstancesPerSelectedHotVisit": 3328,
+    "nearMarginExactFallbackCandidateElements": 256,
+    "note": "This is the least-DOM top-two variant, but it adds a second 256-way Grid evaluation to every selected hot visit before deciding whether exact fallback is needed."
+  },
+  "eagerRunner": {
+    "topAndRunnerCandidateElements": 1024,
+    "netCandidateElementsVsRetained": 512,
+    "topAndRunnerGlyphInstances": 13312,
+    "netGlyphInstancesVsRetained": 7168,
+    "increasePercentVsRetained": 116.66666666666666
+  },
+  "upperAllowance": {
+    "existingBrowserAllowanceBuckets": 24,
+    "observedGsubMaximumErrorBuckets": 2,
+    "requiredWrapperAllowanceBuckets": 26,
+    "scoreStridePx": 4,
+    "requiredWrapperAllowancePx": 104,
+    "empiricalChromeBoundOnly": true,
+    "portableBoundProved": false
+  },
+  "fixtureSemantics": {
+    "comparisons": 20,
+    "winnerMatches": 20,
+    "acceptedAtMarginGreaterThan4": 19,
+    "nearMarginFallbacks": 1,
+    "unsafeAccepts": 0,
+    "maximumAbsoluteCandidateDeltaBuckets": 2,
+    "source": "existing split-complement Chrome fixture measurements"
+  },
+  "corpusSemantics": {
+    "available": false,
+    "reason": "No browser-realized split-GSUB candidate deltas exist for the 1,024-state corpus; the fixture \u00b12 bound is empirical and cannot be promoted to a portable corpus proof."
+  },
+  "assets": {
+    "splitGsubWoff2BytesAdded": 963044,
+    "retainedExactWoff2BytesStillRequiredForNonHotAndFallback": 79431996,
+    "splitBankReplacesExactBank": false
+  },
+  "rejectionReasons": [
+    "GSUB selects group-specific glyph rows but does not perform argmax; the maximum still requires 256 overlaid Grid candidates per group.",
+    "The router needs groups 0 and 1 simultaneously, so cv01 feature selection cannot share one 256-candidate top grid between them.",
+    "Two top grids require the same 512 candidate elements as retained K=2, so zero upper candidates are removed.",
+    "A margin needs a winner-masked runner Grid: 256 additional candidates per selected hot visit, or 512 additional candidates if both runners are eager.",
+    "Each split scorer candidate shapes 13 glyphs instead of the retained exact scorer's 12."
+  ],
+  "browserGateReasons": [
+    "The required 512-row removal is impossible: the lower-bound GSUB top layer still has 512 candidate elements.",
+    "Even before the runner, split-GSUB glyph work rises from 12 to 13 glyphs per candidate.",
+    "The requested offline gate therefore fails, so no HTML/browser topology or timing run is authorized."
+  ]
+}

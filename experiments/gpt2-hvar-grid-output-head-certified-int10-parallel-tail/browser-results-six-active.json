@@ -1,0 +1,345 @@
+{
+  "chrome": "153.0.8010.36",
+  "directory": "gpt2-hvar-grid-output-head-certified-int10-parallel-tail",
+  "fullFanoutGroups": 197,
+  "prefixGroups": 6,
+  "includeStress": true,
+  "currentAllowances": {
+    "coarseBuckets": 10,
+    "fineBuckets": 5,
+    "strictStopGapBuckets": 15
+  },
+  "loadMilliseconds": 56844.841458,
+  "loadAndFirstEvaluationMilliseconds": 60717.209083,
+  "elapsedMilliseconds": 81933.12775,
+  "medianMutationMilliseconds": 10181.361333,
+  "mutationRangeMilliseconds": [
+    3872.367624999999,
+    11015.243124999994
+  ],
+  "fixtures": 3,
+  "easyFixtures": 1,
+  "fallbackFixtures": 2,
+  "activeGroupCounts": [
+    0,
+    1,
+    6
+  ],
+  "easyPathBypassesFallback": true,
+  "hardPathUsesFallback": true,
+  "allPrefixGroupsMatchOffline": true,
+  "allScreenPrefixWinnersMatchOffline": true,
+  "allStrictStopDecisionsMatchOffline": true,
+  "allActiveGroupsMatchOffline": true,
+  "allActiveGroupWinnersMatchOffline": false,
+  "allNWayScoreGroupMergesMatchBrowserBranches": true,
+  "allTokenPlaneSelectionsMatchBrowserBranches": true,
+  "allFinalWinnersMatchOfflineTarget": true,
+  "denseWinnersCorrectWhereTargetMatchesDense": true,
+  "pageErrors": [],
+  "samples": [
+    {
+      "fixture": 0,
+      "kind": "screen",
+      "corpusIndex": 0,
+      "milliseconds": 3872.367624999999,
+      "fallbackUsed": false,
+      "firstDoneZeroBased": 0,
+      "expectedFirstDoneZeroBased": 0,
+      "expectedCandidateGroups": [],
+      "expectedCandidateWinners": [],
+      "browserMaximum": {
+        "group": 3,
+        "winner": 856,
+        "bucket": 8000,
+        "source": "prefix"
+      },
+      "finalWinner": 856,
+      "targetWinner": 856,
+      "denseWinner": 856,
+      "targetMatchesDense": true,
+      "output": {
+        "groupsSeen": [
+          3
+        ],
+        "fineWinners": [
+          856
+        ],
+        "fineBuckets": [
+          8000
+        ],
+        "done": [
+          1
+        ],
+        "gaps": [
+          196
+        ],
+        "bestWinner": 856,
+        "bestBucket": 8000,
+        "activeGroups": [],
+        "active": [],
+        "displayedTailScorers": 0,
+        "mergedBucket": 0,
+        "winningGroup": 0,
+        "finalTailWinner": 0,
+        "prefixScoreGeometryPixels": 0,
+        "mergedScoreGeometryPixels": 0,
+        "selectedTokenGeometryPixels": 0
+      }
+    },
+    {
+      "fixture": 1,
+      "kind": "current-range-hard-plus-one-browser-bucket-guard",
+      "corpusIndex": 579,
+      "milliseconds": 10181.361333,
+      "fallbackUsed": true,
+      "firstDoneZeroBased": null,
+      "expectedFirstDoneZeroBased": null,
+      "expectedCandidateGroups": [
+        5
+      ],
+      "expectedCandidateWinners": [
+        1321
+      ],
+      "browserMaximum": {
+        "group": 3,
+        "winner": 930,
+        "bucket": 5401,
+        "source": "prefix"
+      },
+      "finalWinner": 930,
+      "targetWinner": 930,
+      "denseWinner": 930,
+      "targetMatchesDense": true,
+      "output": {
+        "groupsSeen": [
+          0,
+          24,
+          3,
+          55,
+          108,
+          1
+        ],
+        "fineWinners": [
+          198,
+          6188,
+          930,
+          14151,
+          27766,
+          357
+        ],
+        "fineBuckets": [
+          5252,
+          5370,
+          5401,
+          5183,
+          5159,
+          5001
+        ],
+        "done": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "gaps": [
+          -422,
+          -265,
+          -69,
+          -36,
+          3,
+          16
+        ],
+        "bestWinner": 930,
+        "bestBucket": 5401,
+        "activeGroups": [
+          5
+        ],
+        "active": [
+          {
+            "group": 5,
+            "display": "grid",
+            "winner": 1321,
+            "bucket": 5117,
+            "stageGeometryPixels": 20471.34375,
+            "readerGeometryPixels": 20471.34375,
+            "stageAnchorName": "--tail-fine-winner-5",
+            "scoreGeometryPixels": 5240576,
+            "tokenGeometryPixels": 1321
+          }
+        ],
+        "displayedTailScorers": 1,
+        "mergedBucket": 5401,
+        "winningGroup": 3,
+        "finalTailWinner": 930,
+        "prefixScoreGeometryPixels": 5531400,
+        "mergedScoreGeometryPixels": 5531400,
+        "selectedTokenGeometryPixels": 930
+      }
+    },
+    {
+      "fixture": 2,
+      "kind": "forced-parallel-stress",
+      "corpusIndex": 190,
+      "milliseconds": 11015.243124999994,
+      "fallbackUsed": true,
+      "firstDoneZeroBased": null,
+      "expectedFirstDoneZeroBased": null,
+      "expectedCandidateGroups": [
+        4,
+        7,
+        36,
+        47,
+        91,
+        186
+      ],
+      "expectedCandidateWinners": [
+        1042,
+        1990,
+        9232,
+        12193,
+        23532,
+        47669
+      ],
+      "browserMaximum": {
+        "group": 0,
+        "winner": 78,
+        "bucket": 6079,
+        "source": "prefix"
+      },
+      "finalWinner": 78,
+      "targetWinner": 78,
+      "denseWinner": 78,
+      "targetMatchesDense": true,
+      "output": {
+        "groupsSeen": [
+          0,
+          1,
+          81,
+          2,
+          193,
+          138
+        ],
+        "fineWinners": [
+          78,
+          313,
+          20795,
+          571,
+          49568,
+          35389
+        ],
+        "fineBuckets": [
+          6079,
+          5964,
+          4500,
+          5737,
+          5766,
+          4721
+        ],
+        "done": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "gaps": [
+          -652,
+          -273,
+          -119,
+          -108,
+          -36,
+          20
+        ],
+        "bestWinner": 78,
+        "bestBucket": 6079,
+        "activeGroups": [
+          4,
+          7,
+          36,
+          47,
+          91,
+          186
+        ],
+        "active": [
+          {
+            "group": 4,
+            "display": "grid",
+            "winner": 1042,
+            "bucket": 5632,
+            "stageGeometryPixels": 22531.703125,
+            "readerGeometryPixels": 22531.703125,
+            "stageAnchorName": "--tail-fine-winner-4",
+            "scoreGeometryPixels": 5767940,
+            "tokenGeometryPixels": 1042
+          },
+          {
+            "group": 7,
+            "display": "grid",
+            "winner": 1990,
+            "bucket": 5759,
+            "stageGeometryPixels": 23036.890625,
+            "readerGeometryPixels": 23036.890625,
+            "stageAnchorName": "--tail-fine-winner-7",
+            "scoreGeometryPixels": 5897976,
+            "tokenGeometryPixels": 1990
+          },
+          {
+            "group": 36,
+            "display": "grid",
+            "winner": 9232,
+            "bucket": 5736,
+            "stageGeometryPixels": 22947.734375,
+            "readerGeometryPixels": 22947.734375,
+            "stageAnchorName": "--tail-fine-winner-36",
+            "scoreGeometryPixels": 5874308,
+            "tokenGeometryPixels": 9232
+          },
+          {
+            "group": 47,
+            "display": "grid",
+            "winner": 12193,
+            "bucket": 5545,
+            "stageGeometryPixels": 22181.46875,
+            "readerGeometryPixels": 22181.46875,
+            "stageAnchorName": "--tail-fine-winner-47",
+            "scoreGeometryPixels": 5678680,
+            "tokenGeometryPixels": 12193
+          },
+          {
+            "group": 91,
+            "display": "grid",
+            "winner": 23359,
+            "bucket": 4872,
+            "stageGeometryPixels": 19491,
+            "readerGeometryPixels": 19491,
+            "stageAnchorName": "--tail-fine-winner-91",
+            "scoreGeometryPixels": 4989352,
+            "tokenGeometryPixels": 23359
+          },
+          {
+            "group": 186,
+            "display": "grid",
+            "winner": 47669,
+            "bucket": 5572,
+            "stageGeometryPixels": 22291.15625,
+            "readerGeometryPixels": 22291.15625,
+            "stageAnchorName": "--tail-fine-winner-186",
+            "scoreGeometryPixels": 5705772,
+            "tokenGeometryPixels": 47669
+          }
+        ],
+        "displayedTailScorers": 6,
+        "mergedBucket": 6079,
+        "winningGroup": 0,
+        "finalTailWinner": 78,
+        "prefixScoreGeometryPixels": 6225684,
+        "mergedScoreGeometryPixels": 6225684,
+        "selectedTokenGeometryPixels": 78
+      }
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+{
+  "chromeVersion": "fresh isolated Chromium process per variant",
+  "rounds": 1,
+  "fixtureCount": 2,
+  "isolatedPerVariant": true,
+  "control": "gpt2-mixed-precision-hotk-sweep/k2",
+  "loadOrderAlternated": true,
+  "robustRepeatPerformed": false,
+  "longLivedCursorMcpTerminated": false,
+  "offlineResultsPreserved": true,
+  "allSemanticsPass": false,
+  "results": [
+    {
+      "variant": "g128-s8",
+      "isolatedFreshBrowser": true,
+      "loadOrder": [
+        "candidate",
+        "retained-g256-k2"
+      ],
+      "fixtureOrder": [
+        0,
+        1
+      ],
+      "warmupFixture": 1,
+      "requestFailures": {
+        "candidate": [],
+        "control": []
+      },
+      "cold": {
+        "candidateLoadMilliseconds": 52690.845791,
+        "controlLoadMilliseconds": 57717.246458,
+        "loadRatio": 0.9129133668797308
+      },
+      "semanticsPass": false,
+      "decision": "reject-transport",
+      "comparison": {
+        "candidate": {
+          "count": 2,
+          "minimum": 3031.930290999997,
+          "median": 3949.6665829999984,
+          "p90": 3949.6665829999984,
+          "maximum": 3949.6665829999984,
+          "mean": 3490.7984369999976
+        },
+        "retainedG256K2": {
+          "count": 2,
+          "minimum": 3679.221084000019,
+          "median": 4152.40125000001,
+          "p90": 4152.40125000001,
+          "maximum": 4152.40125000001,
+          "mean": 3915.8111670000144
+        },
+        "normalizedWarmMeanRatio": 0.8914624041164815,
+        "warmSpeedupPercent": 10.853759588351853
+      },
+      "work": {
+        "candidate": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 4,
+          "reusedExactUpper": 3,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 128
+        },
+        "retainedG256K2": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 4,
+          "reusedExactUpper": 3,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 256
+        },
+        "normalized": {
+          "activeStageVisits": 1,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 0.5
+        }
+      },
+      "shadows": {
+        "requested": 4,
+        "present": 4,
+        "source": "candidate variant's forced dynamic exact grid"
+      },
+      "candidateChecks": [
+        {
+          "fixture": 0,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": false,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 1,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": false,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": true,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            },
+            {
+              "stage": 2,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        }
+      ],
+      "controlChecks": [
+        {
+          "fixture": 0,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 1,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        }
+      ],
+      "candidateSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 3949.6665829999984,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 10,
+                "fineBucket": 4946,
+                "fineWinner": 10,
+                "bestBucket": 4946,
+                "bestWinner": 10,
+                "certificateGap": 170,
+                "nextUpperBucket": 4776,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 10,
+            "finalBucket": 4946,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 39575.25,
+                "geometryPx": 39575.251,
+                "scoreStridePx": 8,
+                "tieStepPx": 0.0625,
+                "tieCode": 116,
+                "fineBucket": 4946,
+                "fineLocal": 11,
+                "fineWinner": 11,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 3031.930290999997,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 10,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 71,
+                "fineBucket": 12440,
+                "fineWinner": 1351,
+                "bestBucket": 12440,
+                "bestWinner": 1351,
+                "certificateGap": -204,
+                "nextUpperBucket": 12644,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 3,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 95,
+                "fineBucket": 12620,
+                "fineWinner": 479,
+                "bestBucket": 12620,
+                "bestWinner": 479,
+                "certificateGap": 44,
+                "nextUpperBucket": 12576,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 15,
+                "fineBucket": 12552,
+                "fineWinner": 15,
+                "bestBucket": 12620,
+                "bestWinner": 479,
+                "certificateGap": 249,
+                "nextUpperBucket": 12371,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 1,
+            "finalWinner": 479,
+            "finalBucket": 12620,
+            "exactShadows": [
+              {
+                "group": 10,
+                "width": 99523.5,
+                "geometryPx": 99523.501,
+                "scoreStridePx": 8,
+                "tieStepPx": 0.0625,
+                "tieCode": 56,
+                "fineBucket": 12440,
+                "fineLocal": 71,
+                "fineWinner": 1351,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              },
+              {
+                "group": 3,
+                "width": 100962.125,
+                "geometryPx": 100962.126,
+                "scoreStridePx": 8,
+                "tieStepPx": 0.0625,
+                "tieCode": 34,
+                "fineBucket": 12620,
+                "fineLocal": 93,
+                "fineWinner": 477,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              },
+              {
+                "group": 0,
+                "width": 100423.25,
+                "geometryPx": 100423.251,
+                "scoreStridePx": 8,
+                "tieStepPx": 0.0625,
+                "tieCode": 116,
+                "fineBucket": 12552,
+                "fineLocal": 11,
+                "fineWinner": 11,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        }
+      ],
+      "controlSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 4152.40125000001,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 364,
+                "nextUpperBucket": 4582,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 3679.221084000019,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 5,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 71,
+                "fineBucket": 12440,
+                "fineWinner": 1351,
+                "bestBucket": 12440,
+                "bestWinner": 1351,
+                "certificateGap": -204,
+                "nextUpperBucket": 12644,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 221,
+                "fineBucket": 12620,
+                "fineWinner": 477,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 44,
+                "nextUpperBucket": 12576,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 12552,
+                "fineWinner": 11,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 249,
+                "nextUpperBucket": 12371,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        }
+      ]
+    }
+  ]
+}

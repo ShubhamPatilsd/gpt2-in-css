@@ -1,0 +1,654 @@
+{
+  "experiment": "gpt2-twoplane-256axis-hot2",
+  "control": "gpt2-mixed-precision-hot2-upper",
+  "chromeVersion": "153.0.8010.36",
+  "generatedAt": "2026-09-14T06:01:12.780Z",
+  "identityFields": [
+    "group",
+    "fineCode",
+    "fineLocal",
+    "fineBucket",
+    "fineWinner",
+    "bestBucket",
+    "bestWinner",
+    "certificateGap",
+    "nextUpperBucket",
+    "done"
+  ],
+  "glyphsPerHotRow": 6,
+  "controlGlyphsPerHotRow": 12,
+  "virtualBiasAxes": 0,
+  "falsification": {
+    "phase": "two-fixture-falsification",
+    "rounds": 1,
+    "fixturesPerRound": 2,
+    "semanticsPass": false,
+    "checksPassed": 1,
+    "checksTotal": 2,
+    "requestFailureCount": 0,
+    "comparison": {
+      "threePair256Axis": {
+        "count": 2,
+        "minimum": 3608.4542920000094,
+        "median": 3867.3299579999875,
+        "p90": 3867.3299579999875,
+        "maximum": 3867.3299579999875,
+        "mean": 3737.8921249999985
+      },
+      "retainedTwelveGlyph": {
+        "count": 2,
+        "minimum": 3459.069749999995,
+        "median": 4230.103084000002,
+        "p90": 4230.103084000002,
+        "maximum": 4230.103084000002,
+        "mean": 3844.5864169999986
+      },
+      "meanRatio": 0.9722481743346386,
+      "meanSpeedupPercent": 2.7751825665361385,
+      "perRound": [
+        {
+          "round": 0,
+          "loadOrder": [
+            "three-pair-256-axis",
+            "retained-twelve-glyph"
+          ],
+          "fixtureOrder": [
+            0,
+            1
+          ],
+          "candidateMean": 3737.8921249999985,
+          "controlMean": 3844.5864169999986,
+          "ratio": 0.9722481743346386
+        }
+      ]
+    },
+    "checks": [
+      {
+        "phase": "two-fixture-falsification",
+        "round": 0,
+        "fixture": 0,
+        "requiredIdentityFields": [
+          "group",
+          "fineCode",
+          "fineLocal",
+          "fineBucket",
+          "fineWinner",
+          "bestBucket",
+          "bestWinner",
+          "certificateGap",
+          "nextUpperBucket",
+          "done"
+        ],
+        "exactLiveIdentity": true,
+        "denseWinnerMatches": true,
+        "mismatches": [],
+        "candidate": {
+          "stages": [
+            {
+              "stage": 0,
+              "group": 0,
+              "fineCode": 11,
+              "fineLocal": 11,
+              "fineBucket": 4946,
+              "fineWinner": 11,
+              "bestBucket": 4946,
+              "bestWinner": 11,
+              "certificateGap": 364,
+              "nextUpperBucket": 4582,
+              "done": 1
+            }
+          ],
+          "activeStages": 1,
+          "finalWinner": 11,
+          "finalBucket": 4946
+        },
+        "control": {
+          "stages": [
+            {
+              "stage": 0,
+              "group": 0,
+              "fineCode": 11,
+              "fineLocal": 11,
+              "fineBucket": 4946,
+              "fineWinner": 11,
+              "bestBucket": 4946,
+              "bestWinner": 11,
+              "certificateGap": 364,
+              "nextUpperBucket": 4582,
+              "done": 1
+            }
+          ],
+          "activeStages": 1,
+          "finalWinner": 11,
+          "finalBucket": 4946
+        },
+        "pass": true
+      },
+      {
+        "phase": "two-fixture-falsification",
+        "round": 0,
+        "fixture": 1,
+        "requiredIdentityFields": [
+          "group",
+          "fineCode",
+          "fineLocal",
+          "fineBucket",
+          "fineWinner",
+          "bestBucket",
+          "bestWinner",
+          "certificateGap",
+          "nextUpperBucket",
+          "done"
+        ],
+        "exactLiveIdentity": false,
+        "denseWinnerMatches": true,
+        "mismatches": [
+          {
+            "stage": 0,
+            "field": "certificateGap",
+            "candidate": -205,
+            "control": -204
+          },
+          {
+            "stage": 0,
+            "field": "nextUpperBucket",
+            "candidate": 12645,
+            "control": 12644
+          },
+          {
+            "stage": 1,
+            "field": "fineBucket",
+            "candidate": 12621,
+            "control": 12620
+          },
+          {
+            "stage": 1,
+            "field": "bestBucket",
+            "candidate": 12621,
+            "control": 12620
+          },
+          {
+            "stage": 1,
+            "field": "certificateGap",
+            "candidate": 45,
+            "control": 44
+          },
+          {
+            "stage": 2,
+            "field": "bestBucket",
+            "candidate": 12621,
+            "control": 12620
+          },
+          {
+            "stage": 2,
+            "field": "certificateGap",
+            "candidate": 250,
+            "control": 249
+          },
+          {
+            "stage": null,
+            "field": "finalBucket",
+            "candidate": 12621,
+            "control": 12620
+          }
+        ],
+        "candidate": {
+          "stages": [
+            {
+              "stage": 0,
+              "group": 5,
+              "fineCode": 71,
+              "fineLocal": 71,
+              "fineBucket": 12440,
+              "fineWinner": 1351,
+              "bestBucket": 12440,
+              "bestWinner": 1351,
+              "certificateGap": -205,
+              "nextUpperBucket": 12645,
+              "done": 0
+            },
+            {
+              "stage": 1,
+              "group": 1,
+              "fineCode": 221,
+              "fineLocal": 221,
+              "fineBucket": 12621,
+              "fineWinner": 477,
+              "bestBucket": 12621,
+              "bestWinner": 477,
+              "certificateGap": 45,
+              "nextUpperBucket": 12576,
+              "done": 0
+            },
+            {
+              "stage": 2,
+              "group": 0,
+              "fineCode": 11,
+              "fineLocal": 11,
+              "fineBucket": 12552,
+              "fineWinner": 11,
+              "bestBucket": 12621,
+              "bestWinner": 477,
+              "certificateGap": 250,
+              "nextUpperBucket": 12371,
+              "done": 1
+            }
+          ],
+          "activeStages": 3,
+          "finalWinner": 477,
+          "finalBucket": 12621
+        },
+        "control": {
+          "stages": [
+            {
+              "stage": 0,
+              "group": 5,
+              "fineCode": 71,
+              "fineLocal": 71,
+              "fineBucket": 12440,
+              "fineWinner": 1351,
+              "bestBucket": 12440,
+              "bestWinner": 1351,
+              "certificateGap": -204,
+              "nextUpperBucket": 12644,
+              "done": 0
+            },
+            {
+              "stage": 1,
+              "group": 1,
+              "fineCode": 221,
+              "fineLocal": 221,
+              "fineBucket": 12620,
+              "fineWinner": 477,
+              "bestBucket": 12620,
+              "bestWinner": 477,
+              "certificateGap": 44,
+              "nextUpperBucket": 12576,
+              "done": 0
+            },
+            {
+              "stage": 2,
+              "group": 0,
+              "fineCode": 11,
+              "fineLocal": 11,
+              "fineBucket": 12552,
+              "fineWinner": 11,
+              "bestBucket": 12620,
+              "bestWinner": 477,
+              "certificateGap": 249,
+              "nextUpperBucket": 12371,
+              "done": 1
+            }
+          ],
+          "activeStages": 3,
+          "finalWinner": 477,
+          "finalBucket": 12620
+        },
+        "pass": false
+      }
+    ],
+    "roundsDetail": [
+      {
+        "phase": "two-fixture-falsification",
+        "round": 0,
+        "loadOrder": [
+          "three-pair-256-axis",
+          "retained-twelve-glyph"
+        ],
+        "fixtureOrder": [
+          0,
+          1
+        ],
+        "warmupFixture": 1,
+        "cold": {
+          "candidate": 59183.67125,
+          "control": 79834.9885
+        },
+        "requestFailures": {
+          "candidate": [],
+          "control": []
+        },
+        "browserMessages": {
+          "candidate": [
+            {
+              "type": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+            }
+          ],
+          "control": []
+        },
+        "candidateSamples": [
+          {
+            "fixture": 0,
+            "milliseconds": 3608.4542920000094,
+            "output": {
+              "stages": [
+                {
+                  "stage": 0,
+                  "group": 0,
+                  "fineCode": 11,
+                  "fineLocal": 11,
+                  "fineBucket": 4946,
+                  "fineWinner": 11,
+                  "bestBucket": 4946,
+                  "bestWinner": 11,
+                  "certificateGap": 364,
+                  "nextUpperBucket": 4582,
+                  "done": 1
+                }
+              ],
+              "activeStages": 1,
+              "finalWinner": 11,
+              "finalBucket": 4946
+            }
+          },
+          {
+            "fixture": 1,
+            "milliseconds": 3867.3299579999875,
+            "output": {
+              "stages": [
+                {
+                  "stage": 0,
+                  "group": 5,
+                  "fineCode": 71,
+                  "fineLocal": 71,
+                  "fineBucket": 12440,
+                  "fineWinner": 1351,
+                  "bestBucket": 12440,
+                  "bestWinner": 1351,
+                  "certificateGap": -205,
+                  "nextUpperBucket": 12645,
+                  "done": 0
+                },
+                {
+                  "stage": 1,
+                  "group": 1,
+                  "fineCode": 221,
+                  "fineLocal": 221,
+                  "fineBucket": 12621,
+                  "fineWinner": 477,
+                  "bestBucket": 12621,
+                  "bestWinner": 477,
+                  "certificateGap": 45,
+                  "nextUpperBucket": 12576,
+                  "done": 0
+                },
+                {
+                  "stage": 2,
+                  "group": 0,
+                  "fineCode": 11,
+                  "fineLocal": 11,
+                  "fineBucket": 12552,
+                  "fineWinner": 11,
+                  "bestBucket": 12621,
+                  "bestWinner": 477,
+                  "certificateGap": 250,
+                  "nextUpperBucket": 12371,
+                  "done": 1
+                }
+              ],
+              "activeStages": 3,
+              "finalWinner": 477,
+              "finalBucket": 12621
+            }
+          }
+        ],
+        "controlSamples": [
+          {
+            "fixture": 0,
+            "milliseconds": 4230.103084000002,
+            "output": {
+              "stages": [
+                {
+                  "stage": 0,
+                  "group": 0,
+                  "fineCode": 11,
+                  "fineLocal": 11,
+                  "fineBucket": 4946,
+                  "fineWinner": 11,
+                  "bestBucket": 4946,
+                  "bestWinner": 11,
+                  "certificateGap": 364,
+                  "nextUpperBucket": 4582,
+                  "done": 1
+                }
+              ],
+              "activeStages": 1,
+              "finalWinner": 11,
+              "finalBucket": 4946
+            }
+          },
+          {
+            "fixture": 1,
+            "milliseconds": 3459.069749999995,
+            "output": {
+              "stages": [
+                {
+                  "stage": 0,
+                  "group": 5,
+                  "fineCode": 71,
+                  "fineLocal": 71,
+                  "fineBucket": 12440,
+                  "fineWinner": 1351,
+                  "bestBucket": 12440,
+                  "bestWinner": 1351,
+                  "certificateGap": -204,
+                  "nextUpperBucket": 12644,
+                  "done": 0
+                },
+                {
+                  "stage": 1,
+                  "group": 1,
+                  "fineCode": 221,
+                  "fineLocal": 221,
+                  "fineBucket": 12620,
+                  "fineWinner": 477,
+                  "bestBucket": 12620,
+                  "bestWinner": 477,
+                  "certificateGap": 44,
+                  "nextUpperBucket": 12576,
+                  "done": 0
+                },
+                {
+                  "stage": 2,
+                  "group": 0,
+                  "fineCode": 11,
+                  "fineLocal": 11,
+                  "fineBucket": 12552,
+                  "fineWinner": 11,
+                  "bestBucket": 12620,
+                  "bestWinner": 477,
+                  "certificateGap": 249,
+                  "nextUpperBucket": 12371,
+                  "done": 1
+                }
+              ],
+              "activeStages": 3,
+              "finalWinner": 477,
+              "finalBucket": 12620
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "balanced": null,
+  "stoppedAfterFalsification": true,
+  "semanticsPass": false,
+  "decision": "reject-transport",
+  "assets": {
+    "coarseFontFiles": 5,
+    "coarseFontWoff2Bytes": 51181024,
+    "exactFontFiles": 6,
+    "exactFontWoff2Bytes": 853252,
+    "fontsCopiedOrRebuilt": true,
+    "exactFontsAreCurrentlyFullVocabulary": false,
+    "controlExactFontFiles": 12,
+    "controlExactFontWoff2Bytes": 79431996
+  },
+  "decomposition": {
+    "source": "the retained global-int16 codes and global scale",
+    "formula": "code = trunc(code / 256) * 256 + residual",
+    "shardAxes": 256,
+    "shardsPerPlane": 3,
+    "planes": 2,
+    "safety": 32,
+    "baseRule": "per-row base = 256-axis L1 + safety",
+    "storedBaseMaximum": 65535,
+    "positiveResultingAdvanceMayExceedStoredUint16": true,
+    "planeChecks": [
+      {
+        "shard": 0,
+        "plane": "high",
+        "dimensionStart": 0,
+        "dimensionStop": 256,
+        "axes": 256,
+        "regions": 512,
+        "rowsChecked": 512,
+        "rowsWhoseL1FitsBase": 512,
+        "minimumL1": 909,
+        "maximumL1": 2672,
+        "minimumBase": 941,
+        "maximumBase": 2704,
+        "minimumSafetyAdvance": 32,
+        "maximumPositiveResultingAdvance": 5376,
+        "rowsPositiveResultExceedsUint16": 0
+      },
+      {
+        "shard": 0,
+        "plane": "residual",
+        "dimensionStart": 0,
+        "dimensionStop": 256,
+        "axes": 256,
+        "regions": 512,
+        "rowsChecked": 512,
+        "rowsWhoseL1FitsBase": 512,
+        "minimumL1": 27913,
+        "maximumL1": 35682,
+        "minimumBase": 27945,
+        "maximumBase": 35714,
+        "minimumSafetyAdvance": 32,
+        "maximumPositiveResultingAdvance": 71396,
+        "rowsPositiveResultExceedsUint16": 153
+      },
+      {
+        "shard": 1,
+        "plane": "high",
+        "dimensionStart": 256,
+        "dimensionStop": 512,
+        "axes": 256,
+        "regions": 512,
+        "rowsChecked": 512,
+        "rowsWhoseL1FitsBase": 512,
+        "minimumL1": 970,
+        "maximumL1": 2643,
+        "minimumBase": 1002,
+        "maximumBase": 2675,
+        "minimumSafetyAdvance": 32,
+        "maximumPositiveResultingAdvance": 5318,
+        "rowsPositiveResultExceedsUint16": 0
+      },
+      {
+        "shard": 1,
+        "plane": "residual",
+        "dimensionStart": 256,
+        "dimensionStop": 512,
+        "axes": 256,
+        "regions": 512,
+        "rowsChecked": 512,
+        "rowsWhoseL1FitsBase": 512,
+        "minimumL1": 28609,
+        "maximumL1": 35999,
+        "minimumBase": 28641,
+        "maximumBase": 36031,
+        "minimumSafetyAdvance": 32,
+        "maximumPositiveResultingAdvance": 72030,
+        "rowsPositiveResultExceedsUint16": 148
+      },
+      {
+        "shard": 2,
+        "plane": "high",
+        "dimensionStart": 512,
+        "dimensionStop": 768,
+        "axes": 256,
+        "regions": 512,
+        "rowsChecked": 512,
+        "rowsWhoseL1FitsBase": 512,
+        "minimumL1": 766,
+        "maximumL1": 2562,
+        "minimumBase": 798,
+        "maximumBase": 2594,
+        "minimumSafetyAdvance": 32,
+        "maximumPositiveResultingAdvance": 5156,
+        "rowsPositiveResultExceedsUint16": 0
+      },
+      {
+        "shard": 2,
+        "plane": "residual",
+        "dimensionStart": 512,
+        "dimensionStop": 768,
+        "axes": 256,
+        "regions": 512,
+        "rowsChecked": 512,
+        "rowsWhoseL1FitsBase": 512,
+        "minimumL1": 29097,
+        "maximumL1": 35803,
+        "minimumBase": 29129,
+        "maximumBase": 35835,
+        "minimumSafetyAdvance": 32,
+        "maximumPositiveResultingAdvance": 71638,
+        "rowsPositiveResultExceedsUint16": 158
+      }
+    ],
+    "serializedFontChecks": [
+      {
+        "file": "score-h0.woff2",
+        "axes": 256,
+        "regions": 512,
+        "glyphs": 512,
+        "maximumStoredAdvance": 2704,
+        "expectedMaximumBase": 2704
+      },
+      {
+        "file": "score-l0.woff2",
+        "axes": 256,
+        "regions": 512,
+        "glyphs": 512,
+        "maximumStoredAdvance": 35714,
+        "expectedMaximumBase": 35714
+      },
+      {
+        "file": "score-h1.woff2",
+        "axes": 256,
+        "regions": 512,
+        "glyphs": 512,
+        "maximumStoredAdvance": 2675,
+        "expectedMaximumBase": 2675
+      },
+      {
+        "file": "score-l1.woff2",
+        "axes": 256,
+        "regions": 512,
+        "glyphs": 512,
+        "maximumStoredAdvance": 36031,
+        "expectedMaximumBase": 36031
+      },
+      {
+        "file": "score-h2.woff2",
+        "axes": 256,
+        "regions": 512,
+        "glyphs": 512,
+        "maximumStoredAdvance": 2594,
+        "expectedMaximumBase": 2594
+      },
+      {
+        "file": "score-l2.woff2",
+        "axes": 256,
+        "regions": 512,
+        "glyphs": 512,
+        "maximumStoredAdvance": 35835,
+        "expectedMaximumBase": 35835
+      }
+    ]
+  }
+}

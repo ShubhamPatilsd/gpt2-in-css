@@ -1,0 +1,2602 @@
+{
+  "model": "gpt2-small",
+  "quantizedBoundary": "input to every MLP c_fc",
+  "prompts": 10,
+  "summary": [
+    {
+      "bits": 2,
+      "range": 2.0,
+      "statesPerActivation": 3,
+      "packedStatesPerAxis": 27,
+      "avarRegionsFor256Axes": 6912,
+      "avarDeltasPer256HiddenShard": 1769472,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 37.5,
+      "maximumExactWinnerRank": 13669,
+      "meanLogitRmse": 39.0411351479786
+    },
+    {
+      "bits": 3,
+      "range": 2.0,
+      "statesPerActivation": 7,
+      "packedStatesPerAxis": 343,
+      "avarRegionsFor256Axes": 87808,
+      "avarDeltasPer256HiddenShard": 22478848,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 8.0,
+      "maximumExactWinnerRank": 2540,
+      "meanLogitRmse": 33.02280553215286
+    },
+    {
+      "bits": 4,
+      "range": 2.0,
+      "statesPerActivation": 15,
+      "packedStatesPerAxis": 3375,
+      "avarRegionsFor256Axes": 864000,
+      "avarDeltasPer256HiddenShard": 221184000,
+      "top1Matches": 4,
+      "cases": 10,
+      "medianExactWinnerRank": 2.0,
+      "maximumExactWinnerRank": 22,
+      "meanLogitRmse": 21.969267061736517
+    },
+    {
+      "bits": 5,
+      "range": 2.0,
+      "statesPerActivation": 31,
+      "packedStatesPerAxis": 29791,
+      "avarRegionsFor256Axes": 7626496,
+      "avarDeltasPer256HiddenShard": 1952382976,
+      "top1Matches": 5,
+      "cases": 10,
+      "medianExactWinnerRank": 1.5,
+      "maximumExactWinnerRank": 3,
+      "meanLogitRmse": 19.706874967430206
+    },
+    {
+      "bits": 6,
+      "range": 2.0,
+      "statesPerActivation": 63,
+      "packedStatesPerAxis": 250047,
+      "avarRegionsFor256Axes": 64012032,
+      "avarDeltasPer256HiddenShard": 16387080192,
+      "top1Matches": 7,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 3,
+      "meanLogitRmse": 14.649008818806653
+    },
+    {
+      "bits": 8,
+      "range": 2.0,
+      "statesPerActivation": 255,
+      "packedStatesPerAxis": 16581375,
+      "avarRegionsFor256Axes": 4244832000,
+      "avarDeltasPer256HiddenShard": 1086676992000,
+      "top1Matches": 7,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 2,
+      "meanLogitRmse": 14.924813657970038
+    },
+    {
+      "bits": 2,
+      "range": 3.0,
+      "statesPerActivation": 3,
+      "packedStatesPerAxis": 27,
+      "avarRegionsFor256Axes": 6912,
+      "avarDeltasPer256HiddenShard": 1769472,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 147.0,
+      "maximumExactWinnerRank": 7457,
+      "meanLogitRmse": 44.70857196907688
+    },
+    {
+      "bits": 3,
+      "range": 3.0,
+      "statesPerActivation": 7,
+      "packedStatesPerAxis": 343,
+      "avarRegionsFor256Axes": 87808,
+      "avarDeltasPer256HiddenShard": 22478848,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 31.0,
+      "maximumExactWinnerRank": 2127,
+      "meanLogitRmse": 58.33319402195806
+    },
+    {
+      "bits": 4,
+      "range": 3.0,
+      "statesPerActivation": 15,
+      "packedStatesPerAxis": 3375,
+      "avarRegionsFor256Axes": 864000,
+      "avarDeltasPer256HiddenShard": 221184000,
+      "top1Matches": 4,
+      "cases": 10,
+      "medianExactWinnerRank": 7.5,
+      "maximumExactWinnerRank": 350,
+      "meanLogitRmse": 27.625970743310212
+    },
+    {
+      "bits": 5,
+      "range": 3.0,
+      "statesPerActivation": 31,
+      "packedStatesPerAxis": 29791,
+      "avarRegionsFor256Axes": 7626496,
+      "avarDeltasPer256HiddenShard": 1952382976,
+      "top1Matches": 6,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 10,
+      "meanLogitRmse": 17.25173147574247
+    },
+    {
+      "bits": 6,
+      "range": 3.0,
+      "statesPerActivation": 63,
+      "packedStatesPerAxis": 250047,
+      "avarRegionsFor256Axes": 64012032,
+      "avarDeltasPer256HiddenShard": 16387080192,
+      "top1Matches": 6,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 3,
+      "meanLogitRmse": 14.138399247192362
+    },
+    {
+      "bits": 8,
+      "range": 3.0,
+      "statesPerActivation": 255,
+      "packedStatesPerAxis": 16581375,
+      "avarRegionsFor256Axes": 4244832000,
+      "avarDeltasPer256HiddenShard": 1086676992000,
+      "top1Matches": 8,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 2,
+      "meanLogitRmse": 12.637031595004439
+    },
+    {
+      "bits": 2,
+      "range": 4.0,
+      "statesPerActivation": 3,
+      "packedStatesPerAxis": 27,
+      "avarRegionsFor256Axes": 6912,
+      "avarDeltasPer256HiddenShard": 1769472,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 14.5,
+      "maximumExactWinnerRank": 4391,
+      "meanLogitRmse": 71.72417493341217
+    },
+    {
+      "bits": 3,
+      "range": 4.0,
+      "statesPerActivation": 7,
+      "packedStatesPerAxis": 343,
+      "avarRegionsFor256Axes": 87808,
+      "avarDeltasPer256HiddenShard": 22478848,
+      "top1Matches": 2,
+      "cases": 10,
+      "medianExactWinnerRank": 9.5,
+      "maximumExactWinnerRank": 3530,
+      "meanLogitRmse": 39.95092255819306
+    },
+    {
+      "bits": 4,
+      "range": 4.0,
+      "statesPerActivation": 15,
+      "packedStatesPerAxis": 3375,
+      "avarRegionsFor256Axes": 864000,
+      "avarDeltasPer256HiddenShard": 221184000,
+      "top1Matches": 1,
+      "cases": 10,
+      "medianExactWinnerRank": 11.0,
+      "maximumExactWinnerRank": 622,
+      "meanLogitRmse": 21.29538532293963
+    },
+    {
+      "bits": 5,
+      "range": 4.0,
+      "statesPerActivation": 31,
+      "packedStatesPerAxis": 29791,
+      "avarRegionsFor256Axes": 7626496,
+      "avarDeltasPer256HiddenShard": 1952382976,
+      "top1Matches": 6,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 11,
+      "meanLogitRmse": 16.546285027202437
+    },
+    {
+      "bits": 6,
+      "range": 4.0,
+      "statesPerActivation": 63,
+      "packedStatesPerAxis": 250047,
+      "avarRegionsFor256Axes": 64012032,
+      "avarDeltasPer256HiddenShard": 16387080192,
+      "top1Matches": 4,
+      "cases": 10,
+      "medianExactWinnerRank": 2.0,
+      "maximumExactWinnerRank": 3,
+      "meanLogitRmse": 13.740112579129704
+    },
+    {
+      "bits": 8,
+      "range": 4.0,
+      "statesPerActivation": 255,
+      "packedStatesPerAxis": 16581375,
+      "avarRegionsFor256Axes": 4244832000,
+      "avarDeltasPer256HiddenShard": 1086676992000,
+      "top1Matches": 8,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 2,
+      "meanLogitRmse": 11.232137937033738
+    },
+    {
+      "bits": 2,
+      "range": 6.0,
+      "statesPerActivation": 3,
+      "packedStatesPerAxis": 27,
+      "avarRegionsFor256Axes": 6912,
+      "avarDeltasPer256HiddenShard": 1769472,
+      "top1Matches": 1,
+      "cases": 10,
+      "medianExactWinnerRank": 47.0,
+      "maximumExactWinnerRank": 2781,
+      "meanLogitRmse": 32.46161844094182
+    },
+    {
+      "bits": 3,
+      "range": 6.0,
+      "statesPerActivation": 7,
+      "packedStatesPerAxis": 343,
+      "avarRegionsFor256Axes": 87808,
+      "avarDeltasPer256HiddenShard": 22478848,
+      "top1Matches": 2,
+      "cases": 10,
+      "medianExactWinnerRank": 57.0,
+      "maximumExactWinnerRank": 2553,
+      "meanLogitRmse": 41.078563073630136
+    },
+    {
+      "bits": 4,
+      "range": 6.0,
+      "statesPerActivation": 15,
+      "packedStatesPerAxis": 3375,
+      "avarRegionsFor256Axes": 864000,
+      "avarDeltasPer256HiddenShard": 221184000,
+      "top1Matches": 2,
+      "cases": 10,
+      "medianExactWinnerRank": 38.5,
+      "maximumExactWinnerRank": 3299,
+      "meanLogitRmse": 43.549676038957195
+    },
+    {
+      "bits": 5,
+      "range": 6.0,
+      "statesPerActivation": 31,
+      "packedStatesPerAxis": 29791,
+      "avarRegionsFor256Axes": 7626496,
+      "avarDeltasPer256HiddenShard": 1952382976,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 4.0,
+      "maximumExactWinnerRank": 1573,
+      "meanLogitRmse": 26.554395628365103
+    },
+    {
+      "bits": 6,
+      "range": 6.0,
+      "statesPerActivation": 63,
+      "packedStatesPerAxis": 250047,
+      "avarRegionsFor256Axes": 64012032,
+      "avarDeltasPer256HiddenShard": 16387080192,
+      "top1Matches": 7,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 11,
+      "meanLogitRmse": 13.530069206706443
+    },
+    {
+      "bits": 8,
+      "range": 6.0,
+      "statesPerActivation": 255,
+      "packedStatesPerAxis": 16581375,
+      "avarRegionsFor256Axes": 4244832000,
+      "avarDeltasPer256HiddenShard": 1086676992000,
+      "top1Matches": 9,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 2,
+      "meanLogitRmse": 9.113640767109864
+    }
+  ],
+  "cases": [
+    {
+      "bits": 2,
+      "range": 2.0,
+      "statesPerActivation": 3,
+      "packedStatesPerAxis": 27,
+      "avarRegionsFor256Axes": 6912,
+      "avarDeltasPer256HiddenShard": 1769472,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 37.5,
+      "maximumExactWinnerRank": 13669,
+      "meanLogitRmse": 39.0411351479786,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 29.067846010759432
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 5.251016401105019
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 14,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 16,
+          "logitRmse": 18.190472460136828
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 1399,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 59,
+          "logitRmse": 21.400401104792575
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 290,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 1269,
+          "logitRmse": 105.4869412623548
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 290,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 13669,
+          "logitRmse": 74.99809330978323
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 5.2725417357701705
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 11,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 74.56391916235116
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 290,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 132,
+          "logitRmse": 30.773245512674276
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 290,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 188,
+          "logitRmse": 25.406874520058473
+        }
+      ]
+    },
+    {
+      "bits": 3,
+      "range": 2.0,
+      "statesPerActivation": 7,
+      "packedStatesPerAxis": 343,
+      "avarRegionsFor256Axes": 87808,
+      "avarDeltasPer256HiddenShard": 22478848,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 8.0,
+      "maximumExactWinnerRank": 2540,
+      "meanLogitRmse": 33.02280553215286,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.96093599064004
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 8.123318553575555
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 11,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 225,
+          "logitRmse": 28.727667709327537
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 12,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 12,
+          "logitRmse": 26.790799518682366
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 329,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 39,
+          "logitRmse": 59.9816941100429
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 290,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 2540,
+          "logitRmse": 59.43660840347369
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 2.488043473586516
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 11,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 4,
+          "logitRmse": 56.61228358604319
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 318,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 4,
+          "logitRmse": 35.32911107840707
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 11,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 71,
+          "logitRmse": 24.777592897749766
+        }
+      ]
+    },
+    {
+      "bits": 4,
+      "range": 2.0,
+      "statesPerActivation": 15,
+      "packedStatesPerAxis": 3375,
+      "avarRegionsFor256Axes": 864000,
+      "avarDeltasPer256HiddenShard": 221184000,
+      "top1Matches": 4,
+      "cases": 10,
+      "medianExactWinnerRank": 2.0,
+      "maximumExactWinnerRank": 22,
+      "meanLogitRmse": 21.969267061736517,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 28.16586668666436
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 21.182474441420162
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 11,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 6,
+          "logitRmse": 15.369539545856457
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 6.683682138962273
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 287,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 25.10138442317605
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 673,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 22,
+          "logitRmse": 35.613220961790795
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 13,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 21.847209195344377
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 4,
+          "logitRmse": 30.991736403878974
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 262,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 17.333866323439047
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 17.40369049683267
+        }
+      ]
+    },
+    {
+      "bits": 5,
+      "range": 2.0,
+      "statesPerActivation": 31,
+      "packedStatesPerAxis": 29791,
+      "avarRegionsFor256Axes": 7626496,
+      "avarDeltasPer256HiddenShard": 1952382976,
+      "top1Matches": 5,
+      "cases": 10,
+      "medianExactWinnerRank": 1.5,
+      "maximumExactWinnerRank": 3,
+      "meanLogitRmse": 19.706874967430206,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.490498885088478
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 32.83338849290801
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 11,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 12.480160714657526
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 13.7554449143364
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 423,
+          "exactWinner": 423,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 9.866145384925932
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 6807,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 17.02285961431778
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 13,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 4.886358979080112
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 41.58413348352737
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 262,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 18.58902613938569
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 18.5607330660748
+        }
+      ]
+    },
+    {
+      "bits": 6,
+      "range": 2.0,
+      "statesPerActivation": 63,
+      "packedStatesPerAxis": 250047,
+      "avarRegionsFor256Axes": 64012032,
+      "avarDeltasPer256HiddenShard": 16387080192,
+      "top1Matches": 7,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 3,
+      "meanLogitRmse": 14.649008818806653,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.24727199903095
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 23.654178045964777
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 8.033519784866002
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 14.831927761450899
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 423,
+          "exactWinner": 423,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 2.6586789696873985
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 2497,
+          "exactWinner": 2497,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 2.950731585210108
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 13,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 9.400580069814565
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 27.380553870272035
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 262,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 15.920524352204922
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 14.412121749564866
+        }
+      ]
+    },
+    {
+      "bits": 8,
+      "range": 2.0,
+      "statesPerActivation": 255,
+      "packedStatesPerAxis": 16581375,
+      "avarRegionsFor256Axes": 4244832000,
+      "avarDeltasPer256HiddenShard": 1086676992000,
+      "top1Matches": 7,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 2,
+      "meanLogitRmse": 14.924813657970038,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.18143099681611
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 26.079251937135968
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 7.852742238532848
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 11.884060996411336
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 423,
+          "exactWinner": 423,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 5.553900214287045
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 2497,
+          "exactWinner": 2497,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 6.691247527217736
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 257,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 10.062763150650959
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 29.772056464273774
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 262,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 13.371414777249244
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 10.799268277125357
+        }
+      ]
+    },
+    {
+      "bits": 2,
+      "range": 3.0,
+      "statesPerActivation": 3,
+      "packedStatesPerAxis": 27,
+      "avarRegionsFor256Axes": 6912,
+      "avarDeltasPer256HiddenShard": 1769472,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 147.0,
+      "maximumExactWinnerRank": 7457,
+      "meanLogitRmse": 44.70857196907688,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 28.960829450054568
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 21.578943150091387
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 11,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 105,
+          "logitRmse": 6.084212611639352
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 685,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 189,
+          "logitRmse": 50.078170053341346
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 11,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 216,
+          "logitRmse": 80.45429386995139
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 11,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 7457,
+          "logitRmse": 61.13734343847921
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 14.665537781297445
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 11,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 4,
+          "logitRmse": 66.57248151194358
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 60,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 250,
+          "logitRmse": 41.366223151647375
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 14,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 195,
+          "logitRmse": 76.18768467232312
+        }
+      ]
+    },
+    {
+      "bits": 3,
+      "range": 3.0,
+      "statesPerActivation": 7,
+      "packedStatesPerAxis": 343,
+      "avarRegionsFor256Axes": 87808,
+      "avarDeltasPer256HiddenShard": 22478848,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 31.0,
+      "maximumExactWinnerRank": 2127,
+      "meanLogitRmse": 58.33319402195806,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.946256071837386
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 104.31022485836047
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 11,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 146,
+          "logitRmse": 13.046511054559243
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 12,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 49,
+          "logitRmse": 132.7996602341108
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 14,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 101,
+          "logitRmse": 41.88055166957253
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 393,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 2127,
+          "logitRmse": 95.41340244241059
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 54.80393538338427
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 12,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 8,
+          "logitRmse": 72.55304025194789
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 262,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 28,
+          "logitRmse": 19.260772773357008
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 11,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 34,
+          "logitRmse": 21.317585480040453
+        }
+      ]
+    },
+    {
+      "bits": 4,
+      "range": 3.0,
+      "statesPerActivation": 15,
+      "packedStatesPerAxis": 3375,
+      "avarRegionsFor256Axes": 864000,
+      "avarDeltasPer256HiddenShard": 221184000,
+      "top1Matches": 4,
+      "cases": 10,
+      "medianExactWinnerRank": 7.5,
+      "maximumExactWinnerRank": 350,
+      "meanLogitRmse": 27.625970743310212,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.76737825518994
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 14.028169001002817
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 6.072592441136895
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 257,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 7,
+          "logitRmse": 4.801926534081499
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 11,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 28,
+          "logitRmse": 61.30477835039111
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 262,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 350,
+          "logitRmse": 37.84626781497275
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 534,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 9,
+          "logitRmse": 9.808026854853425
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 8,
+          "logitRmse": 61.98908594977616
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 11,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 114,
+          "logitRmse": 33.24069599367846
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 19.400786238019073
+        }
+      ]
+    },
+    {
+      "bits": 5,
+      "range": 3.0,
+      "statesPerActivation": 31,
+      "packedStatesPerAxis": 29791,
+      "avarRegionsFor256Axes": 7626496,
+      "avarDeltasPer256HiddenShard": 1952382976,
+      "top1Matches": 6,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 10,
+      "meanLogitRmse": 17.25173147574247,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.53676896370148
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 24.35075731359779
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 11.39396550812577
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 16.72931612927958
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 423,
+          "exactWinner": 423,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 1.515954686439108
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 673,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 10,
+          "logitRmse": 9.529138164799013
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 13,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 4.287512778588048
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 29.381079794603547
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 262,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 21.049684035984175
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 26.743137382306195
+        }
+      ]
+    },
+    {
+      "bits": 6,
+      "range": 3.0,
+      "statesPerActivation": 63,
+      "packedStatesPerAxis": 250047,
+      "avarRegionsFor256Axes": 64012032,
+      "avarDeltasPer256HiddenShard": 16387080192,
+      "top1Matches": 6,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 3,
+      "meanLogitRmse": 14.138399247192362,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.125515604034096
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 28.280260493464315
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 8.676557406333263
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 6.665208652845388
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 1043,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 5.343084866806695
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 3114,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 5.9033148187714275
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 257,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 11.86045090791962
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 290,
+          "exactWinner": 290,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.40808755099716
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 262,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 10.207998013483241
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 9.913514157268436
+        }
+      ]
+    },
+    {
+      "bits": 8,
+      "range": 3.0,
+      "statesPerActivation": 255,
+      "packedStatesPerAxis": 16581375,
+      "avarRegionsFor256Axes": 4244832000,
+      "avarDeltasPer256HiddenShard": 1086676992000,
+      "top1Matches": 8,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 2,
+      "meanLogitRmse": 12.637031595004439,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.335686475817
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 23.881384748341645
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 7.718792967297444
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 7.769852507766793
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 423,
+          "exactWinner": 423,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 3.7998117037519084
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 2497,
+          "exactWinner": 2497,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 1.4869415961334909
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 7.527707923466291
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 26.516063911717037
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 262,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 10.565563645490919
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 9.76851047026187
+        }
+      ]
+    },
+    {
+      "bits": 2,
+      "range": 4.0,
+      "statesPerActivation": 3,
+      "packedStatesPerAxis": 27,
+      "avarRegionsFor256Axes": 6912,
+      "avarDeltasPer256HiddenShard": 1769472,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 14.5,
+      "maximumExactWinnerRank": 4391,
+      "meanLogitRmse": 71.72417493341217,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 26.853680858973718
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 41.377794352937
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 30,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 108,
+          "logitRmse": 71.84466663334719
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 11,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 14,
+          "logitRmse": 71.58792749336422
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 11,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 200,
+          "logitRmse": 112.25153544479457
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 12,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 4391,
+          "logitRmse": 95.59916029866746
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 63.29578491583252
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 11,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 6,
+          "logitRmse": 100.94474334238576
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 11,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 83,
+          "logitRmse": 56.19313196954679
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 11,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 15,
+          "logitRmse": 77.29332402427242
+        }
+      ]
+    },
+    {
+      "bits": 3,
+      "range": 4.0,
+      "statesPerActivation": 7,
+      "packedStatesPerAxis": 343,
+      "avarRegionsFor256Axes": 87808,
+      "avarDeltasPer256HiddenShard": 22478848,
+      "top1Matches": 2,
+      "cases": 10,
+      "medianExactWinnerRank": 9.5,
+      "maximumExactWinnerRank": 3530,
+      "meanLogitRmse": 39.95092255819306,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 28.08910225237485
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 41.75283470636655
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 11,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 222,
+          "logitRmse": 22.495803160948686
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 11,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 12,
+          "logitRmse": 110.22721829648457
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 11,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 83,
+          "logitRmse": 34.85261121983895
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 11,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 3530,
+          "logitRmse": 24.06686222009103
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 1424,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 10.957060139296223
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 11,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 4,
+          "logitRmse": 24.523642860876688
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 286,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 61,
+          "logitRmse": 28.983688329285688
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 11,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 7,
+          "logitRmse": 73.56040239636727
+        }
+      ]
+    },
+    {
+      "bits": 4,
+      "range": 4.0,
+      "statesPerActivation": 15,
+      "packedStatesPerAxis": 3375,
+      "avarRegionsFor256Axes": 864000,
+      "avarDeltasPer256HiddenShard": 221184000,
+      "top1Matches": 1,
+      "cases": 10,
+      "medianExactWinnerRank": 11.0,
+      "maximumExactWinnerRank": 622,
+      "meanLogitRmse": 21.29538532293963,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 26.542872632254486
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 286,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 17.94287412862624
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 21831,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 28,
+          "logitRmse": 5.138952846898009
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 11,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 7,
+          "logitRmse": 6.430371319147308
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 11,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 165,
+          "logitRmse": 55.722287533704964
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 11,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 622,
+          "logitRmse": 10.712949855930487
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 889,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 11,
+          "logitRmse": 17.832066676895714
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 4,
+          "logitRmse": 44.73162331345958
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 11,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 64,
+          "logitRmse": 11.757322883554897
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 284,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 11,
+          "logitRmse": 16.142532038924593
+        }
+      ]
+    },
+    {
+      "bits": 5,
+      "range": 4.0,
+      "statesPerActivation": 31,
+      "packedStatesPerAxis": 29791,
+      "avarRegionsFor256Axes": 7626496,
+      "avarDeltasPer256HiddenShard": 1952382976,
+      "top1Matches": 6,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 11,
+      "meanLogitRmse": 16.546285027202437,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.44186481455407
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 23.787357768020417
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 9.576500673286262
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 7.336763751182447
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 423,
+          "exactWinner": 423,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 21.45310668418168
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 1816,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 11,
+          "logitRmse": 2.9141026573204463
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 13,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 5.848180525350477
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 36.62288070349089
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 262,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 5,
+          "logitRmse": 8.822824653299124
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 21.65926804133853
+        }
+      ]
+    },
+    {
+      "bits": 6,
+      "range": 4.0,
+      "statesPerActivation": 63,
+      "packedStatesPerAxis": 250047,
+      "avarRegionsFor256Axes": 64012032,
+      "avarDeltasPer256HiddenShard": 16387080192,
+      "top1Matches": 4,
+      "cases": 10,
+      "medianExactWinnerRank": 2.0,
+      "maximumExactWinnerRank": 3,
+      "meanLogitRmse": 13.740112579129704,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 26.692203735325414
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 26.877562932690324
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 11,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 11.266460684161629
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 1.1323121486891183
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 1043,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 9.072625179124127
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 6807,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 4.785714791133565
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 13,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 5.057235511487564
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 23.865979667468906
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 262,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 17.19576952762967
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 11.455261613586725
+        }
+      ]
+    },
+    {
+      "bits": 8,
+      "range": 4.0,
+      "statesPerActivation": 255,
+      "packedStatesPerAxis": 16581375,
+      "avarRegionsFor256Axes": 4244832000,
+      "avarDeltasPer256HiddenShard": 1086676992000,
+      "top1Matches": 8,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 2,
+      "meanLogitRmse": 11.232137937033738,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 27.033577989976063
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 24.85765677205352
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 5.809833223658033
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 4.570904536014414
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 423,
+          "exactWinner": 423,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 2.093473459342961
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 2497,
+          "exactWinner": 2497,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 0.6731875709351058
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 257,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 8.200731192561703
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 23.525165226996062
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 407,
+          "exactWinner": 407,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 9.37043183829563
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 6.186417560503883
+        }
+      ]
+    },
+    {
+      "bits": 2,
+      "range": 6.0,
+      "statesPerActivation": 3,
+      "packedStatesPerAxis": 27,
+      "avarRegionsFor256Axes": 6912,
+      "avarDeltasPer256HiddenShard": 1769472,
+      "top1Matches": 1,
+      "cases": 10,
+      "medianExactWinnerRank": 47.0,
+      "maximumExactWinnerRank": 2781,
+      "meanLogitRmse": 32.46161844094182,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 12,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 4,
+          "logitRmse": 2.9107388954774427
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 12,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 39.999259353590276
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 11,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 59,
+          "logitRmse": 43.78433785717556
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 12,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 75,
+          "logitRmse": 7.13349220124381
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 11,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 108,
+          "logitRmse": 54.35183586562995
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 12,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 2781,
+          "logitRmse": 36.93188275729403
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 33.19245830656116
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 12,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 39.067786563355845
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 11,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 35,
+          "logitRmse": 59.90743971307887
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 12,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 134,
+          "logitRmse": 7.336952896011268
+        }
+      ]
+    },
+    {
+      "bits": 3,
+      "range": 6.0,
+      "statesPerActivation": 7,
+      "packedStatesPerAxis": 343,
+      "avarRegionsFor256Axes": 87808,
+      "avarDeltasPer256HiddenShard": 22478848,
+      "top1Matches": 2,
+      "cases": 10,
+      "medianExactWinnerRank": 57.0,
+      "maximumExactWinnerRank": 2553,
+      "meanLogitRmse": 41.078563073630136,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 23.38869030161099
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 83.18759314035907
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 290,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 97,
+          "logitRmse": 57.56453302821755
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 11,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 71,
+          "logitRmse": 19.18236565395326
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 290,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 2553,
+          "logitRmse": 41.804689116035746
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 290,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 2476,
+          "logitRmse": 88.34879035974579
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 290,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 11.338937688759545
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 7,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 8,
+          "logitRmse": 47.573905847645435
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 11,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 43,
+          "logitRmse": 6.268888172283754
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 290,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 96,
+          "logitRmse": 32.127237427690226
+        }
+      ]
+    },
+    {
+      "bits": 4,
+      "range": 6.0,
+      "statesPerActivation": 15,
+      "packedStatesPerAxis": 3375,
+      "avarRegionsFor256Axes": 864000,
+      "avarDeltasPer256HiddenShard": 221184000,
+      "top1Matches": 2,
+      "cases": 10,
+      "medianExactWinnerRank": 38.5,
+      "maximumExactWinnerRank": 3299,
+      "meanLogitRmse": 43.549676038957195,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 25.293544145708708
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 50.28571071896296
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 12,
+          "exactWinner": 274,
+          "top1Matches": false,
+          "exactWinnerRank": 64,
+          "logitRmse": 16.349142994321532
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 410,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 46,
+          "logitRmse": 14.638863678280096
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 393,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 284,
+          "logitRmse": 34.91722579063107
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 11,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 3299,
+          "logitRmse": 121.3117510191509
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 198,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 11,
+          "logitRmse": 20.381408914869574
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 271,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 31,
+          "logitRmse": 5.2109660837286
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 1,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 187,
+          "logitRmse": 118.53330534712093
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 13,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 13,
+          "logitRmse": 28.574841696797577
+        }
+      ]
+    },
+    {
+      "bits": 5,
+      "range": 6.0,
+      "statesPerActivation": 31,
+      "packedStatesPerAxis": 29791,
+      "avarRegionsFor256Axes": 7626496,
+      "avarDeltasPer256HiddenShard": 1952382976,
+      "top1Matches": 3,
+      "cases": 10,
+      "medianExactWinnerRank": 4.0,
+      "maximumExactWinnerRank": 1573,
+      "meanLogitRmse": 26.554395628365103,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 24.893564521309
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 54.95313717501789
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 21.45778267867358
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 13,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 19.84555234855198
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 13,
+          "exactWinner": 423,
+          "top1Matches": false,
+          "exactWinnerRank": 80,
+          "logitRmse": 25.74444439965699
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 607,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 1573,
+          "logitRmse": 21.325898327474746
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 326,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 9,
+          "logitRmse": 27.912013710619313
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 11,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 31.12224993557969
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 318,
+          "exactWinner": 407,
+          "top1Matches": false,
+          "exactWinnerRank": 40,
+          "logitRmse": 14.900003945275232
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 290,
+          "exactWinner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 5,
+          "logitRmse": 23.38930924149264
+        }
+      ]
+    },
+    {
+      "bits": 6,
+      "range": 6.0,
+      "statesPerActivation": 63,
+      "packedStatesPerAxis": 250047,
+      "avarRegionsFor256Axes": 64012032,
+      "avarDeltasPer256HiddenShard": 16387080192,
+      "top1Matches": 7,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 11,
+      "meanLogitRmse": 13.530069206706443,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 25.438875887169285
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 32.87056192032948
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 8.468471003677505
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 7.747478753362603
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 423,
+          "exactWinner": 423,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 6.126105277672822
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 673,
+          "exactWinner": 2497,
+          "top1Matches": false,
+          "exactWinnerRank": 11,
+          "logitRmse": 1.8660286717642085
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 257,
+          "exactWinner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 15.834255027996536
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 9.598099142333083
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 407,
+          "exactWinner": 407,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 14.116458511001891
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 13.23435787175702
+        }
+      ]
+    },
+    {
+      "bits": 8,
+      "range": 6.0,
+      "statesPerActivation": 255,
+      "packedStatesPerAxis": 16581375,
+      "avarRegionsFor256Axes": 4244832000,
+      "avarDeltasPer256HiddenShard": 1086676992000,
+      "top1Matches": 9,
+      "cases": 10,
+      "medianExactWinnerRank": 1.0,
+      "maximumExactWinnerRank": 2,
+      "meanLogitRmse": 9.113640767109864,
+      "prompts": [
+        {
+          "prompt": "Hello",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 26.0717526270737
+        },
+        {
+          "prompt": "Once upon a time",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 24.56481971618823
+        },
+        {
+          "prompt": "The quick brown fox",
+          "winner": 274,
+          "exactWinner": 274,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 1.5138977859280076
+        },
+        {
+          "prompt": "Paris is the capital of",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 2.5411089488240264
+        },
+        {
+          "prompt": "In a shocking finding, scientists",
+          "winner": 423,
+          "exactWinner": 423,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 0.4502060551222619
+        },
+        {
+          "prompt": "She opened the door and",
+          "winner": 2497,
+          "exactWinner": 2497,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 1.5607785472963902
+        },
+        {
+          "prompt": "To be or not to be",
+          "winner": 11,
+          "exactWinner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 10.207055589907602
+        },
+        {
+          "prompt": "CSS can perform matrix multiplication",
+          "winner": 13,
+          "exactWinner": 290,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 16.308912859569595
+        },
+        {
+          "prompt": "The meaning of life is",
+          "winner": 407,
+          "exactWinner": 407,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 3.0725911109670396
+        },
+        {
+          "prompt": "Machine learning models predict",
+          "winner": 262,
+          "exactWinner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 4.8452844302217795
+        }
+      ]
+    }
+  ],
+  "elapsedSeconds": 35.33758891699836
+}

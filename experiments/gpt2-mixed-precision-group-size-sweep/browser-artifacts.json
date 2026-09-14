@@ -1,0 +1,191 @@
+{
+  "status": "prepared-not-run",
+  "browserLaunchedByBuilder": false,
+  "offlinePareto": [
+    "g128-s4",
+    "g256-s4",
+    "g512-s8",
+    "g1024-s16"
+  ],
+  "candidateVariants": [
+    "g128-s4",
+    "g512-s8",
+    "g1024-s16",
+    "g128-s8",
+    "g128-s16",
+    "g128-s32"
+  ],
+  "transportSweepVariants": [
+    "g128-s8",
+    "g128-s16",
+    "g128-s32"
+  ],
+  "transportSweepStopAtFirstSemanticallyExact": true,
+  "retainedControl": "experiments/gpt2-mixed-precision-hot2-upper",
+  "pairedHarness": "tools/test_mixed_precision_group_size_probe.mjs",
+  "candidates": [
+    {
+      "variant": "g128-s4",
+      "directory": "experiments/gpt2-mixed-precision-group-size-sweep/g128-s4",
+      "fixtureFinalExactWinners": 10,
+      "fixtureCount": 10,
+      "staticTransportChecks": {
+        "groupWrapperCount": 393,
+        "upperCandidateCount": 50257,
+        "exactUpperCandidateCount": 512,
+        "dynamicFineCandidatesPerStage": 128,
+        "scoreStridePerGroupSizeAtLeastOneLayoutUnit": true,
+        "allowanceAppliedAfterGroupMaximum": true,
+        "readbackUsesVariantStride": true,
+        "readbackUsesVariantGroupSize": true,
+        "tieEncodingUsesStridePerGroupSize": true,
+        "fineWinnerUsesVariantGroupSize": true,
+        "upperWinnerUsesVariantGroupSize": true,
+        "scaledGroupViewport": true,
+        "rowsAdded": 0,
+        "fineFixtureTransportTargetsEveryStage": true
+      },
+      "generatedBytes": {
+        "index.html": 8318981,
+        "topology.css": 6980381,
+        "reference.json": 238942
+      }
+    },
+    {
+      "variant": "g512-s8",
+      "directory": "experiments/gpt2-mixed-precision-group-size-sweep/g512-s8",
+      "fixtureFinalExactWinners": 10,
+      "fixtureCount": 10,
+      "staticTransportChecks": {
+        "groupWrapperCount": 99,
+        "upperCandidateCount": 50257,
+        "exactUpperCandidateCount": 512,
+        "dynamicFineCandidatesPerStage": 512,
+        "scoreStridePerGroupSizeAtLeastOneLayoutUnit": true,
+        "allowanceAppliedAfterGroupMaximum": true,
+        "readbackUsesVariantStride": true,
+        "readbackUsesVariantGroupSize": true,
+        "tieEncodingUsesStridePerGroupSize": true,
+        "fineWinnerUsesVariantGroupSize": true,
+        "upperWinnerUsesVariantGroupSize": true,
+        "scaledGroupViewport": true,
+        "rowsAdded": 0,
+        "fineFixtureTransportTargetsEveryStage": true
+      },
+      "generatedBytes": {
+        "index.html": 8375947,
+        "topology.css": 5724112,
+        "reference.json": 238975
+      }
+    },
+    {
+      "variant": "g1024-s16",
+      "directory": "experiments/gpt2-mixed-precision-group-size-sweep/g1024-s16",
+      "fixtureFinalExactWinners": 10,
+      "fixtureCount": 10,
+      "staticTransportChecks": {
+        "groupWrapperCount": 50,
+        "upperCandidateCount": 50257,
+        "exactUpperCandidateCount": 1024,
+        "dynamicFineCandidatesPerStage": 1024,
+        "scoreStridePerGroupSizeAtLeastOneLayoutUnit": true,
+        "allowanceAppliedAfterGroupMaximum": true,
+        "readbackUsesVariantStride": true,
+        "readbackUsesVariantGroupSize": true,
+        "tieEncodingUsesStridePerGroupSize": true,
+        "fineWinnerUsesVariantGroupSize": true,
+        "upperWinnerUsesVariantGroupSize": true,
+        "scaledGroupViewport": true,
+        "rowsAdded": 0,
+        "fineFixtureTransportTargetsEveryStage": true
+      },
+      "generatedBytes": {
+        "index.html": 8657865,
+        "topology.css": 5605376,
+        "reference.json": 239019
+      }
+    },
+    {
+      "variant": "g128-s8",
+      "directory": "experiments/gpt2-mixed-precision-group-size-sweep/g128-s8",
+      "fixtureFinalExactWinners": 10,
+      "fixtureCount": 10,
+      "staticTransportChecks": {
+        "groupWrapperCount": 393,
+        "upperCandidateCount": 50257,
+        "exactUpperCandidateCount": 512,
+        "dynamicFineCandidatesPerStage": 128,
+        "scoreStridePerGroupSizeAtLeastOneLayoutUnit": true,
+        "allowanceAppliedAfterGroupMaximum": true,
+        "readbackUsesVariantStride": true,
+        "readbackUsesVariantGroupSize": true,
+        "tieEncodingUsesStridePerGroupSize": true,
+        "fineWinnerUsesVariantGroupSize": true,
+        "upperWinnerUsesVariantGroupSize": true,
+        "scaledGroupViewport": true,
+        "rowsAdded": 0,
+        "fineFixtureTransportTargetsEveryStage": true
+      },
+      "generatedBytes": {
+        "index.html": 8356124,
+        "topology.css": 6980395,
+        "reference.json": 239258
+      }
+    },
+    {
+      "variant": "g128-s16",
+      "directory": "experiments/gpt2-mixed-precision-group-size-sweep/g128-s16",
+      "fixtureFinalExactWinners": 10,
+      "fixtureCount": 10,
+      "staticTransportChecks": {
+        "groupWrapperCount": 393,
+        "upperCandidateCount": 50257,
+        "exactUpperCandidateCount": 512,
+        "dynamicFineCandidatesPerStage": 128,
+        "scoreStridePerGroupSizeAtLeastOneLayoutUnit": true,
+        "allowanceAppliedAfterGroupMaximum": true,
+        "readbackUsesVariantStride": true,
+        "readbackUsesVariantGroupSize": true,
+        "tieEncodingUsesStridePerGroupSize": true,
+        "fineWinnerUsesVariantGroupSize": true,
+        "upperWinnerUsesVariantGroupSize": true,
+        "scaledGroupViewport": true,
+        "rowsAdded": 0,
+        "fineFixtureTransportTargetsEveryStage": true
+      },
+      "generatedBytes": {
+        "index.html": 8357121,
+        "topology.css": 6983954,
+        "reference.json": 239261
+      }
+    },
+    {
+      "variant": "g128-s32",
+      "directory": "experiments/gpt2-mixed-precision-group-size-sweep/g128-s32",
+      "fixtureFinalExactWinners": 10,
+      "fixtureCount": 10,
+      "staticTransportChecks": {
+        "groupWrapperCount": 393,
+        "upperCandidateCount": 50257,
+        "exactUpperCandidateCount": 512,
+        "dynamicFineCandidatesPerStage": 128,
+        "scoreStridePerGroupSizeAtLeastOneLayoutUnit": true,
+        "allowanceAppliedAfterGroupMaximum": true,
+        "readbackUsesVariantStride": true,
+        "readbackUsesVariantGroupSize": true,
+        "tieEncodingUsesStridePerGroupSize": true,
+        "fineWinnerUsesVariantGroupSize": true,
+        "upperWinnerUsesVariantGroupSize": true,
+        "scaledGroupViewport": true,
+        "rowsAdded": 0,
+        "fineFixtureTransportTargetsEveryStage": true
+      },
+      "generatedBytes": {
+        "index.html": 8398766,
+        "topology.css": 6983953,
+        "reference.json": 239258
+      }
+    }
+  ],
+  "buildSeconds": 11.343683875049464
+}

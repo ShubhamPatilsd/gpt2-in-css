@@ -1,0 +1,3256 @@
+{
+  "chromeVersion": "fresh isolated Chromium process per variant",
+  "rounds": 1,
+  "fixtureCount": 10,
+  "isolatedPerVariant": true,
+  "control": "gpt2-mixed-precision-hotk-sweep/k2",
+  "loadOrderAlternated": true,
+  "robustRepeatPerformed": false,
+  "longLivedCursorMcpTerminated": false,
+  "offlineResultsPreserved": true,
+  "allSemanticsPass": false,
+  "results": [
+    {
+      "variant": "g128-s4",
+      "isolatedFreshBrowser": true,
+      "loadOrder": [
+        "candidate",
+        "retained-g256-k2"
+      ],
+      "fixtureOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "warmupFixture": 9,
+      "requestFailures": {
+        "candidate": [],
+        "control": []
+      },
+      "cold": {
+        "candidateLoadMilliseconds": 60988.604875,
+        "controlLoadMilliseconds": 54320.151041000005,
+        "loadRatio": 1.1227620635474072
+      },
+      "semanticsPass": false,
+      "decision": "reject-transport",
+      "comparison": {
+        "candidate": {
+          "count": 10,
+          "minimum": 2720.393458000006,
+          "median": 3163.9852079999982,
+          "p90": 4647.25450000001,
+          "maximum": 4647.25450000001,
+          "mean": 3335.4354541999955
+        },
+        "retainedG256K2": {
+          "count": 10,
+          "minimum": 2654.150874999992,
+          "median": 3683.859541999991,
+          "p90": 4189.5052500000165,
+          "maximum": 4189.5052500000165,
+          "mean": 3576.1502959000004
+        },
+        "normalizedWarmMeanRatio": 0.9326888352606487,
+        "warmSpeedupPercent": 6.731116473935128
+      },
+      "work": {
+        "candidate": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 11,
+          "reusedExactUpper": 10,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 128
+        },
+        "retainedG256K2": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 13,
+          "reusedExactUpper": 12,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 256
+        },
+        "normalized": {
+          "activeStageVisits": 0.8461538461538461,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 0.5
+        }
+      },
+      "shadows": {
+        "requested": 11,
+        "present": 11,
+        "source": "candidate variant's forced dynamic exact grid"
+      },
+      "candidateChecks": [
+        {
+          "fixture": 0,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 1,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": true,
+          "finalDenseWinnerMatchesFixture": false,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": true,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 2,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 3,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 4,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 5,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 6,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 7,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 8,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 9,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        }
+      ],
+      "controlChecks": [
+        {
+          "fixture": 0,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 1,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 2,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 3,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 4,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 5,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 6,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 7,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 8,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 9,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        }
+      ],
+      "candidateSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 2746.613624999998,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 170,
+                "nextUpperBucket": 4776,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 175100.203125,
+                "totalUnits": 11206413,
+                "tieUnits": 13,
+                "fineBucket": 43775,
+                "fineLocal": 114,
+                "fineWinner": 114,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 3154.2302080000227,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 10,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 6,
+                "fineBucket": 49667,
+                "fineWinner": 1286,
+                "bestBucket": 49667,
+                "bestWinner": 1286,
+                "certificateGap": 37023,
+                "nextUpperBucket": 12644,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 0,
+            "dynamicFineGrids": 1,
+            "finalWinner": 1286,
+            "finalBucket": 49667,
+            "exactShadows": [
+              {
+                "group": 10,
+                "width": 198669.890625,
+                "totalUnits": 12714873,
+                "tieUnits": 121,
+                "fineBucket": 49667,
+                "fineLocal": 6,
+                "fineWinner": 1286,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 2757.7960420000018,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 70,
+                "fineBucket": 5137,
+                "fineWinner": 198,
+                "bestBucket": 5137,
+                "bestWinner": 198,
+                "certificateGap": 499,
+                "nextUpperBucket": 4638,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5137,
+            "exactShadows": [
+              {
+                "group": 1,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 51230,
+                "fineLocal": 75,
+                "fineWinner": 203,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 4647.25450000001,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 70,
+                "fineBucket": 4577,
+                "fineWinner": 198,
+                "bestBucket": 4577,
+                "bestWinner": 198,
+                "certificateGap": 171,
+                "nextUpperBucket": 4406,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4577,
+            "exactShadows": [
+              {
+                "group": 1,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 51230,
+                "fineLocal": 75,
+                "fineWinner": 203,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 2969.6267089999747,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 2,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 6,
+                "fineBucket": 4440,
+                "fineWinner": 262,
+                "bestBucket": 4440,
+                "bestWinner": 262,
+                "certificateGap": 223,
+                "nextUpperBucket": 4217,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4440,
+            "exactShadows": [
+              {
+                "group": 2,
+                "width": 171069.59375,
+                "totalUnits": 10948454,
+                "tieUnits": 102,
+                "fineBucket": 42767,
+                "fineLocal": 25,
+                "fineWinner": 281,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 3163.9852079999982,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 70,
+                "fineBucket": 5190,
+                "fineWinner": 198,
+                "bestBucket": 5190,
+                "bestWinner": 198,
+                "certificateGap": 545,
+                "nextUpperBucket": 4645,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5190,
+            "exactShadows": [
+              {
+                "group": 1,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 51230,
+                "fineLocal": 75,
+                "fineWinner": 203,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 3312.4336669999757,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 2,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 6,
+                "fineBucket": 4074,
+                "fineWinner": 262,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 14,
+                "nextUpperBucket": 4060,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4036,
+                "fineWinner": 11,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 50,
+                "nextUpperBucket": 4024,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4074,
+            "exactShadows": [
+              {
+                "group": 2,
+                "width": 171069.59375,
+                "totalUnits": 10948454,
+                "tieUnits": 102,
+                "fineBucket": 42767,
+                "fineLocal": 25,
+                "fineWinner": 281,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              },
+              {
+                "group": 0,
+                "width": 175100.203125,
+                "totalUnits": 11206413,
+                "tieUnits": 13,
+                "fineBucket": 43775,
+                "fineLocal": 114,
+                "fineWinner": 114,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 3719.7258749999746,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 70,
+                "fineBucket": 4132,
+                "fineWinner": 198,
+                "bestBucket": 4132,
+                "bestWinner": 198,
+                "certificateGap": 53,
+                "nextUpperBucket": 4079,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4132,
+            "exactShadows": [
+              {
+                "group": 1,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 51230,
+                "fineLocal": 75,
+                "fineWinner": 203,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 2720.393458000006,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 13,
+                "fineBucket": 5488,
+                "fineWinner": 13,
+                "bestBucket": 5488,
+                "bestWinner": 13,
+                "certificateGap": 76,
+                "nextUpperBucket": 5412,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 13,
+            "finalBucket": 5488,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 175100.203125,
+                "totalUnits": 11206413,
+                "tieUnits": 13,
+                "fineBucket": 43775,
+                "fineLocal": 114,
+                "fineWinner": 114,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 4162.295249999996,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 5026,
+                "fineWinner": 11,
+                "bestBucket": 5026,
+                "bestWinner": 11,
+                "certificateGap": 188,
+                "nextUpperBucket": 4838,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 5026,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 175100.203125,
+                "totalUnits": 11206413,
+                "tieUnits": 13,
+                "fineBucket": 43775,
+                "fineLocal": 114,
+                "fineWinner": 114,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        }
+      ],
+      "controlSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 3664.566500000001,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 364,
+                "nextUpperBucket": 4582,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 3985.285208000001,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 5,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 119,
+                "fineBucket": 3845,
+                "fineWinner": 1399,
+                "bestBucket": 3845,
+                "bestWinner": 1399,
+                "certificateGap": -8799,
+                "nextUpperBucket": 12644,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 221,
+                "fineBucket": 12620,
+                "fineWinner": 477,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 44,
+                "nextUpperBucket": 12576,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 12552,
+                "fineWinner": 11,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 249,
+                "nextUpperBucket": 12371,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 3683.859541999991,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 5137,
+                "fineWinner": 198,
+                "bestBucket": 5137,
+                "bestWinner": 198,
+                "certificateGap": 516,
+                "nextUpperBucket": 4621,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 3821.8504170000087,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 4577,
+                "fineWinner": 198,
+                "bestBucket": 4577,
+                "bestWinner": 198,
+                "certificateGap": 171,
+                "nextUpperBucket": 4406,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 3501.0469999999914,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 6,
+                "fineBucket": 4440,
+                "fineWinner": 262,
+                "bestBucket": 4440,
+                "bestWinner": 262,
+                "certificateGap": 223,
+                "nextUpperBucket": 4217,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 2654.150874999992,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 5190,
+                "fineWinner": 198,
+                "bestBucket": 5190,
+                "bestWinner": 198,
+                "certificateGap": 545,
+                "nextUpperBucket": 4645,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 3947.975375000009,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 6,
+                "fineBucket": 4074,
+                "fineWinner": 262,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 14,
+                "nextUpperBucket": 4060,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4036,
+                "fineWinner": 11,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 50,
+                "nextUpperBucket": 4024,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 4189.5052500000165,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 4132,
+                "fineWinner": 198,
+                "bestBucket": 4132,
+                "bestWinner": 198,
+                "certificateGap": 53,
+                "nextUpperBucket": 4079,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 3051.2090420000022,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 13,
+                "fineBucket": 5488,
+                "fineWinner": 13,
+                "bestBucket": 5488,
+                "bestWinner": 13,
+                "certificateGap": 76,
+                "nextUpperBucket": 5412,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 3262.053749999992,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 5026,
+                "fineWinner": 11,
+                "bestBucket": 5026,
+                "bestWinner": 11,
+                "certificateGap": 376,
+                "nextUpperBucket": 4650,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        }
+      ]
+    },
+    {
+      "variant": "g512-s8",
+      "isolatedFreshBrowser": true,
+      "loadOrder": [
+        "retained-g256-k2",
+        "candidate"
+      ],
+      "fixtureOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "warmupFixture": 8,
+      "requestFailures": {
+        "candidate": [],
+        "control": []
+      },
+      "cold": {
+        "candidateLoadMilliseconds": 47197.69741700002,
+        "controlLoadMilliseconds": 53449.156874999986,
+        "loadRatio": 0.8830391380612406
+      },
+      "semanticsPass": false,
+      "decision": "reject-transport",
+      "comparison": {
+        "candidate": {
+          "count": 10,
+          "minimum": 2109.791292000038,
+          "median": 2997.3844999999856,
+          "p90": 3871.6058750000084,
+          "maximum": 3871.6058750000084,
+          "mean": 3046.3603584000025
+        },
+        "retainedG256K2": {
+          "count": 10,
+          "minimum": 1759.0621670000255,
+          "median": 3423.6127910000505,
+          "p90": 5128.737667000038,
+          "maximum": 5128.737667000038,
+          "mean": 3474.2407458000175
+        },
+        "normalizedWarmMeanRatio": 0.8768420444330819,
+        "warmSpeedupPercent": 12.31579555669181
+      },
+      "work": {
+        "candidate": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 10,
+          "reusedExactUpper": 9,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 512
+        },
+        "retainedG256K2": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 13,
+          "reusedExactUpper": 12,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 256
+        },
+        "normalized": {
+          "activeStageVisits": 0.7692307692307693,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 2
+        }
+      },
+      "shadows": {
+        "requested": 10,
+        "present": 10,
+        "source": "candidate variant's forced dynamic exact grid"
+      },
+      "candidateChecks": [
+        {
+          "fixture": 0,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 1,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": true,
+          "finalDenseWinnerMatchesFixture": false,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": true,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 2,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 3,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 4,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 5,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 6,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 7,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 8,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 9,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        }
+      ],
+      "controlChecks": [
+        {
+          "fixture": 0,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 1,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 2,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 3,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 4,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 5,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 6,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 7,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 8,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 9,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        }
+      ],
+      "candidateSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 2813.6917080000276,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 558,
+                "nextUpperBucket": 4388,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 25615,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 2712.680667000008,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 2,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 401,
+                "fineBucket": 25762,
+                "fineWinner": 1425,
+                "bestBucket": 25762,
+                "bestWinner": 1425,
+                "certificateGap": 13118,
+                "nextUpperBucket": 12644,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 0,
+            "dynamicFineGrids": 1,
+            "finalWinner": 1425,
+            "finalBucket": 25762,
+            "exactShadows": [
+              {
+                "group": 2,
+                "width": 206097.71875,
+                "totalUnits": 13190254,
+                "tieUnits": 110,
+                "fineBucket": 25762,
+                "fineLocal": 401,
+                "fineWinner": 1425,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 3497.7182500000345,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 5137,
+                "fineWinner": 198,
+                "bestBucket": 5137,
+                "bestWinner": 198,
+                "certificateGap": 516,
+                "nextUpperBucket": 4621,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5137,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 25615,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 2770.606124999991,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 4577,
+                "fineWinner": 198,
+                "bestBucket": 4577,
+                "bestWinner": 198,
+                "certificateGap": 526,
+                "nextUpperBucket": 4051,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4577,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 25615,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 3871.6058750000084,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 262,
+                "fineBucket": 4440,
+                "fineWinner": 262,
+                "bestBucket": 4440,
+                "bestWinner": 262,
+                "certificateGap": 281,
+                "nextUpperBucket": 4159,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4440,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 25615,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 2997.3844999999856,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 5190,
+                "fineWinner": 198,
+                "bestBucket": 5190,
+                "bestWinner": 198,
+                "certificateGap": 545,
+                "nextUpperBucket": 4645,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5190,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 25615,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 3442.5283329999656,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 262,
+                "fineBucket": 4074,
+                "fineWinner": 262,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 50,
+                "nextUpperBucket": 4024,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4074,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 25615,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 2980.551041999948,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 4132,
+                "fineWinner": 198,
+                "bestBucket": 4132,
+                "bestWinner": 198,
+                "certificateGap": 112,
+                "nextUpperBucket": 4020,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4132,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 25615,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 2109.791292000038,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 13,
+                "fineBucket": 5488,
+                "fineWinner": 13,
+                "bestBucket": 5488,
+                "bestWinner": 13,
+                "certificateGap": 299,
+                "nextUpperBucket": 5189,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 13,
+            "finalBucket": 5488,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 25615,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 3267.045792000019,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 5026,
+                "fineWinner": 11,
+                "bestBucket": 5026,
+                "bestWinner": 11,
+                "certificateGap": 574,
+                "nextUpperBucket": 4452,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 5026,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 52,
+                "fineBucket": 25615,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        }
+      ],
+      "controlSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 3137.675958000007,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 364,
+                "nextUpperBucket": 4582,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 4054.939624999999,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 5,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 119,
+                "fineBucket": 3845,
+                "fineWinner": 1399,
+                "bestBucket": 3845,
+                "bestWinner": 1399,
+                "certificateGap": -8799,
+                "nextUpperBucket": 12644,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 221,
+                "fineBucket": 12620,
+                "fineWinner": 477,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 44,
+                "nextUpperBucket": 12576,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 12552,
+                "fineWinner": 11,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 249,
+                "nextUpperBucket": 12371,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 3422.6031250000233,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 5137,
+                "fineWinner": 198,
+                "bestBucket": 5137,
+                "bestWinner": 198,
+                "certificateGap": 516,
+                "nextUpperBucket": 4621,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 3423.6127910000505,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 4577,
+                "fineWinner": 198,
+                "bestBucket": 4577,
+                "bestWinner": 198,
+                "certificateGap": 171,
+                "nextUpperBucket": 4406,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 3366.0989590000245,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 6,
+                "fineBucket": 4440,
+                "fineWinner": 262,
+                "bestBucket": 4440,
+                "bestWinner": 262,
+                "certificateGap": 223,
+                "nextUpperBucket": 4217,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 3158.3192909999634,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 5190,
+                "fineWinner": 198,
+                "bestBucket": 5190,
+                "bestWinner": 198,
+                "certificateGap": 545,
+                "nextUpperBucket": 4645,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 3531.295375000045,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 6,
+                "fineBucket": 4074,
+                "fineWinner": 262,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 14,
+                "nextUpperBucket": 4060,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4036,
+                "fineWinner": 11,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 50,
+                "nextUpperBucket": 4024,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 5128.737667000038,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 4132,
+                "fineWinner": 198,
+                "bestBucket": 4132,
+                "bestWinner": 198,
+                "certificateGap": 53,
+                "nextUpperBucket": 4079,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 1759.0621670000255,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 13,
+                "fineBucket": 5488,
+                "fineWinner": 13,
+                "bestBucket": 5488,
+                "bestWinner": 13,
+                "certificateGap": 76,
+                "nextUpperBucket": 5412,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 3760.0625,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 5026,
+                "fineWinner": 11,
+                "bestBucket": 5026,
+                "bestWinner": 11,
+                "certificateGap": 376,
+                "nextUpperBucket": 4650,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        }
+      ]
+    },
+    {
+      "variant": "g1024-s16",
+      "isolatedFreshBrowser": true,
+      "loadOrder": [
+        "candidate",
+        "retained-g256-k2"
+      ],
+      "fixtureOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "warmupFixture": 7,
+      "requestFailures": {
+        "candidate": [],
+        "control": []
+      },
+      "cold": {
+        "candidateLoadMilliseconds": 51981.85350000003,
+        "controlLoadMilliseconds": 54657.52349999995,
+        "loadRatio": 0.9510466294727032
+      },
+      "semanticsPass": false,
+      "decision": "reject-transport",
+      "comparison": {
+        "candidate": {
+          "count": 10,
+          "minimum": 2492.19745899993,
+          "median": 3051.431125000003,
+          "p90": 5502.707666000002,
+          "maximum": 5502.707666000002,
+          "mean": 3235.6789373999927
+        },
+        "retainedG256K2": {
+          "count": 10,
+          "minimum": 2474.0347090000287,
+          "median": 3760.4952500000363,
+          "p90": 4578.872415999998,
+          "maximum": 4578.872415999998,
+          "mean": 3467.898800100002
+        },
+        "normalizedWarmMeanRatio": 0.933037301234594,
+        "warmSpeedupPercent": 6.696269876540595
+      },
+      "work": {
+        "candidate": {
+          "exactUpperRows": 1024,
+          "activeStageVisits": 10,
+          "reusedExactUpper": 9,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 1024
+        },
+        "retainedG256K2": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 13,
+          "reusedExactUpper": 12,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 256
+        },
+        "normalized": {
+          "activeStageVisits": 0.7692307692307693,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 4
+        }
+      },
+      "shadows": {
+        "requested": 10,
+        "present": 10,
+        "source": "candidate variant's forced dynamic exact grid"
+      },
+      "candidateChecks": [
+        {
+          "fixture": 0,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 1,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": true,
+          "finalDenseWinnerMatchesFixture": false,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": true,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": true,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 2,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 3,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 4,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 5,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 6,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 7,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 8,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 9,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": true,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": false,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": false,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        }
+      ],
+      "controlChecks": [
+        {
+          "fixture": 0,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 1,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 2,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 3,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 4,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 5,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 6,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 7,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 8,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 9,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        }
+      ],
+      "candidateSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 2600.678457999951,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 808,
+                "nextUpperBucket": 4138,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 564,
+                "fineBucket": 12807,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 2980.9988340000855,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 913,
+                "fineBucket": 12881,
+                "fineWinner": 1937,
+                "bestBucket": 12881,
+                "bestWinner": 1937,
+                "certificateGap": 237,
+                "nextUpperBucket": 12644,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 0,
+            "dynamicFineGrids": 1,
+            "finalWinner": 1937,
+            "finalBucket": 12881,
+            "exactShadows": [
+              {
+                "group": 1,
+                "width": 206097.71875,
+                "totalUnits": 13190254,
+                "tieUnits": 110,
+                "fineBucket": 12881,
+                "fineLocal": 913,
+                "fineWinner": 1937,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 2804.372500000056,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 5137,
+                "fineWinner": 198,
+                "bestBucket": 5137,
+                "bestWinner": 198,
+                "certificateGap": 516,
+                "nextUpperBucket": 4621,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5137,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 564,
+                "fineBucket": 12807,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 3924.0560409999453,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 4577,
+                "fineWinner": 198,
+                "bestBucket": 4577,
+                "bestWinner": 198,
+                "certificateGap": 526,
+                "nextUpperBucket": 4051,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4577,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 564,
+                "fineBucket": 12807,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 2832.4937079999363,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 262,
+                "fineBucket": 4440,
+                "fineWinner": 262,
+                "bestBucket": 4440,
+                "bestWinner": 262,
+                "certificateGap": 773,
+                "nextUpperBucket": 3667,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4440,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 564,
+                "fineBucket": 12807,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 3053.501333000022,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 5190,
+                "fineWinner": 198,
+                "bestBucket": 5190,
+                "bestWinner": 198,
+                "certificateGap": 545,
+                "nextUpperBucket": 4645,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5190,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 564,
+                "fineBucket": 12807,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 3114.3522499999963,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 262,
+                "fineBucket": 4074,
+                "fineWinner": 262,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 270,
+                "nextUpperBucket": 3804,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4074,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 564,
+                "fineBucket": 12807,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 2492.19745899993,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 4132,
+                "fineWinner": 198,
+                "bestBucket": 4132,
+                "bestWinner": 198,
+                "certificateGap": 235,
+                "nextUpperBucket": 3897,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4132,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 564,
+                "fineBucket": 12807,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 3051.431125000003,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 13,
+                "fineBucket": 5488,
+                "fineWinner": 13,
+                "bestBucket": 5488,
+                "bestWinner": 13,
+                "certificateGap": 778,
+                "nextUpperBucket": 4710,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 13,
+            "finalBucket": 5488,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 564,
+                "fineBucket": 12807,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 5502.707666000002,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 5026,
+                "fineWinner": 11,
+                "bestBucket": 5026,
+                "bestWinner": 11,
+                "certificateGap": 820,
+                "nextUpperBucket": 4206,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 5026,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 204920.8125,
+                "totalUnits": 13114932,
+                "tieUnits": 564,
+                "fineBucket": 12807,
+                "fineLocal": 459,
+                "fineWinner": 459,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        }
+      ],
+      "controlSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 2474.0347090000287,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 364,
+                "nextUpperBucket": 4582,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 3825.3705419999314,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 5,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 119,
+                "fineBucket": 3845,
+                "fineWinner": 1399,
+                "bestBucket": 3845,
+                "bestWinner": 1399,
+                "certificateGap": -8799,
+                "nextUpperBucket": 12644,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 221,
+                "fineBucket": 12620,
+                "fineWinner": 477,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 44,
+                "nextUpperBucket": 12576,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 12552,
+                "fineWinner": 11,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 249,
+                "nextUpperBucket": 12371,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 3955.3146669999696,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 5137,
+                "fineWinner": 198,
+                "bestBucket": 5137,
+                "bestWinner": 198,
+                "certificateGap": 516,
+                "nextUpperBucket": 4621,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 2947.4670419999165,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 4577,
+                "fineWinner": 198,
+                "bestBucket": 4577,
+                "bestWinner": 198,
+                "certificateGap": 171,
+                "nextUpperBucket": 4406,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 3760.4952500000363,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 6,
+                "fineBucket": 4440,
+                "fineWinner": 262,
+                "bestBucket": 4440,
+                "bestWinner": 262,
+                "certificateGap": 223,
+                "nextUpperBucket": 4217,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 2796.480749999988,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 5190,
+                "fineWinner": 198,
+                "bestBucket": 5190,
+                "bestWinner": 198,
+                "certificateGap": 545,
+                "nextUpperBucket": 4645,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 4056.7330830000574,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 6,
+                "fineBucket": 4074,
+                "fineWinner": 262,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 14,
+                "nextUpperBucket": 4060,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4036,
+                "fineWinner": 11,
+                "bestBucket": 4074,
+                "bestWinner": 262,
+                "certificateGap": 50,
+                "nextUpperBucket": 4024,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 0,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 4578.872415999998,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 198,
+                "fineBucket": 4132,
+                "fineWinner": 198,
+                "bestBucket": 4132,
+                "bestWinner": 198,
+                "certificateGap": 53,
+                "nextUpperBucket": 4079,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 2860.628625000012,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 13,
+                "fineBucket": 5488,
+                "fineWinner": 13,
+                "bestBucket": 5488,
+                "bestWinner": 13,
+                "certificateGap": 76,
+                "nextUpperBucket": 5412,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 3423.5909170000814,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 5026,
+                "fineWinner": 11,
+                "bestBucket": 5026,
+                "bestWinner": 11,
+                "certificateGap": 376,
+                "nextUpperBucket": 4650,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        }
+      ]
+    }
+  ]
+}

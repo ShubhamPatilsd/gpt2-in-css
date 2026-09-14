@@ -1,0 +1,1649 @@
+{
+  "model": "openai-community/gpt2",
+  "samples": 1024,
+  "target": "global-int16 weights at F2DOT14-realized hidden coordinates",
+  "realization": "nearest F2DOT14 grid, matching the retained production analyzer",
+  "productionInputRange": 266.2483969116211,
+  "maximumObservedCoordinate": 263.6122741699219,
+  "coarseEncoding": "row-wise signed int10",
+  "groupSize": 256,
+  "groups": 197,
+  "coarseAllowanceBuckets": 19,
+  "fineAllowanceBuckets": 8,
+  "requiredStopGapBuckets": 27,
+  "bestFirstGroups": {
+    "count": 1024,
+    "minimum": 1,
+    "median": 3.0,
+    "p95": 17.0,
+    "maximum": 55,
+    "mean": 5.1640625
+  },
+  "targetWinnerRetainedByEveryCandidateClosure": true,
+  "prefixes": [
+    {
+      "prefixGroups": 4,
+      "certifiedAtPrefixStates": 691,
+      "certifiedAtPrefixRate": 0.6748046875,
+      "fallbackStates": 333,
+      "fallbackRate": 0.3251953125,
+      "parallelUncertaintyClosure": {
+        "additionalCandidateGroupsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 13.0,
+          "maximum": 72,
+          "mean": 2.23828125
+        },
+        "additionalCandidateGroupsConditionalOnFallback": {
+          "count": 333,
+          "minimum": 1,
+          "median": 4.0,
+          "p95": 21.0,
+          "maximum": 72,
+          "mean": 6.882882882882883
+        },
+        "additionalExactRowsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 3328.0,
+          "maximum": 18257,
+          "mean": 570.607421875
+        },
+        "additionalExactRowsConditionalOnFallback": {
+          "count": 333,
+          "minimum": 81,
+          "median": 1024.0,
+          "p95": 5376.0,
+          "maximum": 18257,
+          "mean": 1754.6606606606606
+        },
+        "totalExactRowsIncludingPrefixOverall": {
+          "count": 1024,
+          "minimum": 849,
+          "median": 1024.0,
+          "p95": 4352.0,
+          "maximum": 19281,
+          "mean": 1584.8662109375
+        },
+        "totalExactRowsIncludingPrefixConditionalOnFallback": {
+          "count": 333,
+          "minimum": 1105,
+          "median": 2048.0,
+          "p95": 6400.0,
+          "maximum": 19281,
+          "mean": 2778.6606606606606
+        },
+        "targetWinnerRetainedStates": 1024,
+        "closureCertifiedStates": 1024
+      },
+      "sequentialBestFirstTail": {
+        "additionalGroupsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 13.0,
+          "maximum": 51,
+          "mean": 2.17578125
+        },
+        "additionalGroupsConditionalOnFallback": {
+          "count": 333,
+          "minimum": 1,
+          "median": 4.0,
+          "p95": 21.0,
+          "maximum": 51,
+          "mean": 6.6906906906906904
+        }
+      },
+      "fixedNextBatches": [
+        {
+          "additionalGroups": 1,
+          "totalPrefixGroups": 5,
+          "residualFallbackStates": 261,
+          "residualFallbackRateOverall": 0.2548828125,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.7837837837837838
+        },
+        {
+          "additionalGroups": 2,
+          "totalPrefixGroups": 6,
+          "residualFallbackStates": 215,
+          "residualFallbackRateOverall": 0.2099609375,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.6456456456456456
+        },
+        {
+          "additionalGroups": 4,
+          "totalPrefixGroups": 8,
+          "residualFallbackStates": 155,
+          "residualFallbackRateOverall": 0.1513671875,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.46546546546546547
+        },
+        {
+          "additionalGroups": 8,
+          "totalPrefixGroups": 12,
+          "residualFallbackStates": 84,
+          "residualFallbackRateOverall": 0.08203125,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.25225225225225223
+        },
+        {
+          "additionalGroups": 16,
+          "totalPrefixGroups": 20,
+          "residualFallbackStates": 30,
+          "residualFallbackRateOverall": 0.029296875,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.09009009009009009
+        }
+      ],
+      "repeatedBatchedBestFirstTail": [
+        {
+          "batchSize": 1,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 13.0,
+            "maximum": 51,
+            "mean": 2.17578125
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 1,
+            "median": 4.0,
+            "p95": 21.0,
+            "maximum": 51,
+            "mean": 6.6906906906906904
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 13.0,
+            "maximum": 51,
+            "mean": 2.17578125
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 1,
+            "median": 4.0,
+            "p95": 21.0,
+            "maximum": 51,
+            "mean": 6.6906906906906904
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 0.0,
+            "maximum": 0,
+            "mean": 0.0
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 2,
+            "median": 8.0,
+            "p95": 42.0,
+            "maximum": 102,
+            "mean": 13.381381381381381
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 51,
+            "batches": 51,
+            "staticFineScorers": 51,
+            "abstractCriticalLevels": 102,
+            "serialGroupThenScoreLevels": 102
+          }
+        },
+        {
+          "batchSize": 2,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 7.0,
+            "maximum": 26,
+            "mean": 1.1787109375
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 1,
+            "median": 2.0,
+            "p95": 11.0,
+            "maximum": 26,
+            "mean": 3.6246246246246248
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 14.0,
+            "maximum": 52,
+            "mean": 2.357421875
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 2,
+            "median": 4.0,
+            "p95": 22.0,
+            "maximum": 52,
+            "mean": 7.2492492492492495
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 0,
+            "median": 1.0,
+            "p95": 1.0,
+            "maximum": 1,
+            "mean": 0.5585585585585585
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 3,
+            "median": 6.0,
+            "p95": 33.0,
+            "maximum": 78,
+            "mean": 10.873873873873874
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 51,
+            "batches": 26,
+            "staticFineScorers": 51,
+            "abstractCriticalLevels": 77,
+            "serialGroupThenScoreLevels": 102
+          }
+        },
+        {
+          "batchSize": 4,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 4.0,
+            "maximum": 13,
+            "mean": 0.6884765625
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 6.0,
+            "maximum": 13,
+            "mean": 2.1171171171171173
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 16.0,
+            "maximum": 52,
+            "mean": 2.75390625
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 4,
+            "median": 4.0,
+            "p95": 24.0,
+            "maximum": 52,
+            "mean": 8.468468468468469
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 0,
+            "median": 2.0,
+            "p95": 3.0,
+            "maximum": 3,
+            "mean": 1.7777777777777777
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 5,
+            "median": 5.0,
+            "p95": 30.0,
+            "maximum": 65,
+            "mean": 10.585585585585585
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 51,
+            "batches": 13,
+            "staticFineScorers": 51,
+            "abstractCriticalLevels": 64,
+            "serialGroupThenScoreLevels": 102
+          }
+        },
+        {
+          "batchSize": 8,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 2.0,
+            "maximum": 7,
+            "mean": 0.4541015625
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 3.0,
+            "maximum": 7,
+            "mean": 1.3963963963963963
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 16.0,
+            "maximum": 56,
+            "mean": 3.6328125
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 8,
+            "median": 8.0,
+            "p95": 24.0,
+            "maximum": 56,
+            "mean": 11.17117117117117
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 0,
+            "median": 5.0,
+            "p95": 7.0,
+            "maximum": 7,
+            "mean": 4.48048048048048
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 9,
+            "median": 9.0,
+            "p95": 27.0,
+            "maximum": 63,
+            "mean": 12.567567567567568
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 51,
+            "batches": 7,
+            "staticFineScorers": 51,
+            "abstractCriticalLevels": 58,
+            "serialGroupThenScoreLevels": 102
+          }
+        },
+        {
+          "batchSize": 16,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 1.0,
+            "maximum": 4,
+            "mean": 0.359375
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 2.0,
+            "maximum": 4,
+            "mean": 1.105105105105105
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 16.0,
+            "maximum": 64,
+            "mean": 5.75
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 16,
+            "median": 16.0,
+            "p95": 32.0,
+            "maximum": 64,
+            "mean": 17.68168168168168
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 0,
+            "median": 12.0,
+            "p95": 15.0,
+            "maximum": 15,
+            "mean": 10.99099099099099
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 333,
+            "minimum": 17,
+            "median": 17.0,
+            "p95": 34.0,
+            "maximum": 68,
+            "mean": 18.786786786786788
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 51,
+            "batches": 4,
+            "staticFineScorers": 51,
+            "abstractCriticalLevels": 55,
+            "serialGroupThenScoreLevels": 102
+          }
+        }
+      ]
+    },
+    {
+      "prefixGroups": 6,
+      "certifiedAtPrefixStates": 809,
+      "certifiedAtPrefixRate": 0.7900390625,
+      "fallbackStates": 215,
+      "fallbackRate": 0.2099609375,
+      "parallelUncertaintyClosure": {
+        "additionalCandidateGroupsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 11.0,
+          "maximum": 70,
+          "mean": 1.62890625
+        },
+        "additionalCandidateGroupsConditionalOnFallback": {
+          "count": 215,
+          "minimum": 1,
+          "median": 5.0,
+          "p95": 25.0,
+          "maximum": 70,
+          "mean": 7.758139534883721
+        },
+        "additionalExactRowsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 2816.0,
+          "maximum": 17745,
+          "mean": 415.291015625
+        },
+        "additionalExactRowsConditionalOnFallback": {
+          "count": 215,
+          "minimum": 81,
+          "median": 1280.0,
+          "p95": 6400.0,
+          "maximum": 17745,
+          "mean": 1977.9441860465117
+        },
+        "totalExactRowsIncludingPrefixOverall": {
+          "count": 1024,
+          "minimum": 1361,
+          "median": 1536.0,
+          "p95": 4352.0,
+          "maximum": 19281,
+          "mean": 1933.6884765625
+        },
+        "totalExactRowsIncludingPrefixConditionalOnFallback": {
+          "count": 215,
+          "minimum": 1617,
+          "median": 2816.0,
+          "p95": 7936.0,
+          "maximum": 19281,
+          "mean": 3512.3162790697675
+        },
+        "targetWinnerRetainedStates": 1024,
+        "closureCertifiedStates": 1024
+      },
+      "sequentialBestFirstTail": {
+        "additionalGroupsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 11.0,
+          "maximum": 49,
+          "mean": 1.595703125
+        },
+        "additionalGroupsConditionalOnFallback": {
+          "count": 215,
+          "minimum": 1,
+          "median": 5.0,
+          "p95": 25.0,
+          "maximum": 49,
+          "mean": 7.6
+        }
+      },
+      "fixedNextBatches": [
+        {
+          "additionalGroups": 1,
+          "totalPrefixGroups": 7,
+          "residualFallbackStates": 187,
+          "residualFallbackRateOverall": 0.1826171875,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.8697674418604651
+        },
+        {
+          "additionalGroups": 2,
+          "totalPrefixGroups": 8,
+          "residualFallbackStates": 155,
+          "residualFallbackRateOverall": 0.1513671875,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.7209302325581395
+        },
+        {
+          "additionalGroups": 4,
+          "totalPrefixGroups": 10,
+          "residualFallbackStates": 119,
+          "residualFallbackRateOverall": 0.1162109375,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.5534883720930233
+        },
+        {
+          "additionalGroups": 8,
+          "totalPrefixGroups": 14,
+          "residualFallbackStates": 68,
+          "residualFallbackRateOverall": 0.06640625,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.31627906976744186
+        },
+        {
+          "additionalGroups": 16,
+          "totalPrefixGroups": 22,
+          "residualFallbackStates": 20,
+          "residualFallbackRateOverall": 0.01953125,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.09302325581395349
+        }
+      ],
+      "repeatedBatchedBestFirstTail": [
+        {
+          "batchSize": 1,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 11.0,
+            "maximum": 49,
+            "mean": 1.595703125
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 1,
+            "median": 5.0,
+            "p95": 25.0,
+            "maximum": 49,
+            "mean": 7.6
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 11.0,
+            "maximum": 49,
+            "mean": 1.595703125
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 1,
+            "median": 5.0,
+            "p95": 25.0,
+            "maximum": 49,
+            "mean": 7.6
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 0.0,
+            "maximum": 0,
+            "mean": 0.0
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 2,
+            "median": 10.0,
+            "p95": 50.0,
+            "maximum": 98,
+            "mean": 15.2
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 49,
+            "batches": 49,
+            "staticFineScorers": 49,
+            "abstractCriticalLevels": 98,
+            "serialGroupThenScoreLevels": 98
+          }
+        },
+        {
+          "batchSize": 2,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 6.0,
+            "maximum": 25,
+            "mean": 0.853515625
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 1,
+            "median": 3.0,
+            "p95": 13.0,
+            "maximum": 25,
+            "mean": 4.065116279069767
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 12.0,
+            "maximum": 50,
+            "mean": 1.70703125
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 2,
+            "median": 6.0,
+            "p95": 26.0,
+            "maximum": 50,
+            "mean": 8.130232558139534
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 0,
+            "median": 1.0,
+            "p95": 1.0,
+            "maximum": 1,
+            "mean": 0.5302325581395348
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 3,
+            "median": 9.0,
+            "p95": 39.0,
+            "maximum": 75,
+            "mean": 12.195348837209302
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 49,
+            "batches": 25,
+            "staticFineScorers": 49,
+            "abstractCriticalLevels": 74,
+            "serialGroupThenScoreLevels": 98
+          }
+        },
+        {
+          "batchSize": 4,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 3.0,
+            "maximum": 13,
+            "mean": 0.490234375
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 1,
+            "median": 2.0,
+            "p95": 7.0,
+            "maximum": 13,
+            "mean": 2.3348837209302324
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 12.0,
+            "maximum": 52,
+            "mean": 1.9609375
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 4,
+            "median": 8.0,
+            "p95": 28.0,
+            "maximum": 52,
+            "mean": 9.33953488372093
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 0,
+            "median": 2.0,
+            "p95": 3.0,
+            "maximum": 3,
+            "mean": 1.7395348837209301
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 5,
+            "median": 10.0,
+            "p95": 35.0,
+            "maximum": 65,
+            "mean": 11.674418604651162
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 49,
+            "batches": 13,
+            "staticFineScorers": 49,
+            "abstractCriticalLevels": 62,
+            "serialGroupThenScoreLevels": 98
+          }
+        },
+        {
+          "batchSize": 8,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 2.0,
+            "maximum": 7,
+            "mean": 0.3134765625
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 4.0,
+            "maximum": 7,
+            "mean": 1.4930232558139536
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 16.0,
+            "maximum": 56,
+            "mean": 2.5078125
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 8,
+            "median": 8.0,
+            "p95": 32.0,
+            "maximum": 56,
+            "mean": 11.944186046511629
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 0,
+            "median": 5.0,
+            "p95": 7.0,
+            "maximum": 7,
+            "mean": 4.344186046511628
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 9,
+            "median": 9.0,
+            "p95": 36.0,
+            "maximum": 63,
+            "mean": 13.43720930232558
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 49,
+            "batches": 7,
+            "staticFineScorers": 49,
+            "abstractCriticalLevels": 56,
+            "serialGroupThenScoreLevels": 98
+          }
+        },
+        {
+          "batchSize": 16,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 1.0,
+            "maximum": 4,
+            "mean": 0.234375
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 2.0,
+            "maximum": 4,
+            "mean": 1.1162790697674418
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 16.0,
+            "maximum": 64,
+            "mean": 3.75
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 16,
+            "median": 16.0,
+            "p95": 32.0,
+            "maximum": 64,
+            "mean": 17.86046511627907
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 0,
+            "median": 11.0,
+            "p95": 15.0,
+            "maximum": 15,
+            "mean": 10.26046511627907
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 215,
+            "minimum": 17,
+            "median": 17.0,
+            "p95": 34.0,
+            "maximum": 68,
+            "mean": 18.976744186046513
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 49,
+            "batches": 4,
+            "staticFineScorers": 49,
+            "abstractCriticalLevels": 53,
+            "serialGroupThenScoreLevels": 98
+          }
+        }
+      ]
+    },
+    {
+      "prefixGroups": 8,
+      "certifiedAtPrefixStates": 869,
+      "certifiedAtPrefixRate": 0.8486328125,
+      "fallbackStates": 155,
+      "fallbackRate": 0.1513671875,
+      "parallelUncertaintyClosure": {
+        "additionalCandidateGroupsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 9.0,
+          "maximum": 47,
+          "mean": 1.203125
+        },
+        "additionalCandidateGroupsConditionalOnFallback": {
+          "count": 155,
+          "minimum": 1,
+          "median": 6.0,
+          "p95": 23.0,
+          "maximum": 47,
+          "mean": 7.948387096774193
+        },
+        "additionalExactRowsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 2304.0,
+          "maximum": 12032,
+          "mean": 306.974609375
+        },
+        "additionalExactRowsConditionalOnFallback": {
+          "count": 155,
+          "minimum": 256,
+          "median": 1536.0,
+          "p95": 5888.0,
+          "maximum": 12032,
+          "mean": 2028.0129032258064
+        },
+        "totalExactRowsIncludingPrefixOverall": {
+          "count": 1024,
+          "minimum": 1873,
+          "median": 2048.0,
+          "p95": 4352.0,
+          "maximum": 14080,
+          "mean": 2332.2451171875
+        },
+        "totalExactRowsIncludingPrefixConditionalOnFallback": {
+          "count": 155,
+          "minimum": 2304,
+          "median": 3584.0,
+          "p95": 7936.0,
+          "maximum": 14080,
+          "mean": 4072.625806451613
+        },
+        "targetWinnerRetainedStates": 1024,
+        "closureCertifiedStates": 1024
+      },
+      "sequentialBestFirstTail": {
+        "additionalGroupsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 9.0,
+          "maximum": 47,
+          "mean": 1.203125
+        },
+        "additionalGroupsConditionalOnFallback": {
+          "count": 155,
+          "minimum": 1,
+          "median": 6.0,
+          "p95": 23.0,
+          "maximum": 47,
+          "mean": 7.948387096774193
+        }
+      },
+      "fixedNextBatches": [
+        {
+          "additionalGroups": 1,
+          "totalPrefixGroups": 9,
+          "residualFallbackStates": 134,
+          "residualFallbackRateOverall": 0.130859375,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.864516129032258
+        },
+        {
+          "additionalGroups": 2,
+          "totalPrefixGroups": 10,
+          "residualFallbackStates": 119,
+          "residualFallbackRateOverall": 0.1162109375,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.7677419354838709
+        },
+        {
+          "additionalGroups": 4,
+          "totalPrefixGroups": 12,
+          "residualFallbackStates": 84,
+          "residualFallbackRateOverall": 0.08203125,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.5419354838709678
+        },
+        {
+          "additionalGroups": 8,
+          "totalPrefixGroups": 16,
+          "residualFallbackStates": 55,
+          "residualFallbackRateOverall": 0.0537109375,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.3548387096774194
+        },
+        {
+          "additionalGroups": 16,
+          "totalPrefixGroups": 24,
+          "residualFallbackStates": 19,
+          "residualFallbackRateOverall": 0.0185546875,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.12258064516129032
+        }
+      ],
+      "repeatedBatchedBestFirstTail": [
+        {
+          "batchSize": 1,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 9.0,
+            "maximum": 47,
+            "mean": 1.203125
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 1,
+            "median": 6.0,
+            "p95": 23.0,
+            "maximum": 47,
+            "mean": 7.948387096774193
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 9.0,
+            "maximum": 47,
+            "mean": 1.203125
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 1,
+            "median": 6.0,
+            "p95": 23.0,
+            "maximum": 47,
+            "mean": 7.948387096774193
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 0.0,
+            "maximum": 0,
+            "mean": 0.0
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 2,
+            "median": 12.0,
+            "p95": 46.0,
+            "maximum": 94,
+            "mean": 15.896774193548387
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 47,
+            "batches": 47,
+            "staticFineScorers": 47,
+            "abstractCriticalLevels": 94,
+            "serialGroupThenScoreLevels": 94
+          }
+        },
+        {
+          "batchSize": 2,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 5.0,
+            "maximum": 24,
+            "mean": 0.6435546875
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 1,
+            "median": 3.0,
+            "p95": 12.0,
+            "maximum": 24,
+            "mean": 4.251612903225807
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 10.0,
+            "maximum": 48,
+            "mean": 1.287109375
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 2,
+            "median": 6.0,
+            "p95": 24.0,
+            "maximum": 48,
+            "mean": 8.503225806451614
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 0,
+            "median": 1.0,
+            "p95": 1.0,
+            "maximum": 1,
+            "mean": 0.5548387096774193
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 3,
+            "median": 9.0,
+            "p95": 36.0,
+            "maximum": 72,
+            "mean": 12.754838709677419
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 47,
+            "batches": 24,
+            "staticFineScorers": 47,
+            "abstractCriticalLevels": 71,
+            "serialGroupThenScoreLevels": 94
+          }
+        },
+        {
+          "batchSize": 4,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 3.0,
+            "maximum": 12,
+            "mean": 0.36328125
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 1,
+            "median": 2.0,
+            "p95": 6.0,
+            "maximum": 12,
+            "mean": 2.4
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 12.0,
+            "maximum": 48,
+            "mean": 1.453125
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 4,
+            "median": 8.0,
+            "p95": 24.0,
+            "maximum": 48,
+            "mean": 9.6
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 0,
+            "median": 2.0,
+            "p95": 3.0,
+            "maximum": 3,
+            "mean": 1.6516129032258065
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 5,
+            "median": 10.0,
+            "p95": 30.0,
+            "maximum": 60,
+            "mean": 12.0
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 47,
+            "batches": 12,
+            "staticFineScorers": 47,
+            "abstractCriticalLevels": 59,
+            "serialGroupThenScoreLevels": 94
+          }
+        },
+        {
+          "batchSize": 8,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 2.0,
+            "maximum": 6,
+            "mean": 0.234375
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 3.0,
+            "maximum": 6,
+            "mean": 1.5483870967741935
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 16.0,
+            "maximum": 48,
+            "mean": 1.875
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 8,
+            "median": 8.0,
+            "p95": 24.0,
+            "maximum": 48,
+            "mean": 12.387096774193548
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 0,
+            "median": 5.0,
+            "p95": 7.0,
+            "maximum": 7,
+            "mean": 4.438709677419355
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 9,
+            "median": 9.0,
+            "p95": 27.0,
+            "maximum": 54,
+            "mean": 13.935483870967742
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 47,
+            "batches": 6,
+            "staticFineScorers": 47,
+            "abstractCriticalLevels": 53,
+            "serialGroupThenScoreLevels": 94
+          }
+        },
+        {
+          "batchSize": 16,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 1.0,
+            "maximum": 3,
+            "mean": 0.1728515625
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 2.0,
+            "maximum": 3,
+            "mean": 1.1419354838709677
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 16.0,
+            "maximum": 48,
+            "mean": 2.765625
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 16,
+            "median": 16.0,
+            "p95": 32.0,
+            "maximum": 48,
+            "mean": 18.270967741935483
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 0,
+            "median": 12.0,
+            "p95": 15.0,
+            "maximum": 15,
+            "mean": 10.32258064516129
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 155,
+            "minimum": 17,
+            "median": 17.0,
+            "p95": 34.0,
+            "maximum": 51,
+            "mean": 19.412903225806453
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 47,
+            "batches": 3,
+            "staticFineScorers": 47,
+            "abstractCriticalLevels": 50,
+            "serialGroupThenScoreLevels": 94
+          }
+        }
+      ]
+    },
+    {
+      "prefixGroups": 16,
+      "certifiedAtPrefixStates": 969,
+      "certifiedAtPrefixRate": 0.9462890625,
+      "fallbackStates": 55,
+      "fallbackRate": 0.0537109375,
+      "parallelUncertaintyClosure": {
+        "additionalCandidateGroupsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 1.0,
+          "maximum": 39,
+          "mean": 0.423828125
+        },
+        "additionalCandidateGroupsConditionalOnFallback": {
+          "count": 55,
+          "minimum": 1,
+          "median": 5.0,
+          "p95": 25.0,
+          "maximum": 39,
+          "mean": 7.890909090909091
+        },
+        "additionalExactRowsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 256.0,
+          "maximum": 9984,
+          "mean": 108.5
+        },
+        "additionalExactRowsConditionalOnFallback": {
+          "count": 55,
+          "minimum": 256,
+          "median": 1280.0,
+          "p95": 6400.0,
+          "maximum": 9984,
+          "mean": 2020.0727272727272
+        },
+        "totalExactRowsIncludingPrefixOverall": {
+          "count": 1024,
+          "minimum": 3921,
+          "median": 4096.0,
+          "p95": 4352.0,
+          "maximum": 14080,
+          "mean": 4163.6552734375
+        },
+        "totalExactRowsIncludingPrefixConditionalOnFallback": {
+          "count": 55,
+          "minimum": 4352,
+          "median": 5376.0,
+          "p95": 10496.0,
+          "maximum": 14080,
+          "mean": 6103.345454545454
+        },
+        "targetWinnerRetainedStates": 1024,
+        "closureCertifiedStates": 1024
+      },
+      "sequentialBestFirstTail": {
+        "additionalGroupsOverall": {
+          "count": 1024,
+          "minimum": 0,
+          "median": 0.0,
+          "p95": 1.0,
+          "maximum": 39,
+          "mean": 0.423828125
+        },
+        "additionalGroupsConditionalOnFallback": {
+          "count": 55,
+          "minimum": 1,
+          "median": 5.0,
+          "p95": 25.0,
+          "maximum": 39,
+          "mean": 7.890909090909091
+        }
+      },
+      "fixedNextBatches": [
+        {
+          "additionalGroups": 1,
+          "totalPrefixGroups": 17,
+          "residualFallbackStates": 47,
+          "residualFallbackRateOverall": 0.0458984375,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.8545454545454545
+        },
+        {
+          "additionalGroups": 2,
+          "totalPrefixGroups": 18,
+          "residualFallbackStates": 39,
+          "residualFallbackRateOverall": 0.0380859375,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.7090909090909091
+        },
+        {
+          "additionalGroups": 4,
+          "totalPrefixGroups": 20,
+          "residualFallbackStates": 30,
+          "residualFallbackRateOverall": 0.029296875,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.5454545454545454
+        },
+        {
+          "additionalGroups": 8,
+          "totalPrefixGroups": 24,
+          "residualFallbackStates": 19,
+          "residualFallbackRateOverall": 0.0185546875,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.34545454545454546
+        },
+        {
+          "additionalGroups": 16,
+          "totalPrefixGroups": 32,
+          "residualFallbackStates": 7,
+          "residualFallbackRateOverall": 0.0068359375,
+          "residualFallbackRateConditionalOnPrefixFallback": 0.12727272727272726
+        }
+      ],
+      "repeatedBatchedBestFirstTail": [
+        {
+          "batchSize": 1,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 1.0,
+            "maximum": 39,
+            "mean": 0.423828125
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 1,
+            "median": 5.0,
+            "p95": 25.0,
+            "maximum": 39,
+            "mean": 7.890909090909091
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 1.0,
+            "maximum": 39,
+            "mean": 0.423828125
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 1,
+            "median": 5.0,
+            "p95": 25.0,
+            "maximum": 39,
+            "mean": 7.890909090909091
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 0.0,
+            "maximum": 0,
+            "mean": 0.0
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 2,
+            "median": 10.0,
+            "p95": 50.0,
+            "maximum": 78,
+            "mean": 15.781818181818181
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 39,
+            "batches": 39,
+            "staticFineScorers": 39,
+            "abstractCriticalLevels": 78,
+            "serialGroupThenScoreLevels": 78
+          }
+        },
+        {
+          "batchSize": 2,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 1.0,
+            "maximum": 20,
+            "mean": 0.2275390625
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 1,
+            "median": 3.0,
+            "p95": 13.0,
+            "maximum": 20,
+            "mean": 4.236363636363636
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 2.0,
+            "maximum": 40,
+            "mean": 0.455078125
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 2,
+            "median": 6.0,
+            "p95": 26.0,
+            "maximum": 40,
+            "mean": 8.472727272727273
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 0,
+            "median": 1.0,
+            "p95": 1.0,
+            "maximum": 1,
+            "mean": 0.5818181818181818
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 3,
+            "median": 9.0,
+            "p95": 39.0,
+            "maximum": 60,
+            "mean": 12.709090909090909
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 39,
+            "batches": 20,
+            "staticFineScorers": 39,
+            "abstractCriticalLevels": 59,
+            "serialGroupThenScoreLevels": 78
+          }
+        },
+        {
+          "batchSize": 4,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 1.0,
+            "maximum": 10,
+            "mean": 0.1298828125
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 1,
+            "median": 2.0,
+            "p95": 7.0,
+            "maximum": 10,
+            "mean": 2.418181818181818
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 4.0,
+            "maximum": 40,
+            "mean": 0.51953125
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 4,
+            "median": 8.0,
+            "p95": 28.0,
+            "maximum": 40,
+            "mean": 9.672727272727272
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 0,
+            "median": 2.0,
+            "p95": 3.0,
+            "maximum": 3,
+            "mean": 1.7818181818181817
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 5,
+            "median": 10.0,
+            "p95": 35.0,
+            "maximum": 50,
+            "mean": 12.090909090909092
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 39,
+            "batches": 10,
+            "staticFineScorers": 39,
+            "abstractCriticalLevels": 49,
+            "serialGroupThenScoreLevels": 78
+          }
+        },
+        {
+          "batchSize": 8,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 1.0,
+            "maximum": 5,
+            "mean": 0.0830078125
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 4.0,
+            "maximum": 5,
+            "mean": 1.5454545454545454
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 8.0,
+            "maximum": 40,
+            "mean": 0.6640625
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 8,
+            "median": 8.0,
+            "p95": 32.0,
+            "maximum": 40,
+            "mean": 12.363636363636363
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 0,
+            "median": 5.0,
+            "p95": 7.0,
+            "maximum": 7,
+            "mean": 4.472727272727273
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 9,
+            "median": 9.0,
+            "p95": 36.0,
+            "maximum": 45,
+            "mean": 13.909090909090908
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 39,
+            "batches": 5,
+            "staticFineScorers": 39,
+            "abstractCriticalLevels": 44,
+            "serialGroupThenScoreLevels": 78
+          }
+        },
+        {
+          "batchSize": 16,
+          "batchesOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 1.0,
+            "maximum": 3,
+            "mean": 0.0615234375
+          },
+          "batchesConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 1,
+            "median": 1.0,
+            "p95": 2.0,
+            "maximum": 3,
+            "mean": 1.1454545454545455
+          },
+          "groupsScoredOverall": {
+            "count": 1024,
+            "minimum": 0,
+            "median": 0.0,
+            "p95": 16.0,
+            "maximum": 48,
+            "mean": 0.984375
+          },
+          "groupsScoredConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 16,
+            "median": 16.0,
+            "p95": 32.0,
+            "maximum": 48,
+            "mean": 18.327272727272728
+          },
+          "overcomputedGroupsConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 1,
+            "median": 12.0,
+            "p95": 15.0,
+            "maximum": 15,
+            "mean": 10.436363636363636
+          },
+          "abstractCriticalLevelsConditionalOnPrefixFallback": {
+            "count": 55,
+            "minimum": 17,
+            "median": 17.0,
+            "p95": 34.0,
+            "maximum": 51,
+            "mean": 19.472727272727273
+          },
+          "corpusMaximum": {
+            "additionalGroupsActuallyNeeded": 39,
+            "batches": 3,
+            "staticFineScorers": 39,
+            "abstractCriticalLevels": 42,
+            "serialGroupThenScoreLevels": 78
+          }
+        }
+      ]
+    }
+  ]
+}

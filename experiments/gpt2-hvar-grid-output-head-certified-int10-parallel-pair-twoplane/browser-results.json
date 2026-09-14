@@ -1,0 +1,367 @@
+{
+  "chrome": "153.0.8010.36",
+  "directory": "gpt2-hvar-grid-output-head-certified-int10-parallel-pair-twoplane",
+  "mergePlanes": [
+    "score-bucket-plus-group-tie",
+    "selected-token-anchor"
+  ],
+  "scoreGeometryPixelsPerBucket": 1024,
+  "groupTiePixelsPerGroup": 4,
+  "maxGroupTieBandPixels": 788,
+  "loadMilliseconds": 72476.944334,
+  "loadAndFirstEvaluationMilliseconds": 78181.300084,
+  "elapsedMilliseconds": 146698.108292,
+  "medianMutationMilliseconds": 7818.766875000001,
+  "mutationRangeMilliseconds": [
+    4674.825624999998,
+    8607.781958000007
+  ],
+  "fixtures": 10,
+  "allFirstWinnersCorrect": true,
+  "allSecondGroupsCorrect": true,
+  "allSecondWinnersCorrect": true,
+  "mergedScoreGeometryIsBranchMax": true,
+  "allScoreBucketsDecodeBrowserBranchMax": true,
+  "allWinningGroupsDecodeBrowserBranchMax": true,
+  "allBranchSelectionsCorrect": true,
+  "allPairWinnersDecodeBrowserBranchMax": true,
+  "allPairWinnersMatchOffline": true,
+  "finalDenseWinnersCorrect": 10,
+  "syntheticEqualBucketGroupTiesCorrect": true,
+  "syntheticEqualBucketTies": [
+    {
+      "input": {
+        "bucket": 5000,
+        "firstGroup": 5,
+        "firstToken": 1480,
+        "secondGroup": 3,
+        "secondToken": 1018
+      },
+      "output": {
+        "winningGroup": 3,
+        "useSecond": 1,
+        "selectedTokenGeometryPixels": 1018,
+        "pairWinner": 1018
+      }
+    },
+    {
+      "input": {
+        "bucket": 5000,
+        "firstGroup": 2,
+        "firstToken": 700,
+        "secondGroup": 7,
+        "secondToken": 1800
+      },
+      "output": {
+        "winningGroup": 2,
+        "useSecond": 0,
+        "selectedTokenGeometryPixels": 700,
+        "pairWinner": 700
+      }
+    }
+  ],
+  "comparison": {
+    "failedOnePlane": {
+      "directory": "gpt2-hvar-grid-output-head-certified-int10-parallel-pair",
+      "loadMilliseconds": 51283.45166599999,
+      "loadAndFirstEvaluationMilliseconds": 56033.081290999995,
+      "medianMutationMilliseconds": 5485.705958999999,
+      "mutationRangeMilliseconds": [
+        4749.629625000001,
+        7484.275124999993
+      ]
+    },
+    "serialTwoStep": {
+      "directory": "gpt2-hvar-grid-output-head-certified-upper-int10-two-step",
+      "loadMilliseconds": 49702.309666,
+      "loadAndFirstEvaluationMilliseconds": 52656.713706999995,
+      "medianMutationMilliseconds": 4953.3509589999885,
+      "mutationRangeMilliseconds": [
+        2954.4040409999943,
+        6378.508042000001
+      ]
+    },
+    "gatedSixStage": {
+      "directory": "gpt2-hvar-grid-output-head-certified-int10-unrolled6-gated",
+      "loadMilliseconds": 46077.0605,
+      "loadAndFirstEvaluationMilliseconds": 49099.852875,
+      "medianMutationMilliseconds": 4806.266000000003,
+      "mutationRangeMilliseconds": [
+        3022.7923749999973,
+        5861.506416000004
+      ]
+    }
+  },
+  "samples": [
+    {
+      "fixture": 0,
+      "milliseconds": 5704.355750000002,
+      "output": {
+        "firstWinner": 11,
+        "firstBucket": 4946,
+        "secondGroup": 1,
+        "secondWinner": 290,
+        "secondBucket": 4558,
+        "scoreBucket": 4946,
+        "winningGroup": 0,
+        "useSecond": 0,
+        "pairWinner": 11,
+        "firstScoreGeometryPixels": 5065492,
+        "secondScoreGeometryPixels": 4668176,
+        "mergedScoreGeometryPixels": 5065492,
+        "selectedTokenGeometryPixels": 11
+      },
+      "expectedFirstWinner": 11,
+      "expectedSecondGroup": 1,
+      "expectedSecondWinner": 290,
+      "expectedOfflinePairWinner": 11,
+      "browserPairWinner": 11,
+      "browserPairBucket": 4946,
+      "browserWinningGroup": 0,
+      "denseWinner": 11
+    },
+    {
+      "fixture": 1,
+      "milliseconds": 4674.825624999998,
+      "output": {
+        "firstWinner": 11,
+        "firstBucket": 12552,
+        "secondGroup": 1,
+        "secondWinner": 477,
+        "secondBucket": 12620,
+        "scoreBucket": 12620,
+        "winningGroup": 1,
+        "useSecond": 1,
+        "pairWinner": 477,
+        "firstScoreGeometryPixels": 12854036,
+        "secondScoreGeometryPixels": 12923664,
+        "mergedScoreGeometryPixels": 12923664,
+        "selectedTokenGeometryPixels": 477
+      },
+      "expectedFirstWinner": 11,
+      "expectedSecondGroup": 1,
+      "expectedSecondWinner": 477,
+      "expectedOfflinePairWinner": 477,
+      "browserPairWinner": 477,
+      "browserPairBucket": 12620,
+      "browserWinningGroup": 1,
+      "denseWinner": 477
+    },
+    {
+      "fixture": 2,
+      "milliseconds": 7818.766875000001,
+      "output": {
+        "firstWinner": 198,
+        "firstBucket": 5137,
+        "secondGroup": 1,
+        "secondWinner": 314,
+        "secondBucket": 4568,
+        "scoreBucket": 5137,
+        "winningGroup": 0,
+        "useSecond": 0,
+        "pairWinner": 198,
+        "firstScoreGeometryPixels": 5261076,
+        "secondScoreGeometryPixels": 4678416,
+        "mergedScoreGeometryPixels": 5261076,
+        "selectedTokenGeometryPixels": 198
+      },
+      "expectedFirstWinner": 198,
+      "expectedSecondGroup": 1,
+      "expectedSecondWinner": 314,
+      "expectedOfflinePairWinner": 198,
+      "browserPairWinner": 198,
+      "browserPairBucket": 5137,
+      "browserWinningGroup": 0,
+      "denseWinner": 198
+    },
+    {
+      "fixture": 3,
+      "milliseconds": 7196.000375000003,
+      "output": {
+        "firstWinner": 198,
+        "firstBucket": 4577,
+        "secondGroup": 1,
+        "secondWinner": 290,
+        "secondBucket": 4382,
+        "scoreBucket": 4577,
+        "winningGroup": 0,
+        "useSecond": 0,
+        "pairWinner": 198,
+        "firstScoreGeometryPixels": 4687636,
+        "secondScoreGeometryPixels": 4487952,
+        "mergedScoreGeometryPixels": 4687636,
+        "selectedTokenGeometryPixels": 198
+      },
+      "expectedFirstWinner": 198,
+      "expectedSecondGroup": 1,
+      "expectedSecondWinner": 290,
+      "expectedOfflinePairWinner": 198,
+      "browserPairWinner": 198,
+      "browserPairBucket": 4577,
+      "browserWinningGroup": 0,
+      "denseWinner": 198
+    },
+    {
+      "fixture": 4,
+      "milliseconds": 8607.781958000007,
+      "output": {
+        "firstWinner": 262,
+        "firstBucket": 4440,
+        "secondGroup": 0,
+        "secondWinner": 198,
+        "secondBucket": 4193,
+        "scoreBucket": 4440,
+        "winningGroup": 1,
+        "useSecond": 0,
+        "pairWinner": 262,
+        "firstScoreGeometryPixels": 4547344,
+        "secondScoreGeometryPixels": 4294420,
+        "mergedScoreGeometryPixels": 4547344,
+        "selectedTokenGeometryPixels": 262
+      },
+      "expectedFirstWinner": 262,
+      "expectedSecondGroup": 0,
+      "expectedSecondWinner": 198,
+      "expectedOfflinePairWinner": 262,
+      "browserPairWinner": 262,
+      "browserPairBucket": 4440,
+      "browserWinningGroup": 1,
+      "denseWinner": 262
+    },
+    {
+      "fixture": 5,
+      "milliseconds": 7703.736707999997,
+      "output": {
+        "firstWinner": 198,
+        "firstBucket": 5190,
+        "secondGroup": 1,
+        "secondWinner": 383,
+        "secondBucket": 4620,
+        "scoreBucket": 5190,
+        "winningGroup": 0,
+        "useSecond": 0,
+        "pairWinner": 198,
+        "firstScoreGeometryPixels": 5315348,
+        "secondScoreGeometryPixels": 4731664,
+        "mergedScoreGeometryPixels": 5315348,
+        "selectedTokenGeometryPixels": 198
+      },
+      "expectedFirstWinner": 198,
+      "expectedSecondGroup": 1,
+      "expectedSecondWinner": 383,
+      "expectedOfflinePairWinner": 198,
+      "browserPairWinner": 198,
+      "browserPairBucket": 5190,
+      "browserWinningGroup": 0,
+      "denseWinner": 198
+    },
+    {
+      "fixture": 6,
+      "milliseconds": 8477.723375000001,
+      "output": {
+        "firstWinner": 11,
+        "firstBucket": 4036,
+        "secondGroup": 1,
+        "secondWinner": 262,
+        "secondBucket": 4074,
+        "scoreBucket": 4074,
+        "winningGroup": 1,
+        "useSecond": 1,
+        "pairWinner": 262,
+        "firstScoreGeometryPixels": 4133652,
+        "secondScoreGeometryPixels": 4172560,
+        "mergedScoreGeometryPixels": 4172560,
+        "selectedTokenGeometryPixels": 262
+      },
+      "expectedFirstWinner": 11,
+      "expectedSecondGroup": 1,
+      "expectedSecondWinner": 262,
+      "expectedOfflinePairWinner": 262,
+      "browserPairWinner": 262,
+      "browserPairBucket": 4074,
+      "browserWinningGroup": 1,
+      "denseWinner": 262
+    },
+    {
+      "fixture": 7,
+      "milliseconds": 8182.867708999998,
+      "output": {
+        "firstWinner": 198,
+        "firstBucket": 4132,
+        "secondGroup": 1,
+        "secondWinner": 262,
+        "secondBucket": 4055,
+        "scoreBucket": 4132,
+        "winningGroup": 0,
+        "useSecond": 0,
+        "pairWinner": 198,
+        "firstScoreGeometryPixels": 4231956,
+        "secondScoreGeometryPixels": 4153104,
+        "mergedScoreGeometryPixels": 4231956,
+        "selectedTokenGeometryPixels": 198
+      },
+      "expectedFirstWinner": 198,
+      "expectedSecondGroup": 1,
+      "expectedSecondWinner": 262,
+      "expectedOfflinePairWinner": 198,
+      "browserPairWinner": 198,
+      "browserPairBucket": 4132,
+      "browserWinningGroup": 0,
+      "denseWinner": 198
+    },
+    {
+      "fixture": 8,
+      "milliseconds": 5654.959165999986,
+      "output": {
+        "firstWinner": 13,
+        "firstBucket": 5488,
+        "secondGroup": 1,
+        "secondWinner": 318,
+        "secondBucket": 5388,
+        "scoreBucket": 5488,
+        "winningGroup": 0,
+        "useSecond": 0,
+        "pairWinner": 13,
+        "firstScoreGeometryPixels": 5620500,
+        "secondScoreGeometryPixels": 5518096,
+        "mergedScoreGeometryPixels": 5620500,
+        "selectedTokenGeometryPixels": 13
+      },
+      "expectedFirstWinner": 13,
+      "expectedSecondGroup": 1,
+      "expectedSecondWinner": 318,
+      "expectedOfflinePairWinner": 13,
+      "browserPairWinner": 13,
+      "browserPairBucket": 5488,
+      "browserWinningGroup": 0,
+      "denseWinner": 13
+    },
+    {
+      "fixture": 9,
+      "milliseconds": 8370.768582999997,
+      "output": {
+        "firstWinner": 11,
+        "firstBucket": 5026,
+        "secondGroup": 1,
+        "secondWinner": 290,
+        "secondBucket": 4626,
+        "scoreBucket": 5026,
+        "winningGroup": 0,
+        "useSecond": 0,
+        "pairWinner": 11,
+        "firstScoreGeometryPixels": 5147412,
+        "secondScoreGeometryPixels": 4737808,
+        "mergedScoreGeometryPixels": 5147412,
+        "selectedTokenGeometryPixels": 11
+      },
+      "expectedFirstWinner": 11,
+      "expectedSecondGroup": 1,
+      "expectedSecondWinner": 290,
+      "expectedOfflinePairWinner": 11,
+      "browserPairWinner": 11,
+      "browserPairBucket": 5026,
+      "browserWinningGroup": 0,
+      "denseWinner": 11
+    }
+  ]
+}

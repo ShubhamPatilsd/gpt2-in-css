@@ -1,0 +1,6678 @@
+{
+  "decision": "pass",
+  "chrome": "153.0.8010.36",
+  "server": "http://localhost:4178",
+  "rounds": 3,
+  "fixturesPerRound": 10,
+  "comparisons": 30,
+  "allStageRoutesValid": true,
+  "distinctGroupBankStateGuard": true,
+  "allFinalWinnersMatch": true,
+  "allDenseWinnersCorrect": true,
+  "cold": {
+    "hybridLoad": {
+      "count": 3,
+      "minimum": 63114.213042,
+      "median": 64051.40445899998,
+      "p90": 90741.19258400006,
+      "maximum": 90741.19258400006,
+      "mean": 72635.60336166668
+    },
+    "baselineLoad": {
+      "count": 3,
+      "minimum": 66862.87800000003,
+      "median": 70313.535917,
+      "p90": 71879.88387500006,
+      "maximum": 71879.88387500006,
+      "mean": 69685.43259733336
+    },
+    "hybridLoadAndFirstEvaluation": {
+      "count": 3,
+      "minimum": 68488.29158399999,
+      "median": 69080.02062499999,
+      "p90": 96890.77150100016,
+      "maximum": 96890.77150100016,
+      "mean": 78153.02790333338
+    },
+    "baselineLoadAndFirstEvaluation": {
+      "count": 3,
+      "minimum": 70371.83008300007,
+      "median": 73342.044,
+      "p90": 76778.85183300008,
+      "maximum": 76778.85183300008,
+      "mean": 73497.57530533338
+    }
+  },
+  "warm": {
+    "hybrid": {
+      "count": 30,
+      "minimum": 4610.976332999999,
+      "median": 7643.508167000022,
+      "p90": 9880.528374999994,
+      "maximum": 11807.621500000008,
+      "mean": 7653.434297166673
+    },
+    "baseline": {
+      "count": 30,
+      "minimum": 3004.810291999951,
+      "median": 5545.510666999966,
+      "p90": 7220.589124999999,
+      "maximum": 10367.354000000021,
+      "mean": 5443.282588933333
+    },
+    "composedSpeedup": 0.7255190346943147,
+    "pairedSpeedup": {
+      "count": 30,
+      "minimum": 0.34015798965100463,
+      "median": 0.7237748029362739,
+      "p90": 0.9907480864053713,
+      "maximum": 1.2092585309550192,
+      "mean": 0.7250718699156917
+    },
+    "perRoundHybridMedians": [
+      7042.486749999982,
+      8282.06362500001,
+      8068.518041000003
+    ],
+    "perRoundBaselineMedians": [
+      5565.729875000019,
+      5790.826166999992,
+      5352.306709000026
+    ]
+  },
+  "routes": {
+    "totals": {
+      "active": 54,
+      "fallback": 51,
+      "accepted": 3
+    },
+    "fallbackRate": 0.9444444444444444,
+    "activeStages": {
+      "count": 30,
+      "minimum": 1,
+      "median": 2,
+      "p90": 3,
+      "maximum": 3,
+      "mean": 1.8
+    },
+    "fallbackStagesPerEvaluation": {
+      "count": 30,
+      "minimum": 1,
+      "median": 2,
+      "p90": 2,
+      "maximum": 2,
+      "mean": 1.7
+    },
+    "acceptedStagesPerEvaluation": {
+      "count": 30,
+      "minimum": 0,
+      "median": 0,
+      "p90": 1,
+      "maximum": 1,
+      "mean": 0.1
+    }
+  },
+  "bucketDeltas": {
+    "count": 54,
+    "minimum": -6,
+    "median": 1,
+    "p90": 3,
+    "maximum": 6,
+    "mean": -0.4444444444444444
+  },
+  "requestFailures": [],
+  "durationMilliseconds": 850686.319,
+  "roundsDetail": [
+    {
+      "round": 0,
+      "order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "cold": {
+        "hybridLoadMilliseconds": 63114.213042,
+        "baselineLoadMilliseconds": 70313.535917,
+        "hybridLoadAndFirstEvaluationMilliseconds": 69080.02062499999,
+        "baselineLoadAndFirstEvaluationMilliseconds": 73342.044,
+        "hybridFirstEvaluationMilliseconds": 5965.807582999987,
+        "baselineFirstEvaluationMilliseconds": 3028.5080829999933
+      },
+      "warm": {
+        "hybrid": {
+          "count": 10,
+          "minimum": 4610.976332999999,
+          "median": 7042.486749999982,
+          "p90": 9277.203833000007,
+          "maximum": 9277.203833000007,
+          "mean": 6892.558729099997
+        },
+        "baseline": {
+          "count": 10,
+          "minimum": 3294.7573749999865,
+          "median": 5565.729875000019,
+          "p90": 10367.354000000021,
+          "maximum": 10367.354000000021,
+          "mean": 5543.2770708
+        }
+      },
+      "requestFailures": {
+        "hybrid": [],
+        "baseline": []
+      },
+      "hybridSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 6554.791709000012,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4753,
+                "runnerLocal": 12,
+                "runnerBucket": 4586,
+                "marginBuckets": 167,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 4946,
+                "bestWinner": 11,
+                "bestBucket": 4946,
+                "certificateGap": 46,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 34,
+                "topBucket": 4557,
+                "runnerLocal": 28,
+                "runnerBucket": 4555,
+                "marginBuckets": 2,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 290,
+                "fineBucket": 4558,
+                "bestWinner": 11,
+                "bestBucket": 4946,
+                "certificateGap": 558,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 5906.38366599998,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 1,
+                "topBucket": 11626,
+                "runnerLocal": 13,
+                "runnerBucket": 11620,
+                "marginBuckets": 6,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 12552,
+                "bestWinner": 11,
+                "bestBucket": 12552,
+                "certificateGap": -516,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 221,
+                "topBucket": 12621,
+                "runnerLocal": 30,
+                "runnerBucket": 12343,
+                "marginBuckets": 278,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 477,
+                "fineBucket": 12620,
+                "bestWinner": 477,
+                "bestBucket": 12620,
+                "certificateGap": -181,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 5,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 5,
+                  "runner": 5,
+                  "decision": 5,
+                  "exact": 5,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 6",
+                "topProbeFeature": 6,
+                "exactFirstCandidate": {
+                  "group": 5,
+                  "fineBase": 133127.9,
+                  "fineGlyphs": "\"𠔀𰔀񀔀񐔀񠔀񰔀򀔀򐔀򠔀򰔀󰔀􀔀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1,
+                  5
+                ],
+                "topLocal": 71,
+                "topBucket": 12441,
+                "runnerLocal": 130,
+                "runnerBucket": 11755,
+                "marginBuckets": 686,
+                "fallback": 0,
+                "exactDisplay": "none",
+                "fineWinner": 1351,
+                "fineBucket": 12441,
+                "bestWinner": 477,
+                "bestBucket": 12620,
+                "certificateGap": 249,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "fallbackStages": 2,
+            "acceptedStages": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 7042.486749999982,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 5138,
+                "runnerLocal": 12,
+                "runnerBucket": 4310,
+                "marginBuckets": 828,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 5137,
+                "bestWinner": 198,
+                "bestBucket": 5137,
+                "certificateGap": 353,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "fallbackStages": 1,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 7068.838541000005,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4577,
+                "runnerLocal": 40,
+                "runnerBucket": 4143,
+                "marginBuckets": 434,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 4577,
+                "bestWinner": 198,
+                "bestBucket": 4577,
+                "certificateGap": -35,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 34,
+                "topBucket": 4383,
+                "runnerLocal": 28,
+                "runnerBucket": 4297,
+                "marginBuckets": 86,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 290,
+                "fineBucket": 4382,
+                "bestWinner": 198,
+                "bestBucket": 4577,
+                "certificateGap": 526,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 6047.910999999993,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 1,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 1
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  1
+                ],
+                "topLocal": 34,
+                "topBucket": 4425,
+                "runnerLocal": 28,
+                "runnerBucket": 4144,
+                "marginBuckets": 281,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 262,
+                "fineBucket": 4440,
+                "bestWinner": 262,
+                "bestBucket": 4440,
+                "certificateGap": -186,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 1,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 1
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  1,
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4193,
+                "runnerLocal": 12,
+                "runnerBucket": 3699,
+                "marginBuckets": 494,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 4193,
+                "bestWinner": 262,
+                "bestBucket": 4440,
+                "certificateGap": 281,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 5340.854166999983,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 5190,
+                "runnerLocal": 16,
+                "runnerBucket": 4283,
+                "marginBuckets": 907,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 5190,
+                "bestWinner": 198,
+                "bestBucket": 5190,
+                "certificateGap": 379,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "fallbackStages": 1,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 8573.31475000002,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 3995,
+                "runnerLocal": 12,
+                "runnerBucket": 3809,
+                "marginBuckets": 186,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 4036,
+                "bestWinner": 11,
+                "bestBucket": 4036,
+                "certificateGap": -310,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 110,
+                "topBucket": 3990,
+                "runnerLocal": 34,
+                "runnerBucket": 3934,
+                "marginBuckets": 56,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 262,
+                "fineBucket": 4074,
+                "bestWinner": 262,
+                "bestBucket": 4074,
+                "certificateGap": 50,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 9277.203833000007,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4132,
+                "runnerLocal": 12,
+                "runnerBucket": 3743,
+                "marginBuckets": 389,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 4132,
+                "bestWinner": 198,
+                "bestBucket": 4132,
+                "certificateGap": -197,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 110,
+                "topBucket": 4005,
+                "runnerLocal": 34,
+                "runnerBucket": 3869,
+                "marginBuckets": 136,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 262,
+                "fineBucket": 4055,
+                "bestWinner": 198,
+                "bestBucket": 4132,
+                "certificateGap": 112,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 4610.976332999999,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 5152,
+                "runnerLocal": 13,
+                "runnerBucket": 5005,
+                "marginBuckets": 147,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 13,
+                "fineBucket": 5488,
+                "bestWinner": 13,
+                "bestBucket": 5488,
+                "certificateGap": -373,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 62,
+                "topBucket": 5388,
+                "runnerLocal": 28,
+                "runnerBucket": 5303,
+                "marginBuckets": 85,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 318,
+                "fineBucket": 5388,
+                "bestWinner": 13,
+                "bestBucket": 5488,
+                "certificateGap": 299,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 8502.826541999995,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4815,
+                "runnerLocal": 12,
+                "runnerBucket": 4658,
+                "marginBuckets": 157,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 5026,
+                "bestWinner": 11,
+                "bestBucket": 5026,
+                "certificateGap": 56,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "fallbackStages": 1,
+            "acceptedStages": 0,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        }
+      ],
+      "baselineSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 6038.325332999986,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              11,
+              290
+            ],
+            "activeStages": 2,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 4511.105708999996,
+          "output": {
+            "groups": [
+              0,
+              1,
+              5
+            ],
+            "fineWinners": [
+              11,
+              477,
+              1351
+            ],
+            "activeStages": 3,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 4659.874500000005,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              198
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 7108.689416000008,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              198,
+              290
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 5991.956249999988,
+          "output": {
+            "groups": [
+              1,
+              0
+            ],
+            "fineWinners": [
+              262,
+              198
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 3294.7573749999865,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              198
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 10367.354000000021,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              11,
+              262
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 5565.729875000019,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              198,
+              262
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 3861.367499999993,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              13,
+              318
+            ],
+            "activeStages": 2,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 4033.6107499999925,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              11
+            ],
+            "activeStages": 1,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "order": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        0
+      ],
+      "cold": {
+        "hybridLoadMilliseconds": 64051.40445899998,
+        "baselineLoadMilliseconds": 66862.87800000003,
+        "hybridLoadAndFirstEvaluationMilliseconds": 68488.29158399999,
+        "baselineLoadAndFirstEvaluationMilliseconds": 70371.83008300007,
+        "hybridFirstEvaluationMilliseconds": 4436.887125000008,
+        "baselineFirstEvaluationMilliseconds": 3508.95208300004
+      },
+      "warm": {
+        "hybrid": {
+          "count": 10,
+          "minimum": 5573.291790999996,
+          "median": 8282.06362500001,
+          "p90": 10470.223416000023,
+          "maximum": 10470.223416000023,
+          "mean": 8051.7104582000175
+        },
+        "baseline": {
+          "count": 10,
+          "minimum": 3661.3271670000395,
+          "median": 5790.826166999992,
+          "p90": 7785.307415999996,
+          "maximum": 7785.307415999996,
+          "mean": 5832.442920700007
+        }
+      },
+      "requestFailures": {
+        "hybrid": [],
+        "baseline": []
+      },
+      "hybridSamples": [
+        {
+          "fixture": 1,
+          "milliseconds": 6296.2877920000465,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 1,
+                "topBucket": 11626,
+                "runnerLocal": 13,
+                "runnerBucket": 11620,
+                "marginBuckets": 6,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 12552,
+                "bestWinner": 11,
+                "bestBucket": 12552,
+                "certificateGap": -516,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 221,
+                "topBucket": 12621,
+                "runnerLocal": 30,
+                "runnerBucket": 12343,
+                "marginBuckets": 278,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 477,
+                "fineBucket": 12620,
+                "bestWinner": 477,
+                "bestBucket": 12620,
+                "certificateGap": -181,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 5,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 5,
+                  "runner": 5,
+                  "decision": 5,
+                  "exact": 5,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 6",
+                "topProbeFeature": 6,
+                "exactFirstCandidate": {
+                  "group": 5,
+                  "fineBase": 133127.9,
+                  "fineGlyphs": "\"𠔀𰔀񀔀񐔀񠔀񰔀򀔀򐔀򠔀򰔀󰔀􀔀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1,
+                  5
+                ],
+                "topLocal": 71,
+                "topBucket": 12441,
+                "runnerLocal": 130,
+                "runnerBucket": 11755,
+                "marginBuckets": 686,
+                "fallback": 0,
+                "exactDisplay": "none",
+                "fineWinner": 1351,
+                "fineBucket": 12441,
+                "bestWinner": 477,
+                "bestBucket": 12620,
+                "certificateGap": 249,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "fallbackStages": 2,
+            "acceptedStages": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 7643.508167000022,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 5138,
+                "runnerLocal": 12,
+                "runnerBucket": 4310,
+                "marginBuckets": 828,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 5137,
+                "bestWinner": 198,
+                "bestBucket": 5137,
+                "certificateGap": 353,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "fallbackStages": 1,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 9526.861583000049,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4577,
+                "runnerLocal": 40,
+                "runnerBucket": 4143,
+                "marginBuckets": 434,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 4577,
+                "bestWinner": 198,
+                "bestBucket": 4577,
+                "certificateGap": -35,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 34,
+                "topBucket": 4383,
+                "runnerLocal": 28,
+                "runnerBucket": 4297,
+                "marginBuckets": 86,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 290,
+                "fineBucket": 4382,
+                "bestWinner": 198,
+                "bestBucket": 4577,
+                "certificateGap": 526,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 8282.06362500001,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 1,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 1
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  1
+                ],
+                "topLocal": 34,
+                "topBucket": 4425,
+                "runnerLocal": 28,
+                "runnerBucket": 4144,
+                "marginBuckets": 281,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 262,
+                "fineBucket": 4440,
+                "bestWinner": 262,
+                "bestBucket": 4440,
+                "certificateGap": -186,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 1,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 1
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  1,
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4193,
+                "runnerLocal": 12,
+                "runnerBucket": 3699,
+                "marginBuckets": 494,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 4193,
+                "bestWinner": 262,
+                "bestBucket": 4440,
+                "certificateGap": 281,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 10470.223416000023,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 5190,
+                "runnerLocal": 16,
+                "runnerBucket": 4283,
+                "marginBuckets": 907,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 5190,
+                "bestWinner": 198,
+                "bestBucket": 5190,
+                "certificateGap": 379,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "fallbackStages": 1,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 7419.355582999997,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 3995,
+                "runnerLocal": 12,
+                "runnerBucket": 3809,
+                "marginBuckets": 186,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 4036,
+                "bestWinner": 11,
+                "bestBucket": 4036,
+                "certificateGap": -310,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 110,
+                "topBucket": 3990,
+                "runnerLocal": 34,
+                "runnerBucket": 3934,
+                "marginBuckets": 56,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 262,
+                "fineBucket": 4074,
+                "bestWinner": 262,
+                "bestBucket": 4074,
+                "certificateGap": 50,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 7831.865707999968,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4132,
+                "runnerLocal": 12,
+                "runnerBucket": 3743,
+                "marginBuckets": 389,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 4132,
+                "bestWinner": 198,
+                "bestBucket": 4132,
+                "certificateGap": -197,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 110,
+                "topBucket": 4005,
+                "runnerLocal": 34,
+                "runnerBucket": 3869,
+                "marginBuckets": 136,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 262,
+                "fineBucket": 4055,
+                "bestWinner": 198,
+                "bestBucket": 4132,
+                "certificateGap": 112,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 5573.291790999996,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 5152,
+                "runnerLocal": 13,
+                "runnerBucket": 5005,
+                "marginBuckets": 147,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 13,
+                "fineBucket": 5488,
+                "bestWinner": 13,
+                "bestBucket": 5488,
+                "certificateGap": -373,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 62,
+                "topBucket": 5388,
+                "runnerLocal": 28,
+                "runnerBucket": 5303,
+                "marginBuckets": 85,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 318,
+                "fineBucket": 5388,
+                "bestWinner": 13,
+                "bestBucket": 5488,
+                "certificateGap": 299,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 9162.863709000056,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4815,
+                "runnerLocal": 12,
+                "runnerBucket": 4658,
+                "marginBuckets": 157,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 5026,
+                "bestWinner": 11,
+                "bestBucket": 5026,
+                "certificateGap": 56,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "fallbackStages": 1,
+            "acceptedStages": 0,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        },
+        {
+          "fixture": 0,
+          "milliseconds": 8310.783208000008,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4753,
+                "runnerLocal": 12,
+                "runnerBucket": 4586,
+                "marginBuckets": 167,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 4946,
+                "bestWinner": 11,
+                "bestBucket": 4946,
+                "certificateGap": 46,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 34,
+                "topBucket": 4557,
+                "runnerLocal": 28,
+                "runnerBucket": 4555,
+                "marginBuckets": 2,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 290,
+                "fineBucket": 4558,
+                "bestWinner": 11,
+                "bestBucket": 4946,
+                "certificateGap": 558,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        }
+      ],
+      "baselineSamples": [
+        {
+          "fixture": 1,
+          "milliseconds": 5390.433916000009,
+          "output": {
+            "groups": [
+              0,
+              1,
+              5
+            ],
+            "fineWinners": [
+              11,
+              477,
+              1351
+            ],
+            "activeStages": 3,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 3661.3271670000395,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              198
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 7785.307415999996,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              198,
+              290
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 5545.510666999966,
+          "output": {
+            "groups": [
+              1,
+              0
+            ],
+            "fineWinners": [
+              262,
+              198
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 6633.874958000029,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              198
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 5369.942624999967,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              11,
+              262
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 7220.589124999999,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              198,
+              262
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 4017.0908749999944,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              13,
+              318
+            ],
+            "activeStages": 2,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 5790.826166999992,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              11
+            ],
+            "activeStages": 1,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        },
+        {
+          "fixture": 0,
+          "milliseconds": 6909.526291000075,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              11,
+              290
+            ],
+            "activeStages": 2,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "order": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        0,
+        1
+      ],
+      "cold": {
+        "hybridLoadMilliseconds": 90741.19258400006,
+        "baselineLoadMilliseconds": 71879.88387500006,
+        "hybridLoadAndFirstEvaluationMilliseconds": 96890.77150100016,
+        "baselineLoadAndFirstEvaluationMilliseconds": 76778.85183300008,
+        "hybridFirstEvaluationMilliseconds": 6149.5789170000935,
+        "baselineFirstEvaluationMilliseconds": 4898.967958000023
+      },
+      "warm": {
+        "hybrid": {
+          "count": 10,
+          "minimum": 5218.340415999992,
+          "median": 8068.518041000003,
+          "p90": 11807.621500000008,
+          "maximum": 11807.621500000008,
+          "mean": 8016.033704200003
+        },
+        "baseline": {
+          "count": 10,
+          "minimum": 3004.810291999951,
+          "median": 5352.306709000026,
+          "p90": 6218.695999999996,
+          "maximum": 6218.695999999996,
+          "mean": 4954.127775299991
+        }
+      },
+      "requestFailures": {
+        "hybrid": [],
+        "baseline": []
+      },
+      "hybridSamples": [
+        {
+          "fixture": 2,
+          "milliseconds": 6764.710124999983,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 5138,
+                "runnerLocal": 12,
+                "runnerBucket": 4310,
+                "marginBuckets": 828,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 5137,
+                "bestWinner": 198,
+                "bestBucket": 5137,
+                "certificateGap": 353,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "fallbackStages": 1,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 7304.330167000066,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4577,
+                "runnerLocal": 40,
+                "runnerBucket": 4143,
+                "marginBuckets": 434,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 4577,
+                "bestWinner": 198,
+                "bestBucket": 4577,
+                "certificateGap": -35,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 34,
+                "topBucket": 4383,
+                "runnerLocal": 28,
+                "runnerBucket": 4297,
+                "marginBuckets": 86,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 290,
+                "fineBucket": 4382,
+                "bestWinner": 198,
+                "bestBucket": 4577,
+                "certificateGap": 526,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 8068.518041000003,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 1,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 1
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  1
+                ],
+                "topLocal": 34,
+                "topBucket": 4425,
+                "runnerLocal": 28,
+                "runnerBucket": 4144,
+                "marginBuckets": 281,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 262,
+                "fineBucket": 4440,
+                "bestWinner": 262,
+                "bestBucket": 4440,
+                "certificateGap": -186,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 1,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 1
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  1,
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4193,
+                "runnerLocal": 12,
+                "runnerBucket": 3699,
+                "marginBuckets": 494,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 4193,
+                "bestWinner": 262,
+                "bestBucket": 4440,
+                "certificateGap": 281,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 5422.6706669999985,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 5190,
+                "runnerLocal": 16,
+                "runnerBucket": 4283,
+                "marginBuckets": 907,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 5190,
+                "bestWinner": 198,
+                "bestBucket": 5190,
+                "certificateGap": 379,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "fallbackStages": 1,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 9880.528374999994,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 3995,
+                "runnerLocal": 12,
+                "runnerBucket": 3809,
+                "marginBuckets": 186,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 4036,
+                "bestWinner": 11,
+                "bestBucket": 4036,
+                "certificateGap": -310,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 110,
+                "topBucket": 3990,
+                "runnerLocal": 34,
+                "runnerBucket": 3934,
+                "marginBuckets": 56,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 262,
+                "fineBucket": 4074,
+                "bestWinner": 262,
+                "bestBucket": 4074,
+                "certificateGap": 50,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 7023.27329199994,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4132,
+                "runnerLocal": 12,
+                "runnerBucket": 3743,
+                "marginBuckets": 389,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 198,
+                "fineBucket": 4132,
+                "bestWinner": 198,
+                "bestBucket": 4132,
+                "certificateGap": -197,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 110,
+                "topBucket": 4005,
+                "runnerLocal": 34,
+                "runnerBucket": 3869,
+                "marginBuckets": 136,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 262,
+                "fineBucket": 4055,
+                "bestWinner": 198,
+                "bestBucket": 4132,
+                "certificateGap": 112,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 5218.340415999992,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 5152,
+                "runnerLocal": 13,
+                "runnerBucket": 5005,
+                "marginBuckets": 147,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 13,
+                "fineBucket": 5488,
+                "bestWinner": 13,
+                "bestBucket": 5488,
+                "certificateGap": -373,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 62,
+                "topBucket": 5388,
+                "runnerLocal": 28,
+                "runnerBucket": 5303,
+                "marginBuckets": 85,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 318,
+                "fineBucket": 5388,
+                "bestWinner": 13,
+                "bestBucket": 5488,
+                "certificateGap": 299,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 11807.621500000008,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4815,
+                "runnerLocal": 12,
+                "runnerBucket": 4658,
+                "marginBuckets": 157,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 5026,
+                "bestWinner": 11,
+                "bestBucket": 5026,
+                "certificateGap": 56,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "fallbackStages": 1,
+            "acceptedStages": 0,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        },
+        {
+          "fixture": 0,
+          "milliseconds": 9489.709875000059,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 198,
+                "topBucket": 4753,
+                "runnerLocal": 12,
+                "runnerBucket": 4586,
+                "marginBuckets": 167,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 4946,
+                "bestWinner": 11,
+                "bestBucket": 4946,
+                "certificateGap": 46,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 34,
+                "topBucket": 4557,
+                "runnerLocal": 28,
+                "runnerBucket": 4555,
+                "marginBuckets": 2,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 290,
+                "fineBucket": 4558,
+                "bestWinner": 11,
+                "bestBucket": 4946,
+                "certificateGap": 558,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "fallbackStages": 2,
+            "acceptedStages": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 9180.634583999985,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 0,
+                  "runner": 0,
+                  "decision": 0,
+                  "exact": 0,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\"",
+                "topProbeFeature": 1,
+                "exactFirstCandidate": {
+                  "group": 0,
+                  "fineBase": 120344.6,
+                  "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+                },
+                "selectedGroups": [
+                  0
+                ],
+                "topLocal": 1,
+                "topBucket": 11626,
+                "runnerLocal": 13,
+                "runnerBucket": 11620,
+                "marginBuckets": 6,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 11,
+                "fineBucket": 12552,
+                "bestWinner": 11,
+                "bestBucket": 12552,
+                "certificateGap": -516,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 1,
+                  "runner": 1,
+                  "decision": 1,
+                  "exact": 1,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 2",
+                "topProbeFeature": 2,
+                "exactFirstCandidate": {
+                  "group": 1,
+                  "fineBase": 116823,
+                  "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "topLocal": 221,
+                "topBucket": 12621,
+                "runnerLocal": 30,
+                "runnerBucket": 12343,
+                "marginBuckets": 278,
+                "fallback": 1,
+                "exactDisplay": "grid",
+                "fineWinner": 477,
+                "fineBucket": 12620,
+                "bestWinner": 477,
+                "bestBucket": 12620,
+                "certificateGap": -181,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 5,
+                "scopedGroups": {
+                  "wrapper": 0,
+                  "top": 5,
+                  "runner": 5,
+                  "decision": 5,
+                  "exact": 5,
+                  "fine": 0
+                },
+                "topFeatureSettings": "\"cv01\" 6",
+                "topProbeFeature": 6,
+                "exactFirstCandidate": {
+                  "group": 5,
+                  "fineBase": 133127.9,
+                  "fineGlyphs": "\"𠔀𰔀񀔀񐔀񠔀񰔀򀔀򐔀򠔀򰔀󰔀􀔀\""
+                },
+                "selectedGroups": [
+                  0,
+                  1,
+                  5
+                ],
+                "topLocal": 71,
+                "topBucket": 12441,
+                "runnerLocal": 130,
+                "runnerBucket": 11755,
+                "marginBuckets": 686,
+                "fallback": 0,
+                "exactDisplay": "none",
+                "fineWinner": 1351,
+                "fineBucket": 12441,
+                "bestWinner": 477,
+                "bestBucket": 12620,
+                "certificateGap": 249,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "fallbackStages": 2,
+            "acceptedStages": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        }
+      ],
+      "baselineSamples": [
+        {
+          "fixture": 2,
+          "milliseconds": 4190.644458999974,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              198
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 5973.9840420000255,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              198,
+              290
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 5898.161542000016,
+          "output": {
+            "groups": [
+              1,
+              0
+            ],
+            "fineWinners": [
+              262,
+              198
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 3004.810291999951,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              198
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 6218.695999999996,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              11,
+              262
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 5352.306709000026,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              198,
+              262
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 3996.7290000000503,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              13,
+              318
+            ],
+            "activeStages": 2,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 4016.4567919999827,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              11
+            ],
+            "activeStages": 1,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        },
+        {
+          "fixture": 0,
+          "milliseconds": 5731.7010419999715,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              11,
+              290
+            ],
+            "activeStages": 2,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 5157.787874999922,
+          "output": {
+            "groups": [
+              0,
+              1,
+              5
+            ],
+            "fineWinners": [
+              11,
+              477,
+              1351
+            ],
+            "activeStages": 3,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        }
+      ]
+    }
+  ],
+  "paired": [
+    {
+      "round": 0,
+      "fixture": 0,
+      "hybridMilliseconds": 6554.791709000012,
+      "baselineMilliseconds": 6038.325332999986,
+      "speedup": 0.9212078127073214,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4753,
+            "runnerLocal": 12,
+            "runnerBucket": 4586,
+            "marginBuckets": 167,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 4946,
+            "bestWinner": 11,
+            "bestBucket": 4946,
+            "certificateGap": 46,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 34,
+            "topBucket": 4557,
+            "runnerLocal": 28,
+            "runnerBucket": 4555,
+            "marginBuckets": 2,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 290,
+            "fineBucket": 4558,
+            "bestWinner": 11,
+            "bestBucket": 4946,
+            "certificateGap": 558,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          11,
+          290
+        ],
+        "activeStages": 2,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -2
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 0,
+      "fixture": 1,
+      "hybridMilliseconds": 5906.38366599998,
+      "baselineMilliseconds": 4511.105708999996,
+      "speedup": 0.7637678085438501,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 1,
+            "topBucket": 11626,
+            "runnerLocal": 13,
+            "runnerBucket": 11620,
+            "marginBuckets": 6,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 12552,
+            "bestWinner": 11,
+            "bestBucket": 12552,
+            "certificateGap": -516,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 221,
+            "topBucket": 12621,
+            "runnerLocal": 30,
+            "runnerBucket": 12343,
+            "marginBuckets": 278,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 477,
+            "fineBucket": 12620,
+            "bestWinner": 477,
+            "bestBucket": 12620,
+            "certificateGap": -181,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 5,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 5,
+              "runner": 5,
+              "decision": 5,
+              "exact": 5,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 6",
+            "topProbeFeature": 6,
+            "exactFirstCandidate": {
+              "group": 5,
+              "fineBase": 133127.9,
+              "fineGlyphs": "\"𠔀𰔀񀔀񐔀񠔀񰔀򀔀򐔀򠔀򰔀󰔀􀔀\""
+            },
+            "selectedGroups": [
+              0,
+              1,
+              5
+            ],
+            "topLocal": 71,
+            "topBucket": 12441,
+            "runnerLocal": 130,
+            "runnerBucket": 11755,
+            "marginBuckets": 686,
+            "fallback": 0,
+            "exactDisplay": "none",
+            "fineWinner": 1351,
+            "fineBucket": 12441,
+            "bestWinner": 477,
+            "bestBucket": 12620,
+            "certificateGap": 249,
+            "done": 1
+          }
+        ],
+        "activeStages": 3,
+        "fallbackStages": 2,
+        "acceptedStages": 1,
+        "finalWinner": 477,
+        "finalBucket": 12620
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1,
+          5
+        ],
+        "fineWinners": [
+          11,
+          477,
+          1351
+        ],
+        "activeStages": 3,
+        "finalWinner": 477,
+        "finalBucket": 12620
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -3
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -3
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -4
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 0,
+      "fixture": 2,
+      "hybridMilliseconds": 7042.486749999982,
+      "baselineMilliseconds": 4659.874500000005,
+      "speedup": 0.6616802651421414,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 5138,
+            "runnerLocal": 12,
+            "runnerBucket": 4310,
+            "marginBuckets": 828,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 5137,
+            "bestWinner": 198,
+            "bestBucket": 5137,
+            "certificateGap": 353,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "fallbackStages": 1,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 5137
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          198
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5137
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -5
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 0,
+      "fixture": 3,
+      "hybridMilliseconds": 7068.838541000005,
+      "baselineMilliseconds": 7108.689416000008,
+      "speedup": 1.0056375421179682,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4577,
+            "runnerLocal": 40,
+            "runnerBucket": 4143,
+            "marginBuckets": 434,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 4577,
+            "bestWinner": 198,
+            "bestBucket": 4577,
+            "certificateGap": -35,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 34,
+            "topBucket": 4383,
+            "runnerLocal": 28,
+            "runnerBucket": 4297,
+            "marginBuckets": 86,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 290,
+            "fineBucket": 4382,
+            "bestWinner": 198,
+            "bestBucket": 4577,
+            "certificateGap": 526,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 4577
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          198,
+          290
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4577
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -2
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 0,
+      "fixture": 4,
+      "hybridMilliseconds": 6047.910999999993,
+      "baselineMilliseconds": 5991.956249999988,
+      "speedup": 0.9907480864053713,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 1,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 1
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              1
+            ],
+            "topLocal": 34,
+            "topBucket": 4425,
+            "runnerLocal": 28,
+            "runnerBucket": 4144,
+            "marginBuckets": 281,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 262,
+            "fineBucket": 4440,
+            "bestWinner": 262,
+            "bestBucket": 4440,
+            "certificateGap": -186,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 1,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 1
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              1,
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4193,
+            "runnerLocal": 12,
+            "runnerBucket": 3699,
+            "marginBuckets": 494,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 4193,
+            "bestWinner": 262,
+            "bestBucket": 4440,
+            "certificateGap": 281,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 262,
+        "finalBucket": 4440
+      },
+      "baseline": {
+        "groups": [
+          1,
+          0
+        ],
+        "fineWinners": [
+          262,
+          198
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4440
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 2
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 0,
+      "fixture": 5,
+      "hybridMilliseconds": 5340.854166999983,
+      "baselineMilliseconds": 3294.7573749999865,
+      "speedup": 0.6168970864918201,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 5190,
+            "runnerLocal": 16,
+            "runnerBucket": 4283,
+            "marginBuckets": 907,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 5190,
+            "bestWinner": 198,
+            "bestBucket": 5190,
+            "certificateGap": 379,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "fallbackStages": 1,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 5190
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          198
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5190
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -6
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 0,
+      "fixture": 6,
+      "hybridMilliseconds": 8573.31475000002,
+      "baselineMilliseconds": 10367.354000000021,
+      "speedup": 1.2092585309550192,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 3995,
+            "runnerLocal": 12,
+            "runnerBucket": 3809,
+            "marginBuckets": 186,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 4036,
+            "bestWinner": 11,
+            "bestBucket": 4036,
+            "certificateGap": -310,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 110,
+            "topBucket": 3990,
+            "runnerLocal": 34,
+            "runnerBucket": 3934,
+            "marginBuckets": 56,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 262,
+            "fineBucket": 4074,
+            "bestWinner": 262,
+            "bestBucket": 4074,
+            "certificateGap": 50,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 262,
+        "finalBucket": 4074
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          11,
+          262
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4074
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 0,
+      "fixture": 7,
+      "hybridMilliseconds": 9277.203833000007,
+      "baselineMilliseconds": 5565.729875000019,
+      "speedup": 0.5999361418795308,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4132,
+            "runnerLocal": 12,
+            "runnerBucket": 3743,
+            "marginBuckets": 389,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 4132,
+            "bestWinner": 198,
+            "bestBucket": 4132,
+            "certificateGap": -197,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 110,
+            "topBucket": 4005,
+            "runnerLocal": 34,
+            "runnerBucket": 3869,
+            "marginBuckets": 136,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 262,
+            "fineBucket": 4055,
+            "bestWinner": 198,
+            "bestBucket": 4132,
+            "certificateGap": 112,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 4132
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          198,
+          262
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4132
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 0,
+      "fixture": 8,
+      "hybridMilliseconds": 4610.976332999999,
+      "baselineMilliseconds": 3861.367499999993,
+      "speedup": 0.8374294772160987,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 5152,
+            "runnerLocal": 13,
+            "runnerBucket": 5005,
+            "marginBuckets": 147,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 13,
+            "fineBucket": 5488,
+            "bestWinner": 13,
+            "bestBucket": 5488,
+            "certificateGap": -373,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 62,
+            "topBucket": 5388,
+            "runnerLocal": 28,
+            "runnerBucket": 5303,
+            "marginBuckets": 85,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 318,
+            "fineBucket": 5388,
+            "bestWinner": 13,
+            "bestBucket": 5488,
+            "certificateGap": 299,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 13,
+        "finalBucket": 5488
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          13,
+          318
+        ],
+        "activeStages": 2,
+        "finalWinner": 13,
+        "finalBucket": 5488
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -1
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 0,
+      "fixture": 9,
+      "hybridMilliseconds": 8502.826541999995,
+      "baselineMilliseconds": 4033.6107499999925,
+      "speedup": 0.4743846919698806,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4815,
+            "runnerLocal": 12,
+            "runnerBucket": 4658,
+            "marginBuckets": 157,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 5026,
+            "bestWinner": 11,
+            "bestBucket": 5026,
+            "certificateGap": 56,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "fallbackStages": 1,
+        "acceptedStages": 0,
+        "finalWinner": 11,
+        "finalBucket": 5026
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          11
+        ],
+        "activeStages": 1,
+        "finalWinner": 11,
+        "finalBucket": 5026
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 6
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 1,
+      "fixture": 1,
+      "hybridMilliseconds": 6296.2877920000465,
+      "baselineMilliseconds": 5390.433916000009,
+      "speedup": 0.8561288959581868,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 1,
+            "topBucket": 11626,
+            "runnerLocal": 13,
+            "runnerBucket": 11620,
+            "marginBuckets": 6,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 12552,
+            "bestWinner": 11,
+            "bestBucket": 12552,
+            "certificateGap": -516,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 221,
+            "topBucket": 12621,
+            "runnerLocal": 30,
+            "runnerBucket": 12343,
+            "marginBuckets": 278,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 477,
+            "fineBucket": 12620,
+            "bestWinner": 477,
+            "bestBucket": 12620,
+            "certificateGap": -181,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 5,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 5,
+              "runner": 5,
+              "decision": 5,
+              "exact": 5,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 6",
+            "topProbeFeature": 6,
+            "exactFirstCandidate": {
+              "group": 5,
+              "fineBase": 133127.9,
+              "fineGlyphs": "\"𠔀𰔀񀔀񐔀񠔀񰔀򀔀򐔀򠔀򰔀󰔀􀔀\""
+            },
+            "selectedGroups": [
+              0,
+              1,
+              5
+            ],
+            "topLocal": 71,
+            "topBucket": 12441,
+            "runnerLocal": 130,
+            "runnerBucket": 11755,
+            "marginBuckets": 686,
+            "fallback": 0,
+            "exactDisplay": "none",
+            "fineWinner": 1351,
+            "fineBucket": 12441,
+            "bestWinner": 477,
+            "bestBucket": 12620,
+            "certificateGap": 249,
+            "done": 1
+          }
+        ],
+        "activeStages": 3,
+        "fallbackStages": 2,
+        "acceptedStages": 1,
+        "finalWinner": 477,
+        "finalBucket": 12620
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1,
+          5
+        ],
+        "fineWinners": [
+          11,
+          477,
+          1351
+        ],
+        "activeStages": 3,
+        "finalWinner": 477,
+        "finalBucket": 12620
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -3
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -3
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -4
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 1,
+      "fixture": 2,
+      "hybridMilliseconds": 7643.508167000022,
+      "baselineMilliseconds": 3661.3271670000395,
+      "speedup": 0.4790113501556005,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 5138,
+            "runnerLocal": 12,
+            "runnerBucket": 4310,
+            "marginBuckets": 828,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 5137,
+            "bestWinner": 198,
+            "bestBucket": 5137,
+            "certificateGap": 353,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "fallbackStages": 1,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 5137
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          198
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5137
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -5
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 1,
+      "fixture": 3,
+      "hybridMilliseconds": 9526.861583000049,
+      "baselineMilliseconds": 7785.307415999996,
+      "speedup": 0.8171953951647914,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4577,
+            "runnerLocal": 40,
+            "runnerBucket": 4143,
+            "marginBuckets": 434,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 4577,
+            "bestWinner": 198,
+            "bestBucket": 4577,
+            "certificateGap": -35,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 34,
+            "topBucket": 4383,
+            "runnerLocal": 28,
+            "runnerBucket": 4297,
+            "marginBuckets": 86,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 290,
+            "fineBucket": 4382,
+            "bestWinner": 198,
+            "bestBucket": 4577,
+            "certificateGap": 526,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 4577
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          198,
+          290
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4577
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -2
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 1,
+      "fixture": 4,
+      "hybridMilliseconds": 8282.06362500001,
+      "baselineMilliseconds": 5545.510666999966,
+      "speedup": 0.6695807854289406,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 1,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 1
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              1
+            ],
+            "topLocal": 34,
+            "topBucket": 4425,
+            "runnerLocal": 28,
+            "runnerBucket": 4144,
+            "marginBuckets": 281,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 262,
+            "fineBucket": 4440,
+            "bestWinner": 262,
+            "bestBucket": 4440,
+            "certificateGap": -186,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 1,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 1
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              1,
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4193,
+            "runnerLocal": 12,
+            "runnerBucket": 3699,
+            "marginBuckets": 494,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 4193,
+            "bestWinner": 262,
+            "bestBucket": 4440,
+            "certificateGap": 281,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 262,
+        "finalBucket": 4440
+      },
+      "baseline": {
+        "groups": [
+          1,
+          0
+        ],
+        "fineWinners": [
+          262,
+          198
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4440
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 2
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 1,
+      "fixture": 5,
+      "hybridMilliseconds": 10470.223416000023,
+      "baselineMilliseconds": 6633.874958000029,
+      "speedup": 0.6335944033307355,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 5190,
+            "runnerLocal": 16,
+            "runnerBucket": 4283,
+            "marginBuckets": 907,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 5190,
+            "bestWinner": 198,
+            "bestBucket": 5190,
+            "certificateGap": 379,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "fallbackStages": 1,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 5190
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          198
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5190
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -6
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 1,
+      "fixture": 6,
+      "hybridMilliseconds": 7419.355582999997,
+      "baselineMilliseconds": 5369.942624999967,
+      "speedup": 0.7237748029362739,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 3995,
+            "runnerLocal": 12,
+            "runnerBucket": 3809,
+            "marginBuckets": 186,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 4036,
+            "bestWinner": 11,
+            "bestBucket": 4036,
+            "certificateGap": -310,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 110,
+            "topBucket": 3990,
+            "runnerLocal": 34,
+            "runnerBucket": 3934,
+            "marginBuckets": 56,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 262,
+            "fineBucket": 4074,
+            "bestWinner": 262,
+            "bestBucket": 4074,
+            "certificateGap": 50,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 262,
+        "finalBucket": 4074
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          11,
+          262
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4074
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 1,
+      "fixture": 7,
+      "hybridMilliseconds": 7831.865707999968,
+      "baselineMilliseconds": 7220.589124999999,
+      "speedup": 0.9219500683757162,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4132,
+            "runnerLocal": 12,
+            "runnerBucket": 3743,
+            "marginBuckets": 389,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 4132,
+            "bestWinner": 198,
+            "bestBucket": 4132,
+            "certificateGap": -197,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 110,
+            "topBucket": 4005,
+            "runnerLocal": 34,
+            "runnerBucket": 3869,
+            "marginBuckets": 136,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 262,
+            "fineBucket": 4055,
+            "bestWinner": 198,
+            "bestBucket": 4132,
+            "certificateGap": 112,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 4132
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          198,
+          262
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4132
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 1,
+      "fixture": 8,
+      "hybridMilliseconds": 5573.291790999996,
+      "baselineMilliseconds": 4017.0908749999944,
+      "speedup": 0.7207752663312864,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 5152,
+            "runnerLocal": 13,
+            "runnerBucket": 5005,
+            "marginBuckets": 147,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 13,
+            "fineBucket": 5488,
+            "bestWinner": 13,
+            "bestBucket": 5488,
+            "certificateGap": -373,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 62,
+            "topBucket": 5388,
+            "runnerLocal": 28,
+            "runnerBucket": 5303,
+            "marginBuckets": 85,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 318,
+            "fineBucket": 5388,
+            "bestWinner": 13,
+            "bestBucket": 5488,
+            "certificateGap": 299,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 13,
+        "finalBucket": 5488
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          13,
+          318
+        ],
+        "activeStages": 2,
+        "finalWinner": 13,
+        "finalBucket": 5488
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -1
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 1,
+      "fixture": 9,
+      "hybridMilliseconds": 9162.863709000056,
+      "baselineMilliseconds": 5790.826166999992,
+      "speedup": 0.6319886828952894,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4815,
+            "runnerLocal": 12,
+            "runnerBucket": 4658,
+            "marginBuckets": 157,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 5026,
+            "bestWinner": 11,
+            "bestBucket": 5026,
+            "certificateGap": 56,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "fallbackStages": 1,
+        "acceptedStages": 0,
+        "finalWinner": 11,
+        "finalBucket": 5026
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          11
+        ],
+        "activeStages": 1,
+        "finalWinner": 11,
+        "finalBucket": 5026
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 6
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 1,
+      "fixture": 0,
+      "hybridMilliseconds": 8310.783208000008,
+      "baselineMilliseconds": 6909.526291000075,
+      "speedup": 0.8313929166566305,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4753,
+            "runnerLocal": 12,
+            "runnerBucket": 4586,
+            "marginBuckets": 167,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 4946,
+            "bestWinner": 11,
+            "bestBucket": 4946,
+            "certificateGap": 46,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 34,
+            "topBucket": 4557,
+            "runnerLocal": 28,
+            "runnerBucket": 4555,
+            "marginBuckets": 2,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 290,
+            "fineBucket": 4558,
+            "bestWinner": 11,
+            "bestBucket": 4946,
+            "certificateGap": 558,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          11,
+          290
+        ],
+        "activeStages": 2,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -2
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 2,
+      "fixture": 2,
+      "hybridMilliseconds": 6764.710124999983,
+      "baselineMilliseconds": 4190.644458999974,
+      "speedup": 0.6194861836744238,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 5138,
+            "runnerLocal": 12,
+            "runnerBucket": 4310,
+            "marginBuckets": 828,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 5137,
+            "bestWinner": 198,
+            "bestBucket": 5137,
+            "certificateGap": 353,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "fallbackStages": 1,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 5137
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          198
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5137
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -5
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 2,
+      "fixture": 3,
+      "hybridMilliseconds": 7304.330167000066,
+      "baselineMilliseconds": 5973.9840420000255,
+      "speedup": 0.8178688401832716,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4577,
+            "runnerLocal": 40,
+            "runnerBucket": 4143,
+            "marginBuckets": 434,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 4577,
+            "bestWinner": 198,
+            "bestBucket": 4577,
+            "certificateGap": -35,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 34,
+            "topBucket": 4383,
+            "runnerLocal": 28,
+            "runnerBucket": 4297,
+            "marginBuckets": 86,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 290,
+            "fineBucket": 4382,
+            "bestWinner": 198,
+            "bestBucket": 4577,
+            "certificateGap": 526,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 4577
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          198,
+          290
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4577
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -2
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 2,
+      "fixture": 4,
+      "hybridMilliseconds": 8068.518041000003,
+      "baselineMilliseconds": 5898.161542000016,
+      "speedup": 0.7310092772958595,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 1,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 1
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              1
+            ],
+            "topLocal": 34,
+            "topBucket": 4425,
+            "runnerLocal": 28,
+            "runnerBucket": 4144,
+            "marginBuckets": 281,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 262,
+            "fineBucket": 4440,
+            "bestWinner": 262,
+            "bestBucket": 4440,
+            "certificateGap": -186,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 1,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 1
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              1,
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4193,
+            "runnerLocal": 12,
+            "runnerBucket": 3699,
+            "marginBuckets": 494,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 4193,
+            "bestWinner": 262,
+            "bestBucket": 4440,
+            "certificateGap": 281,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 262,
+        "finalBucket": 4440
+      },
+      "baseline": {
+        "groups": [
+          1,
+          0
+        ],
+        "fineWinners": [
+          262,
+          198
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4440
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 2
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 2,
+      "fixture": 5,
+      "hybridMilliseconds": 5422.6706669999985,
+      "baselineMilliseconds": 3004.810291999951,
+      "speedup": 0.554120004057394,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 5190,
+            "runnerLocal": 16,
+            "runnerBucket": 4283,
+            "marginBuckets": 907,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 5190,
+            "bestWinner": 198,
+            "bestBucket": 5190,
+            "certificateGap": 379,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "fallbackStages": 1,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 5190
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          198
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5190
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -6
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 2,
+      "fixture": 6,
+      "hybridMilliseconds": 9880.528374999994,
+      "baselineMilliseconds": 6218.695999999996,
+      "speedup": 0.6293890128117768,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 3995,
+            "runnerLocal": 12,
+            "runnerBucket": 3809,
+            "marginBuckets": 186,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 4036,
+            "bestWinner": 11,
+            "bestBucket": 4036,
+            "certificateGap": -310,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 110,
+            "topBucket": 3990,
+            "runnerLocal": 34,
+            "runnerBucket": 3934,
+            "marginBuckets": 56,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 262,
+            "fineBucket": 4074,
+            "bestWinner": 262,
+            "bestBucket": 4074,
+            "certificateGap": 50,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 262,
+        "finalBucket": 4074
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          11,
+          262
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4074
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 2,
+      "fixture": 7,
+      "hybridMilliseconds": 7023.27329199994,
+      "baselineMilliseconds": 5352.306709000026,
+      "speedup": 0.7620815090730876,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4132,
+            "runnerLocal": 12,
+            "runnerBucket": 3743,
+            "marginBuckets": 389,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 198,
+            "fineBucket": 4132,
+            "bestWinner": 198,
+            "bestBucket": 4132,
+            "certificateGap": -197,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 110,
+            "topBucket": 4005,
+            "runnerLocal": 34,
+            "runnerBucket": 3869,
+            "marginBuckets": 136,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 262,
+            "fineBucket": 4055,
+            "bestWinner": 198,
+            "bestBucket": 4132,
+            "certificateGap": 112,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 198,
+        "finalBucket": 4132
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          198,
+          262
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4132
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 2,
+      "fixture": 8,
+      "hybridMilliseconds": 5218.340415999992,
+      "baselineMilliseconds": 3996.7290000000503,
+      "speedup": 0.7659003977099023,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 5152,
+            "runnerLocal": 13,
+            "runnerBucket": 5005,
+            "marginBuckets": 147,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 13,
+            "fineBucket": 5488,
+            "bestWinner": 13,
+            "bestBucket": 5488,
+            "certificateGap": -373,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 62,
+            "topBucket": 5388,
+            "runnerLocal": 28,
+            "runnerBucket": 5303,
+            "marginBuckets": 85,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 318,
+            "fineBucket": 5388,
+            "bestWinner": 13,
+            "bestBucket": 5488,
+            "certificateGap": 299,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 13,
+        "finalBucket": 5488
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          13,
+          318
+        ],
+        "activeStages": 2,
+        "finalWinner": 13,
+        "finalBucket": 5488
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -1
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -3
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 2,
+      "fixture": 9,
+      "hybridMilliseconds": 11807.621500000008,
+      "baselineMilliseconds": 4016.4567919999827,
+      "speedup": 0.34015798965100463,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4815,
+            "runnerLocal": 12,
+            "runnerBucket": 4658,
+            "marginBuckets": 157,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 5026,
+            "bestWinner": 11,
+            "bestBucket": 5026,
+            "certificateGap": 56,
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "fallbackStages": 1,
+        "acceptedStages": 0,
+        "finalWinner": 11,
+        "finalBucket": 5026
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          11
+        ],
+        "activeStages": 1,
+        "finalWinner": 11,
+        "finalBucket": 5026
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 6
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 2,
+      "fixture": 0,
+      "hybridMilliseconds": 9489.709875000059,
+      "baselineMilliseconds": 5731.7010419999715,
+      "speedup": 0.603991177549033,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 198,
+            "topBucket": 4753,
+            "runnerLocal": 12,
+            "runnerBucket": 4586,
+            "marginBuckets": 167,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 4946,
+            "bestWinner": 11,
+            "bestBucket": 4946,
+            "certificateGap": 46,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 34,
+            "topBucket": 4557,
+            "runnerLocal": 28,
+            "runnerBucket": 4555,
+            "marginBuckets": 2,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 290,
+            "fineBucket": 4558,
+            "bestWinner": 11,
+            "bestBucket": 4946,
+            "certificateGap": 558,
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "fallbackStages": 2,
+        "acceptedStages": 0,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          11,
+          290
+        ],
+        "activeStages": 2,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -2
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": 1
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    },
+    {
+      "round": 2,
+      "fixture": 1,
+      "hybridMilliseconds": 9180.634583999985,
+      "baselineMilliseconds": 5157.787874999922,
+      "speedup": 0.5618116948025486,
+      "hybrid": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 0,
+              "runner": 0,
+              "decision": 0,
+              "exact": 0,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\"",
+            "topProbeFeature": 1,
+            "exactFirstCandidate": {
+              "group": 0,
+              "fineBase": 120344.6,
+              "fineGlyphs": "\"𠀀𰀀񀀀񐀀񠀀񰀀򀀀򐀀򠀀򰀀󰀀􀀀\""
+            },
+            "selectedGroups": [
+              0
+            ],
+            "topLocal": 1,
+            "topBucket": 11626,
+            "runnerLocal": 13,
+            "runnerBucket": 11620,
+            "marginBuckets": 6,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 11,
+            "fineBucket": 12552,
+            "bestWinner": 11,
+            "bestBucket": 12552,
+            "certificateGap": -516,
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 1,
+              "runner": 1,
+              "decision": 1,
+              "exact": 1,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 2",
+            "topProbeFeature": 2,
+            "exactFirstCandidate": {
+              "group": 1,
+              "fineBase": 116823,
+              "fineGlyphs": "\"𠄀𰄀񀄀񐄀񠄀񰄀򀄀򐄀򠄀򰄀󰄀􀄀\""
+            },
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "topLocal": 221,
+            "topBucket": 12621,
+            "runnerLocal": 30,
+            "runnerBucket": 12343,
+            "marginBuckets": 278,
+            "fallback": 1,
+            "exactDisplay": "grid",
+            "fineWinner": 477,
+            "fineBucket": 12620,
+            "bestWinner": 477,
+            "bestBucket": 12620,
+            "certificateGap": -181,
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 5,
+            "scopedGroups": {
+              "wrapper": 0,
+              "top": 5,
+              "runner": 5,
+              "decision": 5,
+              "exact": 5,
+              "fine": 0
+            },
+            "topFeatureSettings": "\"cv01\" 6",
+            "topProbeFeature": 6,
+            "exactFirstCandidate": {
+              "group": 5,
+              "fineBase": 133127.9,
+              "fineGlyphs": "\"𠔀𰔀񀔀񐔀񠔀񰔀򀔀򐔀򠔀򰔀󰔀􀔀\""
+            },
+            "selectedGroups": [
+              0,
+              1,
+              5
+            ],
+            "topLocal": 71,
+            "topBucket": 12441,
+            "runnerLocal": 130,
+            "runnerBucket": 11755,
+            "marginBuckets": 686,
+            "fallback": 0,
+            "exactDisplay": "none",
+            "fineWinner": 1351,
+            "fineBucket": 12441,
+            "bestWinner": 477,
+            "bestBucket": 12620,
+            "certificateGap": 249,
+            "done": 1
+          }
+        ],
+        "activeStages": 3,
+        "fallbackStages": 2,
+        "acceptedStages": 1,
+        "finalWinner": 477,
+        "finalBucket": 12620
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1,
+          5
+        ],
+        "fineWinners": [
+          11,
+          477,
+          1351
+        ],
+        "activeStages": 3,
+        "finalWinner": 477,
+        "finalBucket": 12620
+      },
+      "stageChecks": [
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -3
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -3
+        },
+        {
+          "groupMatches": true,
+          "scorerGroupPropagates": true,
+          "nestedRouterKeepsRootGroup": true,
+          "immutableVisitedGroupsMatch": true,
+          "featureDispatchMatchesGroup": true,
+          "probeFeatureMatchesGroup": true,
+          "fineWinnerExact": true,
+          "fallbackMatchesRule": true,
+          "exactDisplayMatchesRoute": true,
+          "partialGroupConservative": true,
+          "fineBucketDeltaFromExact": -4
+        }
+      ],
+      "finalDenseWinnerCorrect": true,
+      "finalMatchesExactBaseline": true
+    }
+  ]
+}

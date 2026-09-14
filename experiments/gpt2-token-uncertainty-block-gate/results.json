@@ -1,0 +1,7353 @@
+{
+  "chromeVersion": "153.0.8010.36",
+  "blockSizes": [
+    4,
+    8,
+    16
+  ],
+  "benchmarkRounds": 10,
+  "synthetic": {
+    "equalityCarrierWidth": 1,
+    "equalityDescendantDisplay": "block",
+    "belowCarrierWidth": 0,
+    "belowDescendantDisplay": "none",
+    "lowerTokenTieWinner": 3
+  },
+  "syntheticChecks": {
+    "equalityIsInclusive": true,
+    "belowIsExcluded": true,
+    "lowerTokenWinsTie": true
+  },
+  "correctness": [
+    {
+      "blockSize": 4,
+      "blockCount": 64,
+      "meanActiveBlocks": 5.1,
+      "meanShapedRows": 20.4,
+      "fixtures": [
+        {
+          "fixture": 0,
+          "expected": {
+            "activeBlocks": [
+              0,
+              2,
+              3,
+              6,
+              7,
+              49
+            ],
+            "lowerMaxBucket": 4505.519153144587,
+            "exactWinner": 11,
+            "exactWinnerBucket": 4948
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              2,
+              3,
+              6,
+              7,
+              49
+            ],
+            "carrierWidths": [
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4507.171875,
+            "gatedWinner": 11,
+            "gatedBucket": 4946,
+            "fullWinner": 11,
+            "fullBucket": 4946,
+            "debug": {
+              "gatedMaxWidth": 19787.8125,
+              "fullMaxWidth": 19787.8125,
+              "cssRuleCount": 143
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 1,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              2,
+              3,
+              6,
+              7,
+              15,
+              20,
+              22,
+              49
+            ],
+            "lowerMaxBucket": 10899.619144831115,
+            "exactWinner": 11,
+            "exactWinnerBucket": 12555
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              2,
+              3,
+              6,
+              7,
+              15,
+              20,
+              22,
+              49
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 10898.5859375,
+            "gatedWinner": 11,
+            "gatedBucket": 12552,
+            "fullWinner": 11,
+            "fullBucket": 12552,
+            "debug": {
+              "gatedMaxWidth": 50211.8125,
+              "fullMaxWidth": 50211.8125,
+              "cssRuleCount": 143
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 2,
+          "expected": {
+            "activeBlocks": [
+              2,
+              3,
+              49
+            ],
+            "lowerMaxBucket": 4882.410534098502,
+            "exactWinner": 198,
+            "exactWinnerBucket": 5142
+          },
+          "browser": {
+            "activeBlocks": [
+              2,
+              3,
+              49
+            ],
+            "carrierWidths": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "none",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4877.01171875,
+            "gatedWinner": 198,
+            "gatedBucket": 5137,
+            "fullWinner": 198,
+            "fullBucket": 5137,
+            "debug": {
+              "gatedMaxWidth": 20548.890625,
+              "fullMaxWidth": 20548.890625,
+              "cssRuleCount": 143
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 3,
+          "expected": {
+            "activeBlocks": [
+              0,
+              2,
+              3,
+              6,
+              49
+            ],
+            "lowerMaxBucket": 4346.3642436427235,
+            "exactWinner": 198,
+            "exactWinnerBucket": 4579
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              2,
+              3,
+              6,
+              49
+            ],
+            "carrierWidths": [
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4344.64453125,
+            "gatedWinner": 198,
+            "gatedBucket": 4577,
+            "fullWinner": 198,
+            "fullBucket": 4577,
+            "debug": {
+              "gatedMaxWidth": 18308.890625,
+              "fullMaxWidth": 18308.890625,
+              "cssRuleCount": 143
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 4,
+          "expected": {
+            "activeBlocks": [
+              2,
+              3,
+              6,
+              49
+            ],
+            "lowerMaxBucket": 3937.4117071442847,
+            "exactWinner": 198,
+            "exactWinnerBucket": 4190
+          },
+          "browser": {
+            "activeBlocks": [
+              2,
+              3,
+              6,
+              49
+            ],
+            "carrierWidths": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "none",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 3939.953125,
+            "gatedWinner": 198,
+            "gatedBucket": 4193,
+            "fullWinner": 198,
+            "fullBucket": 4193,
+            "debug": {
+              "gatedMaxWidth": 16772.890625,
+              "fullMaxWidth": 16772.890625,
+              "cssRuleCount": 143
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 5,
+          "expected": {
+            "activeBlocks": [
+              2,
+              3,
+              49
+            ],
+            "lowerMaxBucket": 4938.545219165823,
+            "exactWinner": 198,
+            "exactWinnerBucket": 5196
+          },
+          "browser": {
+            "activeBlocks": [
+              2,
+              3,
+              49
+            ],
+            "carrierWidths": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "none",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4933.17578125,
+            "gatedWinner": 198,
+            "gatedBucket": 5190,
+            "fullWinner": 198,
+            "fullBucket": 5190,
+            "debug": {
+              "gatedMaxWidth": 20760.890625,
+              "fullMaxWidth": 20760.890625,
+              "cssRuleCount": 143
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 6,
+          "expected": {
+            "activeBlocks": [
+              2,
+              3,
+              6,
+              49
+            ],
+            "lowerMaxBucket": 3746.357850597349,
+            "exactWinner": 11,
+            "exactWinnerBucket": 4035
+          },
+          "browser": {
+            "activeBlocks": [
+              2,
+              3,
+              6,
+              49
+            ],
+            "carrierWidths": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "none",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 3745.3828125,
+            "gatedWinner": 11,
+            "gatedBucket": 4036,
+            "fullWinner": 11,
+            "fullBucket": 4036,
+            "debug": {
+              "gatedMaxWidth": 16147.8125,
+              "fullMaxWidth": 16147.8125,
+              "cssRuleCount": 143
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 7,
+          "expected": {
+            "activeBlocks": [
+              2,
+              3,
+              6,
+              49
+            ],
+            "lowerMaxBucket": 3879.6698400086507,
+            "exactWinner": 198,
+            "exactWinnerBucket": 4131
+          },
+          "browser": {
+            "activeBlocks": [
+              2,
+              3,
+              6,
+              49
+            ],
+            "carrierWidths": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "none",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 3880.2265625,
+            "gatedWinner": 198,
+            "gatedBucket": 4132,
+            "fullWinner": 198,
+            "fullBucket": 4132,
+            "debug": {
+              "gatedMaxWidth": 16528.890625,
+              "fullMaxWidth": 16528.890625,
+              "cssRuleCount": 143
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 8,
+          "expected": {
+            "activeBlocks": [
+              0,
+              2,
+              3,
+              6,
+              7,
+              49
+            ],
+            "lowerMaxBucket": 4935.954129129767,
+            "exactWinner": 13,
+            "exactWinnerBucket": 5489
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              2,
+              3,
+              6,
+              7,
+              49
+            ],
+            "carrierWidths": [
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4935.67578125,
+            "gatedWinner": 13,
+            "gatedBucket": 5488,
+            "fullWinner": 13,
+            "fullBucket": 5488,
+            "debug": {
+              "gatedMaxWidth": 21955.78125,
+              "fullMaxWidth": 21955.78125,
+              "cssRuleCount": 143
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 9,
+          "expected": {
+            "activeBlocks": [
+              0,
+              2,
+              3,
+              6,
+              7,
+              49
+            ],
+            "lowerMaxBucket": 4568.693288474755,
+            "exactWinner": 11,
+            "exactWinnerBucket": 5020
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              2,
+              3,
+              6,
+              7,
+              49
+            ],
+            "carrierWidths": [
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4571.00390625,
+            "gatedWinner": 11,
+            "gatedBucket": 5026,
+            "fullWinner": 11,
+            "fullBucket": 5026,
+            "debug": {
+              "gatedMaxWidth": 20107.8125,
+              "fullMaxWidth": 20107.8125,
+              "cssRuleCount": 143
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        }
+      ]
+    },
+    {
+      "blockSize": 8,
+      "blockCount": 32,
+      "meanActiveBlocks": 3.6,
+      "meanShapedRows": 28.8,
+      "fixtures": [
+        {
+          "fixture": 0,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              24
+            ],
+            "lowerMaxBucket": 4505.519153144587,
+            "exactWinner": 11,
+            "exactWinnerBucket": 4948
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              24
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4507.171875,
+            "gatedWinner": 11,
+            "gatedBucket": 4946,
+            "fullWinner": 11,
+            "fullBucket": 4946,
+            "debug": {
+              "gatedMaxWidth": 19787.8125,
+              "fullMaxWidth": 19787.8125,
+              "cssRuleCount": 109
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 1,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              7,
+              10,
+              11,
+              24
+            ],
+            "lowerMaxBucket": 10899.619144831115,
+            "exactWinner": 11,
+            "exactWinnerBucket": 12555
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              7,
+              10,
+              11,
+              24
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 10898.5859375,
+            "gatedWinner": 11,
+            "gatedBucket": 12552,
+            "fullWinner": 11,
+            "fullBucket": 12552,
+            "debug": {
+              "gatedMaxWidth": 50211.8125,
+              "fullMaxWidth": 50211.8125,
+              "cssRuleCount": 109
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 2,
+          "expected": {
+            "activeBlocks": [
+              1,
+              24
+            ],
+            "lowerMaxBucket": 4882.410534098502,
+            "exactWinner": 198,
+            "exactWinnerBucket": 5142
+          },
+          "browser": {
+            "activeBlocks": [
+              1,
+              24
+            ],
+            "carrierWidths": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4877.01171875,
+            "gatedWinner": 198,
+            "gatedBucket": 5137,
+            "fullWinner": 198,
+            "fullBucket": 5137,
+            "debug": {
+              "gatedMaxWidth": 20548.890625,
+              "fullMaxWidth": 20548.890625,
+              "cssRuleCount": 109
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 3,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              24
+            ],
+            "lowerMaxBucket": 4346.3642436427235,
+            "exactWinner": 198,
+            "exactWinnerBucket": 4579
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              24
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4344.64453125,
+            "gatedWinner": 198,
+            "gatedBucket": 4577,
+            "fullWinner": 198,
+            "fullBucket": 4577,
+            "debug": {
+              "gatedMaxWidth": 18308.890625,
+              "fullMaxWidth": 18308.890625,
+              "cssRuleCount": 109
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 4,
+          "expected": {
+            "activeBlocks": [
+              1,
+              3,
+              24
+            ],
+            "lowerMaxBucket": 3937.4117071442847,
+            "exactWinner": 198,
+            "exactWinnerBucket": 4190
+          },
+          "browser": {
+            "activeBlocks": [
+              1,
+              3,
+              24
+            ],
+            "carrierWidths": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "none",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 3939.953125,
+            "gatedWinner": 198,
+            "gatedBucket": 4193,
+            "fullWinner": 198,
+            "fullBucket": 4193,
+            "debug": {
+              "gatedMaxWidth": 16772.890625,
+              "fullMaxWidth": 16772.890625,
+              "cssRuleCount": 109
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 5,
+          "expected": {
+            "activeBlocks": [
+              1,
+              24
+            ],
+            "lowerMaxBucket": 4938.545219165823,
+            "exactWinner": 198,
+            "exactWinnerBucket": 5196
+          },
+          "browser": {
+            "activeBlocks": [
+              1,
+              24
+            ],
+            "carrierWidths": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4933.17578125,
+            "gatedWinner": 198,
+            "gatedBucket": 5190,
+            "fullWinner": 198,
+            "fullBucket": 5190,
+            "debug": {
+              "gatedMaxWidth": 20760.890625,
+              "fullMaxWidth": 20760.890625,
+              "cssRuleCount": 109
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 6,
+          "expected": {
+            "activeBlocks": [
+              1,
+              3,
+              24
+            ],
+            "lowerMaxBucket": 3746.357850597349,
+            "exactWinner": 11,
+            "exactWinnerBucket": 4035
+          },
+          "browser": {
+            "activeBlocks": [
+              1,
+              3,
+              24
+            ],
+            "carrierWidths": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "none",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 3745.3828125,
+            "gatedWinner": 11,
+            "gatedBucket": 4036,
+            "fullWinner": 11,
+            "fullBucket": 4036,
+            "debug": {
+              "gatedMaxWidth": 16147.8125,
+              "fullMaxWidth": 16147.8125,
+              "cssRuleCount": 109
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 7,
+          "expected": {
+            "activeBlocks": [
+              1,
+              3,
+              24
+            ],
+            "lowerMaxBucket": 3879.6698400086507,
+            "exactWinner": 198,
+            "exactWinnerBucket": 4131
+          },
+          "browser": {
+            "activeBlocks": [
+              1,
+              3,
+              24
+            ],
+            "carrierWidths": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "none",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 3880.2265625,
+            "gatedWinner": 198,
+            "gatedBucket": 4132,
+            "fullWinner": 198,
+            "fullBucket": 4132,
+            "debug": {
+              "gatedMaxWidth": 16528.890625,
+              "fullMaxWidth": 16528.890625,
+              "cssRuleCount": 109
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 8,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              24
+            ],
+            "lowerMaxBucket": 4935.954129129767,
+            "exactWinner": 13,
+            "exactWinnerBucket": 5489
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              24
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4935.67578125,
+            "gatedWinner": 13,
+            "gatedBucket": 5488,
+            "fullWinner": 13,
+            "fullBucket": 5488,
+            "debug": {
+              "gatedMaxWidth": 21955.78125,
+              "fullMaxWidth": 21955.78125,
+              "cssRuleCount": 109
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 9,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              24
+            ],
+            "lowerMaxBucket": 4568.693288474755,
+            "exactWinner": 11,
+            "exactWinnerBucket": 5020
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              24
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4571.00390625,
+            "gatedWinner": 11,
+            "gatedBucket": 5026,
+            "fullWinner": 11,
+            "fullBucket": 5026,
+            "debug": {
+              "gatedMaxWidth": 20107.8125,
+              "fullMaxWidth": 20107.8125,
+              "cssRuleCount": 109
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        }
+      ]
+    },
+    {
+      "blockSize": 16,
+      "blockCount": 16,
+      "meanActiveBlocks": 3,
+      "meanShapedRows": 48,
+      "fixtures": [
+        {
+          "fixture": 0,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "lowerMaxBucket": 4505.519153144587,
+            "exactWinner": 11,
+            "exactWinnerBucket": 4948
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4507.171875,
+            "gatedWinner": 11,
+            "gatedBucket": 4946,
+            "fullWinner": 11,
+            "fullBucket": 4946,
+            "debug": {
+              "gatedMaxWidth": 19787.8125,
+              "fullMaxWidth": 19787.8125,
+              "cssRuleCount": 90
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 1,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              5,
+              12
+            ],
+            "lowerMaxBucket": 10899.619144831115,
+            "exactWinner": 11,
+            "exactWinnerBucket": 12555
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              3,
+              5,
+              12
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 10898.5859375,
+            "gatedWinner": 11,
+            "gatedBucket": 12552,
+            "fullWinner": 11,
+            "fullBucket": 12552,
+            "debug": {
+              "gatedMaxWidth": 50211.8125,
+              "fullMaxWidth": 50211.8125,
+              "cssRuleCount": 90
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 2,
+          "expected": {
+            "activeBlocks": [
+              0,
+              12
+            ],
+            "lowerMaxBucket": 4882.410534098502,
+            "exactWinner": 198,
+            "exactWinnerBucket": 5142
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              12
+            ],
+            "carrierWidths": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4877.01171875,
+            "gatedWinner": 198,
+            "gatedBucket": 5137,
+            "fullWinner": 198,
+            "fullBucket": 5137,
+            "debug": {
+              "gatedMaxWidth": 20548.890625,
+              "fullMaxWidth": 20548.890625,
+              "cssRuleCount": 90
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 3,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "lowerMaxBucket": 4346.3642436427235,
+            "exactWinner": 198,
+            "exactWinnerBucket": 4579
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4344.64453125,
+            "gatedWinner": 198,
+            "gatedBucket": 4577,
+            "fullWinner": 198,
+            "fullBucket": 4577,
+            "debug": {
+              "gatedMaxWidth": 18308.890625,
+              "fullMaxWidth": 18308.890625,
+              "cssRuleCount": 90
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 4,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "lowerMaxBucket": 3937.4117071442847,
+            "exactWinner": 198,
+            "exactWinnerBucket": 4190
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 3939.953125,
+            "gatedWinner": 198,
+            "gatedBucket": 4193,
+            "fullWinner": 198,
+            "fullBucket": 4193,
+            "debug": {
+              "gatedMaxWidth": 16772.890625,
+              "fullMaxWidth": 16772.890625,
+              "cssRuleCount": 90
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 5,
+          "expected": {
+            "activeBlocks": [
+              0,
+              12
+            ],
+            "lowerMaxBucket": 4938.545219165823,
+            "exactWinner": 198,
+            "exactWinnerBucket": 5196
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              12
+            ],
+            "carrierWidths": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4933.17578125,
+            "gatedWinner": 198,
+            "gatedBucket": 5190,
+            "fullWinner": 198,
+            "fullBucket": 5190,
+            "debug": {
+              "gatedMaxWidth": 20760.890625,
+              "fullMaxWidth": 20760.890625,
+              "cssRuleCount": 90
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 6,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "lowerMaxBucket": 3746.357850597349,
+            "exactWinner": 11,
+            "exactWinnerBucket": 4035
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 3745.3828125,
+            "gatedWinner": 11,
+            "gatedBucket": 4036,
+            "fullWinner": 11,
+            "fullBucket": 4036,
+            "debug": {
+              "gatedMaxWidth": 16147.8125,
+              "fullMaxWidth": 16147.8125,
+              "cssRuleCount": 90
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 7,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "lowerMaxBucket": 3879.6698400086507,
+            "exactWinner": 198,
+            "exactWinnerBucket": 4131
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 3880.2265625,
+            "gatedWinner": 198,
+            "gatedBucket": 4132,
+            "fullWinner": 198,
+            "fullBucket": 4132,
+            "debug": {
+              "gatedMaxWidth": 16528.890625,
+              "fullMaxWidth": 16528.890625,
+              "cssRuleCount": 90
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 8,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "lowerMaxBucket": 4935.954129129767,
+            "exactWinner": 13,
+            "exactWinnerBucket": 5489
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4935.67578125,
+            "gatedWinner": 13,
+            "gatedBucket": 5488,
+            "fullWinner": 13,
+            "fullBucket": 5488,
+            "debug": {
+              "gatedMaxWidth": 21955.78125,
+              "fullMaxWidth": 21955.78125,
+              "cssRuleCount": 90
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        },
+        {
+          "fixture": 9,
+          "expected": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "lowerMaxBucket": 4568.693288474755,
+            "exactWinner": 11,
+            "exactWinnerBucket": 5020
+          },
+          "browser": {
+            "activeBlocks": [
+              0,
+              1,
+              12
+            ],
+            "carrierWidths": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "wrapperDisplays": [
+              "grid",
+              "grid",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "grid",
+              "none",
+              "none",
+              "none"
+            ],
+            "lowerMaxBucket": 4571.00390625,
+            "gatedWinner": 11,
+            "gatedBucket": 5026,
+            "fullWinner": 11,
+            "fullBucket": 5026,
+            "debug": {
+              "gatedMaxWidth": 20107.8125,
+              "fullMaxWidth": 20107.8125,
+              "cssRuleCount": 90
+            }
+          },
+          "checks": {
+            "activeBlocksMatch": true,
+            "gatesAreBinary": true,
+            "wrapperDisplaysMatch": true,
+            "lowerMaxWithinCoarseAllowance": true,
+            "gatedMatchesFullWinner": true,
+            "gatedMatchesFullBucket": true,
+            "fullWinnerMatchesOracle": true,
+            "fullBucketWithinFineAllowance": true
+          }
+        }
+      ]
+    }
+  ],
+  "benchmarks": [
+    {
+      "blockSize": 4,
+      "rounds": 10,
+      "order": "alternating ten-mutation mode batches by round",
+      "gated": {
+        "samples": 100,
+        "minimumMilliseconds": 5.200000047683716,
+        "medianMilliseconds": 6.400000035762787,
+        "p95Milliseconds": 39.5,
+        "maximumMilliseconds": 52.60000002384186,
+        "meanMilliseconds": 9.838000000715256,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 42,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 52.60000002384186,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 52.199999928474426,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 39.5,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 39.699999928474426,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 37.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 38.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 37.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 41.10000002384186,
+            "winner": 13
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 7.700000047683716,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 18.5,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 7.600000023841858,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 7.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 6.5,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 6.399999976158142,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 6.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 6.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 7.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 6.600000023841858,
+            "winner": 13
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 7.100000023841858,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 6.600000023841858,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 7.799999952316284,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 6.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 6.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 7.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 5.899999976158142,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 7.800000071525574,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 6.699999928474426,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 6.400000095367432,
+            "winner": 13
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 7,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 6.899999976158142,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 6.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 6.100000023841858,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 5.699999928474426,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 6.099999904632568,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 6.799999952316284,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 5.699999928474426,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 6.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 5.5,
+            "winner": 13
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 6.100000023841858,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 6.200000047683716,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 6.300000071525574,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 7.399999976158142,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 6.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 6,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 5.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 6.899999976158142,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 6,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 6.399999976158142,
+            "winner": 13
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 6.799999952316284,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 0,
+            "milliseconds": 6.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 1,
+            "milliseconds": 6.100000023841858,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 2,
+            "milliseconds": 6.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 3,
+            "milliseconds": 5.800000071525574,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 4,
+            "milliseconds": 6.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 5,
+            "milliseconds": 6.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 6,
+            "milliseconds": 6.200000047683716,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 7,
+            "milliseconds": 5.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 8,
+            "milliseconds": 9.200000047683716,
+            "winner": 13
+          },
+          {
+            "round": 5,
+            "fixture": 9,
+            "milliseconds": 6.300000071525574,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 0,
+            "milliseconds": 6.600000023841858,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 1,
+            "milliseconds": 6.200000047683716,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 2,
+            "milliseconds": 7.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 3,
+            "milliseconds": 5.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 4,
+            "milliseconds": 7.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 5,
+            "milliseconds": 5.899999976158142,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 6,
+            "milliseconds": 5.399999976158142,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 7,
+            "milliseconds": 5.799999952316284,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 8,
+            "milliseconds": 5.899999976158142,
+            "winner": 13
+          },
+          {
+            "round": 6,
+            "fixture": 9,
+            "milliseconds": 5.5,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 0,
+            "milliseconds": 7,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 1,
+            "milliseconds": 6.300000071525574,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 2,
+            "milliseconds": 6.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 3,
+            "milliseconds": 5.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 4,
+            "milliseconds": 5.399999976158142,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 5,
+            "milliseconds": 8.099999904632568,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 6,
+            "milliseconds": 6.5,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 7,
+            "milliseconds": 5.899999976158142,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 8,
+            "milliseconds": 7.199999928474426,
+            "winner": 13
+          },
+          {
+            "round": 7,
+            "fixture": 9,
+            "milliseconds": 6.899999976158142,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 0,
+            "milliseconds": 6.200000047683716,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 1,
+            "milliseconds": 6.400000095367432,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 2,
+            "milliseconds": 7.5,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 3,
+            "milliseconds": 6.5,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 4,
+            "milliseconds": 5.5,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 5,
+            "milliseconds": 5.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 6,
+            "milliseconds": 5.300000071525574,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 7,
+            "milliseconds": 6.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 8,
+            "milliseconds": 7.600000023841858,
+            "winner": 13
+          },
+          {
+            "round": 8,
+            "fixture": 9,
+            "milliseconds": 6.799999952316284,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 0,
+            "milliseconds": 6.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 1,
+            "milliseconds": 7.800000071525574,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 2,
+            "milliseconds": 5.799999952316284,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 3,
+            "milliseconds": 9.199999928474426,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 4,
+            "milliseconds": 6.100000023841858,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 5,
+            "milliseconds": 6.400000095367432,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 6,
+            "milliseconds": 6.100000023841858,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 7,
+            "milliseconds": 5.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 8,
+            "milliseconds": 7.5,
+            "winner": 13
+          },
+          {
+            "round": 9,
+            "fixture": 9,
+            "milliseconds": 5.899999976158142,
+            "winner": 11
+          }
+        ]
+      },
+      "full": {
+        "samples": 100,
+        "minimumMilliseconds": 129.89999997615814,
+        "medianMilliseconds": 160,
+        "p95Milliseconds": 171.89999997615814,
+        "maximumMilliseconds": 183.29999995231628,
+        "meanMilliseconds": 159.6600000011921,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 168.80000007152557,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 181.70000004768372,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 162.79999995231628,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 160.80000007152557,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 161.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 163.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 167.20000004768372,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 164.5,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 165,
+            "winner": 13
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 153,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 129.89999997615814,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 143.30000007152557,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 139.5,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 140.20000004768372,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 140.69999992847443,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 139.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 141.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 145.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 161.10000002384186,
+            "winner": 13
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 145,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 143.80000007152557,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 140,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 140.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 141.40000009536743,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 141.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 158.80000007152557,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 161,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 145,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 148.20000004768372,
+            "winner": 13
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 161.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 183.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 157.19999992847443,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 157.5,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 174.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 159.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 156.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 167.60000002384186,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 160.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 163.39999997615814,
+            "winner": 13
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 159.19999992847443,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 167.80000007152557,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 156.80000007152557,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 157.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 159,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 171.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 157.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 157.69999992847443,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 170,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 161.39999997615814,
+            "winner": 13
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 158.89999997615814,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 0,
+            "milliseconds": 170.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 1,
+            "milliseconds": 161.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 2,
+            "milliseconds": 158.30000007152557,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 3,
+            "milliseconds": 170.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 4,
+            "milliseconds": 160.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 5,
+            "milliseconds": 158.20000004768372,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 6,
+            "milliseconds": 170.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 7,
+            "milliseconds": 160.29999995231628,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 8,
+            "milliseconds": 161.60000002384186,
+            "winner": 13
+          },
+          {
+            "round": 5,
+            "fixture": 9,
+            "milliseconds": 171.19999992847443,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 0,
+            "milliseconds": 158.70000004768372,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 1,
+            "milliseconds": 158.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 2,
+            "milliseconds": 168.80000007152557,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 3,
+            "milliseconds": 162.5,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 4,
+            "milliseconds": 159.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 5,
+            "milliseconds": 170.40000009536743,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 6,
+            "milliseconds": 160.20000004768372,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 7,
+            "milliseconds": 159,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 8,
+            "milliseconds": 170.89999997615814,
+            "winner": 13
+          },
+          {
+            "round": 6,
+            "fixture": 9,
+            "milliseconds": 159.09999990463257,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 0,
+            "milliseconds": 156.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 1,
+            "milliseconds": 168.19999992847443,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 2,
+            "milliseconds": 160,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 3,
+            "milliseconds": 156.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 4,
+            "milliseconds": 171.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 5,
+            "milliseconds": 157,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 6,
+            "milliseconds": 157.60000002384186,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 7,
+            "milliseconds": 167.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 8,
+            "milliseconds": 158.09999990463257,
+            "winner": 13
+          },
+          {
+            "round": 7,
+            "fixture": 9,
+            "milliseconds": 156.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 0,
+            "milliseconds": 168,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 1,
+            "milliseconds": 158.20000004768372,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 2,
+            "milliseconds": 157.69999992847443,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 3,
+            "milliseconds": 171.80000007152557,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 4,
+            "milliseconds": 160.80000007152557,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 5,
+            "milliseconds": 156.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 6,
+            "milliseconds": 170.19999992847443,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 7,
+            "milliseconds": 159.20000004768372,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 8,
+            "milliseconds": 159.70000004768372,
+            "winner": 13
+          },
+          {
+            "round": 8,
+            "fixture": 9,
+            "milliseconds": 173.79999995231628,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 0,
+            "milliseconds": 160.69999992847443,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 1,
+            "milliseconds": 160.70000004768372,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 2,
+            "milliseconds": 170.29999995231628,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 3,
+            "milliseconds": 161.79999995231628,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 4,
+            "milliseconds": 159.09999990463257,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 5,
+            "milliseconds": 172.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 6,
+            "milliseconds": 161.30000007152557,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 7,
+            "milliseconds": 158.70000004768372,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 8,
+            "milliseconds": 171.69999992847443,
+            "winner": 13
+          },
+          {
+            "round": 9,
+            "fixture": 9,
+            "milliseconds": 160,
+            "winner": 11
+          }
+        ]
+      },
+      "fullToGatedMedianRatio": 24.999999860301614,
+      "fullToGatedMeanRatio": 16.228908313639383
+    },
+    {
+      "blockSize": 8,
+      "rounds": 10,
+      "order": "alternating ten-mutation mode batches by round",
+      "gated": {
+        "samples": 100,
+        "minimumMilliseconds": 4.800000071525574,
+        "medianMilliseconds": 6.100000023841858,
+        "p95Milliseconds": 44.39999997615814,
+        "maximumMilliseconds": 60.5,
+        "meanMilliseconds": 10.308000005483628,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 45.800000071525574,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 60.5,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 59.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 45.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 44.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 38.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 40.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 41.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 47.89999997615814,
+            "winner": 13
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 7.399999976158142,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 11.399999976158142,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 40.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 20.399999976158142,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 6,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 6,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 5.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 5.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 5.799999952316284,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 6.100000023841858,
+            "winner": 13
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 5.700000047683716,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 6.400000095367432,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 7,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 7.899999976158142,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 6.5,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 5.899999976158142,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 6.100000023841858,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 6.100000023841858,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 5.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 7,
+            "winner": 13
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 6.200000047683716,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 6.5,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 7.600000023841858,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 5.5,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 6.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 5.5,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 5.699999928474426,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 6.100000023841858,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 5.5,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 5.800000071525574,
+            "winner": 13
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 5.799999952316284,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 6.799999952316284,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 6.800000071525574,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 6.100000023841858,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 6.100000023841858,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 5.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 4.800000071525574,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 5.5,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 5.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 5.599999904632568,
+            "winner": 13
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 5.899999976158142,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 0,
+            "milliseconds": 6.200000047683716,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 1,
+            "milliseconds": 5.800000071525574,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 2,
+            "milliseconds": 6.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 3,
+            "milliseconds": 5.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 4,
+            "milliseconds": 6.199999928474426,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 5,
+            "milliseconds": 6.199999928474426,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 6,
+            "milliseconds": 5.5,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 7,
+            "milliseconds": 6.799999952316284,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 8,
+            "milliseconds": 6.100000023841858,
+            "winner": 13
+          },
+          {
+            "round": 5,
+            "fixture": 9,
+            "milliseconds": 8.100000023841858,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 0,
+            "milliseconds": 6.700000047683716,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 1,
+            "milliseconds": 6.600000023841858,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 2,
+            "milliseconds": 5.799999952316284,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 3,
+            "milliseconds": 6.799999952316284,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 4,
+            "milliseconds": 5.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 5,
+            "milliseconds": 5.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 6,
+            "milliseconds": 6.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 7,
+            "milliseconds": 5.399999976158142,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 8,
+            "milliseconds": 6,
+            "winner": 13
+          },
+          {
+            "round": 6,
+            "fixture": 9,
+            "milliseconds": 6.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 0,
+            "milliseconds": 5.899999976158142,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 1,
+            "milliseconds": 6.700000047683716,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 2,
+            "milliseconds": 6.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 3,
+            "milliseconds": 6.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 4,
+            "milliseconds": 5.5,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 5,
+            "milliseconds": 6.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 6,
+            "milliseconds": 5.100000023841858,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 7,
+            "milliseconds": 7.5,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 8,
+            "milliseconds": 6.799999952316284,
+            "winner": 13
+          },
+          {
+            "round": 7,
+            "fixture": 9,
+            "milliseconds": 6,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 0,
+            "milliseconds": 5.799999952316284,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 1,
+            "milliseconds": 6.600000023841858,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 2,
+            "milliseconds": 5.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 3,
+            "milliseconds": 5.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 4,
+            "milliseconds": 5.300000071525574,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 5,
+            "milliseconds": 5.5,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 6,
+            "milliseconds": 5.899999976158142,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 7,
+            "milliseconds": 5.5,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 8,
+            "milliseconds": 5.700000047683716,
+            "winner": 13
+          },
+          {
+            "round": 8,
+            "fixture": 9,
+            "milliseconds": 5.100000023841858,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 0,
+            "milliseconds": 6.399999976158142,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 1,
+            "milliseconds": 6.5,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 2,
+            "milliseconds": 5.899999976158142,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 3,
+            "milliseconds": 5.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 4,
+            "milliseconds": 5.399999976158142,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 5,
+            "milliseconds": 7,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 6,
+            "milliseconds": 5.600000023841858,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 7,
+            "milliseconds": 5.800000071525574,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 8,
+            "milliseconds": 6,
+            "winner": 13
+          },
+          {
+            "round": 9,
+            "fixture": 9,
+            "milliseconds": 6.200000047683716,
+            "winner": 11
+          }
+        ]
+      },
+      "full": {
+        "samples": 100,
+        "minimumMilliseconds": 5.399999976158142,
+        "medianMilliseconds": 159.69999998807907,
+        "p95Milliseconds": 171.89999997615814,
+        "maximumMilliseconds": 181.79999995231628,
+        "meanMilliseconds": 156.58,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 158.5,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 161.69999992847443,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 163,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 162.70000004768372,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 163.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 168.5,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 181.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 162.5,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 158.5,
+            "winner": 13
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 142.5,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 139.80000007152557,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 144.09999990463257,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 145.5,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 146.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 147.09999990463257,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 128.40000009536743,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 5.399999976158142,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 5.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 145.80000007152557,
+            "winner": 13
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 140.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 142.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 139.80000007152557,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 139.19999992847443,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 141.5,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 145.80000007152557,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 161.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 153.89999997615814,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 156.79999995231628,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 181.79999995231628,
+            "winner": 13
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 159.09999990463257,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 159.60000002384186,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 169.5,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 158.20000004768372,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 159.70000004768372,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 166.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 159.29999995231628,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 155.89999997615814,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 172.29999995231628,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 158.79999995231628,
+            "winner": 13
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 157.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 166.5,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 159.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 162.5,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 159.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 167.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 157.79999995231628,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 161.30000007152557,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 158.40000009536743,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 169.5,
+            "winner": 13
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 163.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 0,
+            "milliseconds": 159.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 1,
+            "milliseconds": 170.5,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 2,
+            "milliseconds": 161.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 3,
+            "milliseconds": 159.80000007152557,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 4,
+            "milliseconds": 163.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 5,
+            "milliseconds": 160.20000004768372,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 6,
+            "milliseconds": 166.70000004768372,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 7,
+            "milliseconds": 160,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 8,
+            "milliseconds": 169.29999995231628,
+            "winner": 13
+          },
+          {
+            "round": 5,
+            "fixture": 9,
+            "milliseconds": 159.80000007152557,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 0,
+            "milliseconds": 163.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 1,
+            "milliseconds": 159,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 2,
+            "milliseconds": 171.29999995231628,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 3,
+            "milliseconds": 159.69999992847443,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 4,
+            "milliseconds": 158.20000004768372,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 5,
+            "milliseconds": 168,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 6,
+            "milliseconds": 158.70000004768372,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 7,
+            "milliseconds": 157,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 8,
+            "milliseconds": 168.59999990463257,
+            "winner": 13
+          },
+          {
+            "round": 6,
+            "fixture": 9,
+            "milliseconds": 158.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 0,
+            "milliseconds": 158,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 1,
+            "milliseconds": 167.70000004768372,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 2,
+            "milliseconds": 158.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 3,
+            "milliseconds": 157.90000009536743,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 4,
+            "milliseconds": 167.70000004768372,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 5,
+            "milliseconds": 161.20000004768372,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 6,
+            "milliseconds": 156.40000009536743,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 7,
+            "milliseconds": 171.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 8,
+            "milliseconds": 160.20000004768372,
+            "winner": 13
+          },
+          {
+            "round": 7,
+            "fixture": 9,
+            "milliseconds": 157.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 0,
+            "milliseconds": 167.89999997615814,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 1,
+            "milliseconds": 160.5,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 2,
+            "milliseconds": 162,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 3,
+            "milliseconds": 158.29999995231628,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 4,
+            "milliseconds": 173.19999992847443,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 5,
+            "milliseconds": 158.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 6,
+            "milliseconds": 158,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 7,
+            "milliseconds": 172.69999992847443,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 8,
+            "milliseconds": 161.10000002384186,
+            "winner": 13
+          },
+          {
+            "round": 8,
+            "fixture": 9,
+            "milliseconds": 160.60000002384186,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 0,
+            "milliseconds": 165.69999992847443,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 1,
+            "milliseconds": 161.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 2,
+            "milliseconds": 159,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 3,
+            "milliseconds": 156.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 4,
+            "milliseconds": 164.90000009536743,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 5,
+            "milliseconds": 163.29999995231628,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 6,
+            "milliseconds": 164,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 7,
+            "milliseconds": 159.5,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 8,
+            "milliseconds": 167,
+            "winner": 13
+          },
+          {
+            "round": 9,
+            "fixture": 9,
+            "milliseconds": 158.70000004768372,
+            "winner": 11
+          }
+        ]
+      },
+      "fullToGatedMedianRatio": 26.180327764572365,
+      "fullToGatedMeanRatio": 15.19014356972283
+    },
+    {
+      "blockSize": 16,
+      "rounds": 10,
+      "order": "alternating ten-mutation mode batches by round",
+      "gated": {
+        "samples": 100,
+        "minimumMilliseconds": 5.299999952316284,
+        "medianMilliseconds": 33.69999998807907,
+        "p95Milliseconds": 54.199999928474426,
+        "maximumMilliseconds": 77.39999997615814,
+        "meanMilliseconds": 32.991000001430514,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 56.300000071525574,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 77.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 71.69999992847443,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 55.799999952316284,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 54.199999928474426,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 53.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 53.800000071525574,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 54.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 54.60000002384186,
+            "winner": 13
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 5.5,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 10.800000071525574,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 53.799999952316284,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 52,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 33.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 33.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 11.199999928474426,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 6.900000095367432,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 34.5,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 34,
+            "winner": 13
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 34.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 34.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 50.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 52,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 34.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 34.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 33.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 28.699999928474426,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 7.700000047683716,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 35.39999997615814,
+            "winner": 13
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 33.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 34.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 51.799999952316284,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 31.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 35,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 33.199999928474426,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 33.300000071525574,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 31.5,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 34.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 20.899999976158142,
+            "winner": 13
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 7.5,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 34.5,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 51.59999990463257,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 50.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 33.5,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 12.100000023841858,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 6.100000023841858,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 6,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 8.399999976158142,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 35.200000047683716,
+            "winner": 13
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 34.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 0,
+            "milliseconds": 33.699999928474426,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 1,
+            "milliseconds": 51.800000071525574,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 2,
+            "milliseconds": 30.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 3,
+            "milliseconds": 33.59999990463257,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 4,
+            "milliseconds": 34.5,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 5,
+            "milliseconds": 34.09999990463257,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 6,
+            "milliseconds": 33.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 7,
+            "milliseconds": 33.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 8,
+            "milliseconds": 22.09999990463257,
+            "winner": 13
+          },
+          {
+            "round": 5,
+            "fixture": 9,
+            "milliseconds": 34.699999928474426,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 0,
+            "milliseconds": 34.5,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 1,
+            "milliseconds": 51.60000002384186,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 2,
+            "milliseconds": 50.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 3,
+            "milliseconds": 12,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 4,
+            "milliseconds": 5.299999952316284,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 5,
+            "milliseconds": 7.699999928474426,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 6,
+            "milliseconds": 35.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 7,
+            "milliseconds": 32.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 8,
+            "milliseconds": 34.199999928474426,
+            "winner": 13
+          },
+          {
+            "round": 6,
+            "fixture": 9,
+            "milliseconds": 34,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 0,
+            "milliseconds": 34.200000047683716,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 1,
+            "milliseconds": 21.300000071525574,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 2,
+            "milliseconds": 6.899999976158142,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 3,
+            "milliseconds": 34.800000071525574,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 4,
+            "milliseconds": 32.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 5,
+            "milliseconds": 33.799999952316284,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 6,
+            "milliseconds": 32.299999952316284,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 7,
+            "milliseconds": 33.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 8,
+            "milliseconds": 18.300000071525574,
+            "winner": 13
+          },
+          {
+            "round": 7,
+            "fixture": 9,
+            "milliseconds": 6.800000071525574,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 0,
+            "milliseconds": 7.200000047683716,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 1,
+            "milliseconds": 53,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 2,
+            "milliseconds": 52.5,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 3,
+            "milliseconds": 32.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 4,
+            "milliseconds": 34,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 5,
+            "milliseconds": 13.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 6,
+            "milliseconds": 34.200000047683716,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 7,
+            "milliseconds": 31.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 8,
+            "milliseconds": 33.200000047683716,
+            "winner": 13
+          },
+          {
+            "round": 8,
+            "fixture": 9,
+            "milliseconds": 33.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 0,
+            "milliseconds": 33.5,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 1,
+            "milliseconds": 20.100000023841858,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 2,
+            "milliseconds": 51,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 3,
+            "milliseconds": 33.200000047683716,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 4,
+            "milliseconds": 35.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 5,
+            "milliseconds": 33,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 6,
+            "milliseconds": 28.90000009536743,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 7,
+            "milliseconds": 7.600000023841858,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 8,
+            "milliseconds": 35.799999952316284,
+            "winner": 13
+          },
+          {
+            "round": 9,
+            "fixture": 9,
+            "milliseconds": 32.700000047683716,
+            "winner": 11
+          }
+        ]
+      },
+      "full": {
+        "samples": 100,
+        "minimumMilliseconds": 131,
+        "medianMilliseconds": 161,
+        "p95Milliseconds": 172.39999997615814,
+        "maximumMilliseconds": 177.89999997615814,
+        "meanMilliseconds": 160.6489999973774,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 177.89999997615814,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 160.5,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 161.79999995231628,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 163.5,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 164.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 165.79999995231628,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 167,
+            "winner": 11
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 167.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 167,
+            "winner": 13
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 139.79999995231628,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 144.5,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 141.70000004768372,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 142.70000004768372,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 142.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 144.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 142.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 146.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 146.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 131,
+            "winner": 13
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 146.09999990463257,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 143.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 153.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 162.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 161,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 169,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 159.20000004768372,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 157.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 173.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 157.70000004768372,
+            "winner": 13
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 157,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 167.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 157.70000004768372,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 165.30000007152557,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 159.69999992847443,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 172.29999995231628,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 158.30000007152557,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 158.20000004768372,
+            "winner": 11
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 172.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 159.09999990463257,
+            "winner": 13
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 164.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 163.5,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 160.69999992847443,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 167.19999992847443,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 161,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 166.19999992847443,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 157.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 171.60000002384186,
+            "winner": 11
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 160.70000004768372,
+            "winner": 198
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 167,
+            "winner": 13
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 162.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 0,
+            "milliseconds": 168,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 1,
+            "milliseconds": 159.39999997615814,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 2,
+            "milliseconds": 160.5,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 3,
+            "milliseconds": 164.70000004768372,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 4,
+            "milliseconds": 168.30000007152557,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 5,
+            "milliseconds": 160.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 6,
+            "milliseconds": 161.29999995231628,
+            "winner": 11
+          },
+          {
+            "round": 5,
+            "fixture": 7,
+            "milliseconds": 160.80000007152557,
+            "winner": 198
+          },
+          {
+            "round": 5,
+            "fixture": 8,
+            "milliseconds": 161.30000007152557,
+            "winner": 13
+          },
+          {
+            "round": 5,
+            "fixture": 9,
+            "milliseconds": 157.80000007152557,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 0,
+            "milliseconds": 166.89999997615814,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 1,
+            "milliseconds": 161.70000004768372,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 2,
+            "milliseconds": 157.19999992847443,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 3,
+            "milliseconds": 173.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 4,
+            "milliseconds": 161.5,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 5,
+            "milliseconds": 161.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 6,
+            "milliseconds": 167.5,
+            "winner": 11
+          },
+          {
+            "round": 6,
+            "fixture": 7,
+            "milliseconds": 159.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 6,
+            "fixture": 8,
+            "milliseconds": 166.39999997615814,
+            "winner": 13
+          },
+          {
+            "round": 6,
+            "fixture": 9,
+            "milliseconds": 160.89999997615814,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 0,
+            "milliseconds": 175.89999997615814,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 1,
+            "milliseconds": 157,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 2,
+            "milliseconds": 156.30000007152557,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 3,
+            "milliseconds": 171.5,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 4,
+            "milliseconds": 160.5,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 5,
+            "milliseconds": 159.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 6,
+            "milliseconds": 165.19999992847443,
+            "winner": 11
+          },
+          {
+            "round": 7,
+            "fixture": 7,
+            "milliseconds": 161.10000002384186,
+            "winner": 198
+          },
+          {
+            "round": 7,
+            "fixture": 8,
+            "milliseconds": 158.5,
+            "winner": 13
+          },
+          {
+            "round": 7,
+            "fixture": 9,
+            "milliseconds": 174.69999992847443,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 0,
+            "milliseconds": 158.5,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 1,
+            "milliseconds": 156.89999997615814,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 2,
+            "milliseconds": 161.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 3,
+            "milliseconds": 160.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 4,
+            "milliseconds": 165.5,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 5,
+            "milliseconds": 158.39999997615814,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 6,
+            "milliseconds": 164.5,
+            "winner": 11
+          },
+          {
+            "round": 8,
+            "fixture": 7,
+            "milliseconds": 156.79999995231628,
+            "winner": 198
+          },
+          {
+            "round": 8,
+            "fixture": 8,
+            "milliseconds": 168.5,
+            "winner": 13
+          },
+          {
+            "round": 8,
+            "fixture": 9,
+            "milliseconds": 160.60000002384186,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 0,
+            "milliseconds": 162.60000002384186,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 1,
+            "milliseconds": 159.10000002384186,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 2,
+            "milliseconds": 166.89999997615814,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 3,
+            "milliseconds": 159.69999992847443,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 4,
+            "milliseconds": 163.60000002384186,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 5,
+            "milliseconds": 163.30000007152557,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 6,
+            "milliseconds": 166.5,
+            "winner": 11
+          },
+          {
+            "round": 9,
+            "fixture": 7,
+            "milliseconds": 160.69999992847443,
+            "winner": 198
+          },
+          {
+            "round": 9,
+            "fixture": 8,
+            "milliseconds": 162,
+            "winner": 13
+          },
+          {
+            "round": 9,
+            "fixture": 9,
+            "milliseconds": 158.60000002384186,
+            "winner": 11
+          }
+        ]
+      },
+      "fullToGatedMedianRatio": 4.7774480729065765,
+      "fullToGatedMeanRatio": 4.869479554739521
+    }
+  ],
+  "allFixtureChecksPass": true,
+  "benchmarkWinnersCorrect": true,
+  "diagnostics": {
+    "pageErrors": [],
+    "requestFailures": [],
+    "httpErrors": [],
+    "serverErrors": []
+  },
+  "pass": true
+}

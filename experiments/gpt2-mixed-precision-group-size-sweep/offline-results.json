@@ -1,0 +1,626 @@
+{
+  "contract": {
+    "execution": "offline NumPy; no browser",
+    "states": 1024,
+    "vocabulary": 50257,
+    "width": 768,
+    "scoreScale": 256,
+    "scoreBucketLogitWidth": 0.00390625,
+    "layoutUnitsPerPx": 64,
+    "allowanceBucketsPerSide": 24,
+    "stopGapBuckets": 48,
+    "productionInputRange": 266.2483969116211,
+    "axisSteps": 16384,
+    "rawVsRoundedGlobalWinnerMatches": 1023,
+    "retainedG256Replay": {
+      "matches": true,
+      "observed": {
+        "targetRetention": 1024,
+        "meanGroupsVisited": 4.6162109375,
+        "p95GroupsVisited": 17.0,
+        "hotGroupVisits": 820
+      },
+      "expected": {
+        "targetRetention": 1024,
+        "meanGroupsVisited": 4.6162109375,
+        "p95GroupsVisited": 17.0,
+        "hotGroupVisits": 820
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "g128-s4",
+      "groupSize": 128,
+      "scoreStridePx": 4,
+      "scoreBucketLogitWidth": 0.00390625,
+      "stridePerTokenPx": 0.03125,
+      "groups": 393,
+      "hotGroups": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "hotTokensCovered": 512,
+      "exactUpperRows": 512,
+      "exactUpperRowDifferenceFrom512": 0,
+      "targetRetention": 1024,
+      "routeLength": {
+        "total": 5256,
+        "mean": 5.1328125,
+        "median": 3.0,
+        "p95": 20.0,
+        "maximum": 68
+      },
+      "statesStoppingWithinSix": 815,
+      "dynamicFineWork": {
+        "hotVisitsReused": 865,
+        "dynamicFineGridVisits": 4391,
+        "dynamicFineCandidateRowsTotal": 562048,
+        "meanDynamicFineCandidateRowsPerState": 548.875
+      },
+      "routerWork": {
+        "remainingRouterElementsForSixStageArtifact": 4758,
+        "remainingRouterElementsPerStage": 793,
+        "meanActiveRemainingRouters": 5.1328125,
+        "meanRouterGroupSlotsPerState": 2017.1953125,
+        "meanSourceMatchOperationsPerState": 4034.390625
+      },
+      "tieContract": {
+        "scoreBucketStridePx": 4,
+        "layoutUnitPx": 0.015625,
+        "tiePayloadMaximumPx": 1.984375,
+        "unusedTieSpacePx": 2.0,
+        "decode": "local=127-round(mod(width,4px)*64)",
+        "checks": 4096,
+        "matches": 4096
+      },
+      "widthRanges": {
+        "fineCandidateBucketComponent": {
+          "bucketMinimum": 256,
+          "bucketMaximum": 21374,
+          "pixelMinimum": 1024,
+          "pixelMaximum": 85496,
+          "fitsChromeLayoutLimit": true
+        },
+        "mixedGroupUpper": {
+          "bucketMinimum": 2657,
+          "bucketMaximum": 21398,
+          "pixelMinimum": 10628,
+          "pixelMaximum": 85592,
+          "fitsChromeLayoutLimit": true
+        },
+        "maximumTieEncodedFineCandidatePx": 85497.984375,
+        "scaledGroupViewportPx": 262144,
+        "maximumWidthFitsScaledGroupViewport": true,
+        "geometryFitsChromeLayoutLimit": true
+      },
+      "weightedProxy": {
+        "int10UpperRowWeight": 1.0,
+        "globalInt16RowWeight": 1.6,
+        "routerSourceMatchWeight": 0.05,
+        "precisionWeightedCandidateRowsPerState": 51442.4,
+        "routerAwareUnitsPerState": 51644.11953125,
+        "normalizedToRetainedG256": 0.9890110595840919
+      },
+      "rawVsRoundedGlobalWinnerMatches": 1023
+    },
+    {
+      "name": "g256-s4",
+      "groupSize": 256,
+      "scoreStridePx": 4,
+      "scoreBucketLogitWidth": 0.00390625,
+      "stridePerTokenPx": 0.015625,
+      "groups": 197,
+      "hotGroups": [
+        0,
+        1
+      ],
+      "hotTokensCovered": 512,
+      "exactUpperRows": 512,
+      "exactUpperRowDifferenceFrom512": 0,
+      "targetRetention": 1024,
+      "routeLength": {
+        "total": 4727,
+        "mean": 4.6162109375,
+        "median": 2.0,
+        "p95": 17.0,
+        "maximum": 60
+      },
+      "statesStoppingWithinSix": 828,
+      "dynamicFineWork": {
+        "hotVisitsReused": 820,
+        "dynamicFineGridVisits": 3907,
+        "dynamicFineCandidateRowsTotal": 1000192,
+        "meanDynamicFineCandidateRowsPerState": 976.75
+      },
+      "routerWork": {
+        "remainingRouterElementsForSixStageArtifact": 2406,
+        "remainingRouterElementsPerStage": 401,
+        "meanActiveRemainingRouters": 4.6162109375,
+        "meanRouterGroupSlotsPerState": 909.3935546875,
+        "meanSourceMatchOperationsPerState": 1818.787109375
+      },
+      "tieContract": {
+        "scoreBucketStridePx": 4,
+        "layoutUnitPx": 0.015625,
+        "tiePayloadMaximumPx": 3.984375,
+        "unusedTieSpacePx": 0.0,
+        "decode": "local=255-round(mod(width,4px)*64)",
+        "checks": 2048,
+        "matches": 2048
+      },
+      "widthRanges": {
+        "fineCandidateBucketComponent": {
+          "bucketMinimum": 256,
+          "bucketMaximum": 21374,
+          "pixelMinimum": 1024,
+          "pixelMaximum": 85496,
+          "fitsChromeLayoutLimit": true
+        },
+        "mixedGroupUpper": {
+          "bucketMinimum": 2980,
+          "bucketMaximum": 21398,
+          "pixelMinimum": 11920,
+          "pixelMaximum": 85592,
+          "fitsChromeLayoutLimit": true
+        },
+        "maximumTieEncodedFineCandidatePx": 85499.984375,
+        "scaledGroupViewportPx": 262144,
+        "maximumWidthFitsScaledGroupViewport": true,
+        "geometryFitsChromeLayoutLimit": true
+      },
+      "weightedProxy": {
+        "int10UpperRowWeight": 1.0,
+        "globalInt16RowWeight": 1.6,
+        "routerSourceMatchWeight": 0.05,
+        "precisionWeightedCandidateRowsPerState": 52127.0,
+        "routerAwareUnitsPerState": 52217.93935546875,
+        "normalizedToRetainedG256": 1.0
+      },
+      "rawVsRoundedGlobalWinnerMatches": 1023
+    },
+    {
+      "name": "g512-s8",
+      "groupSize": 512,
+      "scoreStridePx": 8,
+      "scoreBucketLogitWidth": 0.00390625,
+      "stridePerTokenPx": 0.015625,
+      "groups": 99,
+      "hotGroups": [
+        0
+      ],
+      "hotTokensCovered": 512,
+      "exactUpperRows": 512,
+      "exactUpperRowDifferenceFrom512": 0,
+      "targetRetention": 1024,
+      "routeLength": {
+        "total": 4145,
+        "mean": 4.0478515625,
+        "median": 2.0,
+        "p95": 15.0,
+        "maximum": 45
+      },
+      "statesStoppingWithinSix": 852,
+      "dynamicFineWork": {
+        "hotVisitsReused": 763,
+        "dynamicFineGridVisits": 3382,
+        "dynamicFineCandidateRowsTotal": 1731584,
+        "meanDynamicFineCandidateRowsPerState": 1691.0
+      },
+      "routerWork": {
+        "remainingRouterElementsForSixStageArtifact": 1230,
+        "remainingRouterElementsPerStage": 205,
+        "meanActiveRemainingRouters": 4.0478515625,
+        "meanRouterGroupSlotsPerState": 400.7373046875,
+        "meanSourceMatchOperationsPerState": 801.474609375
+      },
+      "tieContract": {
+        "scoreBucketStridePx": 8,
+        "layoutUnitPx": 0.015625,
+        "tiePayloadMaximumPx": 7.984375,
+        "unusedTieSpacePx": 0.0,
+        "decode": "local=511-round(mod(width,8px)*64)",
+        "checks": 1024,
+        "matches": 1024
+      },
+      "widthRanges": {
+        "fineCandidateBucketComponent": {
+          "bucketMinimum": 256,
+          "bucketMaximum": 21374,
+          "pixelMinimum": 2048,
+          "pixelMaximum": 170992,
+          "fitsChromeLayoutLimit": true
+        },
+        "mixedGroupUpper": {
+          "bucketMinimum": 3053,
+          "bucketMaximum": 21398,
+          "pixelMinimum": 24424,
+          "pixelMaximum": 171184,
+          "fitsChromeLayoutLimit": true
+        },
+        "maximumTieEncodedFineCandidatePx": 170999.984375,
+        "scaledGroupViewportPx": 524288,
+        "maximumWidthFitsScaledGroupViewport": true,
+        "geometryFitsChromeLayoutLimit": true
+      },
+      "weightedProxy": {
+        "int10UpperRowWeight": 1.0,
+        "globalInt16RowWeight": 1.6,
+        "routerSourceMatchWeight": 0.05,
+        "precisionWeightedCandidateRowsPerState": 53269.8,
+        "routerAwareUnitsPerState": 53309.87373046875,
+        "normalizedToRetainedG256": 1.0209110966169455
+      },
+      "rawVsRoundedGlobalWinnerMatches": 1023
+    },
+    {
+      "name": "g1024-s16",
+      "groupSize": 1024,
+      "scoreStridePx": 16,
+      "scoreBucketLogitWidth": 0.00390625,
+      "stridePerTokenPx": 0.015625,
+      "groups": 50,
+      "hotGroups": [
+        0
+      ],
+      "hotTokensCovered": 1024,
+      "exactUpperRows": 1024,
+      "exactUpperRowDifferenceFrom512": 512,
+      "targetRetention": 1024,
+      "routeLength": {
+        "total": 3279,
+        "mean": 3.2021484375,
+        "median": 2.0,
+        "p95": 11.0,
+        "maximum": 34
+      },
+      "statesStoppingWithinSix": 891,
+      "dynamicFineWork": {
+        "hotVisitsReused": 848,
+        "dynamicFineGridVisits": 2431,
+        "dynamicFineCandidateRowsTotal": 2489344,
+        "meanDynamicFineCandidateRowsPerState": 2431.0
+      },
+      "routerWork": {
+        "remainingRouterElementsForSixStageArtifact": 642,
+        "remainingRouterElementsPerStage": 107,
+        "meanActiveRemainingRouters": 3.2021484375,
+        "meanRouterGroupSlotsPerState": 160.107421875,
+        "meanSourceMatchOperationsPerState": 320.21484375
+      },
+      "tieContract": {
+        "scoreBucketStridePx": 16,
+        "layoutUnitPx": 0.015625,
+        "tiePayloadMaximumPx": 15.984375,
+        "unusedTieSpacePx": 0.0,
+        "decode": "local=1023-round(mod(width,16px)*64)",
+        "checks": 1024,
+        "matches": 1024
+      },
+      "widthRanges": {
+        "fineCandidateBucketComponent": {
+          "bucketMinimum": 256,
+          "bucketMaximum": 21374,
+          "pixelMinimum": 4096,
+          "pixelMaximum": 341984,
+          "fitsChromeLayoutLimit": true
+        },
+        "mixedGroupUpper": {
+          "bucketMinimum": 3215,
+          "bucketMaximum": 21398,
+          "pixelMinimum": 51440,
+          "pixelMaximum": 342368,
+          "fitsChromeLayoutLimit": true
+        },
+        "maximumTieEncodedFineCandidatePx": 341999.984375,
+        "scaledGroupViewportPx": 1048576,
+        "maximumWidthFitsScaledGroupViewport": true,
+        "geometryFitsChromeLayoutLimit": true
+      },
+      "weightedProxy": {
+        "int10UpperRowWeight": 1.0,
+        "globalInt16RowWeight": 1.6,
+        "routerSourceMatchWeight": 0.05,
+        "precisionWeightedCandidateRowsPerState": 54761.0,
+        "routerAwareUnitsPerState": 54777.0107421875,
+        "normalizedToRetainedG256": 1.0490075138602868
+      },
+      "rawVsRoundedGlobalWinnerMatches": 1023
+    }
+  ],
+  "pareto": {
+    "objectives": [
+      "exactUpperRows:min",
+      "weightedProxy.routerAwareUnitsPerState:min",
+      "routeLength.p95:min"
+    ],
+    "variantNames": [
+      "g128-s4",
+      "g256-s4",
+      "g512-s8",
+      "g1024-s16"
+    ],
+    "browserArtifactNames": [
+      "g128-s4",
+      "g512-s8",
+      "g1024-s16"
+    ]
+  },
+  "runtimeSeconds": 2.5351554580265656,
+  "transportSweep": {
+    "status": "offline geometry prepared; browser gated",
+    "basisVariant": "g128-s4",
+    "executionOrder": [
+      "g128-s8",
+      "g128-s16",
+      "g128-s32"
+    ],
+    "stopAtFirstSemanticallyExact": true,
+    "noFixtureSpecificCorrection": true,
+    "variants": [
+      {
+        "name": "g128-s8",
+        "groupSize": 128,
+        "scoreStridePx": 8,
+        "scoreBucketLogitWidth": 0.00390625,
+        "stridePerTokenPx": 0.0625,
+        "groups": 393,
+        "hotGroups": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "hotTokensCovered": 512,
+        "exactUpperRows": 512,
+        "exactUpperRowDifferenceFrom512": 0,
+        "targetRetention": 1024,
+        "routeLength": {
+          "total": 5256,
+          "mean": 5.1328125,
+          "median": 3.0,
+          "p95": 20.0,
+          "maximum": 68
+        },
+        "statesStoppingWithinSix": 815,
+        "dynamicFineWork": {
+          "hotVisitsReused": 865,
+          "dynamicFineGridVisits": 4391,
+          "dynamicFineCandidateRowsTotal": 562048,
+          "meanDynamicFineCandidateRowsPerState": 548.875
+        },
+        "routerWork": {
+          "remainingRouterElementsForSixStageArtifact": 4758,
+          "remainingRouterElementsPerStage": 793,
+          "meanActiveRemainingRouters": 5.1328125,
+          "meanRouterGroupSlotsPerState": 2017.1953125,
+          "meanSourceMatchOperationsPerState": 4034.390625
+        },
+        "tieContract": {
+          "scoreBucketStridePx": 8,
+          "layoutUnitPx": 0.015625,
+          "tiePayloadMaximumPx": 7.9375,
+          "unusedTieSpacePx": 0.0,
+          "decode": "local=127-round(mod(width,8px)/0.0625px)",
+          "checks": 4096,
+          "matches": 4096,
+          "tieStepPx": 0.0625,
+          "layoutUnitsPerToken": 4.0
+        },
+        "widthRanges": {
+          "fineCandidateBucketComponent": {
+            "bucketMinimum": 256,
+            "bucketMaximum": 21374,
+            "pixelMinimum": 2048,
+            "pixelMaximum": 170992,
+            "fitsChromeLayoutLimit": true
+          },
+          "mixedGroupUpper": {
+            "bucketMinimum": 2657,
+            "bucketMaximum": 21398,
+            "pixelMinimum": 21256,
+            "pixelMaximum": 171184,
+            "fitsChromeLayoutLimit": true
+          },
+          "maximumTieEncodedFineCandidatePx": 170999.9375,
+          "scaledGroupViewportPx": 524288,
+          "maximumWidthFitsScaledGroupViewport": true,
+          "geometryFitsChromeLayoutLimit": true
+        },
+        "weightedProxy": {
+          "int10UpperRowWeight": 1.0,
+          "globalInt16RowWeight": 1.6,
+          "routerSourceMatchWeight": 0.05,
+          "precisionWeightedCandidateRowsPerState": 51442.4,
+          "routerAwareUnitsPerState": 51644.11953125,
+          "normalizedToRetainedG256": 0.9890110595840919
+        },
+        "rawVsRoundedGlobalWinnerMatches": 1023,
+        "transportGeometry": {
+          "allowanceBucketsPerSide": 24,
+          "allowanceWidthPxPerSide": 192,
+          "stopGapBuckets": 48,
+          "stopGapWidthPx": 384,
+          "bucketSemanticsUnchanged": true,
+          "routeAndWorkInheritedFrom": "g128-s4"
+        }
+      },
+      {
+        "name": "g128-s16",
+        "groupSize": 128,
+        "scoreStridePx": 16,
+        "scoreBucketLogitWidth": 0.00390625,
+        "stridePerTokenPx": 0.125,
+        "groups": 393,
+        "hotGroups": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "hotTokensCovered": 512,
+        "exactUpperRows": 512,
+        "exactUpperRowDifferenceFrom512": 0,
+        "targetRetention": 1024,
+        "routeLength": {
+          "total": 5256,
+          "mean": 5.1328125,
+          "median": 3.0,
+          "p95": 20.0,
+          "maximum": 68
+        },
+        "statesStoppingWithinSix": 815,
+        "dynamicFineWork": {
+          "hotVisitsReused": 865,
+          "dynamicFineGridVisits": 4391,
+          "dynamicFineCandidateRowsTotal": 562048,
+          "meanDynamicFineCandidateRowsPerState": 548.875
+        },
+        "routerWork": {
+          "remainingRouterElementsForSixStageArtifact": 4758,
+          "remainingRouterElementsPerStage": 793,
+          "meanActiveRemainingRouters": 5.1328125,
+          "meanRouterGroupSlotsPerState": 2017.1953125,
+          "meanSourceMatchOperationsPerState": 4034.390625
+        },
+        "tieContract": {
+          "scoreBucketStridePx": 16,
+          "layoutUnitPx": 0.015625,
+          "tiePayloadMaximumPx": 15.875,
+          "unusedTieSpacePx": 0.0,
+          "decode": "local=127-round(mod(width,16px)/0.125px)",
+          "checks": 4096,
+          "matches": 4096,
+          "tieStepPx": 0.125,
+          "layoutUnitsPerToken": 8.0
+        },
+        "widthRanges": {
+          "fineCandidateBucketComponent": {
+            "bucketMinimum": 256,
+            "bucketMaximum": 21374,
+            "pixelMinimum": 4096,
+            "pixelMaximum": 341984,
+            "fitsChromeLayoutLimit": true
+          },
+          "mixedGroupUpper": {
+            "bucketMinimum": 2657,
+            "bucketMaximum": 21398,
+            "pixelMinimum": 42512,
+            "pixelMaximum": 342368,
+            "fitsChromeLayoutLimit": true
+          },
+          "maximumTieEncodedFineCandidatePx": 341999.875,
+          "scaledGroupViewportPx": 1048576,
+          "maximumWidthFitsScaledGroupViewport": true,
+          "geometryFitsChromeLayoutLimit": true
+        },
+        "weightedProxy": {
+          "int10UpperRowWeight": 1.0,
+          "globalInt16RowWeight": 1.6,
+          "routerSourceMatchWeight": 0.05,
+          "precisionWeightedCandidateRowsPerState": 51442.4,
+          "routerAwareUnitsPerState": 51644.11953125,
+          "normalizedToRetainedG256": 0.9890110595840919
+        },
+        "rawVsRoundedGlobalWinnerMatches": 1023,
+        "transportGeometry": {
+          "allowanceBucketsPerSide": 24,
+          "allowanceWidthPxPerSide": 384,
+          "stopGapBuckets": 48,
+          "stopGapWidthPx": 768,
+          "bucketSemanticsUnchanged": true,
+          "routeAndWorkInheritedFrom": "g128-s4"
+        }
+      },
+      {
+        "name": "g128-s32",
+        "groupSize": 128,
+        "scoreStridePx": 32,
+        "scoreBucketLogitWidth": 0.00390625,
+        "stridePerTokenPx": 0.25,
+        "groups": 393,
+        "hotGroups": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "hotTokensCovered": 512,
+        "exactUpperRows": 512,
+        "exactUpperRowDifferenceFrom512": 0,
+        "targetRetention": 1024,
+        "routeLength": {
+          "total": 5256,
+          "mean": 5.1328125,
+          "median": 3.0,
+          "p95": 20.0,
+          "maximum": 68
+        },
+        "statesStoppingWithinSix": 815,
+        "dynamicFineWork": {
+          "hotVisitsReused": 865,
+          "dynamicFineGridVisits": 4391,
+          "dynamicFineCandidateRowsTotal": 562048,
+          "meanDynamicFineCandidateRowsPerState": 548.875
+        },
+        "routerWork": {
+          "remainingRouterElementsForSixStageArtifact": 4758,
+          "remainingRouterElementsPerStage": 793,
+          "meanActiveRemainingRouters": 5.1328125,
+          "meanRouterGroupSlotsPerState": 2017.1953125,
+          "meanSourceMatchOperationsPerState": 4034.390625
+        },
+        "tieContract": {
+          "scoreBucketStridePx": 32,
+          "layoutUnitPx": 0.015625,
+          "tiePayloadMaximumPx": 31.75,
+          "unusedTieSpacePx": 0.0,
+          "decode": "local=127-round(mod(width,32px)/0.25px)",
+          "checks": 4096,
+          "matches": 4096,
+          "tieStepPx": 0.25,
+          "layoutUnitsPerToken": 16.0
+        },
+        "widthRanges": {
+          "fineCandidateBucketComponent": {
+            "bucketMinimum": 256,
+            "bucketMaximum": 21374,
+            "pixelMinimum": 8192,
+            "pixelMaximum": 683968,
+            "fitsChromeLayoutLimit": true
+          },
+          "mixedGroupUpper": {
+            "bucketMinimum": 2657,
+            "bucketMaximum": 21398,
+            "pixelMinimum": 85024,
+            "pixelMaximum": 684736,
+            "fitsChromeLayoutLimit": true
+          },
+          "maximumTieEncodedFineCandidatePx": 683999.75,
+          "scaledGroupViewportPx": 2097152,
+          "maximumWidthFitsScaledGroupViewport": true,
+          "geometryFitsChromeLayoutLimit": true
+        },
+        "weightedProxy": {
+          "int10UpperRowWeight": 1.0,
+          "globalInt16RowWeight": 1.6,
+          "routerSourceMatchWeight": 0.05,
+          "precisionWeightedCandidateRowsPerState": 51442.4,
+          "routerAwareUnitsPerState": 51644.11953125,
+          "normalizedToRetainedG256": 0.9890110595840919
+        },
+        "rawVsRoundedGlobalWinnerMatches": 1023,
+        "transportGeometry": {
+          "allowanceBucketsPerSide": 24,
+          "allowanceWidthPxPerSide": 768,
+          "stopGapBuckets": 48,
+          "stopGapWidthPx": 1536,
+          "bucketSemanticsUnchanged": true,
+          "routeAndWorkInheritedFrom": "g128-s4"
+        }
+      }
+    ]
+  }
+}

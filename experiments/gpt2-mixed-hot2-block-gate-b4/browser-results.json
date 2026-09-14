@@ -1,0 +1,373 @@
+{
+  "experiment": "gpt2-mixed-hot2-block-gate-b4",
+  "control": "gpt2-hvar-grid-output-head-certified-int10-unrolled6-gated",
+  "chromeVersion": "153.0.8010.36",
+  "rounds": 1,
+  "fixtureLimit": 2,
+  "semanticsPass": true,
+  "decision": "retain",
+  "comparison": {
+    "mixed": {
+      "count": 2,
+      "minimum": 3845.6135000000068,
+      "median": 4116.946041999996,
+      "p90": 4116.946041999996,
+      "maximum": 4116.946041999996,
+      "mean": 3981.2797710000013
+    },
+    "exactInt10Control": {
+      "count": 2,
+      "minimum": 4633.2845420000085,
+      "median": 6298.1087919999845,
+      "p90": 6298.1087919999845,
+      "maximum": 6298.1087919999845,
+      "mean": 5465.6966669999965
+    },
+    "meanRatio": 0.7284121336329555,
+    "meanSpeedupPercent": 27.158786636704445,
+    "perRound": [
+      {
+        "round": 0,
+        "loadOrder": [
+          "mixed",
+          "control"
+        ],
+        "fixtureOrder": [
+          0,
+          1
+        ],
+        "mixedMeanMilliseconds": 3981.2797710000013,
+        "controlMeanMilliseconds": 5465.6966669999965,
+        "meanRatio": 0.7284121336329555,
+        "meanSpeedupPercent": 27.158786636704445
+      }
+    ]
+  },
+  "cold": [
+    {
+      "round": 0,
+      "mixedLoadMilliseconds": 57654.508333,
+      "controlLoadMilliseconds": 64126.80958400001,
+      "mixedFirstEvaluationMilliseconds": 4814.620167000001,
+      "controlFirstEvaluationMilliseconds": 5690.692374999984,
+      "mixedLoadAndFirstEvaluationMilliseconds": 62469.1285,
+      "controlLoadAndFirstEvaluationMilliseconds": 69817.50195899999
+    }
+  ],
+  "work": {
+    "upperRowsAdded": 512,
+    "upperRowsReplacedWithGlobalInt16": 0,
+    "speculativeParallelFineRows": 0,
+    "activeStageVisits": 3,
+    "reusedHotRows": 2,
+    "dynamicFineGrids": 1,
+    "fineGridEvaluationsRemoved": 2
+  },
+  "requestFailures": [
+    {
+      "round": 0,
+      "mixed": [],
+      "control": []
+    }
+  ],
+  "shadowCoverage": {
+    "requested": 3,
+    "fromControlRoute": 3,
+    "forcedExact": 0,
+    "missing": 0
+  },
+  "checks": [
+    {
+      "round": 0,
+      "fixture": 0,
+      "stoppedAtFirstLiveDone": true,
+      "finalExactWinnerMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "groupMatchesGeneratedMixedRoute": true,
+          "liveExactShadowPresent": true,
+          "winnerMatchesLiveExactShadow": true,
+          "bucketMatchesLiveExactShadow": true,
+          "bestWinnerMatchesLiveRecompute": true,
+          "bestBucketMatchesLiveRecompute": true,
+          "certificateGapArithmeticMatches": true,
+          "doneMatchesLiveGap": true,
+          "noUnexpectedConstant255": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "round": 0,
+      "fixture": 1,
+      "stoppedAtFirstLiveDone": true,
+      "finalExactWinnerMatches": true,
+      "stageChecks": [
+        {
+          "stage": 0,
+          "groupMatchesGeneratedMixedRoute": true,
+          "liveExactShadowPresent": true,
+          "winnerMatchesLiveExactShadow": true,
+          "bucketMatchesLiveExactShadow": true,
+          "bestWinnerMatchesLiveRecompute": true,
+          "bestBucketMatchesLiveRecompute": true,
+          "certificateGapArithmeticMatches": true,
+          "doneMatchesLiveGap": true,
+          "noUnexpectedConstant255": true,
+          "routeDisplayMatches": true
+        },
+        {
+          "stage": 1,
+          "groupMatchesGeneratedMixedRoute": true,
+          "liveExactShadowPresent": true,
+          "winnerMatchesLiveExactShadow": true,
+          "bucketMatchesLiveExactShadow": true,
+          "bestWinnerMatchesLiveRecompute": true,
+          "bestBucketMatchesLiveRecompute": true,
+          "certificateGapArithmeticMatches": true,
+          "doneMatchesLiveGap": true,
+          "noUnexpectedConstant255": true,
+          "routeDisplayMatches": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "generatedBytes": {
+    "index.html": 8361385,
+    "topology.css": 879572
+  },
+  "assets": {
+    "coarseFontFiles": 5,
+    "coarseFontWoff2Bytes": 51181024,
+    "exactFontFiles": 12,
+    "exactFontWoff2Bytes": 79431996,
+    "fontsCopiedOrRebuilt": false,
+    "exactFontsAreCurrentlyFullVocabulary": true
+  },
+  "roundsDetail": [
+    {
+      "round": 0,
+      "loadOrder": [
+        "mixed",
+        "control"
+      ],
+      "order": [
+        0,
+        1
+      ],
+      "cold": {
+        "mixedLoadMilliseconds": 57654.508333,
+        "controlLoadMilliseconds": 64126.80958400001,
+        "mixedFirstEvaluationMilliseconds": 4814.620167000001,
+        "controlFirstEvaluationMilliseconds": 5690.692374999984,
+        "mixedLoadAndFirstEvaluationMilliseconds": 62469.1285,
+        "controlLoadAndFirstEvaluationMilliseconds": 69817.50195899999
+      },
+      "shadowCoverage": {
+        "requested": 3,
+        "fromControlRoute": 3,
+        "forcedExact": 0
+      },
+      "requestFailures": {
+        "mixed": [],
+        "control": []
+      },
+      "mixedSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 4116.946041999996,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-upper-row",
+                "dynamicDisplay": "none",
+                "fineCode": 11,
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 383,
+                "nextUpperBucket": 4563,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedHotRows": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 3845.6135000000068,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 5,
+                "route": "dynamic-exact-grid",
+                "dynamicDisplay": "grid",
+                "fineCode": 71,
+                "fineLocal": 71,
+                "fineBucket": 12440,
+                "fineWinner": 1351,
+                "bestBucket": 12440,
+                "bestWinner": 1351,
+                "certificateGap": -157,
+                "nextUpperBucket": 12597,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "reused-upper-row",
+                "dynamicDisplay": "none",
+                "fineCode": 221,
+                "fineLocal": 221,
+                "fineBucket": 12620,
+                "fineWinner": 477,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 127,
+                "nextUpperBucket": 12493,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "reusedHotRows": 1,
+            "dynamicFineGrids": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        }
+      ],
+      "controlSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 6298.1087919999845,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 46,
+                "nextUpperBucket": 4900,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "fineBucket": 4558,
+                "fineWinner": 290,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 558,
+                "nextUpperBucket": 4388,
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 11,
+            "finalBucket": 4946,
+            "exactShadows": [
+              {
+                "group": 0,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "source": "control-route-exact-grid"
+              },
+              {
+                "group": 1,
+                "fineBucket": 4558,
+                "fineWinner": 290,
+                "source": "control-route-exact-grid"
+              }
+            ],
+            "requiredMixedGroups": [
+              0
+            ]
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 4633.2845420000085,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "fineBucket": 12552,
+                "fineWinner": 11,
+                "bestBucket": 12552,
+                "bestWinner": 11,
+                "certificateGap": -516,
+                "nextUpperBucket": 13068,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "fineBucket": 12620,
+                "fineWinner": 477,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": -181,
+                "nextUpperBucket": 12801,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 5,
+                "fineBucket": 12440,
+                "fineWinner": 1351,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 249,
+                "nextUpperBucket": 12371,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "finalWinner": 477,
+            "finalBucket": 12620,
+            "exactShadows": [
+              {
+                "group": 0,
+                "fineBucket": 12552,
+                "fineWinner": 11,
+                "source": "control-route-exact-grid"
+              },
+              {
+                "group": 1,
+                "fineBucket": 12620,
+                "fineWinner": 477,
+                "source": "control-route-exact-grid"
+              },
+              {
+                "group": 5,
+                "fineBucket": 12440,
+                "fineWinner": 1351,
+                "source": "control-route-exact-grid"
+              }
+            ],
+            "requiredMixedGroups": [
+              5,
+              1
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

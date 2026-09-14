@@ -1,0 +1,388 @@
+{
+  "chromeVersion": "fresh isolated Chromium process per variant",
+  "rounds": 1,
+  "fixtureCount": 2,
+  "isolatedPerVariant": true,
+  "control": "gpt2-mixed-precision-hotk-sweep/k2",
+  "loadOrderAlternated": true,
+  "robustRepeatPerformed": false,
+  "longLivedCursorMcpTerminated": false,
+  "offlineResultsPreserved": true,
+  "allSemanticsPass": false,
+  "results": [
+    {
+      "variant": "g128-s4",
+      "isolatedFreshBrowser": true,
+      "loadOrder": [
+        "candidate",
+        "retained-g256-k2"
+      ],
+      "fixtureOrder": [
+        0,
+        1
+      ],
+      "warmupFixture": 1,
+      "requestFailures": {
+        "candidate": [],
+        "control": []
+      },
+      "cold": {
+        "candidateLoadMilliseconds": 55566.983250000005,
+        "controlLoadMilliseconds": 53479.536375,
+        "loadRatio": 1.0390326284873295
+      },
+      "semanticsPass": false,
+      "decision": "reject-transport",
+      "comparison": {
+        "candidate": {
+          "count": 2,
+          "minimum": 2783.464500000002,
+          "median": 3272.258750000008,
+          "p90": 3272.258750000008,
+          "maximum": 3272.258750000008,
+          "mean": 3027.861625000005
+        },
+        "retainedG256K2": {
+          "count": 2,
+          "minimum": 2275.932084,
+          "median": 3316.835374999995,
+          "p90": 3316.835374999995,
+          "maximum": 3316.835374999995,
+          "mean": 2796.3837294999976
+        },
+        "normalizedWarmMeanRatio": 1.082777586301218,
+        "warmSpeedupPercent": -8.27775863012179
+      },
+      "work": {
+        "candidate": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 4,
+          "reusedExactUpper": 3,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 128
+        },
+        "retainedG256K2": {
+          "exactUpperRows": 512,
+          "activeStageVisits": 4,
+          "reusedExactUpper": 3,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 256
+        },
+        "normalized": {
+          "activeStageVisits": 1,
+          "dynamicFineGrids": 1,
+          "dynamicFineCandidateRows": 0.5
+        }
+      },
+      "shadows": {
+        "requested": 4,
+        "present": 4,
+        "source": "candidate variant's forced dynamic exact grid"
+      },
+      "candidateChecks": [
+        {
+          "fixture": 0,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": false,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "fixture": 1,
+          "stoppedAtFirstLiveDone": true,
+          "finalWinnerMatchesLiveExactRoute": false,
+          "finalDenseWinnerMatchesFixture": false,
+          "stageChecks": [
+            {
+              "stage": 0,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            },
+            {
+              "stage": 1,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            },
+            {
+              "stage": 2,
+              "routeGroupMatchesOfflineDiagnostic": true,
+              "liveExactShadowPresent": true,
+              "liveExactShadowHasValidLocal": true,
+              "winnerMatchesLiveExactShadow": false,
+              "bucketMatchesLiveExactShadow": true,
+              "bestWinnerMatchesLiveRecompute": false,
+              "bestBucketMatchesLiveRecompute": true,
+              "gapArithmeticMatches": true,
+              "doneMatchesLiveGap": true,
+              "routeDisplayMatches": true
+            }
+          ],
+          "pass": false
+        }
+      ],
+      "controlChecks": [
+        {
+          "fixture": 0,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        },
+        {
+          "fixture": 1,
+          "finalDenseWinnerMatchesFixture": true,
+          "stoppedAtLiveDone": true
+        }
+      ],
+      "candidateSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 3272.258750000008,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 12,
+                "fineBucket": 4946,
+                "fineWinner": 12,
+                "bestBucket": 4946,
+                "bestWinner": 12,
+                "certificateGap": 170,
+                "nextUpperBucket": 4776,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 12,
+            "finalBucket": 4946,
+            "exactShadows": [
+              {
+                "group": 0,
+                "width": 19785.8125,
+                "geometryPx": 19785.8135,
+                "scoreStridePx": 4,
+                "tieUnits": 116,
+                "fineBucket": 4946,
+                "fineLocal": 11,
+                "fineWinner": 11,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 2783.464500000002,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 10,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 69,
+                "fineBucket": 12440,
+                "fineWinner": 1349,
+                "bestBucket": 12440,
+                "bestWinner": 1349,
+                "certificateGap": -204,
+                "nextUpperBucket": 12644,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 3,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 95,
+                "fineBucket": 12620,
+                "fineWinner": 479,
+                "bestBucket": 12620,
+                "bestWinner": 479,
+                "certificateGap": 44,
+                "nextUpperBucket": 12576,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 12,
+                "fineBucket": 12552,
+                "fineWinner": 12,
+                "bestBucket": 12620,
+                "bestWinner": 479,
+                "certificateGap": 249,
+                "nextUpperBucket": 12371,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 1,
+            "finalWinner": 479,
+            "finalBucket": 12620,
+            "exactShadows": [
+              {
+                "group": 10,
+                "width": 49760.875,
+                "geometryPx": 49760.876,
+                "scoreStridePx": 4,
+                "tieUnits": 56,
+                "fineBucket": 12440,
+                "fineLocal": 71,
+                "fineWinner": 1351,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              },
+              {
+                "group": 3,
+                "width": 50480.53125,
+                "geometryPx": 50480.53225,
+                "scoreStridePx": 4,
+                "tieUnits": 34,
+                "fineBucket": 12620,
+                "fineLocal": 93,
+                "fineWinner": 477,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              },
+              {
+                "group": 0,
+                "width": 50209.8125,
+                "geometryPx": 50209.8135,
+                "scoreStridePx": 4,
+                "tieUnits": 116,
+                "fineBucket": 12552,
+                "fineLocal": 11,
+                "fineWinner": 11,
+                "validLocal": true,
+                "source": "forced-variant-dynamic-exact-grid"
+              }
+            ]
+          }
+        }
+      ],
+      "controlSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 3316.835374999995,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 4946,
+                "fineWinner": 11,
+                "bestBucket": 4946,
+                "bestWinner": 11,
+                "certificateGap": 364,
+                "nextUpperBucket": 4582,
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "reusedExactUpper": 1,
+            "dynamicFineGrids": 0,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 2275.932084,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 5,
+                "route": "dynamic-fine-grid",
+                "dynamicDisplay": "grid",
+                "fineLocal": 71,
+                "fineBucket": 12440,
+                "fineWinner": 1351,
+                "bestBucket": 12440,
+                "bestWinner": 1351,
+                "certificateGap": -204,
+                "nextUpperBucket": 12644,
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 221,
+                "fineBucket": 12620,
+                "fineWinner": 477,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 44,
+                "nextUpperBucket": 12576,
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 0,
+                "route": "reused-exact-upper",
+                "dynamicDisplay": "none",
+                "fineLocal": 11,
+                "fineBucket": 12552,
+                "fineWinner": 11,
+                "bestBucket": 12620,
+                "bestWinner": 477,
+                "certificateGap": 249,
+                "nextUpperBucket": 12371,
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "reusedExactUpper": 2,
+            "dynamicFineGrids": 1,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        }
+      ]
+    }
+  ]
+}

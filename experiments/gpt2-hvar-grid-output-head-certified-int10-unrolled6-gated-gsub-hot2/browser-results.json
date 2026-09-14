@@ -1,0 +1,2231 @@
+{
+  "decision": "pass",
+  "scalingDecision": "reject",
+  "chrome": "153.0.8010.36",
+  "server": "http://localhost:4178",
+  "rounds": 1,
+  "fixturesPerRound": 10,
+  "comparisons": 10,
+  "semanticsPass": true,
+  "allFinalWinnersMatch": true,
+  "allActiveStagesMatch": true,
+  "cold": {
+    "hot2Load": {
+      "count": 1,
+      "minimum": 59323.053792,
+      "median": 59323.053792,
+      "p90": 59323.053792,
+      "maximum": 59323.053792,
+      "mean": 59323.053792
+    },
+    "baselineLoad": {
+      "count": 1,
+      "minimum": 57777.531083,
+      "median": 57777.531083,
+      "p90": 57777.531083,
+      "maximum": 57777.531083,
+      "mean": 57777.531083
+    },
+    "hot2LoadAndFirstEvaluation": {
+      "count": 1,
+      "minimum": 64383.52454200001,
+      "median": 64383.52454200001,
+      "p90": 64383.52454200001,
+      "maximum": 64383.52454200001,
+      "mean": 64383.52454200001
+    },
+    "baselineLoadAndFirstEvaluation": {
+      "count": 1,
+      "minimum": 60677.728333,
+      "median": 60677.728333,
+      "p90": 60677.728333,
+      "maximum": 60677.728333,
+      "mean": 60677.728333
+    }
+  },
+  "warm": {
+    "hot2": {
+      "count": 10,
+      "minimum": 5970.649624999991,
+      "median": 7877.429415999999,
+      "p90": 10623.843166999985,
+      "maximum": 10623.843166999985,
+      "mean": 7784.966870799998
+    },
+    "baseline": {
+      "count": 10,
+      "minimum": 3368.471458999993,
+      "median": 5206.916583000013,
+      "p90": 9367.447667,
+      "maximum": 9367.447667,
+      "mean": 5562.010554099999
+    },
+    "composedSpeedup": 0.6609918423926648,
+    "pairedSpeedup": {
+      "count": 10,
+      "minimum": 0.5380513618301898,
+      "median": 0.714304628666135,
+      "p90": 0.8817381356021305,
+      "maximum": 0.8817381356021305,
+      "mean": 0.70377781714745
+    },
+    "perRoundHot2Medians": [
+      7877.429415999999
+    ],
+    "perRoundBaselineMedians": [
+      5206.916583000013
+    ]
+  },
+  "routes": {
+    "hot2Accepts": 16,
+    "marginFallbacks": 1,
+    "otherGroupFallbacks": 1,
+    "activeStages": 18
+  },
+  "sources": {
+    "generatedBytes": {
+      "index.html": 9218974,
+      "split-bank.css": 32577,
+      "topology.css": 716196,
+      "reference.json": 237099
+    },
+    "reusedAssets": {
+      "splitGsubFontDirectory": "../gsub-split-complement-fine-scorer",
+      "splitGsubWoff2Bytes": 963044,
+      "exactFontDirectory": "../gpt2-hvar-grid-output-head-certified-upper-int10-one-step",
+      "exactWoff2Bytes": 79431996,
+      "fullGsubBankIncludedOrReferenced": false,
+      "fontsCopiedOrRebuilt": false
+    },
+    "hot2Resources": [
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-certified-upper-int10/index.css",
+        "transferSize": 224396,
+        "encodedBodySize": 224096
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-certified-upper-int10-one-step/index.css",
+        "transferSize": 5001540,
+        "encodedBodySize": 5001240
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-certified-int10-unrolled6-gated-gsub-hot2/split-bank.css",
+        "transferSize": 32877,
+        "encodedBodySize": 32577
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-certified-int10-unrolled6-gated-gsub-hot2/topology.css",
+        "transferSize": 716496,
+        "encodedBodySize": 716196
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d0.woff2",
+        "transferSize": 10699196,
+        "encodedBodySize": 10698896
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d1.woff2",
+        "transferSize": 10620308,
+        "encodedBodySize": 10620008
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d2.woff2",
+        "transferSize": 10652700,
+        "encodedBodySize": 10652400
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h0.woff2",
+        "transferSize": 58596,
+        "encodedBodySize": 58296
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h0.woff2",
+        "transferSize": 4968956,
+        "encodedBodySize": 4968656
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d3.woff2",
+        "transferSize": 10646976,
+        "encodedBodySize": 10646676
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l0.woff2",
+        "transferSize": 102016,
+        "encodedBodySize": 101716
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l0.woff2",
+        "transferSize": 8287064,
+        "encodedBodySize": 8286764
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d4.woff2",
+        "transferSize": 8563344,
+        "encodedBodySize": 8563044
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h1.woff2",
+        "transferSize": 58692,
+        "encodedBodySize": 58392
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h1.woff2",
+        "transferSize": 4943232,
+        "encodedBodySize": 4942932
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l1.woff2",
+        "transferSize": 101632,
+        "encodedBodySize": 101332
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l1.woff2",
+        "transferSize": 8296776,
+        "encodedBodySize": 8296476
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h2.woff2",
+        "transferSize": 59024,
+        "encodedBodySize": 58724
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l2.woff2",
+        "transferSize": 101860,
+        "encodedBodySize": 101560
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h2.woff2",
+        "transferSize": 4975632,
+        "encodedBodySize": 4975332
+      },
+      {
+        "name": "http://localhost:4178/favicon.ico",
+        "transferSize": 760,
+        "encodedBodySize": 460
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h3.woff2",
+        "transferSize": 61824,
+        "encodedBodySize": 61524
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l3.woff2",
+        "transferSize": 102028,
+        "encodedBodySize": 101728
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l2.woff2",
+        "transferSize": 8295656,
+        "encodedBodySize": 8295356
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h4.woff2",
+        "transferSize": 58540,
+        "encodedBodySize": 58240
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l4.woff2",
+        "transferSize": 102416,
+        "encodedBodySize": 102116
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h3.woff2",
+        "transferSize": 4924144,
+        "encodedBodySize": 4923844
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h5.woff2",
+        "transferSize": 58532,
+        "encodedBodySize": 58232
+      },
+      {
+        "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l5.woff2",
+        "transferSize": 101484,
+        "encodedBodySize": 101184
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l3.woff2",
+        "transferSize": 8283180,
+        "encodedBodySize": 8282880
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h4.woff2",
+        "transferSize": 4915696,
+        "encodedBodySize": 4915396
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l4.woff2",
+        "transferSize": 8296928,
+        "encodedBodySize": 8296628
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h5.woff2",
+        "transferSize": 4950940,
+        "encodedBodySize": 4950640
+      },
+      {
+        "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l5.woff2",
+        "transferSize": 8297392,
+        "encodedBodySize": 8297092
+      }
+    ],
+    "fullBankReferences": []
+  },
+  "requestFailures": [],
+  "durationMilliseconds": 259669.44658299998,
+  "roundsDetail": [
+    {
+      "round": 0,
+      "order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "cold": {
+        "hot2LoadMilliseconds": 59323.053792,
+        "baselineLoadMilliseconds": 57777.531083,
+        "hot2LoadAndFirstEvaluationMilliseconds": 64383.52454200001,
+        "baselineLoadAndFirstEvaluationMilliseconds": 60677.728333
+      },
+      "warm": {
+        "hot2": {
+          "count": 10,
+          "minimum": 5970.649624999991,
+          "median": 7877.429415999999,
+          "p90": 10623.843166999985,
+          "maximum": 10623.843166999985,
+          "mean": 7784.966870799998
+        },
+        "baseline": {
+          "count": 10,
+          "minimum": 3368.471458999993,
+          "median": 5206.916583000013,
+          "p90": 9367.447667,
+          "maximum": 9367.447667,
+          "mean": 5562.010554099999
+        }
+      },
+      "resources": {
+        "hot2": [
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-certified-upper-int10/index.css",
+            "transferSize": 224396,
+            "encodedBodySize": 224096
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-certified-upper-int10-one-step/index.css",
+            "transferSize": 5001540,
+            "encodedBodySize": 5001240
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-certified-int10-unrolled6-gated-gsub-hot2/split-bank.css",
+            "transferSize": 32877,
+            "encodedBodySize": 32577
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-certified-int10-unrolled6-gated-gsub-hot2/topology.css",
+            "transferSize": 716496,
+            "encodedBodySize": 716196
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d0.woff2",
+            "transferSize": 10699196,
+            "encodedBodySize": 10698896
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d1.woff2",
+            "transferSize": 10620308,
+            "encodedBodySize": 10620008
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d2.woff2",
+            "transferSize": 10652700,
+            "encodedBodySize": 10652400
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h0.woff2",
+            "transferSize": 58596,
+            "encodedBodySize": 58296
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h0.woff2",
+            "transferSize": 4968956,
+            "encodedBodySize": 4968656
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d3.woff2",
+            "transferSize": 10646976,
+            "encodedBodySize": 10646676
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l0.woff2",
+            "transferSize": 102016,
+            "encodedBodySize": 101716
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l0.woff2",
+            "transferSize": 8287064,
+            "encodedBodySize": 8286764
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d4.woff2",
+            "transferSize": 8563344,
+            "encodedBodySize": 8563044
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h1.woff2",
+            "transferSize": 58692,
+            "encodedBodySize": 58392
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h1.woff2",
+            "transferSize": 4943232,
+            "encodedBodySize": 4942932
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l1.woff2",
+            "transferSize": 101632,
+            "encodedBodySize": 101332
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l1.woff2",
+            "transferSize": 8296776,
+            "encodedBodySize": 8296476
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h2.woff2",
+            "transferSize": 59024,
+            "encodedBodySize": 58724
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l2.woff2",
+            "transferSize": 101860,
+            "encodedBodySize": 101560
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h2.woff2",
+            "transferSize": 4975632,
+            "encodedBodySize": 4975332
+          },
+          {
+            "name": "http://localhost:4178/favicon.ico",
+            "transferSize": 760,
+            "encodedBodySize": 460
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h3.woff2",
+            "transferSize": 61824,
+            "encodedBodySize": 61524
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l3.woff2",
+            "transferSize": 102028,
+            "encodedBodySize": 101728
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l2.woff2",
+            "transferSize": 8295656,
+            "encodedBodySize": 8295356
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h4.woff2",
+            "transferSize": 58540,
+            "encodedBodySize": 58240
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l4.woff2",
+            "transferSize": 102416,
+            "encodedBodySize": 102116
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h3.woff2",
+            "transferSize": 4924144,
+            "encodedBodySize": 4923844
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-h5.woff2",
+            "transferSize": 58532,
+            "encodedBodySize": 58232
+          },
+          {
+            "name": "http://localhost:4178/experiments/gsub-split-complement-fine-scorer/score-l5.woff2",
+            "transferSize": 101484,
+            "encodedBodySize": 101184
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l3.woff2",
+            "transferSize": 8283180,
+            "encodedBodySize": 8282880
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h4.woff2",
+            "transferSize": 4915696,
+            "encodedBodySize": 4915396
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l4.woff2",
+            "transferSize": 8296928,
+            "encodedBodySize": 8296628
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h5.woff2",
+            "transferSize": 4950940,
+            "encodedBodySize": 4950640
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l5.woff2",
+            "transferSize": 8297392,
+            "encodedBodySize": 8297092
+          }
+        ],
+        "baseline": [
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-certified-upper-int10/index.css",
+            "transferSize": 224396,
+            "encodedBodySize": 224096
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-certified-int10-unrolled6-gated/index.css",
+            "transferSize": 5689711,
+            "encodedBodySize": 5689411
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d0.woff2",
+            "transferSize": 10699196,
+            "encodedBodySize": 10698896
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d1.woff2",
+            "transferSize": 10620308,
+            "encodedBodySize": 10620008
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d2.woff2",
+            "transferSize": 10652700,
+            "encodedBodySize": 10652400
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h0.woff2",
+            "transferSize": 4968956,
+            "encodedBodySize": 4968656
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d3.woff2",
+            "transferSize": 10646976,
+            "encodedBodySize": 10646676
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l0.woff2",
+            "transferSize": 8287064,
+            "encodedBodySize": 8286764
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head/score-d4.woff2",
+            "transferSize": 8563344,
+            "encodedBodySize": 8563044
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h1.woff2",
+            "transferSize": 4943232,
+            "encodedBodySize": 4942932
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l1.woff2",
+            "transferSize": 8296776,
+            "encodedBodySize": 8296476
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h2.woff2",
+            "transferSize": 4975632,
+            "encodedBodySize": 4975332
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l2.woff2",
+            "transferSize": 8295656,
+            "encodedBodySize": 8295356
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h3.woff2",
+            "transferSize": 4924144,
+            "encodedBodySize": 4923844
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l3.woff2",
+            "transferSize": 8283180,
+            "encodedBodySize": 8282880
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h4.woff2",
+            "transferSize": 4915696,
+            "encodedBodySize": 4915396
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l4.woff2",
+            "transferSize": 8296928,
+            "encodedBodySize": 8296628
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-h5.woff2",
+            "transferSize": 4950940,
+            "encodedBodySize": 4950640
+          },
+          {
+            "name": "http://localhost:4178/experiments/gpt2-hvar-grid-output-head-global16-twoplane/score-l5.woff2",
+            "transferSize": 8297392,
+            "encodedBodySize": 8297092
+          }
+        ]
+      },
+      "requestFailures": [],
+      "hot2Samples": [
+        {
+          "fixture": 0,
+          "milliseconds": 7401.3945419999945,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 1,
+                "topLocal": 11,
+                "topBucket": 4945,
+                "runnerLocal": 13,
+                "runnerBucket": 4900,
+                "marginBuckets": 45,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 11,
+                "fineBucket": 4945,
+                "bestWinner": 11,
+                "bestBucket": 4945,
+                "selectedGroups": [
+                  0
+                ],
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 2,
+                "topLocal": 34,
+                "topBucket": 4557,
+                "runnerLocal": 28,
+                "runnerBucket": 4554,
+                "marginBuckets": 3,
+                "fallback": 1,
+                "route": "margin-fallback",
+                "exactDisplay": "grid",
+                "fineWinner": 290,
+                "fineBucket": 4558,
+                "bestWinner": 11,
+                "bestBucket": 4945,
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 11,
+            "finalBucket": 4945
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 6916.738291000016,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 1,
+                "topLocal": 11,
+                "topBucket": 12552,
+                "runnerLocal": 13,
+                "runnerBucket": 12103,
+                "marginBuckets": 449,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 11,
+                "fineBucket": 12552,
+                "bestWinner": 11,
+                "bestBucket": 12552,
+                "selectedGroups": [
+                  0
+                ],
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 2,
+                "topLocal": 221,
+                "topBucket": 12621,
+                "runnerLocal": 30,
+                "runnerBucket": 12343,
+                "marginBuckets": 278,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 477,
+                "fineBucket": 12621,
+                "bestWinner": 477,
+                "bestBucket": 12621,
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "done": 0
+              },
+              {
+                "stage": 2,
+                "group": 5,
+                "hot2Eligible": false,
+                "topDisplay": "none",
+                "runnerDisplay": "none",
+                "probeFeature": 1,
+                "topLocal": 255,
+                "topBucket": 0,
+                "runnerLocal": 255,
+                "runnerBucket": 0,
+                "marginBuckets": 0,
+                "fallback": 1,
+                "route": "other-group-fallback",
+                "exactDisplay": "grid",
+                "fineWinner": 1351,
+                "fineBucket": 12440,
+                "bestWinner": 477,
+                "bestBucket": 12621,
+                "selectedGroups": [
+                  0,
+                  1,
+                  5
+                ],
+                "done": 1
+              }
+            ],
+            "activeStages": 3,
+            "finalWinner": 477,
+            "finalBucket": 12621
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 7126.097249999992,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 1,
+                "topLocal": 198,
+                "topBucket": 5137,
+                "runnerLocal": 13,
+                "runnerBucket": 4615,
+                "marginBuckets": 522,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 198,
+                "fineBucket": 5137,
+                "bestWinner": 198,
+                "bestBucket": 5137,
+                "selectedGroups": [
+                  0
+                ],
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 8565.099832999986,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 1,
+                "topLocal": 198,
+                "topBucket": 4577,
+                "runnerLocal": 13,
+                "runnerBucket": 4269,
+                "marginBuckets": 308,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 198,
+                "fineBucket": 4577,
+                "bestWinner": 198,
+                "bestBucket": 4577,
+                "selectedGroups": [
+                  0
+                ],
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 2,
+                "topLocal": 34,
+                "topBucket": 4383,
+                "runnerLocal": 28,
+                "runnerBucket": 4296,
+                "marginBuckets": 87,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 290,
+                "fineBucket": 4383,
+                "bestWinner": 198,
+                "bestBucket": 4577,
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 8894.248833999998,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 1,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 2,
+                "topLocal": 6,
+                "topBucket": 4440,
+                "runnerLocal": 34,
+                "runnerBucket": 4425,
+                "marginBuckets": 15,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 262,
+                "fineBucket": 4440,
+                "bestWinner": 262,
+                "bestBucket": 4440,
+                "selectedGroups": [
+                  1
+                ],
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 0,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 1,
+                "topLocal": 198,
+                "topBucket": 4193,
+                "runnerLocal": 11,
+                "runnerBucket": 4084,
+                "marginBuckets": 109,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 198,
+                "fineBucket": 4193,
+                "bestWinner": 262,
+                "bestBucket": 4440,
+                "selectedGroups": [
+                  1,
+                  0
+                ],
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 5970.649624999991,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 1,
+                "topLocal": 198,
+                "topBucket": 5190,
+                "runnerLocal": 13,
+                "runnerBucket": 4477,
+                "marginBuckets": 713,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 198,
+                "fineBucket": 5190,
+                "bestWinner": 198,
+                "bestBucket": 5190,
+                "selectedGroups": [
+                  0
+                ],
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 10623.843166999985,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 1,
+                "topLocal": 11,
+                "topBucket": 4036,
+                "runnerLocal": 13,
+                "runnerBucket": 4021,
+                "marginBuckets": 15,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 11,
+                "fineBucket": 4036,
+                "bestWinner": 11,
+                "bestBucket": 4036,
+                "selectedGroups": [
+                  0
+                ],
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 2,
+                "topLocal": 6,
+                "topBucket": 4075,
+                "runnerLocal": 1,
+                "runnerBucket": 4030,
+                "marginBuckets": 45,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 262,
+                "fineBucket": 4075,
+                "bestWinner": 262,
+                "bestBucket": 4075,
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4075
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 7996.997167000023,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 1,
+                "topLocal": 198,
+                "topBucket": 4132,
+                "runnerLocal": 11,
+                "runnerBucket": 3937,
+                "marginBuckets": 195,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 198,
+                "fineBucket": 4132,
+                "bestWinner": 198,
+                "bestBucket": 4132,
+                "selectedGroups": [
+                  0
+                ],
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 2,
+                "topLocal": 6,
+                "topBucket": 4055,
+                "runnerLocal": 110,
+                "runnerBucket": 4003,
+                "marginBuckets": 52,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 262,
+                "fineBucket": 4055,
+                "bestWinner": 198,
+                "bestBucket": 4132,
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 6477.170582999999,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 1,
+                "topLocal": 13,
+                "topBucket": 5488,
+                "runnerLocal": 11,
+                "runnerBucket": 5474,
+                "marginBuckets": 14,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 13,
+                "fineBucket": 5488,
+                "bestWinner": 13,
+                "bestBucket": 5488,
+                "selectedGroups": [
+                  0
+                ],
+                "done": 0
+              },
+              {
+                "stage": 1,
+                "group": 1,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 2,
+                "topLocal": 62,
+                "topBucket": 5389,
+                "runnerLocal": 28,
+                "runnerBucket": 5303,
+                "marginBuckets": 86,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 318,
+                "fineBucket": 5389,
+                "bestWinner": 13,
+                "bestBucket": 5488,
+                "selectedGroups": [
+                  0,
+                  1
+                ],
+                "done": 1
+              }
+            ],
+            "activeStages": 2,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 7877.429415999999,
+          "output": {
+            "stages": [
+              {
+                "stage": 0,
+                "group": 0,
+                "hot2Eligible": true,
+                "topDisplay": "grid",
+                "runnerDisplay": "grid",
+                "probeFeature": 1,
+                "topLocal": 11,
+                "topBucket": 5026,
+                "runnerLocal": 13,
+                "runnerBucket": 4976,
+                "marginBuckets": 50,
+                "fallback": 0,
+                "route": "hot2-accept",
+                "exactDisplay": "none",
+                "fineWinner": 11,
+                "fineBucket": 5026,
+                "bestWinner": 11,
+                "bestBucket": 5026,
+                "selectedGroups": [
+                  0
+                ],
+                "done": 1
+              }
+            ],
+            "activeStages": 1,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        }
+      ],
+      "baselineSamples": [
+        {
+          "fixture": 0,
+          "milliseconds": 6361.80483400001,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              11,
+              290
+            ],
+            "activeStages": 2,
+            "finalWinner": 11,
+            "finalBucket": 4946
+          }
+        },
+        {
+          "fixture": 1,
+          "milliseconds": 4640.094582999998,
+          "output": {
+            "groups": [
+              0,
+              1,
+              5
+            ],
+            "fineWinners": [
+              11,
+              477,
+              1351
+            ],
+            "activeStages": 3,
+            "finalWinner": 477,
+            "finalBucket": 12620
+          }
+        },
+        {
+          "fixture": 2,
+          "milliseconds": 5090.20425000001,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              198
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5137
+          }
+        },
+        {
+          "fixture": 3,
+          "milliseconds": 6550.252665999986,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              198,
+              290
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4577
+          }
+        },
+        {
+          "fixture": 4,
+          "milliseconds": 6520.987290999998,
+          "output": {
+            "groups": [
+              1,
+              0
+            ],
+            "fineWinners": [
+              262,
+              198
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4440
+          }
+        },
+        {
+          "fixture": 5,
+          "milliseconds": 3368.471458999993,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              198
+            ],
+            "activeStages": 1,
+            "finalWinner": 198,
+            "finalBucket": 5190
+          }
+        },
+        {
+          "fixture": 6,
+          "milliseconds": 9367.447667,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              11,
+              262
+            ],
+            "activeStages": 2,
+            "finalWinner": 262,
+            "finalBucket": 4074
+          }
+        },
+        {
+          "fixture": 7,
+          "milliseconds": 5206.916583000013,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              198,
+              262
+            ],
+            "activeStages": 2,
+            "finalWinner": 198,
+            "finalBucket": 4132
+          }
+        },
+        {
+          "fixture": 8,
+          "milliseconds": 4275.464582999994,
+          "output": {
+            "groups": [
+              0,
+              1
+            ],
+            "fineWinners": [
+              13,
+              318
+            ],
+            "activeStages": 2,
+            "finalWinner": 13,
+            "finalBucket": 5488
+          }
+        },
+        {
+          "fixture": 9,
+          "milliseconds": 4238.461624999996,
+          "output": {
+            "groups": [
+              0
+            ],
+            "fineWinners": [
+              11
+            ],
+            "activeStages": 1,
+            "finalWinner": 11,
+            "finalBucket": 5026
+          }
+        }
+      ]
+    }
+  ],
+  "paired": [
+    {
+      "round": 0,
+      "fixture": 0,
+      "hot2Milliseconds": 7401.3945419999945,
+      "baselineMilliseconds": 6361.80483400001,
+      "pairedSpeedup": 0.8595413739801704,
+      "hot2": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 1,
+            "topLocal": 11,
+            "topBucket": 4945,
+            "runnerLocal": 13,
+            "runnerBucket": 4900,
+            "marginBuckets": 45,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 11,
+            "fineBucket": 4945,
+            "bestWinner": 11,
+            "bestBucket": 4945,
+            "selectedGroups": [
+              0
+            ],
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 2,
+            "topLocal": 34,
+            "topBucket": 4557,
+            "runnerLocal": 28,
+            "runnerBucket": 4554,
+            "marginBuckets": 3,
+            "fallback": 1,
+            "route": "margin-fallback",
+            "exactDisplay": "grid",
+            "fineWinner": 290,
+            "fineBucket": 4558,
+            "bestWinner": 11,
+            "bestBucket": 4945,
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 11,
+        "finalBucket": 4945
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          11,
+          290
+        ],
+        "activeStages": 2,
+        "finalWinner": 11,
+        "finalBucket": 4946
+      },
+      "stageChecks": [
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        },
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        }
+      ],
+      "activeStageCountExact": true,
+      "finalMatchesBaseline": true,
+      "finalDenseWinnerCorrect": true
+    },
+    {
+      "round": 0,
+      "fixture": 1,
+      "hot2Milliseconds": 6916.738291000016,
+      "baselineMilliseconds": 4640.094582999998,
+      "pairedSpeedup": 0.6708501012735495,
+      "hot2": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 1,
+            "topLocal": 11,
+            "topBucket": 12552,
+            "runnerLocal": 13,
+            "runnerBucket": 12103,
+            "marginBuckets": 449,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 11,
+            "fineBucket": 12552,
+            "bestWinner": 11,
+            "bestBucket": 12552,
+            "selectedGroups": [
+              0
+            ],
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 2,
+            "topLocal": 221,
+            "topBucket": 12621,
+            "runnerLocal": 30,
+            "runnerBucket": 12343,
+            "marginBuckets": 278,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 477,
+            "fineBucket": 12621,
+            "bestWinner": 477,
+            "bestBucket": 12621,
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "done": 0
+          },
+          {
+            "stage": 2,
+            "group": 5,
+            "hot2Eligible": false,
+            "topDisplay": "none",
+            "runnerDisplay": "none",
+            "probeFeature": 1,
+            "topLocal": 255,
+            "topBucket": 0,
+            "runnerLocal": 255,
+            "runnerBucket": 0,
+            "marginBuckets": 0,
+            "fallback": 1,
+            "route": "other-group-fallback",
+            "exactDisplay": "grid",
+            "fineWinner": 1351,
+            "fineBucket": 12440,
+            "bestWinner": 477,
+            "bestBucket": 12621,
+            "selectedGroups": [
+              0,
+              1,
+              5
+            ],
+            "done": 1
+          }
+        ],
+        "activeStages": 3,
+        "finalWinner": 477,
+        "finalBucket": 12621
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1,
+          5
+        ],
+        "fineWinners": [
+          11,
+          477,
+          1351
+        ],
+        "activeStages": 3,
+        "finalWinner": 477,
+        "finalBucket": 12620
+      },
+      "stageChecks": [
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        },
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        },
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        }
+      ],
+      "activeStageCountExact": true,
+      "finalMatchesBaseline": true,
+      "finalDenseWinnerCorrect": true
+    },
+    {
+      "round": 0,
+      "fixture": 2,
+      "hot2Milliseconds": 7126.097249999992,
+      "baselineMilliseconds": 5090.20425000001,
+      "pairedSpeedup": 0.714304628666135,
+      "hot2": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 1,
+            "topLocal": 198,
+            "topBucket": 5137,
+            "runnerLocal": 13,
+            "runnerBucket": 4615,
+            "marginBuckets": 522,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 198,
+            "fineBucket": 5137,
+            "bestWinner": 198,
+            "bestBucket": 5137,
+            "selectedGroups": [
+              0
+            ],
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5137
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          198
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5137
+      },
+      "stageChecks": [
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        }
+      ],
+      "activeStageCountExact": true,
+      "finalMatchesBaseline": true,
+      "finalDenseWinnerCorrect": true
+    },
+    {
+      "round": 0,
+      "fixture": 3,
+      "hot2Milliseconds": 8565.099832999986,
+      "baselineMilliseconds": 6550.252665999986,
+      "pairedSpeedup": 0.7647608076630806,
+      "hot2": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 1,
+            "topLocal": 198,
+            "topBucket": 4577,
+            "runnerLocal": 13,
+            "runnerBucket": 4269,
+            "marginBuckets": 308,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 198,
+            "fineBucket": 4577,
+            "bestWinner": 198,
+            "bestBucket": 4577,
+            "selectedGroups": [
+              0
+            ],
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 2,
+            "topLocal": 34,
+            "topBucket": 4383,
+            "runnerLocal": 28,
+            "runnerBucket": 4296,
+            "marginBuckets": 87,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 290,
+            "fineBucket": 4383,
+            "bestWinner": 198,
+            "bestBucket": 4577,
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4577
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          198,
+          290
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4577
+      },
+      "stageChecks": [
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        },
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        }
+      ],
+      "activeStageCountExact": true,
+      "finalMatchesBaseline": true,
+      "finalDenseWinnerCorrect": true
+    },
+    {
+      "round": 0,
+      "fixture": 4,
+      "hot2Milliseconds": 8894.248833999998,
+      "baselineMilliseconds": 6520.987290999998,
+      "pairedSpeedup": 0.7331689738735725,
+      "hot2": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 1,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 2,
+            "topLocal": 6,
+            "topBucket": 4440,
+            "runnerLocal": 34,
+            "runnerBucket": 4425,
+            "marginBuckets": 15,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 262,
+            "fineBucket": 4440,
+            "bestWinner": 262,
+            "bestBucket": 4440,
+            "selectedGroups": [
+              1
+            ],
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 0,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 1,
+            "topLocal": 198,
+            "topBucket": 4193,
+            "runnerLocal": 11,
+            "runnerBucket": 4084,
+            "marginBuckets": 109,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 198,
+            "fineBucket": 4193,
+            "bestWinner": 262,
+            "bestBucket": 4440,
+            "selectedGroups": [
+              1,
+              0
+            ],
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4440
+      },
+      "baseline": {
+        "groups": [
+          1,
+          0
+        ],
+        "fineWinners": [
+          262,
+          198
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4440
+      },
+      "stageChecks": [
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        },
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        }
+      ],
+      "activeStageCountExact": true,
+      "finalMatchesBaseline": true,
+      "finalDenseWinnerCorrect": true
+    },
+    {
+      "round": 0,
+      "fixture": 5,
+      "hot2Milliseconds": 5970.649624999991,
+      "baselineMilliseconds": 3368.471458999993,
+      "pairedSpeedup": 0.564171684919461,
+      "hot2": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 1,
+            "topLocal": 198,
+            "topBucket": 5190,
+            "runnerLocal": 13,
+            "runnerBucket": 4477,
+            "marginBuckets": 713,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 198,
+            "fineBucket": 5190,
+            "bestWinner": 198,
+            "bestBucket": 5190,
+            "selectedGroups": [
+              0
+            ],
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5190
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          198
+        ],
+        "activeStages": 1,
+        "finalWinner": 198,
+        "finalBucket": 5190
+      },
+      "stageChecks": [
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        }
+      ],
+      "activeStageCountExact": true,
+      "finalMatchesBaseline": true,
+      "finalDenseWinnerCorrect": true
+    },
+    {
+      "round": 0,
+      "fixture": 6,
+      "hot2Milliseconds": 10623.843166999985,
+      "baselineMilliseconds": 9367.447667,
+      "pairedSpeedup": 0.8817381356021305,
+      "hot2": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 1,
+            "topLocal": 11,
+            "topBucket": 4036,
+            "runnerLocal": 13,
+            "runnerBucket": 4021,
+            "marginBuckets": 15,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 11,
+            "fineBucket": 4036,
+            "bestWinner": 11,
+            "bestBucket": 4036,
+            "selectedGroups": [
+              0
+            ],
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 2,
+            "topLocal": 6,
+            "topBucket": 4075,
+            "runnerLocal": 1,
+            "runnerBucket": 4030,
+            "marginBuckets": 45,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 262,
+            "fineBucket": 4075,
+            "bestWinner": 262,
+            "bestBucket": 4075,
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4075
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          11,
+          262
+        ],
+        "activeStages": 2,
+        "finalWinner": 262,
+        "finalBucket": 4074
+      },
+      "stageChecks": [
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        },
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        }
+      ],
+      "activeStageCountExact": true,
+      "finalMatchesBaseline": true,
+      "finalDenseWinnerCorrect": true
+    },
+    {
+      "round": 0,
+      "fixture": 7,
+      "hot2Milliseconds": 7996.997167000023,
+      "baselineMilliseconds": 5206.916583000013,
+      "pairedSpeedup": 0.6511089693124557,
+      "hot2": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 1,
+            "topLocal": 198,
+            "topBucket": 4132,
+            "runnerLocal": 11,
+            "runnerBucket": 3937,
+            "marginBuckets": 195,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 198,
+            "fineBucket": 4132,
+            "bestWinner": 198,
+            "bestBucket": 4132,
+            "selectedGroups": [
+              0
+            ],
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 2,
+            "topLocal": 6,
+            "topBucket": 4055,
+            "runnerLocal": 110,
+            "runnerBucket": 4003,
+            "marginBuckets": 52,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 262,
+            "fineBucket": 4055,
+            "bestWinner": 198,
+            "bestBucket": 4132,
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4132
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          198,
+          262
+        ],
+        "activeStages": 2,
+        "finalWinner": 198,
+        "finalBucket": 4132
+      },
+      "stageChecks": [
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        },
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        }
+      ],
+      "activeStageCountExact": true,
+      "finalMatchesBaseline": true,
+      "finalDenseWinnerCorrect": true
+    },
+    {
+      "round": 0,
+      "fixture": 8,
+      "hot2Milliseconds": 6477.170582999999,
+      "baselineMilliseconds": 4275.464582999994,
+      "pairedSpeedup": 0.6600821343537547,
+      "hot2": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 1,
+            "topLocal": 13,
+            "topBucket": 5488,
+            "runnerLocal": 11,
+            "runnerBucket": 5474,
+            "marginBuckets": 14,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 13,
+            "fineBucket": 5488,
+            "bestWinner": 13,
+            "bestBucket": 5488,
+            "selectedGroups": [
+              0
+            ],
+            "done": 0
+          },
+          {
+            "stage": 1,
+            "group": 1,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 2,
+            "topLocal": 62,
+            "topBucket": 5389,
+            "runnerLocal": 28,
+            "runnerBucket": 5303,
+            "marginBuckets": 86,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 318,
+            "fineBucket": 5389,
+            "bestWinner": 13,
+            "bestBucket": 5488,
+            "selectedGroups": [
+              0,
+              1
+            ],
+            "done": 1
+          }
+        ],
+        "activeStages": 2,
+        "finalWinner": 13,
+        "finalBucket": 5488
+      },
+      "baseline": {
+        "groups": [
+          0,
+          1
+        ],
+        "fineWinners": [
+          13,
+          318
+        ],
+        "activeStages": 2,
+        "finalWinner": 13,
+        "finalBucket": 5488
+      },
+      "stageChecks": [
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        },
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        }
+      ],
+      "activeStageCountExact": true,
+      "finalMatchesBaseline": true,
+      "finalDenseWinnerCorrect": true
+    },
+    {
+      "round": 0,
+      "fixture": 9,
+      "hot2Milliseconds": 7877.429415999999,
+      "baselineMilliseconds": 4238.461624999996,
+      "pairedSpeedup": 0.5380513618301898,
+      "hot2": {
+        "stages": [
+          {
+            "stage": 0,
+            "group": 0,
+            "hot2Eligible": true,
+            "topDisplay": "grid",
+            "runnerDisplay": "grid",
+            "probeFeature": 1,
+            "topLocal": 11,
+            "topBucket": 5026,
+            "runnerLocal": 13,
+            "runnerBucket": 4976,
+            "marginBuckets": 50,
+            "fallback": 0,
+            "route": "hot2-accept",
+            "exactDisplay": "none",
+            "fineWinner": 11,
+            "fineBucket": 5026,
+            "bestWinner": 11,
+            "bestBucket": 5026,
+            "selectedGroups": [
+              0
+            ],
+            "done": 1
+          }
+        ],
+        "activeStages": 1,
+        "finalWinner": 11,
+        "finalBucket": 5026
+      },
+      "baseline": {
+        "groups": [
+          0
+        ],
+        "fineWinners": [
+          11
+        ],
+        "activeStages": 1,
+        "finalWinner": 11,
+        "finalBucket": 5026
+      },
+      "stageChecks": [
+        {
+          "groupExact": true,
+          "winnerExact": true,
+          "routeExact": true,
+          "exactDisplayCorrect": true,
+          "hot2GridCorrect": true,
+          "featureCorrect": true,
+          "immutableVisitsExact": true
+        }
+      ],
+      "activeStageCountExact": true,
+      "finalMatchesBaseline": true,
+      "finalDenseWinnerCorrect": true
+    }
+  ]
+}

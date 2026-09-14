@@ -1,0 +1,701 @@
+{
+  "model": "gpt2-small",
+  "prompts": 10,
+  "layers": [
+    {
+      "layer": 0,
+      "retainedEnergy": {
+        "64": 0.2720535134203055,
+        "128": 0.424134798206207,
+        "256": 0.6483099331621076,
+        "384": 0.8033809064843747,
+        "512": 0.9077497754477467
+      }
+    },
+    {
+      "layer": 1,
+      "retainedEnergy": {
+        "64": 0.2990237556635503,
+        "128": 0.44259649565942855,
+        "256": 0.6477293079890529,
+        "384": 0.7896545429574658,
+        "512": 0.8895987401770102
+      }
+    },
+    {
+      "layer": 2,
+      "retainedEnergy": {
+        "64": 0.31741706220740873,
+        "128": 0.457057996433935,
+        "256": 0.6591475048739902,
+        "384": 0.7993528768035433,
+        "512": 0.8973163213250055
+      }
+    },
+    {
+      "layer": 3,
+      "retainedEnergy": {
+        "64": 0.2858125681206387,
+        "128": 0.4376916356977257,
+        "256": 0.6537633119740596,
+        "384": 0.8005447508456632,
+        "512": 0.9008998316124397
+      }
+    },
+    {
+      "layer": 4,
+      "retainedEnergy": {
+        "64": 0.3024103883937995,
+        "128": 0.45686052435943253,
+        "256": 0.6682896982046539,
+        "384": 0.80918339771677,
+        "512": 0.9051061011757932
+      }
+    },
+    {
+      "layer": 5,
+      "retainedEnergy": {
+        "64": 0.29588548655306574,
+        "128": 0.45196863943072085,
+        "256": 0.6672973687348109,
+        "384": 0.8096025629517902,
+        "512": 0.9051732699393724
+      }
+    },
+    {
+      "layer": 6,
+      "retainedEnergy": {
+        "64": 0.2944486985934759,
+        "128": 0.4502764125868195,
+        "256": 0.6652032977797973,
+        "384": 0.8075803660211738,
+        "512": 0.9033688047861197
+      }
+    },
+    {
+      "layer": 7,
+      "retainedEnergy": {
+        "64": 0.2879911399830914,
+        "128": 0.4436806879458021,
+        "256": 0.6600421583987989,
+        "384": 0.8046199781389943,
+        "512": 0.9028510469722599
+      }
+    },
+    {
+      "layer": 8,
+      "retainedEnergy": {
+        "64": 0.2759080872197631,
+        "128": 0.43144052864780114,
+        "256": 0.6497087682029432,
+        "384": 0.7976832639803635,
+        "512": 0.8990119511372263
+      }
+    },
+    {
+      "layer": 9,
+      "retainedEnergy": {
+        "64": 0.27777897691240155,
+        "128": 0.4329199806560826,
+        "256": 0.6518158417245142,
+        "384": 0.8005768217094209,
+        "512": 0.901539731036024
+      }
+    },
+    {
+      "layer": 10,
+      "retainedEnergy": {
+        "64": 0.28768299328307156,
+        "128": 0.44158524890432543,
+        "256": 0.6571988466380995,
+        "384": 0.8024303707419921,
+        "512": 0.9014971492574316
+      }
+    },
+    {
+      "layer": 11,
+      "retainedEnergy": {
+        "64": 0.30837036729747397,
+        "128": 0.4592727783251485,
+        "256": 0.6680996455592207,
+        "384": 0.8081395722264945,
+        "512": 0.9037495871083051
+      }
+    }
+  ],
+  "summary": [
+    {
+      "rank": 64,
+      "top1Matches": 1,
+      "cases": 10,
+      "medianExactWinnerRank": 181.0,
+      "maximumExactWinnerRank": 7810,
+      "meanTop10Overlap": 1.8,
+      "meanLogitRmse": 62.08596073885509
+    },
+    {
+      "rank": 128,
+      "top1Matches": 1,
+      "cases": 10,
+      "medianExactWinnerRank": 120.5,
+      "maximumExactWinnerRank": 6932,
+      "meanTop10Overlap": 1.3,
+      "meanLogitRmse": 51.38073646384045
+    },
+    {
+      "rank": 256,
+      "top1Matches": 0,
+      "cases": 10,
+      "medianExactWinnerRank": 22.5,
+      "maximumExactWinnerRank": 2318,
+      "meanTop10Overlap": 1.9,
+      "meanLogitRmse": 36.83492369948088
+    },
+    {
+      "rank": 384,
+      "top1Matches": 0,
+      "cases": 10,
+      "medianExactWinnerRank": 7.5,
+      "maximumExactWinnerRank": 895,
+      "meanTop10Overlap": 2.5,
+      "meanLogitRmse": 28.92885629038293
+    },
+    {
+      "rank": 512,
+      "top1Matches": 2,
+      "cases": 10,
+      "medianExactWinnerRank": 4.5,
+      "maximumExactWinnerRank": 35,
+      "meanTop10Overlap": 4.0,
+      "meanLogitRmse": 25.55304804551948
+    }
+  ],
+  "cases": [
+    {
+      "prompt": "Hello",
+      "tokens": [
+        15496
+      ],
+      "exactWinner": 11,
+      "approximations": [
+        {
+          "rank": 64,
+          "winner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 24.617492922339892,
+          "top10Overlap": 9
+        },
+        {
+          "rank": 128,
+          "winner": 11,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 23.19872610265444,
+          "top10Overlap": 9
+        },
+        {
+          "rank": 256,
+          "winner": 198,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 15.403412548933513,
+          "top10Overlap": 9
+        },
+        {
+          "rank": 384,
+          "winner": 13,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 10.011814372402947,
+          "top10Overlap": 7
+        },
+        {
+          "rank": 512,
+          "winner": 13,
+          "top1Matches": false,
+          "exactWinnerRank": 5,
+          "logitRmse": 48.057952633674944,
+          "top10Overlap": 5
+        }
+      ]
+    },
+    {
+      "prompt": "Once upon a time",
+      "tokens": [
+        7454,
+        2402,
+        257,
+        640
+      ],
+      "exactWinner": 11,
+      "approximations": [
+        {
+          "rank": 64,
+          "winner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 12,
+          "logitRmse": 6.332795483952314,
+          "top10Overlap": 3
+        },
+        {
+          "rank": 128,
+          "winner": 640,
+          "top1Matches": false,
+          "exactWinnerRank": 5,
+          "logitRmse": 4.105096859022183,
+          "top10Overlap": 2
+        },
+        {
+          "rank": 256,
+          "winner": 257,
+          "top1Matches": false,
+          "exactWinnerRank": 7,
+          "logitRmse": 17.32746014600427,
+          "top10Overlap": 3
+        },
+        {
+          "rank": 384,
+          "winner": 257,
+          "top1Matches": false,
+          "exactWinnerRank": 6,
+          "logitRmse": 8.369134745653525,
+          "top10Overlap": 2
+        },
+        {
+          "rank": 512,
+          "winner": 286,
+          "top1Matches": false,
+          "exactWinnerRank": 3,
+          "logitRmse": 30.68683650199728,
+          "top10Overlap": 4
+        }
+      ]
+    },
+    {
+      "prompt": "The quick brown fox",
+      "tokens": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "exactWinner": 274,
+      "approximations": [
+        {
+          "rank": 64,
+          "winner": 32959,
+          "top1Matches": false,
+          "exactWinnerRank": 6204,
+          "logitRmse": 62.319630702266934,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 128,
+          "winner": 21831,
+          "top1Matches": false,
+          "exactWinnerRank": 4189,
+          "logitRmse": 45.52185544539162,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 256,
+          "winner": 21831,
+          "top1Matches": false,
+          "exactWinnerRank": 2318,
+          "logitRmse": 29.436736766892665,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 384,
+          "winner": 21831,
+          "top1Matches": false,
+          "exactWinnerRank": 895,
+          "logitRmse": 24.05273794121297,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 512,
+          "winner": 21831,
+          "top1Matches": false,
+          "exactWinnerRank": 35,
+          "logitRmse": 21.71562448678899,
+          "top10Overlap": 1
+        }
+      ]
+    },
+    {
+      "prompt": "Paris is the capital of",
+      "tokens": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "exactWinner": 262,
+      "approximations": [
+        {
+          "rank": 64,
+          "winner": 2401,
+          "top1Matches": false,
+          "exactWinnerRank": 30,
+          "logitRmse": 60.187522692866395,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 128,
+          "winner": 26850,
+          "top1Matches": false,
+          "exactWinnerRank": 68,
+          "logitRmse": 51.187173221408344,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 256,
+          "winner": 3139,
+          "top1Matches": false,
+          "exactWinnerRank": 4,
+          "logitRmse": 24.336434315245114,
+          "top10Overlap": 2
+        },
+        {
+          "rank": 384,
+          "winner": 3139,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 22.36122485042128,
+          "top10Overlap": 2
+        },
+        {
+          "rank": 512,
+          "winner": 262,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 17.940950905225037,
+          "top10Overlap": 2
+        }
+      ]
+    },
+    {
+      "prompt": "In a shocking finding, scientists",
+      "tokens": [
+        818,
+        257,
+        14702,
+        4917,
+        11,
+        5519
+      ],
+      "exactWinner": 423,
+      "approximations": [
+        {
+          "rank": 64,
+          "winner": 2401,
+          "top1Matches": false,
+          "exactWinnerRank": 304,
+          "logitRmse": 110.04953035439434,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 128,
+          "winner": 9622,
+          "top1Matches": false,
+          "exactWinnerRank": 465,
+          "logitRmse": 100.4684597182756,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 256,
+          "winner": 4240,
+          "top1Matches": false,
+          "exactWinnerRank": 34,
+          "logitRmse": 59.45466946633446,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 384,
+          "winner": 11,
+          "top1Matches": false,
+          "exactWinnerRank": 7,
+          "logitRmse": 36.29506435707527,
+          "top10Overlap": 3
+        },
+        {
+          "rank": 512,
+          "winner": 423,
+          "top1Matches": true,
+          "exactWinnerRank": 1,
+          "logitRmse": 14.182591173933638,
+          "top10Overlap": 8
+        }
+      ]
+    },
+    {
+      "prompt": "She opened the door and",
+      "tokens": [
+        3347,
+        4721,
+        262,
+        3420,
+        290
+      ],
+      "exactWinner": 2497,
+      "approximations": [
+        {
+          "rank": 64,
+          "winner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 7810,
+          "logitRmse": 94.45683163191691,
+          "top10Overlap": 2
+        },
+        {
+          "rank": 128,
+          "winner": 37699,
+          "top1Matches": false,
+          "exactWinnerRank": 6932,
+          "logitRmse": 76.56218040098948,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 256,
+          "winner": 4721,
+          "top1Matches": false,
+          "exactWinnerRank": 84,
+          "logitRmse": 60.779226237193825,
+          "top10Overlap": 1
+        },
+        {
+          "rank": 384,
+          "winner": 4721,
+          "top1Matches": false,
+          "exactWinnerRank": 15,
+          "logitRmse": 44.585399731666385,
+          "top10Overlap": 1
+        },
+        {
+          "rank": 512,
+          "winner": 4721,
+          "top1Matches": false,
+          "exactWinnerRank": 18,
+          "logitRmse": 16.26511969531814,
+          "top10Overlap": 3
+        }
+      ]
+    },
+    {
+      "prompt": "To be or not to be",
+      "tokens": [
+        2514,
+        307,
+        393,
+        407,
+        284,
+        307
+      ],
+      "exactWinner": 11,
+      "approximations": [
+        {
+          "rank": 64,
+          "winner": 3763,
+          "top1Matches": false,
+          "exactWinnerRank": 21,
+          "logitRmse": 39.65136750601974,
+          "top10Overlap": 1
+        },
+        {
+          "rank": 128,
+          "winner": 307,
+          "top1Matches": false,
+          "exactWinnerRank": 13,
+          "logitRmse": 29.75394928582371,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 256,
+          "winner": 307,
+          "top1Matches": false,
+          "exactWinnerRank": 18,
+          "logitRmse": 2.8380851295710685,
+          "top10Overlap": 2
+        },
+        {
+          "rank": 384,
+          "winner": 307,
+          "top1Matches": false,
+          "exactWinnerRank": 8,
+          "logitRmse": 9.251762144656409,
+          "top10Overlap": 4
+        },
+        {
+          "rank": 512,
+          "winner": 393,
+          "top1Matches": false,
+          "exactWinnerRank": 7,
+          "logitRmse": 12.960602806192465,
+          "top10Overlap": 4
+        }
+      ]
+    },
+    {
+      "prompt": "CSS can perform matrix multiplication",
+      "tokens": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "exactWinner": 290,
+      "approximations": [
+        {
+          "rank": 64,
+          "winner": 17593,
+          "top1Matches": false,
+          "exactWinnerRank": 919,
+          "logitRmse": 84.3147801525999,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 128,
+          "winner": 17593,
+          "top1Matches": false,
+          "exactWinnerRank": 173,
+          "logitRmse": 68.77896253797219,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 256,
+          "winner": 17593,
+          "top1Matches": false,
+          "exactWinnerRank": 27,
+          "logitRmse": 61.803644620175874,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 384,
+          "winner": 17593,
+          "top1Matches": false,
+          "exactWinnerRank": 7,
+          "logitRmse": 55.60737231485924,
+          "top10Overlap": 3
+        },
+        {
+          "rank": 512,
+          "winner": 17593,
+          "top1Matches": false,
+          "exactWinnerRank": 2,
+          "logitRmse": 33.75781753212953,
+          "top10Overlap": 4
+        }
+      ]
+    },
+    {
+      "prompt": "The meaning of life is",
+      "tokens": [
+        464,
+        3616,
+        286,
+        1204,
+        318
+      ],
+      "exactWinner": 407,
+      "approximations": [
+        {
+          "rank": 64,
+          "winner": 262,
+          "top1Matches": false,
+          "exactWinnerRank": 58,
+          "logitRmse": 70.64082180473945,
+          "top10Overlap": 3
+        },
+        {
+          "rank": 128,
+          "winner": 1573,
+          "top1Matches": false,
+          "exactWinnerRank": 26,
+          "logitRmse": 56.87551096517338,
+          "top10Overlap": 2
+        },
+        {
+          "rank": 256,
+          "winner": 3367,
+          "top1Matches": false,
+          "exactWinnerRank": 5,
+          "logitRmse": 48.99305384598264,
+          "top10Overlap": 2
+        },
+        {
+          "rank": 384,
+          "winner": 1204,
+          "top1Matches": false,
+          "exactWinnerRank": 20,
+          "logitRmse": 40.515682441930885,
+          "top10Overlap": 3
+        },
+        {
+          "rank": 512,
+          "winner": 1204,
+          "top1Matches": false,
+          "exactWinnerRank": 8,
+          "logitRmse": 31.189179873414744,
+          "top10Overlap": 5
+        }
+      ]
+    },
+    {
+      "prompt": "Machine learning models predict",
+      "tokens": [
+        37573,
+        4673,
+        4981,
+        4331
+      ],
+      "exactWinner": 262,
+      "approximations": [
+        {
+          "rank": 64,
+          "winner": 2401,
+          "top1Matches": false,
+          "exactWinnerRank": 2021,
+          "logitRmse": 68.28883413745505,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 128,
+          "winner": 4331,
+          "top1Matches": false,
+          "exactWinnerRank": 1058,
+          "logitRmse": 57.355450101693606,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 256,
+          "winner": 4331,
+          "top1Matches": false,
+          "exactWinnerRank": 996,
+          "logitRmse": 47.97651391847533,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 384,
+          "winner": 4331,
+          "top1Matches": false,
+          "exactWinnerRank": 78,
+          "logitRmse": 38.238370003950386,
+          "top10Overlap": 0
+        },
+        {
+          "rank": 512,
+          "winner": 4981,
+          "top1Matches": false,
+          "exactWinnerRank": 4,
+          "logitRmse": 28.77380484652002,
+          "top10Overlap": 4
+        }
+      ]
+    }
+  ],
+  "elapsedSeconds": 13.424665124970488
+}
