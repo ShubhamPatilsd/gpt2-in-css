@@ -1,0 +1,224 @@
+{
+  "chrome": "153.0.8010.36",
+  "rounds": 3,
+  "pageTimeoutMilliseconds": 60000,
+  "status": "finalized-after-stop",
+  "primitive": {
+    "support": {
+      "calcSize": true,
+      "zoomVariable": true,
+      "scriptElements": 0
+    },
+    "gate": {
+      "maximumRmse": 0.001,
+      "maximumAbsoluteError": 0.005
+    },
+    "observations": [
+      {
+        "mode": "initial",
+        "outputsIdenticalAcrossVariants": true,
+        "control": {
+          "rmse": 0.000029149594804522234,
+          "maximumAbsoluteError": 0.000040340206647060395
+        },
+        "font-size": {
+          "rmse": 0.000029149594804522234,
+          "maximumAbsoluteError": 0.000040340206647060395
+        },
+        "zoom": {
+          "rmse": 0.000029149594804522234,
+          "maximumAbsoluteError": 0.000040340206647060395
+        }
+      },
+      {
+        "mode": "score-only",
+        "outputsIdenticalAcrossVariants": true,
+        "control": {
+          "rmse": 0.00003557572535156936,
+          "maximumAbsoluteError": 0.000053572283680844435
+        },
+        "font-size": {
+          "rmse": 0.00003557572535156936,
+          "maximumAbsoluteError": 0.000053572283680844435
+        },
+        "zoom": {
+          "rmse": 0.00003557572535156936,
+          "maximumAbsoluteError": 0.000053572283680844435
+        }
+      },
+      {
+        "mode": "value-only",
+        "outputsIdenticalAcrossVariants": true,
+        "control": {
+          "rmse": 0.00004261647487469717,
+          "maximumAbsoluteError": 0.000051013582885221787
+        },
+        "font-size": {
+          "rmse": 0.00004261647487469717,
+          "maximumAbsoluteError": 0.000051013582885221787
+        },
+        "zoom": {
+          "rmse": 0.00004261647487469717,
+          "maximumAbsoluteError": 0.000051013582885221787
+        }
+      },
+      {
+        "mode": "both",
+        "outputsIdenticalAcrossVariants": true,
+        "control": {
+          "rmse": 0.000029115569364140607,
+          "maximumAbsoluteError": 0.00004189275248488167
+        },
+        "font-size": {
+          "rmse": 0.000029115569364140607,
+          "maximumAbsoluteError": 0.00004189275248488167
+        },
+        "zoom": {
+          "rmse": 0.000029115569364140607,
+          "maximumAbsoluteError": 0.00004189275248488167
+        }
+      }
+    ],
+    "viable": [
+      "font-size",
+      "zoom"
+    ],
+    "pass": true
+  },
+  "measurements": [
+    {
+      "status": "complete",
+      "variant": "control",
+      "context": 8,
+      "rounds": 3,
+      "samplesMilliseconds": [
+        141.87816599999996,
+        105.81379199999992,
+        29.165458999999828
+      ],
+      "medianMilliseconds": 105.81379199999992,
+      "maximumRmse": 0.00003421346760874219,
+      "maximumAbsoluteError": 0.000059007569413419,
+      "elements": 776,
+      "outputElements": 768,
+      "valueSpans": 0
+    },
+    {
+      "status": "complete",
+      "variant": "font-size",
+      "context": 8,
+      "rounds": 3,
+      "samplesMilliseconds": [
+        189.18562500000007,
+        175.45737500000178,
+        54.52820900000006
+      ],
+      "medianMilliseconds": 175.45737500000178,
+      "maximumRmse": 0.000053598308790188634,
+      "maximumAbsoluteError": 0.00034939030812841665,
+      "elements": 6920,
+      "outputElements": 768,
+      "valueSpans": 6144
+    },
+    {
+      "status": "complete",
+      "variant": "zoom",
+      "context": 8,
+      "rounds": 3,
+      "samplesMilliseconds": [
+        432.60620899999776,
+        491.2636249999996,
+        442.96545799999876
+      ],
+      "medianMilliseconds": 442.96545799999876,
+      "maximumRmse": 0.000053598308790188634,
+      "maximumAbsoluteError": 0.00034939030812841665,
+      "elements": 6920,
+      "outputElements": 768,
+      "valueSpans": 6144
+    },
+    {
+      "status": "complete",
+      "variant": "control",
+      "context": 16,
+      "rounds": 3,
+      "samplesMilliseconds": [
+        823.0261659999996,
+        834.2325419999979,
+        806.4844169999997
+      ],
+      "medianMilliseconds": 823.0261659999996,
+      "maximumRmse": 0.00003443729806624229,
+      "maximumAbsoluteError": 0.00005909736488171613,
+      "elements": 776,
+      "outputElements": 768,
+      "valueSpans": 0
+    },
+    {
+      "status": "complete",
+      "variant": "font-size",
+      "context": 16,
+      "rounds": 3,
+      "samplesMilliseconds": [
+        1065.731749999999,
+        1069.2080419999984,
+        1116.3555410000045
+      ],
+      "medianMilliseconds": 1069.2080419999984,
+      "maximumRmse": 0.00008457813812001078,
+      "maximumAbsoluteError": 0.0005435853051889428,
+      "elements": 13064,
+      "outputElements": 768,
+      "valueSpans": 12288
+    }
+  ],
+  "skippedMeasurements": [
+    {
+      "variant": "zoom",
+      "context": 16,
+      "status": "not-run",
+      "reason": "Stopped after the completed rows made the rejection decisive."
+    },
+    {
+      "variant": "control",
+      "context": 32,
+      "status": "not-run",
+      "reason": "Stopped after the completed rows made the rejection decisive."
+    },
+    {
+      "variant": "font-size",
+      "context": 32,
+      "status": "not-run",
+      "reason": "Stopped after the completed rows made the rejection decisive."
+    },
+    {
+      "variant": "zoom",
+      "context": 32,
+      "status": "not-run",
+      "reason": "Stopped after the completed rows made the rejection decisive."
+    }
+  ],
+  "comparisons": [
+    {
+      "context": 8,
+      "variant": "font-size",
+      "speedRatioVsControl": 1.6581711295253638,
+      "extraValueSpans": 6144
+    },
+    {
+      "context": 8,
+      "variant": "zoom",
+      "speedRatioVsControl": 4.186273354611458,
+      "extraValueSpans": 6144
+    },
+    {
+      "context": 16,
+      "variant": "font-size",
+      "speedRatioVsControl": 1.299117921361444,
+      "extraValueSpans": 12288
+    }
+  ],
+  "decision": "reject",
+  "accepted": false,
+  "reason": "The primitive is correct, but candidates are slower than the flat reducer and add O(context * 768) DOM value carriers."
+}
