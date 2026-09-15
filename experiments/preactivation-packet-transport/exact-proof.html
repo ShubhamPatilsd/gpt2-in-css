@@ -1,0 +1,83 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Exact eight-preactivation packet</title>
+<style>
+  @property --d0 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --d1 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --d2 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --d3 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --d4 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --d5 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --d6 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --d7 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --z0 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --z1 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --z2 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --z3 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --z4 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --z5 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --z6 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --z7 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --h0 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --h1 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --h2 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --h3 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --h4 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --h5 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --h6 { syntax:"<number>"; inherits:true; initial-value:0 }
+  @property --h7 { syntax:"<number>"; inherits:true; initial-value:0 }
+
+  @function --gelu(--z <number>) returns <number> {
+    --t:clamp(-20,calc(.7978845608028654 *
+      (var(--z) + .044715 * pow(var(--z),3))),20);
+    result:calc(.5 * var(--z) *
+      (1 + (exp(2 * var(--t)) - 1) / (exp(2 * var(--t)) + 1)));
+  }
+
+  .scope {
+    --i0:3; --i1:17; --i2:42; --i3:61;
+    --i4:0; --i5:9; --i6:33; --i7:63;
+  }
+  .scope:has(#case-1:checked) {
+    --i0:63; --i1:48; --i2:21; --i3:1;
+    --i4:57; --i5:36; --i6:12; --i7:5;
+  }
+  .carrier {
+    position:fixed;
+    inset:0 auto auto 0;
+    container-type:size;
+    width:calc((var(--i0) + 64 * var(--i1) + 4096 * var(--i2) +
+      262144 * var(--i3)) * 1px);
+    height:calc((var(--i4) + 64 * var(--i5) + 4096 * var(--i6) +
+      262144 * var(--i7)) * 1px);
+  }
+  #result {
+    --packed-x:round(nearest,100cqi / 1px,1);
+    --packed-y:round(nearest,100cqb / 1px,1);
+    --d0:mod(var(--packed-x),64);
+    --d1:mod(round(down,var(--packed-x) / 64,1),64);
+    --d2:mod(round(down,var(--packed-x) / 4096,1),64);
+    --d3:round(down,var(--packed-x) / 262144,1);
+    --d4:mod(var(--packed-y),64);
+    --d5:mod(round(down,var(--packed-y) / 64,1),64);
+    --d6:mod(round(down,var(--packed-y) / 4096,1),64);
+    --d7:round(down,var(--packed-y) / 262144,1);
+    --z0:calc(-8 + var(--d0) * 16 / 63);
+    --z1:calc(-8 + var(--d1) * 16 / 63);
+    --z2:calc(-8 + var(--d2) * 16 / 63);
+    --z3:calc(-8 + var(--d3) * 16 / 63);
+    --z4:calc(-8 + var(--d4) * 16 / 63);
+    --z5:calc(-8 + var(--d5) * 16 / 63);
+    --z6:calc(-8 + var(--d6) * 16 / 63);
+    --z7:calc(-8 + var(--d7) * 16 / 63);
+    --h0:--gelu(var(--z0)); --h1:--gelu(var(--z1));
+    --h2:--gelu(var(--z2)); --h3:--gelu(var(--z3));
+    --h4:--gelu(var(--z4)); --h5:--gelu(var(--z5));
+    --h6:--gelu(var(--z6)); --h7:--gelu(var(--z7));
+  }
+</style>
+<div class="scope">
+  <input id="case-0" name="case" type="radio" checked>
+  <input id="case-1" name="case" type="radio">
+  <div class="carrier"><output id="result"></output></div>
+</div>
