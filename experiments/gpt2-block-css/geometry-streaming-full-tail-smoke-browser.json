@@ -1,0 +1,94 @@
+{
+  "chrome": "153.0.8010.36",
+  "contexts": [
+    2
+  ],
+  "rounds": 2,
+  "runtimeJavaScript": false,
+  "summary": {
+    "2": {
+      "attention": {
+        "warmMedianMilliseconds": 996.1166670000002,
+        "finite": true,
+        "rmseMaximum": 0.0007703341177361291
+      },
+      "tail-isolated": {
+        "warmMedianMilliseconds": 743.2795830000005,
+        "finite": true,
+        "modelRmseMaximum": 1.0750418954150875,
+        "modelMaxErrorMaximum": 13.801538759873342
+      },
+      "connected": {
+        "warmMedianMilliseconds": 2833.879083,
+        "finite": true,
+        "modelRmseMaximum": 1.0750418954150875,
+        "modelMaxErrorMaximum": 13.801538759873342,
+        "isolatedRmseMaximum": 0,
+        "isolatedMaxErrorMaximum": 0
+      },
+      "connectedMinusAttentionMilliseconds": 1837.7624159999996,
+      "dependencyPremiumMilliseconds": 1094.4828329999991,
+      "connectedOverSeparateRatio": 1.6292314548798175
+    }
+  },
+  "trials": [
+    {
+      "context": 2,
+      "round": 0,
+      "name": "attention",
+      "milliseconds": 867.9322500000001,
+      "finite": true,
+      "rmse": 0.0007703341177361291,
+      "maxError": 0.00688726864092426
+    },
+    {
+      "context": 2,
+      "round": 0,
+      "name": "tail-isolated",
+      "milliseconds": 805.76325,
+      "finite": true,
+      "rmse": 1.0750418954150875,
+      "maxError": 13.801538759873342
+    },
+    {
+      "context": 2,
+      "round": 0,
+      "name": "connected",
+      "milliseconds": 2513.2970419999997,
+      "finite": true,
+      "rmse": 1.0750418954150875,
+      "maxError": 13.801538759873342,
+      "isolatedRmse": 0,
+      "isolatedMaxError": 0
+    },
+    {
+      "context": 2,
+      "round": 1,
+      "name": "tail-isolated",
+      "milliseconds": 743.2795830000005,
+      "finite": true,
+      "rmse": 1.0750418954150875,
+      "maxError": 13.801538759873342
+    },
+    {
+      "context": 2,
+      "round": 1,
+      "name": "connected",
+      "milliseconds": 2833.879083,
+      "finite": true,
+      "rmse": 1.0750418954150875,
+      "maxError": 13.801538759873342,
+      "isolatedRmse": 0,
+      "isolatedMaxError": 0
+    },
+    {
+      "context": 2,
+      "round": 1,
+      "name": "attention",
+      "milliseconds": 996.1166670000002,
+      "finite": true,
+      "rmse": 0.0007703341177361291,
+      "maxError": 0.00688726864092426
+    }
+  ]
+}

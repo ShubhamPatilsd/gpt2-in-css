@@ -1,0 +1,76 @@
+{
+  "chrome": "153.0.8010.36",
+  "rounds": 3,
+  "rangeCalibration": "4096 random token/position states, 1.2 margin",
+  "trials": [
+    {
+      "context": 8,
+      "transport": "streaming-key-anchor",
+      "round": 0,
+      "milliseconds": 3566.4687920000006,
+      "rmse": 0.0013869612693689242,
+      "maxError": 0.010610432735168374
+    },
+    {
+      "context": 8,
+      "transport": "streaming-key-anchor",
+      "round": 1,
+      "milliseconds": 3525.4613750000008,
+      "rmse": 0.0013869612693689242,
+      "maxError": 0.010610432735168374
+    },
+    {
+      "context": 8,
+      "transport": "streaming-key-anchor",
+      "round": 2,
+      "milliseconds": 3475.6499170000006,
+      "rmse": 0.0013869612693689242,
+      "maxError": 0.010610432735168374
+    },
+    {
+      "context": 16,
+      "transport": "streaming-key-anchor",
+      "round": 0,
+      "milliseconds": 11277.74975,
+      "rmse": 0.0009280822639768208,
+      "maxError": 0.00968981869773522
+    },
+    {
+      "context": 16,
+      "transport": "streaming-key-anchor",
+      "round": 1,
+      "milliseconds": 10844.786541000001,
+      "rmse": 0.0009280822639768208,
+      "maxError": 0.00968981869773522
+    },
+    {
+      "context": 16,
+      "transport": "streaming-key-anchor",
+      "round": 2,
+      "milliseconds": 10426.782834000005,
+      "rmse": 0.0009280822639768208,
+      "maxError": 0.00968981869773522
+    }
+  ],
+  "summary": {
+    "streaming-key-anchor": {
+      "8": {
+        "warmMedianMilliseconds": 3525.4613750000008,
+        "rmseMaximum": 0.0013869612693689242,
+        "maxErrorMaximum": 0.010610432735168374,
+        "qkvPackingRmse": 0.009803198161845793,
+        "qkvClippedFraction": 0.00021701388888888888,
+        "sourceBytes": 8638956
+      },
+      "16": {
+        "warmMedianMilliseconds": 10844.786541000001,
+        "rmseMaximum": 0.0009280822639768208,
+        "maxErrorMaximum": 0.00968981869773522,
+        "qkvPackingRmse": 0.008489300360503937,
+        "qkvClippedFraction": 0.00016276041666666666,
+        "sourceBytes": 13562556,
+        "incrementalMilliseconds": 7319.3251660000005
+      }
+    }
+  }
+}

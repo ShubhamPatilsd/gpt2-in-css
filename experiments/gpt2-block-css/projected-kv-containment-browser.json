@@ -1,0 +1,115 @@
+{
+  "chrome": "153.0.8010.36",
+  "context": 16,
+  "rounds": 1,
+  "runtimeJavaScript": false,
+  "summary": {
+    "baseline": {
+      "medianMilliseconds": 2334.2649999999994,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    "mlp-style": {
+      "medianMilliseconds": 2266.829540999999,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    "mlp-layout": {
+      "medianMilliseconds": 2239.96775,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    "mlp-layout-style": {
+      "medianMilliseconds": 2283.3946249999935,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    "bridge-layout-style": {
+      "medianMilliseconds": 2472.776334000002,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    "attention-layout-style": {
+      "medianMilliseconds": 2473.116458000004,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    "both-layout-style": {
+      "medianMilliseconds": 2235.0477909999972,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    }
+  },
+  "trials": [
+    {
+      "round": 0,
+      "name": "baseline",
+      "css": "",
+      "milliseconds": 2334.2649999999994,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    {
+      "round": 0,
+      "name": "mlp-style",
+      "css": ".after-attn{contain:style}",
+      "milliseconds": 2266.829540999999,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    {
+      "round": 0,
+      "name": "mlp-layout",
+      "css": ".after-attn{contain:layout}",
+      "milliseconds": 2239.96775,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    {
+      "round": 0,
+      "name": "mlp-layout-style",
+      "css": ".after-attn{contain:layout style}",
+      "milliseconds": 2283.3946249999935,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    {
+      "round": 0,
+      "name": "bridge-layout-style",
+      "css": "#attention-result{contain:layout style}",
+      "milliseconds": 2472.776334000002,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    {
+      "round": 0,
+      "name": "attention-layout-style",
+      "css": "geometry-stream-attention{contain:layout style}",
+      "milliseconds": 2473.116458000004,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    },
+    {
+      "round": 0,
+      "name": "both-layout-style",
+      "css": "geometry-stream-attention,.after-attn{contain:layout style}",
+      "milliseconds": 2235.0477909999972,
+      "finite": 768,
+      "outputDeltaRmse": 0.1699150347075156,
+      "checksum": 13.594589999999975
+    }
+  ]
+}

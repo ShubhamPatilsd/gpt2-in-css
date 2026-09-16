@@ -1,0 +1,175 @@
+{
+  "chrome": "153.0.8010.36",
+  "rounds": 3,
+  "rangeCalibration": "4096 random token/position states, 1.2 margin",
+  "trials": [
+    {
+      "context": 1,
+      "transport": "streaming-key-anchor",
+      "round": 0,
+      "milliseconds": 583.426625,
+      "rmse": 0.0035734852598645417,
+      "maxError": 0.03928798103738018
+    },
+    {
+      "context": 1,
+      "transport": "streaming-key-anchor",
+      "round": 1,
+      "milliseconds": 572.7294999999999,
+      "rmse": 0.0035734852598645417,
+      "maxError": 0.03928798103738018
+    },
+    {
+      "context": 1,
+      "transport": "streaming-key-anchor",
+      "round": 2,
+      "milliseconds": 578.2197919999999,
+      "rmse": 0.0035734852598645417,
+      "maxError": 0.03928798103738018
+    },
+    {
+      "context": 2,
+      "transport": "streaming-key-anchor",
+      "round": 0,
+      "milliseconds": 929.7396670000003,
+      "rmse": 0.0030598158421696335,
+      "maxError": 0.031822965344254994
+    },
+    {
+      "context": 2,
+      "transport": "streaming-key-anchor",
+      "round": 1,
+      "milliseconds": 935.2482500000001,
+      "rmse": 0.0030598158421696335,
+      "maxError": 0.031822965344254994
+    },
+    {
+      "context": 2,
+      "transport": "streaming-key-anchor",
+      "round": 2,
+      "milliseconds": 1020.0572499999998,
+      "rmse": 0.0030598158421696335,
+      "maxError": 0.031822965344254994
+    },
+    {
+      "context": 4,
+      "transport": "streaming-key-anchor",
+      "round": 0,
+      "milliseconds": 1671.3561659999996,
+      "rmse": 0.0019076507588123637,
+      "maxError": 0.016117637737643076
+    },
+    {
+      "context": 4,
+      "transport": "streaming-key-anchor",
+      "round": 1,
+      "milliseconds": 1639.2923330000003,
+      "rmse": 0.0019076507588123637,
+      "maxError": 0.016117637737643076
+    },
+    {
+      "context": 4,
+      "transport": "streaming-key-anchor",
+      "round": 2,
+      "milliseconds": 1551.3024999999998,
+      "rmse": 0.0019076507588123637,
+      "maxError": 0.016117637737643076
+    },
+    {
+      "context": 8,
+      "transport": "streaming-key-anchor",
+      "round": 0,
+      "milliseconds": 3441.5509170000005,
+      "rmse": 0.0013869612693689242,
+      "maxError": 0.010610432735168374
+    },
+    {
+      "context": 8,
+      "transport": "streaming-key-anchor",
+      "round": 1,
+      "milliseconds": 4125.253457999999,
+      "rmse": 0.0013869612693689242,
+      "maxError": 0.010610432735168374
+    },
+    {
+      "context": 8,
+      "transport": "streaming-key-anchor",
+      "round": 2,
+      "milliseconds": 3540.8752499999973,
+      "rmse": 0.0013869612693689242,
+      "maxError": 0.010610432735168374
+    },
+    {
+      "context": 16,
+      "transport": "streaming-key-anchor",
+      "round": 0,
+      "milliseconds": 10490.629292000001,
+      "rmse": 0.0009280822639768208,
+      "maxError": 0.00968981869773522
+    },
+    {
+      "context": 16,
+      "transport": "streaming-key-anchor",
+      "round": 1,
+      "milliseconds": 11141.46125,
+      "rmse": 0.0009280822639768208,
+      "maxError": 0.00968981869773522
+    },
+    {
+      "context": 16,
+      "transport": "streaming-key-anchor",
+      "round": 2,
+      "milliseconds": 10615.174459000002,
+      "rmse": 0.0009280822639768208,
+      "maxError": 0.00968981869773522
+    }
+  ],
+  "summary": {
+    "streaming-key-anchor": {
+      "1": {
+        "warmMedianMilliseconds": 578.2197919999999,
+        "rmseMaximum": 0.0035734852598645417,
+        "maxErrorMaximum": 0.03928798103738018,
+        "qkvPackingRmse": 0.006774496062097178,
+        "qkvClippedFraction": 0,
+        "sourceBytes": 4423560
+      },
+      "2": {
+        "warmMedianMilliseconds": 1020.0572499999998,
+        "rmseMaximum": 0.0030598158421696335,
+        "maxErrorMaximum": 0.031822965344254994,
+        "qkvPackingRmse": 0.006861274862644757,
+        "qkvClippedFraction": 0,
+        "sourceBytes": 5025622,
+        "incrementalMilliseconds": 441.83745799999997
+      },
+      "4": {
+        "warmMedianMilliseconds": 1639.2923330000003,
+        "rmseMaximum": 0.0019076507588123637,
+        "maxErrorMaximum": 0.016117637737643076,
+        "qkvPackingRmse": 0.008174651262562707,
+        "qkvClippedFraction": 0.00010850694444444444,
+        "sourceBytes": 6229789,
+        "incrementalMilliseconds": 619.2350830000005
+      },
+      "8": {
+        "warmMedianMilliseconds": 4125.253457999999,
+        "rmseMaximum": 0.0013869612693689242,
+        "maxErrorMaximum": 0.010610432735168374,
+        "qkvPackingRmse": 0.009803198161845793,
+        "qkvClippedFraction": 0.00021701388888888888,
+        "sourceBytes": 8638956,
+        "incrementalMilliseconds": 2485.961124999999
+      },
+      "16": {
+        "warmMedianMilliseconds": 11141.46125,
+        "rmseMaximum": 0.0009280822639768208,
+        "maxErrorMaximum": 0.00968981869773522,
+        "qkvPackingRmse": 0.008489300360503937,
+        "qkvClippedFraction": 0.00016276041666666666,
+        "sourceBytes": 13562556,
+        "incrementalMilliseconds": 7016.207792000001
+      }
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "chrome": "153.0.8010.36",
+  "contexts": [
+    16
+  ],
+  "rounds": 4,
+  "runtimeJavaScript": false,
+  "safeOutput": false,
+  "variant": "multitoken-direct",
+  "projectionTransport": "packet12",
+  "scoreBackend": "bilinear-kv",
+  "summary": {
+    "16": {
+      "isolatedWarmMedianMilliseconds": 1517.9814999999999,
+      "connectedWarmMedianMilliseconds": 3777.747375000001,
+      "connectedAttentionRmse": 0.010170269725205485,
+      "isolatedNormalizedRmse": 3.3614493511719156e-7,
+      "connectedNormalizedRmse": 0.010291578465022442,
+      "isolatedModelRmse": 0.08900833336334894,
+      "connectedModelRmse": 0.09206782666218476,
+      "isolatedPackedModelRmse": 0.08817988092551153,
+      "connectedPackedModelRmse": 0.09299118575842089,
+      "connectedVsIsolatedRmse": 0.1281599898776995,
+      "connectedVsIsolatedMaxError": 0.6017299999999999,
+      "isolatedOutputFirst5": [
+        0.0269091,
+        0.158169,
+        0.531158,
+        0.44036,
+        -0.177927
+      ],
+      "modelReferenceFirst5": [
+        0.0002060249792746327,
+        0.18916633201463512,
+        0.5449774351028995,
+        0.34987493702469075,
+        -0.13767531415374834
+      ],
+      "worstModelErrors": [
+        {
+          "index": 480,
+          "value": 4.13687,
+          "reference": 4.539333842073622,
+          "absoluteError": 0.4024638420736215
+        },
+        {
+          "index": 735,
+          "value": -1.0208,
+          "reference": -0.6379127756293158,
+          "absoluteError": 0.3828872243706841
+        },
+        {
+          "index": 179,
+          "value": -0.516176,
+          "reference": -0.8949803562771094,
+          "absoluteError": 0.3788043562771094
+        },
+        {
+          "index": 619,
+          "value": 1.57192,
+          "reference": 1.2162751675031245,
+          "absoluteError": 0.3556448324968755
+        },
+        {
+          "index": 489,
+          "value": -0.148899,
+          "reference": 0.18380604852096338,
+          "absoluteError": 0.3327050485209634
+        },
+        {
+          "index": 550,
+          "value": 0.624166,
+          "reference": 0.30255681529166917,
+          "absoluteError": 0.32160918470833083
+        },
+        {
+          "index": 517,
+          "value": 0.826823,
+          "reference": 0.5174662232884615,
+          "absoluteError": 0.3093567767115385
+        },
+        {
+          "index": 564,
+          "value": 1.70396,
+          "reference": 1.4017473601366484,
+          "absoluteError": 0.30221263986335156
+        }
+      ]
+    }
+  },
+  "trials": [
+    {
+      "context": 16,
+      "isolated": true,
+      "round": 0,
+      "milliseconds": 1628.69425,
+      "modelError": {
+        "rmse": 0.08900833336334894,
+        "maxError": 0.4024638420736215
+      },
+      "packedModelError": {
+        "rmse": 0.08817988092551153,
+        "maxError": 0.3856719125683158
+      },
+      "attentionError": {
+        "rmse": 0.0000027186040986487022,
+        "maxError": 0.00004827577120636306
+      },
+      "normalizedError": {
+        "rmse": 3.3614493511719156e-7,
+        "maxError": 0.0000032380107324869734
+      }
+    },
+    {
+      "context": 16,
+      "isolated": false,
+      "round": 0,
+      "milliseconds": 4034.5001250000005,
+      "modelError": {
+        "rmse": 0.09206782666218476,
+        "maxError": 0.37316935686654207
+      },
+      "packedModelError": {
+        "rmse": 0.09299118575842089,
+        "maxError": 0.3874268702961453
+      },
+      "attentionError": {
+        "rmse": 0.010170269725205485,
+        "maxError": 0.20019290657819921
+      },
+      "normalizedError": {
+        "rmse": 0.010291578465022442,
+        "maxError": 0.2247792115496412
+      }
+    },
+    {
+      "context": 16,
+      "isolated": true,
+      "round": 1,
+      "milliseconds": 1517.9814999999999,
+      "modelError": {
+        "rmse": 0.08900833336334894,
+        "maxError": 0.4024638420736215
+      },
+      "packedModelError": {
+        "rmse": 0.08817988092551153,
+        "maxError": 0.3856719125683158
+      },
+      "attentionError": {
+        "rmse": 0.0000027186040986487022,
+        "maxError": 0.00004827577120636306
+      },
+      "normalizedError": {
+        "rmse": 3.3614493511719156e-7,
+        "maxError": 0.0000032380107324869734
+      }
+    },
+    {
+      "context": 16,
+      "isolated": false,
+      "round": 1,
+      "milliseconds": 3777.747375000001,
+      "modelError": {
+        "rmse": 0.09206782666218476,
+        "maxError": 0.37316935686654207
+      },
+      "packedModelError": {
+        "rmse": 0.09299118575842089,
+        "maxError": 0.3874268702961453
+      },
+      "attentionError": {
+        "rmse": 0.010170269725205485,
+        "maxError": 0.20019290657819921
+      },
+      "normalizedError": {
+        "rmse": 0.010291578465022442,
+        "maxError": 0.2247792115496412
+      }
+    },
+    {
+      "context": 16,
+      "isolated": true,
+      "round": 2,
+      "milliseconds": 1492.4950829999998,
+      "modelError": {
+        "rmse": 0.08900833336334894,
+        "maxError": 0.4024638420736215
+      },
+      "packedModelError": {
+        "rmse": 0.08817988092551153,
+        "maxError": 0.3856719125683158
+      },
+      "attentionError": {
+        "rmse": 0.0000027186040986487022,
+        "maxError": 0.00004827577120636306
+      },
+      "normalizedError": {
+        "rmse": 3.3614493511719156e-7,
+        "maxError": 0.0000032380107324869734
+      }
+    },
+    {
+      "context": 16,
+      "isolated": false,
+      "round": 2,
+      "milliseconds": 3540.2797089999985,
+      "modelError": {
+        "rmse": 0.09206782666218476,
+        "maxError": 0.37316935686654207
+      },
+      "packedModelError": {
+        "rmse": 0.09299118575842089,
+        "maxError": 0.3874268702961453
+      },
+      "attentionError": {
+        "rmse": 0.010170269725205485,
+        "maxError": 0.20019290657819921
+      },
+      "normalizedError": {
+        "rmse": 0.010291578465022442,
+        "maxError": 0.2247792115496412
+      }
+    },
+    {
+      "context": 16,
+      "isolated": true,
+      "round": 3,
+      "milliseconds": 1544.5149999999994,
+      "modelError": {
+        "rmse": 0.08900833336334894,
+        "maxError": 0.4024638420736215
+      },
+      "packedModelError": {
+        "rmse": 0.08817988092551153,
+        "maxError": 0.3856719125683158
+      },
+      "attentionError": {
+        "rmse": 0.0000027186040986487022,
+        "maxError": 0.00004827577120636306
+      },
+      "normalizedError": {
+        "rmse": 3.3614493511719156e-7,
+        "maxError": 0.0000032380107324869734
+      }
+    },
+    {
+      "context": 16,
+      "isolated": false,
+      "round": 3,
+      "milliseconds": 3963.642333,
+      "modelError": {
+        "rmse": 0.09206782666218476,
+        "maxError": 0.37316935686654207
+      },
+      "packedModelError": {
+        "rmse": 0.09299118575842089,
+        "maxError": 0.3874268702961453
+      },
+      "attentionError": {
+        "rmse": 0.010170269725205485,
+        "maxError": 0.20019290657819921
+      },
+      "normalizedError": {
+        "rmse": 0.010291578465022442,
+        "maxError": 0.2247792115496412
+      }
+    }
+  ]
+}

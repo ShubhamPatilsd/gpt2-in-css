@@ -1,0 +1,529 @@
+{
+  "chrome": "153.0.8010.36",
+  "contexts": [
+    8,
+    16
+  ],
+  "rounds": 3,
+  "runtimeJavaScript": false,
+  "summary": {
+    "8": {
+      "attention": {
+        "warmMedianMilliseconds": 2100.332166,
+        "finite": true,
+        "rmseMaximum": 0.0011405713858769352
+      },
+      "tail-isolated": {
+        "warmMedianMilliseconds": 1039.668915999995,
+        "finite": true,
+        "modelRmseMaximum": 0.03248440549600128,
+        "modelMaxErrorMaximum": 0.19327646748992677,
+        "normalizedRmseMaximum": 3.233808127967893e-7,
+        "normalizedMaxErrorMaximum": 0.000005386530338657991,
+        "packedHiddenRmseMaximum": 0.00112401307609087,
+        "packedHiddenMaxErrorMaximum": 0.02189542483660134
+      },
+      "connected": {
+        "warmMedianMilliseconds": 4267.05775,
+        "finite": true,
+        "modelRmseMaximum": 0.03375210367652571,
+        "modelMaxErrorMaximum": 0.3234764674899253,
+        "normalizedRmseMaximum": 0.0002231264527276703,
+        "normalizedMaxErrorMaximum": 0.0013982795429700046,
+        "packedHiddenRmseMaximum": 0.0013616855872815498,
+        "packedHiddenMaxErrorMaximum": 0.025501730103806075,
+        "isolatedRmseMaximum": 0.016985132873409997,
+        "isolatedMaxErrorMaximum": 0.13019999999999854
+      },
+      "dual-boundary": {
+        "warmMedianMilliseconds": 4697.093416999996,
+        "finite": true,
+        "modelRmseMaximum": 0.03275472945929305,
+        "modelMaxErrorMaximum": 0.21627646748992646,
+        "normalizedRmseMaximum": 0.0012963538358011968,
+        "normalizedMaxErrorMaximum": 0.011762531237296231,
+        "packedHiddenRmseMaximum": 0.003004282684952851,
+        "packedHiddenMaxErrorMaximum": 0.02189542483660134,
+        "isolatedRmseMaximum": 0.027466132000180016,
+        "isolatedMaxErrorMaximum": 0.1838999999999995
+      },
+      "connectedMinusAttentionMilliseconds": 2166.725584,
+      "connectedDependencyPremiumMilliseconds": 1127.0566680000047,
+      "connectedOverSeparateRatio": 1.3589351209019762,
+      "dualBoundaryMinusAttentionMilliseconds": 2596.7612509999963,
+      "dualBoundaryDependencyPremiumMilliseconds": 1557.0923350000012,
+      "dualBoundaryOverSeparateRatio": 1.4958891077859837,
+      "dualBoundaryVersusDirectMilliseconds": 430.03566699999647
+    },
+    "16": {
+      "attention": {
+        "warmMedianMilliseconds": 3911.6877499999973,
+        "finite": true,
+        "rmseMaximum": 0.0008516564138729563
+      },
+      "tail-isolated": {
+        "warmMedianMilliseconds": 1112.7214160000003,
+        "finite": true,
+        "modelRmseMaximum": 0.028120068654111794,
+        "modelMaxErrorMaximum": 0.1027316820889308,
+        "normalizedRmseMaximum": 4.3938282733716575e-7,
+        "normalizedMaxErrorMaximum": 0.000008336888059456982,
+        "packedHiddenRmseMaximum": 0.0009675820126206292,
+        "packedHiddenMaxErrorMaximum": 0.014682814302191483
+      },
+      "connected": {
+        "warmMedianMilliseconds": 7163.716916000005,
+        "finite": true,
+        "modelRmseMaximum": 0.028761088069757117,
+        "modelMaxErrorMaximum": 0.10605854764445531,
+        "normalizedRmseMaximum": 0.00016685419256138602,
+        "normalizedMaxErrorMaximum": 0.0009396753517559864,
+        "packedHiddenRmseMaximum": 0.001253004502410387,
+        "packedHiddenMaxErrorMaximum": 0.01725874663590915,
+        "isolatedRmseMaximum": 0.012866170676112697,
+        "isolatedMaxErrorMaximum": 0.05089999999999861
+      },
+      "dual-boundary": {
+        "warmMedianMilliseconds": 8282.818791999991,
+        "finite": true,
+        "modelRmseMaximum": 0.03125048416850873,
+        "modelMaxErrorMaximum": 0.17613380256261735,
+        "normalizedRmseMaximum": 0.0013436165941244694,
+        "normalizedMaxErrorMaximum": 0.012548380901165376,
+        "packedHiddenRmseMaximum": 0.0031260428383842903,
+        "packedHiddenMaxErrorMaximum": 0.02344098423683194,
+        "isolatedRmseMaximum": 0.026401560985927466,
+        "isolatedMaxErrorMaximum": 0.09999999999999964
+      },
+      "connectedMinusAttentionMilliseconds": 3252.0291660000075,
+      "connectedDependencyPremiumMilliseconds": 2139.307750000007,
+      "connectedOverSeparateRatio": 1.4257829486652138,
+      "dualBoundaryMinusAttentionMilliseconds": 4371.131041999994,
+      "dualBoundaryDependencyPremiumMilliseconds": 3258.4096259999933,
+      "dualBoundaryOverSeparateRatio": 1.648515978366081,
+      "dualBoundaryVersusDirectMilliseconds": 1119.101875999986
+    }
+  },
+  "trials": [
+    {
+      "context": 8,
+      "round": 0,
+      "name": "attention",
+      "milliseconds": 2111.109791,
+      "finite": true,
+      "rmse": 0.0011405713858769352,
+      "maxError": 0.008441641022360002
+    },
+    {
+      "context": 8,
+      "round": 0,
+      "name": "tail-isolated",
+      "milliseconds": 1035.261375,
+      "finite": true,
+      "rmse": 0.03248440549600128,
+      "maxError": 0.19327646748992677,
+      "normalized": {
+        "finite": true,
+        "rmse": 3.233808127967893e-7,
+        "maxError": 0.000005386530338657991
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.00112401307609087,
+        "maxError": 0.02189542483660134
+      }
+    },
+    {
+      "context": 8,
+      "round": 0,
+      "name": "connected",
+      "milliseconds": 4236.127625000001,
+      "finite": true,
+      "rmse": 0.03375210367652571,
+      "maxError": 0.3234764674899253,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.0002231264527276703,
+        "maxError": 0.0013982795429700046
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.0013616855872815498,
+        "maxError": 0.025501730103806075
+      },
+      "isolatedRmse": 0.016985132873409997,
+      "isolatedMaxError": 0.13019999999999854
+    },
+    {
+      "context": 8,
+      "round": 0,
+      "name": "dual-boundary",
+      "milliseconds": 4606.9649580000005,
+      "finite": true,
+      "rmse": 0.03275472945929305,
+      "maxError": 0.21627646748992646,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.0012963538358011968,
+        "maxError": 0.011762531237296231
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.003004282684952851,
+        "maxError": 0.02189542483660134
+      },
+      "isolatedRmse": 0.027466132000180016,
+      "isolatedMaxError": 0.1838999999999995
+    },
+    {
+      "context": 8,
+      "round": 1,
+      "name": "tail-isolated",
+      "milliseconds": 1036.7769580000004,
+      "finite": true,
+      "rmse": 0.03248440549600128,
+      "maxError": 0.19327646748992677,
+      "normalized": {
+        "finite": true,
+        "rmse": 3.233808127967893e-7,
+        "maxError": 0.000005386530338657991
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.00112401307609087,
+        "maxError": 0.02189542483660134
+      }
+    },
+    {
+      "context": 8,
+      "round": 1,
+      "name": "connected",
+      "milliseconds": 4267.05775,
+      "finite": true,
+      "rmse": 0.03375210367652571,
+      "maxError": 0.3234764674899253,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.0002231264527276703,
+        "maxError": 0.0013982795429700046
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.0013616855872815498,
+        "maxError": 0.025501730103806075
+      },
+      "isolatedRmse": 0.016985132873409997,
+      "isolatedMaxError": 0.13019999999999854
+    },
+    {
+      "context": 8,
+      "round": 1,
+      "name": "dual-boundary",
+      "milliseconds": 4459.799209000001,
+      "finite": true,
+      "rmse": 0.03275472945929305,
+      "maxError": 0.21627646748992646,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.0012963538358011968,
+        "maxError": 0.011762531237296231
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.003004282684952851,
+        "maxError": 0.02189542483660134
+      },
+      "isolatedRmse": 0.027466132000180016,
+      "isolatedMaxError": 0.1838999999999995
+    },
+    {
+      "context": 8,
+      "round": 1,
+      "name": "attention",
+      "milliseconds": 2080.168291000002,
+      "finite": true,
+      "rmse": 0.0011405713858769352,
+      "maxError": 0.008441641022360002
+    },
+    {
+      "context": 8,
+      "round": 2,
+      "name": "connected",
+      "milliseconds": 4110.001791999999,
+      "finite": true,
+      "rmse": 0.03375210367652571,
+      "maxError": 0.3234764674899253,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.0002231264527276703,
+        "maxError": 0.0013982795429700046
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.0013616855872815498,
+        "maxError": 0.025501730103806075
+      },
+      "isolatedRmse": 0.016985132873409997,
+      "isolatedMaxError": 0.13019999999999854
+    },
+    {
+      "context": 8,
+      "round": 2,
+      "name": "dual-boundary",
+      "milliseconds": 4697.093416999996,
+      "finite": true,
+      "rmse": 0.03275472945929305,
+      "maxError": 0.21627646748992646,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.0012963538358011968,
+        "maxError": 0.011762531237296231
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.003004282684952851,
+        "maxError": 0.02189542483660134
+      },
+      "isolatedRmse": 0.027466132000180016,
+      "isolatedMaxError": 0.1838999999999995
+    },
+    {
+      "context": 8,
+      "round": 2,
+      "name": "attention",
+      "milliseconds": 2100.332166,
+      "finite": true,
+      "rmse": 0.0011405713858769352,
+      "maxError": 0.008441641022360002
+    },
+    {
+      "context": 8,
+      "round": 2,
+      "name": "tail-isolated",
+      "milliseconds": 1039.668915999995,
+      "finite": true,
+      "rmse": 0.03248440549600128,
+      "maxError": 0.19327646748992677,
+      "normalized": {
+        "finite": true,
+        "rmse": 3.233808127967893e-7,
+        "maxError": 0.000005386530338657991
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.00112401307609087,
+        "maxError": 0.02189542483660134
+      }
+    },
+    {
+      "context": 16,
+      "round": 0,
+      "name": "attention",
+      "milliseconds": 4527.014374999999,
+      "finite": true,
+      "rmse": 0.0008516564138729563,
+      "maxError": 0.0051340837296418584
+    },
+    {
+      "context": 16,
+      "round": 0,
+      "name": "tail-isolated",
+      "milliseconds": 953.6335829999953,
+      "finite": true,
+      "rmse": 0.028120068654111794,
+      "maxError": 0.1027316820889308,
+      "normalized": {
+        "finite": true,
+        "rmse": 4.3938282733716575e-7,
+        "maxError": 0.000008336888059456982
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.0009675820126206292,
+        "maxError": 0.014682814302191483
+      }
+    },
+    {
+      "context": 16,
+      "round": 0,
+      "name": "connected",
+      "milliseconds": 6504.510375000005,
+      "finite": true,
+      "rmse": 0.028761088069757117,
+      "maxError": 0.10605854764445531,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.00016685419256138602,
+        "maxError": 0.0009396753517559864
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.001253004502410387,
+        "maxError": 0.01725874663590915
+      },
+      "isolatedRmse": 0.012866170676112697,
+      "isolatedMaxError": 0.05089999999999861
+    },
+    {
+      "context": 16,
+      "round": 0,
+      "name": "dual-boundary",
+      "milliseconds": 7061.857958999994,
+      "finite": true,
+      "rmse": 0.03125048416850873,
+      "maxError": 0.17613380256261735,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.0013436165941244694,
+        "maxError": 0.012548380901165376
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.0031260428383842903,
+        "maxError": 0.02344098423683194
+      },
+      "isolatedRmse": 0.026401560985927466,
+      "isolatedMaxError": 0.09999999999999964
+    },
+    {
+      "context": 16,
+      "round": 1,
+      "name": "tail-isolated",
+      "milliseconds": 1112.7214160000003,
+      "finite": true,
+      "rmse": 0.028120068654111794,
+      "maxError": 0.1027316820889308,
+      "normalized": {
+        "finite": true,
+        "rmse": 4.3938282733716575e-7,
+        "maxError": 0.000008336888059456982
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.0009675820126206292,
+        "maxError": 0.014682814302191483
+      }
+    },
+    {
+      "context": 16,
+      "round": 1,
+      "name": "connected",
+      "milliseconds": 6861.083084000005,
+      "finite": true,
+      "rmse": 0.028761088069757117,
+      "maxError": 0.10605854764445531,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.00016685419256138602,
+        "maxError": 0.0009396753517559864
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.001253004502410387,
+        "maxError": 0.01725874663590915
+      },
+      "isolatedRmse": 0.012866170676112697,
+      "isolatedMaxError": 0.05089999999999861
+    },
+    {
+      "context": 16,
+      "round": 1,
+      "name": "dual-boundary",
+      "milliseconds": 7583.93791600001,
+      "finite": true,
+      "rmse": 0.03125048416850873,
+      "maxError": 0.17613380256261735,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.0013436165941244694,
+        "maxError": 0.012548380901165376
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.0031260428383842903,
+        "maxError": 0.02344098423683194
+      },
+      "isolatedRmse": 0.026401560985927466,
+      "isolatedMaxError": 0.09999999999999964
+    },
+    {
+      "context": 16,
+      "round": 1,
+      "name": "attention",
+      "milliseconds": 3903.331625000006,
+      "finite": true,
+      "rmse": 0.0008516564138729563,
+      "maxError": 0.0051340837296418584
+    },
+    {
+      "context": 16,
+      "round": 2,
+      "name": "connected",
+      "milliseconds": 7163.716916000005,
+      "finite": true,
+      "rmse": 0.028761088069757117,
+      "maxError": 0.10605854764445531,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.00016685419256138602,
+        "maxError": 0.0009396753517559864
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.001253004502410387,
+        "maxError": 0.01725874663590915
+      },
+      "isolatedRmse": 0.012866170676112697,
+      "isolatedMaxError": 0.05089999999999861
+    },
+    {
+      "context": 16,
+      "round": 2,
+      "name": "dual-boundary",
+      "milliseconds": 8282.818791999991,
+      "finite": true,
+      "rmse": 0.03125048416850873,
+      "maxError": 0.17613380256261735,
+      "normalized": {
+        "finite": true,
+        "rmse": 0.0013436165941244694,
+        "maxError": 0.012548380901165376
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.0031260428383842903,
+        "maxError": 0.02344098423683194
+      },
+      "isolatedRmse": 0.026401560985927466,
+      "isolatedMaxError": 0.09999999999999964
+    },
+    {
+      "context": 16,
+      "round": 2,
+      "name": "attention",
+      "milliseconds": 3911.6877499999973,
+      "finite": true,
+      "rmse": 0.0008516564138729563,
+      "maxError": 0.0051340837296418584
+    },
+    {
+      "context": 16,
+      "round": 2,
+      "name": "tail-isolated",
+      "milliseconds": 1059.0978750000068,
+      "finite": true,
+      "rmse": 0.028120068654111794,
+      "maxError": 0.1027316820889308,
+      "normalized": {
+        "finite": true,
+        "rmse": 4.3938282733716575e-7,
+        "maxError": 0.000008336888059456982
+      },
+      "packedHidden": {
+        "finite": true,
+        "rmse": 0.0009675820126206292,
+        "maxError": 0.014682814302191483
+      }
+    }
+  ]
+}

@@ -1,0 +1,959 @@
+{
+  "chrome": "153.0.8010.36",
+  "context": 16,
+  "profiles": [
+    {
+      "name": "attention",
+      "file": "attention-context-16-geometry-streaming-flat-siblings-projected.html",
+      "milliseconds": 4367.625250000001,
+      "output": -0.424864,
+      "traceEvents": 131598,
+      "metrics": {
+        "LayoutCount": 5,
+        "RecalcStyleCount": 647,
+        "LayoutDuration": 2.774871,
+        "RecalcStyleDuration": 0.907972,
+        "TaskDuration": 4.522803,
+        "ScriptDuration": 0.000033,
+        "JSHeapUsedSize": 1495184,
+        "Nodes": 53575
+      },
+      "keyEvents": [
+        {
+          "name": "Layout",
+          "milliseconds": 3317.195,
+          "count": 5,
+          "maximumMilliseconds": 2019.833
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "milliseconds": 365.645,
+          "count": 8,
+          "maximumMilliseconds": 340.616
+        },
+        {
+          "name": "PrePaint",
+          "milliseconds": 328.864,
+          "count": 10,
+          "maximumMilliseconds": 270.446
+        },
+        {
+          "name": "InlineNode::ShapeTextIncludingFirstLine",
+          "milliseconds": 279.939,
+          "count": 42501,
+          "maximumMilliseconds": 0.208
+        },
+        {
+          "name": "AnimationTimeline::serviceAnimations",
+          "milliseconds": 7.559,
+          "count": 7125,
+          "maximumMilliseconds": 0.02
+        },
+        {
+          "name": "ParseAuthorStyleSheet",
+          "milliseconds": 5.029,
+          "count": 3,
+          "maximumMilliseconds": 2.897
+        }
+      ],
+      "topEvents": [
+        {
+          "name": "RunTask",
+          "milliseconds": 4599.452,
+          "count": 16748,
+          "maximumMilliseconds": 3190.818
+        },
+        {
+          "name": "WebFrameWidgetImpl::UpdateLifecycle",
+          "milliseconds": 3690.629,
+          "count": 10,
+          "maximumMilliseconds": 3187.477
+        },
+        {
+          "name": "LocalFrameView::UpdateStyleAndLayout",
+          "milliseconds": 3686.641,
+          "count": 23,
+          "maximumMilliseconds": 2033.002
+        },
+        {
+          "name": "Blink.Layout.UpdateTime",
+          "milliseconds": 3317.285,
+          "count": 5,
+          "maximumMilliseconds": 2019.845
+        },
+        {
+          "name": "LocalFrameView::layout",
+          "milliseconds": 3317.208,
+          "count": 5,
+          "maximumMilliseconds": 2019.836
+        },
+        {
+          "name": "Layout",
+          "milliseconds": 3317.195,
+          "count": 5,
+          "maximumMilliseconds": 2019.833
+        },
+        {
+          "name": "LocalFrameView::performLayout",
+          "milliseconds": 3315.686,
+          "count": 5,
+          "maximumMilliseconds": 2019.58
+        },
+        {
+          "name": "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+          "milliseconds": 3191.852,
+          "count": 12,
+          "maximumMilliseconds": 2033.007
+        },
+        {
+          "name": "Document::UpdateStyleAndLayout",
+          "milliseconds": 494.868,
+          "count": 11,
+          "maximumMilliseconds": 494.58
+        },
+        {
+          "name": "Blink.ForcedStyleAndLayout.UpdateTime",
+          "milliseconds": 494.852,
+          "count": 11,
+          "maximumMilliseconds": 494.578
+        },
+        {
+          "name": "Blink.Style.UpdateTime",
+          "milliseconds": 365.85,
+          "count": 8,
+          "maximumMilliseconds": 340.621
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "milliseconds": 365.645,
+          "count": 8,
+          "maximumMilliseconds": 340.616
+        },
+        {
+          "name": "Document::updateStyle",
+          "milliseconds": 348.247,
+          "count": 8,
+          "maximumMilliseconds": 337.93
+        },
+        {
+          "name": "Document::recalcStyle",
+          "milliseconds": 347.231,
+          "count": 6,
+          "maximumMilliseconds": 337.892
+        },
+        {
+          "name": "PrePaint",
+          "milliseconds": 328.864,
+          "count": 10,
+          "maximumMilliseconds": 270.446
+        },
+        {
+          "name": "InlineNode::ShapeTextIncludingFirstLine",
+          "milliseconds": 279.939,
+          "count": 42501,
+          "maximumMilliseconds": 0.208
+        },
+        {
+          "name": "LocalFrameView::RunCompositingInputsLifecyclePhase",
+          "milliseconds": 256.108,
+          "count": 10,
+          "maximumMilliseconds": 242.089
+        },
+        {
+          "name": "Blink.CompositingInputs.UpdateTime",
+          "milliseconds": 256.09,
+          "count": 10,
+          "maximumMilliseconds": 242.086
+        },
+        {
+          "name": "LocalFrameView::RunPaintLifecyclePhase",
+          "milliseconds": 156.112,
+          "count": 10,
+          "maximumMilliseconds": 52.665
+        },
+        {
+          "name": "Paint",
+          "milliseconds": 100.008,
+          "count": 7694,
+          "maximumMilliseconds": 19.256
+        },
+        {
+          "name": "Blink.Paint.UpdateTime",
+          "milliseconds": 78.676,
+          "count": 10,
+          "maximumMilliseconds": 24.024
+        },
+        {
+          "name": "LocalFrameView::RunPrePaintLifecyclePhase",
+          "milliseconds": 72.612,
+          "count": 10,
+          "maximumMilliseconds": 28.356
+        },
+        {
+          "name": "Blink.PrePaint.UpdateTime",
+          "milliseconds": 72.59,
+          "count": 10,
+          "maximumMilliseconds": 28.349
+        },
+        {
+          "name": "LocalFrameView::pushPaintArtifactToCompositor",
+          "milliseconds": 59.173,
+          "count": 10,
+          "maximumMilliseconds": 22.189
+        },
+        {
+          "name": "Blink.CompositingCommit.UpdateTime",
+          "milliseconds": 59.155,
+          "count": 10,
+          "maximumMilliseconds": 22.185
+        },
+        {
+          "name": "Layerize",
+          "milliseconds": 59.144,
+          "count": 10,
+          "maximumMilliseconds": 22.184
+        },
+        {
+          "name": "PaintArtifactCompositor::Update",
+          "milliseconds": 59.088,
+          "count": 5,
+          "maximumMilliseconds": 22.165
+        },
+        {
+          "name": "V8.GC_MC_INCREMENTAL",
+          "milliseconds": 51.018,
+          "count": 2837,
+          "maximumMilliseconds": 2.646
+        },
+        {
+          "name": "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+          "milliseconds": 47.983,
+          "count": 2776,
+          "maximumMilliseconds": 2.644
+        },
+        {
+          "name": "HTMLDocumentParser::PumpTokenizerIfPossible",
+          "milliseconds": 45.47,
+          "count": 9,
+          "maximumMilliseconds": 10.029
+        }
+      ]
+    },
+    {
+      "name": "tail-isolated",
+      "file": "attention-context-16-geometry-streaming-flat-siblings-projected-full-tail-isolated.html",
+      "milliseconds": 1049.7101250000014,
+      "output": 0.0753255,
+      "traceEvents": 73218,
+      "metrics": {
+        "LayoutCount": 5,
+        "RecalcStyleCount": 8,
+        "LayoutDuration": 0.305291,
+        "RecalcStyleDuration": 0.511514,
+        "TaskDuration": 1.020551,
+        "ScriptDuration": 0.000025,
+        "JSHeapUsedSize": 1764512,
+        "Nodes": 15403
+      },
+      "keyEvents": [
+        {
+          "name": "UpdateLayoutTree",
+          "milliseconds": 511.59,
+          "count": 9,
+          "maximumMilliseconds": 250.807
+        },
+        {
+          "name": "Layout",
+          "milliseconds": 305.205,
+          "count": 5,
+          "maximumMilliseconds": 84.474
+        },
+        {
+          "name": "InlineNode::ShapeTextIncludingFirstLine",
+          "milliseconds": 136.077,
+          "count": 24579,
+          "maximumMilliseconds": 0.213
+        },
+        {
+          "name": "PrePaint",
+          "milliseconds": 75.308,
+          "count": 8,
+          "maximumMilliseconds": 61.206
+        },
+        {
+          "name": "AnimationTimeline::serviceAnimations",
+          "milliseconds": 16.438,
+          "count": 12882,
+          "maximumMilliseconds": 0.064
+        },
+        {
+          "name": "ParseAuthorStyleSheet",
+          "milliseconds": 5.271,
+          "count": 1,
+          "maximumMilliseconds": 5.271
+        }
+      ],
+      "topEvents": [
+        {
+          "name": "RunTask",
+          "milliseconds": 1121.314,
+          "count": 4587,
+          "maximumMilliseconds": 268.538
+        },
+        {
+          "name": "WebFrameWidgetImpl::UpdateLifecycle",
+          "milliseconds": 606.295,
+          "count": 8,
+          "maximumMilliseconds": 260.481
+        },
+        {
+          "name": "LocalFrameView::UpdateStyleAndLayout",
+          "milliseconds": 566.655,
+          "count": 20,
+          "maximumMilliseconds": 173.032
+        },
+        {
+          "name": "Blink.Style.UpdateTime",
+          "milliseconds": 511.626,
+          "count": 9,
+          "maximumMilliseconds": 250.81
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "milliseconds": 511.59,
+          "count": 9,
+          "maximumMilliseconds": 250.807
+        },
+        {
+          "name": "Document::updateStyle",
+          "milliseconds": 498.849,
+          "count": 9,
+          "maximumMilliseconds": 248.65
+        },
+        {
+          "name": "Document::recalcStyle",
+          "milliseconds": 493.174,
+          "count": 6,
+          "maximumMilliseconds": 243.1
+        },
+        {
+          "name": "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+          "milliseconds": 481.275,
+          "count": 11,
+          "maximumMilliseconds": 173.036
+        },
+        {
+          "name": "Blink.Layout.UpdateTime",
+          "milliseconds": 305.298,
+          "count": 5,
+          "maximumMilliseconds": 84.484
+        },
+        {
+          "name": "LocalFrameView::layout",
+          "milliseconds": 305.229,
+          "count": 5,
+          "maximumMilliseconds": 84.476
+        },
+        {
+          "name": "Layout",
+          "milliseconds": 305.205,
+          "count": 5,
+          "maximumMilliseconds": 84.474
+        },
+        {
+          "name": "LocalFrameView::performLayout",
+          "milliseconds": 304.85,
+          "count": 5,
+          "maximumMilliseconds": 84.4
+        },
+        {
+          "name": "HTMLDocumentParser::PumpTokenizerIfPossible",
+          "milliseconds": 261.835,
+          "count": 4,
+          "maximumMilliseconds": 254.79
+        },
+        {
+          "name": "HTMLDocumentParser::DeferredPumpTokenizerIfPossible",
+          "milliseconds": 261.801,
+          "count": 2,
+          "maximumMilliseconds": 254.795
+        },
+        {
+          "name": "HTMLDocumentParser::AttemptToEnd",
+          "milliseconds": 254.687,
+          "count": 2,
+          "maximumMilliseconds": 254.606
+        },
+        {
+          "name": "HTMLDocumentParser::PrepareToStopParsing",
+          "milliseconds": 254.686,
+          "count": 2,
+          "maximumMilliseconds": 254.606
+        },
+        {
+          "name": "Document::FinishedParsing",
+          "milliseconds": 254.599,
+          "count": 2,
+          "maximumMilliseconds": 254.583
+        },
+        {
+          "name": "InlineNode::ShapeTextIncludingFirstLine",
+          "milliseconds": 136.077,
+          "count": 24579,
+          "maximumMilliseconds": 0.213
+        },
+        {
+          "name": "DecodeFont",
+          "milliseconds": 101.851,
+          "count": 15,
+          "maximumMilliseconds": 15.21
+        },
+        {
+          "name": "Document::UpdateStyleAndLayout",
+          "milliseconds": 85.479,
+          "count": 9,
+          "maximumMilliseconds": 85.277
+        },
+        {
+          "name": "Blink.ForcedStyleAndLayout.UpdateTime",
+          "milliseconds": 85.462,
+          "count": 9,
+          "maximumMilliseconds": 85.275
+        },
+        {
+          "name": "PrePaint",
+          "milliseconds": 75.308,
+          "count": 8,
+          "maximumMilliseconds": 61.206
+        },
+        {
+          "name": "LocalFrameView::RunCompositingInputsLifecyclePhase",
+          "milliseconds": 60.108,
+          "count": 8,
+          "maximumMilliseconds": 56.291
+        },
+        {
+          "name": "Blink.CompositingInputs.UpdateTime",
+          "milliseconds": 60.099,
+          "count": 8,
+          "maximumMilliseconds": 56.289
+        },
+        {
+          "name": "WebFrameWidgetImpl::BeginMainFrame",
+          "milliseconds": 32.194,
+          "count": 8,
+          "maximumMilliseconds": 7.073
+        },
+        {
+          "name": "Blink.Animate.UpdateTime",
+          "milliseconds": 32.16,
+          "count": 8,
+          "maximumMilliseconds": 7.069
+        },
+        {
+          "name": "PageAnimator::serviceScriptedAnimations",
+          "milliseconds": 32.137,
+          "count": 8,
+          "maximumMilliseconds": 7.066
+        },
+        {
+          "name": "LocalFrameView::RunPaintLifecyclePhase",
+          "milliseconds": 30.219,
+          "count": 8,
+          "maximumMilliseconds": 11.088
+        },
+        {
+          "name": "GPUTask",
+          "milliseconds": 16.743,
+          "count": 149,
+          "maximumMilliseconds": 0.527
+        },
+        {
+          "name": "AnimationTimeline::serviceAnimations",
+          "milliseconds": 16.438,
+          "count": 12882,
+          "maximumMilliseconds": 0.064
+        }
+      ]
+    },
+    {
+      "name": "connected",
+      "file": "attention-context-16-geometry-streaming-flat-siblings-projected-full-tail.html",
+      "milliseconds": 7160.318166000001,
+      "output": 0.057049,
+      "traceEvents": 215080,
+      "metrics": {
+        "LayoutCount": 9,
+        "RecalcStyleCount": 651,
+        "LayoutDuration": 4.987914,
+        "RecalcStyleDuration": 1.266456,
+        "TaskDuration": 7.139778,
+        "ScriptDuration": 0.000035,
+        "JSHeapUsedSize": 1849660,
+        "Nodes": 68975
+      },
+      "keyEvents": [
+        {
+          "name": "Layout",
+          "milliseconds": 5484.832,
+          "count": 9,
+          "maximumMilliseconds": 1930.581
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "milliseconds": 769.412,
+          "count": 11,
+          "maximumMilliseconds": 339.397
+        },
+        {
+          "name": "InlineNode::ShapeTextIncludingFirstLine",
+          "milliseconds": 449.319,
+          "count": 92955,
+          "maximumMilliseconds": 1.424
+        },
+        {
+          "name": "PrePaint",
+          "milliseconds": 433.824,
+          "count": 9,
+          "maximumMilliseconds": 270.512
+        },
+        {
+          "name": "AnimationTimeline::serviceAnimations",
+          "milliseconds": 21.931,
+          "count": 17368,
+          "maximumMilliseconds": 0.187
+        },
+        {
+          "name": "ParseAuthorStyleSheet",
+          "milliseconds": 11.218,
+          "count": 4,
+          "maximumMilliseconds": 5.978
+        }
+      ],
+      "topEvents": [
+        {
+          "name": "RunTask",
+          "milliseconds": 7501.287,
+          "count": 14424,
+          "maximumMilliseconds": 3057.729
+        },
+        {
+          "name": "LocalFrameView::UpdateStyleAndLayout",
+          "milliseconds": 6243.415,
+          "count": 24,
+          "maximumMilliseconds": 1940.958
+        },
+        {
+          "name": "WebFrameWidgetImpl::UpdateLifecycle",
+          "milliseconds": 5524.471,
+          "count": 9,
+          "maximumMilliseconds": 3054.209
+        },
+        {
+          "name": "Blink.Layout.UpdateTime",
+          "milliseconds": 5484.984,
+          "count": 9,
+          "maximumMilliseconds": 1930.591
+        },
+        {
+          "name": "LocalFrameView::layout",
+          "milliseconds": 5484.864,
+          "count": 9,
+          "maximumMilliseconds": 1930.583
+        },
+        {
+          "name": "Layout",
+          "milliseconds": 5484.832,
+          "count": 9,
+          "maximumMilliseconds": 1930.581
+        },
+        {
+          "name": "LocalFrameView::performLayout",
+          "milliseconds": 5481.296,
+          "count": 9,
+          "maximumMilliseconds": 1930.294
+        },
+        {
+          "name": "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+          "milliseconds": 4847.933,
+          "count": 13,
+          "maximumMilliseconds": 1940.963
+        },
+        {
+          "name": "Document::UpdateStyleAndLayout",
+          "milliseconds": 1395.577,
+          "count": 11,
+          "maximumMilliseconds": 866.737
+        },
+        {
+          "name": "Blink.ForcedStyleAndLayout.UpdateTime",
+          "milliseconds": 1395.557,
+          "count": 11,
+          "maximumMilliseconds": 866.736
+        },
+        {
+          "name": "HTMLDocumentParser::PumpTokenizerIfPossible",
+          "milliseconds": 942.827,
+          "count": 10,
+          "maximumMilliseconds": 888.496
+        },
+        {
+          "name": "HTMLDocumentParser::DeferredPumpTokenizerIfPossible",
+          "milliseconds": 942.812,
+          "count": 8,
+          "maximumMilliseconds": 888.499
+        },
+        {
+          "name": "HTMLDocumentParser::AttemptToEnd",
+          "milliseconds": 887.547,
+          "count": 2,
+          "maximumMilliseconds": 887.48
+        },
+        {
+          "name": "HTMLDocumentParser::PrepareToStopParsing",
+          "milliseconds": 887.545,
+          "count": 2,
+          "maximumMilliseconds": 887.479
+        },
+        {
+          "name": "Document::FinishedParsing",
+          "milliseconds": 887.445,
+          "count": 2,
+          "maximumMilliseconds": 887.432
+        },
+        {
+          "name": "Blink.Style.UpdateTime",
+          "milliseconds": 769.641,
+          "count": 11,
+          "maximumMilliseconds": 339.401
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "milliseconds": 769.412,
+          "count": 11,
+          "maximumMilliseconds": 339.397
+        },
+        {
+          "name": "Document::updateStyle",
+          "milliseconds": 720.038,
+          "count": 11,
+          "maximumMilliseconds": 338.532
+        },
+        {
+          "name": "Document::recalcStyle",
+          "milliseconds": 717.323,
+          "count": 9,
+          "maximumMilliseconds": 338.521
+        },
+        {
+          "name": "InlineNode::ShapeTextIncludingFirstLine",
+          "milliseconds": 449.319,
+          "count": 92955,
+          "maximumMilliseconds": 1.424
+        },
+        {
+          "name": "PrePaint",
+          "milliseconds": 433.824,
+          "count": 9,
+          "maximumMilliseconds": 270.512
+        },
+        {
+          "name": "LocalFrameView::RunCompositingInputsLifecyclePhase",
+          "milliseconds": 330.824,
+          "count": 9,
+          "maximumMilliseconds": 242.544
+        },
+        {
+          "name": "Blink.CompositingInputs.UpdateTime",
+          "milliseconds": 330.789,
+          "count": 9,
+          "maximumMilliseconds": 242.54
+        },
+        {
+          "name": "DecodeFont",
+          "milliseconds": 308.97,
+          "count": 21,
+          "maximumMilliseconds": 37.036
+        },
+        {
+          "name": "LocalFrameView::RunPaintLifecyclePhase",
+          "milliseconds": 208.837,
+          "count": 9,
+          "maximumMilliseconds": 51.349
+        },
+        {
+          "name": "Paint",
+          "milliseconds": 113.927,
+          "count": 7032,
+          "maximumMilliseconds": 18.118
+        },
+        {
+          "name": "LocalFrameView::RunPrePaintLifecyclePhase",
+          "milliseconds": 102.972,
+          "count": 9,
+          "maximumMilliseconds": 29.6
+        },
+        {
+          "name": "Blink.PrePaint.UpdateTime",
+          "milliseconds": 102.947,
+          "count": 9,
+          "maximumMilliseconds": 29.596
+        },
+        {
+          "name": "Blink.Paint.UpdateTime",
+          "milliseconds": 99.595,
+          "count": 9,
+          "maximumMilliseconds": 24.286
+        },
+        {
+          "name": "LocalFrameView::pushPaintArtifactToCompositor",
+          "milliseconds": 76.93,
+          "count": 9,
+          "maximumMilliseconds": 21.783
+        }
+      ]
+    },
+    {
+      "name": "gated",
+      "file": "attention-context-16-geometry-streaming-flat-siblings-projected-full-tail-gated.html",
+      "milliseconds": 6539.839333,
+      "output": 0.057049,
+      "traceEvents": 190428,
+      "metrics": {
+        "LayoutCount": 11,
+        "RecalcStyleCount": 653,
+        "LayoutDuration": 3.902823,
+        "RecalcStyleDuration": 1.655463,
+        "TaskDuration": 6.5224649999999995,
+        "ScriptDuration": 0.000034,
+        "JSHeapUsedSize": 1863044,
+        "Nodes": 68978
+      },
+      "keyEvents": [
+        {
+          "name": "Layout",
+          "milliseconds": 3982.65,
+          "count": 11,
+          "maximumMilliseconds": 621.054
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "milliseconds": 1575.492,
+          "count": 14,
+          "maximumMilliseconds": 436.699
+        },
+        {
+          "name": "PrePaint",
+          "milliseconds": 458.215,
+          "count": 12,
+          "maximumMilliseconds": 205.313
+        },
+        {
+          "name": "InlineNode::ShapeTextIncludingFirstLine",
+          "milliseconds": 382.572,
+          "count": 58485,
+          "maximumMilliseconds": 0.222
+        },
+        {
+          "name": "AnimationTimeline::serviceAnimations",
+          "milliseconds": 26.352,
+          "count": 22059,
+          "maximumMilliseconds": 0.098
+        },
+        {
+          "name": "ParseAuthorStyleSheet",
+          "milliseconds": 10.312,
+          "count": 4,
+          "maximumMilliseconds": 5.483
+        }
+      ],
+      "topEvents": [
+        {
+          "name": "RunTask",
+          "milliseconds": 6896.078,
+          "count": 12798,
+          "maximumMilliseconds": 1135.821
+        },
+        {
+          "name": "LocalFrameView::UpdateStyleAndLayout",
+          "milliseconds": 5189.823,
+          "count": 31,
+          "maximumMilliseconds": 983.148
+        },
+        {
+          "name": "Blink.Layout.UpdateTime",
+          "milliseconds": 3982.876,
+          "count": 11,
+          "maximumMilliseconds": 621.078
+        },
+        {
+          "name": "LocalFrameView::layout",
+          "milliseconds": 3982.71,
+          "count": 11,
+          "maximumMilliseconds": 621.06
+        },
+        {
+          "name": "Layout",
+          "milliseconds": 3982.65,
+          "count": 11,
+          "maximumMilliseconds": 621.054
+        },
+        {
+          "name": "LocalFrameView::performLayout",
+          "milliseconds": 3978.168,
+          "count": 11,
+          "maximumMilliseconds": 620.671
+        },
+        {
+          "name": "WebFrameWidgetImpl::UpdateLifecycle",
+          "milliseconds": 3913.944,
+          "count": 12,
+          "maximumMilliseconds": 1129.833
+        },
+        {
+          "name": "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+          "milliseconds": 3213.002,
+          "count": 19,
+          "maximumMilliseconds": 767.051
+        },
+        {
+          "name": "Document::UpdateStyleAndLayout",
+          "milliseconds": 1976.95,
+          "count": 12,
+          "maximumMilliseconds": 983.153
+        },
+        {
+          "name": "Blink.ForcedStyleAndLayout.UpdateTime",
+          "milliseconds": 1976.926,
+          "count": 12,
+          "maximumMilliseconds": 983.15
+        },
+        {
+          "name": "Blink.Style.UpdateTime",
+          "milliseconds": 1575.759,
+          "count": 14,
+          "maximumMilliseconds": 436.89
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "milliseconds": 1575.492,
+          "count": 14,
+          "maximumMilliseconds": 436.699
+        },
+        {
+          "name": "Document::updateStyle",
+          "milliseconds": 1540.577,
+          "count": 14,
+          "maximumMilliseconds": 436.687
+        },
+        {
+          "name": "Document::recalcStyle",
+          "milliseconds": 1494.076,
+          "count": 12,
+          "maximumMilliseconds": 421.343
+        },
+        {
+          "name": "HTMLDocumentParser::DeferredPumpTokenizerIfPossible",
+          "milliseconds": 894.063,
+          "count": 9,
+          "maximumMilliseconds": 841.787
+        },
+        {
+          "name": "HTMLDocumentParser::PrepareToStopParsing",
+          "milliseconds": 841.878,
+          "count": 2,
+          "maximumMilliseconds": 841.76
+        },
+        {
+          "name": "HTMLDocumentParser::EndIfDelayed",
+          "milliseconds": 841.762,
+          "count": 2,
+          "maximumMilliseconds": 841.761
+        },
+        {
+          "name": "Document::FinishedParsing",
+          "milliseconds": 841.747,
+          "count": 2,
+          "maximumMilliseconds": 841.72
+        },
+        {
+          "name": "PrePaint",
+          "milliseconds": 458.215,
+          "count": 12,
+          "maximumMilliseconds": 205.313
+        },
+        {
+          "name": "InlineNode::ShapeTextIncludingFirstLine",
+          "milliseconds": 382.572,
+          "count": 58485,
+          "maximumMilliseconds": 0.222
+        },
+        {
+          "name": "LocalFrameView::RunCompositingInputsLifecyclePhase",
+          "milliseconds": 320.867,
+          "count": 12,
+          "maximumMilliseconds": 186.087
+        },
+        {
+          "name": "Blink.CompositingInputs.UpdateTime",
+          "milliseconds": 320.846,
+          "count": 12,
+          "maximumMilliseconds": 186.084
+        },
+        {
+          "name": "LocalFrameView::RunPaintLifecyclePhase",
+          "milliseconds": 216.239,
+          "count": 12,
+          "maximumMilliseconds": 40.36
+        },
+        {
+          "name": "DecodeFont",
+          "milliseconds": 212.707,
+          "count": 21,
+          "maximumMilliseconds": 25.557
+        },
+        {
+          "name": "LocalFrameView::RunPrePaintLifecyclePhase",
+          "milliseconds": 137.315,
+          "count": 12,
+          "maximumMilliseconds": 25.522
+        },
+        {
+          "name": "Blink.PrePaint.UpdateTime",
+          "milliseconds": 137.257,
+          "count": 12,
+          "maximumMilliseconds": 25.517
+        },
+        {
+          "name": "Paint",
+          "milliseconds": 110.456,
+          "count": 3560,
+          "maximumMilliseconds": 17.473
+        },
+        {
+          "name": "Blink.Paint.UpdateTime",
+          "milliseconds": 94.088,
+          "count": 12,
+          "maximumMilliseconds": 23.141
+        },
+        {
+          "name": "LocalFrameView::pushPaintArtifactToCompositor",
+          "milliseconds": 80.939,
+          "count": 12,
+          "maximumMilliseconds": 12.479
+        },
+        {
+          "name": "Blink.CompositingCommit.UpdateTime",
+          "milliseconds": 80.913,
+          "count": 12,
+          "maximumMilliseconds": 12.478
+        }
+      ]
+    }
+  ],
+  "connectedOverSeparateWallRatio": 1.3217417180858952,
+  "connectedWallPremiumMilliseconds": 1742.9827909999985,
+  "gatedOverSeparateWallRatio": 1.207205919570744,
+  "gatedWallPremiumMilliseconds": 1122.5039579999975,
+  "gatedVersusConnectedMilliseconds": -620.478833000001
+}

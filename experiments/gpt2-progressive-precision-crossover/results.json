@@ -1,0 +1,2770 @@
+{
+  "chromeVersion": "153.0.8010.48",
+  "benchmarkRounds": 5,
+  "methodology": {
+    "warmup": "one unmeasured pass over all ten fixtures per mode and scale",
+    "ordering": "alternating direct-progressive / progressive-direct batches",
+    "mutation": "all 768 hidden CSS custom properties plus score offset"
+  },
+  "points": [
+    {
+      "q12Rows": 128,
+      "directQ16Rows": 128,
+      "progressiveQ16Rows": 7,
+      "inspections": {
+        "direct": {
+          "mode": "direct",
+          "scriptElements": 0,
+          "hiddenPropertyCount": 768,
+          "scoreRows": 128,
+          "q12Rows": 0,
+          "q16Rows": 128,
+          "firstGateWidth": 1,
+          "firstContentDisplay": "grid",
+          "q12StageWidth": null,
+          "secondGateWidth": null,
+          "secondContentDisplay": null,
+          "finalStageWidth": 19787.8125,
+          "expected": {
+            "q12Rows": 0,
+            "q16Rows": 128
+          }
+        },
+        "progressive": {
+          "mode": "progressive",
+          "scriptElements": 0,
+          "hiddenPropertyCount": 768,
+          "scoreRows": 135,
+          "q12Rows": 128,
+          "q16Rows": 7,
+          "firstGateWidth": 1,
+          "firstContentDisplay": "grid",
+          "q12StageWidth": 19777.03125,
+          "secondGateWidth": 2,
+          "secondContentDisplay": "grid",
+          "finalStageWidth": 16919.984375,
+          "expected": {
+            "q12Rows": 128,
+            "q16Rows": 7
+          }
+        }
+      },
+      "inspectionChecks": {
+        "directNoRuntimeScript": true,
+        "progressiveNoRuntimeScript": true,
+        "directQ12RowsMatch": true,
+        "directQ16RowsMatch": true,
+        "progressiveQ12RowsMatch": true,
+        "progressiveQ16RowsMatch": true,
+        "directFirstWaveActive": true,
+        "progressiveFirstWaveActive": true,
+        "progressiveSecondWaveActive": true,
+        "directFinalWidthLive": true,
+        "progressiveFinalWidthLive": true
+      },
+      "outputChecks": {
+        "directOutputsFinite": true,
+        "progressiveOutputsFinite": true,
+        "directOutputsReact": true,
+        "progressiveOutputsReact": true
+      },
+      "direct": {
+        "samples": 50,
+        "minimumMilliseconds": 2.199999999254942,
+        "medianMilliseconds": 67.04999999981374,
+        "p95Milliseconds": 86,
+        "maximumMilliseconds": 88.29999999981374,
+        "meanMilliseconds": 46.90800000000745,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 84,
+            "observed": 19788
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 2.5,
+            "observed": 50212
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 2.400000000372529,
+            "observed": 18460
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 2.3999999994412065,
+            "observed": 17080
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 2.400000000372529,
+            "observed": 16340
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 2.2000000001862645,
+            "observed": 17912
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 2.6000000005587935,
+            "observed": 16148
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 2.400000000372529,
+            "observed": 15748
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 2.5,
+            "observed": 21956
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 2.2000000001862645,
+            "observed": 20108
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 2.400000000372529,
+            "observed": 19788
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 2.3999999994412065,
+            "observed": 50212
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 3.599999999627471,
+            "observed": 18460
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 69.40000000037253,
+            "observed": 17080
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 67.5,
+            "observed": 16340
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 66.40000000037253,
+            "observed": 17912
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 66.3999999994412,
+            "observed": 16148
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 67,
+            "observed": 15748
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 66.09999999962747,
+            "observed": 21956
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 67.09999999962747,
+            "observed": 20108
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 45.89999999944121,
+            "observed": 19788
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 2.5,
+            "observed": 50212
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 2.2000000001862645,
+            "observed": 18460
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 2.300000000745058,
+            "observed": 17080
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 2.2999999998137355,
+            "observed": 16340
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 2.400000000372529,
+            "observed": 17912
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 2.199999999254942,
+            "observed": 16148
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 2.2000000001862645,
+            "observed": 15748
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 3.400000000372529,
+            "observed": 21956
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 68.8999999994412,
+            "observed": 20108
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 68.09999999962747,
+            "observed": 19788
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 82.29999999981374,
+            "observed": 50212
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 87.29999999981374,
+            "observed": 18460
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 79.79999999981374,
+            "observed": 17080
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 79.40000000037253,
+            "observed": 16340
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 85.5,
+            "observed": 17912
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 80,
+            "observed": 16148
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 79.80000000074506,
+            "observed": 15748
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 82.5,
+            "observed": 21956
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 79.79999999981374,
+            "observed": 20108
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 88.29999999981374,
+            "observed": 19788
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 79.5,
+            "observed": 50212
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 83.69999999925494,
+            "observed": 18460
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 79.1000000005588,
+            "observed": 17080
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 86,
+            "observed": 16340
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 79.20000000018626,
+            "observed": 17912
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 79.29999999981374,
+            "observed": 16148
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 85.90000000037253,
+            "observed": 15748
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 80.40000000037253,
+            "observed": 21956
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 81.29999999981374,
+            "observed": 20108
+          }
+        ]
+      },
+      "progressive": {
+        "samples": 50,
+        "minimumMilliseconds": 1.599999999627471,
+        "medianMilliseconds": 1.8999999994412065,
+        "p95Milliseconds": 96.1000000005588,
+        "maximumMilliseconds": 96.5,
+        "meanMilliseconds": 29.770000000018626,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 77,
+            "observed": 16920
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 72.5,
+            "observed": 46508
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 69.90000000037253,
+            "observed": 16636
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 70.79999999981374,
+            "observed": 16184
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 69.5,
+            "observed": 13148
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 68.6000000005588,
+            "observed": 15972
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 70.30000000074506,
+            "observed": 13124
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 70,
+            "observed": 13312
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 56.200000000186265,
+            "observed": 18348
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 1.7999999998137355,
+            "observed": 17184
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 2,
+            "observed": 16920
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 1.7000000001862645,
+            "observed": 46508
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 1.599999999627471,
+            "observed": 16636
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 1.699999999254942,
+            "observed": 16184
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 1.7999999998137355,
+            "observed": 13148
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 1.7000000001862645,
+            "observed": 15972
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 1.6000000005587935,
+            "observed": 13124
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 1.7999999998137355,
+            "observed": 13312
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 1.900000000372529,
+            "observed": 18348
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 1.599999999627471,
+            "observed": 17184
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 1.8999999994412065,
+            "observed": 16920
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 1.7999999998137355,
+            "observed": 46508
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 1.8999999994412065,
+            "observed": 16636
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 1.7000000001862645,
+            "observed": 16184
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 1.800000000745058,
+            "observed": 13148
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 2.099999999627471,
+            "observed": 15972
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 1.7999999998137355,
+            "observed": 13124
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 1.800000000745058,
+            "observed": 13312
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 1.7999999998137355,
+            "observed": 18348
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 1.7999999998137355,
+            "observed": 17184
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 1.8999999994412065,
+            "observed": 16920
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 1.7000000001862645,
+            "observed": 46508
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 1.7000000001862645,
+            "observed": 16636
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 1.7000000001862645,
+            "observed": 16184
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 1.699999999254942,
+            "observed": 13148
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 1.7000000001862645,
+            "observed": 15972
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 1.7000000001862645,
+            "observed": 13124
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 1.7000000001862645,
+            "observed": 13312
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 1.7999999998137355,
+            "observed": 18348
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 1.900000000372529,
+            "observed": 17184
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 2.599999999627471,
+            "observed": 16920
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 70.3999999994412,
+            "observed": 46508
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 74.90000000037253,
+            "observed": 16636
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 93.6000000005588,
+            "observed": 16184
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 96.40000000037253,
+            "observed": 13148
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 92.19999999925494,
+            "observed": 15972
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 96.1000000005588,
+            "observed": 13124
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 91.70000000018626,
+            "observed": 13312
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 94.20000000018626,
+            "observed": 18348
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 96.5,
+            "observed": 17184
+          }
+        ]
+      },
+      "progressiveToDirectMedianRatio": 0.028337061885853613,
+      "progressiveToDirectMeanRatio": 0.6346465421679436,
+      "progressiveFasterByMean": true
+    },
+    {
+      "q12Rows": 256,
+      "directQ16Rows": 256,
+      "progressiveQ16Rows": 13,
+      "inspections": {
+        "direct": {
+          "mode": "direct",
+          "scriptElements": 0,
+          "hiddenPropertyCount": 768,
+          "scoreRows": 256,
+          "q12Rows": 0,
+          "q16Rows": 256,
+          "firstGateWidth": 1,
+          "firstContentDisplay": "grid",
+          "q12StageWidth": null,
+          "secondGateWidth": null,
+          "secondContentDisplay": null,
+          "finalStageWidth": 19787.8125,
+          "expected": {
+            "q12Rows": 0,
+            "q16Rows": 256
+          }
+        },
+        "progressive": {
+          "mode": "progressive",
+          "scriptElements": 0,
+          "hiddenPropertyCount": 768,
+          "scoreRows": 269,
+          "q12Rows": 256,
+          "q16Rows": 13,
+          "firstGateWidth": 1,
+          "firstContentDisplay": "grid",
+          "q12StageWidth": 19777.03125,
+          "secondGateWidth": 2,
+          "secondContentDisplay": "grid",
+          "finalStageWidth": 19787.8125,
+          "expected": {
+            "q12Rows": 256,
+            "q16Rows": 13
+          }
+        }
+      },
+      "inspectionChecks": {
+        "directNoRuntimeScript": true,
+        "progressiveNoRuntimeScript": true,
+        "directQ12RowsMatch": true,
+        "directQ16RowsMatch": true,
+        "progressiveQ12RowsMatch": true,
+        "progressiveQ16RowsMatch": true,
+        "directFirstWaveActive": true,
+        "progressiveFirstWaveActive": true,
+        "progressiveSecondWaveActive": true,
+        "directFinalWidthLive": true,
+        "progressiveFinalWidthLive": true
+      },
+      "outputChecks": {
+        "directOutputsFinite": true,
+        "progressiveOutputsFinite": true,
+        "directOutputsReact": true,
+        "progressiveOutputsReact": true
+      },
+      "direct": {
+        "samples": 50,
+        "minimumMilliseconds": 138.20000000018626,
+        "medianMilliseconds": 151.39999999990687,
+        "p95Milliseconds": 165.40000000037253,
+        "maximumMilliseconds": 168.3999999994412,
+        "meanMilliseconds": 153.90399999991058,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 168.3999999994412,
+            "observed": 19788
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 150.6000000005588,
+            "observed": 50212
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 145.70000000018626,
+            "observed": 20549
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 138.20000000018626,
+            "observed": 18309
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 151.69999999925494,
+            "observed": 16773
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 164.1000000005588,
+            "observed": 20761
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 148.79999999981374,
+            "observed": 16148
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 158.6000000005588,
+            "observed": 16529
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 149.79999999981374,
+            "observed": 21956
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 154.5,
+            "observed": 20108
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 149.5,
+            "observed": 19788
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 158.70000000018626,
+            "observed": 50212
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 149.8999999994412,
+            "observed": 20549
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 161.3999999994412,
+            "observed": 18309
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 150.20000000018626,
+            "observed": 16773
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 148.69999999925494,
+            "observed": 20761
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 157.20000000018626,
+            "observed": 16148
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 152,
+            "observed": 16529
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 151.09999999962747,
+            "observed": 21956
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 163.29999999981374,
+            "observed": 20108
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 151.5,
+            "observed": 19788
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 149.69999999925494,
+            "observed": 50212
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 157.70000000018626,
+            "observed": 20549
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 151.29999999981374,
+            "observed": 18309
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 154,
+            "observed": 16773
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 150.40000000037253,
+            "observed": 20761
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 161.29999999981374,
+            "observed": 16148
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 148.70000000018626,
+            "observed": 16529
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 149.29999999981374,
+            "observed": 21956
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 162.20000000018626,
+            "observed": 20108
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 148.8999999994412,
+            "observed": 19788
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 149.3999999994412,
+            "observed": 50212
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 160.29999999981374,
+            "observed": 20549
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 151.29999999981374,
+            "observed": 18309
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 160.29999999981374,
+            "observed": 16773
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 150.1000000005588,
+            "observed": 20761
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 148.70000000018626,
+            "observed": 16148
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 159.90000000037253,
+            "observed": 16529
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 153.59999999962747,
+            "observed": 21956
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 149.09999999962747,
+            "observed": 20108
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 160.8999999994412,
+            "observed": 19788
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 151.8999999994412,
+            "observed": 50212
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 150.59999999962747,
+            "observed": 20549
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 165.5,
+            "observed": 18309
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 150.5,
+            "observed": 16773
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 147.79999999981374,
+            "observed": 20761
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 165.40000000037253,
+            "observed": 16148
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 150.5,
+            "observed": 16529
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 158.5,
+            "observed": 21956
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 153.5,
+            "observed": 20108
+          }
+        ]
+      },
+      "progressive": {
+        "samples": 50,
+        "minimumMilliseconds": 200.40000000037253,
+        "medianMilliseconds": 205.6999999997206,
+        "p95Milliseconds": 216.70000000018626,
+        "maximumMilliseconds": 220.20000000018626,
+        "meanMilliseconds": 207.83000000001863,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 200.40000000037253,
+            "observed": 19788
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 212.40000000037253,
+            "observed": 50212
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 202.79999999981374,
+            "observed": 18212
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 209.29999999981374,
+            "observed": 17060
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 205.59999999962747,
+            "observed": 16340
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 210.1000000005588,
+            "observed": 17520
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 204.30000000074506,
+            "observed": 16148
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 213.79999999981374,
+            "observed": 15748
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 204.09999999962747,
+            "observed": 21900
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 215.3999999994412,
+            "observed": 20108
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 203,
+            "observed": 19788
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 216.70000000018626,
+            "observed": 50212
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 202.70000000018626,
+            "observed": 18212
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 212.70000000018626,
+            "observed": 17060
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 201.1000000005588,
+            "observed": 16340
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 211.19999999925494,
+            "observed": 17520
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 201.29999999981374,
+            "observed": 16148
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 211.1000000005588,
+            "observed": 15748
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 202.3999999994412,
+            "observed": 21900
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 213.40000000037253,
+            "observed": 20108
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 203.1000000005588,
+            "observed": 19788
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 208.79999999981374,
+            "observed": 50212
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 208.79999999981374,
+            "observed": 18212
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 220.20000000018626,
+            "observed": 17060
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 205.20000000018626,
+            "observed": 16340
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 213.40000000037253,
+            "observed": 17520
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 203.5,
+            "observed": 16148
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 203.30000000074506,
+            "observed": 15748
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 210.70000000018626,
+            "observed": 21900
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 204.20000000018626,
+            "observed": 20108
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 204.90000000037253,
+            "observed": 19788
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 215.29999999981374,
+            "observed": 50212
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 204.79999999981374,
+            "observed": 18212
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 210,
+            "observed": 17060
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 204.29999999981374,
+            "observed": 16340
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 212,
+            "observed": 17520
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 201.20000000018626,
+            "observed": 16148
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 215.20000000018626,
+            "observed": 15748
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 204.09999999962747,
+            "observed": 21900
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 201.59999999962747,
+            "observed": 20108
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 214.5,
+            "observed": 19788
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 205.79999999981374,
+            "observed": 50212
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 204.3999999994412,
+            "observed": 18212
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 215.70000000018626,
+            "observed": 17060
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 207.3999999994412,
+            "observed": 16340
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 202.29999999981374,
+            "observed": 17520
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 218.29999999981374,
+            "observed": 16148
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 202,
+            "observed": 15748
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 200.6000000005588,
+            "observed": 21900
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 212.09999999962747,
+            "observed": 20108
+          }
+        ]
+      },
+      "progressiveToDirectMedianRatio": 1.3586525759567183,
+      "progressiveToDirectMeanRatio": 1.350387254393254,
+      "progressiveFasterByMean": false
+    },
+    {
+      "q12Rows": 418,
+      "directQ16Rows": 418,
+      "progressiveQ16Rows": 22,
+      "inspections": {
+        "direct": {
+          "mode": "direct",
+          "scriptElements": 0,
+          "hiddenPropertyCount": 768,
+          "scoreRows": 418,
+          "q12Rows": 0,
+          "q16Rows": 418,
+          "firstGateWidth": 1,
+          "firstContentDisplay": "grid",
+          "q12StageWidth": null,
+          "secondGateWidth": null,
+          "secondContentDisplay": null,
+          "finalStageWidth": 19787.8125,
+          "expected": {
+            "q12Rows": 0,
+            "q16Rows": 418
+          }
+        },
+        "progressive": {
+          "mode": "progressive",
+          "scriptElements": 0,
+          "hiddenPropertyCount": 768,
+          "scoreRows": 440,
+          "q12Rows": 418,
+          "q16Rows": 22,
+          "firstGateWidth": 1,
+          "firstContentDisplay": "grid",
+          "q12StageWidth": 19777.03125,
+          "secondGateWidth": 2,
+          "secondContentDisplay": "grid",
+          "finalStageWidth": 19787.8125,
+          "expected": {
+            "q12Rows": 418,
+            "q16Rows": 22
+          }
+        }
+      },
+      "inspectionChecks": {
+        "directNoRuntimeScript": true,
+        "progressiveNoRuntimeScript": true,
+        "directQ12RowsMatch": true,
+        "directQ16RowsMatch": true,
+        "progressiveQ12RowsMatch": true,
+        "progressiveQ16RowsMatch": true,
+        "directFirstWaveActive": true,
+        "progressiveFirstWaveActive": true,
+        "progressiveSecondWaveActive": true,
+        "directFinalWidthLive": true,
+        "progressiveFinalWidthLive": true
+      },
+      "outputChecks": {
+        "directOutputsFinite": true,
+        "progressiveOutputsFinite": true,
+        "directOutputsReact": true,
+        "progressiveOutputsReact": true
+      },
+      "direct": {
+        "samples": 50,
+        "minimumMilliseconds": 299.09999999962747,
+        "medianMilliseconds": 310.60000000009313,
+        "p95Milliseconds": 324,
+        "maximumMilliseconds": 326.09999999962747,
+        "meanMilliseconds": 310.9240000000224,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 305.90000000037253,
+            "observed": 19788
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 324,
+            "observed": 50212
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 306.79999999981374,
+            "observed": 20549
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 308.79999999981374,
+            "observed": 18309
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 316.19999999925494,
+            "observed": 17764
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 310.59999999962747,
+            "observed": 20761
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 312.79999999981374,
+            "observed": 16300
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 311.80000000074506,
+            "observed": 16529
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 310.90000000037253,
+            "observed": 21956
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 308.1000000005588,
+            "observed": 20108
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 308.29999999981374,
+            "observed": 19788
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 320.5,
+            "observed": 50212
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 299.09999999962747,
+            "observed": 20549
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 309.09999999962747,
+            "observed": 18309
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 302.1000000005588,
+            "observed": 17764
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 314,
+            "observed": 20761
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 301.09999999962747,
+            "observed": 16300
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 315.5,
+            "observed": 16529
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 306.3999999994412,
+            "observed": 21956
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 316.40000000037253,
+            "observed": 20108
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 299.20000000018626,
+            "observed": 19788
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 315.29999999981374,
+            "observed": 50212
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 304.5,
+            "observed": 20549
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 324.29999999981374,
+            "observed": 18309
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 304.59999999962747,
+            "observed": 17764
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 311.6000000005588,
+            "observed": 20761
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 303.59999999962747,
+            "observed": 16300
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 321.5,
+            "observed": 16529
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 303.90000000037253,
+            "observed": 21956
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 308.79999999981374,
+            "observed": 20108
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 310.70000000018626,
+            "observed": 19788
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 320.6000000005588,
+            "observed": 50212
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 300.69999999925494,
+            "observed": 20549
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 315.6000000005588,
+            "observed": 18309
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 302.80000000074506,
+            "observed": 17764
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 310.6000000005588,
+            "observed": 20761
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 309.40000000037253,
+            "observed": 16300
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 316.09999999962747,
+            "observed": 16529
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 300.69999999925494,
+            "observed": 21956
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 318.20000000018626,
+            "observed": 20108
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 300.90000000037253,
+            "observed": 19788
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 322.70000000018626,
+            "observed": 50212
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 302.3999999994412,
+            "observed": 20549
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 323.70000000018626,
+            "observed": 18309
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 302.70000000018626,
+            "observed": 17764
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 317.5,
+            "observed": 20761
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 301.40000000037253,
+            "observed": 16300
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 320.29999999981374,
+            "observed": 16529
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 317.40000000037253,
+            "observed": 21956
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 326.09999999962747,
+            "observed": 20108
+          }
+        ]
+      },
+      "progressive": {
+        "samples": 50,
+        "minimumMilliseconds": 314.90000000037253,
+        "medianMilliseconds": 325.29999999981374,
+        "p95Milliseconds": 338.8999999994412,
+        "maximumMilliseconds": 342,
+        "meanMilliseconds": 326.74800000013784,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 325.09999999962747,
+            "observed": 19788
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 341.70000000018626,
+            "observed": 50212
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 317.30000000074506,
+            "observed": 18460
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 334.79999999981374,
+            "observed": 17080
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 319.70000000018626,
+            "observed": 16340
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 333.1000000005588,
+            "observed": 17912
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 321.20000000018626,
+            "observed": 16148
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 321.90000000037253,
+            "observed": 15748
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 324.80000000074506,
+            "observed": 21956
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 334.5,
+            "observed": 20108
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 319.40000000037253,
+            "observed": 19788
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 335.5,
+            "observed": 50212
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 320,
+            "observed": 18460
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 321.40000000037253,
+            "observed": 17080
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 334.29999999981374,
+            "observed": 16340
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 325.5,
+            "observed": 17912
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 331.40000000037253,
+            "observed": 16148
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 327.1000000005588,
+            "observed": 15748
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 331.09999999962747,
+            "observed": 21956
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 324.5,
+            "observed": 20108
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 334.8999999994412,
+            "observed": 19788
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 335.40000000037253,
+            "observed": 50212
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 324.6000000005588,
+            "observed": 18460
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 327,
+            "observed": 17080
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 319.70000000018626,
+            "observed": 16340
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 327.1000000005588,
+            "observed": 17912
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 320.1000000005588,
+            "observed": 16148
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 328.8999999994412,
+            "observed": 15748
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 316.5,
+            "observed": 21956
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 332.90000000037253,
+            "observed": 20108
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 320.20000000018626,
+            "observed": 19788
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 333.5,
+            "observed": 50212
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 317.70000000018626,
+            "observed": 18460
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 333.20000000018626,
+            "observed": 17080
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 319,
+            "observed": 16340
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 335.5,
+            "observed": 17912
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 316.6000000005588,
+            "observed": 16148
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 338.3999999994412,
+            "observed": 15748
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 322.80000000074506,
+            "observed": 21956
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 342,
+            "observed": 20108
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 321.20000000018626,
+            "observed": 19788
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 327.70000000018626,
+            "observed": 50212
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 338.8999999994412,
+            "observed": 18460
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 321.79999999981374,
+            "observed": 17080
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 331.40000000037253,
+            "observed": 16340
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 315.29999999981374,
+            "observed": 17912
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 322.20000000018626,
+            "observed": 16148
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 317.29999999981374,
+            "observed": 15748
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 336.40000000037253,
+            "observed": 21956
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 314.90000000037253,
+            "observed": 20108
+          }
+        ]
+      },
+      "progressiveToDirectMedianRatio": 1.047327752735725,
+      "progressiveToDirectMeanRatio": 1.0508934659277325,
+      "progressiveFasterByMean": false
+    },
+    {
+      "q12Rows": 640,
+      "directQ16Rows": 640,
+      "progressiveQ16Rows": 34,
+      "inspections": {
+        "direct": {
+          "mode": "direct",
+          "scriptElements": 0,
+          "hiddenPropertyCount": 768,
+          "scoreRows": 640,
+          "q12Rows": 0,
+          "q16Rows": 640,
+          "firstGateWidth": 1,
+          "firstContentDisplay": "grid",
+          "q12StageWidth": null,
+          "secondGateWidth": null,
+          "secondContentDisplay": null,
+          "finalStageWidth": 19787.8125,
+          "expected": {
+            "q12Rows": 0,
+            "q16Rows": 640
+          }
+        },
+        "progressive": {
+          "mode": "progressive",
+          "scriptElements": 0,
+          "hiddenPropertyCount": 768,
+          "scoreRows": 674,
+          "q12Rows": 640,
+          "q16Rows": 34,
+          "firstGateWidth": 1,
+          "firstContentDisplay": "grid",
+          "q12StageWidth": 19777.03125,
+          "secondGateWidth": 2,
+          "secondContentDisplay": "grid",
+          "finalStageWidth": 19787.8125,
+          "expected": {
+            "q12Rows": 640,
+            "q16Rows": 34
+          }
+        }
+      },
+      "inspectionChecks": {
+        "directNoRuntimeScript": true,
+        "progressiveNoRuntimeScript": true,
+        "directQ12RowsMatch": true,
+        "directQ16RowsMatch": true,
+        "progressiveQ12RowsMatch": true,
+        "progressiveQ16RowsMatch": true,
+        "directFirstWaveActive": true,
+        "progressiveFirstWaveActive": true,
+        "progressiveSecondWaveActive": true,
+        "directFinalWidthLive": true,
+        "progressiveFinalWidthLive": true
+      },
+      "outputChecks": {
+        "directOutputsFinite": true,
+        "progressiveOutputsFinite": true,
+        "directOutputsReact": true,
+        "progressiveOutputsReact": true
+      },
+      "direct": {
+        "samples": 50,
+        "minimumMilliseconds": 455.3999999994412,
+        "medianMilliseconds": 471.45000000018626,
+        "p95Milliseconds": 488.1000000005588,
+        "maximumMilliseconds": 500.29999999981374,
+        "meanMilliseconds": 472.01800000002606,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 467.59999999962747,
+            "observed": 19788
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 476.5,
+            "observed": 50481
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 457.3999999994412,
+            "observed": 20549
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 478.5,
+            "observed": 18309
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 461,
+            "observed": 17764
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 473.59999999962747,
+            "observed": 20761
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 457.8999999994412,
+            "observed": 16300
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 488.1000000005588,
+            "observed": 16529
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 465.20000000018626,
+            "observed": 21956
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 484.90000000037253,
+            "observed": 20108
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 498.29999999981374,
+            "observed": 19788
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 463.20000000018626,
+            "observed": 50481
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 482.29999999981374,
+            "observed": 20549
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 460.70000000018626,
+            "observed": 18309
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 487.1000000005588,
+            "observed": 17764
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 459.1000000005588,
+            "observed": 20761
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 473.90000000037253,
+            "observed": 16300
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 471,
+            "observed": 16529
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 474,
+            "observed": 21956
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 457.59999999962747,
+            "observed": 20108
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 481.40000000037253,
+            "observed": 19788
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 462,
+            "observed": 50481
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 471.90000000037253,
+            "observed": 20549
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 466.5,
+            "observed": 18309
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 470.1000000005588,
+            "observed": 17764
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 464.6000000005588,
+            "observed": 20761
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 480.59999999962747,
+            "observed": 16300
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 455.3999999994412,
+            "observed": 16529
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 486.3999999994412,
+            "observed": 21956
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 458.20000000018626,
+            "observed": 20108
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 488.09999999962747,
+            "observed": 19788
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 461.6000000005588,
+            "observed": 50481
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 500.29999999981374,
+            "observed": 20549
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 463.1000000005588,
+            "observed": 18309
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 474.40000000037253,
+            "observed": 17764
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 479.20000000018626,
+            "observed": 20761
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 476.59999999962747,
+            "observed": 16300
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 466.5,
+            "observed": 16529
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 479.3999999994412,
+            "observed": 21956
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 458.70000000018626,
+            "observed": 20108
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 486.1000000005588,
+            "observed": 19788
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 458.3999999994412,
+            "observed": 50481
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 476.09999999962747,
+            "observed": 20549
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 482.6000000005588,
+            "observed": 18309
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 462.5,
+            "observed": 17764
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 469.5,
+            "observed": 20761
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 459,
+            "observed": 16300
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 480.8999999994412,
+            "observed": 16529
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 459.59999999962747,
+            "observed": 21956
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 483.30000000074506,
+            "observed": 20108
+          }
+        ]
+      },
+      "progressive": {
+        "samples": 50,
+        "minimumMilliseconds": 467.30000000074506,
+        "medianMilliseconds": 492,
+        "p95Milliseconds": 511.40000000037253,
+        "maximumMilliseconds": 515.2999999998137,
+        "meanMilliseconds": 491.3840000000037,
+        "outputs": [
+          {
+            "round": 0,
+            "fixture": 0,
+            "milliseconds": 479.6000000005588,
+            "observed": 19788
+          },
+          {
+            "round": 0,
+            "fixture": 1,
+            "milliseconds": 497.80000000074506,
+            "observed": 50212
+          },
+          {
+            "round": 0,
+            "fixture": 2,
+            "milliseconds": 497.90000000037253,
+            "observed": 18460
+          },
+          {
+            "round": 0,
+            "fixture": 3,
+            "milliseconds": 496.30000000074506,
+            "observed": 17080
+          },
+          {
+            "round": 0,
+            "fixture": 4,
+            "milliseconds": 493.70000000018626,
+            "observed": 16340
+          },
+          {
+            "round": 0,
+            "fixture": 5,
+            "milliseconds": 494.90000000037253,
+            "observed": 17912
+          },
+          {
+            "round": 0,
+            "fixture": 6,
+            "milliseconds": 478.59999999962747,
+            "observed": 16148
+          },
+          {
+            "round": 0,
+            "fixture": 7,
+            "milliseconds": 505.59999999962747,
+            "observed": 15748
+          },
+          {
+            "round": 0,
+            "fixture": 8,
+            "milliseconds": 475.90000000037253,
+            "observed": 21956
+          },
+          {
+            "round": 0,
+            "fixture": 9,
+            "milliseconds": 500.09999999962747,
+            "observed": 20108
+          },
+          {
+            "round": 1,
+            "fixture": 0,
+            "milliseconds": 478.90000000037253,
+            "observed": 19788
+          },
+          {
+            "round": 1,
+            "fixture": 1,
+            "milliseconds": 493,
+            "observed": 50212
+          },
+          {
+            "round": 1,
+            "fixture": 2,
+            "milliseconds": 479.79999999981374,
+            "observed": 18460
+          },
+          {
+            "round": 1,
+            "fixture": 3,
+            "milliseconds": 510.1000000005588,
+            "observed": 17080
+          },
+          {
+            "round": 1,
+            "fixture": 4,
+            "milliseconds": 477.20000000018626,
+            "observed": 16340
+          },
+          {
+            "round": 1,
+            "fixture": 5,
+            "milliseconds": 485.79999999981374,
+            "observed": 17912
+          },
+          {
+            "round": 1,
+            "fixture": 6,
+            "milliseconds": 494.20000000018626,
+            "observed": 16148
+          },
+          {
+            "round": 1,
+            "fixture": 7,
+            "milliseconds": 489.79999999981374,
+            "observed": 15748
+          },
+          {
+            "round": 1,
+            "fixture": 8,
+            "milliseconds": 486,
+            "observed": 21956
+          },
+          {
+            "round": 1,
+            "fixture": 9,
+            "milliseconds": 499.09999999962747,
+            "observed": 20108
+          },
+          {
+            "round": 2,
+            "fixture": 0,
+            "milliseconds": 510.79999999981374,
+            "observed": 19788
+          },
+          {
+            "round": 2,
+            "fixture": 1,
+            "milliseconds": 489,
+            "observed": 50212
+          },
+          {
+            "round": 2,
+            "fixture": 2,
+            "milliseconds": 499.40000000037253,
+            "observed": 18460
+          },
+          {
+            "round": 2,
+            "fixture": 3,
+            "milliseconds": 477.09999999962747,
+            "observed": 17080
+          },
+          {
+            "round": 2,
+            "fixture": 4,
+            "milliseconds": 503.19999999925494,
+            "observed": 16340
+          },
+          {
+            "round": 2,
+            "fixture": 5,
+            "milliseconds": 478.3999999994412,
+            "observed": 17912
+          },
+          {
+            "round": 2,
+            "fixture": 6,
+            "milliseconds": 492.5,
+            "observed": 16148
+          },
+          {
+            "round": 2,
+            "fixture": 7,
+            "milliseconds": 489.5,
+            "observed": 15748
+          },
+          {
+            "round": 2,
+            "fixture": 8,
+            "milliseconds": 495.30000000074506,
+            "observed": 21956
+          },
+          {
+            "round": 2,
+            "fixture": 9,
+            "milliseconds": 472.59999999962747,
+            "observed": 20108
+          },
+          {
+            "round": 3,
+            "fixture": 0,
+            "milliseconds": 511.40000000037253,
+            "observed": 19788
+          },
+          {
+            "round": 3,
+            "fixture": 1,
+            "milliseconds": 481.29999999981374,
+            "observed": 50212
+          },
+          {
+            "round": 3,
+            "fixture": 2,
+            "milliseconds": 484.5,
+            "observed": 18460
+          },
+          {
+            "round": 3,
+            "fixture": 3,
+            "milliseconds": 496.59999999962747,
+            "observed": 17080
+          },
+          {
+            "round": 3,
+            "fixture": 4,
+            "milliseconds": 498.09999999962747,
+            "observed": 16340
+          },
+          {
+            "round": 3,
+            "fixture": 5,
+            "milliseconds": 491.5,
+            "observed": 17912
+          },
+          {
+            "round": 3,
+            "fixture": 6,
+            "milliseconds": 515.2999999998137,
+            "observed": 16148
+          },
+          {
+            "round": 3,
+            "fixture": 7,
+            "milliseconds": 485.29999999981374,
+            "observed": 15748
+          },
+          {
+            "round": 3,
+            "fixture": 8,
+            "milliseconds": 496.5,
+            "observed": 21956
+          },
+          {
+            "round": 3,
+            "fixture": 9,
+            "milliseconds": 477,
+            "observed": 20108
+          },
+          {
+            "round": 4,
+            "fixture": 0,
+            "milliseconds": 512.4000000003725,
+            "observed": 19788
+          },
+          {
+            "round": 4,
+            "fixture": 1,
+            "milliseconds": 487.70000000018626,
+            "observed": 50212
+          },
+          {
+            "round": 4,
+            "fixture": 2,
+            "milliseconds": 508.70000000018626,
+            "observed": 18460
+          },
+          {
+            "round": 4,
+            "fixture": 3,
+            "milliseconds": 480.19999999925494,
+            "observed": 17080
+          },
+          {
+            "round": 4,
+            "fixture": 4,
+            "milliseconds": 506.29999999981374,
+            "observed": 16340
+          },
+          {
+            "round": 4,
+            "fixture": 5,
+            "milliseconds": 477.59999999962747,
+            "observed": 17912
+          },
+          {
+            "round": 4,
+            "fixture": 6,
+            "milliseconds": 489.20000000018626,
+            "observed": 16148
+          },
+          {
+            "round": 4,
+            "fixture": 7,
+            "milliseconds": 487.09999999962747,
+            "observed": 15748
+          },
+          {
+            "round": 4,
+            "fixture": 8,
+            "milliseconds": 493.09999999962747,
+            "observed": 21956
+          },
+          {
+            "round": 4,
+            "fixture": 9,
+            "milliseconds": 467.30000000074506,
+            "observed": 20108
+          }
+        ]
+      },
+      "progressiveToDirectMedianRatio": 1.0435889277755979,
+      "progressiveToDirectMeanRatio": 1.0410280963861052,
+      "progressiveFasterByMean": false
+    }
+  ],
+  "globalBudget": {
+    "q12Rows": 418,
+    "directQ16Rows": 418,
+    "progressiveQ16Rows": 22,
+    "progressiveToDirectMedianRatio": 1.047327752735725,
+    "progressiveToDirectMeanRatio": 1.0508934659277325,
+    "progressiveFasterByMean": false,
+    "progressiveMateriallyFaster": false
+  },
+  "firstMeanCrossoverRows": 128,
+  "firstMaterialCrossoverRows": 128,
+  "allChecksPass": true,
+  "diagnostics": {
+    "pageErrors": [],
+    "requestFailures": [],
+    "httpErrors": [],
+    "serverErrors": []
+  },
+  "pass": true
+}
