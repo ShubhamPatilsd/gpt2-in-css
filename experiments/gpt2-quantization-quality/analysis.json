@@ -1,0 +1,103 @@
+{
+  "fp32": {
+    "ppl_ratio": 1.0,
+    "delta_nll": 0.0,
+    "delta_nll_paired_article_bootstrap_95pct": [
+      0.0,
+      0.0
+    ],
+    "ppl_ratio_paired_article_bootstrap_95pct": [
+      1.0,
+      1.0
+    ],
+    "windows_with_higher_nll": 0
+  },
+  "w8a8": {
+    "ppl_ratio": 4.1471060714501276,
+    "delta_nll": 1.4224107588127393,
+    "delta_nll_paired_article_bootstrap_95pct": [
+      1.3462160408232802,
+      1.4920130983326054
+    ],
+    "ppl_ratio_paired_article_bootstrap_95pct": [
+      3.842856771140664,
+      4.446036825439519
+    ],
+    "windows_with_higher_nll": 24
+  },
+  "smoothquant_w8a8": {
+    "ppl_ratio": 1.0104597879685602,
+    "delta_nll": 0.01040546287730962,
+    "delta_nll_paired_article_bootstrap_95pct": [
+      0.0060228909095418936,
+      0.015204895952148622
+    ],
+    "ppl_ratio_paired_article_bootstrap_95pct": [
+      1.0060410649855014,
+      1.0153210784835038
+    ],
+    "windows_with_higher_nll": 19
+  },
+  "svg": {
+    "ppl_ratio": 1.0426013093596866,
+    "delta_nll": 0.041718849211128506,
+    "delta_nll_paired_article_bootstrap_95pct": [
+      0.03428470828798269,
+      0.04923667471100594
+    ],
+    "ppl_ratio_paired_article_bootstrap_95pct": [
+      1.0348792034753505,
+      1.0504689407543566
+    ],
+    "windows_with_higher_nll": 24,
+    "clipped_elements": 77957,
+    "materialized_elements": 1142341632,
+    "attention_probabilities": {
+      "rounded_to_zero_fraction": 0.7272070414533119,
+      "mean_mass_lost_to_zero": 0.030199343534925642,
+      "mean_abs_row_sum_error": 0.021757414631321335
+    }
+  },
+  "svg_float_probabilities": {
+    "ppl_ratio": 1.0393771704481916,
+    "delta_nll": 0.038621659187232336,
+    "delta_nll_paired_article_bootstrap_95pct": [
+      0.03212335266649144,
+      0.0454010895931837
+    ],
+    "ppl_ratio_paired_article_bootstrap_95pct": [
+      1.0326448769482512,
+      1.0464474949475044
+    ],
+    "windows_with_higher_nll": 24,
+    "clipped_elements": 78482,
+    "materialized_elements": 1142341632
+  },
+  "svg_legacy_ranges": {
+    "ppl_ratio": 3.803306034201198,
+    "delta_nll": 1.3358706974941905,
+    "delta_nll_paired_article_bootstrap_95pct": [
+      1.2498994039964035,
+      1.426990565024266
+    ],
+    "ppl_ratio_paired_article_bootstrap_95pct": [
+      3.489991860568908,
+      4.166142572064284
+    ],
+    "windows_with_higher_nll": 24,
+    "clipped_elements": 33912171,
+    "materialized_elements": 1142341632,
+    "attention_probabilities": {
+      "rounded_to_zero_fraction": 0.6188943381611183,
+      "mean_mass_lost_to_zero": 0.03559596267172222,
+      "mean_abs_row_sum_error": 0.02463554860851555
+    }
+  },
+  "probability_rounding_effect": {
+    "delta_nll_svg_minus_float_probability": 0.003097190023896174,
+    "paired_article_bootstrap_95pct": [
+      -0.003675587021650269,
+      0.009098656764774683
+    ]
+  }
+}

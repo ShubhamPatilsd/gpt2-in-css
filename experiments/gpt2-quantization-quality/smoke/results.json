@@ -1,0 +1,2588 @@
+{
+  "kind": "offline_numerical_screening_not_browser",
+  "checks": {
+    "scalar_max_logit_error": 9.918212890625e-05,
+    "cache_max_logit_error": 0.00011444091796875,
+    "left_padding_max_logit_error": 7.62939453125e-05,
+    "known_hello_tokens": [
+      11,
+      314,
+      1101,
+      7926,
+      11,
+      475,
+      314,
+      1101
+    ]
+  },
+  "python": "3.13.2",
+  "numpy": "2.5.3",
+  "context": 32,
+  "test_windows": 2,
+  "variants": {
+    "fp32": {
+      "overall": {
+        "nll": 4.671076507453693,
+        "kl": 0.0,
+        "tv": 0.0,
+        "agreement": 1.0,
+        "perplexity": 106.81266519397786,
+        "tokens": 64
+      },
+      "per_window": [
+        {
+          "article_id": 36,
+          "nll": 4.188597098647589,
+          "kl": 0.0,
+          "tv": 0.0,
+          "agreement": 1.0,
+          "perplexity": 65.93023243810032,
+          "tokens": 32
+        },
+        {
+          "article_id": 40,
+          "nll": 5.153555916259797,
+          "kl": 0.0,
+          "tv": 0.0,
+          "agreement": 1.0,
+          "perplexity": 173.04573370877006,
+          "tokens": 32
+        }
+      ],
+      "context_buckets": {
+        "1-16": {
+          "nll": 4.965657887483413,
+          "kl": 0.0,
+          "tv": 0.0,
+          "agreement": 1.0,
+          "perplexity": 143.40286219474953,
+          "tokens": 32
+        },
+        "17-32": {
+          "nll": 4.376495127423972,
+          "kl": 0.0,
+          "tv": 0.0,
+          "agreement": 1.0,
+          "perplexity": 79.55870106934681,
+          "tokens": 32
+        }
+      },
+      "teacher_forced_surface_stats": {},
+      "continuations": [
+        {
+          "prompt": "Hello, my name is",
+          "tokens": [
+            1757,
+            13,
+            314,
+            1101,
+            257,
+            6260,
+            11,
+            290
+          ],
+          "continuation": " John. I'm a writer, and",
+          "text": "Hello, my name is John. I'm a writer, and",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The quick brown fox",
+          "tokens": [
+            274,
+            389,
+            257,
+            1049,
+            835,
+            284,
+            651,
+            257
+          ],
+          "continuation": "es are a great way to get a",
+          "text": "The quick brown foxes are a great way to get a",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "Once upon a time there was",
+          "tokens": [
+            257,
+            1049,
+            1730,
+            286,
+            10802,
+            546,
+            262,
+            3616
+          ],
+          "continuation": " a great deal of confusion about the meaning",
+          "text": "Once upon a time there was a great deal of confusion about the meaning",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "In the future, computers",
+          "tokens": [
+            481,
+            307,
+            1498,
+            284,
+            466,
+            1243,
+            588,
+            3758
+          ],
+          "continuation": " will be able to do things like send",
+          "text": "In the future, computers will be able to do things like send",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The capital of France is",
+          "tokens": [
+            262,
+            3139,
+            286,
+            262,
+            4141,
+            2066,
+            11,
+            290
+          ],
+          "continuation": " the capital of the French Republic, and",
+          "text": "The capital of France is the capital of the French Republic, and",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "She opened the door and",
+          "tokens": [
+            2497,
+            257,
+            582,
+            287,
+            257,
+            2330,
+            10147,
+            290
+          ],
+          "continuation": " saw a man in a white shirt and",
+          "text": "She opened the door and saw a man in a white shirt and",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The purpose of the experiment was to",
+          "tokens": [
+            5004,
+            1771,
+            262,
+            3048,
+            286,
+            262,
+            2563,
+            319
+          ],
+          "continuation": " determine whether the effects of the drug on",
+          "text": "The purpose of the experiment was to determine whether the effects of the drug on",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "After three days at sea, the crew",
+          "tokens": [
+            286,
+            262,
+            23116,
+            14973,
+            12,
+            35,
+            373,
+            4137
+          ],
+          "continuation": " of the USS Enterprise-D was forced",
+          "text": "After three days at sea, the crew of the USS Enterprise-D was forced",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "To make a cup of tea, first",
+          "tokens": [
+            345,
+            761,
+            284,
+            787,
+            257,
+            6508,
+            286,
+            8887
+          ],
+          "continuation": " you need to make a cup of tea",
+          "text": "To make a cup of tea, first you need to make a cup of tea",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The report found that the number of",
+          "tokens": [
+            661,
+            508,
+            423,
+            587,
+            5169,
+            329,
+            2563,
+            20819
+          ],
+          "continuation": " people who have been arrested for drug offences",
+          "text": "The report found that the number of people who have been arrested for drug offences",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "When the train arrived at the station,",
+          "tokens": [
+            262,
+            4639,
+            373,
+            407,
+            612,
+            284,
+            1037,
+            13
+          ],
+          "continuation": " the driver was not there to help.",
+          "text": "When the train arrived at the station, the driver was not there to help.",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "A computer program is a set of",
+          "tokens": [
+            7729,
+            326,
+            460,
+            307,
+            973,
+            284,
+            1620,
+            257
+          ],
+          "continuation": " instructions that can be used to perform a",
+          "text": "A computer program is a set of instructions that can be used to perform a",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        }
+      ],
+      "mean_repeated_4gram_fraction": 0.0,
+      "offline_evaluation_seconds_NOT_inference_timing": 1.447042625000904
+    },
+    "w8a8": {
+      "overall": {
+        "nll": 5.4693023073519775,
+        "kl": 1.03295082397304,
+        "tv": 0.46713421098553576,
+        "agreement": 0.421875,
+        "perplexity": 237.294576311887,
+        "tokens": 64
+      },
+      "per_window": [
+        {
+          "article_id": 36,
+          "nll": 4.789094639101475,
+          "kl": 1.0056693278317566,
+          "tv": 0.4729807693916632,
+          "agreement": 0.4375,
+          "perplexity": 120.19250179732686,
+          "tokens": 32
+        },
+        {
+          "article_id": 40,
+          "nll": 6.14950997560248,
+          "kl": 1.060232320114324,
+          "tv": 0.46128765257940835,
+          "agreement": 0.40625,
+          "perplexity": 468.48776009328645,
+          "tokens": 32
+        }
+      ],
+      "context_buckets": {
+        "1-16": {
+          "nll": 5.873458440459162,
+          "kl": 0.9065612195815793,
+          "tv": 0.4380994990079529,
+          "agreement": 0.4375,
+          "perplexity": 355.47625027059456,
+          "tokens": 32
+        },
+        "17-32": {
+          "nll": 5.065146174244793,
+          "kl": 1.159340428364501,
+          "tv": 0.4961689229631187,
+          "agreement": 0.40625,
+          "perplexity": 158.4035949073245,
+          "tokens": 32
+        }
+      },
+      "teacher_forced_surface_stats": {},
+      "continuations": [
+        {
+          "prompt": "Hello, my name is",
+          "tokens": [
+            327,
+            13,
+            198,
+            198,
+            464,
+            366,
+            464,
+            1869
+          ],
+          "continuation": " C.\n\nThe \"The Man",
+          "text": "Hello, my name is C.\n\nThe \"The Man",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 2,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The quick brown fox",
+          "tokens": [
+            290,
+            262,
+            262,
+            262,
+            290,
+            262,
+            262,
+            262
+          ],
+          "continuation": " and the the the and the the the",
+          "text": "The quick brown fox and the the the and the the the",
+          "eos": false,
+          "repeated_4gram_fraction": 0.2,
+          "longest_identical_token_run": 3,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "Once upon a time there was",
+          "tokens": [
+            257,
+            366,
+            71,
+            7335,
+            1,
+            290,
+            262,
+            366
+          ],
+          "continuation": " a \"halo\" and the \"",
+          "text": "Once upon a time there was a \"halo\" and the \"",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "In the future, computers",
+          "tokens": [
+            290,
+            262,
+            1029,
+            12,
+            12287,
+            4455,
+            290,
+            262
+          ],
+          "continuation": " and the high-speed Internet and the",
+          "text": "In the future, computers and the high-speed Internet and the",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The capital of France is",
+          "tokens": [
+            262,
+            366,
+            34,
+            313,
+            18287,
+            390,
+            300,
+            6
+          ],
+          "continuation": " the \"Coterie de l'",
+          "text": "The capital of France is the \"Coterie de l'",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "She opened the door and",
+          "tokens": [
+            262,
+            734,
+            286,
+            606,
+            290,
+            262,
+            290,
+            262
+          ],
+          "continuation": " the two of them and the and the",
+          "text": "She opened the door and the two of them and the and the",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The purpose of the experiment was to",
+          "tokens": [
+            307,
+            284,
+            307,
+            262,
+            366,
+            82,
+            2122,
+            1
+          ],
+          "continuation": " be to be the \"solution\"",
+          "text": "The purpose of the experiment was to be to be the \"solution\"",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "After three days at sea, the crew",
+          "tokens": [
+            290,
+            262,
+            584,
+            649,
+            12,
+            6286,
+            11,
+            262
+          ],
+          "continuation": " and the other new-born, the",
+          "text": "After three days at sea, the crew and the other new-born, the",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "To make a cup of tea, first",
+          "tokens": [
+            11,
+            262,
+            366,
+            82,
+            676,
+            290,
+            10285,
+            1
+          ],
+          "continuation": ", the \"sink and dump\"",
+          "text": "To make a cup of tea, first, the \"sink and dump\"",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The report found that the number of",
+          "tokens": [
+            262,
+            366,
+            64,
+            316,
+            12371,
+            1,
+            290,
+            366
+          ],
+          "continuation": " the \"aetiology\" and \"",
+          "text": "The report found that the number of the \"aetiology\" and \"",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "When the train arrived at the station,",
+          "tokens": [
+            262,
+            366,
+            50,
+            1,
+            290,
+            366,
+            50,
+            1
+          ],
+          "continuation": " the \"S\" and \"S\"",
+          "text": "When the train arrived at the station, the \"S\" and \"S\"",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "A computer program is a set of",
+          "tokens": [
+            262,
+            366,
+            71,
+            896,
+            290,
+            18297,
+            1,
+            290
+          ],
+          "continuation": " the \"hits and misses\" and",
+          "text": "A computer program is a set of the \"hits and misses\" and",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        }
+      ],
+      "mean_repeated_4gram_fraction": 0.016666666666666666,
+      "offline_evaluation_seconds_NOT_inference_timing": 1.074054624999917
+    },
+    "smoothquant_w8a8": {
+      "overall": {
+        "nll": 4.630797459141819,
+        "kl": 0.025302635328110792,
+        "tv": 0.08419580606526303,
+        "agreement": 0.9375,
+        "perplexity": 102.59584749320238,
+        "tokens": 64
+      },
+      "per_window": [
+        {
+          "article_id": 36,
+          "nll": 4.164984982531156,
+          "kl": 0.027500436536610676,
+          "tv": 0.08845725272724266,
+          "agreement": 0.90625,
+          "perplexity": 64.39171543562102,
+          "tokens": 32
+        },
+        {
+          "article_id": 40,
+          "nll": 5.096609935752482,
+          "kl": 0.02310483411961092,
+          "tv": 0.0799343594032834,
+          "agreement": 0.96875,
+          "perplexity": 163.46680394580045,
+          "tokens": 32
+        }
+      ],
+      "context_buckets": {
+        "1-16": {
+          "nll": 4.96382994130649,
+          "kl": 0.025720654741452006,
+          "tv": 0.08382286902611681,
+          "agreement": 0.9375,
+          "perplexity": 143.14096891737228,
+          "tokens": 32
+        },
+        "17-32": {
+          "nll": 4.297764976977147,
+          "kl": 0.024884615914769585,
+          "tv": 0.08456874310440923,
+          "agreement": 0.9375,
+          "perplexity": 73.53525690415358,
+          "tokens": 32
+        }
+      },
+      "teacher_forced_surface_stats": {},
+      "continuations": [
+        {
+          "prompt": "Hello, my name is",
+          "tokens": [
+            1757,
+            13,
+            314,
+            1101,
+            257,
+            6260,
+            290,
+            257
+          ],
+          "continuation": " John. I'm a writer and a",
+          "text": "Hello, my name is John. I'm a writer and a",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The quick brown fox",
+          "tokens": [
+            274,
+            389,
+            262,
+            749,
+            2219,
+            4693,
+            286,
+            21831
+          ],
+          "continuation": "es are the most common species of fox",
+          "text": "The quick brown foxes are the most common species of fox",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "Once upon a time there was",
+          "tokens": [
+            257,
+            1049,
+            1730,
+            286,
+            10802,
+            546,
+            262,
+            3616
+          ],
+          "continuation": " a great deal of confusion about the meaning",
+          "text": "Once upon a time there was a great deal of confusion about the meaning",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "In the future, computers",
+          "tokens": [
+            481,
+            307,
+            1498,
+            284,
+            466,
+            1243,
+            588,
+            15284
+          ],
+          "continuation": " will be able to do things like calculate",
+          "text": "In the future, computers will be able to do things like calculate",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The capital of France is",
+          "tokens": [
+            262,
+            3139,
+            286,
+            4881,
+            11,
+            290,
+            262,
+            3139
+          ],
+          "continuation": " the capital of France, and the capital",
+          "text": "The capital of France is the capital of France, and the capital",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "She opened the door and",
+          "tokens": [
+            2497,
+            257,
+            582,
+            5055,
+            287,
+            262,
+            32439,
+            13
+          ],
+          "continuation": " saw a man standing in the doorway.",
+          "text": "She opened the door and saw a man standing in the doorway.",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The purpose of the experiment was to",
+          "tokens": [
+            5004,
+            1771,
+            262,
+            1245,
+            286,
+            257,
+            2060,
+            10742
+          ],
+          "continuation": " determine whether the effect of a single dose",
+          "text": "The purpose of the experiment was to determine whether the effect of a single dose",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "After three days at sea, the crew",
+          "tokens": [
+            286,
+            262,
+            23116,
+            14973,
+            12,
+            35,
+            373,
+            7384
+          ],
+          "continuation": " of the USS Enterprise-D was attacked",
+          "text": "After three days at sea, the crew of the USS Enterprise-D was attacked",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "To make a cup of tea, first",
+          "tokens": [
+            345,
+            423,
+            284,
+            787,
+            257,
+            6508,
+            286,
+            8887
+          ],
+          "continuation": " you have to make a cup of tea",
+          "text": "To make a cup of tea, first you have to make a cup of tea",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The report found that the number of",
+          "tokens": [
+            661,
+            508,
+            423,
+            587,
+            2923,
+            416,
+            12594,
+            287
+          ],
+          "continuation": " people who have been killed by firearms in",
+          "text": "The report found that the number of people who have been killed by firearms in",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "When the train arrived at the station,",
+          "tokens": [
+            262,
+            4639,
+            373,
+            407,
+            5762,
+            257,
+            5852,
+            10999
+          ],
+          "continuation": " the driver was not wearing a seat belt",
+          "text": "When the train arrived at the station, the driver was not wearing a seat belt",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "A computer program is a set of",
+          "tokens": [
+            7729,
+            326,
+            460,
+            307,
+            10945,
+            416,
+            257,
+            3644
+          ],
+          "continuation": " instructions that can be executed by a computer",
+          "text": "A computer program is a set of instructions that can be executed by a computer",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        }
+      ],
+      "mean_repeated_4gram_fraction": 0.0,
+      "offline_evaluation_seconds_NOT_inference_timing": 0.8954501670013997
+    },
+    "svg": {
+      "overall": {
+        "nll": 5.421989221856071,
+        "kl": 0.8405153809392124,
+        "tv": 0.44770596343103697,
+        "agreement": 0.390625,
+        "perplexity": 226.3288933880708,
+        "tokens": 64
+      },
+      "per_window": [
+        {
+          "article_id": 36,
+          "nll": 4.964716169570041,
+          "kl": 0.9340750149951542,
+          "tv": 0.46907705806347855,
+          "agreement": 0.3125,
+          "perplexity": 143.26788071780476,
+          "tokens": 32
+        },
+        {
+          "article_id": 40,
+          "nll": 5.8792622741421,
+          "kl": 0.7469557468832706,
+          "tv": 0.4263348687985955,
+          "agreement": 0.46875,
+          "perplexity": 357.5453739220603,
+          "tokens": 32
+        }
+      ],
+      "context_buckets": {
+        "1-16": {
+          "nll": 5.835266882615276,
+          "kl": 0.8697347396949235,
+          "tv": 0.42788106649302204,
+          "agreement": 0.375,
+          "perplexity": 342.1560373641827,
+          "tokens": 32
+        },
+        "17-32": {
+          "nll": 5.008711561096865,
+          "kl": 0.8112960221835013,
+          "tv": 0.467530860369052,
+          "agreement": 0.40625,
+          "perplexity": 149.7117174283446,
+          "tokens": 32
+        }
+      },
+      "teacher_forced_surface_stats": {
+        "input": {
+          "elements": 49152,
+          "clipped": 335
+        },
+        "b0.ln1": {
+          "elements": 49152,
+          "clipped": 208
+        },
+        "b0.qkv": {
+          "elements": 147456,
+          "clipped": 743
+        },
+        "b0.scores": {
+          "elements": 12672,
+          "clipped": 3
+        },
+        "b0.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 2868,
+          "lost_mass": 1.110176307593945,
+          "rows": 768,
+          "row_sum_abs_error": 2.639218807220459
+        },
+        "b0.context": {
+          "elements": 49152,
+          "clipped": 565
+        },
+        "b0.attention": {
+          "elements": 49152,
+          "clipped": 244
+        },
+        "b0.residual1": {
+          "elements": 49152,
+          "clipped": 199
+        },
+        "b0.ln2": {
+          "elements": 49152,
+          "clipped": 309
+        },
+        "b0.fc": {
+          "elements": 196608,
+          "clipped": 838
+        },
+        "b0.gelu": {
+          "elements": 196608,
+          "clipped": 1566
+        },
+        "b0.projection": {
+          "elements": 49152,
+          "clipped": 78
+        },
+        "b0.residual2": {
+          "elements": 49152,
+          "clipped": 67
+        },
+        "b1.ln1": {
+          "elements": 49152,
+          "clipped": 89
+        },
+        "b1.qkv": {
+          "elements": 147456,
+          "clipped": 408
+        },
+        "b1.scores": {
+          "elements": 12672,
+          "clipped": 47
+        },
+        "b1.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 641,
+          "lost_mass": 0.6426862433654605,
+          "rows": 768,
+          "row_sum_abs_error": 2.768629550933838
+        },
+        "b1.context": {
+          "elements": 49152,
+          "clipped": 871
+        },
+        "b1.attention": {
+          "elements": 49152,
+          "clipped": 182
+        },
+        "b1.residual1": {
+          "elements": 49152,
+          "clipped": 49
+        },
+        "b1.ln2": {
+          "elements": 49152,
+          "clipped": 190
+        },
+        "b1.fc": {
+          "elements": 196608,
+          "clipped": 1032
+        },
+        "b1.gelu": {
+          "elements": 196608,
+          "clipped": 935
+        },
+        "b1.projection": {
+          "elements": 49152,
+          "clipped": 217
+        },
+        "b1.residual2": {
+          "elements": 49152,
+          "clipped": 35
+        },
+        "b2.ln1": {
+          "elements": 49152,
+          "clipped": 173
+        },
+        "b2.qkv": {
+          "elements": 147456,
+          "clipped": 524
+        },
+        "b2.scores": {
+          "elements": 12672,
+          "clipped": 4
+        },
+        "b2.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 3399,
+          "lost_mass": 1.3761277487279362,
+          "rows": 768,
+          "row_sum_abs_error": 2.4705907106399536
+        },
+        "b2.context": {
+          "elements": 49152,
+          "clipped": 463
+        },
+        "b2.attention": {
+          "elements": 49152,
+          "clipped": 244
+        },
+        "b2.residual1": {
+          "elements": 49152,
+          "clipped": 35
+        },
+        "b2.ln2": {
+          "elements": 49152,
+          "clipped": 204
+        },
+        "b2.fc": {
+          "elements": 196608,
+          "clipped": 633
+        },
+        "b2.gelu": {
+          "elements": 196608,
+          "clipped": 1234
+        },
+        "b2.projection": {
+          "elements": 49152,
+          "clipped": 90
+        },
+        "b2.residual2": {
+          "elements": 49152,
+          "clipped": 46
+        },
+        "b3.ln1": {
+          "elements": 49152,
+          "clipped": 213
+        },
+        "b3.qkv": {
+          "elements": 147456,
+          "clipped": 806
+        },
+        "b3.scores": {
+          "elements": 12672,
+          "clipped": 28
+        },
+        "b3.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 5046,
+          "lost_mass": 1.9510729021023634,
+          "rows": 768,
+          "row_sum_abs_error": 2.4392179250717163
+        },
+        "b3.context": {
+          "elements": 49152,
+          "clipped": 385
+        },
+        "b3.attention": {
+          "elements": 49152,
+          "clipped": 73
+        },
+        "b3.residual1": {
+          "elements": 49152,
+          "clipped": 19
+        },
+        "b3.ln2": {
+          "elements": 49152,
+          "clipped": 150
+        },
+        "b3.fc": {
+          "elements": 196608,
+          "clipped": 519
+        },
+        "b3.gelu": {
+          "elements": 196608,
+          "clipped": 1462
+        },
+        "b3.projection": {
+          "elements": 49152,
+          "clipped": 32
+        },
+        "b3.residual2": {
+          "elements": 49152,
+          "clipped": 19
+        },
+        "b4.ln1": {
+          "elements": 49152,
+          "clipped": 175
+        },
+        "b4.qkv": {
+          "elements": 147456,
+          "clipped": 647
+        },
+        "b4.scores": {
+          "elements": 12672,
+          "clipped": 29
+        },
+        "b4.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 3967,
+          "lost_mass": 1.7952339226068033,
+          "rows": 768,
+          "row_sum_abs_error": 2.6392195224761963
+        },
+        "b4.context": {
+          "elements": 49152,
+          "clipped": 445
+        },
+        "b4.attention": {
+          "elements": 49152,
+          "clipped": 156
+        },
+        "b4.residual1": {
+          "elements": 49152,
+          "clipped": 19
+        },
+        "b4.ln2": {
+          "elements": 49152,
+          "clipped": 210
+        },
+        "b4.fc": {
+          "elements": 196608,
+          "clipped": 674
+        },
+        "b4.gelu": {
+          "elements": 196608,
+          "clipped": 1345
+        },
+        "b4.projection": {
+          "elements": 49152,
+          "clipped": 82
+        },
+        "b4.residual2": {
+          "elements": 49152,
+          "clipped": 23
+        },
+        "b5.ln1": {
+          "elements": 49152,
+          "clipped": 223
+        },
+        "b5.qkv": {
+          "elements": 147456,
+          "clipped": 687
+        },
+        "b5.scores": {
+          "elements": 12672,
+          "clipped": 19
+        },
+        "b5.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 4404,
+          "lost_mass": 2.2206573376175216,
+          "rows": 768,
+          "row_sum_abs_error": 2.6509854793548584
+        },
+        "b5.context": {
+          "elements": 49152,
+          "clipped": 578
+        },
+        "b5.attention": {
+          "elements": 49152,
+          "clipped": 284
+        },
+        "b5.residual1": {
+          "elements": 49152,
+          "clipped": 22
+        },
+        "b5.ln2": {
+          "elements": 49152,
+          "clipped": 252
+        },
+        "b5.fc": {
+          "elements": 196608,
+          "clipped": 695
+        },
+        "b5.gelu": {
+          "elements": 196608,
+          "clipped": 1586
+        },
+        "b5.projection": {
+          "elements": 49152,
+          "clipped": 65
+        },
+        "b5.residual2": {
+          "elements": 49152,
+          "clipped": 26
+        },
+        "b6.ln1": {
+          "elements": 49152,
+          "clipped": 259
+        },
+        "b6.qkv": {
+          "elements": 147456,
+          "clipped": 887
+        },
+        "b6.scores": {
+          "elements": 12672,
+          "clipped": 8
+        },
+        "b6.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 2924,
+          "lost_mass": 1.950341018076955,
+          "rows": 768,
+          "row_sum_abs_error": 2.870592951774597
+        },
+        "b6.context": {
+          "elements": 49152,
+          "clipped": 754
+        },
+        "b6.attention": {
+          "elements": 49152,
+          "clipped": 197
+        },
+        "b6.residual1": {
+          "elements": 49152,
+          "clipped": 29
+        },
+        "b6.ln2": {
+          "elements": 49152,
+          "clipped": 258
+        },
+        "b6.fc": {
+          "elements": 196608,
+          "clipped": 954
+        },
+        "b6.gelu": {
+          "elements": 196608,
+          "clipped": 1778
+        },
+        "b6.projection": {
+          "elements": 49152,
+          "clipped": 92
+        },
+        "b6.residual2": {
+          "elements": 49152,
+          "clipped": 28
+        },
+        "b7.ln1": {
+          "elements": 49152,
+          "clipped": 278
+        },
+        "b7.qkv": {
+          "elements": 147456,
+          "clipped": 953
+        },
+        "b7.scores": {
+          "elements": 12672,
+          "clipped": 16
+        },
+        "b7.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 4579,
+          "lost_mass": 2.9562845069449892,
+          "rows": 768,
+          "row_sum_abs_error": 3.0039256811141968
+        },
+        "b7.context": {
+          "elements": 49152,
+          "clipped": 705
+        },
+        "b7.attention": {
+          "elements": 49152,
+          "clipped": 294
+        },
+        "b7.residual1": {
+          "elements": 49152,
+          "clipped": 28
+        },
+        "b7.ln2": {
+          "elements": 49152,
+          "clipped": 231
+        },
+        "b7.fc": {
+          "elements": 196608,
+          "clipped": 760
+        },
+        "b7.gelu": {
+          "elements": 196608,
+          "clipped": 2272
+        },
+        "b7.projection": {
+          "elements": 49152,
+          "clipped": 64
+        },
+        "b7.residual2": {
+          "elements": 49152,
+          "clipped": 24
+        },
+        "b8.ln1": {
+          "elements": 49152,
+          "clipped": 297
+        },
+        "b8.qkv": {
+          "elements": 147456,
+          "clipped": 977
+        },
+        "b8.scores": {
+          "elements": 12672,
+          "clipped": 3
+        },
+        "b8.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 2341,
+          "lost_mass": 2.0512817875039673,
+          "rows": 768,
+          "row_sum_abs_error": 2.8313775062561035
+        },
+        "b8.context": {
+          "elements": 49152,
+          "clipped": 756
+        },
+        "b8.attention": {
+          "elements": 49152,
+          "clipped": 256
+        },
+        "b8.residual1": {
+          "elements": 49152,
+          "clipped": 36
+        },
+        "b8.ln2": {
+          "elements": 49152,
+          "clipped": 233
+        },
+        "b8.fc": {
+          "elements": 196608,
+          "clipped": 858
+        },
+        "b8.gelu": {
+          "elements": 196608,
+          "clipped": 2310
+        },
+        "b8.projection": {
+          "elements": 49152,
+          "clipped": 59
+        },
+        "b8.residual2": {
+          "elements": 49152,
+          "clipped": 37
+        },
+        "b9.ln1": {
+          "elements": 49152,
+          "clipped": 303
+        },
+        "b9.qkv": {
+          "elements": 147456,
+          "clipped": 1009
+        },
+        "b9.scores": {
+          "elements": 12672,
+          "clipped": 4
+        },
+        "b9.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 2916,
+          "lost_mass": 2.5948537596120786,
+          "rows": 768,
+          "row_sum_abs_error": 2.878436326980591
+        },
+        "b9.context": {
+          "elements": 49152,
+          "clipped": 1230
+        },
+        "b9.attention": {
+          "elements": 49152,
+          "clipped": 489
+        },
+        "b9.residual1": {
+          "elements": 49152,
+          "clipped": 55
+        },
+        "b9.ln2": {
+          "elements": 49152,
+          "clipped": 196
+        },
+        "b9.fc": {
+          "elements": 196608,
+          "clipped": 912
+        },
+        "b9.gelu": {
+          "elements": 196608,
+          "clipped": 2379
+        },
+        "b9.projection": {
+          "elements": 49152,
+          "clipped": 33
+        },
+        "b9.residual2": {
+          "elements": 49152,
+          "clipped": 37
+        },
+        "b10.ln1": {
+          "elements": 49152,
+          "clipped": 286
+        },
+        "b10.qkv": {
+          "elements": 147456,
+          "clipped": 983
+        },
+        "b10.scores": {
+          "elements": 12672,
+          "clipped": 16
+        },
+        "b10.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 2655,
+          "lost_mass": 2.446992975419789,
+          "rows": 768,
+          "row_sum_abs_error": 2.7960814237594604
+        },
+        "b10.context": {
+          "elements": 49152,
+          "clipped": 1210
+        },
+        "b10.attention": {
+          "elements": 49152,
+          "clipped": 478
+        },
+        "b10.residual1": {
+          "elements": 49152,
+          "clipped": 74
+        },
+        "b10.ln2": {
+          "elements": 49152,
+          "clipped": 142
+        },
+        "b10.fc": {
+          "elements": 196608,
+          "clipped": 1131
+        },
+        "b10.gelu": {
+          "elements": 196608,
+          "clipped": 2764
+        },
+        "b10.projection": {
+          "elements": 49152,
+          "clipped": 51
+        },
+        "b10.residual2": {
+          "elements": 49152,
+          "clipped": 55
+        },
+        "b11.ln1": {
+          "elements": 49152,
+          "clipped": 207
+        },
+        "b11.qkv": {
+          "elements": 147456,
+          "clipped": 679
+        },
+        "b11.scores": {
+          "elements": 12672,
+          "clipped": 0
+        },
+        "b11.probabilities": {
+          "elements": 12672,
+          "rounded_to_zero": 555,
+          "lost_mass": 0.6029601140757563,
+          "rows": 768,
+          "row_sum_abs_error": 2.6941254138946533
+        },
+        "b11.context": {
+          "elements": 49152,
+          "clipped": 1703
+        },
+        "b11.attention": {
+          "elements": 49152,
+          "clipped": 686
+        },
+        "b11.residual1": {
+          "elements": 49152,
+          "clipped": 124
+        },
+        "b11.ln2": {
+          "elements": 49152,
+          "clipped": 108
+        },
+        "b11.fc": {
+          "elements": 196608,
+          "clipped": 674
+        },
+        "b11.gelu": {
+          "elements": 196608,
+          "clipped": 2758
+        },
+        "b11.projection": {
+          "elements": 49152,
+          "clipped": 51
+        },
+        "b11.residual2": {
+          "elements": 49152,
+          "clipped": 111
+        },
+        "final": {
+          "elements": 49152,
+          "clipped": 167
+        }
+      },
+      "continuations": [
+        {
+          "prompt": "Hello, my name is",
+          "tokens": [
+            257,
+            1310,
+            2576,
+            13,
+            314,
+            318,
+            257,
+            1310
+          ],
+          "continuation": " a little girl. I is a little",
+          "text": "Hello, my name is a little girl. I is a little",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The quick brown fox",
+          "tokens": [
+            274,
+            389,
+            257,
+            1310,
+            1643,
+            286,
+            257,
+            10715
+          ],
+          "continuation": "es are a little bit of a mystery",
+          "text": "The quick brown foxes are a little bit of a mystery",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "Once upon a time there was",
+          "tokens": [
+            11,
+            262,
+            4252,
+            373,
+            11,
+            290,
+            262,
+            8824
+          ],
+          "continuation": ", the sun was, and the moon",
+          "text": "Once upon a time there was, the sun was, and the moon",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "In the future, computers",
+          "tokens": [
+            481,
+            307,
+            1498,
+            284,
+            779,
+            262,
+            976,
+            1366
+          ],
+          "continuation": " will be able to use the same data",
+          "text": "In the future, computers will be able to use the same data",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The capital of France is",
+          "tokens": [
+            262,
+            3139,
+            286,
+            4881,
+            11,
+            290,
+            262,
+            3139
+          ],
+          "continuation": " the capital of France, and the capital",
+          "text": "The capital of France is the capital of France, and the capital",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "She opened the door and",
+          "tokens": [
+            373,
+            21272,
+            416,
+            262,
+            4315,
+            13,
+            198,
+            198
+          ],
+          "continuation": " was greeted by the crowd.\n\n",
+          "text": "She opened the door and was greeted by the crowd.\n\n",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 2,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The purpose of the experiment was to",
+          "tokens": [
+            262,
+            2050,
+            286,
+            262,
+            3048,
+            286,
+            262,
+            3048
+          ],
+          "continuation": " the study of the effects of the effects",
+          "text": "The purpose of the experiment was to the study of the effects of the effects",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "After three days at sea, the crew",
+          "tokens": [
+            286,
+            262,
+            4074,
+            373,
+            1498,
+            284,
+            262,
+            4074
+          ],
+          "continuation": " of the ship was able to the ship",
+          "text": "After three days at sea, the crew of the ship was able to the ship",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "To make a cup of tea, first",
+          "tokens": [
+            11,
+            788,
+            11,
+            788,
+            11,
+            788,
+            11,
+            788
+          ],
+          "continuation": ", then, then, then, then",
+          "text": "To make a cup of tea, first, then, then, then, then",
+          "eos": false,
+          "repeated_4gram_fraction": 0.6,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The report found that the number of",
+          "tokens": [
+            661,
+            508,
+            547,
+            5676,
+            416,
+            262,
+            4369,
+            373
+          ],
+          "continuation": " people who were affected by the disease was",
+          "text": "The report found that the number of people who were affected by the disease was",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "When the train arrived at the station,",
+          "tokens": [
+            262,
+            4512,
+            373,
+            5025,
+            13,
+            198,
+            198,
+            198
+          ],
+          "continuation": " the train was stopped.\n\n\n",
+          "text": "When the train arrived at the station, the train was stopped.\n\n\n",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 3,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "A computer program is a set of",
+          "tokens": [
+            257,
+            900,
+            286,
+            257,
+            900,
+            286,
+            257,
+            900
+          ],
+          "continuation": " a set of a set of a set",
+          "text": "A computer program is a set of a set of a set of a set",
+          "eos": false,
+          "repeated_4gram_fraction": 0.4,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        }
+      ],
+      "mean_repeated_4gram_fraction": 0.08333333333333333,
+      "offline_evaluation_seconds_NOT_inference_timing": 2.8606799999997747
+    },
+    "svg_float_probabilities": {
+      "overall": {
+        "nll": 5.419847235294021,
+        "kl": 0.8452075015999967,
+        "tv": 0.44888011859705673,
+        "agreement": 0.375,
+        "perplexity": 225.84461877983998,
+        "tokens": 64
+      },
+      "per_window": [
+        {
+          "article_id": 36,
+          "nll": 4.969489808626905,
+          "kl": 0.9419454362479642,
+          "tv": 0.47111696742729015,
+          "agreement": 0.3125,
+          "perplexity": 143.95342483705826,
+          "tokens": 32
+        },
+        {
+          "article_id": 40,
+          "nll": 5.870204661961134,
+          "kl": 0.7484695669520294,
+          "tv": 0.4266432697668233,
+          "agreement": 0.4375,
+          "perplexity": 354.3214889784311,
+          "tokens": 32
+        }
+      ],
+      "context_buckets": {
+        "1-16": {
+          "nll": 5.834592582106102,
+          "kl": 0.8834332438320116,
+          "tv": 0.4298221477096327,
+          "agreement": 0.375,
+          "perplexity": 341.92539914244514,
+          "tokens": 32
+        },
+        "17-32": {
+          "nll": 5.005101888481939,
+          "kl": 0.8069817593679819,
+          "tv": 0.4679380894844808,
+          "agreement": 0.375,
+          "perplexity": 149.17228132140713,
+          "tokens": 32
+        }
+      },
+      "teacher_forced_surface_stats": {
+        "input": {
+          "elements": 49152,
+          "clipped": 335
+        },
+        "b0.ln1": {
+          "elements": 49152,
+          "clipped": 208
+        },
+        "b0.qkv": {
+          "elements": 147456,
+          "clipped": 743
+        },
+        "b0.scores": {
+          "elements": 12672,
+          "clipped": 3
+        },
+        "b0.context": {
+          "elements": 49152,
+          "clipped": 561
+        },
+        "b0.attention": {
+          "elements": 49152,
+          "clipped": 241
+        },
+        "b0.residual1": {
+          "elements": 49152,
+          "clipped": 195
+        },
+        "b0.ln2": {
+          "elements": 49152,
+          "clipped": 311
+        },
+        "b0.fc": {
+          "elements": 196608,
+          "clipped": 839
+        },
+        "b0.gelu": {
+          "elements": 196608,
+          "clipped": 1559
+        },
+        "b0.projection": {
+          "elements": 49152,
+          "clipped": 80
+        },
+        "b0.residual2": {
+          "elements": 49152,
+          "clipped": 66
+        },
+        "b1.ln1": {
+          "elements": 49152,
+          "clipped": 86
+        },
+        "b1.qkv": {
+          "elements": 147456,
+          "clipped": 405
+        },
+        "b1.scores": {
+          "elements": 12672,
+          "clipped": 44
+        },
+        "b1.context": {
+          "elements": 49152,
+          "clipped": 875
+        },
+        "b1.attention": {
+          "elements": 49152,
+          "clipped": 181
+        },
+        "b1.residual1": {
+          "elements": 49152,
+          "clipped": 47
+        },
+        "b1.ln2": {
+          "elements": 49152,
+          "clipped": 190
+        },
+        "b1.fc": {
+          "elements": 196608,
+          "clipped": 1024
+        },
+        "b1.gelu": {
+          "elements": 196608,
+          "clipped": 921
+        },
+        "b1.projection": {
+          "elements": 49152,
+          "clipped": 228
+        },
+        "b1.residual2": {
+          "elements": 49152,
+          "clipped": 37
+        },
+        "b2.ln1": {
+          "elements": 49152,
+          "clipped": 184
+        },
+        "b2.qkv": {
+          "elements": 147456,
+          "clipped": 519
+        },
+        "b2.scores": {
+          "elements": 12672,
+          "clipped": 6
+        },
+        "b2.context": {
+          "elements": 49152,
+          "clipped": 457
+        },
+        "b2.attention": {
+          "elements": 49152,
+          "clipped": 238
+        },
+        "b2.residual1": {
+          "elements": 49152,
+          "clipped": 29
+        },
+        "b2.ln2": {
+          "elements": 49152,
+          "clipped": 204
+        },
+        "b2.fc": {
+          "elements": 196608,
+          "clipped": 648
+        },
+        "b2.gelu": {
+          "elements": 196608,
+          "clipped": 1238
+        },
+        "b2.projection": {
+          "elements": 49152,
+          "clipped": 86
+        },
+        "b2.residual2": {
+          "elements": 49152,
+          "clipped": 44
+        },
+        "b3.ln1": {
+          "elements": 49152,
+          "clipped": 220
+        },
+        "b3.qkv": {
+          "elements": 147456,
+          "clipped": 823
+        },
+        "b3.scores": {
+          "elements": 12672,
+          "clipped": 22
+        },
+        "b3.context": {
+          "elements": 49152,
+          "clipped": 430
+        },
+        "b3.attention": {
+          "elements": 49152,
+          "clipped": 96
+        },
+        "b3.residual1": {
+          "elements": 49152,
+          "clipped": 22
+        },
+        "b3.ln2": {
+          "elements": 49152,
+          "clipped": 147
+        },
+        "b3.fc": {
+          "elements": 196608,
+          "clipped": 532
+        },
+        "b3.gelu": {
+          "elements": 196608,
+          "clipped": 1486
+        },
+        "b3.projection": {
+          "elements": 49152,
+          "clipped": 33
+        },
+        "b3.residual2": {
+          "elements": 49152,
+          "clipped": 21
+        },
+        "b4.ln1": {
+          "elements": 49152,
+          "clipped": 179
+        },
+        "b4.qkv": {
+          "elements": 147456,
+          "clipped": 641
+        },
+        "b4.scores": {
+          "elements": 12672,
+          "clipped": 27
+        },
+        "b4.context": {
+          "elements": 49152,
+          "clipped": 456
+        },
+        "b4.attention": {
+          "elements": 49152,
+          "clipped": 159
+        },
+        "b4.residual1": {
+          "elements": 49152,
+          "clipped": 19
+        },
+        "b4.ln2": {
+          "elements": 49152,
+          "clipped": 214
+        },
+        "b4.fc": {
+          "elements": 196608,
+          "clipped": 697
+        },
+        "b4.gelu": {
+          "elements": 196608,
+          "clipped": 1405
+        },
+        "b4.projection": {
+          "elements": 49152,
+          "clipped": 100
+        },
+        "b4.residual2": {
+          "elements": 49152,
+          "clipped": 26
+        },
+        "b5.ln1": {
+          "elements": 49152,
+          "clipped": 224
+        },
+        "b5.qkv": {
+          "elements": 147456,
+          "clipped": 698
+        },
+        "b5.scores": {
+          "elements": 12672,
+          "clipped": 8
+        },
+        "b5.context": {
+          "elements": 49152,
+          "clipped": 592
+        },
+        "b5.attention": {
+          "elements": 49152,
+          "clipped": 313
+        },
+        "b5.residual1": {
+          "elements": 49152,
+          "clipped": 22
+        },
+        "b5.ln2": {
+          "elements": 49152,
+          "clipped": 239
+        },
+        "b5.fc": {
+          "elements": 196608,
+          "clipped": 682
+        },
+        "b5.gelu": {
+          "elements": 196608,
+          "clipped": 1571
+        },
+        "b5.projection": {
+          "elements": 49152,
+          "clipped": 70
+        },
+        "b5.residual2": {
+          "elements": 49152,
+          "clipped": 25
+        },
+        "b6.ln1": {
+          "elements": 49152,
+          "clipped": 270
+        },
+        "b6.qkv": {
+          "elements": 147456,
+          "clipped": 906
+        },
+        "b6.scores": {
+          "elements": 12672,
+          "clipped": 5
+        },
+        "b6.context": {
+          "elements": 49152,
+          "clipped": 748
+        },
+        "b6.attention": {
+          "elements": 49152,
+          "clipped": 227
+        },
+        "b6.residual1": {
+          "elements": 49152,
+          "clipped": 26
+        },
+        "b6.ln2": {
+          "elements": 49152,
+          "clipped": 262
+        },
+        "b6.fc": {
+          "elements": 196608,
+          "clipped": 981
+        },
+        "b6.gelu": {
+          "elements": 196608,
+          "clipped": 1810
+        },
+        "b6.projection": {
+          "elements": 49152,
+          "clipped": 94
+        },
+        "b6.residual2": {
+          "elements": 49152,
+          "clipped": 28
+        },
+        "b7.ln1": {
+          "elements": 49152,
+          "clipped": 280
+        },
+        "b7.qkv": {
+          "elements": 147456,
+          "clipped": 909
+        },
+        "b7.scores": {
+          "elements": 12672,
+          "clipped": 11
+        },
+        "b7.context": {
+          "elements": 49152,
+          "clipped": 718
+        },
+        "b7.attention": {
+          "elements": 49152,
+          "clipped": 270
+        },
+        "b7.residual1": {
+          "elements": 49152,
+          "clipped": 30
+        },
+        "b7.ln2": {
+          "elements": 49152,
+          "clipped": 220
+        },
+        "b7.fc": {
+          "elements": 196608,
+          "clipped": 755
+        },
+        "b7.gelu": {
+          "elements": 196608,
+          "clipped": 2227
+        },
+        "b7.projection": {
+          "elements": 49152,
+          "clipped": 64
+        },
+        "b7.residual2": {
+          "elements": 49152,
+          "clipped": 27
+        },
+        "b8.ln1": {
+          "elements": 49152,
+          "clipped": 307
+        },
+        "b8.qkv": {
+          "elements": 147456,
+          "clipped": 984
+        },
+        "b8.scores": {
+          "elements": 12672,
+          "clipped": 3
+        },
+        "b8.context": {
+          "elements": 49152,
+          "clipped": 746
+        },
+        "b8.attention": {
+          "elements": 49152,
+          "clipped": 268
+        },
+        "b8.residual1": {
+          "elements": 49152,
+          "clipped": 38
+        },
+        "b8.ln2": {
+          "elements": 49152,
+          "clipped": 231
+        },
+        "b8.fc": {
+          "elements": 196608,
+          "clipped": 883
+        },
+        "b8.gelu": {
+          "elements": 196608,
+          "clipped": 2310
+        },
+        "b8.projection": {
+          "elements": 49152,
+          "clipped": 60
+        },
+        "b8.residual2": {
+          "elements": 49152,
+          "clipped": 38
+        },
+        "b9.ln1": {
+          "elements": 49152,
+          "clipped": 297
+        },
+        "b9.qkv": {
+          "elements": 147456,
+          "clipped": 993
+        },
+        "b9.scores": {
+          "elements": 12672,
+          "clipped": 3
+        },
+        "b9.context": {
+          "elements": 49152,
+          "clipped": 1243
+        },
+        "b9.attention": {
+          "elements": 49152,
+          "clipped": 488
+        },
+        "b9.residual1": {
+          "elements": 49152,
+          "clipped": 56
+        },
+        "b9.ln2": {
+          "elements": 49152,
+          "clipped": 207
+        },
+        "b9.fc": {
+          "elements": 196608,
+          "clipped": 929
+        },
+        "b9.gelu": {
+          "elements": 196608,
+          "clipped": 2393
+        },
+        "b9.projection": {
+          "elements": 49152,
+          "clipped": 37
+        },
+        "b9.residual2": {
+          "elements": 49152,
+          "clipped": 37
+        },
+        "b10.ln1": {
+          "elements": 49152,
+          "clipped": 294
+        },
+        "b10.qkv": {
+          "elements": 147456,
+          "clipped": 999
+        },
+        "b10.scores": {
+          "elements": 12672,
+          "clipped": 15
+        },
+        "b10.context": {
+          "elements": 49152,
+          "clipped": 1200
+        },
+        "b10.attention": {
+          "elements": 49152,
+          "clipped": 453
+        },
+        "b10.residual1": {
+          "elements": 49152,
+          "clipped": 77
+        },
+        "b10.ln2": {
+          "elements": 49152,
+          "clipped": 146
+        },
+        "b10.fc": {
+          "elements": 196608,
+          "clipped": 1155
+        },
+        "b10.gelu": {
+          "elements": 196608,
+          "clipped": 2796
+        },
+        "b10.projection": {
+          "elements": 49152,
+          "clipped": 55
+        },
+        "b10.residual2": {
+          "elements": 49152,
+          "clipped": 54
+        },
+        "b11.ln1": {
+          "elements": 49152,
+          "clipped": 210
+        },
+        "b11.qkv": {
+          "elements": 147456,
+          "clipped": 675
+        },
+        "b11.scores": {
+          "elements": 12672,
+          "clipped": 0
+        },
+        "b11.context": {
+          "elements": 49152,
+          "clipped": 1705
+        },
+        "b11.attention": {
+          "elements": 49152,
+          "clipped": 673
+        },
+        "b11.residual1": {
+          "elements": 49152,
+          "clipped": 128
+        },
+        "b11.ln2": {
+          "elements": 49152,
+          "clipped": 107
+        },
+        "b11.fc": {
+          "elements": 196608,
+          "clipped": 684
+        },
+        "b11.gelu": {
+          "elements": 196608,
+          "clipped": 2791
+        },
+        "b11.projection": {
+          "elements": 49152,
+          "clipped": 60
+        },
+        "b11.residual2": {
+          "elements": 49152,
+          "clipped": 111
+        },
+        "final": {
+          "elements": 49152,
+          "clipped": 172
+        }
+      },
+      "continuations": [
+        {
+          "prompt": "Hello, my name is",
+          "tokens": [
+            257,
+            1310,
+            2576,
+            13,
+            314,
+            318,
+            257,
+            1310
+          ],
+          "continuation": " a little girl. I is a little",
+          "text": "Hello, my name is a little girl. I is a little",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The quick brown fox",
+          "tokens": [
+            274,
+            389,
+            257,
+            1310,
+            1643,
+            286,
+            257,
+            10715
+          ],
+          "continuation": "es are a little bit of a mystery",
+          "text": "The quick brown foxes are a little bit of a mystery",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "Once upon a time there was",
+          "tokens": [
+            11,
+            262,
+            4252,
+            373,
+            11,
+            290,
+            262,
+            8824
+          ],
+          "continuation": ", the sun was, and the moon",
+          "text": "Once upon a time there was, the sun was, and the moon",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "In the future, computers",
+          "tokens": [
+            481,
+            307,
+            1498,
+            284,
+            779,
+            262,
+            3644,
+            3788
+          ],
+          "continuation": " will be able to use the computer software",
+          "text": "In the future, computers will be able to use the computer software",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The capital of France is",
+          "tokens": [
+            262,
+            3139,
+            286,
+            4881,
+            11,
+            290,
+            262,
+            3139
+          ],
+          "continuation": " the capital of France, and the capital",
+          "text": "The capital of France is the capital of France, and the capital",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "She opened the door and",
+          "tokens": [
+            373,
+            21272,
+            416,
+            262,
+            4315,
+            13,
+            198,
+            198
+          ],
+          "continuation": " was greeted by the crowd.\n\n",
+          "text": "She opened the door and was greeted by the crowd.\n\n",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 2,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The purpose of the experiment was to",
+          "tokens": [
+            5004,
+            262,
+            1245,
+            286,
+            262,
+            1245,
+            286,
+            262
+          ],
+          "continuation": " determine the effect of the effect of the",
+          "text": "The purpose of the experiment was to determine the effect of the effect of the",
+          "eos": false,
+          "repeated_4gram_fraction": 0.2,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "After three days at sea, the crew",
+          "tokens": [
+            286,
+            262,
+            4074,
+            373,
+            1498,
+            284,
+            262,
+            4074
+          ],
+          "continuation": " of the ship was able to the ship",
+          "text": "After three days at sea, the crew of the ship was able to the ship",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "To make a cup of tea, first",
+          "tokens": [
+            11,
+            788,
+            11,
+            788,
+            11,
+            788,
+            11,
+            788
+          ],
+          "continuation": ", then, then, then, then",
+          "text": "To make a cup of tea, first, then, then, then, then",
+          "eos": false,
+          "repeated_4gram_fraction": 0.6,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "The report found that the number of",
+          "tokens": [
+            661,
+            508,
+            547,
+            5676,
+            416,
+            262,
+            4369,
+            373
+          ],
+          "continuation": " people who were affected by the disease was",
+          "text": "The report found that the number of people who were affected by the disease was",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "When the train arrived at the station,",
+          "tokens": [
+            262,
+            4512,
+            373,
+            5025,
+            13,
+            198,
+            198,
+            198
+          ],
+          "continuation": " the train was stopped.\n\n\n",
+          "text": "When the train arrived at the station, the train was stopped.\n\n\n",
+          "eos": false,
+          "repeated_4gram_fraction": 0.0,
+          "longest_identical_token_run": 3,
+          "generated_tokens": 8
+        },
+        {
+          "prompt": "A computer program is a set of",
+          "tokens": [
+            257,
+            900,
+            286,
+            257,
+            900,
+            286,
+            257,
+            900
+          ],
+          "continuation": " a set of a set of a set",
+          "text": "A computer program is a set of a set of a set of a set",
+          "eos": false,
+          "repeated_4gram_fraction": 0.4,
+          "longest_identical_token_run": 1,
+          "generated_tokens": 8
+        }
+      ],
+      "mean_repeated_4gram_fraction": 0.10000000000000002,
+      "offline_evaluation_seconds_NOT_inference_timing": 2.3188122499996098
+    }
+  },
+  "offline_total_seconds_NOT_inference_timing": 23.862584624999727
+}

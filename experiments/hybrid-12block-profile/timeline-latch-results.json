@@ -1,0 +1,45 @@
+{
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "automaticScheduler": false,
+  "phases": [
+    {
+      "phase": "pause",
+      "error": {
+        "finite": 2304,
+        "rmse": 0.00021730667777113914,
+        "maximum": 0.0011196855848751852
+      },
+      "gate": "1",
+      "playState": "paused",
+      "sourceTimeline": "--b0-qkv-t0"
+    },
+    {
+      "phase": "detach-producers",
+      "error": {
+        "finite": 2304,
+        "rmse": 105.18936575002873,
+        "maximum": 216.45868143243504
+      },
+      "gate": "0",
+      "playState": "paused",
+      "sourceTimeline": "none"
+    },
+    {
+      "phase": "resume-new-input",
+      "error": {
+        "finite": 2304,
+        "rmse": 0.0002118121574212266,
+        "maximum": 0.0010100143178852772
+      },
+      "gate": "1",
+      "playState": "running",
+      "sourceTimeline": "--b0-qkv-t0"
+    }
+  ],
+  "initialError": {
+    "finite": 2304,
+    "rmse": 0.00021730667777113914,
+    "maximum": 0.0011196855848751852
+  }
+}
