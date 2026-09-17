@@ -1,0 +1,123 @@
+{
+  "label": "matvec2-r0",
+  "startedAt": "2026-09-17T10:29:51.376Z",
+  "command": [
+    "/opt/homebrew/Cellar/node/26.5.0_1/bin/node",
+    "/Users/shubhampatil/Documents/programming/gpt2-css/tools/test_svg_alpha_circuit_probe.mjs",
+    "matvec2-r0"
+  ],
+  "platform": "darwin",
+  "release": "25.0.0",
+  "arch": "arm64",
+  "rounds": 3,
+  "fixtures": [
+    {
+      "name": "matvec2",
+      "primitives": 299,
+      "htmlBytes": 28496,
+      "trials": [],
+      "cachedReadMilliseconds": [],
+      "passed": false,
+      "coldNavigationAndReadMilliseconds": 8839.084041,
+      "initialCorrectness": {
+        "passed": false,
+        "mismatches": 6,
+        "sampleErrors": [
+          {
+            "x": 0,
+            "y": 1,
+            "actual": 255,
+            "expected": 0
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "actual": 255,
+            "expected": 0
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "actual": 255,
+            "expected": 0
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "actual": 255,
+            "expected": 0
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "actual": 255,
+            "expected": 0
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "actual": 255,
+            "expected": 0
+          }
+        ],
+        "actualBytes": [
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ]
+        ]
+      }
+    }
+  ],
+  "passed": false,
+  "methodology": "Input delivery is external href-only mutation of pre-generated alpha PNGs. Measured warm latency includes mutation, browser rendering, and PNG screenshot readback. No page inference JavaScript. Cached screenshots measure readback/synchronization floor. RSS is sampled process RSS, not physical footprint. Named SVG primitives do not prove distinct physical allocations.",
+  "executedHarnessSha256": "fb94447f3231d819e721a13d7192c99d6426addd2fac0e3e0b593f312ef91215",
+  "selectedCases": "all",
+  "browserVersion": "153.0.8010.48",
+  "error": "Error: matvec2: initial exactness failed\n    at file:///Users/shubhampatil/Documents/programming/gpt2-css/tools/test_svg_alpha_circuit_probe.mjs:100:50",
+  "finishedAt": "2026-09-17T10:30:00.930Z"
+}

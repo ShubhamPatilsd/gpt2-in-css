@@ -1,0 +1,40 @@
+{
+  "decision": "Do not promote this generated Boolean SVG circuit architecture to GPT-2 integration",
+  "browserVersion": "153.0.8010.48",
+  "modelIntegration": false,
+  "exactArithmeticEstablished": "Alpha-only Boolean gates, repeated operations, modulo 8/16/32-bit addition and signed cancellation",
+  "successfulChangedInputTrials": 34,
+  "styleRecalculationCountAcrossSuccessfulTrials": 0,
+  "styleRecalculationSecondsAcrossSuccessfulTrials": 0,
+  "timingDefinition": "External pre-generated input delivery plus changed frame rendering and screenshot readback; not pure arithmetic time",
+  "ripple": [
+    {"case": "gates", "primitives": 214, "medianMs": 589.510875, "cachedScreenshotMedianMs": 66.913125},
+    {"case": "add8", "primitives": 156, "medianMs": 82.275416, "cachedScreenshotMedianMs": 66.906333},
+    {"case": "add16", "primitives": 308, "medianMs": 414.847375, "cachedScreenshotMedianMs": 66.827},
+    {"case": "add32", "primitives": 612, "medianMs": 2755.944916, "cachedScreenshotMedianMs": 66.545708, "peakBrowserSubtreeRssMiB": 1978.21875}
+  ],
+  "prefix": [
+    {"case": "add8", "primitives": 242, "medianMs": 99.560875, "passed": true},
+    {"case": "add16", "primitives": 586, "medianMs": 638.531, "passed": true},
+    {"case": "add32", "primitives": 1386, "medianMs": null, "passed": false, "failure": "Initial screenshot exceeded 30-second timeout"}
+  ],
+  "connectedMatvec": {
+    "computation": "Signed int8 input, dense ternary matvec, ReLU, dense ternary matvec with adequate signed accumulator widths",
+    "intermediateCssOrJavaScriptReadback": false,
+    "size4": {"primitives": 486, "passed": false, "failure": "Initial screenshot exceeded 30-second timeout", "offlineGraphAuditPassed": true},
+    "size2": {"primitives": 299, "passed": false, "failure": "No valid filter image painted; magenta page-background sentinel visible at all 24 output pixels", "offlineGraphAuditPassed": true},
+    "largerSizesAttempted": false
+  },
+  "physicalFilterSurfacesInstrumented": false,
+  "failedCaseRootCauseDetermined": false,
+  "evidence": [
+    "stage1-r0/browser-results.json",
+    "stage1-prefix-r0/browser-results.json",
+    "matvec4-r0/browser-results.json",
+    "matvec4-r0/offline-graph-audit.json",
+    "matvec2-r0/browser-results.json",
+    "matvec2-r0/offline-graph-audit.json",
+    "matvec2-sentinel-r1/browser-results.json"
+  ],
+  "futureBoundedProbe": "Isolate crop/tile and filter graph-depth behavior to identify why the two-wide connected graph does not paint; do not scale further first"
+}

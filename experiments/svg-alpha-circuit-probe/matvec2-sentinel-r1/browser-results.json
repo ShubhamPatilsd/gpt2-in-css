@@ -1,0 +1,307 @@
+{
+  "label": "matvec2-sentinel-r1",
+  "startedAt": "2026-09-17T10:30:39.380Z",
+  "command": [
+    "/opt/homebrew/Cellar/node/26.5.0_1/bin/node",
+    "/Users/shubhampatil/Documents/programming/gpt2-css/tools/test_svg_alpha_circuit_probe.mjs",
+    "matvec2-sentinel-r1"
+  ],
+  "platform": "darwin",
+  "release": "25.0.0",
+  "arch": "arm64",
+  "rounds": 1,
+  "fixtures": [
+    {
+      "name": "matvec2",
+      "primitives": 299,
+      "htmlBytes": 28499,
+      "trials": [],
+      "cachedReadMilliseconds": [],
+      "passed": false,
+      "coldNavigationAndReadMilliseconds": 9708.216875,
+      "initialCorrectness": {
+        "passed": false,
+        "mismatches": 24,
+        "sampleErrors": [
+          {
+            "x": 0,
+            "y": 0,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 0
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 0
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 0
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 0
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 1,
+            "y": 4,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 0
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 0
+          },
+          {
+            "x": 0,
+            "y": 6,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 1,
+            "y": 6,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 1,
+            "y": 7,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 1,
+            "y": 8,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 0,
+            "y": 9,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          },
+          {
+            "x": 1,
+            "y": 9,
+            "actual": 255,
+            "rgb": [
+              255,
+              0,
+              255
+            ],
+            "expected": 255
+          }
+        ],
+        "actualBytes": [
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ]
+        ]
+      }
+    }
+  ],
+  "passed": false,
+  "methodology": "Input delivery is external href-only mutation of pre-generated alpha PNGs. Measured warm latency includes mutation, browser rendering, and PNG screenshot readback. No page inference JavaScript. Cached screenshots measure readback/synchronization floor. RSS is sampled process RSS, not physical footprint. Named SVG primitives do not prove distinct physical allocations.",
+  "executedHarnessSha256": "8233831033b2ec3cab9f4c87bed494110424586290d7168099dc88a771e26187",
+  "selectedCases": "all",
+  "browserVersion": "153.0.8010.48",
+  "error": "Error: matvec2: initial exactness failed\n    at file:///Users/shubhampatil/Documents/programming/gpt2-css/tools/test_svg_alpha_circuit_probe.mjs:102:50",
+  "finishedAt": "2026-09-17T10:30:49.652Z"
+}

@@ -1,0 +1,391 @@
+{
+  "fixtures": [
+    {
+      "name": "matvec4",
+      "file": "matvec4.html",
+      "width": 4,
+      "height": 14,
+      "inputs": [
+        {
+          "id": "input-x-0",
+          "files": [
+            "matvec4-x-0-v0.png",
+            "matvec4-x-0-v1.png"
+          ]
+        },
+        {
+          "id": "input-x-1",
+          "files": [
+            "matvec4-x-1-v0.png",
+            "matvec4-x-1-v1.png"
+          ]
+        },
+        {
+          "id": "input-x-2",
+          "files": [
+            "matvec4-x-2-v0.png",
+            "matvec4-x-2-v1.png"
+          ]
+        },
+        {
+          "id": "input-x-3",
+          "files": [
+            "matvec4-x-3-v0.png",
+            "matvec4-x-3-v1.png"
+          ]
+        },
+        {
+          "id": "input-x-4",
+          "files": [
+            "matvec4-x-4-v0.png",
+            "matvec4-x-4-v1.png"
+          ]
+        },
+        {
+          "id": "input-x-5",
+          "files": [
+            "matvec4-x-5-v0.png",
+            "matvec4-x-5-v1.png"
+          ]
+        },
+        {
+          "id": "input-x-6",
+          "files": [
+            "matvec4-x-6-v0.png",
+            "matvec4-x-6-v1.png"
+          ]
+        },
+        {
+          "id": "input-x-7",
+          "files": [
+            "matvec4-x-7-v0.png",
+            "matvec4-x-7-v1.png"
+          ]
+        }
+      ],
+      "expectedVariants": [
+        [
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ]
+      ],
+      "filterPrimitives": 486,
+      "operations": {
+        "feFlood": 2,
+        "feImage": 12,
+        "feTile": 19,
+        "feComposite": 362,
+        "feOffset": 89
+      },
+      "htmlBytes": 46130,
+      "surfacePixelUpperBound": 27216,
+      "surfaceBoundNote": "Conservative area times primitive count, not measured allocation or simultaneous live surfaces",
+      "sha256": "e66436ab819fd0897557c575d3282b1ec65ac7ac1c1d3659e9e502cd37ada620",
+      "kind": "signed-matvec-relu-matvec",
+      "size": 4,
+      "inputBits": 8,
+      "firstAccumulatorBits": 11,
+      "outputBits": 14,
+      "weights": [
+        [
+          [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            0,
+            1,
+            -1
+          ],
+          [
+            -1,
+            0,
+            -1,
+            -1
+          ]
+        ],
+        [
+          [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            0,
+            0,
+            1
+          ]
+        ]
+      ],
+      "integerReference": [
+        {
+          "input": [
+            9,
+            -123,
+            -28,
+            63
+          ],
+          "firstMatvec": [
+            41,
+            79,
+            -100,
+            -44
+          ],
+          "relu": [
+            41,
+            79,
+            0,
+            0
+          ],
+          "secondMatvec": [
+            -38,
+            41,
+            38,
+            -41
+          ]
+        },
+        {
+          "input": [
+            127,
+            -127,
+            127,
+            -127
+          ],
+          "firstMatvec": [
+            508,
+            0,
+            127,
+            -127
+          ],
+          "relu": [
+            508,
+            0,
+            127,
+            0
+          ],
+          "secondMatvec": [
+            635,
+            635,
+            -635,
+            -508
+          ]
+        }
+      ],
+      "weightDomain": [
+        -1,
+        0,
+        1
+      ],
+      "nonlinearity": "ReLU, not GPT-2 GELU",
+      "overflow": "None in reference; accumulator bounds cover all signed 8-bit inputs"
+    }
+  ],
+  "sources": {
+    "build_svg_alpha_circuit_probe.py": "7660b6d4770fcd988284fc8b134ef885827ee2d7616fb865a9a8f1c4435956c3",
+    "test_svg_alpha_circuit_probe.mjs": "fb94447f3231d819e721a13d7192c99d6426addd2fac0e3e0b593f312ef91215"
+  },
+  "noPageJavaScript": true,
+  "adder": "ripple",
+  "noRuntimeFontCanvasOrShader": true,
+  "buildCommand": [
+    "tools/build_svg_alpha_circuit_probe.py",
+    "--label",
+    "matvec4-r0",
+    "--size",
+    "4",
+    "--adder",
+    "ripple"
+  ],
+  "boundaries": "Every gate is an explicitly named two-input compositing primitive; physical intermediate allocation/fusion is not instrumented"
+}
