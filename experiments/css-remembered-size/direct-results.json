@@ -1,0 +1,161 @@
+{
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "nativeStorage": "contain-intrinsic-size auto; no delayed transitions",
+  "samples": [
+    {
+      "phase": "initial",
+      "actual": [
+        123.125,
+        456.75
+      ],
+      "expected": [
+        123.125,
+        456.75
+      ],
+      "passed": true,
+      "latchGeometry": {
+        "width": "123.125px",
+        "height": "456.75px",
+        "contain-intrinsic-width": "auto 0px",
+        "contain-intrinsic-height": "auto 0px",
+        "content-visibility": "visible"
+      }
+    },
+    {
+      "phase": "held",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        123.125,
+        456.75
+      ],
+      "passed": false,
+      "latchGeometry": {
+        "width": "123.125px",
+        "height": "456.75px",
+        "contain-intrinsic-width": "auto 0px",
+        "contain-intrinsic-height": "auto 0px",
+        "content-visibility": "hidden"
+      }
+    },
+    {
+      "phase": "changed-source",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        123.125,
+        456.75
+      ],
+      "passed": false,
+      "latchGeometry": {
+        "width": "123.125px",
+        "height": "456.75px",
+        "contain-intrinsic-width": "auto 0px",
+        "contain-intrinsic-height": "auto 0px",
+        "content-visibility": "hidden"
+      }
+    },
+    {
+      "phase": "removed",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0
+      ],
+      "passed": true
+    },
+    {
+      "phase": "restored",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        123.125,
+        456.75
+      ],
+      "passed": false,
+      "latchGeometry": {
+        "width": "123.125px",
+        "height": "456.75px",
+        "contain-intrinsic-width": "auto 0px",
+        "contain-intrinsic-height": "auto 0px",
+        "content-visibility": "hidden"
+      }
+    },
+    {
+      "phase": "rewritten",
+      "actual": [
+        333.5,
+        777.25
+      ],
+      "expected": [
+        333.5,
+        777.25
+      ],
+      "passed": true,
+      "latchGeometry": {
+        "width": "333.5px",
+        "height": "777.25px",
+        "contain-intrinsic-width": "auto 0px",
+        "contain-intrinsic-height": "auto 0px",
+        "content-visibility": "visible"
+      }
+    },
+    {
+      "phase": "reheld",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        333.5,
+        777.25
+      ],
+      "passed": false,
+      "latchGeometry": {
+        "width": "333.5px",
+        "height": "777.25px",
+        "contain-intrinsic-width": "auto 0px",
+        "contain-intrinsic-height": "auto 0px",
+        "content-visibility": "hidden"
+      }
+    },
+    {
+      "phase": "changed-again",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        333.5,
+        777.25
+      ],
+      "passed": false,
+      "latchGeometry": {
+        "width": "333.5px",
+        "height": "777.25px",
+        "contain-intrinsic-width": "auto 0px",
+        "contain-intrinsic-height": "auto 0px",
+        "content-visibility": "hidden"
+      }
+    }
+  ],
+  "variant": "direct",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.48",
+    "revision": "@199a3a541d76237379e353b348e64045584db057",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "passed": false
+}

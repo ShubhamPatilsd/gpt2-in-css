@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="script-src 'none'">
+<style>
+@property --a {syntax:"<number>";inherits:true;initial-value:0}
+@property --b {syntax:"<number>";inherits:true;initial-value:0}
+@property --c {syntax:"<number>";inherits:true;initial-value:0}
+@property --q {syntax:"<number>";inherits:true;initial-value:0}
+@property --saved {syntax:"*";inherits:true;initial-value:0,0,0}
+@property --deferred {syntax:"*";inherits:true;initial-value:0}
+@property --out0 {syntax:"<number>";inherits:true;initial-value:-999}
+@property --out1 {syntax:"<number>";inherits:true;initial-value:-999}
+@property --out2 {syntax:"<number>";inherits:true;initial-value:-999}
+@property --out3 {syntax:"<number>";inherits:true;initial-value:-999}
+@property --direct {syntax:"<number>";inherits:true;initial-value:-999}
+@function --get0(--x <number>, --y <number>, --z <number>) returns <number> {result:var(--x)}
+@function --get1(--x <number>, --y <number>, --z <number>) returns <number> {result:var(--y)}
+@function --get2(--x <number>, --y <number>, --z <number>) returns <number> {result:var(--z)}
+@function --query() returns <number> {result:var(--q)}
+.source {--a:17.125;--b:-89.0625;--c:.123456789;--q:2}
+.bank {--saved:var(--a),var(--b),var(--c);--deferred:calc(var(--a) * --query());transition:none}
+.hold .bank {--saved:0,0,0;--deferred:0;transition-property:--saved,--deferred;transition-duration:1ms;transition-delay:86400s;transition-behavior:allow-discrete}
+.consumer {--q:3;--out0:--get0(var(--saved));--out1:--get1(var(--saved));--out2:--get2(var(--saved));--out3:var(--deferred);--direct:--get1(1,2,3);width:calc(var(--out0) * 1px);height:1px}
+</style><body><div class="source"><div class="bank" id="bank"><div class="consumer" id="consumer"></div></div></div></body>
