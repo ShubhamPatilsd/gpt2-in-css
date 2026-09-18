@@ -1,0 +1,1423 @@
+{
+  "manifest": {
+    "baseline": "experiments/browser-gpt2-scaling/native/baseline-b12-c4-r2",
+    "baselineHashes": {
+      "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+      "runtime.css": "b8b4f564e55471a9c539407144c184b76a4d9c3f43574c445f10a7df48bedc8d",
+      "manifest.json": "17dda9193c6438d9ad2d8a788cf764104620c5046aad43807c626bf537796597",
+      "pipeline-results.json": "58c95734f84e014ce3663a336decd6a9604c9f0d57f66e84d486d7f70d4d3583"
+    },
+    "htmlSha256": "8161d087a64b30a7fbe163d4c1ea82d32828909c0726da0ace407a736b2ea247",
+    "scriptSha256": "d8d887b63e084612f5ac8db90cbde5963373220df8fb07e14e82433478062716",
+    "witnesses": {
+      "input": "<div class=\"core-reset core-valid reused-input\">",
+      "qkv": "<div class=\"shared-qkv-gate\">",
+      "context": "<div class=\"cache-bridge-gate\">",
+      "attentionProjection": "<div class=\"shared-attn-gate\">",
+      "fc": "<div class=\"shared-fc-gate\">",
+      "projection": "<div class=\"shared-proj-gate\">"
+    },
+    "changes": "Only absolute stylesheet link and six geometry witnesses inserted inside existing native receipt gates; baseline CSS unchanged.",
+    "runtimeJavaScript": false,
+    "externalWritesAfterNavigation": 0
+  },
+  "scriptSha256": "d8d887b63e084612f5ac8db90cbde5963373220df8fb07e14e82433478062716",
+  "pythonVersion": "3.13.2 (main, Feb 12 2025, 14:59:08) [Clang 19.1.6 ]",
+  "platform": "macOS-26.0-arm64-arm-64bit-Mach-O",
+  "targetTokens": 2,
+  "limitSeconds": 180,
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 0,
+  "events": [
+    {
+      "stage": "input",
+      "epoch": 1,
+      "tokenEpoch": 1,
+      "layer": 0,
+      "readStartMilliseconds": 11010.612417005177,
+      "readEndMilliseconds": 11094.364084005065,
+      "counterEndMilliseconds": 11477.766084004543,
+      "metrics": {
+        "TaskDuration": 10.930137,
+        "RecalcStyleDuration": 5.432247,
+        "LayoutDuration": 0.592857,
+        "TaskOtherDuration": 4.896984,
+        "DevToolsCommandDuration": 0.008049,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 26,
+        "LayoutCount": 20
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 2,
+      "tokenEpoch": 1,
+      "layer": 1,
+      "readStartMilliseconds": 11477.78316699987,
+      "readEndMilliseconds": 11750.379959004931,
+      "counterEndMilliseconds": 12323.812292001094,
+      "metrics": {
+        "TaskDuration": 11.774215,
+        "RecalcStyleDuration": 5.730128,
+        "LayoutDuration": 0.798876,
+        "TaskOtherDuration": 5.236156,
+        "DevToolsCommandDuration": 0.009055,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 31,
+        "LayoutCount": 24
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 2,
+      "tokenEpoch": 1,
+      "layer": 1,
+      "readStartMilliseconds": 12323.81754200469,
+      "readEndMilliseconds": 13071.591542000533,
+      "counterEndMilliseconds": 13150.018250002177,
+      "metrics": {
+        "TaskDuration": 12.600387,
+        "RecalcStyleDuration": 6.302332,
+        "LayoutDuration": 0.805988,
+        "TaskOtherDuration": 5.482818,
+        "DevToolsCommandDuration": 0.009249,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 34,
+        "LayoutCount": 26
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 2,
+      "tokenEpoch": 1,
+      "layer": 1,
+      "readStartMilliseconds": 13150.023959002283,
+      "readEndMilliseconds": 13466.82816700195,
+      "counterEndMilliseconds": 13545.275542004674,
+      "metrics": {
+        "TaskDuration": 12.99563,
+        "RecalcStyleDuration": 6.53473,
+        "LayoutDuration": 0.80723,
+        "TaskOtherDuration": 5.644208,
+        "DevToolsCommandDuration": 0.009462,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 36,
+        "LayoutCount": 27
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 3,
+      "tokenEpoch": 1,
+      "layer": 2,
+      "readStartMilliseconds": 13545.281417005754,
+      "readEndMilliseconds": 14257.562584003608,
+      "counterEndMilliseconds": 15107.969750002667,
+      "metrics": {
+        "TaskDuration": 14.554804,
+        "RecalcStyleDuration": 7.26462,
+        "LayoutDuration": 1.189165,
+        "TaskOtherDuration": 6.091166,
+        "DevToolsCommandDuration": 0.009853,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 41,
+        "LayoutCount": 32
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 3,
+      "tokenEpoch": 1,
+      "layer": 2,
+      "readStartMilliseconds": 15107.98466700362,
+      "readEndMilliseconds": 16135.915958999249,
+      "counterEndMilliseconds": 16412.509624999075,
+      "metrics": {
+        "TaskDuration": 15.857037,
+        "RecalcStyleDuration": 7.91761,
+        "LayoutDuration": 1.368184,
+        "TaskOtherDuration": 6.561189,
+        "DevToolsCommandDuration": 0.010054,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 46,
+        "LayoutCount": 35
+      }
+    },
+    {
+      "stage": "input",
+      "epoch": 4,
+      "tokenEpoch": 1,
+      "layer": 3,
+      "readStartMilliseconds": 17256.135667004855,
+      "readEndMilliseconds": 17390.76904200192,
+      "counterEndMilliseconds": 18078.807042002154,
+      "metrics": {
+        "TaskDuration": 17.52011,
+        "RecalcStyleDuration": 8.614901,
+        "LayoutDuration": 1.671714,
+        "TaskOtherDuration": 7.222867,
+        "DevToolsCommandDuration": 0.010628,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 57,
+        "LayoutCount": 42
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 4,
+      "tokenEpoch": 1,
+      "layer": 3,
+      "readStartMilliseconds": 18078.816584005835,
+      "readEndMilliseconds": 18869.670209001924,
+      "counterEndMilliseconds": 18928.17233400274,
+      "metrics": {
+        "TaskDuration": 18.369511,
+        "RecalcStyleDuration": 9.224131,
+        "LayoutDuration": 1.678441,
+        "TaskOtherDuration": 7.45612,
+        "DevToolsCommandDuration": 0.010819,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 60,
+        "LayoutCount": 44
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 4,
+      "tokenEpoch": 1,
+      "layer": 3,
+      "readStartMilliseconds": 18928.180709001026,
+      "readEndMilliseconds": 19183.75995899987,
+      "counterEndMilliseconds": 19253.74491700495,
+      "metrics": {
+        "TaskDuration": 18.695086,
+        "RecalcStyleDuration": 9.418934,
+        "LayoutDuration": 1.679467,
+        "TaskOtherDuration": 7.585681,
+        "DevToolsCommandDuration": 0.011004,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 62,
+        "LayoutCount": 45
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 5,
+      "tokenEpoch": 1,
+      "layer": 4,
+      "readStartMilliseconds": 19253.75087500288,
+      "readEndMilliseconds": 19807.761791998928,
+      "counterEndMilliseconds": 20481.914834002964,
+      "metrics": {
+        "TaskDuration": 19.919693,
+        "RecalcStyleDuration": 9.91034,
+        "LayoutDuration": 1.983783,
+        "TaskOtherDuration": 8.014212,
+        "DevToolsCommandDuration": 0.011358,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 67,
+        "LayoutCount": 50
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 5,
+      "tokenEpoch": 1,
+      "layer": 4,
+      "readStartMilliseconds": 20481.918792000215,
+      "readEndMilliseconds": 21705.74850000412,
+      "counterEndMilliseconds": 22024.144959003024,
+      "metrics": {
+        "TaskDuration": 21.454338,
+        "RecalcStyleDuration": 10.758395,
+        "LayoutDuration": 2.160544,
+        "TaskOtherDuration": 8.523819,
+        "DevToolsCommandDuration": 0.01158,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 72,
+        "LayoutCount": 53
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 5,
+      "tokenEpoch": 1,
+      "layer": 4,
+      "readStartMilliseconds": 22024.15062500222,
+      "readEndMilliseconds": 22322.79712500167,
+      "counterEndMilliseconds": 22393.00091699988,
+      "metrics": {
+        "TaskDuration": 21.828365,
+        "RecalcStyleDuration": 10.980157,
+        "LayoutDuration": 2.161686,
+        "TaskOtherDuration": 8.674735,
+        "DevToolsCommandDuration": 0.011787,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 74,
+        "LayoutCount": 54
+      }
+    },
+    {
+      "stage": "input",
+      "epoch": 6,
+      "tokenEpoch": 1,
+      "layer": 5,
+      "readStartMilliseconds": 23637.41391700023,
+      "readEndMilliseconds": 24345.492584005115,
+      "counterEndMilliseconds": 24423.99870900408,
+      "metrics": {
+        "TaskDuration": 23.856315,
+        "RecalcStyleDuration": 12.041581,
+        "LayoutDuration": 2.405789,
+        "TaskOtherDuration": 9.396575,
+        "DevToolsCommandDuration": 0.01237,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 86,
+        "LayoutCount": 62
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 6,
+      "tokenEpoch": 1,
+      "layer": 5,
+      "readStartMilliseconds": 24424.00437500328,
+      "readEndMilliseconds": 24778.61466700415,
+      "counterEndMilliseconds": 24857.655709005485,
+      "metrics": {
+        "TaskDuration": 24.289935,
+        "RecalcStyleDuration": 12.308492,
+        "LayoutDuration": 2.407087,
+        "TaskOtherDuration": 9.561781,
+        "DevToolsCommandDuration": 0.012575,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 88,
+        "LayoutCount": 63
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 7,
+      "tokenEpoch": 1,
+      "layer": 6,
+      "readStartMilliseconds": 24857.66058399895,
+      "readEndMilliseconds": 25383.084042005066,
+      "counterEndMilliseconds": 25757.518375001382,
+      "metrics": {
+        "TaskDuration": 25.187428,
+        "RecalcStyleDuration": 12.669494,
+        "LayoutDuration": 2.616228,
+        "TaskOtherDuration": 9.888814,
+        "DevToolsCommandDuration": 0.012892,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 93,
+        "LayoutCount": 68
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 7,
+      "tokenEpoch": 1,
+      "layer": 6,
+      "readStartMilliseconds": 25757.534709002357,
+      "readEndMilliseconds": 26888.135917004547,
+      "counterEndMilliseconds": 27410.17791700142,
+      "metrics": {
+        "TaskDuration": 26.837386,
+        "RecalcStyleDuration": 13.674193,
+        "LayoutDuration": 2.802517,
+        "TaskOtherDuration": 10.347548,
+        "DevToolsCommandDuration": 0.013128,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 98,
+        "LayoutCount": 71
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 7,
+      "tokenEpoch": 1,
+      "layer": 6,
+      "readStartMilliseconds": 27410.189583999454,
+      "readEndMilliseconds": 27494.368709005357,
+      "counterEndMilliseconds": 27796.58279200521,
+      "metrics": {
+        "TaskDuration": 27.223284,
+        "RecalcStyleDuration": 13.898116,
+        "LayoutDuration": 2.803763,
+        "TaskOtherDuration": 10.508081,
+        "DevToolsCommandDuration": 0.013324,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 101,
+        "LayoutCount": 72
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 7,
+      "tokenEpoch": 1,
+      "layer": 6,
+      "readStartMilliseconds": 27796.588584002166,
+      "readEndMilliseconds": 27897.207750000234,
+      "counterEndMilliseconds": 28323.368459001358,
+      "metrics": {
+        "TaskDuration": 27.749213,
+        "RecalcStyleDuration": 14.091481,
+        "LayoutDuration": 2.879905,
+        "TaskOtherDuration": 10.764262,
+        "DevToolsCommandDuration": 0.013565,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 105,
+        "LayoutCount": 74
+      }
+    },
+    {
+      "stage": "input",
+      "epoch": 8,
+      "tokenEpoch": 1,
+      "layer": 7,
+      "readStartMilliseconds": 30091.948542001774,
+      "readEndMilliseconds": 30383.550375001505,
+      "counterEndMilliseconds": 30471.257542005333,
+      "metrics": {
+        "TaskDuration": 29.894835,
+        "RecalcStyleDuration": 15.329625,
+        "LayoutDuration": 3.061637,
+        "TaskOtherDuration": 11.489124,
+        "DevToolsCommandDuration": 0.014449,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 115,
+        "LayoutCount": 81
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 8,
+      "tokenEpoch": 1,
+      "layer": 7,
+      "readStartMilliseconds": 30471.265874999517,
+      "readEndMilliseconds": 30563.70329200581,
+      "counterEndMilliseconds": 31018.460084000253,
+      "metrics": {
+        "TaskDuration": 30.441882,
+        "RecalcStyleDuration": 15.556748,
+        "LayoutDuration": 3.13627,
+        "TaskOtherDuration": 11.734185,
+        "DevToolsCommandDuration": 0.014679,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 119,
+        "LayoutCount": 83
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 9,
+      "tokenEpoch": 1,
+      "layer": 8,
+      "readStartMilliseconds": 31018.465000001015,
+      "readEndMilliseconds": 31261.169917001098,
+      "counterEndMilliseconds": 32148.31212500576,
+      "metrics": {
+        "TaskDuration": 31.565618,
+        "RecalcStyleDuration": 15.999569,
+        "LayoutDuration": 3.403702,
+        "TaskOtherDuration": 12.147481,
+        "DevToolsCommandDuration": 0.014866,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 124,
+        "LayoutCount": 87
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 9,
+      "tokenEpoch": 1,
+      "layer": 8,
+      "readStartMilliseconds": 32148.328375005804,
+      "readEndMilliseconds": 33249.96258399915,
+      "counterEndMilliseconds": 33344.043417004286,
+      "metrics": {
+        "TaskDuration": 32.76239,
+        "RecalcStyleDuration": 16.831997,
+        "LayoutDuration": 3.412523,
+        "TaskOtherDuration": 12.502756,
+        "DevToolsCommandDuration": 0.015114,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 127,
+        "LayoutCount": 89
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 9,
+      "tokenEpoch": 1,
+      "layer": 8,
+      "readStartMilliseconds": 33344.061709001835,
+      "readEndMilliseconds": 33637.59025000036,
+      "counterEndMilliseconds": 33706.02250000229,
+      "metrics": {
+        "TaskDuration": 33.124487,
+        "RecalcStyleDuration": 17.043543,
+        "LayoutDuration": 3.413451,
+        "TaskOtherDuration": 12.652195,
+        "DevToolsCommandDuration": 0.015298,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 129,
+        "LayoutCount": 90
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 10,
+      "tokenEpoch": 1,
+      "layer": 9,
+      "readStartMilliseconds": 33706.0286670021,
+      "readEndMilliseconds": 34892.71400000143,
+      "counterEndMilliseconds": 35823.536125004466,
+      "metrics": {
+        "TaskDuration": 35.237778,
+        "RecalcStyleDuration": 18.206666,
+        "LayoutDuration": 3.798238,
+        "TaskOtherDuration": 13.215421,
+        "DevToolsCommandDuration": 0.017453,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 134,
+        "LayoutCount": 95
+      }
+    },
+    {
+      "stage": "input",
+      "epoch": 11,
+      "tokenEpoch": 1,
+      "layer": 10,
+      "readStartMilliseconds": 37535.211084003095,
+      "readEndMilliseconds": 37864.461334000225,
+      "counterEndMilliseconds": 38039.47850000259,
+      "metrics": {
+        "TaskDuration": 37.449845,
+        "RecalcStyleDuration": 19.303908,
+        "LayoutDuration": 4.082738,
+        "TaskOtherDuration": 14.045206,
+        "DevToolsCommandDuration": 0.017993,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 145,
+        "LayoutCount": 102
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 11,
+      "tokenEpoch": 1,
+      "layer": 10,
+      "readStartMilliseconds": 38039.48408400174,
+      "readEndMilliseconds": 38623.64279200119,
+      "counterEndMilliseconds": 39414.8372500058,
+      "metrics": {
+        "TaskDuration": 38.823672,
+        "RecalcStyleDuration": 20.106435,
+        "LayoutDuration": 4.211863,
+        "TaskOtherDuration": 14.487194,
+        "DevToolsCommandDuration": 0.01818,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 150,
+        "LayoutCount": 106
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 11,
+      "tokenEpoch": 1,
+      "layer": 10,
+      "readStartMilliseconds": 39414.84208399925,
+      "readEndMilliseconds": 39492.91004200495,
+      "counterEndMilliseconds": 39765.03170900105,
+      "metrics": {
+        "TaskDuration": 39.173823,
+        "RecalcStyleDuration": 20.312041,
+        "LayoutDuration": 4.212957,
+        "TaskOtherDuration": 14.630429,
+        "DevToolsCommandDuration": 0.018396,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 153,
+        "LayoutCount": 107
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 11,
+      "tokenEpoch": 1,
+      "layer": 10,
+      "readStartMilliseconds": 39765.04216700414,
+      "readEndMilliseconds": 39829.96137500595,
+      "counterEndMilliseconds": 40229.82654200314,
+      "metrics": {
+        "TaskDuration": 39.637306,
+        "RecalcStyleDuration": 20.49368,
+        "LayoutDuration": 4.287799,
+        "TaskOtherDuration": 14.837258,
+        "DevToolsCommandDuration": 0.018569,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 157,
+        "LayoutCount": 109
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 12,
+      "tokenEpoch": 1,
+      "layer": 11,
+      "readStartMilliseconds": 40229.83162500168,
+      "readEndMilliseconds": 40712.25000000413,
+      "counterEndMilliseconds": 44967.811959002574,
+      "metrics": {
+        "TaskDuration": 44.367662,
+        "RecalcStyleDuration": 21.920463,
+        "LayoutDuration": 6.114264,
+        "TaskOtherDuration": 16.313996,
+        "DevToolsCommandDuration": 0.018939,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 165,
+        "LayoutCount": 114
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 12,
+      "tokenEpoch": 1,
+      "layer": 11,
+      "readStartMilliseconds": 44967.875000002095,
+      "readEndMilliseconds": 50652.583959003096,
+      "counterEndMilliseconds": 51027.2248340043,
+      "metrics": {
+        "TaskDuration": 50.428805,
+        "RecalcStyleDuration": 23.837799,
+        "LayoutDuration": 8.883781,
+        "TaskOtherDuration": 17.688064,
+        "DevToolsCommandDuration": 0.019161,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 173,
+        "LayoutCount": 117
+      }
+    },
+    {
+      "stage": "headInput",
+      "epoch": 1,
+      "tokenEpoch": 1,
+      "layer": null,
+      "readStartMilliseconds": 51027.25783400092,
+      "readEndMilliseconds": 51120.23970900191,
+      "counterEndMilliseconds": 51694.442334002815,
+      "metrics": {
+        "TaskDuration": 51.095707,
+        "RecalcStyleDuration": 24.109201,
+        "LayoutDuration": 9.044038,
+        "TaskOtherDuration": 17.92311,
+        "DevToolsCommandDuration": 0.019358,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 178,
+        "LayoutCount": 119
+      }
+    },
+    {
+      "stage": "capture",
+      "epoch": 1,
+      "tokenEpoch": 1,
+      "layer": null,
+      "readStartMilliseconds": 52039.793000003556,
+      "readEndMilliseconds": 52477.9074590042,
+      "counterEndMilliseconds": 53159.355374998995,
+      "metrics": {
+        "TaskDuration": 52.557012,
+        "RecalcStyleDuration": 24.805805,
+        "LayoutDuration": 9.28278,
+        "TaskOtherDuration": 18.448681,
+        "DevToolsCommandDuration": 0.019746,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 186,
+        "LayoutCount": 125
+      }
+    },
+    {
+      "stage": "input",
+      "epoch": 13,
+      "tokenEpoch": 2,
+      "layer": 0,
+      "readStartMilliseconds": 53221.01533400564,
+      "readEndMilliseconds": 53797.77837500296,
+      "counterEndMilliseconds": 53861.31283400027,
+      "metrics": {
+        "TaskDuration": 53.258955,
+        "RecalcStyleDuration": 25.299789,
+        "LayoutDuration": 9.285846,
+        "TaskOtherDuration": 18.653371,
+        "DevToolsCommandDuration": 0.019949,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 188,
+        "LayoutCount": 126
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 13,
+      "tokenEpoch": 2,
+      "layer": 0,
+      "readStartMilliseconds": 53861.31849999947,
+      "readEndMilliseconds": 54298.144417,
+      "counterEndMilliseconds": 54390.48775000265,
+      "metrics": {
+        "TaskDuration": 53.787907,
+        "RecalcStyleDuration": 25.643425,
+        "LayoutDuration": 9.295902,
+        "TaskOtherDuration": 18.828419,
+        "DevToolsCommandDuration": 0.020161,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 190,
+        "LayoutCount": 127
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 14,
+      "tokenEpoch": 2,
+      "layer": 1,
+      "readStartMilliseconds": 54390.49370900466,
+      "readEndMilliseconds": 54883.398209000006,
+      "counterEndMilliseconds": 55269.19158400415,
+      "metrics": {
+        "TaskDuration": 54.66305,
+        "RecalcStyleDuration": 26.00403,
+        "LayoutDuration": 9.503222,
+        "TaskOtherDuration": 19.135336,
+        "DevToolsCommandDuration": 0.020462,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 195,
+        "LayoutCount": 132
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 14,
+      "tokenEpoch": 2,
+      "layer": 1,
+      "readStartMilliseconds": 55269.201167000574,
+      "readEndMilliseconds": 56321.4797920009,
+      "counterEndMilliseconds": 56796.818209004414,
+      "metrics": {
+        "TaskDuration": 56.188354,
+        "RecalcStyleDuration": 26.913036,
+        "LayoutDuration": 9.687821,
+        "TaskOtherDuration": 19.566821,
+        "DevToolsCommandDuration": 0.020676,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 200,
+        "LayoutCount": 135
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 14,
+      "tokenEpoch": 2,
+      "layer": 1,
+      "readStartMilliseconds": 56796.82320899883,
+      "readEndMilliseconds": 56876.58429200383,
+      "counterEndMilliseconds": 57153.78195900121,
+      "metrics": {
+        "TaskDuration": 56.545187,
+        "RecalcStyleDuration": 27.117442,
+        "LayoutDuration": 9.695876,
+        "TaskOtherDuration": 19.710986,
+        "DevToolsCommandDuration": 0.020883,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 203,
+        "LayoutCount": 136
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 14,
+      "tokenEpoch": 2,
+      "layer": 1,
+      "readStartMilliseconds": 57153.78737500578,
+      "readEndMilliseconds": 57246.21883399959,
+      "counterEndMilliseconds": 57648.43741700315,
+      "metrics": {
+        "TaskDuration": 57.03803,
+        "RecalcStyleDuration": 27.299413,
+        "LayoutDuration": 9.773767,
+        "TaskOtherDuration": 19.943712,
+        "DevToolsCommandDuration": 0.021138,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 207,
+        "LayoutCount": 138
+      }
+    },
+    {
+      "stage": "input",
+      "epoch": 15,
+      "tokenEpoch": 2,
+      "layer": 2,
+      "readStartMilliseconds": 59362.63579200022,
+      "readEndMilliseconds": 59618.429000001925,
+      "counterEndMilliseconds": 59688.83108400041,
+      "metrics": {
+        "TaskDuration": 59.075506,
+        "RecalcStyleDuration": 28.441727,
+        "LayoutDuration": 10.000548,
+        "TaskOtherDuration": 20.611251,
+        "DevToolsCommandDuration": 0.02198,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 217,
+        "LayoutCount": 145
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 15,
+      "tokenEpoch": 2,
+      "layer": 2,
+      "readStartMilliseconds": 59688.83929200092,
+      "readEndMilliseconds": 59769.9277089996,
+      "counterEndMilliseconds": 60197.46908399975,
+      "metrics": {
+        "TaskDuration": 59.58232,
+        "RecalcStyleDuration": 28.634653,
+        "LayoutDuration": 10.086064,
+        "TaskOtherDuration": 20.83943,
+        "DevToolsCommandDuration": 0.022173,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 221,
+        "LayoutCount": 147
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 16,
+      "tokenEpoch": 2,
+      "layer": 3,
+      "readStartMilliseconds": 60197.47462500527,
+      "readEndMilliseconds": 60423.10091700347,
+      "counterEndMilliseconds": 61100.290624999616,
+      "metrics": {
+        "TaskDuration": 60.48407,
+        "RecalcStyleDuration": 28.954523,
+        "LayoutDuration": 10.316026,
+        "TaskOtherDuration": 21.191131,
+        "DevToolsCommandDuration": 0.02239,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 226,
+        "LayoutCount": 151
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 16,
+      "tokenEpoch": 2,
+      "layer": 3,
+      "readStartMilliseconds": 61100.296125005116,
+      "readEndMilliseconds": 61871.106167003745,
+      "counterEndMilliseconds": 61932.184917000995,
+      "metrics": {
+        "TaskDuration": 61.314208,
+        "RecalcStyleDuration": 29.519617,
+        "LayoutDuration": 10.330502,
+        "TaskOtherDuration": 21.44148,
+        "DevToolsCommandDuration": 0.022609,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 229,
+        "LayoutCount": 153
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 16,
+      "tokenEpoch": 2,
+      "layer": 3,
+      "readStartMilliseconds": 61932.189667000785,
+      "readEndMilliseconds": 62220.66883400112,
+      "counterEndMilliseconds": 62290.54037500464,
+      "metrics": {
+        "TaskDuration": 61.672613,
+        "RecalcStyleDuration": 29.731334,
+        "LayoutDuration": 10.338538,
+        "TaskOtherDuration": 21.579931,
+        "DevToolsCommandDuration": 0.02281,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 231,
+        "LayoutCount": 154
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 17,
+      "tokenEpoch": 2,
+      "layer": 4,
+      "readStartMilliseconds": 62290.545458999986,
+      "readEndMilliseconds": 63328.40429200587,
+      "counterEndMilliseconds": 64493.62225000368,
+      "metrics": {
+        "TaskDuration": 63.869098,
+        "RecalcStyleDuration": 30.805499,
+        "LayoutDuration": 10.837335,
+        "TaskOtherDuration": 22.199218,
+        "DevToolsCommandDuration": 0.027046,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 236,
+        "LayoutCount": 159
+      }
+    },
+    {
+      "stage": "input",
+      "epoch": 18,
+      "tokenEpoch": 2,
+      "layer": 5,
+      "readStartMilliseconds": 66231.6874590033,
+      "readEndMilliseconds": 66991.56220900477,
+      "counterEndMilliseconds": 67215.14125000249,
+      "metrics": {
+        "TaskDuration": 66.585774,
+        "RecalcStyleDuration": 32.341453,
+        "LayoutDuration": 11.165447,
+        "TaskOtherDuration": 23.050801,
+        "DevToolsCommandDuration": 0.028073,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 247,
+        "LayoutCount": 166
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 18,
+      "tokenEpoch": 2,
+      "layer": 5,
+      "readStartMilliseconds": 67215.15179199923,
+      "readEndMilliseconds": 67868.99070900108,
+      "counterEndMilliseconds": 68857.71483400458,
+      "metrics": {
+        "TaskDuration": 68.226661,
+        "RecalcStyleDuration": 33.320848,
+        "LayoutDuration": 11.314601,
+        "TaskOtherDuration": 23.56292,
+        "DevToolsCommandDuration": 0.028292,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 252,
+        "LayoutCount": 170
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 18,
+      "tokenEpoch": 2,
+      "layer": 5,
+      "readStartMilliseconds": 68857.72079200251,
+      "readEndMilliseconds": 68986.15012500522,
+      "counterEndMilliseconds": 69383.3288340029,
+      "metrics": {
+        "TaskDuration": 68.752176,
+        "RecalcStyleDuration": 33.624397,
+        "LayoutDuration": 11.326545,
+        "TaskOtherDuration": 23.772718,
+        "DevToolsCommandDuration": 0.028516,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 255,
+        "LayoutCount": 171
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 18,
+      "tokenEpoch": 2,
+      "layer": 5,
+      "readStartMilliseconds": 69383.33666700055,
+      "readEndMilliseconds": 69474.09245900053,
+      "counterEndMilliseconds": 69964.60854200268,
+      "metrics": {
+        "TaskDuration": 69.331788,
+        "RecalcStyleDuration": 33.859628,
+        "LayoutDuration": 11.425541,
+        "TaskOtherDuration": 24.017896,
+        "DevToolsCommandDuration": 0.028723,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 259,
+        "LayoutCount": 173
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 19,
+      "tokenEpoch": 2,
+      "layer": 6,
+      "readStartMilliseconds": 69964.61345900025,
+      "readEndMilliseconds": 70543.7471250043,
+      "counterEndMilliseconds": 72043.49925000133,
+      "metrics": {
+        "TaskDuration": 71.408087,
+        "RecalcStyleDuration": 34.959974,
+        "LayoutDuration": 11.880581,
+        "TaskOtherDuration": 24.538368,
+        "DevToolsCommandDuration": 0.029164,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 264,
+        "LayoutCount": 178
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 19,
+      "tokenEpoch": 2,
+      "layer": 6,
+      "readStartMilliseconds": 72043.5453750033,
+      "readEndMilliseconds": 72376.18495900097,
+      "counterEndMilliseconds": 72760.255125002,
+      "metrics": {
+        "TaskDuration": 72.122778,
+        "RecalcStyleDuration": 35.404061,
+        "LayoutDuration": 11.89484,
+        "TaskOtherDuration": 24.794476,
+        "DevToolsCommandDuration": 0.029401,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 268,
+        "LayoutCount": 180
+      }
+    },
+    {
+      "stage": "input",
+      "epoch": 20,
+      "tokenEpoch": 2,
+      "layer": 7,
+      "readStartMilliseconds": 73703.2082500009,
+      "readEndMilliseconds": 74740.33883400261,
+      "counterEndMilliseconds": 75826.16079199943,
+      "metrics": {
+        "TaskDuration": 75.183481,
+        "RecalcStyleDuration": 37.106828,
+        "LayoutDuration": 12.314391,
+        "TaskOtherDuration": 25.731735,
+        "DevToolsCommandDuration": 0.030527,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 281,
+        "LayoutCount": 188
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 20,
+      "tokenEpoch": 2,
+      "layer": 7,
+      "readStartMilliseconds": 75826.19129199884,
+      "readEndMilliseconds": 75917.8200000024,
+      "counterEndMilliseconds": 76375.01295900438,
+      "metrics": {
+        "TaskDuration": 75.732074,
+        "RecalcStyleDuration": 37.480252,
+        "LayoutDuration": 12.323458,
+        "TaskOtherDuration": 25.897589,
+        "DevToolsCommandDuration": 0.030775,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 284,
+        "LayoutCount": 189
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 20,
+      "tokenEpoch": 2,
+      "layer": 7,
+      "readStartMilliseconds": 76375.0261669993,
+      "readEndMilliseconds": 76463.98691700597,
+      "counterEndMilliseconds": 77008.84820899955,
+      "metrics": {
+        "TaskDuration": 76.364739,
+        "RecalcStyleDuration": 37.771898,
+        "LayoutDuration": 12.420589,
+        "TaskOtherDuration": 26.141261,
+        "DevToolsCommandDuration": 0.030991,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 288,
+        "LayoutCount": 191
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 21,
+      "tokenEpoch": 2,
+      "layer": 8,
+      "readStartMilliseconds": 77008.86008400266,
+      "readEndMilliseconds": 77597.22483400401,
+      "counterEndMilliseconds": 78745.367334006,
+      "metrics": {
+        "TaskDuration": 78.095767,
+        "RecalcStyleDuration": 38.651399,
+        "LayoutDuration": 12.767506,
+        "TaskOtherDuration": 26.645431,
+        "DevToolsCommandDuration": 0.031431,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 293,
+        "LayoutCount": 196
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 21,
+      "tokenEpoch": 2,
+      "layer": 8,
+      "readStartMilliseconds": 78745.39854199975,
+      "readEndMilliseconds": 80092.63529199961,
+      "counterEndMilliseconds": 80171.5859169999,
+      "metrics": {
+        "TaskDuration": 79.522266,
+        "RecalcStyleDuration": 39.820234,
+        "LayoutDuration": 12.771162,
+        "TaskOtherDuration": 26.899067,
+        "DevToolsCommandDuration": 0.031803,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 296,
+        "LayoutCount": 197
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 21,
+      "tokenEpoch": 2,
+      "layer": 8,
+      "readStartMilliseconds": 80171.5972919992,
+      "readEndMilliseconds": 80510.05516700388,
+      "counterEndMilliseconds": 80587.856750004,
+      "metrics": {
+        "TaskDuration": 79.938628,
+        "RecalcStyleDuration": 40.066893,
+        "LayoutDuration": 12.779864,
+        "TaskOtherDuration": 27.059857,
+        "DevToolsCommandDuration": 0.032014,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 298,
+        "LayoutCount": 198
+      }
+    },
+    {
+      "stage": "input",
+      "epoch": 22,
+      "tokenEpoch": 2,
+      "layer": 9,
+      "readStartMilliseconds": 82046.24195900396,
+      "readEndMilliseconds": 82950.05225000205,
+      "counterEndMilliseconds": 83035.26162500202,
+      "metrics": {
+        "TaskDuration": 82.381666,
+        "RecalcStyleDuration": 41.331454,
+        "LayoutDuration": 13.099996,
+        "TaskOtherDuration": 27.917613,
+        "DevToolsCommandDuration": 0.032603,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 310,
+        "LayoutCount": 206
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 22,
+      "tokenEpoch": 2,
+      "layer": 9,
+      "readStartMilliseconds": 83035.26666700054,
+      "readEndMilliseconds": 83413.86274999968,
+      "counterEndMilliseconds": 83494.11500000133,
+      "metrics": {
+        "TaskDuration": 82.840419,
+        "RecalcStyleDuration": 41.615798,
+        "LayoutDuration": 13.108771,
+        "TaskOtherDuration": 28.083034,
+        "DevToolsCommandDuration": 0.032816,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 312,
+        "LayoutCount": 207
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 23,
+      "tokenEpoch": 2,
+      "layer": 10,
+      "readStartMilliseconds": 83494.119959003,
+      "readEndMilliseconds": 84037.45916700427,
+      "counterEndMilliseconds": 84627.57716700435,
+      "metrics": {
+        "TaskDuration": 83.96955,
+        "RecalcStyleDuration": 42.099125,
+        "LayoutDuration": 13.413941,
+        "TaskOtherDuration": 28.423332,
+        "DevToolsCommandDuration": 0.033152,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 317,
+        "LayoutCount": 212
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 23,
+      "tokenEpoch": 2,
+      "layer": 10,
+      "readStartMilliseconds": 84627.61875000433,
+      "readEndMilliseconds": 85928.07887500385,
+      "counterEndMilliseconds": 86612.60179200326,
+      "metrics": {
+        "TaskDuration": 85.952133,
+        "RecalcStyleDuration": 43.28968,
+        "LayoutDuration": 13.657073,
+        "TaskOtherDuration": 28.97197,
+        "DevToolsCommandDuration": 0.03341,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 322,
+        "LayoutCount": 215
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 23,
+      "tokenEpoch": 2,
+      "layer": 10,
+      "readStartMilliseconds": 86612.60741700244,
+      "readEndMilliseconds": 86700.89391700458,
+      "counterEndMilliseconds": 87112.3325840017,
+      "metrics": {
+        "TaskDuration": 86.451348,
+        "RecalcStyleDuration": 43.606989,
+        "LayoutDuration": 13.670873,
+        "TaskOtherDuration": 29.13985,
+        "DevToolsCommandDuration": 0.033636,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 325,
+        "LayoutCount": 216
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 23,
+      "tokenEpoch": 2,
+      "layer": 10,
+      "readStartMilliseconds": 87112.39945900161,
+      "readEndMilliseconds": 87200.90170900221,
+      "counterEndMilliseconds": 87686.61799999973,
+      "metrics": {
+        "TaskDuration": 87.024139,
+        "RecalcStyleDuration": 43.838915,
+        "LayoutDuration": 13.765885,
+        "TaskOtherDuration": 29.385487,
+        "DevToolsCommandDuration": 0.033852,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 329,
+        "LayoutCount": 218
+      }
+    },
+    {
+      "stage": "input",
+      "epoch": 24,
+      "tokenEpoch": 2,
+      "layer": 11,
+      "readStartMilliseconds": 94445.76258400048,
+      "readEndMilliseconds": 95951.14791700325,
+      "counterEndMilliseconds": 96044.1877090052,
+      "metrics": {
+        "TaskDuration": 95.378419,
+        "RecalcStyleDuration": 48.46898,
+        "LayoutDuration": 15.654823,
+        "TaskOtherDuration": 31.219932,
+        "DevToolsCommandDuration": 0.034684,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 343,
+        "LayoutCount": 226
+      }
+    },
+    {
+      "stage": "qkv",
+      "epoch": 24,
+      "tokenEpoch": 2,
+      "layer": 11,
+      "readStartMilliseconds": 96044.2229170003,
+      "readEndMilliseconds": 96132.9657919996,
+      "counterEndMilliseconds": 96675.24324999977,
+      "metrics": {
+        "TaskDuration": 96.009423,
+        "RecalcStyleDuration": 48.736851,
+        "LayoutDuration": 15.813236,
+        "TaskOtherDuration": 31.42442,
+        "DevToolsCommandDuration": 0.034916,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 348,
+        "LayoutCount": 228
+      }
+    },
+    {
+      "stage": "context",
+      "epoch": 25,
+      "tokenEpoch": 3,
+      "layer": 0,
+      "readStartMilliseconds": 96675.24787500588,
+      "readEndMilliseconds": 97132.92554200598,
+      "counterEndMilliseconds": 98063.91041700408,
+      "metrics": {
+        "TaskDuration": 97.39485,
+        "RecalcStyleDuration": 49.325976,
+        "LayoutDuration": 16.1876,
+        "TaskOtherDuration": 31.846062,
+        "DevToolsCommandDuration": 0.035212,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 353,
+        "LayoutCount": 233
+      }
+    },
+    {
+      "stage": "attentionProjection",
+      "epoch": 25,
+      "tokenEpoch": 3,
+      "layer": 0,
+      "readStartMilliseconds": 98063.92908400449,
+      "readEndMilliseconds": 99539.00479200092,
+      "counterEndMilliseconds": 99698.20129200525,
+      "metrics": {
+        "TaskDuration": 99.025932,
+        "RecalcStyleDuration": 50.379812,
+        "LayoutDuration": 16.268657,
+        "TaskOtherDuration": 32.342031,
+        "DevToolsCommandDuration": 0.035432,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 357,
+        "LayoutCount": 235
+      }
+    },
+    {
+      "stage": "fc",
+      "epoch": 25,
+      "tokenEpoch": 3,
+      "layer": 0,
+      "readStartMilliseconds": 99698.20637500379,
+      "readEndMilliseconds": 100112.93866699998,
+      "counterEndMilliseconds": 100200.77883400518,
+      "metrics": {
+        "TaskDuration": 99.528368,
+        "RecalcStyleDuration": 50.687471,
+        "LayoutDuration": 16.287307,
+        "TaskOtherDuration": 32.517929,
+        "DevToolsCommandDuration": 0.035661,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 359,
+        "LayoutCount": 236
+      }
+    },
+    {
+      "stage": "projection",
+      "epoch": 26,
+      "tokenEpoch": 3,
+      "layer": 1,
+      "readStartMilliseconds": 100200.786625006,
+      "readEndMilliseconds": 101566.06441700569,
+      "counterEndMilliseconds": 103331.3247920014,
+      "metrics": {
+        "TaskDuration": 102.651121,
+        "RecalcStyleDuration": 52.744055,
+        "LayoutDuration": 16.78386,
+        "TaskOtherDuration": 33.084157,
+        "DevToolsCommandDuration": 0.039049,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 364,
+        "LayoutCount": 241
+      }
+    },
+    {
+      "stage": "headInput",
+      "epoch": 2,
+      "tokenEpoch": 2,
+      "layer": null,
+      "readStartMilliseconds": 103331.37379200343,
+      "readEndMilliseconds": 104362.46558400308,
+      "counterEndMilliseconds": 105029.41062500031,
+      "metrics": {
+        "TaskDuration": 104.347087,
+        "RecalcStyleDuration": 53.694347,
+        "LayoutDuration": 16.970324,
+        "TaskOtherDuration": 33.643135,
+        "DevToolsCommandDuration": 0.039281,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 368,
+        "LayoutCount": 244
+      }
+    },
+    {
+      "stage": "capture",
+      "epoch": 2,
+      "tokenEpoch": 2,
+      "layer": null,
+      "readStartMilliseconds": 105120.76279200119,
+      "readEndMilliseconds": 105601.458834004,
+      "counterEndMilliseconds": 105856.1632090059,
+      "metrics": {
+        "TaskDuration": 105.170071,
+        "RecalcStyleDuration": 53.984378,
+        "LayoutDuration": 17.141406,
+        "TaskOtherDuration": 34.004667,
+        "DevToolsCommandDuration": 0.03962,
+        "ScriptDuration": 0,
+        "RecalcStyleCount": 375,
+        "LayoutCount": 248
+      }
+    }
+  ],
+  "captures": [
+    {
+      "epoch": 1,
+      "token": 11,
+      "expected": 11,
+      "passed": true
+    },
+    {
+      "epoch": 2,
+      "token": 314,
+      "expected": 314,
+      "passed": true
+    }
+  ],
+  "commands": {
+    "DOM.getDocument": 2,
+    "DOM.querySelector": 13,
+    "DOM.getBoxModel": 99,
+    "Performance.getMetrics": 70
+  },
+  "complete": true,
+  "stopReason": "bounded-token-target",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.48",
+    "revision": "@199a3a541d76237379e353b348e64045584db057",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "discoveryRetries": 1,
+  "setupMilliseconds": 11010.571042002994,
+  "observerProtocol": {
+    "pollDelayMilliseconds": 50,
+    "readOrder": [
+      "input",
+      "qkv",
+      "context",
+      "attentionProjection",
+      "fc",
+      "projection",
+      "headInput",
+      "head",
+      "capture"
+    ],
+    "metricsOn": "first observed positive stage/pass only",
+    "trace": false,
+    "maximumEvents": 2000,
+    "timeLimitScope": "loop deadline; an in-flight CDP read can exceed it by at most its 60-second socket timeout",
+    "counterAttribution": "Counters are snapshots after geometry reads; shared/queued work is not exclusive stage CPU.",
+    "tokenCheckScope": "captured token IDs only; no fresh residual-vector readback"
+  },
+  "totalMilliseconds": 106345.42254199914,
+  "geometryReadLatencyMilliseconds": {
+    "count": 99,
+    "median": 436.8259170005331,
+    "maximum": 5684.708959001,
+    "total": 59961.36008603935
+  },
+  "passed": true
+}

@@ -1,0 +1,291 @@
+{
+  "validation": "offline only; no native prefix browser run performed",
+  "estimatorSha256": "c2eadda3dacb21fa8ac00ddac8e86f4f4364788ddf215eb5e50cd447fe1acbf8",
+  "sourceHistoricalSummary": "experiments/browser-gpt2/demo-font-vector-context32/scaling-summary.json",
+  "historicalPrefix4MatchesBacktest": true,
+  "rejectedScopes": [
+    "segment benchmark",
+    "incomplete prefix",
+    "changed source",
+    "wrong allocation",
+    "skipped observation",
+    "NaN milliseconds at every prefix position",
+    "positive infinity milliseconds at every prefix position",
+    "negative infinity milliseconds at every prefix position"
+  ],
+  "negativeCasesRejected": 17,
+  "forecast": {
+    "status": "diagnostic-only; observed token timing is not numerical validation or calibrated forecast accuracy",
+    "observedTokens": 4,
+    "allocatedCapacity": 32,
+    "blocks": 12,
+    "firstObservedSeconds": 97.56551987499915,
+    "continuingIntervals": [
+      {
+        "epoch": 2,
+        "seconds": 57.17613062500095
+      },
+      {
+        "epoch": 3,
+        "seconds": 59.734375583000656
+      },
+      {
+        "epoch": 4,
+        "seconds": 61.83640462499898
+      }
+    ],
+    "models": [
+      {
+        "model": "constant",
+        "fit": {
+          "interceptSeconds": 59.58230361100019,
+          "secondsPerContextPosition": 0.0
+        },
+        "observedPrefixSeconds": 276.31243070799974,
+        "predictedRemainingContinuingSeconds": 1608.7221974970053,
+        "terminalContinuingProxySeconds": 59.58230361100019,
+        "predictedTotalWithUncalibratedTerminalProxySeconds": 1944.6169318160053,
+        "remainingContinuingPredictions": [
+          {
+            "epoch": 5,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 6,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 7,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 8,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 9,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 10,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 11,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 12,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 13,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 14,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 15,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 16,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 17,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 18,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 19,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 20,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 21,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 22,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 23,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 24,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 25,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 26,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 27,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 28,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 29,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 30,
+            "predictedSeconds": 59.58230361100019
+          },
+          {
+            "epoch": 31,
+            "predictedSeconds": 59.58230361100019
+          }
+        ]
+      },
+      {
+        "model": "linear-context",
+        "fit": {
+          "interceptSeconds": 52.59189261100315,
+          "secondsPerContextPosition": 2.330136999999013
+        },
+        "observedPrefixSeconds": 276.31243070799974,
+        "predictedRemainingContinuingSeconds": 2552.427682496605,
+        "terminalContinuingProxySeconds": 127.15627661097156,
+        "predictedTotalWithUncalibratedTerminalProxySeconds": 2955.896389815576,
+        "remainingContinuingPredictions": [
+          {
+            "epoch": 5,
+            "predictedSeconds": 64.24257761099821
+          },
+          {
+            "epoch": 6,
+            "predictedSeconds": 66.57271461099722
+          },
+          {
+            "epoch": 7,
+            "predictedSeconds": 68.90285161099624
+          },
+          {
+            "epoch": 8,
+            "predictedSeconds": 71.23298861099525
+          },
+          {
+            "epoch": 9,
+            "predictedSeconds": 73.56312561099426
+          },
+          {
+            "epoch": 10,
+            "predictedSeconds": 75.89326261099328
+          },
+          {
+            "epoch": 11,
+            "predictedSeconds": 78.22339961099229
+          },
+          {
+            "epoch": 12,
+            "predictedSeconds": 80.5535366109913
+          },
+          {
+            "epoch": 13,
+            "predictedSeconds": 82.88367361099031
+          },
+          {
+            "epoch": 14,
+            "predictedSeconds": 85.21381061098933
+          },
+          {
+            "epoch": 15,
+            "predictedSeconds": 87.54394761098834
+          },
+          {
+            "epoch": 16,
+            "predictedSeconds": 89.87408461098735
+          },
+          {
+            "epoch": 17,
+            "predictedSeconds": 92.20422161098637
+          },
+          {
+            "epoch": 18,
+            "predictedSeconds": 94.53435861098538
+          },
+          {
+            "epoch": 19,
+            "predictedSeconds": 96.86449561098439
+          },
+          {
+            "epoch": 20,
+            "predictedSeconds": 99.1946326109834
+          },
+          {
+            "epoch": 21,
+            "predictedSeconds": 101.52476961098242
+          },
+          {
+            "epoch": 22,
+            "predictedSeconds": 103.85490661098143
+          },
+          {
+            "epoch": 23,
+            "predictedSeconds": 106.18504361098044
+          },
+          {
+            "epoch": 24,
+            "predictedSeconds": 108.51518061097946
+          },
+          {
+            "epoch": 25,
+            "predictedSeconds": 110.84531761097847
+          },
+          {
+            "epoch": 26,
+            "predictedSeconds": 113.17545461097748
+          },
+          {
+            "epoch": 27,
+            "predictedSeconds": 115.5055916109765
+          },
+          {
+            "epoch": 28,
+            "predictedSeconds": 117.83572861097551
+          },
+          {
+            "epoch": 29,
+            "predictedSeconds": 120.16586561097452
+          },
+          {
+            "epoch": 30,
+            "predictedSeconds": 122.49600261097353
+          },
+          {
+            "epoch": 31,
+            "predictedSeconds": 124.82613961097255
+          }
+        ]
+      }
+    ],
+    "numericalVerificationPerformed": false,
+    "runnerBrowserValidated": false,
+    "requirementsBeforeCallingEstimateAccurate": [
+      "Verify prefix token outputs, current residual, and every retained cache against an independent reference.",
+      "Measure fresh AB/BA baseline and candidate native prefixes at the same allocated capacity and graph residency.",
+      "Reserve later continuing contexts for validation; early-prefix fit alone cannot establish later-context or memory-pressure accuracy.",
+      "Calibrate terminal behavior separately; the final token need not cost the same as a continuing token."
+    ],
+    "limitation": "No checkpoint restoration or candidate-model integration is implemented here. The historical withheld-suffix backtest is not a confidence interval for this prefix."
+  }
+}

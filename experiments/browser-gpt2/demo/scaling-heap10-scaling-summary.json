@@ -1,0 +1,76 @@
+{
+  "directory": "experiments/browser-gpt2/demo",
+  "reportPrefix": "scaling-heap10-",
+  "complete": false,
+  "manifest": {
+    "blocks": 12,
+    "capacity": 8,
+    "dynamicActivationRange": true,
+    "runtimeJavaScript": false,
+    "cacheLayout": "flat",
+    "fontFaces": 259,
+    "autostart": false,
+    "head": "full-vocabulary-q16-two-pass",
+    "promptTokens": 1,
+    "generatedTokenLimit": 8,
+    "kvStorage": "native delayed transitions",
+    "scheduler": "CSS receipts and SVG SMIL events",
+    "isolateHead": true
+  },
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "observedTokenEpochs": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "totalSeconds": 0.0,
+  "firstObservedSeconds": 124.0407727080019,
+  "warmIntervals": [
+    {
+      "epoch": 2,
+      "seconds": 79.65296587500052
+    },
+    {
+      "epoch": 3,
+      "seconds": 104.69964149999939
+    },
+    {
+      "epoch": 4,
+      "seconds": 91.40475333300128
+    }
+  ],
+  "warmMedianSeconds": 91.40475333300128,
+  "warmMinimumSeconds": 79.65296587500052,
+  "warmMaximumSeconds": 104.69964149999939,
+  "sampledPeak": null,
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 1,
+  "runToFirstSeconds": 80.37010200000077,
+  "rendererWarmTaskPercentages": {
+    "RecalcStyleDuration": 44.43070805195749,
+    "LayoutDuration": 6.750864995449903,
+    "TaskOtherDuration": 48.73845675012605,
+    "DevToolsCommandDuration": 0.0799702024665558,
+    "ScriptDuration": 0.0,
+    "V8CompileDuration": 0.0
+  },
+  "coarseMilestones": {
+    "usableEpochs": [
+      2,
+      3,
+      4
+    ],
+    "missingOrNonmonotonicEpochs": [],
+    "note": "Observed geometry boundaries, not exclusive operation timings; shared frames and observer delay overlap.",
+    "percentages": {
+      "handoff": 12.062510740074414,
+      "embedding": 2.5382326243636992,
+      "coreAndKV": 77.87290870437471,
+      "finalBridgeAndHead": 7.526347931187181
+    }
+  }
+}

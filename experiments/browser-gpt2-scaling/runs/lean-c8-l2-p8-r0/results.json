@@ -1,0 +1,1614 @@
+{
+  "variant": "lean",
+  "options": {
+    "widths": true,
+    "empty_slots": true,
+    "selective_fields": false,
+    "materialize_inputs": true,
+    "local_timelines": true,
+    "containment": null
+  },
+  "capacity": 8,
+  "layers": 2,
+  "positions": 8,
+  "repeat": 0,
+  "queryUpdates": 3,
+  "traceRequested": true,
+  "startedAtUTC": "2026-09-17T08:14:34.909825+00:00",
+  "pythonVersion": "3.13.2",
+  "platform": "macOS-26.0-arm64-arm-64bit-Mach-O",
+  "fixtureSeed": 7391,
+  "packages": {
+    "numpy": "2.5.3",
+    "fonttools": "4.65.0",
+    "brotli": "1.2.0",
+    "pillow": "12.3.0"
+  },
+  "scope": "Externally supplied QKV attention component with native KV retention; excludes projections, MLP and vocabulary head",
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 22,
+  "samples": [
+    {
+      "epoch": 1,
+      "position": 1,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 190.8171670002048,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00025580787033887626,
+        "maximum": 0.0007762416407866013
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 0,
+        "RecalcStyleCount": 0,
+        "LayoutDuration": 0.0,
+        "RecalcStyleDuration": 0.0,
+        "DevToolsCommandDuration": 0.035507000000000004,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.03564600000000001,
+        "TaskOtherDuration": 0.00013900000000000023
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0007762416407866013
+    },
+    {
+      "epoch": 2,
+      "position": 1,
+      "layer": 1,
+      "kind": "append",
+      "milliseconds": 277.8585829983058,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00027762748872470314,
+        "maximum": 0.0007227501259248759
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 10,
+        "LayoutDuration": 0.023921000000000005,
+        "RecalcStyleDuration": 0.03611099999999999,
+        "DevToolsCommandDuration": 0.032657000000000005,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.126889,
+        "TaskOtherDuration": 0.034199999999999994
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0007227501259248759
+    },
+    {
+      "epoch": 3,
+      "position": 2,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 315.4746670006716,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00046096485953143096,
+        "maximum": 0.003222999545994476
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.03782599999999999,
+        "RecalcStyleDuration": 0.045984,
+        "DevToolsCommandDuration": 0.035857,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.15982199999999996,
+        "TaskOtherDuration": 0.040154999999999996
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.002155978631036337
+    },
+    {
+      "epoch": 4,
+      "position": 2,
+      "layer": 1,
+      "kind": "append",
+      "milliseconds": 330.90687499861815,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00030257912230830745,
+        "maximum": 0.0015685894964990177
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.0411,
+        "RecalcStyleDuration": 0.05565500000000001,
+        "DevToolsCommandDuration": 0.03520699999999999,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.19005799999999995,
+        "TaskOtherDuration": 0.05809600000000001
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0010414634797726308
+    },
+    {
+      "epoch": 5,
+      "position": 3,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 303.3513749978738,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00035680677915312455,
+        "maximum": 0.001774485147308269
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.045878,
+        "RecalcStyleDuration": 0.043513000000000024,
+        "DevToolsCommandDuration": 0.03281899999999999,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.15808999999999995,
+        "TaskOtherDuration": 0.03588000000000002
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.001774485147308269
+    },
+    {
+      "epoch": 6,
+      "position": 3,
+      "layer": 1,
+      "kind": "append",
+      "milliseconds": 337.7332079980988,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00038636083126605136,
+        "maximum": 0.0023594689528319
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.05233200000000002,
+        "RecalcStyleDuration": 0.05433199999999999,
+        "DevToolsCommandDuration": 0.035334000000000004,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.198121,
+        "TaskOtherDuration": 0.056123000000000034
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0023594689528319
+    },
+    {
+      "epoch": 7,
+      "position": 4,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 347.6961249980377,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00034165502017782047,
+        "maximum": 0.0011807943455887093
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 10,
+        "LayoutDuration": 0.062283000000000005,
+        "RecalcStyleDuration": 0.050995999999999986,
+        "DevToolsCommandDuration": 0.03420999999999999,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.19074900000000006,
+        "TaskOtherDuration": 0.04326000000000002
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0011807943455887093
+    },
+    {
+      "epoch": 8,
+      "position": 4,
+      "layer": 1,
+      "kind": "append",
+      "milliseconds": 349.53824999684,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0003308811895366861,
+        "maximum": 0.0011838422636527568
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.06257799999999997,
+        "RecalcStyleDuration": 0.06015199999999998,
+        "DevToolsCommandDuration": 0.034356000000000025,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.20907999999999993,
+        "TaskOtherDuration": 0.05199400000000004
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0011838422636527568
+    },
+    {
+      "epoch": 9,
+      "position": 5,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 353.1842080010392,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0003662382867572472,
+        "maximum": 0.00161887466276589
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.074494,
+        "RecalcStyleDuration": 0.05507500000000004,
+        "DevToolsCommandDuration": 0.034138,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.2080329999999999,
+        "TaskOtherDuration": 0.04432600000000003
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.00161887466276589
+    },
+    {
+      "epoch": 10,
+      "position": 5,
+      "layer": 1,
+      "kind": "append",
+      "milliseconds": 387.0349160024489,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0005973448004642543,
+        "maximum": 0.003592258648391855
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.07856599999999997,
+        "RecalcStyleDuration": 0.07049799999999995,
+        "DevToolsCommandDuration": 0.03513499999999997,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.244386,
+        "TaskOtherDuration": 0.060187000000000046
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.003592258648391855
+    },
+    {
+      "epoch": 11,
+      "position": 6,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 371.53037499956554,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00043405549282215405,
+        "maximum": 0.0028615739098872828
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.083237,
+        "RecalcStyleDuration": 0.053856000000000015,
+        "DevToolsCommandDuration": 0.035126999999999964,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.21663999999999994,
+        "TaskOtherDuration": 0.04441999999999996
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0028615739098872828
+    },
+    {
+      "epoch": 12,
+      "position": 6,
+      "layer": 1,
+      "kind": "append",
+      "milliseconds": 406.063999998878,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0003558361933067912,
+        "maximum": 0.0017227016713379228
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 10,
+        "LayoutDuration": 0.09120899999999998,
+        "RecalcStyleDuration": 0.07544899999999999,
+        "DevToolsCommandDuration": 0.03711199999999998,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.2679659999999999,
+        "TaskOtherDuration": 0.06419600000000003
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0017227016713379228
+    },
+    {
+      "epoch": 13,
+      "position": 7,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 389.6939170008409,
+      "error": {
+        "finite": 768,
+        "rmse": 0.000327757113847048,
+        "maximum": 0.0014134687761049314
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.10059000000000007,
+        "RecalcStyleDuration": 0.06167,
+        "DevToolsCommandDuration": 0.03348699999999999,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.2376100000000001,
+        "TaskOtherDuration": 0.041862999999999984
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0014134687761049314
+    },
+    {
+      "epoch": 14,
+      "position": 7,
+      "layer": 1,
+      "kind": "append",
+      "milliseconds": 423.3868330011319,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0005144008395813269,
+        "maximum": 0.0032155249696610433
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.10504999999999998,
+        "RecalcStyleDuration": 0.07889999999999997,
+        "DevToolsCommandDuration": 0.03700999999999999,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.2874650000000001,
+        "TaskOtherDuration": 0.06650500000000004
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0032155249696610433
+    },
+    {
+      "epoch": 15,
+      "position": 8,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 410.3175829986867,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00035697991929102633,
+        "maximum": 0.001794439404060988
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.11524100000000004,
+        "RecalcStyleDuration": 0.06208400000000003,
+        "DevToolsCommandDuration": 0.03589999999999999,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.261161,
+        "TaskOtherDuration": 0.04793599999999998
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.001794439404060988
+    },
+    {
+      "epoch": 16,
+      "position": 8,
+      "layer": 1,
+      "kind": "append",
+      "milliseconds": 427.67129200001364,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0005318514421561709,
+        "maximum": 0.003321160850874527
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 10,
+        "LayoutDuration": 0.11477999999999988,
+        "RecalcStyleDuration": 0.07443600000000006,
+        "DevToolsCommandDuration": 0.03615400000000002,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.28986,
+        "TaskOtherDuration": 0.06449000000000005
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.003321160850874527
+    },
+    {
+      "epoch": 17,
+      "position": 8,
+      "layer": 0,
+      "kind": "query+layer-switch",
+      "milliseconds": 317.92974999916623,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00035933249434259607,
+        "maximum": 0.001794439404060988
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.024253999999999998,
+        "RecalcStyleDuration": 0.0634539999999999,
+        "DevToolsCommandDuration": 0.03502700000000003,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.16900799999999983,
+        "TaskOtherDuration": 0.04627300000000001
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.001794439404060988
+    },
+    {
+      "epoch": 18,
+      "position": 8,
+      "layer": 1,
+      "kind": "query+layer-switch",
+      "milliseconds": 346.5312080006697,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0005288019836504526,
+        "maximum": 0.003321160850874527
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 9,
+        "LayoutDuration": 0.0337400000000001,
+        "RecalcStyleDuration": 0.07225100000000007,
+        "DevToolsCommandDuration": 0.035194999999999976,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.21012699999999995,
+        "TaskOtherDuration": 0.06894100000000003
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.003321160850874527
+    },
+    {
+      "epoch": 19,
+      "position": 8,
+      "layer": 0,
+      "kind": "query+layer-switch",
+      "milliseconds": 324.84208299865713,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00036709968264111845,
+        "maximum": 0.001794439404060988
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.025436999999999932,
+        "RecalcStyleDuration": 0.06386800000000004,
+        "DevToolsCommandDuration": 0.03569699999999998,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.17258899999999988,
+        "TaskOtherDuration": 0.047587000000000046
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.001794439404060988
+    },
+    {
+      "epoch": 20,
+      "position": 8,
+      "layer": 1,
+      "kind": "query+layer-switch",
+      "milliseconds": 345.9653330028232,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0005532841673431647,
+        "maximum": 0.003321160850874527
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.03231000000000006,
+        "RecalcStyleDuration": 0.07340599999999986,
+        "DevToolsCommandDuration": 0.03575399999999995,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.20887499999999992,
+        "TaskOtherDuration": 0.06740500000000005
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.003321160850874527
+    },
+    {
+      "epoch": 21,
+      "position": 8,
+      "layer": 0,
+      "kind": "query+layer-switch",
+      "milliseconds": 339.6921659987129,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0003610208449479657,
+        "maximum": 0.001794439404060988
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 10,
+        "LayoutDuration": 0.03037599999999996,
+        "RecalcStyleDuration": 0.07255400000000001,
+        "DevToolsCommandDuration": 0.03340299999999996,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.19876800000000028,
+        "TaskOtherDuration": 0.06243500000000002
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.001794439404060988
+    },
+    {
+      "epoch": 22,
+      "position": 8,
+      "layer": 1,
+      "kind": "query+layer-switch",
+      "milliseconds": 341.3765830009652,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0005314813268421432,
+        "maximum": 0.003321160850874527
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.02892399999999995,
+        "RecalcStyleDuration": 0.0737620000000001,
+        "DevToolsCommandDuration": 0.03673399999999993,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.20299400000000034,
+        "TaskOtherDuration": 0.06357400000000002
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.003321160850874527
+    }
+  ],
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "sourceHashes": {
+    "investigate_browser_gpt2_scaling.py": "4fcb45e9d5acb2b9af55d25eb6b585fc2b5b75dfc7ba8ee078dc21ac980ae857",
+    "browser_gpt2_scaling_variants.py": "5e25c189780d89fd33222af29778567022977e3918d60acbe797a4e55e79b971",
+    "browser_gpt2_font_vector_cache.py": "7041e23cecef6e80fef0feb37f93231f31132458ae193ebaa750a40e46b66bdf",
+    "probe_browser_gpt2_geometry_attention.py": "2f8438c886a5466b2b518f34872966b8bcb0d0fef6f2af6e88e8e1a9755c65d8",
+    "build_hybrid_twelve_block.py": "5d688ec9bf96789067b6de89037382d32d1cdadc94557afbdfaa748d93041a1c",
+    "profile_hybrid_twelve_block.py": "9e10b25c78b76e982b19bf65e263b3775cb29beabfc83317922c7d8495dc9c18",
+    "probe_native_value_latch.py": "9dbd9d892eac7fc8779c9d48be2aa6ade9f5072ed2f6931c140864b2c8fa1298",
+    "benchmark_browser_gpt2_memory.py": "b39953e35b09f625845c2fc996544acdd4c3c4089c6bf18adb86a4051fd11476",
+    "test_browser_gpt2_components.py": "f119592e208776b42feb8cfd34793c6423753cec5b18482aaec5a818eb2bf9f3",
+    "attention.css": "029d4896c97bc398041a9b55d5ec7a78707ca015731e6e9fdb34f377752acf58",
+    "index.html": "937dcaea1eb4d545f54cac4291f54e47b5b9e6dc74e76b9bc4227ae819d71bd7"
+  },
+  "settleProtocol": "Three unchanged finite vector reads plus matching native generation receipt; 25ms polling. Timing includes CDP writes/reads and settling floor.",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.48",
+    "revision": "@199a3a541d76237379e353b348e64045584db057",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "sampledPeak": {
+    "rendererRssMiB": 940.21875,
+    "browserTreeRssMiB": 1525.40625
+  },
+  "rendererFinal": {
+    "Timestamp": 30050.447658,
+    "AudioHandlers": 0,
+    "AudioWorkletProcessors": 0,
+    "Documents": 1,
+    "Frames": 1,
+    "JSEventListeners": 0,
+    "LayoutObjects": 13272,
+    "MediaKeySessions": 0,
+    "MediaKeys": 0,
+    "Nodes": 13274,
+    "Resources": 3,
+    "ContextLifecycleStateObservers": 3,
+    "V8PerContextDatas": 1,
+    "WorkerGlobalScopes": 0,
+    "UACSSResources": 0,
+    "RTCPeerConnections": 0,
+    "ResourceFetchers": 1,
+    "AdSubframes": 0,
+    "DetachedScriptStates": 0,
+    "ArrayBufferContents": 0,
+    "LayoutCount": 67,
+    "RecalcStyleCount": 229,
+    "LayoutDuration": 1.298787,
+    "RecalcStyleDuration": 1.382282,
+    "DevToolsCommandDuration": 0.775226,
+    "ScriptDuration": 0,
+    "V8CompileDuration": 0,
+    "TaskDuration": 4.632849,
+    "TaskOtherDuration": 1.176554,
+    "ThreadTime": 4.716345,
+    "ProcessTime": 5.471979,
+    "JSHeapUsedSize": 446344,
+    "JSHeapTotalSize": 1048576,
+    "FirstMeaningfulPaint": 0,
+    "DomContentLoaded": 30042.584563,
+    "NavigationStart": 30042.570055
+  },
+  "domCounters": {
+    "documents": 1,
+    "nodes": 13274,
+    "jsEventListeners": 0
+  },
+  "traceKind": "query-only; same selected layer, position and K/V as the final timed sample",
+  "traceValidation": {
+    "finite": 768,
+    "rmse": 0.0005254011899819678,
+    "maximum": 0.003321160850874527
+  },
+  "traceComplete": true,
+  "tracePassed": true,
+  "traceTotals": [
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "WebFrameWidgetImpl::BeginMainFrame",
+      "microsecondsInclusive": 7694,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Blink.Animate.UpdateTime",
+      "microsecondsInclusive": 7670,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "PageAnimator::serviceScriptedAnimations",
+      "microsecondsInclusive": 7656,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "AnimationTimeline::serviceAnimations",
+      "microsecondsInclusive": 11307,
+      "count": 6741
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "WebFrameWidgetImpl::UpdateLifecycle",
+      "microsecondsInclusive": 106086,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::WillStartLifecycleUpdate",
+      "microsecondsInclusive": 3,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::UpdateLifecyclePhases - start of lifecycle tasks",
+      "microsecondsInclusive": 2,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+      "microsecondsInclusive": 94223,
+      "count": 4
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::UpdateStyleAndLayout",
+      "microsecondsInclusive": 106236,
+      "count": 20
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Blink.Style.UpdateTime",
+      "microsecondsInclusive": 84367,
+      "count": 11
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "UpdateLayoutTree",
+      "microsecondsInclusive": 84330,
+      "count": 11
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Document::updateActiveStyle",
+      "microsecondsInclusive": 11,
+      "count": 8
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Document::updateStyle",
+      "microsecondsInclusive": 71487,
+      "count": 11
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Document::recalcStyle",
+      "microsecondsInclusive": 70746,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+      "microsecondsInclusive": 74,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_COMPLETE_SWEEPING",
+      "microsecondsInclusive": 11,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_SWEEP",
+      "microsecondsInclusive": 8,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_TIME_TO_SAFEPOINT",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_INCREMENTAL_START",
+      "microsecondsInclusive": 198,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE",
+      "microsecondsInclusive": 131,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_MARK_EMBEDDER_PROLOGUE",
+      "microsecondsInclusive": 28,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_MARK_ROOTS",
+      "microsecondsInclusive": 27,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Major concurrent marking started",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_INCREMENTAL_EXTERNAL_EPILOGUE",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_INCREMENTAL",
+      "microsecondsInclusive": 2674,
+      "count": 123
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+      "microsecondsInclusive": 2496,
+      "count": 122
+    },
+    {
+      "pid": 71052,
+      "tid": 1016966,
+      "event": "V8.GC_MC_BACKGROUND_MARKING",
+      "microsecondsInclusive": 191,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016969,
+      "event": "V8.GC_MC_BACKGROUND_MARKING",
+      "microsecondsInclusive": 90,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1017083,
+      "event": "V8.GC_MC_BACKGROUND_MARKING",
+      "microsecondsInclusive": 123,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017087,
+      "event": "V8.GC_MC_BACKGROUND_MARKING",
+      "microsecondsInclusive": 140,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017084,
+      "event": "V8.GC_MC_BACKGROUND_MARKING",
+      "microsecondsInclusive": 109,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016966,
+      "event": "ConcurrentMarking::RunMajor Finished",
+      "microsecondsInclusive": 2,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016969,
+      "event": "ConcurrentMarking::RunMajor Finished",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017086,
+      "event": "V8.GC_MC_BACKGROUND_MARKING",
+      "microsecondsInclusive": 70,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017084,
+      "event": "ConcurrentMarking::RunMajor Finished",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017083,
+      "event": "ConcurrentMarking::RunMajor Finished",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017087,
+      "event": "ConcurrentMarking::RunMajor Finished",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017085,
+      "event": "V8.GC_MC_BACKGROUND_MARKING",
+      "microsecondsInclusive": 9,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017086,
+      "event": "ConcurrentMarking::RunMajor Finished",
+      "microsecondsInclusive": 2,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017085,
+      "event": "ConcurrentMarking::RunMajor Finished",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Document::rebuildLayoutTree",
+      "microsecondsInclusive": 35,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Blink.Layout.UpdateTime",
+      "microsecondsInclusive": 21268,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::layout",
+      "microsecondsInclusive": 21233,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Layout",
+      "microsecondsInclusive": 21229,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::performLayout",
+      "microsecondsInclusive": 21050,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "InlineNode::ShapeTextIncludingFirstLine",
+      "microsecondsInclusive": 115,
+      "count": 9
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::performPostLayoutTasks",
+      "microsecondsInclusive": 8,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "ResourceLoadPriorityOptimizer::UpdateImagePrioritiesAndSpeculativeDecodes",
+      "microsecondsInclusive": 3,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "RootScrollerController::PerformRootScrollerSelection",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "PrePaint",
+      "microsecondsInclusive": 3352,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::RunCompositingInputsLifecyclePhase",
+      "microsecondsInclusive": 251,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Blink.CompositingInputs.UpdateTime",
+      "microsecondsInclusive": 251,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LayoutView::commitPendingSelection",
+      "microsecondsInclusive": 2,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::RunPrePaintLifecyclePhase",
+      "microsecondsInclusive": 3094,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Blink.PrePaint.UpdateTime",
+      "microsecondsInclusive": 3089,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::NotifyResizeObservers",
+      "microsecondsInclusive": 4,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::RunPaintLifecyclePhase",
+      "microsecondsInclusive": 5029,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Blink.Paint.UpdateTime",
+      "microsecondsInclusive": 187,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "CullRectUpdate",
+      "microsecondsInclusive": 31,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Paint",
+      "microsecondsInclusive": 51,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "PaintController::commitNewDisplayItems",
+      "microsecondsInclusive": 3,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::pushPaintArtifactToCompositor",
+      "microsecondsInclusive": 51,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Blink.CompositingCommit.UpdateTime",
+      "microsecondsInclusive": 50,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Layerize",
+      "microsecondsInclusive": 47,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "PaintArtifactCompositor::Update",
+      "microsecondsInclusive": 38,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::DidFinishLifecycleUpdate",
+      "microsecondsInclusive": 3,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::RunAccessibilitySteps",
+      "microsecondsInclusive": 9,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Blink.Accessibility.UpdateTime",
+      "microsecondsInclusive": 3,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "LocalFrameView::UpdateViewportIntersectionsForSubtree",
+      "microsecondsInclusive": 6,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Blink.IntersectionObservation.UpdateTime",
+      "microsecondsInclusive": 2,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "TimerBase::run",
+      "microsecondsInclusive": 5,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Document::UpdateStyleAndLayout",
+      "microsecondsInclusive": 12078,
+      "count": 16
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Blink.ForcedStyleAndLayout.UpdateTime",
+      "microsecondsInclusive": 12045,
+      "count": 16
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_HEAP_EXTERNAL_PROLOGUE",
+      "microsecondsInclusive": 44,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "MajorGC",
+      "microsecondsInclusive": 1160,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_HEAP_PROLOGUE",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MARK_COMPACTOR",
+      "microsecondsInclusive": 1140,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_HEAP_PROLOGUE_SAFEPOINT",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_PROLOGUE",
+      "microsecondsInclusive": 2,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_MARK",
+      "microsecondsInclusive": 51,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_MARK_FINISH_INCREMENTAL",
+      "microsecondsInclusive": 2,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_MARK_CLIENT_HEAPS",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_MARK_RETAIN_MAPS",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL",
+      "microsecondsInclusive": 17,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "Major concurrent marking rescheduled",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_MARKING",
+      "microsecondsInclusive": 6,
+      "count": 3
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_MARK_EMBEDDER_TRACING",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_CONSERVATIVE_STACK_SCANNING",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_MARK_FULL_CLOSURE_SERIAL",
+      "microsecondsInclusive": 2,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_CLEAR",
+      "microsecondsInclusive": 84,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "ClearStringTableJob started",
+      "microsecondsInclusive": 2,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_CLEAR_JOIN_JOB",
+      "microsecondsInclusive": 72,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_CLEAR_WEAK_COLLECTIONS",
+      "microsecondsInclusive": 3,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_CLEAR_SWEEP_WASM_CODE_POINTER_TABLE",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_CLEAR_MAPS",
+      "microsecondsInclusive": 3,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_CLEAR_WEAK_LISTS",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016966,
+      "event": "V8.GC_MC_CLEAR_FLUSHED_JS_FUNCTIONS",
+      "microsecondsInclusive": 3,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_CLEAR_SWEEP_JS_DISPATCH_TABLE",
+      "microsecondsInclusive": 6,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016969,
+      "event": "V8.GC_MC_CLEAR_WEAK_GLOBAL_HANDLES",
+      "microsecondsInclusive": 6,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_CLEAR_STRING_TABLE",
+      "microsecondsInclusive": 16,
+      "count": 4
+    },
+    {
+      "pid": 71052,
+      "tid": 1016966,
+      "event": "V8.GC_MC_CLEAR_SWEEP_EXTERNAL_POINTER_TABLE",
+      "microsecondsInclusive": 33,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_CLEAR_SWEEP_TRUSTED_POINTER_TABLE",
+      "microsecondsInclusive": 6,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017084,
+      "event": "V8.GC_MC_CLEAR_WEAK_REFERENCES_NON_TRIVIAL",
+      "microsecondsInclusive": 14,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017085,
+      "event": "V8.GC_MC_CLEAR_WEAK_REFERENCES_TRIVIAL",
+      "microsecondsInclusive": 3,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017083,
+      "event": "V8.GC_MC_CLEAR_STRING_TABLE",
+      "microsecondsInclusive": 10,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1017085,
+      "event": "V8.GC_MC_CLEAR_STRING_TABLE",
+      "microsecondsInclusive": 5,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017086,
+      "event": "V8.GC_MC_CLEAR_STRING_TABLE",
+      "microsecondsInclusive": 9,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_EVACUATE",
+      "microsecondsInclusive": 88,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_EVACUATE_PROLOGUE",
+      "microsecondsInclusive": 7,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_EVACUATE_COPY",
+      "microsecondsInclusive": 2,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_EVACUATE_UPDATE_POINTERS",
+      "microsecondsInclusive": 74,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_EVACUATE_UPDATE_POINTERS_TO_NEW_ROOTS",
+      "microsecondsInclusive": 36,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_EVACUATE_UPDATE_POINTERS_SLOTS_MAIN",
+      "microsecondsInclusive": 3,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "PointersUpdatingJob started",
+      "microsecondsInclusive": 2,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_EVACUATE_UPDATE_POINTERS_WEAK",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_EVACUATE_UPDATE_POINTERS_POINTER_TABLES",
+      "microsecondsInclusive": 28,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_SWEEP_NEW_LO",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_EVACUATE_REBALANCE",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_FINISH",
+      "microsecondsInclusive": 10,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_SWEEP_START_JOBS",
+      "microsecondsInclusive": 6,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_MC_EPILOGUE",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE",
+      "microsecondsInclusive": 135,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016969,
+      "event": "V8.GC_MC_BACKGROUND_SWEEPING",
+      "microsecondsInclusive": 76,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016966,
+      "event": "V8.GC_MC_BACKGROUND_SWEEPING",
+      "microsecondsInclusive": 28,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016966,
+      "event": "Sweeper::ConcurrentMajorSweeper Finished",
+      "microsecondsInclusive": 1,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017083,
+      "event": "V8.GC_MC_BACKGROUND_SWEEPING",
+      "microsecondsInclusive": 14,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1017083,
+      "event": "Sweeper::ConcurrentMajorSweeper Finished",
+      "microsecondsInclusive": 7,
+      "count": 5
+    },
+    {
+      "pid": 71052,
+      "tid": 1016969,
+      "event": "Sweeper::ConcurrentMajorSweeper Finished",
+      "microsecondsInclusive": 2,
+      "count": 2
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_HEAP_EPILOGUE_SAFEPOINT",
+      "microsecondsInclusive": 2,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_HEAP_EPILOGUE",
+      "microsecondsInclusive": 2,
+      "count": 1
+    },
+    {
+      "pid": 71052,
+      "tid": 1016931,
+      "event": "V8.GC_HEAP_EXTERNAL_EPILOGUE",
+      "microsecondsInclusive": 3,
+      "count": 1
+    }
+  ],
+  "passed": true,
+  "append": {
+    "medianMilliseconds": 353.1842080010392,
+    "meanStyleMilliseconds": 58.580733333333335,
+    "meanLayoutMilliseconds": 72.60566666666666
+  },
+  "query+layer-switch": {
+    "medianMilliseconds": 340.53437449983903,
+    "meanStyleMilliseconds": 69.8825,
+    "meanLayoutMilliseconds": 29.1735
+  }
+}

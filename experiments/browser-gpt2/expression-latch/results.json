@@ -1,0 +1,350 @@
+[
+  {
+    "case": "p9-expression",
+    "expected": [
+      510,
+      273
+    ],
+    "initial": {
+      "values": [
+        510,
+        273
+      ],
+      "serialized": "calc(510 + 512 * 273)"
+    },
+    "held": {
+      "values": [
+        510,
+        273
+      ],
+      "serialized": "calc(510 + 512 * 273)"
+    },
+    "resumed": {
+      "values": [
+        37,
+        241
+      ],
+      "serialized": "calc(37 + 512 * 241)"
+    },
+    "passed": true
+  },
+  {
+    "case": "p9-number",
+    "expected": [
+      510,
+      273
+    ],
+    "initial": {
+      "values": [
+        510,
+        273
+      ],
+      "serialized": "140286"
+    },
+    "held": {
+      "values": [
+        510,
+        273
+      ],
+      "serialized": "140286"
+    },
+    "resumed": {
+      "values": [
+        37,
+        241
+      ],
+      "serialized": "123429"
+    },
+    "passed": true
+  },
+  {
+    "case": "p12-expression",
+    "expected": [
+      4094,
+      2065
+    ],
+    "initial": {
+      "values": [
+        4094,
+        2065
+      ],
+      "serialized": "calc(4094 + 4096 * 2065)"
+    },
+    "held": {
+      "values": [
+        4094,
+        2065
+      ],
+      "serialized": "calc(4094 + 4096 * 2065)"
+    },
+    "resumed": {
+      "values": [
+        37,
+        241
+      ],
+      "serialized": "calc(37 + 4096 * 241)"
+    },
+    "passed": true
+  },
+  {
+    "case": "p12-number",
+    "expected": [
+      4094,
+      2065
+    ],
+    "initial": {
+      "values": [
+        4090,
+        2065
+      ],
+      "serialized": "8.46233e+06"
+    },
+    "held": {
+      "values": [
+        4090,
+        2065
+      ],
+      "serialized": "8.46233e+06"
+    },
+    "resumed": {
+      "values": [
+        37,
+        241
+      ],
+      "serialized": "987173"
+    },
+    "passed": false
+  },
+  {
+    "case": "p16-expression",
+    "expected": [
+      65534,
+      32785
+    ],
+    "initial": {
+      "values": [
+        65534,
+        32785
+      ],
+      "serialized": "calc(65534 + 65536 * 32785)"
+    },
+    "held": {
+      "values": [
+        65534,
+        32785
+      ],
+      "serialized": "calc(65534 + 65536 * 32785)"
+    },
+    "resumed": {
+      "values": [
+        37,
+        241
+      ],
+      "serialized": "calc(37 + 65536 * 241)"
+    },
+    "passed": true
+  },
+  {
+    "case": "p16-number",
+    "expected": [
+      65534,
+      32785
+    ],
+    "initial": {
+      "values": [
+        62240,
+        32785
+      ],
+      "serialized": "2.14866e+09"
+    },
+    "held": {
+      "values": [
+        62240,
+        32785
+      ],
+      "serialized": "2.14866e+09"
+    },
+    "resumed": {
+      "values": [
+        24,
+        241
+      ],
+      "serialized": "1.57942e+07"
+    },
+    "passed": false
+  },
+  {
+    "case": "p18-expression",
+    "expected": [
+      262142,
+      131089
+    ],
+    "initial": {
+      "values": [
+        262142,
+        131089
+      ],
+      "serialized": "calc(262142 + 262144 * 131089)"
+    },
+    "held": {
+      "values": [
+        262142,
+        131089
+      ],
+      "serialized": "calc(262142 + 262144 * 131089)"
+    },
+    "resumed": {
+      "values": [
+        37,
+        241
+      ],
+      "serialized": "calc(37 + 262144 * 241)"
+    },
+    "passed": true
+  },
+  {
+    "case": "p18-number",
+    "expected": [
+      262142,
+      131089
+    ],
+    "initial": {
+      "values": [
+        43040,
+        131090
+      ],
+      "serialized": "3.43645e+10"
+    },
+    "held": {
+      "values": [
+        43040,
+        131090
+      ],
+      "serialized": "3.43645e+10"
+    },
+    "resumed": {
+      "values": [
+        262140,
+        240
+      ],
+      "serialized": "6.31767e+07"
+    },
+    "passed": false
+  },
+  {
+    "case": "p20-expression",
+    "expected": [
+      1048574,
+      524305
+    ],
+    "initial": {
+      "values": [
+        1048574,
+        524305
+      ],
+      "serialized": "calc(1048574 + 1048576 * 524305)"
+    },
+    "held": {
+      "values": [
+        1048574,
+        524305
+      ],
+      "serialized": "calc(1048574 + 1048576 * 524305)"
+    },
+    "resumed": {
+      "values": [
+        37,
+        241
+      ],
+      "serialized": "calc(37 + 1048576 * 241)"
+    },
+    "passed": true
+  },
+  {
+    "case": "p20-number",
+    "expected": [
+      1048574,
+      524305
+    ],
+    "initial": {
+      "values": [
+        311744,
+        524306
+      ],
+      "serialized": "5.49775e+11"
+    },
+    "held": {
+      "values": [
+        311744,
+        524306
+      ],
+      "serialized": "5.49775e+11"
+    },
+    "resumed": {
+      "values": [
+        184,
+        241
+      ],
+      "serialized": "2.52707e+08"
+    },
+    "passed": false
+  },
+  {
+    "case": "p24-expression",
+    "expected": [
+      16777214,
+      8388625
+    ],
+    "initial": {
+      "values": [
+        16777214,
+        8388625
+      ],
+      "serialized": "calc(16777214 + 16777216 * 8388625)"
+    },
+    "held": {
+      "values": [
+        16777214,
+        8388625
+      ],
+      "serialized": "calc(16777214 + 16777216 * 8388625)"
+    },
+    "resumed": {
+      "values": [
+        37,
+        241
+      ],
+      "serialized": "calc(37 + 16777216 * 241)"
+    },
+    "passed": true
+  },
+  {
+    "case": "p24-number",
+    "expected": [
+      16777214,
+      8388625
+    ],
+    "initial": {
+      "values": [
+        8328192,
+        8388638
+      ],
+      "serialized": "1.40738e+14"
+    },
+    "held": {
+      "values": [
+        8328192,
+        8388638
+      ],
+      "serialized": "1.40738e+14"
+    },
+    "resumed": {
+      "values": [
+        944,
+        241
+      ],
+      "serialized": "4.04331e+09"
+    },
+    "passed": false
+  }
+]

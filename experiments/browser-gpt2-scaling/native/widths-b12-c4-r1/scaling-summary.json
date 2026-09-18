@@ -1,0 +1,148 @@
+{
+  "directory": "/Users/shubhampatil/Documents/programming/gpt2-css/experiments/browser-gpt2-scaling/native/widths-b12-c4-r1",
+  "reportPrefix": "",
+  "complete": true,
+  "manifest": {
+    "blocks": 12,
+    "capacity": 4,
+    "renderingGraphs": 1,
+    "coreBackend": "reused",
+    "cacheLayout": "flat",
+    "cacheCodec": "font-vector",
+    "kvWindow": 4,
+    "kvSinks": 0,
+    "isolatedMetricState": false,
+    "valueLayout": "widths",
+    "globalProjection": false,
+    "fontVectorOperatorVersion": 2,
+    "attentionMask": "full causal",
+    "scopedState": true,
+    "centeredContext": true,
+    "dynamicActivationRange": true,
+    "runtimeJavaScript": false,
+    "liveness": false,
+    "uncachedStyle": false,
+    "nativeLayerTokenHandshake": true,
+    "privateLayerControl": true,
+    "localLayerContainer": true,
+    "kvStorage": "native delayed whole-head font settings",
+    "fontFaces": 261,
+    "autostart": true,
+    "head": "full-vocabulary-q16-two-pass",
+    "promptTokens": 1,
+    "generatedTokenLimit": 4,
+    "scheduler": "CSS receipts and SVG SMIL events",
+    "isolateHead": true,
+    "detachedOutput": true,
+    "headEpochTransport": "packed four bits",
+    "fontBackend": "original",
+    "teacherForcedInputs": null,
+    "teacherForcedTargets": null,
+    "scalingExperimentVariant": "widths",
+    "scalingExperimentOptions": {
+      "widths": true,
+      "empty_slots": false,
+      "selective_fields": false,
+      "materialize_inputs": false,
+      "local_timelines": false,
+      "containment": null
+    }
+  },
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "observedTokenEpochs": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "totalSeconds": 163.9058749579999,
+  "firstObservedSeconds": 42.058642332998716,
+  "warmIntervals": [
+    {
+      "epoch": 2,
+      "seconds": 35.34711716700258
+    },
+    {
+      "epoch": 3,
+      "seconds": 44.794610665998334
+    },
+    {
+      "epoch": 4,
+      "seconds": 41.70201895900027
+    }
+  ],
+  "warmMedianSeconds": 41.70201895900027,
+  "warmMinimumSeconds": 35.34711716700258,
+  "warmMaximumSeconds": 44.794610665998334,
+  "sampledPeak": {
+    "rendererRssMiB": 3969.453125,
+    "browserTreeRssMiB": 4284.578125
+  },
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 0,
+  "rendererWarmTaskPercentages": {
+    "RecalcStyleDuration": 53.537589538753586,
+    "LayoutDuration": 15.876829909668931,
+    "TaskOtherDuration": 30.491071974508188,
+    "DevToolsCommandDuration": 0.09450857706929428,
+    "ScriptDuration": 0.0,
+    "V8CompileDuration": 0.0
+  },
+  "coarseMilestones": {
+    "usableEpochs": [
+      2,
+      4
+    ],
+    "missingOrNonmonotonicEpochs": [
+      3
+    ],
+    "note": "Observed geometry boundaries, not exclusive operation timings; shared frames and observer delay overlap.",
+    "percentages": {
+      "handoff": 7.493054541394495,
+      "embedding": 1.320102526285238,
+      "coreAndKV": 89.55972059482076,
+      "finalBridgeAndHead": 1.62712233749951
+    }
+  },
+  "tokens": [
+    11,
+    314,
+    1101,
+    7926
+  ],
+  "text": "Hello, I'm sorry",
+  "tokenAgreement": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "originalFloatAgreement": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "finalResidualError": {
+    "finite": 768,
+    "rmse": 0.020589988712593266,
+    "maximum": 0.2521110575025034
+  },
+  "experiment": {
+    "variant": "widths",
+    "scope": "12-layer GPT-2 with native autoregressive feedback and full vocabulary head",
+    "measurement": {
+      "limitSeconds": 900,
+      "quietSecondsAfterObserverSetup": 0,
+      "browserArguments": [
+        "--js-flags=--heap-growing-percent=10"
+      ],
+      "observer": "Existing native runtime harness: small geometry observers via CDP, approximately 100ms polling, no JavaScript domains",
+      "quietInterval": "None; normal observation run",
+      "timingCaveat": "Wall time includes navigation, font loading and CDP observation. Warm intervals are single-sequence token intervals, not an isolated stage timing."
+    }
+  }
+}

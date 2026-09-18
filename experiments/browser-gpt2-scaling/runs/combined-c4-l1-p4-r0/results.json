@@ -1,0 +1,252 @@
+{
+  "variant": "combined",
+  "options": {
+    "widths": true,
+    "empty_slots": true,
+    "selective_fields": true,
+    "materialize_inputs": true,
+    "local_timelines": true,
+    "containment": null
+  },
+  "capacity": 4,
+  "layers": 1,
+  "positions": 4,
+  "repeat": 0,
+  "scope": "Externally supplied QKV attention component with native KV retention; excludes projections, MLP and vocabulary head",
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 5,
+  "samples": [
+    {
+      "epoch": 1,
+      "position": 1,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 173.26308300107485,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00025580787033887626,
+        "maximum": 0.0007762416407866013
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 0,
+        "RecalcStyleCount": 0,
+        "LayoutDuration": 0.0,
+        "RecalcStyleDuration": 0.0,
+        "DevToolsCommandDuration": 0.027663,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.02782000000000001,
+        "TaskOtherDuration": 0.00015699999999999742
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0007762416407866013
+    },
+    {
+      "epoch": 2,
+      "position": 2,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 390.9345829997619,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00046096485953143096,
+        "maximum": 0.003222999545994476
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 10,
+        "LayoutDuration": 0.039738,
+        "RecalcStyleDuration": 0.13146799999999997,
+        "DevToolsCommandDuration": 0.029366000000000003,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.263181,
+        "TaskOtherDuration": 0.062609
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.002155978631036337
+    },
+    {
+      "epoch": 3,
+      "position": 3,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 409.8721669979568,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00035680677915312455,
+        "maximum": 0.001774485147308269
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 8,
+        "LayoutDuration": 0.05155900000000001,
+        "RecalcStyleDuration": 0.14564300000000002,
+        "DevToolsCommandDuration": 0.029811000000000004,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.289303,
+        "TaskOtherDuration": 0.06229
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.001774485147308269
+    },
+    {
+      "epoch": 4,
+      "position": 4,
+      "layer": 0,
+      "kind": "append",
+      "milliseconds": 458.52670899694203,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00034165502017782047,
+        "maximum": 0.0011807943455887093
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.06641499999999997,
+        "RecalcStyleDuration": 0.17352500000000004,
+        "DevToolsCommandDuration": 0.029215000000000005,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.31952500000000006,
+        "TaskOtherDuration": 0.05037
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0011807943455887093
+    },
+    {
+      "epoch": 5,
+      "position": 4,
+      "layer": 0,
+      "kind": "query-only",
+      "milliseconds": 393.9133329986362,
+      "error": {
+        "finite": 768,
+        "rmse": 0.00033625220052453295,
+        "maximum": 0.0011807943455887093
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 9,
+        "LayoutDuration": 0.00619900000000001,
+        "RecalcStyleDuration": 0.181214,
+        "DevToolsCommandDuration": 0.030372999999999997,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.2532970000000001,
+        "TaskOtherDuration": 0.03551099999999999
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0011807943455887093
+    },
+    {
+      "epoch": 6,
+      "position": 4,
+      "layer": 0,
+      "kind": "query-only",
+      "milliseconds": 366.48349999813945,
+      "error": {
+        "finite": 768,
+        "rmse": 0.0003357125171716799,
+        "maximum": 0.0011807943455887093
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 3,
+        "RecalcStyleCount": 11,
+        "LayoutDuration": 0.005901000000000017,
+        "RecalcStyleDuration": 0.17308899999999994,
+        "DevToolsCommandDuration": 0.02776300000000001,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.241838,
+        "TaskOtherDuration": 0.03508499999999998
+      },
+      "passed": true,
+      "unchangedHeadsMaximumError": 0.0011807943455887093
+    }
+  ],
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "sourceHashes": {
+    "investigate_browser_gpt2_scaling.py": "911d93326c8c81e85826caa0530e14db14645e5c4a0b441cff5506ca0e861865",
+    "browser_gpt2_scaling_variants.py": "af494fe7ad541324d67d8b543df33ba1f52d0b55d03528e8f10a0b7ef2f1c67e",
+    "browser_gpt2_font_vector_cache.py": "7041e23cecef6e80fef0feb37f93231f31132458ae193ebaa750a40e46b66bdf",
+    "attention.css": "17d0b7d6928ac617e5d364b816cc09d3de282672ea4613e1b867380d0d9c48ce"
+  },
+  "settleProtocol": "Three unchanged finite vector reads plus matching native generation receipt; 25ms polling. Timing includes CDP writes/reads and settling floor.",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.48",
+    "revision": "@199a3a541d76237379e353b348e64045584db057",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "sampledPeak": {
+    "rendererRssMiB": 841.265625,
+    "browserTreeRssMiB": 1402.890625
+  },
+  "rendererFinal": {
+    "Timestamp": 28883.414121,
+    "AudioHandlers": 0,
+    "AudioWorkletProcessors": 0,
+    "Documents": 1,
+    "Frames": 1,
+    "JSEventListeners": 0,
+    "LayoutObjects": 7028,
+    "MediaKeySessions": 0,
+    "MediaKeys": 0,
+    "Nodes": 7033,
+    "Resources": 3,
+    "ContextLifecycleStateObservers": 3,
+    "V8PerContextDatas": 1,
+    "WorkerGlobalScopes": 0,
+    "UACSSResources": 0,
+    "RTCPeerConnections": 0,
+    "ResourceFetchers": 1,
+    "AdSubframes": 0,
+    "DetachedScriptStates": 0,
+    "ArrayBufferContents": 0,
+    "LayoutCount": 19,
+    "RecalcStyleCount": 54,
+    "LayoutDuration": 0.205581,
+    "RecalcStyleDuration": 0.938167,
+    "DevToolsCommandDuration": 0.176462,
+    "ScriptDuration": 0,
+    "V8CompileDuration": 0,
+    "TaskDuration": 1.626088,
+    "TaskOtherDuration": 0.305878,
+    "ThreadTime": 1.657613,
+    "ProcessTime": 2.145978,
+    "JSHeapUsedSize": 446344,
+    "JSHeapTotalSize": 1048576,
+    "FirstMeaningfulPaint": 0,
+    "DomContentLoaded": 28880.964356,
+    "NavigationStart": 28880.944329
+  },
+  "domCounters": {
+    "documents": 1,
+    "nodes": 7033,
+    "jsEventListeners": 0
+  },
+  "passed": true,
+  "append": {
+    "medianMilliseconds": 409.8721669979568,
+    "meanStyleMilliseconds": 150.21200000000002,
+    "meanLayoutMilliseconds": 52.57066666666666
+  },
+  "query-only": {
+    "medianMilliseconds": 380.1984164983878,
+    "meanStyleMilliseconds": 177.15149999999997,
+    "meanLayoutMilliseconds": 6.050000000000014
+  }
+}

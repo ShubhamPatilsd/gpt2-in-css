@@ -1,0 +1,144 @@
+{
+  "scope": "Structural locality diagnostic: static fixture KV, real font QK, CSS softmax/weighted V; not production cache or autonomous inference",
+  "heads": 1,
+  "slots": 8,
+  "spectatorsPerHead": 1024,
+  "mode": "local",
+  "repeat": 1,
+  "samples": [
+    {
+      "milliseconds": 106.32533299940405,
+      "error": {
+        "finite": 64,
+        "rmse": 2.6075597750151602e-05,
+        "maximum": 7.008916389833475e-05
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 2,
+        "RecalcStyleCount": 2,
+        "LayoutDuration": 0.006823000000000003,
+        "RecalcStyleDuration": 0.002728,
+        "DevToolsCommandDuration": 0.001966,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.012076999999999997,
+        "TaskOtherDuration": 0.0005599999999999997
+      },
+      "unrelatedMaximumOutputChange": 0,
+      "unrelatedHeadErrors": []
+    },
+    {
+      "milliseconds": 105.40612499971758,
+      "error": {
+        "finite": 64,
+        "rmse": 1.3361500496678301e-05,
+        "maximum": 3.178951929322382e-05
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 2,
+        "RecalcStyleCount": 2,
+        "LayoutDuration": 0.008694,
+        "RecalcStyleDuration": 0.0032329999999999998,
+        "DevToolsCommandDuration": 0.0021140000000000004,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.014657000000000003,
+        "TaskOtherDuration": 0.0006159999999999994
+      },
+      "unrelatedMaximumOutputChange": 0,
+      "unrelatedHeadErrors": []
+    },
+    {
+      "milliseconds": 102.16970900000888,
+      "error": {
+        "finite": 64,
+        "rmse": 2.6075597750151602e-05,
+        "maximum": 7.008916389833475e-05
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 2,
+        "RecalcStyleCount": 2,
+        "LayoutDuration": 0.0003889999999999935,
+        "RecalcStyleDuration": 0.003667,
+        "DevToolsCommandDuration": 0.0023760000000000005,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.007086999999999996,
+        "TaskOtherDuration": 0.0006549999999999993
+      },
+      "unrelatedMaximumOutputChange": 0,
+      "unrelatedHeadErrors": []
+    },
+    {
+      "milliseconds": 99.511041000369,
+      "error": {
+        "finite": 64,
+        "rmse": 1.3361500496678301e-05,
+        "maximum": 3.178951929322382e-05
+      },
+      "reads": 4,
+      "rendererDelta": {
+        "LayoutCount": 2,
+        "RecalcStyleCount": 2,
+        "LayoutDuration": 0.0003980000000000025,
+        "RecalcStyleDuration": 0.0037070000000000002,
+        "DevToolsCommandDuration": 0.002093000000000001,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.006921999999999998,
+        "TaskOtherDuration": 0.000723999999999999
+      },
+      "unrelatedMaximumOutputChange": 0,
+      "unrelatedHeadErrors": []
+    }
+  ],
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 4,
+  "sourceHashes": {
+    "tools/probe_browser_gpt2_state_locality.py": "41ab246561b1bd093aa210274d6240400b5a0596e4a9e2e7fea95bc26b88017d",
+    "tools/browser_gpt2_font_vector_cache.py": "7041e23cecef6e80fef0feb37f93231f31132458ae193ebaa750a40e46b66bdf",
+    "tools/profile_hybrid_twelve_block.py": "9e10b25c78b76e982b19bf65e263b3775cb29beabfc83317922c7d8495dc9c18",
+    "experiments/browser-gpt2-scaling/locality/local-h1-s8-n1024-r1/style.css": "5766b3283602af5b999a36fd02675abd56b12c5ba7b53e39acdc6d363cc02ccd",
+    "experiments/browser-gpt2-scaling/locality/local-h1-s8-n1024-r1/index.html": "20734a0dc23126a1f894db290e912e8de8b0deb397d6dfd732baa208b05f88d5",
+    "experiments/browser-gpt2/font-vector-operators-v2/dot.woff2": "7bf3e9b65c31dc6f8fa6a565a33e5029cd07615885bc877825ce89b340f18412"
+  },
+  "activeInputHash": "ef6ea505315b6d692fc142bfc1ca03d7523a9d2c14494304268982d8a54cf467",
+  "settleProtocol": "All heads initialized before timing; matching native receipt and explicit input tick plus three unchanged finite reads. 25ms polling imposes at least 75ms delay; mutation timing includes CDP overhead. Unrelated-head checks occur outside timed samples.",
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.48",
+    "revision": "@199a3a541d76237379e353b348e64045584db057",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "initialHeadErrors": [
+    {
+      "finite": 64,
+      "rmse": 1.6459605883886396e-05,
+      "maximum": 3.8373991126806895e-05
+    }
+  ],
+  "initialError": {
+    "finite": 64,
+    "rmse": 1.6459605883886396e-05,
+    "maximum": 3.8373991126806895e-05
+  },
+  "unrelatedHeadErrors": [],
+  "sampledPeakRendererMiB": 652.390625,
+  "domCounters": {
+    "documents": 4,
+    "nodes": 1129,
+    "jsEventListeners": 0
+  },
+  "passed": true,
+  "medianMilliseconds": 103.78791699986323,
+  "meanStyleMilliseconds": 3.33375,
+  "meanLayoutMilliseconds": 4.076
+}

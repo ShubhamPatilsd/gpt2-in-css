@@ -1,0 +1,1627 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Historical withheld-suffix backtest and requirements for a future calibrated prediction. No new 32-token run.",
+  "sources": [
+    {
+      "path": "experiments/browser-gpt2/demo-font-vector-context32/scaling-summary.json",
+      "sha256": "6863d655a75d6ddc7f2e97455bc725b718bc1160027f63be11364fe40d6ca02b"
+    },
+    {
+      "path": "experiments/browser-gpt2/demo-font-vector-twelve/scaling-summary.json",
+      "sha256": "b0f12a0fbaf55cc091bba8354b84858be2b821057a8e12cb540719daffb3560d"
+    },
+    {
+      "path": "tools/estimate_native_mlp_runtime.py",
+      "sha256": "c2eadda3dacb21fa8ac00ddac8e86f4f4364788ddf215eb5e50cd447fe1acbf8"
+    }
+  ],
+  "historicalBaseline": {
+    "totalSeconds": 3177.1319252499998,
+    "blocks": 12,
+    "allocatedCapacity": 32,
+    "generatedTokens": 32,
+    "observedLastTokenSeconds": 3177.1201537920024,
+    "postObservationBookkeepingSeconds": 0.01177145799738355,
+    "peakRendererRssMiB": 5215.71875
+  },
+  "backtestProtocol": {
+    "modelsDeclared": [
+      "constant arithmetic-mean continuing latency",
+      "ordinary least squares affine latency versus token epoch"
+    ],
+    "prefixCutoffsDeclared": [
+      4,
+      8,
+      12,
+      16
+    ],
+    "startup": "Use observed first-token elapsed time; do not extrapolate it.",
+    "continuing": "Fit epochs2..cutoff only; validate unseen cutoff+1..31. Epoch32 is terminal and excluded.",
+    "terminal": "Show extrapolated continuing value separately; it is not a calibrated terminal model.",
+    "limitations": [
+      "Single historical trajectory and machine/browser state; not independent replicated validation.",
+      "Context count is a proxy for both growing cache/history and elapsed runtime; their effects cannot be identified separately.",
+      "No confidence interval is justified by one saved run.",
+      "Post-hoc backtesting shows feasibility/risk; these model classes were not prospectively declared before the historical run."
+    ]
+  },
+  "backtests": [
+    {
+      "prefixThroughEpoch": 4,
+      "model": "constant",
+      "fit": {
+        "interceptSeconds": 59.58230361100019,
+        "secondsPerContextPosition": 0.0
+      },
+      "trainingEpochs": [
+        2,
+        3,
+        4
+      ],
+      "heldOutContinuingEpochs": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "heldOutActualSeconds": 2772.8457268750026,
+      "heldOutPredictedSeconds": 1608.7221974970053,
+      "heldOutAggregateErrorPercent": -41.98298946439998,
+      "heldOutMeanAbsoluteErrorSeconds": 43.11568627325917,
+      "heldOutMeanAbsolutePercentageError": 39.068407143198826,
+      "heldOutMaximumAbsoluteErrorSeconds": 83.737631305999,
+      "observedPrefixSeconds": 276.31243070799974,
+      "actualTerminalSeconds": 127.96199620899978,
+      "terminalContinuingProxySeconds": 59.58230361100019,
+      "terminalWasNotUsedForTrainingOrContinuingValidation": true,
+      "estimatedTotalIncludingUncalibratedTerminalProxySeconds": 1944.6169318160053,
+      "actualTotalSeconds": 3177.1319252499998,
+      "totalProxyErrorPercent": -38.79332122278842,
+      "heldOutPredictions": [
+        {
+          "epoch": 5,
+          "actualSeconds": 63.08702875000017,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 6,
+          "actualSeconds": 70.13883483400056,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 7,
+          "actualSeconds": 73.57912633299932,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 8,
+          "actualSeconds": 77.59355479200161,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 9,
+          "actualSeconds": 76.11468337499909,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 10,
+          "actualSeconds": 86.13265058300016,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 11,
+          "actualSeconds": 86.05350016699964,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 12,
+          "actualSeconds": 89.04509020800097,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 13,
+          "actualSeconds": 99.11831375000114,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 14,
+          "actualSeconds": 85.22366191699984,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 15,
+          "actualSeconds": 93.80377966599912,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 16,
+          "actualSeconds": 90.19294295899826,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 17,
+          "actualSeconds": 96.42844404100114,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 18,
+          "actualSeconds": 104.09776083399984,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 19,
+          "actualSeconds": 97.69441041599936,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 20,
+          "actualSeconds": 105.54199700000021,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 21,
+          "actualSeconds": 102.569587959002,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 22,
+          "actualSeconds": 113.91349712499883,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 23,
+          "actualSeconds": 110.79804241600144,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 24,
+          "actualSeconds": 119.94753841700009,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 25,
+          "actualSeconds": 118.99983120799857,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 26,
+          "actualSeconds": 125.70460312499944,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 27,
+          "actualSeconds": 130.8677061250019,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 28,
+          "actualSeconds": 140.18174612499914,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 29,
+          "actualSeconds": 137.0844002919984,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 30,
+          "actualSeconds": 143.3199349169992,
+          "predictedSeconds": 59.58230361100019
+        },
+        {
+          "epoch": 31,
+          "actualSeconds": 135.6130595410033,
+          "predictedSeconds": 59.58230361100019
+        }
+      ]
+    },
+    {
+      "prefixThroughEpoch": 4,
+      "model": "linear-context",
+      "fit": {
+        "interceptSeconds": 52.59189261100315,
+        "secondsPerContextPosition": 2.330136999999013
+      },
+      "trainingEpochs": [
+        2,
+        3,
+        4
+      ],
+      "heldOutContinuingEpochs": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "heldOutActualSeconds": 2772.8457268750026,
+      "heldOutPredictedSeconds": 2552.427682496605,
+      "heldOutAggregateErrorPercent": -7.949163642320944,
+      "heldOutMeanAbsoluteErrorSeconds": 8.249227485199762,
+      "heldOutMeanAbsolutePercentageError": 7.483734728063623,
+      "heldOutMaximumAbsoluteErrorSeconds": 22.34601751402363,
+      "observedPrefixSeconds": 276.31243070799974,
+      "actualTerminalSeconds": 127.96199620899978,
+      "terminalContinuingProxySeconds": 127.15627661097156,
+      "terminalWasNotUsedForTrainingOrContinuingValidation": true,
+      "estimatedTotalIncludingUncalibratedTerminalProxySeconds": 2955.896389815576,
+      "actualTotalSeconds": 3177.1319252499998,
+      "totalProxyErrorPercent": -6.9633726467627,
+      "heldOutPredictions": [
+        {
+          "epoch": 5,
+          "actualSeconds": 63.08702875000017,
+          "predictedSeconds": 64.24257761099821
+        },
+        {
+          "epoch": 6,
+          "actualSeconds": 70.13883483400056,
+          "predictedSeconds": 66.57271461099722
+        },
+        {
+          "epoch": 7,
+          "actualSeconds": 73.57912633299932,
+          "predictedSeconds": 68.90285161099624
+        },
+        {
+          "epoch": 8,
+          "actualSeconds": 77.59355479200161,
+          "predictedSeconds": 71.23298861099525
+        },
+        {
+          "epoch": 9,
+          "actualSeconds": 76.11468337499909,
+          "predictedSeconds": 73.56312561099426
+        },
+        {
+          "epoch": 10,
+          "actualSeconds": 86.13265058300016,
+          "predictedSeconds": 75.89326261099328
+        },
+        {
+          "epoch": 11,
+          "actualSeconds": 86.05350016699964,
+          "predictedSeconds": 78.22339961099229
+        },
+        {
+          "epoch": 12,
+          "actualSeconds": 89.04509020800097,
+          "predictedSeconds": 80.5535366109913
+        },
+        {
+          "epoch": 13,
+          "actualSeconds": 99.11831375000114,
+          "predictedSeconds": 82.88367361099031
+        },
+        {
+          "epoch": 14,
+          "actualSeconds": 85.22366191699984,
+          "predictedSeconds": 85.21381061098933
+        },
+        {
+          "epoch": 15,
+          "actualSeconds": 93.80377966599912,
+          "predictedSeconds": 87.54394761098834
+        },
+        {
+          "epoch": 16,
+          "actualSeconds": 90.19294295899826,
+          "predictedSeconds": 89.87408461098735
+        },
+        {
+          "epoch": 17,
+          "actualSeconds": 96.42844404100114,
+          "predictedSeconds": 92.20422161098637
+        },
+        {
+          "epoch": 18,
+          "actualSeconds": 104.09776083399984,
+          "predictedSeconds": 94.53435861098538
+        },
+        {
+          "epoch": 19,
+          "actualSeconds": 97.69441041599936,
+          "predictedSeconds": 96.86449561098439
+        },
+        {
+          "epoch": 20,
+          "actualSeconds": 105.54199700000021,
+          "predictedSeconds": 99.1946326109834
+        },
+        {
+          "epoch": 21,
+          "actualSeconds": 102.569587959002,
+          "predictedSeconds": 101.52476961098242
+        },
+        {
+          "epoch": 22,
+          "actualSeconds": 113.91349712499883,
+          "predictedSeconds": 103.85490661098143
+        },
+        {
+          "epoch": 23,
+          "actualSeconds": 110.79804241600144,
+          "predictedSeconds": 106.18504361098044
+        },
+        {
+          "epoch": 24,
+          "actualSeconds": 119.94753841700009,
+          "predictedSeconds": 108.51518061097946
+        },
+        {
+          "epoch": 25,
+          "actualSeconds": 118.99983120799857,
+          "predictedSeconds": 110.84531761097847
+        },
+        {
+          "epoch": 26,
+          "actualSeconds": 125.70460312499944,
+          "predictedSeconds": 113.17545461097748
+        },
+        {
+          "epoch": 27,
+          "actualSeconds": 130.8677061250019,
+          "predictedSeconds": 115.5055916109765
+        },
+        {
+          "epoch": 28,
+          "actualSeconds": 140.18174612499914,
+          "predictedSeconds": 117.83572861097551
+        },
+        {
+          "epoch": 29,
+          "actualSeconds": 137.0844002919984,
+          "predictedSeconds": 120.16586561097452
+        },
+        {
+          "epoch": 30,
+          "actualSeconds": 143.3199349169992,
+          "predictedSeconds": 122.49600261097353
+        },
+        {
+          "epoch": 31,
+          "actualSeconds": 135.6130595410033,
+          "predictedSeconds": 124.82613961097255
+        }
+      ]
+    },
+    {
+      "prefixThroughEpoch": 8,
+      "model": "constant",
+      "fit": {
+        "interceptSeconds": 66.16363650600032,
+        "secondsPerContextPosition": 0.0
+      },
+      "trainingEpochs": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "heldOutContinuingEpochs": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "heldOutActualSeconds": 2488.447182166001,
+      "heldOutPredictedSeconds": 1521.7636396380074,
+      "heldOutAggregateErrorPercent": -38.8468579705425,
+      "heldOutMeanAbsoluteErrorSeconds": 42.02971924034755,
+      "heldOutMeanAbsolutePercentageError": 36.84901469427562,
+      "heldOutMaximumAbsoluteErrorSeconds": 77.15629841099887,
+      "observedPrefixSeconds": 560.7109754170015,
+      "actualTerminalSeconds": 127.96199620899978,
+      "terminalContinuingProxySeconds": 66.16363650600032,
+      "terminalWasNotUsedForTrainingOrContinuingValidation": true,
+      "estimatedTotalIncludingUncalibratedTerminalProxySeconds": 2148.6382515610094,
+      "actualTotalSeconds": 3177.1319252499998,
+      "totalProxyErrorPercent": -32.37176478304599,
+      "heldOutPredictions": [
+        {
+          "epoch": 9,
+          "actualSeconds": 76.11468337499909,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 10,
+          "actualSeconds": 86.13265058300016,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 11,
+          "actualSeconds": 86.05350016699964,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 12,
+          "actualSeconds": 89.04509020800097,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 13,
+          "actualSeconds": 99.11831375000114,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 14,
+          "actualSeconds": 85.22366191699984,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 15,
+          "actualSeconds": 93.80377966599912,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 16,
+          "actualSeconds": 90.19294295899826,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 17,
+          "actualSeconds": 96.42844404100114,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 18,
+          "actualSeconds": 104.09776083399984,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 19,
+          "actualSeconds": 97.69441041599936,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 20,
+          "actualSeconds": 105.54199700000021,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 21,
+          "actualSeconds": 102.569587959002,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 22,
+          "actualSeconds": 113.91349712499883,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 23,
+          "actualSeconds": 110.79804241600144,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 24,
+          "actualSeconds": 119.94753841700009,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 25,
+          "actualSeconds": 118.99983120799857,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 26,
+          "actualSeconds": 125.70460312499944,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 27,
+          "actualSeconds": 130.8677061250019,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 28,
+          "actualSeconds": 140.18174612499914,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 29,
+          "actualSeconds": 137.0844002919984,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 30,
+          "actualSeconds": 143.3199349169992,
+          "predictedSeconds": 66.16363650600032
+        },
+        {
+          "epoch": 31,
+          "actualSeconds": 135.6130595410033,
+          "predictedSeconds": 66.16363650600032
+        }
+      ]
+    },
+    {
+      "prefixThroughEpoch": 8,
+      "model": "linear-context",
+      "fit": {
+        "interceptSeconds": 48.79860003992873,
+        "secondsPerContextPosition": 3.473007293214318
+      },
+      "trainingEpochs": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "heldOutContinuingEpochs": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "heldOutActualSeconds": 2488.447182166001,
+      "heldOutPredictedSeconds": 2719.951155796947,
+      "heldOutAggregateErrorPercent": 9.303149984057125,
+      "heldOutMeanAbsoluteErrorSeconds": 10.741442028233699,
+      "heldOutMeanAbsolutePercentageError": 9.819939476877158,
+      "heldOutMaximumAbsoluteErrorSeconds": 20.848766588569276,
+      "observedPrefixSeconds": 560.7109754170015,
+      "actualTerminalSeconds": 127.96199620899978,
+      "terminalContinuingProxySeconds": 159.9348334227869,
+      "terminalWasNotUsedForTrainingOrContinuingValidation": true,
+      "estimatedTotalIncludingUncalibratedTerminalProxySeconds": 3440.5969646367357,
+      "actualTotalSeconds": 3177.1319252499998,
+      "totalProxyErrorPercent": 8.292543261828978,
+      "heldOutPredictions": [
+        {
+          "epoch": 9,
+          "actualSeconds": 76.11468337499909,
+          "predictedSeconds": 80.0556656788576
+        },
+        {
+          "epoch": 10,
+          "actualSeconds": 86.13265058300016,
+          "predictedSeconds": 83.52867297207192
+        },
+        {
+          "epoch": 11,
+          "actualSeconds": 86.05350016699964,
+          "predictedSeconds": 87.00168026528623
+        },
+        {
+          "epoch": 12,
+          "actualSeconds": 89.04509020800097,
+          "predictedSeconds": 90.47468755850055
+        },
+        {
+          "epoch": 13,
+          "actualSeconds": 99.11831375000114,
+          "predictedSeconds": 93.94769485171486
+        },
+        {
+          "epoch": 14,
+          "actualSeconds": 85.22366191699984,
+          "predictedSeconds": 97.42070214492918
+        },
+        {
+          "epoch": 15,
+          "actualSeconds": 93.80377966599912,
+          "predictedSeconds": 100.8937094381435
+        },
+        {
+          "epoch": 16,
+          "actualSeconds": 90.19294295899826,
+          "predictedSeconds": 104.36671673135783
+        },
+        {
+          "epoch": 17,
+          "actualSeconds": 96.42844404100114,
+          "predictedSeconds": 107.83972402457213
+        },
+        {
+          "epoch": 18,
+          "actualSeconds": 104.09776083399984,
+          "predictedSeconds": 111.31273131778646
+        },
+        {
+          "epoch": 19,
+          "actualSeconds": 97.69441041599936,
+          "predictedSeconds": 114.78573861100077
+        },
+        {
+          "epoch": 20,
+          "actualSeconds": 105.54199700000021,
+          "predictedSeconds": 118.25874590421509
+        },
+        {
+          "epoch": 21,
+          "actualSeconds": 102.569587959002,
+          "predictedSeconds": 121.73175319742941
+        },
+        {
+          "epoch": 22,
+          "actualSeconds": 113.91349712499883,
+          "predictedSeconds": 125.20476049064372
+        },
+        {
+          "epoch": 23,
+          "actualSeconds": 110.79804241600144,
+          "predictedSeconds": 128.67776778385803
+        },
+        {
+          "epoch": 24,
+          "actualSeconds": 119.94753841700009,
+          "predictedSeconds": 132.15077507707235
+        },
+        {
+          "epoch": 25,
+          "actualSeconds": 118.99983120799857,
+          "predictedSeconds": 135.62378237028668
+        },
+        {
+          "epoch": 26,
+          "actualSeconds": 125.70460312499944,
+          "predictedSeconds": 139.096789663501
+        },
+        {
+          "epoch": 27,
+          "actualSeconds": 130.8677061250019,
+          "predictedSeconds": 142.56979695671532
+        },
+        {
+          "epoch": 28,
+          "actualSeconds": 140.18174612499914,
+          "predictedSeconds": 146.04280424992965
+        },
+        {
+          "epoch": 29,
+          "actualSeconds": 137.0844002919984,
+          "predictedSeconds": 149.51581154314397
+        },
+        {
+          "epoch": 30,
+          "actualSeconds": 143.3199349169992,
+          "predictedSeconds": 152.9888188363583
+        },
+        {
+          "epoch": 31,
+          "actualSeconds": 135.6130595410033,
+          "predictedSeconds": 156.4618261295726
+        }
+      ]
+    },
+    {
+      "prefixThroughEpoch": 12,
+      "model": "constant",
+      "fit": {
+        "interceptSeconds": 72.77194362500019,
+        "secondsPerContextPosition": 0.0
+      },
+      "trainingEpochs": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "heldOutContinuingEpochs": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "heldOutActualSeconds": 2151.101257833001,
+      "heldOutPredictedSeconds": 1382.6669288750036,
+      "heldOutAggregateErrorPercent": -35.72283388147478,
+      "heldOutMeanAbsoluteErrorSeconds": 40.44391205042093,
+      "heldOutMeanAbsolutePercentageError": 34.14969451442498,
+      "heldOutMaximumAbsoluteErrorSeconds": 70.547991291999,
+      "observedPrefixSeconds": 898.0568997500013,
+      "actualTerminalSeconds": 127.96199620899978,
+      "terminalContinuingProxySeconds": 72.77194362500019,
+      "terminalWasNotUsedForTrainingOrContinuingValidation": true,
+      "estimatedTotalIncludingUncalibratedTerminalProxySeconds": 2353.4957722500053,
+      "actualTotalSeconds": 3177.1319252499998,
+      "totalProxyErrorPercent": -25.92388897842777,
+      "heldOutPredictions": [
+        {
+          "epoch": 13,
+          "actualSeconds": 99.11831375000114,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 14,
+          "actualSeconds": 85.22366191699984,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 15,
+          "actualSeconds": 93.80377966599912,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 16,
+          "actualSeconds": 90.19294295899826,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 17,
+          "actualSeconds": 96.42844404100114,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 18,
+          "actualSeconds": 104.09776083399984,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 19,
+          "actualSeconds": 97.69441041599936,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 20,
+          "actualSeconds": 105.54199700000021,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 21,
+          "actualSeconds": 102.569587959002,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 22,
+          "actualSeconds": 113.91349712499883,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 23,
+          "actualSeconds": 110.79804241600144,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 24,
+          "actualSeconds": 119.94753841700009,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 25,
+          "actualSeconds": 118.99983120799857,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 26,
+          "actualSeconds": 125.70460312499944,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 27,
+          "actualSeconds": 130.8677061250019,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 28,
+          "actualSeconds": 140.18174612499914,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 29,
+          "actualSeconds": 137.0844002919984,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 30,
+          "actualSeconds": 143.3199349169992,
+          "predictedSeconds": 72.77194362500019
+        },
+        {
+          "epoch": 31,
+          "actualSeconds": 135.6130595410033,
+          "predictedSeconds": 72.77194362500019
+        }
+      ]
+    },
+    {
+      "prefixThroughEpoch": 12,
+      "model": "linear-context",
+      "fit": {
+        "interceptSeconds": 49.16157595835483,
+        "secondsPerContextPosition": 3.3729096666636225
+      },
+      "trainingEpochs": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "heldOutContinuingEpochs": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "heldOutActualSeconds": 2151.101257833001,
+      "heldOutPredictedSeconds": 2343.946183874136,
+      "heldOutAggregateErrorPercent": 8.964939485712776,
+      "heldOutMeanAbsoluteErrorSeconds": 10.792776331114382,
+      "heldOutMeanAbsolutePercentageError": 9.821558402409817,
+      "heldOutMaximumAbsoluteErrorSeconds": 18.108716083923838,
+      "observedPrefixSeconds": 898.0568997500013,
+      "actualTerminalSeconds": 127.96199620899978,
+      "terminalContinuingProxySeconds": 157.09468529159074,
+      "terminalWasNotUsedForTrainingOrContinuingValidation": true,
+      "estimatedTotalIncludingUncalibratedTerminalProxySeconds": 3399.097768915728,
+      "actualTotalSeconds": 3177.1319252499998,
+      "totalProxyErrorPercent": 6.986359046084067,
+      "heldOutPredictions": [
+        {
+          "epoch": 13,
+          "actualSeconds": 99.11831375000114,
+          "predictedSeconds": 93.00940162498193
+        },
+        {
+          "epoch": 14,
+          "actualSeconds": 85.22366191699984,
+          "predictedSeconds": 96.38231129164555
+        },
+        {
+          "epoch": 15,
+          "actualSeconds": 93.80377966599912,
+          "predictedSeconds": 99.75522095830917
+        },
+        {
+          "epoch": 16,
+          "actualSeconds": 90.19294295899826,
+          "predictedSeconds": 103.12813062497278
+        },
+        {
+          "epoch": 17,
+          "actualSeconds": 96.42844404100114,
+          "predictedSeconds": 106.50104029163641
+        },
+        {
+          "epoch": 18,
+          "actualSeconds": 104.09776083399984,
+          "predictedSeconds": 109.87394995830005
+        },
+        {
+          "epoch": 19,
+          "actualSeconds": 97.69441041599936,
+          "predictedSeconds": 113.24685962496366
+        },
+        {
+          "epoch": 20,
+          "actualSeconds": 105.54199700000021,
+          "predictedSeconds": 116.61976929162728
+        },
+        {
+          "epoch": 21,
+          "actualSeconds": 102.569587959002,
+          "predictedSeconds": 119.99267895829091
+        },
+        {
+          "epoch": 22,
+          "actualSeconds": 113.91349712499883,
+          "predictedSeconds": 123.36558862495453
+        },
+        {
+          "epoch": 23,
+          "actualSeconds": 110.79804241600144,
+          "predictedSeconds": 126.73849829161814
+        },
+        {
+          "epoch": 24,
+          "actualSeconds": 119.94753841700009,
+          "predictedSeconds": 130.11140795828177
+        },
+        {
+          "epoch": 25,
+          "actualSeconds": 118.99983120799857,
+          "predictedSeconds": 133.4843176249454
+        },
+        {
+          "epoch": 26,
+          "actualSeconds": 125.70460312499944,
+          "predictedSeconds": 136.85722729160904
+        },
+        {
+          "epoch": 27,
+          "actualSeconds": 130.8677061250019,
+          "predictedSeconds": 140.23013695827262
+        },
+        {
+          "epoch": 28,
+          "actualSeconds": 140.18174612499914,
+          "predictedSeconds": 143.60304662493627
+        },
+        {
+          "epoch": 29,
+          "actualSeconds": 137.0844002919984,
+          "predictedSeconds": 146.97595629159989
+        },
+        {
+          "epoch": 30,
+          "actualSeconds": 143.3199349169992,
+          "predictedSeconds": 150.3488659582635
+        },
+        {
+          "epoch": 31,
+          "actualSeconds": 135.6130595410033,
+          "predictedSeconds": 153.72177562492715
+        }
+      ]
+    },
+    {
+      "prefixThroughEpoch": 16,
+      "model": "constant",
+      "fit": {
+        "interceptSeconds": 77.92200521113337,
+        "secondsPerContextPosition": 0.0
+      },
+      "trainingEpochs": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "heldOutContinuingEpochs": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "heldOutActualSeconds": 1782.762559541003,
+      "heldOutPredictedSeconds": 1168.8300781670005,
+      "heldOutAggregateErrorPercent": -34.43714240510346,
+      "heldOutMeanAbsoluteErrorSeconds": 40.92883209160016,
+      "heldOutMeanAbsolutePercentageError": 33.32076670165718,
+      "heldOutMaximumAbsoluteErrorSeconds": 65.39792970586582,
+      "observedPrefixSeconds": 1266.3955980419996,
+      "actualTerminalSeconds": 127.96199620899978,
+      "terminalContinuingProxySeconds": 77.92200521113337,
+      "terminalWasNotUsedForTrainingOrContinuingValidation": true,
+      "estimatedTotalIncludingUncalibratedTerminalProxySeconds": 2513.1476814201333,
+      "actualTotalSeconds": 3177.1319252499998,
+      "totalProxyErrorPercent": -20.89885656157068,
+      "heldOutPredictions": [
+        {
+          "epoch": 17,
+          "actualSeconds": 96.42844404100114,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 18,
+          "actualSeconds": 104.09776083399984,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 19,
+          "actualSeconds": 97.69441041599936,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 20,
+          "actualSeconds": 105.54199700000021,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 21,
+          "actualSeconds": 102.569587959002,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 22,
+          "actualSeconds": 113.91349712499883,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 23,
+          "actualSeconds": 110.79804241600144,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 24,
+          "actualSeconds": 119.94753841700009,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 25,
+          "actualSeconds": 118.99983120799857,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 26,
+          "actualSeconds": 125.70460312499944,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 27,
+          "actualSeconds": 130.8677061250019,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 28,
+          "actualSeconds": 140.18174612499914,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 29,
+          "actualSeconds": 137.0844002919984,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 30,
+          "actualSeconds": 143.3199349169992,
+          "predictedSeconds": 77.92200521113337
+        },
+        {
+          "epoch": 31,
+          "actualSeconds": 135.6130595410033,
+          "predictedSeconds": 77.92200521113337
+        }
+      ]
+    },
+    {
+      "prefixThroughEpoch": 16,
+      "model": "linear-context",
+      "fit": {
+        "interceptSeconds": 52.63193620437328,
+        "secondsPerContextPosition": 2.8100076674177874
+      },
+      "trainingEpochs": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "heldOutContinuingEpochs": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "heldOutActualSeconds": 1782.762559541003,
+      "heldOutPredictedSeconds": 1801.0818033360026,
+      "heldOutAggregateErrorPercent": 1.0275762017189827,
+      "heldOutMeanAbsoluteErrorSeconds": 4.085725951633029,
+      "heldOutMeanAbsolutePercentageError": 3.52926652027819,
+      "heldOutMaximumAbsoluteErrorSeconds": 9.072509261144802,
+      "observedPrefixSeconds": 1266.3955980419996,
+      "actualTerminalSeconds": 127.96199620899978,
+      "terminalContinuingProxySeconds": 142.5521815617425,
+      "terminalWasNotUsedForTrainingOrContinuingValidation": true,
+      "estimatedTotalIncludingUncalibratedTerminalProxySeconds": 3210.029582939745,
+      "actualTotalSeconds": 3177.1319252499998,
+      "totalProxyErrorPercent": 1.0354514217144617,
+      "heldOutPredictions": [
+        {
+          "epoch": 17,
+          "actualSeconds": 96.42844404100114,
+          "predictedSeconds": 100.40206655047567
+        },
+        {
+          "epoch": 18,
+          "actualSeconds": 104.09776083399984,
+          "predictedSeconds": 103.21207421789344
+        },
+        {
+          "epoch": 19,
+          "actualSeconds": 97.69441041599936,
+          "predictedSeconds": 106.02208188531125
+        },
+        {
+          "epoch": 20,
+          "actualSeconds": 105.54199700000021,
+          "predictedSeconds": 108.83208955272903
+        },
+        {
+          "epoch": 21,
+          "actualSeconds": 102.569587959002,
+          "predictedSeconds": 111.64209722014681
+        },
+        {
+          "epoch": 22,
+          "actualSeconds": 113.91349712499883,
+          "predictedSeconds": 114.45210488756462
+        },
+        {
+          "epoch": 23,
+          "actualSeconds": 110.79804241600144,
+          "predictedSeconds": 117.2621125549824
+        },
+        {
+          "epoch": 24,
+          "actualSeconds": 119.94753841700009,
+          "predictedSeconds": 120.07212022240017
+        },
+        {
+          "epoch": 25,
+          "actualSeconds": 118.99983120799857,
+          "predictedSeconds": 122.88212788981798
+        },
+        {
+          "epoch": 26,
+          "actualSeconds": 125.70460312499944,
+          "predictedSeconds": 125.69213555723576
+        },
+        {
+          "epoch": 27,
+          "actualSeconds": 130.8677061250019,
+          "predictedSeconds": 128.50214322465354
+        },
+        {
+          "epoch": 28,
+          "actualSeconds": 140.18174612499914,
+          "predictedSeconds": 131.31215089207134
+        },
+        {
+          "epoch": 29,
+          "actualSeconds": 137.0844002919984,
+          "predictedSeconds": 134.12215855948912
+        },
+        {
+          "epoch": 30,
+          "actualSeconds": 143.3199349169992,
+          "predictedSeconds": 136.9321662269069
+        },
+        {
+          "epoch": 31,
+          "actualSeconds": 135.6130595410033,
+          "predictedSeconds": 139.74217389432468
+        }
+      ]
+    }
+  ],
+  "crossCapacityDiagnostic": {
+    "matchedEpochs": [
+      {
+        "epoch": 2,
+        "capacity8Seconds": 43.96717954199994,
+        "capacity32Seconds": 57.17613062500095,
+        "capacity32Over8Ratio": 1.3004275284563813
+      },
+      {
+        "epoch": 3,
+        "capacity8Seconds": 47.271044832999905,
+        "capacity32Seconds": 59.734375583000656,
+        "capacity32Over8Ratio": 1.2636567648130363
+      },
+      {
+        "epoch": 4,
+        "capacity8Seconds": 49.72163441700104,
+        "capacity32Seconds": 61.83640462499898,
+        "capacity32Over8Ratio": 1.243651890169073
+      },
+      {
+        "epoch": 5,
+        "capacity8Seconds": 51.61328074999983,
+        "capacity32Seconds": 63.08702875000017,
+        "capacity32Over8Ratio": 1.2223022414633151
+      },
+      {
+        "epoch": 6,
+        "capacity8Seconds": 55.207310791000054,
+        "capacity32Seconds": 70.13883483400056,
+        "capacity32Over8Ratio": 1.2704628033690541
+      },
+      {
+        "epoch": 7,
+        "capacity8Seconds": 58.51750395899941,
+        "capacity32Seconds": 73.57912633299932,
+        "capacity32Over8Ratio": 1.2573866169095818
+      }
+    ],
+    "ratioOfMeanContinuingLatencies": 1.2587478804459986,
+    "causalClaim": false,
+    "warning": "These are non-contemporaneous runs with different allocation and head-epoch transport. A capacity8 prefix is not a calibrated capacity32 prefix."
+  },
+  "newCandidateTotalPrediction": null,
+  "newCandidateTotalPredictionReason": "A segment replay does not measure twelve-layer scheduling, layer switching, attention history, vocabulary, memory pressure, or token feedback. Multiplying its saving by384 is an unvalidated scenario, not a runtime forecast.",
+  "futureCalibrationPlan": {
+    "scope": "Keep allocated capacity32 and all12layer assets resident in both variants.",
+    "checkpoints": [
+      2,
+      8,
+      16,
+      24,
+      30
+    ],
+    "workAtCheckpoint": "Restore independently verified residual/KV/native generation state, then measure a continuing token with actual current pipeline. Do not count restoration as inference; report it separately.",
+    "checkpointSupport": "Not implemented by this script. Never inject precomputed outputs within a timed token.",
+    "pairing": "At least two fresh-process AB/BA pairs per sampled context, one page resident. Compare per-context baseline/candidate changes and initialization independently.",
+    "validation": "Reserve at least one interior context and one late context from model fitting; compare prediction with their measured latencies. Save correctness of all caches and full token outputs.",
+    "forecast": "Sum context-specific calibrated predictions across32positions plus separately measured initialization and terminal behavior. Report pair spread and held-out prediction error.",
+    "stop": "Do not publish an accurate full-run estimate if correctness fails, pair directions reverse, or held-out error exceeds a predeclared useful bound."
+  },
+  "segmentBenchmarks": [
+    {
+      "path": "experiments/native-mlp-integration/timing-layer0-replay.json",
+      "sha256": "16d355a7e78b40037d2ab586d62f8f446e0f3a7cdbb9cb85ec0385d344261b9e",
+      "passed": true,
+      "schedule": "replay",
+      "summary": {
+        "variants": [
+          {
+            "variant": "baseline-layer0",
+            "backend": "baseline",
+            "layer": 0,
+            "processMediansMilliseconds": [
+              835.2999999970198,
+              772.6999999880791
+            ],
+            "medianOfProcessMediansMilliseconds": 835.2999999970198,
+            "loadMilliseconds": [
+              2331.418667,
+              2330.3762080000015
+            ],
+            "sampledPeakRendererRssMiB": [
+              1137.390625,
+              1038.953125
+            ],
+            "ownOracleStateMaxAbs": 0.09852121499550748,
+            "ownOracleStateMaxRmse": 0.007964496400185457,
+            "commonTargetStateMaxRmse": 0.016652424993560882,
+            "nextLayerNormMaxAbs": 0.00344972601341767
+          },
+          {
+            "variant": "candidate-layer0",
+            "backend": "candidate",
+            "layer": 0,
+            "processMediansMilliseconds": [
+              850.7999999970198,
+              1048.199999988079
+            ],
+            "medianOfProcessMediansMilliseconds": 1048.199999988079,
+            "loadMilliseconds": [
+              2446.175165999999,
+              2744.0504169999986
+            ],
+            "sampledPeakRendererRssMiB": [
+              1838.71875,
+              1967.515625
+            ],
+            "ownOracleStateMaxAbs": 0.0213574024989841,
+            "ownOracleStateMaxRmse": 0.006425205288530265,
+            "commonTargetStateMaxRmse": 0.026446764721849852,
+            "nextLayerNormMaxAbs": 0.002516460921433712
+          }
+        ],
+        "pairedLayerComparisons": [
+          {
+            "layer": 0,
+            "repeat": 0,
+            "paired": true,
+            "order": [
+              "baseline-layer0",
+              "candidate-layer0"
+            ],
+            "baselineMedianMilliseconds": 835.2999999970198,
+            "candidateMedianMilliseconds": 850.7999999970198,
+            "candidateChangePercent": 1.8556207350718612,
+            "baselineSampledPeakRendererRssMiB": 1137.390625,
+            "candidateSampledPeakRendererRssMiB": 1838.71875
+          },
+          {
+            "layer": 0,
+            "repeat": 1,
+            "paired": true,
+            "order": [
+              "candidate-layer0",
+              "baseline-layer0"
+            ],
+            "baselineMedianMilliseconds": 772.6999999880791,
+            "candidateMedianMilliseconds": 1048.199999988079,
+            "candidateChangePercent": 35.65419956053453,
+            "baselineSampledPeakRendererRssMiB": 1038.953125,
+            "candidateSampledPeakRendererRssMiB": 1967.515625
+          }
+        ],
+        "pairs": [
+          {
+            "repeat": 0,
+            "order": [
+              "baseline-layer0",
+              "candidate-layer0"
+            ],
+            "mediansMilliseconds": {
+              "baseline-layer0": 835.2999999970198,
+              "candidate-layer0": 850.7999999970198
+            }
+          },
+          {
+            "repeat": 1,
+            "order": [
+              "candidate-layer0",
+              "baseline-layer0"
+            ],
+            "mediansMilliseconds": {
+              "candidate-layer0": 1048.199999988079,
+              "baseline-layer0": 772.6999999880791
+            }
+          }
+        ]
+      },
+      "scope": "Post-attention residual replay; native LN2\u2192MLP\u2192residual/bias\u2192next LN1. No autoregressive loop."
+    },
+    {
+      "path": "experiments/native-mlp-integration/timing-layer0-first-visit.json",
+      "sha256": "0a6aeebbc83b507ca134067431b8c2c126eae9cc57845973b78111eb4d5d982d",
+      "passed": true,
+      "schedule": "first-visit",
+      "summary": {
+        "variants": [
+          {
+            "variant": "baseline-layer0",
+            "backend": "baseline",
+            "layer": 0,
+            "processMediansMilliseconds": [
+              930.0999999940395,
+              931.2999999970198
+            ],
+            "medianOfProcessMediansMilliseconds": 931.2999999970198,
+            "loadMilliseconds": [
+              2332.4825419999997,
+              2302.057791000003
+            ],
+            "sampledPeakRendererRssMiB": [
+              1012.1875,
+              1010.671875
+            ],
+            "ownOracleStateMaxAbs": 0.09852121499550748,
+            "ownOracleStateMaxRmse": 0.007964496400185457,
+            "commonTargetStateMaxRmse": 0.016652424993560882,
+            "nextLayerNormMaxAbs": 0.00344972601341767
+          },
+          {
+            "variant": "candidate-layer0",
+            "backend": "candidate",
+            "layer": 0,
+            "processMediansMilliseconds": [
+              1104,
+              1091.199999988079
+            ],
+            "medianOfProcessMediansMilliseconds": 1104,
+            "loadMilliseconds": [
+              2753.0997499999994,
+              2745.571917000001
+            ],
+            "sampledPeakRendererRssMiB": [
+              1849.375,
+              1862
+            ],
+            "ownOracleStateMaxAbs": 0.0213574024989841,
+            "ownOracleStateMaxRmse": 0.006425205288530265,
+            "commonTargetStateMaxRmse": 0.026446764721849852,
+            "nextLayerNormMaxAbs": 0.002516460921433712
+          }
+        ],
+        "pairedLayerComparisons": [
+          {
+            "layer": 0,
+            "repeat": 0,
+            "paired": true,
+            "order": [
+              "baseline-layer0",
+              "candidate-layer0"
+            ],
+            "baselineMedianMilliseconds": 930.0999999940395,
+            "candidateMedianMilliseconds": 1104,
+            "candidateChangePercent": 18.696914311049873,
+            "baselineSampledPeakRendererRssMiB": 1012.1875,
+            "candidateSampledPeakRendererRssMiB": 1849.375
+          },
+          {
+            "layer": 0,
+            "repeat": 1,
+            "paired": true,
+            "order": [
+              "candidate-layer0",
+              "baseline-layer0"
+            ],
+            "baselineMedianMilliseconds": 931.2999999970198,
+            "candidateMedianMilliseconds": 1091.199999988079,
+            "candidateChangePercent": 17.169547942829478,
+            "baselineSampledPeakRendererRssMiB": 1010.671875,
+            "candidateSampledPeakRendererRssMiB": 1862
+          }
+        ],
+        "pairs": [
+          {
+            "repeat": 0,
+            "order": [
+              "baseline-layer0",
+              "candidate-layer0"
+            ],
+            "mediansMilliseconds": {
+              "baseline-layer0": 930.0999999940395,
+              "candidate-layer0": 1104
+            }
+          },
+          {
+            "repeat": 1,
+            "order": [
+              "candidate-layer0",
+              "baseline-layer0"
+            ],
+            "mediansMilliseconds": {
+              "candidate-layer0": 1091.199999988079,
+              "baseline-layer0": 931.2999999970198
+            }
+          }
+        ]
+      },
+      "scope": "Post-attention residual replay; native LN2\u2192MLP\u2192residual/bias\u2192next LN1. No autoregressive loop."
+    }
+  ]
+}

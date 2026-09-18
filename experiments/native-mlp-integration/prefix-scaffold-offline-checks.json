@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-09-18T04:27:26.310297+00:00",
+  "sourceSha256": "354285906a81fe993149294e883a40af635772df1876096158bd66701be4d25d",
+  "nativeBrowserExecutionPerformed": false,
+  "checks": [
+    "Python syntax",
+    "unchanged32-capacity32-generation-limit planning with target4",
+    "zero/terminal/overflow token-target rejection",
+    "fresh-output-directory refusal before browser launch",
+    "watchdog normal subprocess exit",
+    "watchdog timeout kills own new process group",
+    "native-runner schema compatible with estimator diagnostic calibration"
+  ],
+  "watchdogTest": {
+    "secondsBudget": 0.15,
+    "observedSeconds": 0.15277620799315628,
+    "exitStatus": -9,
+    "expired": true
+  },
+  "dryRun": {
+    "schemaVersion": 1,
+    "scope": "full-native-token-pipeline",
+    "directory": "/Users/shubhampatil/Documents/programming/gpt2-css/experiments/browser-gpt2/demo-font-vector-context32",
+    "blocks": 12,
+    "allocatedCapacity": 32,
+    "compiledGenerationLimit": 32,
+    "observedTokenTarget": 4,
+    "wallBudgetSeconds": 480,
+    "sourceSha256": {
+      "index.html": "eb53d8a2711b51b7ab0b436f0ab9f8b90e11550b068fec9d8a95b475a1e78faa",
+      "runtime.css": "c9a54991f520293a5f7c68eeaa7f54084e81c69d39874fd23fb775364c31b31e",
+      "manifest.json": "5c5ea6cca8ec21f467f8077120691c4f5114d7c3169a88674f377e43ca1f0773"
+    },
+    "compiledGraphModified": false,
+    "runnerBrowserValidated": false,
+    "browserArguments": [
+      "--js-flags=--heap-growing-percent=10"
+    ],
+    "runnerSha256": "354285906a81fe993149294e883a40af635772df1876096158bd66701be4d25d",
+    "numericalVerificationPerformed": false,
+    "verificationScope": "Native capture epochs and retained token IDs only; no independent numerical or token-reference validation",
+    "authorJavaScript": false,
+    "observerJavaScript": false,
+    "limitations": [
+      "Observation times include layout reads and polling delay.",
+      "The next native token may begin before the observer closes the browser.",
+      "A short prefix does not identify long-context latency growth.",
+      "No numerical-quality verification is performed by this timing scaffold."
+    ],
+    "samples": [],
+    "completedObservedPrefix": false,
+    "manifest": {
+      "blocks": 12,
+      "capacity": 32,
+      "renderingGraphs": 1,
+      "coreBackend": "reused",
+      "cacheLayout": "flat",
+      "cacheCodec": "font-vector",
+      "kvWindow": 32,
+      "kvSinks": 0,
+      "isolatedMetricState": false,
+      "attentionMask": "full causal",
+      "scopedState": true,
+      "centeredContext": true,
+      "dynamicActivationRange": true,
+      "runtimeJavaScript": false,
+      "liveness": false,
+      "uncachedStyle": false,
+      "nativeLayerTokenHandshake": true,
+      "privateLayerControl": true,
+      "localLayerContainer": true,
+      "kvStorage": "native delayed whole-head font settings",
+      "fontFaces": 261,
+      "autostart": false,
+      "head": "full-vocabulary-q16-two-pass",
+      "promptTokens": 1,
+      "generatedTokenLimit": 32,
+      "scheduler": "CSS receipts and SVG SMIL events",
+      "isolateHead": true,
+      "detachedOutput": true,
+      "headEpochTransport": "separate geometry"
+    }
+  },
+  "passed": true,
+  "limitation": "Full native browser execution unvalidated; no numerical quality assertion."
+}

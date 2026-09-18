@@ -1,0 +1,234 @@
+{
+  "complete": true,
+  "scope": "12 layers,4 allocated/populated input positions,4 generated tokens; two fresh-process repetitions with reversed order",
+  "chronologicalOrder": [
+    "baseline-b12-c4-r2",
+    "widths-b12-c4-r2",
+    "widths-b12-c4-r1",
+    "baseline-b12-c4-r1"
+  ],
+  "excludedCases": {
+    "baseline-b12-c4-r0": "Known host CPU contention; see interference.json. Correctness preserved, all timing excluded."
+  },
+  "cases": [
+    {
+      "case": "baseline-b12-c4-r2",
+      "variant": "baseline",
+      "repeat": 2,
+      "firstTokenSeconds": 41.201145500002895,
+      "totalSeconds": 162.1267332910029,
+      "continuingIntervalsSeconds": [
+        36.33685499999774,
+        40.554443291002826
+      ],
+      "continuingMeanSeconds": 38.44564914550028,
+      "terminalIntervalSeconds": 44.03258562499832,
+      "peakRendererRssMiB": 3600.859375,
+      "correctness": {
+        "completed": true,
+        "allTokenIdsMatchQuantizedReference": true,
+        "finalHeadMatchesActualInput": true,
+        "finalResidualError": {
+          "finite": 768,
+          "rmse": 0.01830629877815425,
+          "maximum": 0.11879961158982155
+        },
+        "originalFloatAgreement": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "cacheSlotCountChecked": 48,
+        "maximumCacheRmse": 0.004467276941642905,
+        "caveat": "Reference is evaluated independently after the browser exits. Truncated-layer results cannot establish full-model quality; a short sequence cannot establish general model accuracy."
+      },
+      "postFirstRendererDelta": {
+        "TaskDuration": 120.06261200000002,
+        "RecalcStyleDuration": 65.135299,
+        "RecalcStyleCount": 553,
+        "LayoutDuration": 17.697844,
+        "LayoutCount": 322
+      },
+      "artifactHashes": {
+        "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+        "runtime.css": "b8b4f564e55471a9c539407144c184b76a4d9c3f43574c445f10a7df48bedc8d",
+        "manifest.json": "17dda9193c6438d9ad2d8a788cf764104620c5046aad43807c626bf537796597"
+      }
+    },
+    {
+      "case": "widths-b12-c4-r2",
+      "variant": "widths",
+      "repeat": 2,
+      "firstTokenSeconds": 39.53666987500037,
+      "totalSeconds": 151.95015079199948,
+      "continuingIntervalsSeconds": [
+        33.671725917,
+        36.97402483299811
+      ],
+      "continuingMeanSeconds": 35.32287537499906,
+      "terminalIntervalSeconds": 41.76493233400106,
+      "peakRendererRssMiB": 4236.421875,
+      "correctness": {
+        "completed": true,
+        "allTokenIdsMatchQuantizedReference": true,
+        "finalHeadMatchesActualInput": true,
+        "finalResidualError": {
+          "finite": 768,
+          "rmse": 0.020589988712593266,
+          "maximum": 0.2521110575025034
+        },
+        "originalFloatAgreement": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "cacheSlotCountChecked": 48,
+        "maximumCacheRmse": 0.00454869017816276,
+        "caveat": "Reference is evaluated independently after the browser exits. Truncated-layer results cannot establish full-model quality; a short sequence cannot establish general model accuracy."
+      },
+      "postFirstRendererDelta": {
+        "TaskDuration": 111.85213999999999,
+        "RecalcStyleDuration": 58.742391000000005,
+        "RecalcStyleCount": 555,
+        "LayoutDuration": 17.867278,
+        "LayoutCount": 324
+      },
+      "artifactHashes": {
+        "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+        "runtime.css": "1e6518a8f488a7e5bd301316836fe030471b5863c5bccafd865485d90547b02e",
+        "manifest.json": "b1756de185643bf97b706cdafc6c112f964779f33a77bded34ce1127a9d27b47"
+      }
+    },
+    {
+      "case": "widths-b12-c4-r1",
+      "variant": "widths",
+      "repeat": 1,
+      "firstTokenSeconds": 42.058642332998716,
+      "totalSeconds": 163.9058749579999,
+      "continuingIntervalsSeconds": [
+        35.34711716700258,
+        44.794610665998334
+      ],
+      "continuingMeanSeconds": 40.07086391650046,
+      "terminalIntervalSeconds": 41.70201895900027,
+      "peakRendererRssMiB": 3969.453125,
+      "correctness": {
+        "completed": true,
+        "allTokenIdsMatchQuantizedReference": true,
+        "finalHeadMatchesActualInput": true,
+        "finalResidualError": {
+          "finite": 768,
+          "rmse": 0.020589988712593266,
+          "maximum": 0.2521110575025034
+        },
+        "originalFloatAgreement": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "cacheSlotCountChecked": 48,
+        "maximumCacheRmse": 0.00454869017816276,
+        "caveat": "Reference is evaluated independently after the browser exits. Truncated-layer results cannot establish full-model quality; a short sequence cannot establish general model accuracy."
+      },
+      "postFirstRendererDelta": {
+        "TaskDuration": 121.596371,
+        "RecalcStyleDuration": 65.099766,
+        "RecalcStyleCount": 551,
+        "LayoutDuration": 19.305649,
+        "LayoutCount": 321
+      },
+      "artifactHashes": {
+        "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+        "runtime.css": "1e6518a8f488a7e5bd301316836fe030471b5863c5bccafd865485d90547b02e",
+        "manifest.json": "b1756de185643bf97b706cdafc6c112f964779f33a77bded34ce1127a9d27b47"
+      }
+    },
+    {
+      "case": "baseline-b12-c4-r1",
+      "variant": "baseline",
+      "repeat": 1,
+      "firstTokenSeconds": 42.55726195799798,
+      "totalSeconds": 144.10015162499985,
+      "continuingIntervalsSeconds": [
+        32.9373947080021,
+        33.64818979199845
+      ],
+      "continuingMeanSeconds": 33.292792250000275,
+      "terminalIntervalSeconds": 34.955690708000475,
+      "peakRendererRssMiB": 4844.34375,
+      "correctness": {
+        "completed": true,
+        "allTokenIdsMatchQuantizedReference": true,
+        "finalHeadMatchesActualInput": true,
+        "finalResidualError": {
+          "finite": 768,
+          "rmse": 0.01830629877815425,
+          "maximum": 0.11879961158982155
+        },
+        "originalFloatAgreement": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "cacheSlotCountChecked": 48,
+        "maximumCacheRmse": 0.004467276941642905,
+        "caveat": "Reference is evaluated independently after the browser exits. Truncated-layer results cannot establish full-model quality; a short sequence cannot establish general model accuracy."
+      },
+      "postFirstRendererDelta": {
+        "TaskDuration": 100.98371099999999,
+        "RecalcStyleDuration": 52.196427,
+        "RecalcStyleCount": 555,
+        "LayoutDuration": 15.072827000000002,
+        "LayoutCount": 324
+      },
+      "artifactHashes": {
+        "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+        "runtime.css": "b8b4f564e55471a9c539407144c184b76a4d9c3f43574c445f10a7df48bedc8d",
+        "manifest.json": "17dda9193c6438d9ad2d8a788cf764104620c5046aad43807c626bf537796597"
+      }
+    }
+  ],
+  "pairedComparisons": [
+    {
+      "repeat": 2,
+      "order": [
+        "baseline",
+        "widths"
+      ],
+      "widthsChangePercent": {
+        "totalSeconds": -6.276930579201501,
+        "continuingMeanSeconds": -8.122567416361903,
+        "terminalIntervalSeconds": -5.149943522076206,
+        "peakRendererRssMiB": 17.650300492503955
+      }
+    },
+    {
+      "repeat": 1,
+      "order": [
+        "widths",
+        "baseline"
+      ],
+      "widthsChangePercent": {
+        "totalSeconds": 13.744415331735137,
+        "continuingMeanSeconds": 20.35897624808003,
+        "terminalIntervalSeconds": 19.299656549071507,
+        "peakRendererRssMiB": -18.060044252639994
+      }
+    }
+  ],
+  "compiledArtifactHashesIdenticalAcrossRepeats": {
+    "baseline": true,
+    "widths": true
+  },
+  "conclusion": "The direction reverses: widths is faster in the first pair and slower in the reversed pair. No repeatable native capacity-four speedup or memory reduction is established. No 32-position native run or fine-grained trace was performed.",
+  "limitations": [
+    "Two processes per variant and two continuing intervals per process; no confidence interval or significance claim.",
+    "Terminal intervals are reported separately.",
+    "Raw renderer RSS varied substantially between repetitions.",
+    "Contemporaneous controls reduce stale-control concerns but cannot isolate all host/allocator variability."
+  ]
+}

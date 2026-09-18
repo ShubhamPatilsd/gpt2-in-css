@@ -1,0 +1,16 @@
+{
+  "excludeTimingFromPrimaryComparison": true,
+  "preserveCorrectnessEvidence": true,
+  "reason": "Another agent reported a CPU-intensive source-analysis regular expression using approximately one core for about 40 seconds during this case; process was terminated.",
+  "reportedBy": "locality agent directly and parent task",
+  "exactWindow": {
+    "conservativeStartUtc": "2026-09-17 08:25:00 UTC",
+    "conservativeEndUtc": "2026-09-17 08:27:37 UTC",
+    "nativeDriverApproximateStartUtc": "2026-09-17 08:25:12 UTC",
+    "reportedCpuSeconds": "approximately 40 seconds at approximately 99% of one core",
+    "externalProcessPid": 74321,
+    "externalProcessTermination": "SIGTERM before warning"
+  },
+  "replacement": "baseline-b12-c4-r2; clean comparison sequence baseline-r2,widths-r2,widths-r1,baseline-r1",
+  "classification": "host workload contamination; no browser failure; no competing browser launched"
+}

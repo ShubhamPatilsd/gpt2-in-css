@@ -1,0 +1,141 @@
+{
+  "directory": "/Users/shubhampatil/Documents/programming/gpt2-css/experiments/browser-gpt2-scaling/native/widths-b2-c4-r0",
+  "reportPrefix": "",
+  "complete": true,
+  "manifest": {
+    "blocks": 2,
+    "capacity": 4,
+    "renderingGraphs": 1,
+    "coreBackend": "reused",
+    "cacheLayout": "flat",
+    "cacheCodec": "font-vector",
+    "kvWindow": 4,
+    "kvSinks": 0,
+    "isolatedMetricState": false,
+    "valueLayout": "widths",
+    "globalProjection": false,
+    "fontVectorOperatorVersion": 2,
+    "attentionMask": "full causal",
+    "scopedState": true,
+    "centeredContext": true,
+    "dynamicActivationRange": true,
+    "runtimeJavaScript": false,
+    "liveness": false,
+    "uncachedStyle": false,
+    "nativeLayerTokenHandshake": true,
+    "privateLayerControl": true,
+    "localLayerContainer": true,
+    "kvStorage": "native delayed whole-head font settings",
+    "fontFaces": 51,
+    "autostart": true,
+    "head": "full-vocabulary-q16-two-pass",
+    "promptTokens": 1,
+    "generatedTokenLimit": 4,
+    "scheduler": "CSS receipts and SVG SMIL events",
+    "isolateHead": true,
+    "detachedOutput": true,
+    "headEpochTransport": "packed four bits",
+    "fontBackend": "original",
+    "teacherForcedInputs": null,
+    "teacherForcedTargets": null,
+    "scalingExperimentVariant": "widths",
+    "scalingExperimentOptions": {
+      "widths": true,
+      "empty_slots": false,
+      "selective_fields": false,
+      "materialize_inputs": false,
+      "local_timelines": false,
+      "containment": null
+    }
+  },
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "observedTokenEpochs": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "totalSeconds": 47.675135083001805,
+  "firstObservedSeconds": 19.438448583001446,
+  "warmIntervals": [
+    {
+      "epoch": 2,
+      "seconds": 9.80787212499854
+    },
+    {
+      "epoch": 3,
+      "seconds": 9.8927728330018
+    },
+    {
+      "epoch": 4,
+      "seconds": 8.528255458997592
+    }
+  ],
+  "warmMedianSeconds": 9.80787212499854,
+  "warmMinimumSeconds": 8.528255458997592,
+  "warmMaximumSeconds": 9.8927728330018,
+  "sampledPeak": {
+    "rendererRssMiB": 3203.890625,
+    "browserTreeRssMiB": 3707.265625
+  },
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 0,
+  "rendererWarmTaskPercentages": {
+    "RecalcStyleDuration": 45.48479995351034,
+    "LayoutDuration": 21.40091374039784,
+    "TaskOtherDuration": 32.90053025826501,
+    "DevToolsCommandDuration": 0.2137560478268099,
+    "ScriptDuration": 0.0,
+    "V8CompileDuration": 0.0
+  },
+  "coarseMilestones": {
+    "usableEpochs": [
+      2,
+      3,
+      4
+    ],
+    "missingOrNonmonotonicEpochs": [],
+    "note": "Observed geometry boundaries, not exclusive operation timings; shared frames and observer delay overlap.",
+    "percentages": {
+      "handoff": 24.993737405246524,
+      "embedding": 2.85191858363341,
+      "coreAndKV": 64.5423615173853,
+      "finalBridgeAndHead": 7.6119824937347635
+    }
+  },
+  "tokens": [
+    11,
+    3387,
+    3387,
+    3387
+  ],
+  "text": "Hello, please please please",
+  "tokenAgreement": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "finalResidualError": {
+    "finite": 768,
+    "rmse": 0.0025274200684955563,
+    "maximum": 0.041444795979820814
+  },
+  "experiment": {
+    "variant": "widths",
+    "scope": "Truncated 2-layer GPT-2 with native autoregressive feedback and full vocabulary head; not the full model",
+    "measurement": {
+      "limitSeconds": 900,
+      "quietSecondsAfterObserverSetup": 0,
+      "browserArguments": [
+        "--js-flags=--heap-growing-percent=10"
+      ],
+      "observer": "Existing native runtime harness: small geometry observers via CDP, approximately 100ms polling, no JavaScript domains",
+      "quietInterval": "None; normal observation run",
+      "timingCaveat": "Wall time includes navigation, font loading and CDP observation. Warm intervals are single-sequence token intervals, not an isolated stage timing."
+    }
+  }
+}

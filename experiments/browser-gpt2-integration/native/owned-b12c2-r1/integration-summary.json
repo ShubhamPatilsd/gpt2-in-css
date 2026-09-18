@@ -1,0 +1,328 @@
+{
+  "complete": true,
+  "passed": true,
+  "totalSeconds": 99.48733470899606,
+  "lastObservedSampleSeconds": 99.48591004199989,
+  "timingScope": "Observed native capture intervals; continuing and terminal intervals are separate, with no exclusive stage attribution",
+  "sampledPeak": {
+    "rendererRssMiB": 4970.734375,
+    "browserTreeRssMiB": 5584.953125
+  },
+  "externalWritesAfterNavigation": 0,
+  "stopReason": "token-limit",
+  "observedTokenEpochs": [
+    1,
+    2
+  ],
+  "warmIntervals": [
+    {
+      "epoch": 2,
+      "seconds": 47.369906375002756,
+      "terminal": true,
+      "kind": "terminal"
+    }
+  ],
+  "warmMedianSeconds": null,
+  "warmMedianScope": "Continuing intervals only; null when no continuing interval was observed",
+  "terminalIntervalsSeconds": [
+    47.369906375002756
+  ],
+  "verificationCoverage": {
+    "checks": {
+      "validTokenPrefix": true,
+      "terminationMatchesTokenPrefix": true,
+      "finiteResidual768": true,
+      "finiteHidden768": true,
+      "cacheCoverage": true,
+      "finiteCacheVectors1536": true
+    },
+    "expectedCacheCount": 24,
+    "observedCacheCount": 24,
+    "passed": true
+  },
+  "numerical": {
+    "tokens": [
+      11,
+      314
+    ],
+    "referenceQ9Q16": [
+      11,
+      314
+    ],
+    "referenceAttentionMask": "full causal",
+    "tokenAgreement": [
+      true,
+      true
+    ],
+    "finalResidualError": {
+      "finite": 768,
+      "rmse": 0.025063136340219186,
+      "maximum": 0.2605046254475951
+    },
+    "cacheErrors": [
+      {
+        "layer": 0,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.00022371090358755887,
+          "maximum": 0.001236711814652347
+        }
+      },
+      {
+        "layer": 0,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0003210806369887777,
+          "maximum": 0.0016035842570759629
+        }
+      },
+      {
+        "layer": 1,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0014296721000800513,
+          "maximum": 0.00968796949508599
+        }
+      },
+      {
+        "layer": 1,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0007607496960075734,
+          "maximum": 0.003636108468746402
+        }
+      },
+      {
+        "layer": 2,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0006701955022549938,
+          "maximum": 0.002763638825118875
+        }
+      },
+      {
+        "layer": 2,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0013923302901754765,
+          "maximum": 0.0059343936092870475
+        }
+      },
+      {
+        "layer": 3,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0005690171626382728,
+          "maximum": 0.0029455243226433753
+        }
+      },
+      {
+        "layer": 3,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.002221341965131044,
+          "maximum": 0.010387928388974288
+        }
+      },
+      {
+        "layer": 4,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0005170558972327002,
+          "maximum": 0.003404273035073846
+        }
+      },
+      {
+        "layer": 4,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0036651468931354464,
+          "maximum": 0.02216242831405424
+        }
+      },
+      {
+        "layer": 5,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0005078268726267526,
+          "maximum": 0.002431766796831464
+        }
+      },
+      {
+        "layer": 5,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.005115838062121032,
+          "maximum": 0.021672072173209544
+        }
+      },
+      {
+        "layer": 6,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.00041326279924964315,
+          "maximum": 0.002585964435248389
+        }
+      },
+      {
+        "layer": 6,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.004043318294917661,
+          "maximum": 0.01286032426661432
+        }
+      },
+      {
+        "layer": 7,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.00042339956624051994,
+          "maximum": 0.0029000602281803976
+        }
+      },
+      {
+        "layer": 7,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0035180537047092555,
+          "maximum": 0.013750620457224194
+        }
+      },
+      {
+        "layer": 8,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.00042664921784839067,
+          "maximum": 0.0028598051934857205
+        }
+      },
+      {
+        "layer": 8,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0035259019401714157,
+          "maximum": 0.015084064239168526
+        }
+      },
+      {
+        "layer": 9,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0004669512299566048,
+          "maximum": 0.0024336440358350697
+        }
+      },
+      {
+        "layer": 9,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0033374052260953533,
+          "maximum": 0.011703928139183417
+        }
+      },
+      {
+        "layer": 10,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0005100256386388625,
+          "maximum": 0.002417801343301662
+        }
+      },
+      {
+        "layer": 10,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0032959554100209926,
+          "maximum": 0.011794381338816749
+        }
+      },
+      {
+        "layer": 11,
+        "slot": 0,
+        "position": 0,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0010825853066243182,
+          "maximum": 0.005200690724004531
+        }
+      },
+      {
+        "layer": 11,
+        "slot": 1,
+        "position": 1,
+        "error": {
+          "finite": 1536,
+          "rmse": 0.0028601311363313895,
+          "maximum": 0.011903487718827488
+        }
+      }
+    ],
+    "finalHeadActualInputWinner": 314,
+    "finalHeadMatchesActualInput": true,
+    "originalFloatWinners": [
+      11,
+      314
+    ],
+    "originalFloatAgreement": [
+      true,
+      true
+    ],
+    "text": "Hello, I"
+  },
+  "maximumCacheRmse": 0.005115838062121032,
+  "correctnessChecks": {
+    "tokenAgreement": true,
+    "headMatchesActualInput": true,
+    "finiteResidualError768": true,
+    "cacheErrorCoverage": true,
+    "finiteCacheErrors1536": true,
+    "zeroExternalWrites": true,
+    "residualRmseBelow005": true,
+    "cacheRmseBelow001": true
+  },
+  "verificationSeconds": 2.7275022089961567
+}

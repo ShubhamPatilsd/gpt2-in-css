@@ -1,0 +1,120 @@
+{
+  "directory": "experiments/browser-gpt2/demo-widths-global4",
+  "reportPrefix": "",
+  "complete": true,
+  "manifest": {
+    "blocks": 2,
+    "capacity": 4,
+    "renderingGraphs": 1,
+    "coreBackend": "reused",
+    "cacheLayout": "flat",
+    "cacheCodec": "font-vector",
+    "kvWindow": 4,
+    "kvSinks": 0,
+    "isolatedMetricState": false,
+    "valueLayout": "widths",
+    "globalProjection": true,
+    "fontVectorOperatorVersion": 2,
+    "attentionMask": "full causal",
+    "scopedState": true,
+    "centeredContext": true,
+    "dynamicActivationRange": true,
+    "runtimeJavaScript": false,
+    "liveness": false,
+    "uncachedStyle": false,
+    "nativeLayerTokenHandshake": true,
+    "privateLayerControl": true,
+    "localLayerContainer": true,
+    "kvStorage": "native delayed whole-head font settings",
+    "fontFaces": 51,
+    "autostart": false,
+    "head": "full-vocabulary-q16-two-pass",
+    "promptTokens": 1,
+    "generatedTokenLimit": 4,
+    "scheduler": "CSS receipts and SVG SMIL events",
+    "isolateHead": true,
+    "detachedOutput": true,
+    "headEpochTransport": "packed four bits",
+    "fontBackend": "original",
+    "teacherForcedInputs": null,
+    "teacherForcedTargets": null
+  },
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "observedTokenEpochs": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "totalSeconds": 40.14609487499911,
+  "firstObservedSeconds": 15.247208625001804,
+  "warmIntervals": [
+    {
+      "epoch": 2,
+      "seconds": 9.024209416998929
+    },
+    {
+      "epoch": 3,
+      "seconds": 9.270759082999575
+    },
+    {
+      "epoch": 4,
+      "seconds": 6.6028341249984805
+    }
+  ],
+  "warmMedianSeconds": 9.024209416998929,
+  "warmMinimumSeconds": 6.6028341249984805,
+  "warmMaximumSeconds": 9.270759082999575,
+  "sampledPeak": {
+    "rendererRssMiB": 3836.203125,
+    "browserTreeRssMiB": 4558.375
+  },
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 1,
+  "runToFirstSeconds": 12.049170542002685,
+  "rendererWarmTaskPercentages": {
+    "RecalcStyleDuration": 45.1582599805847,
+    "LayoutDuration": 22.033626248533693,
+    "TaskOtherDuration": 32.610279499009906,
+    "DevToolsCommandDuration": 0.19783427187171226,
+    "ScriptDuration": 0.0,
+    "V8CompileDuration": 0.0
+  },
+  "coarseMilestones": {
+    "usableEpochs": [
+      2,
+      3
+    ],
+    "missingOrNonmonotonicEpochs": [
+      4
+    ],
+    "note": "Observed geometry boundaries, not exclusive operation timings; shared frames and observer delay overlap.",
+    "percentages": {
+      "handoff": 25.082843166463277,
+      "embedding": 0.8054674735631389,
+      "coreAndKV": 63.65658856607887,
+      "finalBridgeAndHead": 10.455100793894717
+    }
+  },
+  "tokens": [
+    11,
+    3387,
+    3387,
+    3387
+  ],
+  "text": "Hello, please please please",
+  "tokenAgreement": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "finalResidualError": {
+    "finite": 768,
+    "rmse": 0.0024792570638242487,
+    "maximum": 0.041444795979820814
+  }
+}

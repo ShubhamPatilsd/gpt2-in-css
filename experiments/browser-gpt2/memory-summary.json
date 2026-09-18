@@ -1,0 +1,95 @@
+{
+  "runs": {
+    "Scalar baseline 1": {
+      "file": "memory-baseline/run-1.json",
+      "coldSeconds": 8.364018209000278,
+      "warmMedianSeconds": 4.220072124999206,
+      "secondSeconds": 3.258714207999219,
+      "eighthSeconds": 5.2918145839994395,
+      "sampledPeakRendererRssMiB": 2817.3125,
+      "maximumOutputRmse": 0.013694282938062751,
+      "retentionChecksPassed": true,
+      "scriptDuration": 0,
+      "v8CompileDuration": 0
+    },
+    "Scalar baseline 2": {
+      "file": "memory-baseline/run-2.json",
+      "coldSeconds": 9.11221362499964,
+      "warmMedianSeconds": 4.621424458999172,
+      "secondSeconds": 3.5777004999999917,
+      "eighthSeconds": 5.750629958998616,
+      "sampledPeakRendererRssMiB": 2927.390625,
+      "maximumOutputRmse": 0.013694282938062751,
+      "retentionChecksPassed": true,
+      "scriptDuration": 0,
+      "v8CompileDuration": 0
+    },
+    "Expression16 packed 1": {
+      "file": "memory-expression16/run-1.json",
+      "coldSeconds": 6.869668375000401,
+      "warmMedianSeconds": 3.113683667001169,
+      "secondSeconds": 2.7595562919996155,
+      "eighthSeconds": 3.359576124999876,
+      "sampledPeakRendererRssMiB": 3085.0625,
+      "maximumOutputRmse": 0.012936450467099325,
+      "retentionChecksPassed": true,
+      "scriptDuration": 0,
+      "v8CompileDuration": 0
+    },
+    "Expression16 packed 2": {
+      "file": "memory-expression16/run-2.json",
+      "coldSeconds": 6.940453791999971,
+      "warmMedianSeconds": 3.0906482079990383,
+      "secondSeconds": 2.786560999998983,
+      "eighthSeconds": 3.384599999999409,
+      "sampledPeakRendererRssMiB": 2943.984375,
+      "maximumOutputRmse": 0.012936450467099325,
+      "retentionChecksPassed": true,
+      "scriptDuration": 0,
+      "v8CompileDuration": 0
+    },
+    "Cache inheritance reset": {
+      "file": "memory-isolated/run-1.json",
+      "coldSeconds": 8.521732499999416,
+      "warmMedianSeconds": 4.3556060409991915,
+      "secondSeconds": 3.326587041001403,
+      "eighthSeconds": 5.373845709000307,
+      "sampledPeakRendererRssMiB": 2620.578125,
+      "maximumOutputRmse": 0.013694282938062751,
+      "retentionChecksPassed": true,
+      "scriptDuration": 0,
+      "v8CompileDuration": 0
+    },
+    "Discrete scalar": {
+      "file": "memory-discrete/run-1.json",
+      "coldSeconds": 9.079019707998668,
+      "warmMedianSeconds": 4.555998541000008,
+      "secondSeconds": 3.5592807909997646,
+      "eighthSeconds": 5.748944917000699,
+      "sampledPeakRendererRssMiB": 2889.78125,
+      "maximumOutputRmse": 0.013694282938062751,
+      "retentionChecksPassed": true,
+      "scriptDuration": 0,
+      "v8CompileDuration": 0
+    },
+    "Externally frozen cache: diagnostic only": {
+      "file": "memory-baseline/static-cache-diagnostic.json",
+      "coldSeconds": 8.482521166999504,
+      "warmMedianSeconds": 2.3290902500011725,
+      "secondSeconds": 2.2301597080004285,
+      "eighthSeconds": 2.34254270800011,
+      "sampledPeakRendererRssMiB": 2692.234375,
+      "maximumOutputRmse": 0.013694282938062751,
+      "retentionChecksPassed": true,
+      "scriptDuration": 0,
+      "v8CompileDuration": 0
+    }
+  },
+  "pairedMedianReductionFractions": [
+    0.2621728788576676,
+    0.33123472309912927
+  ],
+  "scope": "two blocks, eight teacher-forced inputs; not full autonomous generation",
+  "defaultDemoChanged": false,
+  "memoryReductionEstablished": false
+}

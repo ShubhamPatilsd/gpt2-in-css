@@ -1,0 +1,59 @@
+{
+  "manifest": {
+    "baseline": "experiments/browser-gpt2-scaling/native/baseline-b12-c4-r2",
+    "baselineHashes": {
+      "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+      "runtime.css": "b8b4f564e55471a9c539407144c184b76a4d9c3f43574c445f10a7df48bedc8d",
+      "manifest.json": "17dda9193c6438d9ad2d8a788cf764104620c5046aad43807c626bf537796597",
+      "pipeline-results.json": "58c95734f84e014ce3663a336decd6a9604c9f0d57f66e84d486d7f70d4d3583"
+    },
+    "htmlSha256": "8161d087a64b30a7fbe163d4c1ea82d32828909c0726da0ace407a736b2ea247",
+    "scriptSha256": "159b73105953fd410d02a67a660f783ebbc640fdd957d784aa6041baec5c34d5",
+    "witnesses": {
+      "input": "<div class=\"core-reset core-valid reused-input\">",
+      "qkv": "<div class=\"shared-qkv-gate\">",
+      "context": "<div class=\"cache-bridge-gate\">",
+      "attentionProjection": "<div class=\"shared-attn-gate\">",
+      "fc": "<div class=\"shared-fc-gate\">",
+      "projection": "<div class=\"shared-proj-gate\">"
+    },
+    "changes": "Only absolute stylesheet link and six geometry witnesses inserted inside existing native receipt gates; baseline CSS unchanged.",
+    "runtimeJavaScript": false,
+    "externalWritesAfterNavigation": 0
+  },
+  "scriptSha256": "159b73105953fd410d02a67a660f783ebbc640fdd957d784aa6041baec5c34d5",
+  "pythonVersion": "3.13.2 (main, Feb 12 2025, 14:59:08) [Clang 19.1.6 ]",
+  "platform": "macOS-26.0-arm64-arm-64bit-Mach-O",
+  "targetTokens": 2,
+  "limitSeconds": 180,
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 0,
+  "events": [],
+  "captures": [],
+  "commands": {
+    "DOM.getDocument": 1,
+    "DOM.querySelector": 2
+  },
+  "complete": false,
+  "stopReason": "error",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.48",
+    "revision": "@199a3a541d76237379e353b348e64045584db057",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "failure": {
+    "type": "RuntimeError",
+    "message": "CDP DOM.querySelector: {'code': -32000, 'message': 'Could not find node with given id'}"
+  },
+  "totalMilliseconds": 348.08650000195485,
+  "geometryReadLatencyMilliseconds": {
+    "count": 0,
+    "median": null,
+    "maximum": null,
+    "total": 0
+  },
+  "passed": false
+}

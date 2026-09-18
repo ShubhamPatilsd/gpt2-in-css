@@ -1,0 +1,1678 @@
+{
+  "schemaVersion": 1,
+  "method": "First-observed geometry markers, matched by captured token epoch. These spans are neither exclusive operation costs nor lower/upper bounds on math costs; CDP geometry reads may flush shared renderer work.",
+  "counterScope": "Renderer counters exist only at token samples and are not assigned to individual stage spans.",
+  "cases": [
+    {
+      "case": "baseline-b12-c2-r0",
+      "path": "experiments/browser-gpt2-scaling/native/baseline-b12-c2-r0/pipeline-results.json",
+      "sha256": "fbf93b500927c72cf41de0fe18af9f8c23bcdd9f23b551f9c4c6bd17be3f98a1",
+      "blocks": 12,
+      "capacity": 2,
+      "variant": "baseline",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "453ca3ca0ee314df3f7efecfc9fe6690e5f84a3eb156e888615a73995567b253",
+        "runtime.css": "eefc5b63fc5f8eaa5a60255e2dc859732d3ad7f29c8544f9317cdd304217c1c3",
+        "manifest.json": "c3b26beca791c5fbe7ec999f7b3b5d8d2f878ac5100e13f69e9a7c3ad6cdb8a5"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [
+        1,
+        2
+      ],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 45216.71829200204,
+            "embedding": 45302.5972079995,
+            "headInput": 82625.82970800213,
+            "head": 82632.47454200246,
+            "capture": 82644.49675000287,
+            "previousCapture": 43028.80512500269
+          },
+          "spansMilliseconds": {
+            "feedback": 2187.9131669993512,
+            "embedding": 85.8789159974549,
+            "coreThroughHeadInput": 37323.23250000263,
+            "headInputThroughHead": 6.644834000326227,
+            "headThroughCapture": 12.022208000416867
+          },
+          "totalMilliseconds": 39615.69162500018
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "milliseconds": 37907.44533299949,
+          "counterDeltas": {
+            "TaskDuration": 37.783773000000004,
+            "RecalcStyleDuration": 19.267474,
+            "LayoutDuration": 5.664313,
+            "TaskOtherDuration": 12.819727,
+            "DevToolsCommandDuration": 0.032258999999999996,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 175,
+            "LayoutCount": 101
+          }
+        }
+      ]
+    },
+    {
+      "case": "baseline-b12-c4-r0",
+      "path": "experiments/browser-gpt2-scaling/native/baseline-b12-c4-r0/pipeline-results.json",
+      "sha256": "dcad648e7c5fa65618b12139526d137a5895dd848479c63078aeabf6040d5973",
+      "blocks": 12,
+      "capacity": 4,
+      "variant": "baseline",
+      "complete": true,
+      "timingExcluded": true,
+      "timingExclusion": {
+        "excludeTimingFromPrimaryComparison": true,
+        "preserveCorrectnessEvidence": true,
+        "reason": "Another agent reported a CPU-intensive source-analysis regular expression using approximately one core for about 40 seconds during this case; process was terminated.",
+        "reportedBy": "locality agent directly and parent task",
+        "exactWindow": {
+          "conservativeStartUtc": "2026-09-17 08:25:00 UTC",
+          "conservativeEndUtc": "2026-09-17 08:27:37 UTC",
+          "nativeDriverApproximateStartUtc": "2026-09-17 08:25:12 UTC",
+          "reportedCpuSeconds": "approximately 40 seconds at approximately 99% of one core",
+          "externalProcessPid": 74321,
+          "externalProcessTermination": "SIGTERM before warning"
+        },
+        "replacement": "baseline-b12-c4-r2; clean comparison sequence baseline-r2,widths-r2,widths-r1,baseline-r1",
+        "classification": "host workload contamination; no browser failure; no competing browser launched"
+      },
+      "sourceHashes": {
+        "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+        "runtime.css": "b8b4f564e55471a9c539407144c184b76a4d9c3f43574c445f10a7df48bedc8d",
+        "manifest.json": "17dda9193c6438d9ad2d8a788cf764104620c5046aad43807c626bf537796597"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [
+        1,
+        2
+      ],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "valid": false,
+          "observedMilliseconds": {
+            "epoch": 43242.202458000975,
+            "embedding": 43308.35429200306,
+            "headInput": 75062.69125000108,
+            "head": null,
+            "capture": 75742.95945800259,
+            "previousCapture": 41201.93858300263
+          },
+          "rejection": {
+            "missing": [
+              "head"
+            ],
+            "nonmonotonic": false
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 77843.02725000089,
+            "embedding": 78062.14745800025,
+            "headInput": 110849.15862500202,
+            "head": 111873.5744580008,
+            "capture": 112252.62916700012,
+            "previousCapture": 75742.95945800259
+          },
+          "spansMilliseconds": {
+            "feedback": 2100.067791998299,
+            "embedding": 219.12020799936727,
+            "coreThroughHeadInput": 32787.011167001765,
+            "headInputThroughHead": 1024.415832998784,
+            "headThroughCapture": 379.0547089993197
+          },
+          "totalMilliseconds": 36509.669708997535
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 114517.96295800159,
+            "embedding": 115164.11833300299,
+            "headInput": 151413.22745800062,
+            "head": 153459.03716700195,
+            "capture": 153761.670625001,
+            "previousCapture": 112252.62916700012
+          },
+          "spansMilliseconds": {
+            "feedback": 2265.333791001467,
+            "embedding": 646.1553750013991,
+            "coreThroughHeadInput": 36249.10912499763,
+            "headInputThroughHead": 2045.8097090013325,
+            "headThroughCapture": 302.6334579990362
+          },
+          "totalMilliseconds": 41509.041458000866
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "milliseconds": 34158.008667000104,
+          "counterDeltas": {
+            "TaskDuration": 34.322009,
+            "RecalcStyleDuration": 17.985833000000003,
+            "LayoutDuration": 4.894729,
+            "TaskOtherDuration": 11.41351,
+            "DevToolsCommandDuration": 0.027937000000000003,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 188,
+            "LayoutCount": 111
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "milliseconds": 36197.72379099959,
+          "counterDeltas": {
+            "TaskDuration": 36.350797,
+            "RecalcStyleDuration": 19.490721,
+            "LayoutDuration": 5.392284,
+            "TaskOtherDuration": 11.442316000000002,
+            "DevToolsCommandDuration": 0.025476,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 178,
+            "LayoutCount": 106
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "milliseconds": 40722.81666699928,
+          "counterDeltas": {
+            "TaskDuration": 40.170198,
+            "RecalcStyleDuration": 22.527811,
+            "LayoutDuration": 5.825614999999999,
+            "TaskOtherDuration": 11.790003999999996,
+            "DevToolsCommandDuration": 0.026768,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 181,
+            "LayoutCount": 104
+          }
+        }
+      ]
+    },
+    {
+      "case": "baseline-b12-c4-r1",
+      "path": "experiments/browser-gpt2-scaling/native/baseline-b12-c4-r1/pipeline-results.json",
+      "sha256": "bd0818482477644dff6e4934e750e7e1634b72aafdec18c9a7e755517e5036cf",
+      "blocks": 12,
+      "capacity": 4,
+      "variant": "baseline",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+        "runtime.css": "b8b4f564e55471a9c539407144c184b76a4d9c3f43574c445f10a7df48bedc8d",
+        "manifest.json": "17dda9193c6438d9ad2d8a788cf764104620c5046aad43807c626bf537796597"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 43651.429333000124,
+            "embedding": 44276.84883300026,
+            "headInput": 73267.2203330003,
+            "head": 74351.81962500064,
+            "capture": 74644.49925000008,
+            "previousCapture": 41710.66045800035
+          },
+          "spansMilliseconds": {
+            "feedback": 1940.768874999776,
+            "embedding": 625.4195000001346,
+            "coreThroughHeadInput": 28990.371500000037,
+            "headInputThroughHead": 1084.5992920003482,
+            "headThroughCapture": 292.6796249994368
+          },
+          "totalMilliseconds": 32933.83879199973
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 76485.91787499754,
+            "embedding": 77100.59208299936,
+            "headInput": 107046.11770799966,
+            "head": 107922.70354100037,
+            "capture": 108219.4134579986,
+            "previousCapture": 74644.49925000008
+          },
+          "spansMilliseconds": {
+            "feedback": 1841.4186249974591,
+            "embedding": 614.6742080018157,
+            "coreThroughHeadInput": 29945.5256250003,
+            "headInputThroughHead": 876.5858330007177,
+            "headThroughCapture": 296.7099169982248
+          },
+          "totalMilliseconds": 33574.91420799852
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 110105.90574999878,
+            "embedding": 111043.76024999874,
+            "headInput": 142425.61579099856,
+            "head": 143620.02787500023,
+            "capture": 143904.47379099714,
+            "previousCapture": 108219.4134579986
+          },
+          "spansMilliseconds": {
+            "feedback": 1886.4922920001845,
+            "embedding": 937.8544999999576,
+            "coreThroughHeadInput": 31381.855540999823,
+            "headInputThroughHead": 1194.4120840016694,
+            "headThroughCapture": 284.44591599691194
+          },
+          "totalMilliseconds": 35685.060332998546
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "milliseconds": 32937.3947080021,
+          "counterDeltas": {
+            "TaskDuration": 32.851243999999994,
+            "RecalcStyleDuration": 16.886597,
+            "LayoutDuration": 4.791097000000001,
+            "TaskOtherDuration": 11.148456999999999,
+            "DevToolsCommandDuration": 0.025093000000000004,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 187,
+            "LayoutCount": 110
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "milliseconds": 33648.18979199845,
+          "counterDeltas": {
+            "TaskDuration": 33.59351600000001,
+            "RecalcStyleDuration": 17.156261,
+            "LayoutDuration": 5.114222999999999,
+            "TaskOtherDuration": 11.299744,
+            "DevToolsCommandDuration": 0.023287999999999996,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 187,
+            "LayoutCount": 110
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "milliseconds": 34955.690708000475,
+          "counterDeltas": {
+            "TaskDuration": 34.53895099999998,
+            "RecalcStyleDuration": 18.153568999999997,
+            "LayoutDuration": 5.167507000000002,
+            "TaskOtherDuration": 11.193038000000001,
+            "DevToolsCommandDuration": 0.024836999999999998,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 181,
+            "LayoutCount": 104
+          }
+        }
+      ]
+    },
+    {
+      "case": "baseline-b12-c4-r2",
+      "path": "experiments/browser-gpt2-scaling/native/baseline-b12-c4-r2/pipeline-results.json",
+      "sha256": "58c95734f84e014ce3663a336decd6a9604c9f0d57f66e84d486d7f70d4d3583",
+      "blocks": 12,
+      "capacity": 4,
+      "variant": "baseline",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+        "runtime.css": "b8b4f564e55471a9c539407144c184b76a4d9c3f43574c445f10a7df48bedc8d",
+        "manifest.json": "17dda9193c6438d9ad2d8a788cf764104620c5046aad43807c626bf537796597"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [
+        1
+      ],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 42497.246041002654,
+            "embedding": 42563.83633299993,
+            "headInput": 74502.81304100281,
+            "head": 76328.9466660026,
+            "capture": 76637.33208300255,
+            "previousCapture": 40066.65079100276
+          },
+          "spansMilliseconds": {
+            "feedback": 2430.5952499998966,
+            "embedding": 66.59029199727229,
+            "coreThroughHeadInput": 31938.976708002883,
+            "headInputThroughHead": 1826.133624999784,
+            "headThroughCapture": 308.38541699995403
+          },
+          "totalMilliseconds": 36570.68129199979
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 78515.26945800288,
+            "embedding": 79157.30866600279,
+            "headInput": 115533.21879100258,
+            "head": 116695.08650000353,
+            "capture": 117078.58266600306,
+            "previousCapture": 76637.33208300255
+          },
+          "spansMilliseconds": {
+            "feedback": 1877.9373750003288,
+            "embedding": 642.0392079999147,
+            "coreThroughHeadInput": 36375.91012499979,
+            "headInputThroughHead": 1161.8677090009442,
+            "headThroughCapture": 383.4961659995315
+          },
+          "totalMilliseconds": 40441.25058300051
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 119336.58091600228,
+            "embedding": 120249.20708300124,
+            "headInput": 159038.7344160008,
+            "head": 161560.45933300265,
+            "capture": 161880.0009580009,
+            "previousCapture": 117078.58266600306
+          },
+          "spansMilliseconds": {
+            "feedback": 2257.9982499992184,
+            "embedding": 912.6261669989617,
+            "coreThroughHeadInput": 38789.52733299957,
+            "headInputThroughHead": 2521.7249170018476,
+            "headThroughCapture": 319.54162499823724
+          },
+          "totalMilliseconds": 44801.418291997834
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "milliseconds": 36336.85499999774,
+          "counterDeltas": {
+            "TaskDuration": 35.966177,
+            "RecalcStyleDuration": 19.15447,
+            "LayoutDuration": 5.145817,
+            "TaskOtherDuration": 11.637387,
+            "DevToolsCommandDuration": 0.028502999999999994,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 185,
+            "LayoutCount": 108
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "milliseconds": 40554.443291002826,
+          "counterDeltas": {
+            "TaskDuration": 40.579494,
+            "RecalcStyleDuration": 21.082250000000002,
+            "LayoutDuration": 6.529335000000001,
+            "TaskOtherDuration": 12.943058,
+            "DevToolsCommandDuration": 0.024850999999999998,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 187,
+            "LayoutCount": 110
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "milliseconds": 44032.58562499832,
+          "counterDeltas": {
+            "TaskDuration": 43.51694100000002,
+            "RecalcStyleDuration": 24.898579000000005,
+            "LayoutDuration": 6.022691999999999,
+            "TaskOtherDuration": 12.567976999999999,
+            "DevToolsCommandDuration": 0.02769300000000001,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 181,
+            "LayoutCount": 104
+          }
+        }
+      ]
+    },
+    {
+      "case": "baseline-b2-c4-r0",
+      "path": "experiments/browser-gpt2-scaling/native/baseline-b2-c4-r0/pipeline-results.json",
+      "sha256": "a1996e4f680da960f7ff78722cb8100c32f8045bd2bc73b9839cde211c1b5309",
+      "blocks": 2,
+      "capacity": 4,
+      "variant": "baseline",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "c86eca7c5089080db3e6e8db9b7c09e10a50c2e2221cb34cdc0bbb642e4136c1",
+        "runtime.css": "80fd392a39ba8a032c1c2a1b0058efc829d8ea8aabb0dfc2a907d0e3a0b187ec",
+        "manifest.json": "e08c99cc93dfc791bac648079407eab38675df46d30bb52a9f7a467359695319"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [
+        1,
+        2,
+        3
+      ],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 18293.24620800253,
+            "embedding": 18380.937625002844,
+            "headInput": 25478.074291000667,
+            "head": 25570.81679100156,
+            "capture": 26121.706041001744,
+            "previousCapture": 15759.1386660024
+          },
+          "spansMilliseconds": {
+            "feedback": 2534.107542000129,
+            "embedding": 87.69141700031469,
+            "coreThroughHeadInput": 7097.136665997823,
+            "headInputThroughHead": 92.74250000089523,
+            "headThroughCapture": 550.8892500001821
+          },
+          "totalMilliseconds": 10362.567374999344
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "valid": false,
+          "observedMilliseconds": {
+            "epoch": 28604.68333300014,
+            "embedding": 28702.526208002382,
+            "headInput": 36470.502333002514,
+            "head": null,
+            "capture": 37364.722416001314,
+            "previousCapture": 26121.706041001744
+          },
+          "rejection": {
+            "missing": [
+              "head"
+            ],
+            "nonmonotonic": false
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 40250.5690830003,
+            "embedding": 40512.91108300211,
+            "headInput": 45273.60416600277,
+            "head": 46691.95104100072,
+            "capture": 47020.13708300001,
+            "previousCapture": 37364.722416001314
+          },
+          "spansMilliseconds": {
+            "feedback": 2885.8466669989866,
+            "embedding": 262.34200000180863,
+            "coreThroughHeadInput": 4760.69308300066,
+            "headInputThroughHead": 1418.346874997951,
+            "headThroughCapture": 328.18604199928814
+          },
+          "totalMilliseconds": 9655.414666998695
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "milliseconds": 10587.495916999615,
+          "counterDeltas": {
+            "TaskDuration": 10.541637999999999,
+            "RecalcStyleDuration": 4.99714,
+            "LayoutDuration": 2.21436,
+            "TaskOtherDuration": 3.310555,
+            "DevToolsCommandDuration": 0.019583,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 38,
+            "LayoutCount": 21
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "milliseconds": 11567.020624999714,
+          "counterDeltas": {
+            "TaskDuration": 11.392146,
+            "RecalcStyleDuration": 5.234580999999999,
+            "LayoutDuration": 2.68067,
+            "TaskOtherDuration": 3.4580610000000007,
+            "DevToolsCommandDuration": 0.018834000000000004,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 39,
+            "LayoutCount": 21
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "milliseconds": 8124.053332998301,
+          "counterDeltas": {
+            "TaskDuration": 7.622412000000004,
+            "RecalcStyleDuration": 3.419664000000001,
+            "LayoutDuration": 1.899684999999999,
+            "TaskOtherDuration": 2.285233999999999,
+            "DevToolsCommandDuration": 0.017828999999999998,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 22,
+            "LayoutCount": 10
+          }
+        }
+      ]
+    },
+    {
+      "case": "empty-b12-c2-r0",
+      "path": "experiments/browser-gpt2-scaling/native/empty-b12-c2-r0/pipeline-results.json",
+      "sha256": "ea8afcc73d81d8577738da5f70bc7f015f633c9a46a7149170c9eaa7219b8390",
+      "blocks": 12,
+      "capacity": 2,
+      "variant": "empty",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "a7e7ed317ff8537b9aa0998e34bdfdb78317ba464e135034c53b6063e6c9e0d0",
+        "runtime.css": "770bc1df1fca1a1a3601bbb32c140eca8a033e565c0aef8e3efe5b50b3b41c73",
+        "manifest.json": "be3a71b2967474fd5416f44cdb50edc9841386782cf34eb696540e5943ffa5e8"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 39509.84995800172,
+            "embedding": 40214.41454100204,
+            "headInput": 74814.33566600026,
+            "head": 76907.35016600229,
+            "capture": 77218.97316600007,
+            "previousCapture": 37511.157666001964
+          },
+          "spansMilliseconds": {
+            "feedback": 1998.6922919997596,
+            "embedding": 704.5645830003195,
+            "coreThroughHeadInput": 34599.92112499822,
+            "headInputThroughHead": 2093.0145000020275,
+            "headThroughCapture": 311.6229999977804
+          },
+          "totalMilliseconds": 39707.815499998105
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "milliseconds": 39101.873625000735,
+          "counterDeltas": {
+            "TaskDuration": 38.675206,
+            "RecalcStyleDuration": 20.670192,
+            "LayoutDuration": 5.233582999999999,
+            "TaskOtherDuration": 12.736665,
+            "DevToolsCommandDuration": 0.034766000000000005,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 181,
+            "LayoutCount": 104
+          }
+        }
+      ]
+    },
+    {
+      "case": "empty-b2-c4-r0",
+      "path": "experiments/browser-gpt2-scaling/native/empty-b2-c4-r0/pipeline-results.json",
+      "sha256": "8cbf7900510c87cf1409943d4c948755ef3638ce795da7ae030ff3fdce081fc5",
+      "blocks": 2,
+      "capacity": 4,
+      "variant": "empty",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "6e4f6b05473381277600b76bf626c2b54be66c6da9221540eef5d01191bfa552",
+        "runtime.css": "ae67c701a67f7fd82c2cc5cb9fdf02497eec4d0431e1dbc31f65ace82f1a7a2e",
+        "manifest.json": "312ec59cec5df5f7b51d17673e20e11313cf6bb2cc9fe6f69494a5443a64b0aa"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [
+        1,
+        2,
+        3
+      ],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 17753.26870900244,
+            "embedding": 17835.172167000565,
+            "headInput": 24617.53725000017,
+            "head": 24713.534959002573,
+            "capture": 25269.258334003098,
+            "previousCapture": 15288.273334001133
+          },
+          "spansMilliseconds": {
+            "feedback": 2464.9953750013083,
+            "embedding": 81.90345799812349,
+            "coreThroughHeadInput": 6782.365082999604,
+            "headInputThroughHead": 95.99770900240401,
+            "headThroughCapture": 555.7233750005253
+          },
+          "totalMilliseconds": 9980.985000001965
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "valid": false,
+          "observedMilliseconds": {
+            "epoch": 27748.213875001966,
+            "embedding": 27830.371584001114,
+            "headInput": 34561.75820900171,
+            "head": null,
+            "capture": 35339.3496250028,
+            "previousCapture": 25269.258334003098
+          },
+          "rejection": {
+            "missing": [
+              "head"
+            ],
+            "nonmonotonic": false
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 37796.12858400287,
+            "embedding": 38486.16229199979,
+            "headInput": 42830.1338750025,
+            "head": 44112.43637500229,
+            "capture": 44462.854917001096,
+            "previousCapture": 35339.3496250028
+          },
+          "spansMilliseconds": {
+            "feedback": 2456.7789590000757,
+            "embedding": 690.0337079969177,
+            "coreThroughHeadInput": 4343.971583002713,
+            "headInputThroughHead": 1282.302499999787,
+            "headThroughCapture": 350.4185419988062
+          },
+          "totalMilliseconds": 9123.505291998299
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "milliseconds": 10346.945792000042,
+          "counterDeltas": {
+            "TaskDuration": 10.259224,
+            "RecalcStyleDuration": 4.791385,
+            "LayoutDuration": 2.227166,
+            "TaskOtherDuration": 3.22027,
+            "DevToolsCommandDuration": 0.020403,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 38,
+            "LayoutCount": 21
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "milliseconds": 10205.606125000486,
+          "counterDeltas": {
+            "TaskDuration": 9.885770999999998,
+            "RecalcStyleDuration": 4.437564,
+            "LayoutDuration": 2.1872860000000003,
+            "TaskOtherDuration": 3.2393140000000002,
+            "DevToolsCommandDuration": 0.021606999999999994,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 39,
+            "LayoutCount": 21
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "milliseconds": 7719.40800000084,
+          "counterDeltas": {
+            "TaskDuration": 7.380886000000004,
+            "RecalcStyleDuration": 2.9836889999999983,
+            "LayoutDuration": 1.782152,
+            "TaskOtherDuration": 2.594353999999999,
+            "DevToolsCommandDuration": 0.020691,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 22,
+            "LayoutCount": 10
+          }
+        }
+      ]
+    },
+    {
+      "case": "lean-b12-c2-r0",
+      "path": "experiments/browser-gpt2-scaling/native/lean-b12-c2-r0/pipeline-results.json",
+      "sha256": "bf02bb3825f802177bc9e31b10f004e26be85185e977fdc544ae282e0f7b3001",
+      "blocks": 12,
+      "capacity": 2,
+      "variant": "lean",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "a7e7ed317ff8537b9aa0998e34bdfdb78317ba464e135034c53b6063e6c9e0d0",
+        "runtime.css": "4c517b897d57d1eb2af29ee86e092fa6b4c508e6d576fe9f2f33d375d7930fb5",
+        "manifest.json": "1d9011190c29fd60d3722db6433759940d23df5cab3fc4ef6231b28aa902c6cf"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [
+        2
+      ],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "valid": false,
+          "observedMilliseconds": {
+            "epoch": 46341.12987499975,
+            "embedding": 47448.946624997916,
+            "headInput": 91892.88433299953,
+            "head": 91224.6650829984,
+            "capture": 91912.45933299797,
+            "previousCapture": 43242.61404099889
+          },
+          "rejection": {
+            "missing": [],
+            "nonmonotonic": true
+          }
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "milliseconds": 47430.35379199864,
+          "counterDeltas": {
+            "TaskDuration": 46.747685000000004,
+            "RecalcStyleDuration": 26.256684,
+            "LayoutDuration": 6.143811,
+            "TaskOtherDuration": 14.31277,
+            "DevToolsCommandDuration": 0.03441999999999999,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 185,
+            "LayoutCount": 104
+          }
+        }
+      ]
+    },
+    {
+      "case": "lean-b2-c4-r0",
+      "path": "experiments/browser-gpt2-scaling/native/lean-b2-c4-r0/pipeline-results.json",
+      "sha256": "5dba56802d6f16dd28b0dc2e2443e5b3015c24675f3b7454098a9f97eb6d9299",
+      "blocks": 2,
+      "capacity": 4,
+      "variant": "lean",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "6e4f6b05473381277600b76bf626c2b54be66c6da9221540eef5d01191bfa552",
+        "runtime.css": "c30ecc58b12eb1b86c95604955738eb44c33c4d3b90a0184816a54e5b9897d6e",
+        "manifest.json": "e7c9fd69180803f231f59fc217fe4fa81a29250233e7c17571e73ca2f731c59d"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [
+        1,
+        2,
+        3
+      ],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 17569.399541996972,
+            "embedding": 17656.922916998155,
+            "headInput": 24167.276459000277,
+            "head": 24258.804958997644,
+            "capture": 24820.763791998615,
+            "previousCapture": 15125.531583998963
+          },
+          "spansMilliseconds": {
+            "feedback": 2443.867957998009,
+            "embedding": 87.52337500118301,
+            "coreThroughHeadInput": 6510.353542002122,
+            "headInputThroughHead": 91.52849999736645,
+            "headThroughCapture": 561.9588330009719
+          },
+          "totalMilliseconds": 9695.232207999652
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "valid": false,
+          "observedMilliseconds": {
+            "epoch": 27220.372042000236,
+            "embedding": 27306.9359589972,
+            "headInput": 33919.4541249999,
+            "head": null,
+            "capture": 34679.25891699997,
+            "previousCapture": 24820.763791998615
+          },
+          "rejection": {
+            "missing": [
+              "head"
+            ],
+            "nonmonotonic": false
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 36994.33333399793,
+            "embedding": 37374.47954199888,
+            "headInput": 41691.814292000345,
+            "head": 42900.2384589985,
+            "capture": 43219.37816699938,
+            "previousCapture": 34679.25891699997
+          },
+          "spansMilliseconds": {
+            "feedback": 2315.074416997959,
+            "embedding": 380.14620800095145,
+            "coreThroughHeadInput": 4317.334750001464,
+            "headInputThroughHead": 1208.4241669981566,
+            "headThroughCapture": 319.13970800087554
+          },
+          "totalMilliseconds": 8540.119249999407
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "milliseconds": 9941.434750002372,
+          "counterDeltas": {
+            "TaskDuration": 9.909271,
+            "RecalcStyleDuration": 4.672359,
+            "LayoutDuration": 1.9786490000000003,
+            "TaskOtherDuration": 3.2385789999999988,
+            "DevToolsCommandDuration": 0.019684,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 38,
+            "LayoutCount": 21
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "milliseconds": 10024.30741599892,
+          "counterDeltas": {
+            "TaskDuration": 9.661261000000003,
+            "RecalcStyleDuration": 4.427524,
+            "LayoutDuration": 1.954573,
+            "TaskOtherDuration": 3.260917000000001,
+            "DevToolsCommandDuration": 0.018247,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 39,
+            "LayoutCount": 21
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "milliseconds": 7204.58245899863,
+          "counterDeltas": {
+            "TaskDuration": 6.912405999999997,
+            "RecalcStyleDuration": 2.991827999999998,
+            "LayoutDuration": 1.6877769999999996,
+            "TaskOtherDuration": 2.2126280000000005,
+            "DevToolsCommandDuration": 0.020173000000000003,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 22,
+            "LayoutCount": 10
+          }
+        }
+      ]
+    },
+    {
+      "case": "materialize-b12-c2-r0",
+      "path": "experiments/browser-gpt2-scaling/native/materialize-b12-c2-r0/pipeline-results.json",
+      "sha256": "09f0f59e7de442331240c101df2a14aa2926b98dfa3d2934ee0dff3716d3066b",
+      "blocks": 12,
+      "capacity": 2,
+      "variant": "materialize",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "453ca3ca0ee314df3f7efecfc9fe6690e5f84a3eb156e888615a73995567b253",
+        "runtime.css": "b8aba73e51c76458f51b4a9556db0bba9218ab3812e9e18ca202234f1084ff06",
+        "manifest.json": "bfc2f869011a397699c8d1f4ba6ec7b152bbc6defa6421ba5d8c35346a4bc521"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 42156.44779200011,
+            "embedding": 42876.18116699741,
+            "headInput": 77795.27154199968,
+            "head": 86396.18379199965,
+            "capture": 86918.54537499967,
+            "previousCapture": 40184.972499999276
+          },
+          "spansMilliseconds": {
+            "feedback": 1971.4752920008323,
+            "embedding": 719.733374997304,
+            "coreThroughHeadInput": 34919.09037500227,
+            "headInputThroughHead": 8600.912249999965,
+            "headThroughCapture": 522.3615830000199
+          },
+          "totalMilliseconds": 46733.57287500039
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "milliseconds": 46183.34791700181,
+          "counterDeltas": {
+            "TaskDuration": 45.726141000000005,
+            "RecalcStyleDuration": 27.457971999999998,
+            "LayoutDuration": 5.241936,
+            "TaskOtherDuration": 12.993545999999998,
+            "DevToolsCommandDuration": 0.03268700000000001,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 181,
+            "LayoutCount": 104
+          }
+        }
+      ]
+    },
+    {
+      "case": "timelines-b12-c2-r0",
+      "path": "experiments/browser-gpt2-scaling/native/timelines-b12-c2-r0/pipeline-results.json",
+      "sha256": "2d8f5dbac15c9ff802c043176d7abf128380da9d42d6afdab0dedd4eded11d9b",
+      "blocks": 12,
+      "capacity": 2,
+      "variant": "timelines",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "453ca3ca0ee314df3f7efecfc9fe6690e5f84a3eb156e888615a73995567b253",
+        "runtime.css": "bab8df9f4dbcd2458ba252dab82db767074ceef6867850f5f9db98bef3b5c95d",
+        "manifest.json": "b2f792f063b4490f0700e0e47213b15aad5d322658b2301b7b655b80b79e2708"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [
+        1
+      ],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 42449.68349999908,
+            "embedding": 42511.77391699821,
+            "headInput": 72591.8894589995,
+            "head": 80680.42433399751,
+            "capture": 81031.48845899705,
+            "previousCapture": 40169.39858399928
+          },
+          "spansMilliseconds": {
+            "feedback": 2280.2849159998004,
+            "embedding": 62.09041699912632,
+            "coreThroughHeadInput": 30080.115542001295,
+            "headInputThroughHead": 8088.534874998004,
+            "headThroughCapture": 351.06412499953876
+          },
+          "totalMilliseconds": 40862.089874997764
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "milliseconds": 40005.90762499996,
+          "counterDeltas": {
+            "TaskDuration": 39.337787999999996,
+            "RecalcStyleDuration": 23.473058,
+            "LayoutDuration": 4.630468,
+            "TaskOtherDuration": 11.207355000000002,
+            "DevToolsCommandDuration": 0.026907,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 179,
+            "LayoutCount": 102
+          }
+        }
+      ]
+    },
+    {
+      "case": "widths-b12-c2-r0",
+      "path": "experiments/browser-gpt2-scaling/native/widths-b12-c2-r0/pipeline-results.json",
+      "sha256": "0362d301c271f959fecd6d5c0aec139ee1f29d1df5e46152a26ffe7c703b1ef1",
+      "blocks": 12,
+      "capacity": 2,
+      "variant": "widths",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "453ca3ca0ee314df3f7efecfc9fe6690e5f84a3eb156e888615a73995567b253",
+        "runtime.css": "b122c65534d9f547bcf58e0ff76b50907f6b23e23b87070177b48452f41e8dcc",
+        "manifest.json": "6f91f6a3aceed38b4602c921edc315cdadae458019e659aff6a596d67e7eff2e"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 39716.33700000166,
+            "embedding": 40324.19304200084,
+            "headInput": 68442.76237500162,
+            "head": 69676.3532920013,
+            "capture": 69928.3192920011,
+            "previousCapture": 37895.99708300011
+          },
+          "spansMilliseconds": {
+            "feedback": 1820.3399170015473,
+            "embedding": 607.8560419991845,
+            "coreThroughHeadInput": 28118.569333000778,
+            "headInputThroughHead": 1233.590916999674,
+            "headThroughCapture": 251.96599999981117
+          },
+          "totalMilliseconds": 32032.322209000995
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": true,
+          "milliseconds": 31432.30712500008,
+          "counterDeltas": {
+            "TaskDuration": 31.03100100000001,
+            "RecalcStyleDuration": 15.888323000000003,
+            "LayoutDuration": 4.381026,
+            "TaskOtherDuration": 10.737866,
+            "DevToolsCommandDuration": 0.023786,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 181,
+            "LayoutCount": 104
+          }
+        }
+      ]
+    },
+    {
+      "case": "widths-b12-c4-r1",
+      "path": "experiments/browser-gpt2-scaling/native/widths-b12-c4-r1/pipeline-results.json",
+      "sha256": "33df1179503717e078d30ebf356d2dff5c975d5b3604f44ba87d2cbeef77588f",
+      "blocks": 12,
+      "capacity": 4,
+      "variant": "widths",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+        "runtime.css": "1e6518a8f488a7e5bd301316836fe030471b5863c5bccafd865485d90547b02e",
+        "manifest.json": "b1756de185643bf97b706cdafc6c112f964779f33a77bded34ce1127a9d27b47"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [
+        1,
+        2,
+        4
+      ],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "valid": false,
+          "observedMilliseconds": {
+            "epoch": 42388.755500000116,
+            "embedding": 42451.949875001446,
+            "headInput": 75313.00337499852,
+            "head": null,
+            "capture": 76007.35391600028,
+            "previousCapture": 40239.01358299918
+          },
+          "rejection": {
+            "missing": [
+              "head"
+            ],
+            "nonmonotonic": false
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "valid": false,
+          "observedMilliseconds": {
+            "epoch": 78196.36083300065,
+            "embedding": 78473.97120800088,
+            "headInput": 118618.71912499919,
+            "head": 116555.72645799839,
+            "capture": 120406.15762499874,
+            "previousCapture": 76007.35391600028
+          },
+          "rejection": {
+            "missing": [],
+            "nonmonotonic": true
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 124190.46487499872,
+            "embedding": 125172.71241599883,
+            "headInput": 163772.54695800002,
+            "head": 163824.8028329981,
+            "capture": 163831.81133299877,
+            "previousCapture": 120406.15762499874
+          },
+          "spansMilliseconds": {
+            "feedback": 3784.3072499999835,
+            "embedding": 982.2475410001061,
+            "coreThroughHeadInput": 38599.83454200119,
+            "headInputThroughHead": 52.25587499808171,
+            "headThroughCapture": 7.008500000665663
+          },
+          "totalMilliseconds": 43425.65370800003
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "milliseconds": 35347.11716700258,
+          "counterDeltas": {
+            "TaskDuration": 35.517725,
+            "RecalcStyleDuration": 18.737772000000003,
+            "LayoutDuration": 5.101984,
+            "TaskOtherDuration": 11.651003000000001,
+            "DevToolsCommandDuration": 0.026965999999999997,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 188,
+            "LayoutCount": 111
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "milliseconds": 44794.610665998334,
+          "counterDeltas": {
+            "TaskDuration": 44.539197,
+            "RecalcStyleDuration": 23.848689999999998,
+            "LayoutDuration": 7.300593000000001,
+            "TaskOtherDuration": 13.336394999999996,
+            "DevToolsCommandDuration": 0.053519,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 188,
+            "LayoutCount": 110
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "milliseconds": 41702.01895900027,
+          "counterDeltas": {
+            "TaskDuration": 41.539449000000005,
+            "RecalcStyleDuration": 22.513304000000005,
+            "LayoutDuration": 6.903071999999998,
+            "TaskOtherDuration": 12.088639,
+            "DevToolsCommandDuration": 0.03443399999999999,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 175,
+            "LayoutCount": 100
+          }
+        }
+      ]
+    },
+    {
+      "case": "widths-b12-c4-r2",
+      "path": "experiments/browser-gpt2-scaling/native/widths-b12-c4-r2/pipeline-results.json",
+      "sha256": "2a7c7e3a8a53f37ef68e834b07e8703b816031bc1430fbcd1579b9dde51bd936",
+      "blocks": 12,
+      "capacity": 4,
+      "variant": "widths",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "1ad65cf1aca4a713fdb2d0b0945b15dca7e0ece8289acfdfafbf96956878599d",
+        "runtime.css": "1e6518a8f488a7e5bd301316836fe030471b5863c5bccafd865485d90547b02e",
+        "manifest.json": "b1756de185643bf97b706cdafc6c112f964779f33a77bded34ce1127a9d27b47"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 40605.09275000004,
+            "embedding": 41244.109833998664,
+            "headInput": 70964.89587500037,
+            "head": 72086.12741699835,
+            "capture": 72358.50879200007,
+            "previousCapture": 38647.53345899953
+          },
+          "spansMilliseconds": {
+            "feedback": 1957.559291000507,
+            "embedding": 639.017083998624,
+            "coreThroughHeadInput": 29720.786041001702,
+            "headInputThroughHead": 1121.231541997986,
+            "headThroughCapture": 272.38137500171433
+          },
+          "totalMilliseconds": 33710.97533300053
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 74237.72475000078,
+            "embedding": 74863.13904199778,
+            "headInput": 107476.48308399948,
+            "head": 108676.02799999804,
+            "capture": 109076.82899999782,
+            "previousCapture": 72358.50879200007
+          },
+          "spansMilliseconds": {
+            "feedback": 1879.2159580007137,
+            "embedding": 625.4142919970036,
+            "coreThroughHeadInput": 32613.3440420017,
+            "headInputThroughHead": 1199.5449159985583,
+            "headThroughCapture": 400.8009999997739
+          },
+          "totalMilliseconds": 36718.32020799775
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 111542.59662500044,
+            "embedding": 112223.52350000074,
+            "headInput": 149153.04162499888,
+            "head": 151415.3290840004,
+            "capture": 151715.48987499773,
+            "previousCapture": 109076.82899999782
+          },
+          "spansMilliseconds": {
+            "feedback": 2465.767625002627,
+            "embedding": 680.9268750002957,
+            "coreThroughHeadInput": 36929.51812499814,
+            "headInputThroughHead": 2262.287459001527,
+            "headThroughCapture": 300.1607909973245
+          },
+          "totalMilliseconds": 42638.660874999914
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "milliseconds": 33671.725917,
+          "counterDeltas": {
+            "TaskDuration": 33.615451,
+            "RecalcStyleDuration": 17.339211999999996,
+            "LayoutDuration": 4.978911999999999,
+            "TaskOtherDuration": 11.272389000000002,
+            "DevToolsCommandDuration": 0.024937999999999995,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 187,
+            "LayoutCount": 110
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "milliseconds": 36974.02483299811,
+          "counterDeltas": {
+            "TaskDuration": 37.142961,
+            "RecalcStyleDuration": 18.918153000000004,
+            "LayoutDuration": 6.103667999999999,
+            "TaskOtherDuration": 12.094760999999998,
+            "DevToolsCommandDuration": 0.026379000000000007,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 187,
+            "LayoutCount": 110
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "milliseconds": 41764.93233400106,
+          "counterDeltas": {
+            "TaskDuration": 41.093728,
+            "RecalcStyleDuration": 22.485026000000005,
+            "LayoutDuration": 6.784698000000002,
+            "TaskOtherDuration": 11.795077999999997,
+            "DevToolsCommandDuration": 0.028925999999999993,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 181,
+            "LayoutCount": 104
+          }
+        }
+      ]
+    },
+    {
+      "case": "widths-b2-c4-r0",
+      "path": "experiments/browser-gpt2-scaling/native/widths-b2-c4-r0/pipeline-results.json",
+      "sha256": "b34f04399b92552e8cff7b47f8f0238b1d6a8838738028d30c98cb26f6324e44",
+      "blocks": 2,
+      "capacity": 4,
+      "variant": "widths",
+      "complete": true,
+      "timingExcluded": false,
+      "timingExclusion": null,
+      "sourceHashes": {
+        "index.html": "c86eca7c5089080db3e6e8db9b7c09e10a50c2e2221cb34cdc0bbb642e4136c1",
+        "runtime.css": "3602c9c16c8f5c3206a2f5bb4a74a820c61731a6c7af9906a129d56b1724e842",
+        "manifest.json": "295405493d9b581cca3046c255344d2757a84a85973e15f73c91288c854d48ce"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "coreMarkerEpochs": [
+        2,
+        3,
+        4
+      ],
+      "spans": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 20551.472250001098,
+            "embedding": 21216.0065829994,
+            "headInput": 27541.577583000617,
+            "head": 27865.054666002834,
+            "capture": 27953.834500000085,
+            "previousCapture": 18444.770624999364
+          },
+          "spansMilliseconds": {
+            "feedback": 2106.701625001733,
+            "embedding": 664.5343329983007,
+            "coreThroughHeadInput": 6325.571000001219,
+            "headInputThroughHead": 323.4770830022171,
+            "headThroughCapture": 88.77983399725053
+          },
+          "totalMilliseconds": 9509.06387500072
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 30568.41016600083,
+            "embedding": 30649.20875000098,
+            "headInput": 37239.67204099972,
+            "head": 37329.482875000394,
+            "capture": 37684.12558300042,
+            "previousCapture": 27953.834500000085
+          },
+          "spansMilliseconds": {
+            "feedback": 2614.5756660007464,
+            "embedding": 80.79858400014928,
+            "coreThroughHeadInput": 6590.463290998741,
+            "headInputThroughHead": 89.81083400067291,
+            "headThroughCapture": 354.6427080000285
+          },
+          "totalMilliseconds": 9730.291083000338
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "valid": true,
+          "observedMilliseconds": {
+            "epoch": 40244.51533300089,
+            "embedding": 40330.05941600277,
+            "headInput": 47559.90887500229,
+            "head": 47573.249332999694,
+            "capture": 47578.736957999354,
+            "previousCapture": 37684.12558300042
+          },
+          "spansMilliseconds": {
+            "feedback": 2560.3897500004678,
+            "embedding": 85.54408300187788,
+            "coreThroughHeadInput": 7229.849458999524,
+            "headInputThroughHead": 13.340457997401245,
+            "headThroughCapture": 5.487624999659602
+          },
+          "totalMilliseconds": 9894.61137499893
+        }
+      ],
+      "tokenBoundaryRenderer": [
+        {
+          "epoch": 2,
+          "terminal": false,
+          "milliseconds": 9807.87212499854,
+          "counterDeltas": {
+            "TaskDuration": 10.074953,
+            "RecalcStyleDuration": 4.610005000000001,
+            "LayoutDuration": 2.1879069999999996,
+            "TaskOtherDuration": 3.259702999999999,
+            "DevToolsCommandDuration": 0.017338,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 39,
+            "LayoutCount": 22
+          }
+        },
+        {
+          "epoch": 3,
+          "terminal": false,
+          "milliseconds": 9892.7728330018,
+          "counterDeltas": {
+            "TaskDuration": 9.919475000000002,
+            "RecalcStyleDuration": 4.623773,
+            "LayoutDuration": 2.021483,
+            "TaskOtherDuration": 3.25647,
+            "DevToolsCommandDuration": 0.017749,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 38,
+            "LayoutCount": 21
+          }
+        },
+        {
+          "epoch": 4,
+          "terminal": true,
+          "milliseconds": 8528.255458997592,
+          "counterDeltas": {
+            "TaskDuration": 7.813907999999998,
+            "RecalcStyleDuration": 3.414787999999998,
+            "LayoutDuration": 1.741848000000001,
+            "TaskOtherDuration": 2.632917000000001,
+            "DevToolsCommandDuration": 0.024354999999999995,
+            "ScriptDuration": 0,
+            "RecalcStyleCount": 27,
+            "LayoutCount": 11
+          }
+        }
+      ]
+    }
+  ],
+  "matchedPairs": [
+    {
+      "cases": [
+        "baseline-b12-c4-r1",
+        "widths-b12-c4-r1"
+      ],
+      "commonValidEpochs": [
+        4
+      ],
+      "continuingEpochs": [],
+      "terminalEpochs": [
+        4
+      ]
+    },
+    {
+      "cases": [
+        "baseline-b12-c4-r2",
+        "widths-b12-c4-r2"
+      ],
+      "commonValidEpochs": [
+        2,
+        3,
+        4
+      ],
+      "continuingEpochs": [
+        2,
+        3
+      ],
+      "terminalEpochs": [
+        4
+      ]
+    }
+  ],
+  "scriptSha256": "f77319f2db57b003528129de8a74deddf30ee4a757b5f62a64de9afc0de3ef66"
+}

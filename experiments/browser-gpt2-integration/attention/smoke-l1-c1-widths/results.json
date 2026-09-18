@@ -1,0 +1,371 @@
+{
+  "scope": "Externally supplied all-head QKV component, native owned input commits and per-layer/per-slot retained KV; not autonomous full-model timing",
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 1,
+  "metadata": {
+    "ownedHeads": 12,
+    "headWidth": 64,
+    "kvSlots": 1,
+    "layers": 1,
+    "cacheFieldsPerLayer": 48,
+    "valueLayout": "widths",
+    "operators": {
+      "dot": {
+        "scale": 468,
+        "base": 29984,
+        "coefficient": 468
+      },
+      "value": {
+        "scale": 12000,
+        "base": 12032,
+        "coefficient": 12000,
+        "axes": 65
+      }
+    },
+    "fontVectorOperatorVersion": 2,
+    "runtimeJavaScript": false,
+    "detachedInputBoundary": true,
+    "inputGeometryCoordinates": 2340,
+    "allHeadGenerationJoin": true,
+    "maxGenerations": 1,
+    "cacheSelectors": {
+      "0": [
+        ".oa-bank-0-0",
+        ".oa-bank-1-0",
+        ".oa-bank-2-0",
+        ".oa-bank-3-0",
+        ".oa-bank-4-0",
+        ".oa-bank-5-0",
+        ".oa-bank-6-0",
+        ".oa-bank-7-0",
+        ".oa-bank-8-0",
+        ".oa-bank-9-0",
+        ".oa-bank-10-0",
+        ".oa-bank-11-0"
+      ]
+    },
+    "contextMarker": "--b100-bridge-stamp",
+    "expectedEpochProperty": "--expected",
+    "inputTimelineScope": "html"
+  },
+  "samples": [
+    {
+      "generation": 1,
+      "kind": "append",
+      "layer": 0,
+      "position": 1,
+      "milliseconds": 226.3195409977925,
+      "headErrors": [
+        {
+          "finite": 64,
+          "rmse": 0.00028091109738525286,
+          "maximum": 0.0007898574666412263
+        },
+        {
+          "finite": 64,
+          "rmse": 0.00026784575349070555,
+          "maximum": 0.0005967777189849199
+        },
+        {
+          "finite": 64,
+          "rmse": 0.00025314922938612043,
+          "maximum": 0.0005282875252996533
+        },
+        {
+          "finite": 64,
+          "rmse": 0.00021482253978658466,
+          "maximum": 0.00046984868872973484
+        },
+        {
+          "finite": 64,
+          "rmse": 0.0002569016395897771,
+          "maximum": 0.0005368433340340317
+        },
+        {
+          "finite": 64,
+          "rmse": 0.00042982889834103507,
+          "maximum": 0.0008771369089455305
+        },
+        {
+          "finite": 64,
+          "rmse": 0.00026420361688191796,
+          "maximum": 0.0006373399733567986
+        },
+        {
+          "finite": 64,
+          "rmse": 0.00024257200508471358,
+          "maximum": 0.0004735077230959561
+        },
+        {
+          "finite": 64,
+          "rmse": 0.00026380075904122323,
+          "maximum": 0.00048525892750195254
+        },
+        {
+          "finite": 64,
+          "rmse": 0.00029074664318018347,
+          "maximum": 0.000640370655562883
+        },
+        {
+          "finite": 64,
+          "rmse": 0.0003453045595003418,
+          "maximum": 0.0007438004070170479
+        },
+        {
+          "finite": 64,
+          "rmse": 0.00027079759896277074,
+          "maximum": 0.0005145185408299557
+        }
+      ],
+      "headJoinedTags": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "perHeadQKVChangeMaximum": null,
+      "rendererDelta": {
+        "LayoutCount": 0,
+        "RecalcStyleCount": 0,
+        "LayoutDuration": 0.0,
+        "RecalcStyleDuration": 0.0,
+        "DevToolsCommandDuration": 0.048156000000000004,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.048315,
+        "TaskOtherDuration": 0.00015900000000002024
+      },
+      "cacheErrors": [
+        {
+          "layer": 0,
+          "slot": 0,
+          "error": {
+            "finite": 1536,
+            "rmse": 1.0675692920127176e-05,
+            "maximum": 4.9481162283981917e-05
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "sourceHashes": {
+    "tools/probe_browser_gpt2_owned_attention.py": "85965d62de0564d184651d409babbb0bc5139ab8e67afac3ad68ad587f056c38",
+    "tools/browser_gpt2_owned_attention.py": "3f11d959cf986eaaa1d577da98d5c0cf6e40ce12f8c54832471f540f1688fbe5",
+    "experiments/browser-gpt2-integration/attention/smoke-l1-c1-widths/index.html": "9165a5afeff5c6b4bd4a0ff25e97ef48ad4db57be286a503bac5e2c6b08a8f5d",
+    "experiments/browser-gpt2-integration/attention/smoke-l1-c1-widths/attention.css": "9ea21471da28154605c90f1d069e979194ad97c64fb7dfbaa2d05e25caaaac19"
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.48",
+    "revision": "@199a3a541d76237379e353b348e64045584db057",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "poisonCheck": {
+    "heads": [
+      {
+        "head": 0,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 8.767352228741516e-06,
+          "maximum": 3.2325736152749585e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 1.0336973563045181e-05,
+          "maximum": 4.396947067242252e-05
+        }
+      },
+      {
+        "head": 1,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 7.797110748612431e-06,
+          "maximum": 2.3851415036801882e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 1.0316983604835716e-05,
+          "maximum": 3.799623307898514e-05
+        }
+      },
+      {
+        "head": 2,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 8.062842423867713e-06,
+          "maximum": 2.1690948459163195e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 8.959195997884603e-06,
+          "maximum": 3.280277464057235e-05
+        }
+      },
+      {
+        "head": 3,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 8.47790310398615e-06,
+          "maximum": 3.112279372619042e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 8.881789572418667e-06,
+          "maximum": 2.4763478315037446e-05
+        }
+      },
+      {
+        "head": 4,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 7.75016439677282e-06,
+          "maximum": 2.3627160267825076e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 1.0810926833193318e-05,
+          "maximum": 4.9481162283981917e-05
+        }
+      },
+      {
+        "head": 5,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 8.175356579081179e-06,
+          "maximum": 3.150510393368222e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 9.864719947965726e-06,
+          "maximum": 4.277462141466515e-05
+        }
+      },
+      {
+        "head": 6,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 8.08485269012911e-06,
+          "maximum": 2.4407300255990805e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 9.746501022192524e-06,
+          "maximum": 4.849567666909138e-05
+        }
+      },
+      {
+        "head": 7,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 7.321375888344596e-06,
+          "maximum": 2.4331913798469884e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 1.0210418770637627e-05,
+          "maximum": 4.245856238860313e-05
+        }
+      },
+      {
+        "head": 8,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 8.202274720291655e-06,
+          "maximum": 2.2139609461735432e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 9.150819301196652e-06,
+          "maximum": 4.900938876239991e-05
+        }
+      },
+      {
+        "head": 9,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 7.97796017878108e-06,
+          "maximum": 2.4292715997020764e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 9.759411252069057e-06,
+          "maximum": 4.760711741624846e-05
+        }
+      },
+      {
+        "head": 10,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 8.258812635571164e-06,
+          "maximum": 3.354692963197792e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 9.50772118428713e-06,
+          "maximum": 4.380040701690291e-05
+        }
+      },
+      {
+        "head": 11,
+        "receivedPoisonError": {
+          "finite": 192,
+          "rmse": 7.682753043340123e-06,
+          "maximum": 2.483747192805197e-05
+        },
+        "heldOriginalError": {
+          "finite": 192,
+          "rmse": 9.196414095355587e-06,
+          "maximum": 3.495071474635125e-05
+        }
+      }
+    ],
+    "contextError": {
+      "finite": 768,
+      "rmse": 0.0002867886476049076,
+      "maximum": 0.0008771369089455305
+    },
+    "tags": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "passed": true
+  },
+  "finalJoin": {
+    "--oa-join-tag-5": "1",
+    "--oa-join-tag-1": "1",
+    "--oa-join-tag-3": "1",
+    "--oa-join-tag-0": "1",
+    "--oa-join-tag-10": "1",
+    "--oa-all-ready": "1",
+    "--oa-output-epoch": "1",
+    "--oa-join-tag-2": "1",
+    "--oa-join-tag-8": "1",
+    "--oa-join-tag-11": "1",
+    "--oa-join-tag-7": "1",
+    "--oa-join-tag-6": "1",
+    "--oa-join-tag-4": "1",
+    "--oa-join-tag-9": "1"
+  },
+  "passed": true
+}

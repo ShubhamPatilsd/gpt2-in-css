@@ -1,0 +1,159 @@
+{
+  "attention": "owned",
+  "dense": "baseline",
+  "head": "baseline",
+  "blocks": 2,
+  "capacity": 2,
+  "configuration": {
+    "autostart": true,
+    "isolate_head": true,
+    "cache_layout": "flat",
+    "cache_codec": "font-vector",
+    "scoped_state": true,
+    "reuse_core": true,
+    "detached_output": true
+  },
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "scope": "Truncated 2-layer model, native autoregressive feedback, all 50257 vocabulary rows",
+  "sourceHashes": {
+    "integrate_browser_gpt2_local_updates.py": "7af77a6eda8e543f2244e54cf1fceb2d80f12f308db389cfb3bb88004f6040a7",
+    "browser_gpt2_owned_attention.py": "9dce0c5f5d7c82b62ac97de6917edd22520b063de450542c08d716108d3b028b",
+    "browser_gpt2_dense_locality.py": "22839333043caf6164c1668a0628a1b7e5b9c9ddfbe2fafbe56cd772800d8121",
+    "browser_gpt2_head_locality.py": "89df8c1f5741126ae75ee441654af0c9cb7590d4a09abf514851c73ba1838abe",
+    "browser_gpt2_runtime.py": "3ec647ea9745f23afe5e400ebb3f3fbaa5919832628cf67d25e4092bc28aadf7",
+    "browser_gpt2_reused_core.py": "1bd88ce20e8e56ce6767b1af67cf46829aa82e362944b521e1316212bc4b4cef",
+    "browser_gpt2_reused_adapter.py": "aec3080842fb702d1d3b3667d2baa7b16f5872166a6c48b3850786112ee1f2e6",
+    "browser_gpt2_font_vector_cache.py": "7041e23cecef6e80fef0feb37f93231f31132458ae193ebaa750a40e46b66bdf",
+    "browser_gpt2_core.py": "b164f299888467b84006f8b1c1bc10a273121234381e011d28d670a54a9c234f",
+    "browser_gpt2_head_receipts.py": "13efcdd27a8aac8820c271f3484fd9168f4e7e341f79ae89fbead9dff05f2ffc",
+    "build_hybrid_twelve_block.py": "5d688ec9bf96789067b6de89037382d32d1cdadc94557afbdfaa748d93041a1c",
+    "build_gpt2_groupwise_production_q16_sixfont.py": "cec70bc82a1f0e94ebde56a26e86ff980c36f3c619dfaffc4863c02ca12dc917",
+    "test_browser_gpt2_runtime.py": "e3a2f7c1aa5e553aa3867464d96b1fa660ef36f7dad146e73f8f19e8216d6c61",
+    "verify_browser_gpt2_runtime.py": "1d37033c47a1608282e7dffd6e55218af143220b4ac9a33fd111f4372d44173b",
+    "profile_hybrid_twelve_block.py": "9e10b25c78b76e982b19bf65e263b3775cb29beabfc83317922c7d8495dc9c18",
+    "probe_native_value_latch.py": "9dbd9d892eac7fc8779c9d48be2aa6ade9f5072ed2f6931c140864b2c8fa1298",
+    "benchmark_browser_gpt2_memory.py": "b39953e35b09f625845c2fc996544acdd4c3c4089c6bf18adb86a4051fd11476",
+    "decode_css_cache_diagnostic.py": "b5a54199a7de6fcc15ffba7c3cf2ecad0747cbf4b4a432208ed49ceb497628ac",
+    "probe_native_reused_loop.py": "85858ef74a3272f446f8a85614971b97c1b6da659c8a80af5d9d779f44d0e3da"
+  },
+  "gitHead": "8945a2d9fb75d3b100f6c9a82f9c64e01fe4728e",
+  "platform": "macOS-26.0-arm64-arm-64bit-Mach-O",
+  "notes": [
+    "All changes are opt-in scoped compiler patches; original compilers are unchanged.",
+    "Model fonts are referenced in place, not regenerated or copied.",
+    "No post-navigation writes; independent reference evaluation follows browser exit.",
+    "Wall time includes font loading and observer overhead; it is not an exclusive stage timing."
+  ],
+  "compiled": true,
+  "denseRewrite": {
+    "variant": "baseline",
+    "options": {
+      "private_normalized_inputs": false,
+      "projection_settings": false,
+      "hoist_layer_invariants": false
+    },
+    "normalizedPrivatePropertyCount": 0,
+    "normalizedForwardingPropertyCount": 0,
+    "projectionPackListsMaterialized": 0,
+    "conditionalDeclarationsHoisted": 0,
+    "uniqueHoistedDeclarations": 0,
+    "stageStylesheetByteDelta": 0,
+    "runtimeJavaScript": false
+  },
+  "attentionRewrite": {
+    "ownedHeads": 12,
+    "headWidth": 64,
+    "kvSlots": 2,
+    "layers": 2,
+    "cacheFieldsPerLayer": 96,
+    "valueLayout": "widths",
+    "operators": {
+      "dot": {
+        "scale": 468,
+        "base": 29984,
+        "coefficient": 468
+      },
+      "value": {
+        "scale": 12000,
+        "base": 12032,
+        "coefficient": 12000,
+        "axes": 65
+      }
+    },
+    "fontVectorOperatorVersion": 2,
+    "runtimeJavaScript": false,
+    "detachedInputBoundary": true,
+    "inputGeometryCoordinates": 2340,
+    "allHeadGenerationJoin": true,
+    "maxGenerations": 4,
+    "cacheSelectors": {
+      "0": [
+        ".oa-bank-0-0",
+        ".oa-bank-1-0",
+        ".oa-bank-2-0",
+        ".oa-bank-3-0",
+        ".oa-bank-4-0",
+        ".oa-bank-5-0",
+        ".oa-bank-6-0",
+        ".oa-bank-7-0",
+        ".oa-bank-8-0",
+        ".oa-bank-9-0",
+        ".oa-bank-10-0",
+        ".oa-bank-11-0"
+      ],
+      "1": [
+        ".oa-bank-0-1",
+        ".oa-bank-1-1",
+        ".oa-bank-2-1",
+        ".oa-bank-3-1",
+        ".oa-bank-4-1",
+        ".oa-bank-5-1",
+        ".oa-bank-6-1",
+        ".oa-bank-7-1",
+        ".oa-bank-8-1",
+        ".oa-bank-9-1",
+        ".oa-bank-10-1",
+        ".oa-bank-11-1"
+      ]
+    },
+    "contextMarker": "--cache-bridge-stamp",
+    "expectedEpochProperty": "--native-pass",
+    "inputTimelineScope": ".core-block",
+    "producerInsideQkvGenerationGate": true
+  },
+  "headRewrite": {
+    "mode": "baseline",
+    "vocabularyRows": 50257,
+    "privateInputCount": 0,
+    "fontSettingsDeclarationsReplaced": 0,
+    "ownerSelector": ".head-input-bank"
+  },
+  "artifactHashes": {
+    "index.html": "773b19441ddd62bbd210bc8851e15c1ae9bf66c68a45ee4e17c69298b24ad554",
+    "runtime.css": "6879e8f24a75265cbabbedd00d692bb230f34a792c291c9689b01ef121588d9c",
+    "manifest.json": "bdd8b18119b26ff0c28cca277dcb4a0fb22a8a69e2f5df794cf3cbf12732774d"
+  },
+  "artifactBytes": {
+    "index.html": 6820268,
+    "runtime.css": 15592246,
+    "manifest.json": 2565
+  },
+  "compileSeconds": 3.6007124160023523,
+  "measurement": {
+    "limitSeconds": 180.0,
+    "quietSecondsAfterObserverSetup": 0,
+    "browserArguments": [
+      "--js-flags=--heap-growing-percent=10"
+    ],
+    "cacheReadback": "After generation: actual own-head fields from all twelve banks per layer"
+  },
+  "complete": true,
+  "harnessSecondsIncludingReadback": 34.08149974999833,
+  "correctness": {
+    "passed": true,
+    "summary": "integration-summary.json",
+    "requiredResidualRmseBelow": 0.05,
+    "requiredCacheRmseBelow": 0.01
+  }
+}

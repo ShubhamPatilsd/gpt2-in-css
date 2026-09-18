@@ -1,0 +1,3114 @@
+{
+  "schemaVersion": 1,
+  "mode": "timing",
+  "passed": true,
+  "startedAt": "2026-09-18T04:22:00.174Z",
+  "scope": "Post-attention residual replay; native LN2→MLP→residual/bias→next LN1. No autoregressive loop.",
+  "manifestSha256": "3c76300cf6c0da47f13a337f604fccd98f9bbc62b219121be225db272fe50a74",
+  "harnessSha256": "32b40a0e61f648b6c5a1fb33344f758d7ecabf27001d37852344dd088dc99d7b",
+  "protocol": {
+    "authorJavaScriptEnabled": false,
+    "harnessJavaScript": true,
+    "mutations": "Select a predeclared raw input fixture and advance generation. No calculated answer injection.",
+    "timing": "Browser performance.now elapsed from mutation to generation-tagged final dependent geometry;16ms Node polling and DevTools round-trip gaps are included between reads. All-coordinate numerical serialization follows the timer, and terminal geometry must remain unchanged by verification.",
+    "correctness": "Every warmup and measured generation is checked after its completion, not just the timed final scalar.",
+    "load": "Navigation + explicit loading of every declared FontFace + document.fonts.ready recorded separately; native gated projection fonts otherwise load late. No other benchmark pages resident.",
+    "freshProcessPerVariantRun": true,
+    "order": "AB then BA for two variants; alternating reversal otherwise",
+    "warmups": 2,
+    "measured": 8,
+    "repeats": 2,
+    "updateTimeout": 45000,
+    "schedule": "replay",
+    "inputReuse": "Four real states revisited; font shaping/variation caches are not disabled. Not a stream of unseen token inputs.",
+    "memory": "After verification, sum RSS of renderer processes reported by this browser SystemInfo.getProcessInfo; sampled aggregate, not a continuous peak.",
+    "quantiles": "Upper-middle median, nearest-rank p90; process medians and paired differences retained. Two pairs are not a precision confidence interval.",
+    "caveats": [
+      "External16ms polling and DevTools round trips can perturb scheduling and add observation delay; same observer in both variants. Synchronous candidate may complete on its first read.",
+      "No full-model token runtime may be inferred by multiplying this segment latency."
+    ]
+  },
+  "runs": [
+    {
+      "variant": "baseline-layer0",
+      "layer": 0,
+      "repeat": 0,
+      "passed": true,
+      "samples": [
+        {
+          "terminalAfterVerification": {
+            "width": 1047998,
+            "height": 128
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.22314907474342505,
+              "rmse": 0.016652424993560882
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.006842770336063425,
+              "rmse": 0.0006223700708580596
+            }
+          },
+          "index": 0,
+          "caseIndex": 0,
+          "epoch": 2,
+          "phase": "warmup",
+          "milliseconds": 498.20000000298023,
+          "width": 1047998,
+          "height": 128,
+          "polls": 2,
+          "geometryReadMilliseconds": 125.90000000596046,
+          "externalMilliseconds": 500.0369999999998,
+          "verificationMilliseconds": 307.42170899999974,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.09852121499550748,
+              "rmse": 0.007964496400185457,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00344972601341767,
+              "rmse": 0.00029563332309581617,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 756.03125,
+            "browserProcessRssMiB": 1290.203125,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047869.6875,
+            "height": 192
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.08955290248946568,
+              "rmse": 0.007717729661080835
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00812438449861752,
+              "rmse": 0.0008553532504948548
+            }
+          },
+          "index": 1,
+          "caseIndex": 1,
+          "epoch": 3,
+          "phase": "warmup",
+          "milliseconds": 944,
+          "width": 1047869.6875,
+          "height": 192,
+          "polls": 2,
+          "geometryReadMilliseconds": 205.79999999701977,
+          "externalMilliseconds": 945.2439160000004,
+          "verificationMilliseconds": 299.4484999999995,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.015484109805505852,
+              "rmse": 0.0017388651842633726,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.001468803150592779,
+              "rmse": 0.00016775254675971716,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 881.546875,
+            "browserProcessRssMiB": 1415.5625,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047845.4375,
+            "height": 256
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.057847554174749405,
+              "rmse": 0.006507779263435728
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.005588491103236393,
+              "rmse": 0.0006654765635601979
+            }
+          },
+          "index": 2,
+          "caseIndex": 2,
+          "epoch": 4,
+          "phase": "measured",
+          "milliseconds": 990.5999999940395,
+          "width": 1047845.4375,
+          "height": 256,
+          "polls": 2,
+          "geometryReadMilliseconds": 204.09999999403954,
+          "externalMilliseconds": 992.729292,
+          "verificationMilliseconds": 326.84820800000034,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01683397456871205,
+              "rmse": 0.0015698061497647683,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002697347316343912,
+              "rmse": 0.00020190753024004241,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1018.828125,
+            "browserProcessRssMiB": 1548.6875,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047720.5625,
+            "height": 320
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.10453587743373915,
+              "rmse": 0.009670590268225464
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.02282000176647414,
+              "rmse": 0.0011634941355288194
+            }
+          },
+          "index": 3,
+          "caseIndex": 3,
+          "epoch": 5,
+          "phase": "measured",
+          "milliseconds": 944,
+          "width": 1047720.5625,
+          "height": 320,
+          "polls": 2,
+          "geometryReadMilliseconds": 199.5,
+          "externalMilliseconds": 944.9249170000003,
+          "verificationMilliseconds": 365.67820800000027,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.014954106394961642,
+              "rmse": 0.0016622527988273525,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0017980976876554866,
+              "rmse": 0.0002036913365700745,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1027.765625,
+            "browserProcessRssMiB": 1557.53125,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047998,
+            "height": 384
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.22314907474342505,
+              "rmse": 0.016652424993560882
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.006842770336063425,
+              "rmse": 0.0006223700708580596
+            }
+          },
+          "index": 4,
+          "caseIndex": 0,
+          "epoch": 6,
+          "phase": "measured",
+          "milliseconds": 796.2000000029802,
+          "width": 1047998,
+          "height": 384,
+          "polls": 2,
+          "geometryReadMilliseconds": 157.8999999910593,
+          "externalMilliseconds": 797.1831249999996,
+          "verificationMilliseconds": 410.5036250000012,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.09852121499550748,
+              "rmse": 0.007964496400185457,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00344972601341767,
+              "rmse": 0.00029563332309581617,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1029.90625,
+            "browserProcessRssMiB": 1559.65625,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047869.6875,
+            "height": 448
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.08955290248946568,
+              "rmse": 0.007717729661080835
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00812438449861752,
+              "rmse": 0.0008553532504948548
+            }
+          },
+          "index": 5,
+          "caseIndex": 1,
+          "epoch": 7,
+          "phase": "measured",
+          "milliseconds": 805.8000000119209,
+          "width": 1047869.6875,
+          "height": 448,
+          "polls": 2,
+          "geometryReadMilliseconds": 154,
+          "externalMilliseconds": 807.1109579999993,
+          "verificationMilliseconds": 505.7903750000005,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.015484109805505852,
+              "rmse": 0.0017388651842633726,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.001468803150592779,
+              "rmse": 0.00016775254675971716,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1031.96875,
+            "browserProcessRssMiB": 1561.71875,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047845.4375,
+            "height": 512
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.057847554174749405,
+              "rmse": 0.006507779263435728
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.005588491103236393,
+              "rmse": 0.0006654765635601979
+            }
+          },
+          "index": 6,
+          "caseIndex": 2,
+          "epoch": 8,
+          "phase": "measured",
+          "milliseconds": 870.7999999970198,
+          "width": 1047845.4375,
+          "height": 512,
+          "polls": 2,
+          "geometryReadMilliseconds": 183.1000000089407,
+          "externalMilliseconds": 872.2182920000014,
+          "verificationMilliseconds": 264.1592079999991,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01683397456871205,
+              "rmse": 0.0015698061497647683,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002697347316343912,
+              "rmse": 0.00020190753024004241,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1086.546875,
+            "browserProcessRssMiB": 1616.359375,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047720.5625,
+            "height": 576
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.10453587743373915,
+              "rmse": 0.009670590268225464
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.02282000176647414,
+              "rmse": 0.0011634941355288194
+            }
+          },
+          "index": 7,
+          "caseIndex": 3,
+          "epoch": 9,
+          "phase": "measured",
+          "milliseconds": 763.6000000089407,
+          "width": 1047720.5625,
+          "height": 576,
+          "polls": 2,
+          "geometryReadMilliseconds": 153.00000001490116,
+          "externalMilliseconds": 764.8290830000005,
+          "verificationMilliseconds": 302.7059169999993,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.014954106394961642,
+              "rmse": 0.0016622527988273525,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0017980976876554866,
+              "rmse": 0.0002036913365700745,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1087.15625,
+            "browserProcessRssMiB": 1617,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047998,
+            "height": 640
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.22314907474342505,
+              "rmse": 0.016652424993560882
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.006842770336063425,
+              "rmse": 0.0006223700708580596
+            }
+          },
+          "index": 8,
+          "caseIndex": 0,
+          "epoch": 10,
+          "phase": "measured",
+          "milliseconds": 784.1000000089407,
+          "width": 1047998,
+          "height": 640,
+          "polls": 2,
+          "geometryReadMilliseconds": 158.90000000596046,
+          "externalMilliseconds": 785.1610410000012,
+          "verificationMilliseconds": 350.5748330000006,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.09852121499550748,
+              "rmse": 0.007964496400185457,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00344972601341767,
+              "rmse": 0.00029563332309581617,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1087.390625,
+            "browserProcessRssMiB": 1617.234375,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047869.6875,
+            "height": 704
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.08955290248946568,
+              "rmse": 0.007717729661080835
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00812438449861752,
+              "rmse": 0.0008553532504948548
+            }
+          },
+          "index": 9,
+          "caseIndex": 1,
+          "epoch": 11,
+          "phase": "measured",
+          "milliseconds": 835.2999999970198,
+          "width": 1047869.6875,
+          "height": 704,
+          "polls": 2,
+          "geometryReadMilliseconds": 158.3999999910593,
+          "externalMilliseconds": 836.4853330000005,
+          "verificationMilliseconds": 257.7427919999991,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.015484109805505852,
+              "rmse": 0.0017388651842633726,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.001468803150592779,
+              "rmse": 0.00016775254675971716,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1137.390625,
+            "browserProcessRssMiB": 1667.234375,
+            "rendererProcesses": 3
+          }
+        }
+      ],
+      "chrome": "153.0.8010.48",
+      "loadMilliseconds": 2331.418667,
+      "pageAudit": {
+        "authorScriptElements": 0,
+        "elements": 8483,
+        "fonts": [
+          {
+            "family": "b0fcS0",
+            "status": "loaded"
+          },
+          {
+            "family": "b0fcS1",
+            "status": "loaded"
+          },
+          {
+            "family": "b0fcS2",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS0",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS1",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS2",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS3",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS4",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS5",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS6",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS7",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS8",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS9",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS10",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS11",
+            "status": "loaded"
+          }
+        ],
+        "csp": "script-src 'none'"
+      },
+      "initializationMemory": {
+        "rendererRssMiB": 683.984375,
+        "browserProcessRssMiB": 1214.421875,
+        "rendererProcesses": 3
+      },
+      "errors": [],
+      "timing": {
+        "count": 8,
+        "median": 835.2999999970198,
+        "minimum": 763.6000000089407,
+        "maximum": 990.5999999940395,
+        "p90": 990.5999999940395,
+        "mean": 848.8000000026077
+      },
+      "sampledPeakRendererRssMiB": 1137.390625
+    },
+    {
+      "variant": "candidate-layer0",
+      "layer": 0,
+      "repeat": 0,
+      "passed": true,
+      "samples": [
+        {
+          "terminalAfterVerification": {
+            "width": 1047996.75,
+            "height": 128
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.2419854495129945,
+              "rmse": 0.025488221385565522
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.005518254771099129,
+              "rmse": 0.0009890099515424886
+            }
+          },
+          "index": 0,
+          "caseIndex": 0,
+          "epoch": 2,
+          "phase": "warmup",
+          "milliseconds": 229.29999999701977,
+          "width": 1047996.75,
+          "height": 128,
+          "polls": 1,
+          "geometryReadMilliseconds": 229.19999998807907,
+          "externalMilliseconds": 230.93779200000063,
+          "verificationMilliseconds": 162.72020799999882,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.019132614443397644,
+              "rmse": 0.006425205288530265,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0008516880504966934,
+              "rmse": 0.00026734697536249505,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1289.796875,
+            "browserProcessRssMiB": 1898.15625,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047865.9375,
+            "height": 192
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.21650602748946568,
+              "rmse": 0.026446764721849852
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.013456005039652899,
+              "rmse": 0.0027676203087520094
+            }
+          },
+          "index": 1,
+          "caseIndex": 1,
+          "epoch": 3,
+          "phase": "warmup",
+          "milliseconds": 1093.5999999940395,
+          "width": 1047865.9375,
+          "height": 192,
+          "polls": 1,
+          "geometryReadMilliseconds": 1093.5999999940395,
+          "externalMilliseconds": 1094.9269999999997,
+          "verificationMilliseconds": 1161.499708000003,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.021229140747369257,
+              "rmse": 0.00570926954908942,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0023947942491714946,
+              "rmse": 0.0006292438071239947,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1469.921875,
+            "browserProcessRssMiB": 2073.109375,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047843.625,
+            "height": 256
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.24886934005656514,
+              "rmse": 0.022829695440570383
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.010241888566608903,
+              "rmse": 0.0023399536648610834
+            }
+          },
+          "index": 2,
+          "caseIndex": 2,
+          "epoch": 4,
+          "phase": "measured",
+          "milliseconds": 1126.199999988079,
+          "width": 1047843.625,
+          "height": 256,
+          "polls": 1,
+          "geometryReadMilliseconds": 1126.0999999940395,
+          "externalMilliseconds": 1127.268791999999,
+          "verificationMilliseconds": 1154.0950410000005,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01899050419251852,
+              "rmse": 0.00600469019085905,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002516460921433712,
+              "rmse": 0.0006519549386915503,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1717.34375,
+            "browserProcessRssMiB": 2312.875,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047722.6875,
+            "height": 320
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.24293990580804348,
+              "rmse": 0.024108631196157748
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01015677507908326,
+              "rmse": 0.0025640990605999203
+            }
+          },
+          "index": 3,
+          "caseIndex": 3,
+          "epoch": 5,
+          "phase": "measured",
+          "milliseconds": 1187.2000000029802,
+          "width": 1047722.6875,
+          "height": 320,
+          "polls": 1,
+          "geometryReadMilliseconds": 1187.2000000029802,
+          "externalMilliseconds": 1196.5582500000019,
+          "verificationMilliseconds": 1164.7779580000024,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0213574024989841,
+              "rmse": 0.006135861826841404,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002294084336645019,
+              "rmse": 0.0006724132151779578,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1838.71875,
+            "browserProcessRssMiB": 2429.421875,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047996.75,
+            "height": 384
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.2419854495129945,
+              "rmse": 0.025488221385565522
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.005518254771099129,
+              "rmse": 0.0009890099515424886
+            }
+          },
+          "index": 4,
+          "caseIndex": 0,
+          "epoch": 6,
+          "phase": "measured",
+          "milliseconds": 850.7999999970198,
+          "width": 1047996.75,
+          "height": 384,
+          "polls": 1,
+          "geometryReadMilliseconds": 850.7999999970198,
+          "externalMilliseconds": 852.0789169999989,
+          "verificationMilliseconds": 3128.2369590000017,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.019132614443397644,
+              "rmse": 0.006425205288530265,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0008516880504966934,
+              "rmse": 0.00026734697536249505,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1789.015625,
+            "browserProcessRssMiB": 2380.40625,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047865.9375,
+            "height": 448
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.21650602748946568,
+              "rmse": 0.026446764721849852
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.013456005039652899,
+              "rmse": 0.0027676203087520094
+            }
+          },
+          "index": 5,
+          "caseIndex": 1,
+          "epoch": 7,
+          "phase": "measured",
+          "milliseconds": 769.3999999910593,
+          "width": 1047865.9375,
+          "height": 448,
+          "polls": 1,
+          "geometryReadMilliseconds": 769.3999999910593,
+          "externalMilliseconds": 770.7052919999987,
+          "verificationMilliseconds": 505.0730829999993,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.021229140747369257,
+              "rmse": 0.00570926954908942,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0023947942491714946,
+              "rmse": 0.0006292438071239947,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1789.171875,
+            "browserProcessRssMiB": 2383.65625,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047843.625,
+            "height": 512
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.24886934005656514,
+              "rmse": 0.022829695440570383
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.010241888566608903,
+              "rmse": 0.0023399536648610834
+            }
+          },
+          "index": 6,
+          "caseIndex": 2,
+          "epoch": 8,
+          "phase": "measured",
+          "milliseconds": 416.5,
+          "width": 1047843.625,
+          "height": 512,
+          "polls": 1,
+          "geometryReadMilliseconds": 416.5,
+          "externalMilliseconds": 418.19104199999856,
+          "verificationMilliseconds": 804.8573750000032,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01899050419251852,
+              "rmse": 0.00600469019085905,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002516460921433712,
+              "rmse": 0.0006519549386915503,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1804.03125,
+            "browserProcessRssMiB": 2398.3125,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047722.6875,
+            "height": 576
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.24293990580804348,
+              "rmse": 0.024108631196157748
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01015677507908326,
+              "rmse": 0.0025640990605999203
+            }
+          },
+          "index": 7,
+          "caseIndex": 3,
+          "epoch": 9,
+          "phase": "measured",
+          "milliseconds": 431.29999999701977,
+          "width": 1047722.6875,
+          "height": 576,
+          "polls": 1,
+          "geometryReadMilliseconds": 431.09999999403954,
+          "externalMilliseconds": 432.7562080000025,
+          "verificationMilliseconds": 3615.370749999998,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0213574024989841,
+              "rmse": 0.006135861826841404,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002294084336645019,
+              "rmse": 0.0006724132151779578,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1720.140625,
+            "browserProcessRssMiB": 2300.046875,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047996.75,
+            "height": 640
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.2419854495129945,
+              "rmse": 0.025488221385565522
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.005518254771099129,
+              "rmse": 0.0009890099515424886
+            }
+          },
+          "index": 8,
+          "caseIndex": 0,
+          "epoch": 10,
+          "phase": "measured",
+          "milliseconds": 498.29999999701977,
+          "width": 1047996.75,
+          "height": 640,
+          "polls": 1,
+          "geometryReadMilliseconds": 498.29999999701977,
+          "externalMilliseconds": 507.5402499999982,
+          "verificationMilliseconds": 842.6704170000012,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.019132614443397644,
+              "rmse": 0.006425205288530265,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0008516880504966934,
+              "rmse": 0.00026734697536249505,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1770.171875,
+            "browserProcessRssMiB": 2255.4375,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047865.9375,
+            "height": 704
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.21650602748946568,
+              "rmse": 0.026446764721849852
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.013456005039652899,
+              "rmse": 0.0027676203087520094
+            }
+          },
+          "index": 9,
+          "caseIndex": 1,
+          "epoch": 11,
+          "phase": "measured",
+          "milliseconds": 990.5,
+          "width": 1047865.9375,
+          "height": 704,
+          "polls": 1,
+          "geometryReadMilliseconds": 990.5,
+          "externalMilliseconds": 993.3532080000004,
+          "verificationMilliseconds": 3655.1924579999977,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.021229140747369257,
+              "rmse": 0.00570926954908942,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0023947942491714946,
+              "rmse": 0.0006292438071239947,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1837.46875,
+            "browserProcessRssMiB": 2324.796875,
+            "rendererProcesses": 3
+          }
+        }
+      ],
+      "chrome": "153.0.8010.48",
+      "loadMilliseconds": 2446.175165999999,
+      "pageAudit": {
+        "authorScriptElements": 0,
+        "elements": 17322,
+        "fonts": [
+          {
+            "family": "candidatefcS0",
+            "status": "loaded"
+          },
+          {
+            "family": "candidatefcS1",
+            "status": "loaded"
+          },
+          {
+            "family": "candidatefcS2",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection0",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection1",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection2",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection3",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection4",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection5",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection6",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection7",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection8",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection9",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection10",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection11",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection12",
+            "status": "loaded"
+          }
+        ],
+        "csp": "script-src 'none'"
+      },
+      "initializationMemory": {
+        "rendererRssMiB": 1272.921875,
+        "browserProcessRssMiB": 1877.515625,
+        "rendererProcesses": 3
+      },
+      "errors": [],
+      "timing": {
+        "count": 8,
+        "median": 850.7999999970198,
+        "minimum": 416.5,
+        "maximum": 1187.2000000029802,
+        "p90": 1187.2000000029802,
+        "mean": 783.7749999966472
+      },
+      "sampledPeakRendererRssMiB": 1838.71875
+    },
+    {
+      "variant": "candidate-layer0",
+      "layer": 0,
+      "repeat": 1,
+      "passed": true,
+      "samples": [
+        {
+          "terminalAfterVerification": {
+            "width": 1047865.9375,
+            "height": 128
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.21650602748946568,
+              "rmse": 0.026446764721849852
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.013456005039652899,
+              "rmse": 0.0027676203087520094
+            }
+          },
+          "index": 0,
+          "caseIndex": 1,
+          "epoch": 2,
+          "phase": "warmup",
+          "milliseconds": 1091.1000000089407,
+          "width": 1047865.9375,
+          "height": 128,
+          "polls": 1,
+          "geometryReadMilliseconds": 1090.9000000059605,
+          "externalMilliseconds": 1092.4704590000038,
+          "verificationMilliseconds": 1162.0817500000048,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.021229140747369257,
+              "rmse": 0.00570926954908942,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0023947942491714946,
+              "rmse": 0.0006292438071239947,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1436.359375,
+            "browserProcessRssMiB": 2036.96875,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047843.625,
+            "height": 192
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.24886934005656514,
+              "rmse": 0.022829695440570383
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.010241888566608903,
+              "rmse": 0.0023399536648610834
+            }
+          },
+          "index": 1,
+          "caseIndex": 2,
+          "epoch": 3,
+          "phase": "warmup",
+          "milliseconds": 1100.5,
+          "width": 1047843.625,
+          "height": 192,
+          "polls": 1,
+          "geometryReadMilliseconds": 1100.5,
+          "externalMilliseconds": 1101.749291,
+          "verificationMilliseconds": 1153.1759579999998,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01899050419251852,
+              "rmse": 0.00600469019085905,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002516460921433712,
+              "rmse": 0.0006519549386915503,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1675.875,
+            "browserProcessRssMiB": 2276.828125,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047722.6875,
+            "height": 256
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.24293990580804348,
+              "rmse": 0.024108631196157748
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01015677507908326,
+              "rmse": 0.0025640990605999203
+            }
+          },
+          "index": 2,
+          "caseIndex": 3,
+          "epoch": 4,
+          "phase": "measured",
+          "milliseconds": 1150.7999999970198,
+          "width": 1047722.6875,
+          "height": 256,
+          "polls": 1,
+          "geometryReadMilliseconds": 1150.7999999970198,
+          "externalMilliseconds": 1156.7006670000046,
+          "verificationMilliseconds": 1172.0067080000008,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0213574024989841,
+              "rmse": 0.006135861826841404,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002294084336645019,
+              "rmse": 0.0006724132151779578,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1711.15625,
+            "browserProcessRssMiB": 2312.28125,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047996.75,
+            "height": 320
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.2419854495129945,
+              "rmse": 0.025488221385565522
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.005518254771099129,
+              "rmse": 0.0009890099515424886
+            }
+          },
+          "index": 3,
+          "caseIndex": 0,
+          "epoch": 5,
+          "phase": "measured",
+          "milliseconds": 1048.199999988079,
+          "width": 1047996.75,
+          "height": 320,
+          "polls": 1,
+          "geometryReadMilliseconds": 1048.199999988079,
+          "externalMilliseconds": 1049.5783749999973,
+          "verificationMilliseconds": 2799.825834000003,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.019132614443397644,
+              "rmse": 0.006425205288530265,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0008516880504966934,
+              "rmse": 0.00026734697536249505,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1838.96875,
+            "browserProcessRssMiB": 2444.59375,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047865.9375,
+            "height": 384
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.21650602748946568,
+              "rmse": 0.026446764721849852
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.013456005039652899,
+              "rmse": 0.0027676203087520094
+            }
+          },
+          "index": 4,
+          "caseIndex": 1,
+          "epoch": 6,
+          "phase": "measured",
+          "milliseconds": 1056.2999999970198,
+          "width": 1047865.9375,
+          "height": 384,
+          "polls": 1,
+          "geometryReadMilliseconds": 1056.2999999970198,
+          "externalMilliseconds": 1057.5490419999987,
+          "verificationMilliseconds": 249.42758299999696,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.021229140747369257,
+              "rmse": 0.00570926954908942,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0023947942491714946,
+              "rmse": 0.0006292438071239947,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1935.734375,
+            "browserProcessRssMiB": 2537.078125,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047843.625,
+            "height": 448
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.24886934005656514,
+              "rmse": 0.022829695440570383
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.010241888566608903,
+              "rmse": 0.0023399536648610834
+            }
+          },
+          "index": 5,
+          "caseIndex": 2,
+          "epoch": 7,
+          "phase": "measured",
+          "milliseconds": 416.6000000089407,
+          "width": 1047843.625,
+          "height": 448,
+          "polls": 1,
+          "geometryReadMilliseconds": 416.6000000089407,
+          "externalMilliseconds": 417.82916699999623,
+          "verificationMilliseconds": 805.5368329999983,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01899050419251852,
+              "rmse": 0.00600469019085905,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002516460921433712,
+              "rmse": 0.0006519549386915503,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1967.515625,
+            "browserProcessRssMiB": 2566.9375,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047722.6875,
+            "height": 512
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.24293990580804348,
+              "rmse": 0.024108631196157748
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01015677507908326,
+              "rmse": 0.0025640990605999203
+            }
+          },
+          "index": 6,
+          "caseIndex": 3,
+          "epoch": 8,
+          "phase": "measured",
+          "milliseconds": 472.59999999403954,
+          "width": 1047722.6875,
+          "height": 512,
+          "polls": 1,
+          "geometryReadMilliseconds": 472.5,
+          "externalMilliseconds": 479.8544170000023,
+          "verificationMilliseconds": 3677.802334,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0213574024989841,
+              "rmse": 0.006135861826841404,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002294084336645019,
+              "rmse": 0.0006724132151779578,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1730.515625,
+            "browserProcessRssMiB": 2333.8125,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047996.75,
+            "height": 576
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.2419854495129945,
+              "rmse": 0.025488221385565522
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.005518254771099129,
+              "rmse": 0.0009890099515424886
+            }
+          },
+          "index": 7,
+          "caseIndex": 0,
+          "epoch": 9,
+          "phase": "measured",
+          "milliseconds": 1050.5,
+          "width": 1047996.75,
+          "height": 576,
+          "polls": 1,
+          "geometryReadMilliseconds": 1050.3999999910593,
+          "externalMilliseconds": 1055.955915999999,
+          "verificationMilliseconds": 262.43537500000093,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.019132614443397644,
+              "rmse": 0.006425205288530265,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0008516880504966934,
+              "rmse": 0.00026734697536249505,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1820.578125,
+            "browserProcessRssMiB": 2424.0625,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047865.9375,
+            "height": 640
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.21650602748946568,
+              "rmse": 0.026446764721849852
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.013456005039652899,
+              "rmse": 0.0027676203087520094
+            }
+          },
+          "index": 8,
+          "caseIndex": 1,
+          "epoch": 10,
+          "phase": "measured",
+          "milliseconds": 1044.7999999970198,
+          "width": 1047865.9375,
+          "height": 640,
+          "polls": 1,
+          "geometryReadMilliseconds": 1044.7999999970198,
+          "externalMilliseconds": 1046.2398750000066,
+          "verificationMilliseconds": 3471.580541999996,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.021229140747369257,
+              "rmse": 0.00570926954908942,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0023947942491714946,
+              "rmse": 0.0006292438071239947,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1935.15625,
+            "browserProcessRssMiB": 2539.1875,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047843.625,
+            "height": 704
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.24886934005656514,
+              "rmse": 0.022829695440570383
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.010241888566608903,
+              "rmse": 0.0023399536648610834
+            }
+          },
+          "index": 9,
+          "caseIndex": 2,
+          "epoch": 11,
+          "phase": "measured",
+          "milliseconds": 411.70000000298023,
+          "width": 1047843.625,
+          "height": 704,
+          "polls": 1,
+          "geometryReadMilliseconds": 411.6000000089407,
+          "externalMilliseconds": 412.752084000007,
+          "verificationMilliseconds": 797.3980420000007,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01899050419251852,
+              "rmse": 0.00600469019085905,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002516460921433712,
+              "rmse": 0.0006519549386915503,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1935.859375,
+            "browserProcessRssMiB": 2535.859375,
+            "rendererProcesses": 3
+          }
+        }
+      ],
+      "chrome": "153.0.8010.48",
+      "loadMilliseconds": 2744.0504169999986,
+      "pageAudit": {
+        "authorScriptElements": 0,
+        "elements": 17322,
+        "fonts": [
+          {
+            "family": "candidatefcS0",
+            "status": "loaded"
+          },
+          {
+            "family": "candidatefcS1",
+            "status": "loaded"
+          },
+          {
+            "family": "candidatefcS2",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection0",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection1",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection2",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection3",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection4",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection5",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection6",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection7",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection8",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection9",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection10",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection11",
+            "status": "loaded"
+          },
+          {
+            "family": "CandidateProjection12",
+            "status": "loaded"
+          }
+        ],
+        "csp": "script-src 'none'"
+      },
+      "initializationMemory": {
+        "rendererRssMiB": 1272.609375,
+        "browserProcessRssMiB": 1872.359375,
+        "rendererProcesses": 3
+      },
+      "errors": [],
+      "timing": {
+        "count": 8,
+        "median": 1048.199999988079,
+        "minimum": 411.70000000298023,
+        "maximum": 1150.7999999970198,
+        "p90": 1150.7999999970198,
+        "mean": 831.4374999981374
+      },
+      "sampledPeakRendererRssMiB": 1967.515625
+    },
+    {
+      "variant": "baseline-layer0",
+      "layer": 0,
+      "repeat": 1,
+      "passed": true,
+      "samples": [
+        {
+          "terminalAfterVerification": {
+            "width": 1047869.6875,
+            "height": 128
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.08955290248946568,
+              "rmse": 0.007717729661080835
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00812438449861752,
+              "rmse": 0.0008553532504948548
+            }
+          },
+          "index": 0,
+          "caseIndex": 1,
+          "epoch": 2,
+          "phase": "warmup",
+          "milliseconds": 906.7999999970198,
+          "width": 1047869.6875,
+          "height": 128,
+          "polls": 2,
+          "geometryReadMilliseconds": 195.09999999403954,
+          "externalMilliseconds": 907.8508749999892,
+          "verificationMilliseconds": 303.2084590000013,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.015484109805505852,
+              "rmse": 0.0017388651842633726,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.001468803150592779,
+              "rmse": 0.00016775254675971716,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 805.421875,
+            "browserProcessRssMiB": 1339.125,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047845.4375,
+            "height": 192
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.057847554174749405,
+              "rmse": 0.006507779263435728
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.005588491103236393,
+              "rmse": 0.0006654765635601979
+            }
+          },
+          "index": 1,
+          "caseIndex": 2,
+          "epoch": 3,
+          "phase": "warmup",
+          "milliseconds": 925,
+          "width": 1047845.4375,
+          "height": 192,
+          "polls": 2,
+          "geometryReadMilliseconds": 202.99999998509884,
+          "externalMilliseconds": 926.4898749999993,
+          "verificationMilliseconds": 299.30466599999636,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01683397456871205,
+              "rmse": 0.0015698061497647683,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002697347316343912,
+              "rmse": 0.00020190753024004241,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 931.34375,
+            "browserProcessRssMiB": 1464.96875,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047720.5625,
+            "height": 256
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.10453587743373915,
+              "rmse": 0.009670590268225464
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.02282000176647414,
+              "rmse": 0.0011634941355288194
+            }
+          },
+          "index": 2,
+          "caseIndex": 3,
+          "epoch": 4,
+          "phase": "measured",
+          "milliseconds": 926.3000000119209,
+          "width": 1047720.5625,
+          "height": 256,
+          "polls": 2,
+          "geometryReadMilliseconds": 219.1000000089407,
+          "externalMilliseconds": 927.4512919999979,
+          "verificationMilliseconds": 263.01600000000326,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.014954106394961642,
+              "rmse": 0.0016622527988273525,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0017980976876554866,
+              "rmse": 0.0002036913365700745,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 992.75,
+            "browserProcessRssMiB": 1521.875,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047998,
+            "height": 320
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.22314907474342505,
+              "rmse": 0.016652424993560882
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.006842770336063425,
+              "rmse": 0.0006223700708580596
+            }
+          },
+          "index": 3,
+          "caseIndex": 0,
+          "epoch": 5,
+          "phase": "measured",
+          "milliseconds": 751.2000000029802,
+          "width": 1047998,
+          "height": 320,
+          "polls": 2,
+          "geometryReadMilliseconds": 152.79999999701977,
+          "externalMilliseconds": 752.3377919999912,
+          "verificationMilliseconds": 300.88079200001084,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.09852121499550748,
+              "rmse": 0.007964496400185457,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00344972601341767,
+              "rmse": 0.00029563332309581617,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 993.5,
+            "browserProcessRssMiB": 1522.625,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047869.6875,
+            "height": 384
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.08955290248946568,
+              "rmse": 0.007717729661080835
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00812438449861752,
+              "rmse": 0.0008553532504948548
+            }
+          },
+          "index": 4,
+          "caseIndex": 1,
+          "epoch": 6,
+          "phase": "measured",
+          "milliseconds": 765,
+          "width": 1047869.6875,
+          "height": 384,
+          "polls": 2,
+          "geometryReadMilliseconds": 153.40000000596046,
+          "externalMilliseconds": 766.1005000000005,
+          "verificationMilliseconds": 352.5452500000101,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.015484109805505852,
+              "rmse": 0.0017388651842633726,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.001468803150592779,
+              "rmse": 0.00016775254675971716,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 995.640625,
+            "browserProcessRssMiB": 1524.71875,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047845.4375,
+            "height": 448
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.057847554174749405,
+              "rmse": 0.006507779263435728
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.005588491103236393,
+              "rmse": 0.0006654765635601979
+            }
+          },
+          "index": 5,
+          "caseIndex": 2,
+          "epoch": 7,
+          "phase": "measured",
+          "milliseconds": 857.1000000089407,
+          "width": 1047845.4375,
+          "height": 448,
+          "polls": 2,
+          "geometryReadMilliseconds": 176.50000001490116,
+          "externalMilliseconds": 858.1453330000077,
+          "verificationMilliseconds": 262.13787500000035,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01683397456871205,
+              "rmse": 0.0015698061497647683,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002697347316343912,
+              "rmse": 0.00020190753024004241,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1025.1875,
+            "browserProcessRssMiB": 1554.265625,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047720.5625,
+            "height": 512
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.10453587743373915,
+              "rmse": 0.009670590268225464
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.02282000176647414,
+              "rmse": 0.0011634941355288194
+            }
+          },
+          "index": 6,
+          "caseIndex": 3,
+          "epoch": 8,
+          "phase": "measured",
+          "milliseconds": 742.9000000059605,
+          "width": 1047720.5625,
+          "height": 512,
+          "polls": 2,
+          "geometryReadMilliseconds": 146.70000000298023,
+          "externalMilliseconds": 744.0438339999964,
+          "verificationMilliseconds": 301.7974580000009,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.014954106394961642,
+              "rmse": 0.0016622527988273525,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.0017980976876554866,
+              "rmse": 0.0002036913365700745,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1025.640625,
+            "browserProcessRssMiB": 1554.78125,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047998,
+            "height": 576
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.22314907474342505,
+              "rmse": 0.016652424993560882
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.006842770336063425,
+              "rmse": 0.0006223700708580596
+            }
+          },
+          "index": 7,
+          "caseIndex": 0,
+          "epoch": 9,
+          "phase": "measured",
+          "milliseconds": 772.6999999880791,
+          "width": 1047998,
+          "height": 576,
+          "polls": 2,
+          "geometryReadMilliseconds": 152.79999999701977,
+          "externalMilliseconds": 773.7064580000006,
+          "verificationMilliseconds": 346.9702089999919,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.09852121499550748,
+              "rmse": 0.007964496400185457,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00344972601341767,
+              "rmse": 0.00029563332309581617,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1025.96875,
+            "browserProcessRssMiB": 1555.125,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047869.6875,
+            "height": 640
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.08955290248946568,
+              "rmse": 0.007717729661080835
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.00812438449861752,
+              "rmse": 0.0008553532504948548
+            }
+          },
+          "index": 8,
+          "caseIndex": 1,
+          "epoch": 10,
+          "phase": "measured",
+          "milliseconds": 845,
+          "width": 1047869.6875,
+          "height": 640,
+          "polls": 2,
+          "geometryReadMilliseconds": 167.59999999403954,
+          "externalMilliseconds": 845.9711249999964,
+          "verificationMilliseconds": 254.32062500000757,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.015484109805505852,
+              "rmse": 0.0017388651842633726,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.001468803150592779,
+              "rmse": 0.00016775254675971716,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1038.828125,
+            "browserProcessRssMiB": 1568.015625,
+            "rendererProcesses": 3
+          }
+        },
+        {
+          "terminalAfterVerification": {
+            "width": 1047845.4375,
+            "height": 704
+          },
+          "endpointUnchanged": true,
+          "commonTargetErrors": {
+            "state": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.057847554174749405,
+              "rmse": 0.006507779263435728
+            },
+            "nextLayerNorm": {
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.005588491103236393,
+              "rmse": 0.0006654765635601979
+            }
+          },
+          "index": 9,
+          "caseIndex": 2,
+          "epoch": 11,
+          "phase": "measured",
+          "milliseconds": 743.2999999970198,
+          "width": 1047845.4375,
+          "height": 704,
+          "polls": 2,
+          "geometryReadMilliseconds": 148,
+          "externalMilliseconds": 744.3726670000033,
+          "verificationMilliseconds": 286.2093750000058,
+          "checks": {
+            "state": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.01683397456871205,
+              "rmse": 0.0015698061497647683,
+              "tolerance": {
+                "maximum": null,
+                "rmse": 0.05
+              }
+            },
+            "nextLayerNorm": {
+              "passed": true,
+              "finite": true,
+              "count": 768,
+              "maximumAbsoluteError": 0.002697347316343912,
+              "rmse": 0.00020190753024004241,
+              "tolerance": {
+                "maximum": 0.01,
+                "rmse": 0.01
+              }
+            }
+          },
+          "passed": true,
+          "memory": {
+            "rendererRssMiB": 1038.953125,
+            "browserProcessRssMiB": 1568.140625,
+            "rendererProcesses": 3
+          }
+        }
+      ],
+      "chrome": "153.0.8010.48",
+      "loadMilliseconds": 2330.3762080000015,
+      "pageAudit": {
+        "authorScriptElements": 0,
+        "elements": 8483,
+        "fonts": [
+          {
+            "family": "b0fcS0",
+            "status": "loaded"
+          },
+          {
+            "family": "b0fcS1",
+            "status": "loaded"
+          },
+          {
+            "family": "b0fcS2",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS0",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS1",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS2",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS3",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS4",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS5",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS6",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS7",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS8",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS9",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS10",
+            "status": "loaded"
+          },
+          {
+            "family": "b0projS11",
+            "status": "loaded"
+          }
+        ],
+        "csp": "script-src 'none'"
+      },
+      "initializationMemory": {
+        "rendererRssMiB": 678.359375,
+        "browserProcessRssMiB": 1208.375,
+        "rendererProcesses": 3
+      },
+      "errors": [],
+      "timing": {
+        "count": 8,
+        "median": 772.6999999880791,
+        "minimum": 742.9000000059605,
+        "maximum": 926.3000000119209,
+        "p90": 926.3000000119209,
+        "mean": 800.4375000018626
+      },
+      "sampledPeakRendererRssMiB": 1038.953125
+    }
+  ],
+  "assets": {
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-0.woff2": {
+      "sha256": "3d8ac5441e77493ef612097428af6fe22f828211642530c6bee5c35438fa3068",
+      "bytes": 283444
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-1.woff2": {
+      "sha256": "3f55bd62f64b9cf285f9f979d4983754c9342c118f6112abdc70d27754ee6ef0",
+      "bytes": 282352
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-10.woff2": {
+      "sha256": "ecd6feba32cdfb0564be7a35ce54bb4eb5d47b53c2969dcdf2a99d5a368d76c2",
+      "bytes": 280596
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-11.woff2": {
+      "sha256": "ec511d463ac7229fd9b3436515b05b2e78d5db9232c81bfb6b47546547d4b9d0",
+      "bytes": 280428
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-12.woff2": {
+      "sha256": "b06d68e97cf19b4d31e0d68f309927fcbad25c5b4373eb0b282a268694daae60",
+      "bytes": 279848
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-2.woff2": {
+      "sha256": "d09566ca60315f11b68e2fd1770ddb3761b43531facf3b2a47d33fa8d491a2b0",
+      "bytes": 279704
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-3.woff2": {
+      "sha256": "3ef61b1555798c6c8c1673f62233fb3b3517d91245746999af7b60c9bf000068",
+      "bytes": 279640
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-4.woff2": {
+      "sha256": "b7c92626ed2bb1e33f0331e1dd5dc4a9cb80dc00c513668ac857e06fe0aa005f",
+      "bytes": 279784
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-5.woff2": {
+      "sha256": "cdd31302fdc9b75b2b998e48dbd532f177a96fe9e108f2de563fd31e8fd3087c",
+      "bytes": 280680
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-6.woff2": {
+      "sha256": "1461cf6c71224ec7d9163152d912b6b9dab3357f56e2ac50078e637dc24a15cd",
+      "bytes": 280504
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-7.woff2": {
+      "sha256": "f3d3d6bf85de2561ea3fb69ae551742e49179bf16b723ef56a8089a2d7b50b55",
+      "bytes": 279780
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-8.woff2": {
+      "sha256": "c54c681173a6a4e3f1c54943780a57f20d8ee84a0fbb03550c5d52a3fd17b777",
+      "bytes": 280016
+    },
+    "experiments/avar2-gelu-linear-hvar-full-mlp-g13/gelu-projection-9.woff2": {
+      "sha256": "b318dd8ade304e0279f4eae14a5cc25d3f0a65a7fa94fcfa3c65a84b29d14fc0",
+      "bytes": 280504
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s0.woff2": {
+      "sha256": "8047b53e078e8857ce675a6344bfeeefa3eed66e0b051af02bbfae2a945b2607",
+      "bytes": 249984
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s1.woff2": {
+      "sha256": "a2884608667e2feb2eb42d3aef758a87412f149c5a3b3876fe4201eec031f9e8",
+      "bytes": 262836
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s10.woff2": {
+      "sha256": "3697e2a2e7df26d862c8a7756f0d1b1b9c26a724de6094341f1bd0128a205182",
+      "bytes": 236200
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s11.woff2": {
+      "sha256": "2f4a13c0a90c1d61c7eea7b71d170659c12fd8471c6650685a73414ded1b5a6e",
+      "bytes": 248436
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s2.woff2": {
+      "sha256": "783059c558eaf0edb0a643891eb28e7ae1c5cf6ccf5e2d8630cc8960020aca01",
+      "bytes": 235844
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s3.woff2": {
+      "sha256": "6886ad669ce259c1bd7f352a836872b1b8160978715fe111b81a0e45324434bf",
+      "bytes": 263728
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s4.woff2": {
+      "sha256": "4f10864bfc2ec55cc85b080a1b5088794a4825c9a9afd1f15b51a2ee87d330db",
+      "bytes": 234940
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s5.woff2": {
+      "sha256": "d67280340ff906d70a6ea82f7235154fdd52f46c033234a0d79d294c6d140499",
+      "bytes": 238460
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s6.woff2": {
+      "sha256": "3852f92ea166f06878b56998b4bffa7d80dfee5eac1bfa667e529320319e5d78",
+      "bytes": 264340
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s7.woff2": {
+      "sha256": "f353ceadb2fec7c235fe97ce05fa9a3a5947c05cd4344cc2eac45c37358a0fa8",
+      "bytes": 234468
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s8.woff2": {
+      "sha256": "6b27f745982e1e7280958abe3e5aa48c2db814c023864a6590ea6ffbac78e7f1",
+      "bytes": 249352
+    },
+    "experiments/gpt2-block-css/mlp-proj-rowbase-s9.woff2": {
+      "sha256": "f6c35a46f87c8cbd9a2e965057484499c5c043cd095a7b62bcc02d462ad124eb",
+      "bytes": 235916
+    },
+    "experiments/hybrid-12block-profile/fonts/b0-fc-s0.woff2": {
+      "sha256": "4eaead286a33ca614c329512e2f7ce5e6ca0dbfe82e04ab6a5e416c9d3f511cd",
+      "bytes": 941856
+    },
+    "experiments/hybrid-12block-profile/fonts/b0-fc-s1.woff2": {
+      "sha256": "70cb6acfb09a70b65965a1e3aab44bc6d1ce83b94df5760eca3a9795e3db0091",
+      "bytes": 940132
+    },
+    "experiments/hybrid-12block-profile/fonts/b0-fc-s2.woff2": {
+      "sha256": "3d945645e10bf726fefca3c0ff6dd235ae3182097e51fd28e7226f84a34adf00",
+      "bytes": 942232
+    },
+    "experiments/native-mlp-integration/baseline-layer0.html": {
+      "sha256": "8e318d4e5f88c79b59aec51bfbc811b9841d2e51dd5412d0a18928ac19690a9a",
+      "bytes": 4040622
+    },
+    "experiments/native-mlp-integration/candidate-layer0.html": {
+      "sha256": "b01449a48bd5fb7e91c67b0f73a65f609d24b01139cceb3a742132b991329813",
+      "bytes": 5121164
+    }
+  },
+  "summary": {
+    "variants": [
+      {
+        "variant": "baseline-layer0",
+        "backend": "baseline",
+        "layer": 0,
+        "processMediansMilliseconds": [
+          835.2999999970198,
+          772.6999999880791
+        ],
+        "medianOfProcessMediansMilliseconds": 835.2999999970198,
+        "loadMilliseconds": [
+          2331.418667,
+          2330.3762080000015
+        ],
+        "sampledPeakRendererRssMiB": [
+          1137.390625,
+          1038.953125
+        ],
+        "ownOracleStateMaxAbs": 0.09852121499550748,
+        "ownOracleStateMaxRmse": 0.007964496400185457,
+        "commonTargetStateMaxRmse": 0.016652424993560882,
+        "nextLayerNormMaxAbs": 0.00344972601341767
+      },
+      {
+        "variant": "candidate-layer0",
+        "backend": "candidate",
+        "layer": 0,
+        "processMediansMilliseconds": [
+          850.7999999970198,
+          1048.199999988079
+        ],
+        "medianOfProcessMediansMilliseconds": 1048.199999988079,
+        "loadMilliseconds": [
+          2446.175165999999,
+          2744.0504169999986
+        ],
+        "sampledPeakRendererRssMiB": [
+          1838.71875,
+          1967.515625
+        ],
+        "ownOracleStateMaxAbs": 0.0213574024989841,
+        "ownOracleStateMaxRmse": 0.006425205288530265,
+        "commonTargetStateMaxRmse": 0.026446764721849852,
+        "nextLayerNormMaxAbs": 0.002516460921433712
+      }
+    ],
+    "pairedLayerComparisons": [
+      {
+        "layer": 0,
+        "repeat": 0,
+        "paired": true,
+        "order": [
+          "baseline-layer0",
+          "candidate-layer0"
+        ],
+        "baselineMedianMilliseconds": 835.2999999970198,
+        "candidateMedianMilliseconds": 850.7999999970198,
+        "candidateChangePercent": 1.8556207350718612,
+        "baselineSampledPeakRendererRssMiB": 1137.390625,
+        "candidateSampledPeakRendererRssMiB": 1838.71875
+      },
+      {
+        "layer": 0,
+        "repeat": 1,
+        "paired": true,
+        "order": [
+          "candidate-layer0",
+          "baseline-layer0"
+        ],
+        "baselineMedianMilliseconds": 772.6999999880791,
+        "candidateMedianMilliseconds": 1048.199999988079,
+        "candidateChangePercent": 35.65419956053453,
+        "baselineSampledPeakRendererRssMiB": 1038.953125,
+        "candidateSampledPeakRendererRssMiB": 1967.515625
+      }
+    ],
+    "pairs": [
+      {
+        "repeat": 0,
+        "order": [
+          "baseline-layer0",
+          "candidate-layer0"
+        ],
+        "mediansMilliseconds": {
+          "baseline-layer0": 835.2999999970198,
+          "candidate-layer0": 850.7999999970198
+        }
+      },
+      {
+        "repeat": 1,
+        "order": [
+          "candidate-layer0",
+          "baseline-layer0"
+        ],
+        "mediansMilliseconds": {
+          "candidate-layer0": 1048.199999988079,
+          "baseline-layer0": 772.6999999880791
+        }
+      }
+    ]
+  },
+  "finishedAt": "2026-09-18T04:23:24.692Z"
+}

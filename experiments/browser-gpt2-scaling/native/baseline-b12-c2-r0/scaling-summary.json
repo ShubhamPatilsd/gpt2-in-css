@@ -1,0 +1,129 @@
+{
+  "directory": "/Users/shubhampatil/Documents/programming/gpt2-css/experiments/browser-gpt2-scaling/native/baseline-b12-c2-r0",
+  "reportPrefix": "",
+  "complete": true,
+  "manifest": {
+    "blocks": 12,
+    "capacity": 2,
+    "renderingGraphs": 1,
+    "coreBackend": "reused",
+    "cacheLayout": "flat",
+    "cacheCodec": "font-vector",
+    "kvWindow": 2,
+    "kvSinks": 0,
+    "isolatedMetricState": false,
+    "valueLayout": "runs",
+    "globalProjection": false,
+    "fontVectorOperatorVersion": 2,
+    "attentionMask": "full causal",
+    "scopedState": true,
+    "centeredContext": true,
+    "dynamicActivationRange": true,
+    "runtimeJavaScript": false,
+    "liveness": false,
+    "uncachedStyle": false,
+    "nativeLayerTokenHandshake": true,
+    "privateLayerControl": true,
+    "localLayerContainer": true,
+    "kvStorage": "native delayed whole-head font settings",
+    "fontFaces": 261,
+    "autostart": true,
+    "head": "full-vocabulary-q16-two-pass",
+    "promptTokens": 1,
+    "generatedTokenLimit": 2,
+    "scheduler": "CSS receipts and SVG SMIL events",
+    "isolateHead": true,
+    "detachedOutput": true,
+    "headEpochTransport": "packed four bits",
+    "fontBackend": "original",
+    "teacherForcedInputs": null,
+    "teacherForcedTargets": null,
+    "scalingExperimentVariant": "baseline",
+    "scalingExperimentOptions": {
+      "widths": false,
+      "empty_slots": false,
+      "selective_fields": false,
+      "materialize_inputs": false,
+      "local_timelines": false,
+      "containment": null
+    }
+  },
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "observedTokenEpochs": [
+    1,
+    2
+  ],
+  "totalSeconds": 82.72893729200223,
+  "firstObservedSeconds": 44.813012292001076,
+  "warmIntervals": [
+    {
+      "epoch": 2,
+      "seconds": 37.90744533299949
+    }
+  ],
+  "warmMedianSeconds": 37.90744533299949,
+  "warmMinimumSeconds": 37.90744533299949,
+  "warmMaximumSeconds": 37.90744533299949,
+  "sampledPeak": {
+    "rendererRssMiB": 3421.265625,
+    "browserTreeRssMiB": 3926.875
+  },
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 0,
+  "rendererWarmTaskPercentages": {
+    "RecalcStyleDuration": 50.99404445395117,
+    "LayoutDuration": 14.991390616283871,
+    "TaskOtherDuration": 33.929187008401726,
+    "DevToolsCommandDuration": 0.08537792136322647,
+    "ScriptDuration": 0.0,
+    "V8CompileDuration": 0.0
+  },
+  "coarseMilestones": {
+    "usableEpochs": [
+      2
+    ],
+    "missingOrNonmonotonicEpochs": [],
+    "note": "Observed geometry boundaries, not exclusive operation timings; shared frames and observer delay overlap.",
+    "percentages": {
+      "handoff": 5.52284480531101,
+      "embedding": 0.2167800497095436,
+      "coreAndKV": 93.94263878133829,
+      "finalBridgeAndHead": 0.31773636364115554
+    }
+  },
+  "tokens": [
+    11,
+    314
+  ],
+  "text": "Hello, I",
+  "tokenAgreement": [
+    true,
+    true
+  ],
+  "originalFloatAgreement": [
+    true,
+    true
+  ],
+  "finalResidualError": {
+    "finite": 768,
+    "rmse": 0.02722838875125626,
+    "maximum": 0.3135046254475924
+  },
+  "experiment": {
+    "variant": "baseline",
+    "scope": "12-layer GPT-2 with native autoregressive feedback and full vocabulary head",
+    "measurement": {
+      "limitSeconds": 900,
+      "quietSecondsAfterObserverSetup": 0,
+      "browserArguments": [
+        "--js-flags=--heap-growing-percent=10"
+      ],
+      "observer": "Existing native runtime harness: small geometry observers via CDP, approximately 100ms polling, no JavaScript domains",
+      "quietInterval": "None; normal observation run",
+      "timingCaveat": "Wall time includes navigation, font loading and CDP observation. Warm intervals are single-sequence token intervals, not an isolated stage timing."
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "scope": "Mechanism validation; not a performance benchmark or production cache/inference test",
+  "cases": [
+    {
+      "case": "attempt1-delay0-r0",
+      "passed": true,
+      "commits": 3,
+      "externalWritesAfterNavigation": 0,
+      "observeAfterSeconds": 0,
+      "completedBeforeFirstComputedStyleRead": null,
+      "maxQueryRMSE": 7.61258609361443e-06,
+      "maxOutputRMSE": 2.8696327455633407e-05,
+      "maxOutputAbsoluteError": 7.343254002367683e-05,
+      "maxPoisonRMSE": 6.982208460567761e-06,
+      "unrelatedObservedValidSamples": 8,
+      "unrelatedMaximumObservedOutputChange": 0.0,
+      "unrelatedError": {
+        "finite": 64,
+        "rmse": 2.098148576915629e-05,
+        "maximum": 5.123999407852242e-05
+      },
+      "archivedSourceHash": "b643d846200be95f38af36cd0c41e7e35956019a720fd3f5cb9c58c3b6ede378"
+    },
+    {
+      "case": "attempt1-unobserved-delay2-r0",
+      "passed": true,
+      "commits": 3,
+      "externalWritesAfterNavigation": 0,
+      "observeAfterSeconds": 2.0,
+      "completedBeforeFirstComputedStyleRead": null,
+      "maxQueryRMSE": 7.61258609361443e-06,
+      "maxOutputRMSE": 2.8696327455633407e-05,
+      "maxOutputAbsoluteError": 7.343254002367683e-05,
+      "maxPoisonRMSE": 6.982208460567761e-06,
+      "unrelatedObservedValidSamples": 1,
+      "unrelatedMaximumObservedOutputChange": 0.0,
+      "unrelatedError": {
+        "finite": 64,
+        "rmse": 2.098148576915629e-05,
+        "maximum": 5.123999407852242e-05
+      },
+      "archivedSourceHash": "b643d846200be95f38af36cd0c41e7e35956019a720fd3f5cb9c58c3b6ede378"
+    },
+    {
+      "case": "attempt2-unobserved-marker-delay2-r0",
+      "passed": true,
+      "commits": 3,
+      "externalWritesAfterNavigation": 0,
+      "observeAfterSeconds": 2.0,
+      "completedBeforeFirstComputedStyleRead": true,
+      "maxQueryRMSE": 7.61258609361443e-06,
+      "maxOutputRMSE": 2.8696327455633407e-05,
+      "maxOutputAbsoluteError": 7.343254002367683e-05,
+      "maxPoisonRMSE": 6.982208460567761e-06,
+      "unrelatedObservedValidSamples": 1,
+      "unrelatedMaximumObservedOutputChange": 0.0,
+      "unrelatedError": {
+        "finite": 64,
+        "rmse": 2.098148576915629e-05,
+        "maximum": 5.123999407852242e-05
+      },
+      "archivedSourceHash": "825a326c24176cac08b1e2197c4470e6eaf8d6420e4f5c83a6eb04a6aca67b2e"
+    }
+  ],
+  "allPassed": true,
+  "totalCommits": 9
+}

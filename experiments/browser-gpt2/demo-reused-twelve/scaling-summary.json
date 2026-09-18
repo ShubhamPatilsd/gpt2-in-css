@@ -1,0 +1,151 @@
+{
+  "directory": "experiments/browser-gpt2/demo-reused-twelve",
+  "reportPrefix": "",
+  "complete": true,
+  "manifest": {
+    "blocks": 12,
+    "capacity": 8,
+    "renderingGraphs": 1,
+    "coreBackend": "reused",
+    "cacheLayout": "flat",
+    "cacheCodec": "integer10",
+    "scopedState": true,
+    "centeredContext": true,
+    "dynamicActivationRange": true,
+    "runtimeJavaScript": false,
+    "liveness": false,
+    "uncachedStyle": false,
+    "nativeLayerTokenHandshake": true,
+    "privateLayerControl": true,
+    "localLayerContainer": true,
+    "fontFaces": 259,
+    "autostart": false,
+    "head": "full-vocabulary-q16-two-pass",
+    "promptTokens": 1,
+    "generatedTokenLimit": 8,
+    "kvStorage": "native delayed transitions",
+    "scheduler": "CSS receipts and SVG SMIL events",
+    "isolateHead": true,
+    "detachedOutput": true
+  },
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "observedTokenEpochs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "totalSeconds": 458.2055116250012,
+  "firstObservedSeconds": 81.96717337500013,
+  "warmIntervals": [
+    {
+      "epoch": 2,
+      "seconds": 41.16463287499937
+    },
+    {
+      "epoch": 3,
+      "seconds": 48.85206016700249
+    },
+    {
+      "epoch": 4,
+      "seconds": 50.10279454099873
+    },
+    {
+      "epoch": 5,
+      "seconds": 54.460945124999824
+    },
+    {
+      "epoch": 6,
+      "seconds": 59.36422479199979
+    },
+    {
+      "epoch": 7,
+      "seconds": 58.43688220799959
+    },
+    {
+      "epoch": 8,
+      "seconds": 63.85540766700066
+    }
+  ],
+  "warmMedianSeconds": 54.460945124999824,
+  "warmMinimumSeconds": 41.16463287499937,
+  "warmMaximumSeconds": 63.85540766700066,
+  "sampledPeak": {
+    "rendererRssMiB": 5445.1875,
+    "browserTreeRssMiB": 5850.9375
+  },
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 1,
+  "runToFirstSeconds": 50.9692607500001,
+  "rendererWarmTaskPercentages": {
+    "RecalcStyleDuration": 59.46143412661543,
+    "LayoutDuration": 8.298989630780197,
+    "TaskOtherDuration": 32.120109584763085,
+    "DevToolsCommandDuration": 0.1194666578413026,
+    "ScriptDuration": 0.0,
+    "V8CompileDuration": 0.0
+  },
+  "coarseMilestones": {
+    "usableEpochs": [
+      6,
+      7,
+      8
+    ],
+    "missingOrNonmonotonicEpochs": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "note": "Observed geometry boundaries, not exclusive operation timings; shared frames and observer delay overlap.",
+    "percentages": {
+      "handoff": 6.443944561946048,
+      "embedding": 0.3934265213380752,
+      "coreAndKV": 88.64589419873636,
+      "finalBridgeAndHead": 4.516734717979515
+    }
+  },
+  "tokens": [
+    11,
+    314,
+    1101,
+    7926,
+    11,
+    475,
+    314,
+    1101
+  ],
+  "text": "Hello, I'm sorry, but I'm",
+  "tokenAgreement": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "originalFloatAgreement": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "finalResidualError": {
+    "finite": 768,
+    "rmse": 0.01982621766719237,
+    "maximum": 0.08833541662345112
+  }
+}

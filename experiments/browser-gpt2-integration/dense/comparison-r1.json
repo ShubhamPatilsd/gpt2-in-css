@@ -1,0 +1,413 @@
+{
+  "protocol": "One fresh process per variant/stage, fixed baseline then candidate order, layers0/11, six epochs: position0 both layers,position1 both layers,revisitposition1 both layers. No repeat. First epoch cold; next five warm. Candidate shares measured harness/compiler source hashes with corresponding baseline.",
+  "scope": "Externally driven dense components with native arithmetic and generation receipts; no autonomous full-model inference.",
+  "interpretation": "All norm-private coordinates exactly match baseline. Small median decreases are not a demonstrated speedup: warm paired epochs are mixed and no repetition or order reversal was taken.",
+  "excluded": [
+    {
+      "case": "baseline-qkv-l0-11-r0",
+      "reason": "Standalone fixture omitted head-reduction base display/position rule used by native font readiness; font barrier timed out before any dense timing samples. Fixed in probe and preserved under a new repeat label."
+    }
+  ],
+  "cases": [
+    {
+      "stage": "qkv",
+      "baseline": "baseline-qkv-l0-11-r1/results.json",
+      "candidate": "norm-private-qkv-l0-11-r1/results.json",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "baselineWarmMedianMilliseconds": 279.6957079990534,
+      "candidateWarmMedianMilliseconds": 273.0657499996596,
+      "warmMedianChangePercent": -2.3704182115716455,
+      "allCandidateCoordinatesExactlyMatchBaseline": true,
+      "sourceHashesMatch": true,
+      "samples": [
+        {
+          "epoch": 1,
+          "layer": 0,
+          "position": 0,
+          "kind": "fresh-input",
+          "baselineMilliseconds": 1008.1322090045433,
+          "candidateMilliseconds": 936.5818750011385,
+          "changePercent": -7.097316538874942,
+          "baselineRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 6,
+            "LayoutDuration": 0.050999,
+            "RecalcStyleDuration": 0.579449,
+            "DevToolsCommandDuration": 0.0033179999999999998,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.901207,
+            "TaskOtherDuration": 0.267441
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 6,
+            "LayoutDuration": 0.04454,
+            "RecalcStyleDuration": 0.551561,
+            "DevToolsCommandDuration": 0.00111,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.8310660000000001,
+            "TaskOtherDuration": 0.233855
+          }
+        },
+        {
+          "epoch": 2,
+          "layer": 11,
+          "position": 0,
+          "kind": "fresh-input",
+          "baselineMilliseconds": 279.6957079990534,
+          "candidateMilliseconds": 273.0657499996596,
+          "changePercent": -2.3704182115716455,
+          "baselineRendererDelta": {
+            "LayoutCount": 2,
+            "RecalcStyleCount": 2,
+            "LayoutDuration": 0.034432000000000004,
+            "RecalcStyleDuration": 0.062697,
+            "DevToolsCommandDuration": 0.0013179999999999997,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.19397599999999993,
+            "TaskOtherDuration": 0.09552899999999998
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 2,
+            "RecalcStyleCount": 2,
+            "LayoutDuration": 0.034444999999999996,
+            "RecalcStyleDuration": 0.06169900000000006,
+            "DevToolsCommandDuration": 0.0011280000000000005,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.19290299999999994,
+            "TaskOtherDuration": 0.095631
+          }
+        },
+        {
+          "epoch": 3,
+          "layer": 0,
+          "position": 1,
+          "kind": "fresh-input",
+          "baselineMilliseconds": 280.70424999896204,
+          "candidateMilliseconds": 285.06650000053924,
+          "changePercent": 1.554037746700776,
+          "baselineRendererDelta": {
+            "LayoutCount": 2,
+            "RecalcStyleCount": 2,
+            "LayoutDuration": 0.04064499999999999,
+            "RecalcStyleDuration": 0.06620899999999996,
+            "DevToolsCommandDuration": 0.001119000000000002,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.2192829999999999,
+            "TaskOtherDuration": 0.11131000000000002
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 2,
+            "RecalcStyleCount": 2,
+            "LayoutDuration": 0.041068999999999994,
+            "RecalcStyleDuration": 0.06495799999999996,
+            "DevToolsCommandDuration": 0.0011909999999999976,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.2189970000000001,
+            "TaskOtherDuration": 0.11177900000000002
+          }
+        },
+        {
+          "epoch": 4,
+          "layer": 11,
+          "position": 1,
+          "kind": "fresh-input",
+          "baselineMilliseconds": 279.9136670000735,
+          "candidateMilliseconds": 274.28587499889545,
+          "changePercent": -2.010545630548488,
+          "baselineRendererDelta": {
+            "LayoutCount": 2,
+            "RecalcStyleCount": 2,
+            "LayoutDuration": 0.034527,
+            "RecalcStyleDuration": 0.06005000000000005,
+            "DevToolsCommandDuration": 0.0012209999999999999,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.19441600000000014,
+            "TaskOtherDuration": 0.09861799999999998
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 2,
+            "RecalcStyleCount": 2,
+            "LayoutDuration": 0.033567000000000013,
+            "RecalcStyleDuration": 0.05921299999999996,
+            "DevToolsCommandDuration": 0.0012119999999999978,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.18843699999999997,
+            "TaskOtherDuration": 0.094445
+          }
+        },
+        {
+          "epoch": 5,
+          "layer": 0,
+          "position": 1,
+          "kind": "layer-revisit",
+          "baselineMilliseconds": 242.92779199458892,
+          "candidateMilliseconds": 250.9155000007013,
+          "changePercent": 3.2880997026022873,
+          "baselineRendererDelta": {
+            "LayoutCount": 2,
+            "RecalcStyleCount": 2,
+            "LayoutDuration": 0.011873999999999996,
+            "RecalcStyleDuration": 0.06688799999999995,
+            "DevToolsCommandDuration": 0.0011399999999999952,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.18606699999999998,
+            "TaskOtherDuration": 0.10616499999999995
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 2,
+            "RecalcStyleCount": 2,
+            "LayoutDuration": 0.011759999999999993,
+            "RecalcStyleDuration": 0.0634650000000001,
+            "DevToolsCommandDuration": 0.0011660000000000004,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.17976199999999998,
+            "TaskOtherDuration": 0.10337099999999999
+          }
+        },
+        {
+          "epoch": 6,
+          "layer": 11,
+          "position": 1,
+          "kind": "layer-revisit",
+          "baselineMilliseconds": 233.89654100174084,
+          "candidateMilliseconds": 236.380916001508,
+          "changePercent": 1.062168336960867,
+          "baselineRendererDelta": {
+            "LayoutCount": 2,
+            "RecalcStyleCount": 2,
+            "LayoutDuration": 0.010624000000000022,
+            "RecalcStyleDuration": 0.05698900000000007,
+            "DevToolsCommandDuration": 0.0009949999999999959,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.15032,
+            "TaskOtherDuration": 0.081712
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 2,
+            "RecalcStyleCount": 2,
+            "LayoutDuration": 0.010327000000000003,
+            "RecalcStyleDuration": 0.060394999999999976,
+            "DevToolsCommandDuration": 0.0010949999999999988,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.15545299999999984,
+            "TaskOtherDuration": 0.08363599999999993
+          }
+        }
+      ]
+    },
+    {
+      "stage": "mlp",
+      "baseline": "baseline-mlp-l0-11-r1/results.json",
+      "candidate": "norm-private-mlp-l0-11-r1/results.json",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "baselineWarmMedianMilliseconds": 601.6678339947248,
+      "candidateWarmMedianMilliseconds": 577.1901669941144,
+      "warmMedianChangePercent": -4.068302411663405,
+      "allCandidateCoordinatesExactlyMatchBaseline": true,
+      "sourceHashesMatch": true,
+      "samples": [
+        {
+          "epoch": 1,
+          "layer": 0,
+          "position": 0,
+          "kind": "fresh-input",
+          "baselineMilliseconds": 1785.951917001512,
+          "candidateMilliseconds": 1821.980208005698,
+          "changePercent": 2.017315844912271,
+          "baselineRendererDelta": {
+            "LayoutCount": 5,
+            "RecalcStyleCount": 7,
+            "LayoutDuration": 0.127867,
+            "RecalcStyleDuration": 1.077271,
+            "DevToolsCommandDuration": 0.00151,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 1.623965,
+            "TaskOtherDuration": 0.417317
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 5,
+            "RecalcStyleCount": 7,
+            "LayoutDuration": 0.142925,
+            "RecalcStyleDuration": 1.087464,
+            "DevToolsCommandDuration": 0.001701,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 1.725653,
+            "TaskOtherDuration": 0.49356300000000003
+          }
+        },
+        {
+          "epoch": 2,
+          "layer": 11,
+          "position": 0,
+          "kind": "fresh-input",
+          "baselineMilliseconds": 601.6678339947248,
+          "candidateMilliseconds": 636.4535000029719,
+          "changePercent": 5.781539920007095,
+          "baselineRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "LayoutDuration": 0.101906,
+            "RecalcStyleDuration": 0.20547799999999983,
+            "DevToolsCommandDuration": 0.002130999999999999,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.5252889999999999,
+            "TaskOtherDuration": 0.21577400000000002
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "LayoutDuration": 0.122779,
+            "RecalcStyleDuration": 0.20341699999999996,
+            "DevToolsCommandDuration": 0.0023750000000000004,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.5446650000000002,
+            "TaskOtherDuration": 0.21609399999999995
+          }
+        },
+        {
+          "epoch": 3,
+          "layer": 0,
+          "position": 1,
+          "kind": "fresh-input",
+          "baselineMilliseconds": 632.3220000049332,
+          "candidateMilliseconds": 639.6523750008782,
+          "changePercent": 1.1592788161550294,
+          "baselineRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "LayoutDuration": 0.11043900000000001,
+            "RecalcStyleDuration": 0.23234100000000013,
+            "DevToolsCommandDuration": 0.0017800000000000003,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.6000690000000004,
+            "TaskOtherDuration": 0.255509
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "LayoutDuration": 0.10781800000000002,
+            "RecalcStyleDuration": 0.22856200000000015,
+            "DevToolsCommandDuration": 0.0018790000000000022,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.6021779999999999,
+            "TaskOtherDuration": 0.263919
+          }
+        },
+        {
+          "epoch": 4,
+          "layer": 11,
+          "position": 1,
+          "kind": "fresh-input",
+          "baselineMilliseconds": 602.2909170060302,
+          "candidateMilliseconds": 577.1901669941144,
+          "changePercent": -4.167545832617048,
+          "baselineRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "LayoutDuration": 0.101354,
+            "RecalcStyleDuration": 0.20195399999999997,
+            "DevToolsCommandDuration": 0.0017809999999999979,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.525534,
+            "TaskOtherDuration": 0.220445
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "LayoutDuration": 0.09928099999999995,
+            "RecalcStyleDuration": 0.1960139999999999,
+            "DevToolsCommandDuration": 0.0016979999999999981,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.5039510000000003,
+            "TaskOtherDuration": 0.20695799999999986
+          }
+        },
+        {
+          "epoch": 5,
+          "layer": 0,
+          "position": 1,
+          "kind": "layer-revisit",
+          "baselineMilliseconds": 522.5894590039388,
+          "candidateMilliseconds": 525.9622500016121,
+          "changePercent": 0.6453997377026788,
+          "baselineRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "LayoutDuration": 0.03517199999999998,
+            "RecalcStyleDuration": 0.24295500000000003,
+            "DevToolsCommandDuration": 0.001583000000000001,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.4841850000000001,
+            "TaskOtherDuration": 0.20447499999999996
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "LayoutDuration": 0.036224000000000034,
+            "RecalcStyleDuration": 0.23951100000000003,
+            "DevToolsCommandDuration": 0.001694000000000001,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.49041099999999993,
+            "TaskOtherDuration": 0.212982
+          }
+        },
+        {
+          "epoch": 6,
+          "layer": 11,
+          "position": 1,
+          "kind": "layer-revisit",
+          "baselineMilliseconds": 454.97954200254753,
+          "candidateMilliseconds": 461.0311249998631,
+          "changePercent": 1.3300780449776006,
+          "baselineRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "LayoutDuration": 0.025985000000000036,
+            "RecalcStyleDuration": 0.19142099999999984,
+            "DevToolsCommandDuration": 0.0017070000000000002,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.3761140000000003,
+            "TaskOtherDuration": 0.15700099999999995
+          },
+          "candidateRendererDelta": {
+            "LayoutCount": 4,
+            "RecalcStyleCount": 4,
+            "LayoutDuration": 0.025421999999999945,
+            "RecalcStyleDuration": 0.19673499999999988,
+            "DevToolsCommandDuration": 0.0014860000000000012,
+            "ScriptDuration": 0,
+            "V8CompileDuration": 0,
+            "TaskDuration": 0.38120500000000046,
+            "TaskOtherDuration": 0.15756199999999998
+          }
+        }
+      ]
+    }
+  ]
+}

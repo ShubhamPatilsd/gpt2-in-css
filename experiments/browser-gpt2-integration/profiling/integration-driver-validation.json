@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "Unique phase archives retain old bytes and record source drift without rejecting it.",
+    "Valid vectors pass declared limits; a two-token run has only a terminal interval and no warm median.",
+    "Missing, duplicated, short and nonfinite cache/residual vectors are rejected before reference evaluation.",
+    "Independent verifier exceptions preserve a failed summary and exception details.",
+    "Incomplete runs preserve observed sample time without inventing a zero total.",
+    "The predeclared strict residual RMSE boundary remains 0.05; equality fails."
+  ],
+  "testScope": "Standard-library AST-loaded driver functions and synthetic files; no browser, model import, or reference computation",
+  "scriptSha256": "470070e013c7508e1890a96cf76f66a3c8ee088f36a1173fc0e75838e570c38b"
+}
