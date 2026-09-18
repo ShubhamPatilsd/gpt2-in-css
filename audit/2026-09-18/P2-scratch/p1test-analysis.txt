@@ -1,0 +1,131 @@
+trace ../P1-scratch/gated-trace-trace.json.gz: 780372 events; main thread 87494/2637955 CrRendererMain; DOM nodes 0
+marks after nav: {'responseEnd': 0.5, 'fetchStart': 0.5, 'domInteractive': 1.8, 'domContentLoadedEventEnd': 2.0, 'domComplete': 2.0, 'loadEventStart': 2022.4, 'loadEventEnd': 2022.4, 'P1-play': 3577.5, 'P1-done': 14762.6}
+
+== LOAD (nav -> run click) wall 3577.5 busy 1924.3 idle 1653.3 style 827.2 (4) layout 10.8 (1) paint-ish 2.5 gc 52.4
+  named: {"ParseAuthorStyleSheet": [4, 787.7], "CSSParserImpl::parseStyleSheet": [5, 788.5], "CSSParserImpl::parseStyleSheet.parse": [5, 788.5], "StyleEngine::updateActiveStyleSheets": [2, 21.7], "RuleSet::addRulesFromSheet": [5, 1.6], "ParseHTML": [4, 2.1]}
+  self top: Document::recalcStyle=799.8ms(n=1), CSSParserImpl::parseStyleSheet.parse=781.1ms(n=5), RunTask=126.3ms(n=77429), ResponseBodyLoader::DidFinishLoadingBody=93.4ms(n=5), TextResourceDecoder::Decode=25.9ms(n=1492), StyleEngine::updateActiveStyleSheets=20.1ms(n=2), Resource::appendData=19.6ms(n=1491), LocalFrameView::performLayout=10.1ms(n=1), ResponseBodyLoader::OnStateChange=6.5ms(n=2477), ProxyMain::Stop=6.4ms(n=1), V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING=5.2ms(n=722), V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE=2.6ms(n=2), LocalFrameView::UpdateStyleAndLayout=1.8ms(n=9), RuleSet::addRulesFromSheet=1.6ms(n=5), ResourceFetcher::requestResource=1.3ms(n=9)
+  big events (t, dur, name, depth): [[32.8, 25.0, "RunTask", 0], [32.9, 25.0, "ResponseBodyLoader::OnStateChange", 1], [32.9, 25.0, "ResponseBodyLoader::DidFinishLoadingBody", 2], [132.9, 45.8, "RunTask", 0], [133.0, 45.7, "ResponseBodyLoader::OnStateChange", 1], [133.0, 45.7, "ResponseBodyLoader::DidFinishLoadingBody", 2], [343.2, 835.7, "RunTask", 0], [343.3, 835.6, "ResponseBodyLoader::OnStateChange", 1], [343.3, 835.6, "ResponseBodyLoader::DidFinishLoadingBody", 2], [1178.9, 843.3, "RunTask", 0], [1178.9, 843.3, "ProxyMain::BeginMainFrame", 1], [1179.4, 842.5, "WebFrameWidgetImpl::UpdateLifecycle", 2]]
+
+== GENERATE (run -> end) wall 11185.0 busy 11150.4 idle 34.6 style 10901.3 (19) layout 3.7 (17) anim 5.2 (144) paint-ish 184.6 gc 197.3 (25896)
+  self top: Document::recalcStyle=10836.9ms(n=18), LocalFrameView::RunPaintLifecyclePhase=175.2ms(n=22), RunTask=33.3ms(n=7539), V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING=30.4ms(n=7331), V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE=13.0ms(n=4), WebFrameWidgetImpl::BeginMainFrame=9.5ms(n=22), V8.GC_MC_INCREMENTAL=7.4ms(n=9112), V8.GCIncrementalMarking=5.3ms(n=9150), EvaluateScript=4.5ms(n=2), V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED=3.9ms(n=4), EventHandler::handleMouseMoveEvent=3.9ms(n=18), LocalFrameView::performLayout=3.1ms(n=17), EventHandler::handleMousePressEvent=1.4ms(n=1), V8.GC_MC_MARK=1.3ms(n=4), v8.callFunction=1.1ms(n=11), HitTest=1.1ms(n=42), LocalFrameView::UpdateStyleAndLayout=1.0ms(n=136), Paint=0.9ms(n=35), Blink.PrePaint.UpdateTime=0.8ms(n=45), FunctionCall=0.8ms(n=11), EventDispatch=0.7ms(n=18), Document::updateStyle=0.7ms(n=19), PaintArtifactCompositor::Update=0.7ms(n=18), Commit=0.7ms(n=22), ProxyMain::BeginMainFrame=0.6ms(n=22), V8.GC_MARK_COMPACTOR=0.6ms(n=4), Document::rebuildLayoutTree=0.6ms(n=17), SelectionController::handleMousePressEventSingleClick=0.6ms(n=1), LocalFrameView::ScheduleAnimation=0.5ms(n=71), AnimationTimeline::serviceAnimations=0.5ms(n=37)
+  incl top: RunTask=11150.4ms(n=7539), ProxyMain::BeginMainFrame=11084.2ms(n=22), LocalFrameView::UpdateStyleAndLayout=10906.6ms(n=136), Blink.Style.UpdateTime=10901.6ms(n=19), UpdateLayoutTree=10901.3ms(n=19), Document::updateStyle=10901.0ms(n=19), Document::recalcStyle=10899.7ms(n=18), Document::UpdateStyleAndLayout=10889.9ms(n=156), Blink.ForcedStyleAndLayout.UpdateTime=10889.8ms(n=143), WebFrameWidgetImpl::UpdateLifecycle=178.1ms(n=22), LocalFrameView::RunPaintLifecyclePhase=177.6ms(n=22), V8.GCIncrementalMarking=43.1ms(n=9150), V8.GC_MC_INCREMENTAL=37.8ms(n=9112), V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING=30.4ms(n=7331), MajorGC=18.0ms(n=4), EventHandler::handleMouseReleaseEvent=17.8ms(n=1), V8.GCFinalizeMC=17.7ms(n=4), V8.GC_MARK_COMPACTOR=17.6ms(n=4), LocalFrameView::RunStyleAndLayoutLifecyclePhases=17.1ms(n=50), LocalFrameView::updateStyleAndLayoutIfNeededRecursive=17.0ms(n=48), WebFrameWidgetImpl::BeginMainFrame=14.3ms(n=22), V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE=13.0ms(n=4), EventHandler::handleMouseMoveEvent=5.9ms(n=18), EvaluateScript=4.5ms(n=2), V8.GCIncrementalMarkingStart=4.4ms(n=4), V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED=3.9ms(n=4), Blink.Layout.UpdateTime=3.9ms(n=17), LocalFrameView::layout=3.8ms(n=17), Layout=3.7ms(n=17), LocalFrameView::performLayout=3.6ms(n=17)
+  other threads busy ms: {"Compositor": 162.4, "ThreadPoolForegroundWorker": 50.9, "Chrome_ChildIOThread": 5.9, "PerfettoTrace": 2.0, "MemoryInfra": 0.7, "ThreadPoolServiceThread": 0.0}
+  token bounds: []
+
+== PER TOKEN
+{"wall_ms": 11185.0, "busy_ms": 11150.4, "idle_ms": 34.6, "style_ms": 10901.3, "style_count": 19, "layout_ms": 3.7, "layout_count": 17, "animation_ms": 5.2, "animation_count": 144, "paint_prepaint_composite_ms": 184.6, "gc_ms": 197.3, "gc_count": 25896, "token_index": "1(partial-to-end)", "start_ms_after_run": 0.0, "end_ms_after_run": 11185.0, "style_hist": {"1-9": [18, 10884.9, 79], "10-99": [1, 16.4, 10]}, "layout_total_objects_max": 106}
+   incl top10: [["RunTask", [7539, 11150.4]], ["ProxyMain::BeginMainFrame", [22, 11084.2]], ["LocalFrameView::UpdateStyleAndLayout", [136, 10906.6]], ["Blink.Style.UpdateTime", [19, 10901.6]], ["UpdateLayoutTree", [19, 10901.3]], ["Document::updateStyle", [19, 10901.0]], ["Document::recalcStyle", [18, 10899.7]], ["Document::UpdateStyleAndLayout", [156, 10889.9]], ["Blink.ForcedStyleAndLayout.UpdateTime", [143, 10889.8]], ["WebFrameWidgetImpl::UpdateLifecycle", [22, 178.1]]]
+   biggest style passes (ms, elementCount, t): [[845.3, 5, 3732.9], [845.0, 5, 8174.9], [812.2, 5, 2904.7], [732.0, 5, 5998.3], [727.7, 5, 2165.7], [727.5, 5, 7436.1], [719.4, 5, 4590.1], [709.4, 5, 1444.5]]
+   layout dirty hist: {"<100": 17} total objects max 106
+   inval by reason: []
+
+== STYLE PASS HISTOGRAM (generate window)
+           1-9: {"count": 18, "ms": 10884.9, "elements": 79, "max_ms": 845.3, "min_ms": 0.007, "us_per_element": 137783.54}
+         10-99: {"count": 1, "ms": 16.4, "elements": 10, "max_ms": 16.36, "min_ms": 16.364, "us_per_element": 1640.0}
+  by exact elementCount (top by ms): [[5, 15, 10868.6], [10, 1, 16.4], [1, 1, 16.2], [3, 1, 0.1], [0, 1, 0.0]]
+
+== INVALIDATION (generate window)
+  events: {}
+  with selector part / extra:
+  samples: {}
+
+== ANIMATION names (top): [["ts-open-gate", "running", 17], ["", "e", 17], ["", "n", 16], ["", "running", 16]] distinct 2
+  handshake events (t, node): []
+
+== GC: total 197.9 by name [["V8.GCIncrementalMarking", 10536], ["V8.GC_MC_INCREMENTAL", 10497], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 8501], ["V8.GC_MC_CLEAR_STRING_TABLE", 29], ["V8.GC_MC_SWEEP", 25], ["V8.GC_MC_MARK_ROOTS", 21], ["V8.GCMarkTransitiveClosureFixpoint", 21], ["V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_MARKING", 21], ["V8.GCReachTransitiveClosureWithEmbedder", 21], ["V8.GC_MC_MARK_EMBEDDER_PROLOGUE", 14], ["V8.GC_MC_MARK_EMBEDDER_TRACING", 14], ["V8.GC_MC_EVACUATE", 14], ["V8.GC_TIME_TO_SAFEPOINT", 11], ["V8.GCIncrementalMarkingStart", 7], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 7], ["V8.GC_MC_INCREMENTAL_START", 7], ["V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE", 7], ["V8.GC_MC_INCREMENTAL_EXTERNAL_EPILOGUE", 7], ["V8.GC_HEAP_EXTERNAL_PROLOGUE", 7], ["MajorGC", 7]]
+
+== main-thread name inventory (name, count, incl ms, self ms): 
+  ["Document::recalcStyle", 28, 15206.1, 15131.7]
+  ["CSSParserImpl::parseStyleSheet.parse", 5, 788.5, 781.1]
+  ["RunTask", 432929, 16971.3, 543.7]
+  ["LocalFrameView::RunPaintLifecyclePhase", 35, 178.7, 175.3]
+  ["ResponseBodyLoader::DidFinishLoadingBody", 5, 907.0, 93.4]
+  ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 8501, 41.0, 41.0]
+  ["TextResourceDecoder::Decode", 1492, 25.9, 25.9]
+  ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 7, 20.2, 20.2]
+  ["StyleEngine::updateActiveStyleSheets", 2, 21.7, 20.1]
+  ["Resource::appendData", 1491, 19.6, 19.6]
+  ["LocalFrameView::performLayout", 21, 15.1, 13.9]
+  ["WebFrameWidgetImpl::BeginMainFrame", 35, 15.4, 9.8]
+  ["V8.GC_MC_INCREMENTAL", 10497, 49.7, 8.7]
+  ["ResponseBodyLoader::OnStateChange", 2477, 957.4, 6.5]
+  ["ProxyMain::Stop", 1, 6.4, 6.4]
+  ["V8.GCIncrementalMarking", 10536, 55.9, 6.3]
+  ["EvaluateScript", 3, 8.5, 5.6]
+  ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 7, 4.5, 4.5]
+  ["EventHandler::handleMouseMoveEvent", 21, 6.2, 4.0]
+  ["LocalFrameView::UpdateStyleAndLayout", 182, 11748.0, 2.9]
+  ["RuleSet::addRulesFromSheet", 5, 1.6, 1.6]
+  ["V8.GC_MC_MARK", 7, 2.7, 1.5]
+  ["Blink.CompositingInputs.UpdateTime", 62, 1.4, 1.4]
+  ["v8.callFunction", 13, 2.3, 1.4]
+  ["EventHandler::handleMousePressEvent", 1, 3.2, 1.4]
+  ["ResourceFetcher::requestResource", 9, 1.3, 1.3]
+  ["Paint", 42, 2.1, 1.3]
+  ["V8.GC_MC_MARK_EMBEDDER_PROLOGUE", 14, 1.2, 1.2]
+  ["V8.GC_MARK_COMPACTOR", 7, 27.9, 1.2]
+  ["InlineNode::ShapeTextIncludingFirstLine", 30, 1.2, 1.2]
+  ["Commit", 35, 2.5, 1.2]
+  ["HitTest", 55, 1.2, 1.2]
+  ["ProxyMain::BeginMainFrame", 36, 11930.9, 1.1]
+  ["V8.GC_MC_INCREMENTAL_START", 7, 2.6, 1.1]
+  ["Document::rebuildLayoutTree", 21, 1.2, 1.1]
+  ["WebFrameWidgetImpl::UpdateLifecycle", 35, 1021.4, 1.0]
+  ["Blink.PrePaint.UpdateTime", 60, 1.0, 1.0]
+  ["Frame::Detach", 3, 1.9, 0.9]
+  ["ScrollAnchor::FindAnchor", 1, 0.9, 0.9]
+  ["Document::updateStyle", 32, 15208.2, 0.9]
+  ["MajorGC", 7, 29.0, 0.9]
+  ["LiveObjectVisitor::VisitMarkedObjectsNoFail", 6, 1.1, 0.9]
+  ["Blink.Paint.UpdateTime", 35, 2.4, 0.9]
+  ["FunctionCall", 13, 1.0, 0.9]
+  ["LocalFrameView::ScheduleAnimation", 82, 0.8, 0.8]
+  ["ParseHTML", 4, 2.1, 0.8]
+  ["EventDispatch", 33, 1.2, 0.7]
+  ["PaintArtifactCompositor::Update", 19, 0.7, 0.7]
+  ["DocumentLoader::DidCommitNavigation", 2, 1.7, 0.6]
+  ["CommitLoad", 1, 1.1, 0.6]
+  ["V8.GC_MC_CLEAR_JOIN_JOB", 7, 1.3, 0.6]
+  ["AnimationTimeline::serviceAnimations", 45, 0.6, 0.6]
+  ["Blink.Layout.UpdateTime", 21, 15.9, 0.6]
+  ["SelectionController::handleMousePressEventSingleClick", 1, 1.1, 0.6]
+  ["DocumentLoader::CommitNavigation", 2, 8.0, 0.5]
+  ["DocumentLoader::CreateParserPostCommit", 2, 3.5, 0.5]
+  ["ScrollableArea::SetScrollOffset", 1, 0.5, 0.5]
+  ["V8.GCIncrementalMarkingStart", 7, 7.6, 0.5]
+  ["V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL", 7, 1.0, 0.5]
+  ["Editor::SyncSelection", 1, 0.5, 0.5]
+  ["HTMLDocumentParser::PumpTokenizerIfPossible", 4, 2.8, 0.4]
+  ["V8.DeserializeContext", 2, 0.4, 0.4]
+  ["Blink.ParseStyleSheet.UpdateTime", 5, 788.9, 0.4]
+  ["Document::Document", 2, 0.3, 0.3]
+  ["DocumentLoader::FinishedLoading", 2, 1.5, 0.3]
+  ["HTMLDocumentParser::Flush", 2, 0.3, 0.3]
+  ["EventDispatcher::dispatchEvent", 32, 1.7, 0.3]
+  ["SelectorStats", 32, 0.3, 0.3]
+  ["LocalWindowProxy::Initialize", 2, 1.7, 0.3]
+  ["V8.GC_MC_MARK_ROOTS", 21, 0.3, 0.3]
+  ["V8.GCReachTransitiveClosureWithEmbedder", 21, 0.4, 0.3]
+  ["V8.GC_MC_CLEAR_SWEEP_EXTERNAL_POINTER_TABLE", 4, 0.3, 0.3]
+  ["V8.GC_MC_SWEEP", 25, 0.3, 0.3]
+  ["V8.GC_MC_EVACUATE_UPDATE_POINTERS_TO_NEW_ROOTS", 7, 0.3, 0.3]
+  ["PageAnimator::serviceScriptedAnimations", 35, 2.8, 0.3]
+  ["HTMLDocumentParser::PumpTokenizer", 4, 2.3, 0.2]
+  ["EventDispatcher::dispatch", 33, 1.4, 0.2]
+  ["auto cc::LayerTreeHost::SetViewportRectAndScale(const gfx::Rect &, float, const viz::LocalSurfaceId &)::(lambda)::operator()()::(lambda)::operator()(uint32_t) const", 10, 0.2, 0.2]
+  ["Document::DispatchUnloadEvents", 2, 1.1, 0.2]
+  ["UpdateLayoutTree", 32, 15230.4, 0.2]
+
+== per-second timeline (s, busy, style, layout, ...) first 400 rows
+  {"s": 0, "busy": 1415.0, "UpdateLayoutTree": 1346.3, "Layout": 0.5, "PrePaint": 0.2, "Paint": 0.2, "HitTest": 0.8, "EventDispatch": 1.1, "gc": 0.0}
+  {"s": 1, "busy": 720.9, "UpdateLayoutTree": 709.4, "Layout": 0.1, "PrePaint": 0.1, "Paint": 0.1, "HitTest": 0.0, "EventDispatch": 0.0, "gc": 18.5}
+  {"s": 2, "busy": 1562.5, "UpdateLayoutTree": 1539.9, "Layout": 0.5, "PrePaint": 0.1, "Paint": 0.1, "HitTest": 0.0, "EventDispatch": 0.0, "gc": 34.8}
+  {"s": 3, "busy": 862.2, "UpdateLayoutTree": 845.3, "Layout": 0.1, "PrePaint": 0.1, "Paint": 0.1, "HitTest": 0.0, "EventDispatch": 0.0, "gc": 0.0}
+  {"s": 4, "busy": 730.8, "UpdateLayoutTree": 719.4, "Layout": 0.2, "PrePaint": 0.1, "Paint": 0.1, "HitTest": 0.0, "EventDispatch": 0.0, "gc": 28.7}
+  {"s": 5, "busy": 1420.3, "UpdateLayoutTree": 1397.8, "Layout": 0.3, "PrePaint": 0.2, "Paint": 0.2, "HitTest": 0.0, "EventDispatch": 0.0, "gc": 20.0}
+  {"s": 6, "busy": 694.8, "UpdateLayoutTree": 678.1, "Layout": 0.2, "PrePaint": 0.1, "Paint": 0.1, "HitTest": 0.0, "EventDispatch": 0.0, "gc": 0.0}
+  {"s": 7, "busy": 738.8, "UpdateLayoutTree": 727.5, "Layout": 0.2, "PrePaint": 0.1, "Paint": 0.1, "HitTest": 0.0, "EventDispatch": 0.0, "gc": 29.0}
+  {"s": 8, "busy": 857.6, "UpdateLayoutTree": 845.0, "Layout": 0.2, "PrePaint": 0.1, "Paint": 0.1, "HitTest": 0.0, "EventDispatch": 0.0, "gc": 37.6}
+  {"s": 9, "busy": 1400.9, "UpdateLayoutTree": 1372.1, "Layout": 0.6, "PrePaint": 0.2, "Paint": 0.2, "HitTest": 0.1, "EventDispatch": 0.0, "gc": 0.0}
+  {"s": 10, "busy": 716.2, "UpdateLayoutTree": 704.1, "Layout": 0.2, "PrePaint": 0.1, "Paint": 0.1, "HitTest": 0.0, "EventDispatch": 0.0, "gc": 8.2}
+  {"s": 11, "busy": 222.7, "UpdateLayoutTree": 16.5, "Layout": 0.5, "PrePaint": 0.2, "Paint": 0.2, "HitTest": 0.0, "EventDispatch": 0.0, "gc": 21.1}
