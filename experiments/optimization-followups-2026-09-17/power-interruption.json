@@ -1,0 +1,30 @@
+{
+  "userReportedSleep": true,
+  "evidence": "power-events.txt",
+  "classification": "Environment/power interruption; not evidence of a candidate correctness defect or an intrinsic browser regression",
+  "disconnects": [
+    {
+      "case": "loop/timing/pair0/static-local",
+      "disconnectLocal": "2026-09-17T22:45:47-07:00",
+      "displayOffLocal": "2026-09-17T22:45:47-07:00"
+    },
+    {
+      "case": "head/pair1/settings",
+      "disconnectLocal": "2026-09-17T23:02:53-07:00",
+      "displayOffLocal": "2026-09-17T23:02:52-07:00"
+    },
+    {
+      "case": "head/pair1/baseline",
+      "disconnectLocal": "2026-09-17T23:05:24-07:00",
+      "displayOffLocal": "2026-09-17T23:05:23-07:00"
+    }
+  ],
+  "timingExcludedGroups": [
+    "loop/timing/pair0",
+    "loop/timing/pair1",
+    "head/pair1"
+  ],
+  "extraCaution": "The first reverse loop case completed successfully across a sleep/wake interval; its correctness remains recorded but its timing is excluded. Original raw results are unchanged.",
+  "unaffectedInitialDenseWindow": "2026-09-17 22:42:34\u201322:43:46 PDT; no display-off/sleep event overlaps",
+  "mitigation": "Temporary caffeinate -di while remaining tests run; re-run both loop orders and the reverse head order into awake-retries."
+}

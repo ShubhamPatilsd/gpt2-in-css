@@ -1,0 +1,174 @@
+{
+  "mode": "settings",
+  "repeat": 1,
+  "scope": "Externally supplied real hidden vectors, full 50257-row head; not native token throughput",
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalInputWrites": true,
+  "externalInputWriteCount": 3,
+  "timedObserver": "Two-number geometry witness; full style reads occur after timing",
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "pythonVersion": "3.13.2 (main, Feb 12 2025, 14:59:08) [Clang 19.1.6 ]",
+  "platform": "macOS-26.0-arm64-arm-64bit-Mach-O",
+  "samples": [
+    {
+      "sourceIndex": 1,
+      "epoch": 2,
+      "winner": 1366,
+      "actualEpoch": 2,
+      "expectedWinner": 1366,
+      "milliseconds": 3716.7987920111045,
+      "settlingReads": 4,
+      "rendererDelta": {
+        "Timestamp": 3.71722900000168,
+        "AudioHandlers": 0,
+        "AudioWorkletProcessors": 0,
+        "Documents": 0,
+        "Frames": 0,
+        "JSEventListeners": 0,
+        "LayoutObjects": 512,
+        "MediaKeySessions": 0,
+        "MediaKeys": 0,
+        "Nodes": 0,
+        "Resources": 0,
+        "ContextLifecycleStateObservers": 0,
+        "V8PerContextDatas": 0,
+        "WorkerGlobalScopes": 0,
+        "UACSSResources": 0,
+        "RTCPeerConnections": 0,
+        "ResourceFetchers": 0,
+        "AdSubframes": 0,
+        "DetachedScriptStates": 0,
+        "ArrayBufferContents": 0,
+        "LayoutCount": 1,
+        "RecalcStyleCount": 4,
+        "LayoutDuration": 1.7822919999999982,
+        "RecalcStyleDuration": 0.43343999999999994,
+        "DevToolsCommandDuration": 0.00068,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 3.6350829999999945,
+        "TaskOtherDuration": 1.4186709999999998,
+        "ThreadTime": 3.627357,
+        "ProcessTime": 4.217866999999998,
+        "JSHeapUsedSize": 0,
+        "JSHeapTotalSize": 0,
+        "FirstMeaningfulPaint": 0,
+        "DomContentLoaded": 0.0,
+        "NavigationStart": 0.0
+      },
+      "inputError": {
+        "finite": 768,
+        "rmse": 1.5710268896055386e-05,
+        "maximum": 0.0004326171874993179
+      },
+      "rowRawInputMaximum": 193.357,
+      "passed": true
+    },
+    {
+      "sourceIndex": 2,
+      "epoch": 3,
+      "winner": 532,
+      "actualEpoch": 3,
+      "expectedWinner": 532,
+      "milliseconds": 3718.6703749903245,
+      "settlingReads": 4,
+      "rendererDelta": {
+        "Timestamp": 3.719152000005124,
+        "AudioHandlers": 0,
+        "AudioWorkletProcessors": 0,
+        "Documents": 0,
+        "Frames": 0,
+        "JSEventListeners": 0,
+        "LayoutObjects": 512,
+        "MediaKeySessions": 0,
+        "MediaKeys": 0,
+        "Nodes": 0,
+        "Resources": 0,
+        "ContextLifecycleStateObservers": 0,
+        "V8PerContextDatas": 0,
+        "WorkerGlobalScopes": 0,
+        "UACSSResources": 0,
+        "RTCPeerConnections": 0,
+        "ResourceFetchers": 0,
+        "AdSubframes": 0,
+        "DetachedScriptStates": 0,
+        "ArrayBufferContents": 0,
+        "LayoutCount": 1,
+        "RecalcStyleCount": 4,
+        "LayoutDuration": 1.7621229999999954,
+        "RecalcStyleDuration": 0.45893000000000006,
+        "DevToolsCommandDuration": 0.0007099999999999997,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 3.694535000000002,
+        "TaskOtherDuration": 1.472772,
+        "ThreadTime": 3.706589000000001,
+        "ProcessTime": 4.273394,
+        "JSHeapUsedSize": 0,
+        "JSHeapTotalSize": 0,
+        "FirstMeaningfulPaint": 0,
+        "DomContentLoaded": 0.0,
+        "NavigationStart": 0.0
+      },
+      "inputError": {
+        "finite": 768,
+        "rmse": 2.956775776745485e-06,
+        "maximum": 6.42089843836402e-05
+      },
+      "rowRawInputMaximum": 167.603,
+      "passed": true
+    }
+  ],
+  "passed": false,
+  "rewrite": {
+    "mode": "settings",
+    "vocabularyRows": 50257,
+    "privateInputCount": 0,
+    "fontSettingsDeclarationsReplaced": 2,
+    "ownerSelector": ".head-input-bank"
+  },
+  "requestedUpdates": 38,
+  "sourceHashes": {
+    "tools/probe_browser_gpt2_head_locality.py": "38b9c97aff9ef7f85636a438424adc487335de52d9d8ca345da3fa76284c9869",
+    "tools/browser_gpt2_head_locality.py": "e78ef7ab64c31265c4b9446209631d8c7623e5b8630a4a9a8b86a0cf0a1e16a9",
+    "tools/browser_gpt2_head_receipts.py": "13efcdd27a8aac8820c271f3484fd9168f4e7e341f79ae89fbead9dff05f2ffc",
+    "tools/build_gpt2_groupwise_production_q16_sixfont.py": "cec70bc82a1f0e94ebde56a26e86ff980c36f3c619dfaffc4863c02ca12dc917",
+    "tools/profile_hybrid_twelve_block.py": "9e10b25c78b76e982b19bf65e263b3775cb29beabfc83317922c7d8495dc9c18",
+    "tools/probe_native_value_latch.py": "9dbd9d892eac7fc8779c9d48be2aa6ade9f5072ed2f6931c140864b2c8fa1298",
+    "tools/benchmark_browser_gpt2_memory.py": "b39953e35b09f625845c2fc996544acdd4c3c4089c6bf18adb86a4051fd11476",
+    "tools/test_browser_gpt2_components.py": "f119592e208776b42feb8cfd34793c6423753cec5b18482aaec5a818eb2bf9f3"
+  },
+  "sourceHeadHashes": {
+    "head-body.html": "4ebc589f0400c1ddf9e3f60e65f5c652fbde20f3760fd93e3da544183f0feee7",
+    "head.css": "7314385f97175da02c7b983fc51029f05c0f7e75b251a5706f411fc369bfac75",
+    "reference.json": "152c7b0f3573af4167fae7e9c0225a288e9898ba640cf0231153def685ea9bfd"
+  },
+  "artifactHashes": {
+    "index.html": "fc24eeeb1eebbd1c13867a085afe734b27f3ab55aec7f6d772a9a6e27669496c",
+    "head.css": "b5440298a8206edd70d614a5e90fa30af0ad399f67f5fc366b416a4c96fc681a",
+    "reference.json": "9505fa24f802a31628b2480ffb3b532776610427b212a3e04965a693852a1ef0"
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.48",
+    "revision": "@199a3a541d76237379e353b348e64045584db057",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "initialCheck": {
+    "actual": [
+      1,
+      11
+    ],
+    "expected": [
+      1,
+      11
+    ],
+    "passed": true
+  },
+  "exception": "ConnectionError: WebSocket closed",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/shubhampatil/Documents/programming/gpt2-css/tools/probe_browser_gpt2_head_locality.py\", line 186, in run_case\n    actual, reads = settle_winner(cdp, node, epoch, limit)\n                    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shubhampatil/Documents/programming/gpt2-css/tools/probe_browser_gpt2_head_locality.py\", line 97, in settle_winner\n    box = cdp.command(\"DOM.getBoxModel\", {\"nodeId\": node})[\"model\"][\"content\"]\n          ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shubhampatil/Documents/programming/gpt2-css/tools/profile_hybrid_twelve_block.py\", line 73, in command\n    return super().command(method, params)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/Users/shubhampatil/Documents/programming/gpt2-css/tools/probe_browser_native_compute.py\", line 849, in command\n    opcode, payload = self._receive_frame()\n                      ~~~~~~~~~~~~~~~~~~~^^\n  File \"/Users/shubhampatil/Documents/programming/gpt2-css/tools/profile_hybrid_twelve_block.py\", line 39, in _receive_frame\n    opcode, payload = super()._receive_frame()\n                      ~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/Users/shubhampatil/Documents/programming/gpt2-css/tools/probe_browser_native_compute.py\", line 828, in _receive_frame\n    first, second = _read_exact(self.connection, 2)\n                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shubhampatil/Documents/programming/gpt2-css/tools/probe_browser_native_compute.py\", line 781, in _read_exact\n    raise ConnectionError(\"WebSocket closed\")\nConnectionError: WebSocket closed\n"
+}

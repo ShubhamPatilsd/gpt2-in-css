@@ -1,0 +1,662 @@
+{
+  "scope": "Derived summary; raw interrupted runs remain unchanged and are excluded from eligible timing comparisons.",
+  "complete": false,
+  "missingArtifacts": [
+    "normalization/browser-summary.json",
+    "fusion/results.json",
+    "persistent-v-track/summary.json",
+    "awake-retries/head/summary.json",
+    "awake-retries/loop/summary.json",
+    "boundaries-r1/summary.json",
+    "quality-clamped/results.json"
+  ],
+  "dense": [
+    {
+      "stage": "qkv",
+      "variant": "chunk128",
+      "pairedPercentChanges": [
+        {
+          "cold": -1.8547995715489707,
+          "fresh": -18.811361161978468,
+          "revisit": -21.75654248848604
+        },
+        {
+          "cold": -2.0690991538044545,
+          "fresh": -15.604000109625172,
+          "revisit": -20.749608633321614
+        }
+      ]
+    },
+    {
+      "stage": "qkv",
+      "variant": "chunk256",
+      "pairedPercentChanges": [
+        {
+          "cold": -1.290878138569218,
+          "fresh": -9.959452621847797,
+          "revisit": -14.202148422361038
+        },
+        {
+          "cold": -2.6510098928051895,
+          "fresh": -9.286703038621136,
+          "revisit": -12.684128633539649
+        }
+      ]
+    },
+    {
+      "stage": "mlp",
+      "variant": "proj-settings",
+      "pairedPercentChanges": [
+        {
+          "cold": -2.190058664335215,
+          "fresh": -0.34728191304741474,
+          "revisit": 1.1198464778253703
+        },
+        {
+          "cold": -0.8645042170914663,
+          "fresh": -1.3374401890176024,
+          "revisit": 0.5298451162883078
+        }
+      ]
+    },
+    {
+      "stage": "mlp",
+      "variant": "chunk128",
+      "pairedPercentChanges": [
+        {
+          "cold": -2.8675208085932713,
+          "fresh": -14.260412969394787,
+          "revisit": -7.890002776740868
+        },
+        {
+          "cold": -2.1280004673492336,
+          "fresh": -14.711992417282872,
+          "revisit": -9.725437738296472
+        }
+      ]
+    },
+    {
+      "stage": "mlp",
+      "variant": "chunk256",
+      "pairedPercentChanges": [
+        {
+          "cold": -5.556704151561065,
+          "fresh": -9.813281966698895,
+          "revisit": -2.1860033965308667
+        },
+        {
+          "cold": -1.289700573645558,
+          "fresh": -10.05165350371271,
+          "revisit": -2.7460102745819004
+        }
+      ]
+    }
+  ],
+  "consumerSelection": {
+    "chosenChunk": 128,
+    "eligible": [
+      128
+    ],
+    "rule": "Exact outputs; >=2% fresh improvement over128 in both stages and orders; no >2% revisit regression. Then smallest sum of fresh medians."
+  },
+  "loopEligibleTimings": [
+    {
+      "source": "original",
+      "pair": 2,
+      "variant": "baseline",
+      "passed": true,
+      "continuationMs": 9167.547041986836,
+      "percentChange": 0.0
+    },
+    {
+      "source": "original",
+      "pair": 2,
+      "variant": "static-readers",
+      "passed": true,
+      "continuationMs": 8343.283459005761,
+      "percentChange": -8.991102845788468
+    },
+    {
+      "source": "original",
+      "pair": 2,
+      "variant": "local-scope",
+      "passed": true,
+      "continuationMs": 9271.43520800746,
+      "percentChange": 1.1332166123044995
+    },
+    {
+      "source": "original",
+      "pair": 2,
+      "variant": "static-local",
+      "passed": true,
+      "continuationMs": 8386.700250004651,
+      "percentChange": -8.517510610045974
+    },
+    {
+      "source": "original",
+      "pair": 3,
+      "variant": "static-local",
+      "passed": true,
+      "continuationMs": 8374.017915994045,
+      "percentChange": -9.558866965711655
+    },
+    {
+      "source": "original",
+      "pair": 3,
+      "variant": "local-scope",
+      "passed": true,
+      "continuationMs": 9238.837583005079,
+      "percentChange": -0.21863491229966447
+    },
+    {
+      "source": "original",
+      "pair": 3,
+      "variant": "static-readers",
+      "passed": true,
+      "continuationMs": 8349.746166000841,
+      "percentChange": -9.821006907628627
+    },
+    {
+      "source": "original",
+      "pair": 3,
+      "variant": "baseline",
+      "passed": true,
+      "continuationMs": 9259.081166994292,
+      "percentChange": 0.0
+    }
+  ],
+  "headEligibleTimings": [
+    {
+      "source": "full38-forward",
+      "mode": "baseline",
+      "passed": true,
+      "checkedUpdates": 38,
+      "medianMs": 3724.87445850129,
+      "percentChange": 0.0,
+      "peakRendererRssMiB": 2227.5625
+    },
+    {
+      "source": "full38-forward",
+      "mode": "settings",
+      "passed": true,
+      "checkedUpdates": 38,
+      "medianMs": 3764.531666500261,
+      "percentChange": 1.0646589151068309,
+      "peakRendererRssMiB": 2185.265625
+    },
+    {
+      "source": "full38-forward",
+      "mode": "private-inputs",
+      "passed": true,
+      "checkedUpdates": 38,
+      "medianMs": 3702.472270502767,
+      "percentChange": -0.6014212894449256,
+      "peakRendererRssMiB": 2081.6875
+    }
+  ],
+  "native": {
+    "expectedRuns": 8,
+    "finishedRuns": 2,
+    "completeRuns": 2,
+    "passingRuns": 2,
+    "rows": [
+      {
+        "pair": 0,
+        "variant": "baseline",
+        "directory": "native/runs/pair0/baseline",
+        "complete": true,
+        "passed": true,
+        "firstObservedMs": 119528.93275000679,
+        "totalObservedMs": 195192.0042080019,
+        "continuingObservedMs": 75663.0714579951,
+        "peakRendererRssMiB": 3173.765625,
+        "sourceUnchanged": true,
+        "tokens": [
+          11.0,
+          314.0
+        ],
+        "numerical": {
+          "passed": true,
+          "tokens": [
+            11,
+            314
+          ],
+          "q9Q16Winners": [
+            11,
+            314
+          ],
+          "floatWinners": [
+            11,
+            314
+          ],
+          "headStable": true,
+          "actualHeadWinner": 314,
+          "hiddenError": {
+            "finite": 768,
+            "rmse": 0.006786221446296377,
+            "maximum": 0.16870092057266106
+          },
+          "cacheErrors": [
+            {
+              "layer": 0,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.00022357898586262913,
+              "maximum": 0.0012227118146522775
+            },
+            {
+              "layer": 0,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.00032116687551036674,
+              "maximum": 0.0015925842570759796
+            },
+            {
+              "layer": 1,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0012246409618270361,
+              "maximum": 0.006047969495086125
+            },
+            {
+              "layer": 1,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.000695989016036646,
+              "maximum": 0.0038321300205300945
+            },
+            {
+              "layer": 2,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0005555409287693597,
+              "maximum": 0.0022896087739878723
+            },
+            {
+              "layer": 2,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.0011727097376734903,
+              "maximum": 0.004968403190865001
+            },
+            {
+              "layer": 3,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0005950791030361656,
+              "maximum": 0.0030395295485170504
+            },
+            {
+              "layer": 3,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.0017526345837651747,
+              "maximum": 0.007704264632438673
+            },
+            {
+              "layer": 4,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0005802499981908828,
+              "maximum": 0.0035076629925274716
+            },
+            {
+              "layer": 4,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.003442357058850868,
+              "maximum": 0.024862428314053275
+            },
+            {
+              "layer": 5,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.000557030310029048,
+              "maximum": 0.0025914672869005173
+            },
+            {
+              "layer": 5,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.004080848852862094,
+              "maximum": 0.018881098316830713
+            },
+            {
+              "layer": 6,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.00044655414435548605,
+              "maximum": 0.0023559644352484366
+            },
+            {
+              "layer": 6,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.0032014193458517843,
+              "maximum": 0.010911233933378561
+            },
+            {
+              "layer": 7,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0004650024090067481,
+              "maximum": 0.002908660228180395
+            },
+            {
+              "layer": 7,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.002978234306176694,
+              "maximum": 0.011157127506695175
+            },
+            {
+              "layer": 8,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.00045945733311022856,
+              "maximum": 0.002865805193485671
+            },
+            {
+              "layer": 8,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.0030114957609978267,
+              "maximum": 0.010922718796022579
+            },
+            {
+              "layer": 9,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0005180177492361893,
+              "maximum": 0.0022431361243462344
+            },
+            {
+              "layer": 9,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.002918763061094698,
+              "maximum": 0.010246336768296782
+            },
+            {
+              "layer": 10,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.000587060344781282,
+              "maximum": 0.002672752090873587
+            },
+            {
+              "layer": 10,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.003043885736034868,
+              "maximum": 0.012108537191121593
+            },
+            {
+              "layer": 11,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0010929033710850634,
+              "maximum": 0.004800690724003687
+            },
+            {
+              "layer": 11,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.00274471040710453,
+              "maximum": 0.010278079093670622
+            }
+          ],
+          "scope": "Two-token native prefix; all retained K/V at both positions and final retained head input. No residual snapshot during next-token execution."
+        },
+        "percentChange": {
+          "firstObservedMs": 0.0,
+          "totalObservedMs": 0.0,
+          "continuingObservedMs": 0.0,
+          "peakRendererRssMiB": 0.0
+        },
+        "baselineDifference": {
+          "hiddenMaximum": 0.0,
+          "cacheMaximum": 0.0
+        }
+      },
+      {
+        "pair": 0,
+        "variant": "small-chunks",
+        "directory": "native/runs/pair0/small-chunks",
+        "complete": true,
+        "passed": true,
+        "firstObservedMs": 120227.4201669934,
+        "totalObservedMs": 201315.75349999184,
+        "continuingObservedMs": 81088.33333299845,
+        "peakRendererRssMiB": 3542.65625,
+        "sourceUnchanged": true,
+        "tokens": [
+          11.0,
+          314.0
+        ],
+        "numerical": {
+          "passed": true,
+          "tokens": [
+            11,
+            314
+          ],
+          "q9Q16Winners": [
+            11,
+            314
+          ],
+          "floatWinners": [
+            11,
+            314
+          ],
+          "headStable": true,
+          "actualHeadWinner": 314,
+          "hiddenError": {
+            "finite": 768,
+            "rmse": 0.006786221446296377,
+            "maximum": 0.16870092057266106
+          },
+          "cacheErrors": [
+            {
+              "layer": 0,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.00022357898586262913,
+              "maximum": 0.0012227118146522775
+            },
+            {
+              "layer": 0,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.00032116687551036674,
+              "maximum": 0.0015925842570759796
+            },
+            {
+              "layer": 1,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0012246409618270361,
+              "maximum": 0.006047969495086125
+            },
+            {
+              "layer": 1,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.000695989016036646,
+              "maximum": 0.0038321300205300945
+            },
+            {
+              "layer": 2,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0005555409287693597,
+              "maximum": 0.0022896087739878723
+            },
+            {
+              "layer": 2,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.0011727097376734903,
+              "maximum": 0.004968403190865001
+            },
+            {
+              "layer": 3,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0005950791030361656,
+              "maximum": 0.0030395295485170504
+            },
+            {
+              "layer": 3,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.0017526345837651747,
+              "maximum": 0.007704264632438673
+            },
+            {
+              "layer": 4,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0005802499981908828,
+              "maximum": 0.0035076629925274716
+            },
+            {
+              "layer": 4,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.003442357058850868,
+              "maximum": 0.024862428314053275
+            },
+            {
+              "layer": 5,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.000557030310029048,
+              "maximum": 0.0025914672869005173
+            },
+            {
+              "layer": 5,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.004080848852862094,
+              "maximum": 0.018881098316830713
+            },
+            {
+              "layer": 6,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.00044655414435548605,
+              "maximum": 0.0023559644352484366
+            },
+            {
+              "layer": 6,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.0032014193458517843,
+              "maximum": 0.010911233933378561
+            },
+            {
+              "layer": 7,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0004650024090067481,
+              "maximum": 0.002908660228180395
+            },
+            {
+              "layer": 7,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.002978234306176694,
+              "maximum": 0.011157127506695175
+            },
+            {
+              "layer": 8,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.00045945733311022856,
+              "maximum": 0.002865805193485671
+            },
+            {
+              "layer": 8,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.0030114957609978267,
+              "maximum": 0.010922718796022579
+            },
+            {
+              "layer": 9,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0005180177492361893,
+              "maximum": 0.0022431361243462344
+            },
+            {
+              "layer": 9,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.002918763061094698,
+              "maximum": 0.010246336768296782
+            },
+            {
+              "layer": 10,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.000587060344781282,
+              "maximum": 0.002672752090873587
+            },
+            {
+              "layer": 10,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.003043885736034868,
+              "maximum": 0.012108537191121593
+            },
+            {
+              "layer": 11,
+              "position": 0,
+              "finite": 1536,
+              "rmse": 0.0010929033710850634,
+              "maximum": 0.004800690724003687
+            },
+            {
+              "layer": 11,
+              "position": 1,
+              "finite": 1536,
+              "rmse": 0.00274471040710453,
+              "maximum": 0.010278079093670622
+            }
+          ],
+          "scope": "Two-token native prefix; all retained K/V at both positions and final retained head input. No residual snapshot during next-token execution."
+        },
+        "percentChange": {
+          "firstObservedMs": 0.5843668147255121,
+          "totalObservedMs": 3.137295155525077,
+          "continuingObservedMs": 7.170290302073212,
+          "peakRendererRssMiB": 11.623121193771201
+        },
+        "baselineDifference": {
+          "hiddenMaximum": 0.0,
+          "cacheMaximum": 0.0
+        }
+      },
+      {
+        "pair": 0,
+        "variant": "static-readers",
+        "directory": "native/runs/pair0/static-readers",
+        "complete": false,
+        "passed": false,
+        "firstObservedMs": null,
+        "totalObservedMs": null,
+        "continuingObservedMs": null,
+        "peakRendererRssMiB": null,
+        "sourceUnchanged": null,
+        "tokens": null,
+        "numerical": null
+      }
+    ],
+    "scope": "12 layers, 32 allocated slots, 2 observed outputs; total includes navigation/setup; continuing time is the observed first-to-second interval.",
+    "limitation": "Two opposite orders, not enough to estimate a narrow confidence interval or full32 occupancy behavior."
+  },
+  "normalizationBrowser": null,
+  "boundaryDiagnostic": null,
+  "quality": null
+}

@@ -1,0 +1,867 @@
+{
+  "schemaVersion": 1,
+  "scope": "full-native-token-pipeline",
+  "directory": "/Users/shubhampatil/Documents/programming/gpt2-css/experiments/optimization-followups-2026-09-17/native/fixtures/static-readers",
+  "blocks": 12,
+  "allocatedCapacity": 32,
+  "compiledGenerationLimit": 32,
+  "observedTokenTarget": 2,
+  "wallBudgetSeconds": 360.0,
+  "sourceSha256": {
+    "index.html": "9c85c67234c30f1bde3ce240b9c7e08af720a2be5926f69f93ba8c7c24d1c8b3",
+    "runtime.css": "55d4d22b396306b75bd91bbb122bb02d8ee87e69aef7374895b1c1d69c4f3e77",
+    "manifest.json": "898041a1808bd5045e7c4e3127c0f3c1b41a26676fab34695cfec09c7c7608d7"
+  },
+  "compiledGraphModified": false,
+  "runnerBrowserValidated": false,
+  "browserArguments": [
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "runnerSha256": "4763daa122aca97c446184e68d48f030b04e578265f631fb2bd65b8fb3076a4f",
+  "numericalVerificationPerformed": false,
+  "verificationScope": "Native capture epochs and retained token IDs only; no independent numerical or token-reference validation",
+  "authorJavaScript": false,
+  "observerJavaScript": false,
+  "limitations": [
+    "Observation times include layout reads and polling delay.",
+    "The next native token may begin before the observer closes the browser.",
+    "A short prefix does not identify long-context latency growth.",
+    "No numerical-quality verification is performed by this timing scaffold."
+  ],
+  "samples": [
+    {
+      "capturedTokenCount": 1,
+      "winner": 11,
+      "milliseconds": 82699.91387499613,
+      "skippedObservationCount": 0
+    }
+  ],
+  "completedObservedPrefix": false,
+  "manifest": {
+    "blocks": 12,
+    "capacity": 32,
+    "renderingGraphs": 1,
+    "coreBackend": "reused",
+    "cacheLayout": "flat",
+    "cacheCodec": "font-vector",
+    "kvWindow": 32,
+    "kvSinks": 0,
+    "isolatedMetricState": false,
+    "valueLayout": "runs",
+    "globalProjection": false,
+    "fontVectorOperatorVersion": 2,
+    "attentionMask": "full causal",
+    "scopedState": true,
+    "centeredContext": true,
+    "dynamicActivationRange": true,
+    "runtimeJavaScript": false,
+    "liveness": false,
+    "uncachedStyle": false,
+    "nativeLayerTokenHandshake": true,
+    "privateLayerControl": true,
+    "localLayerContainer": true,
+    "kvStorage": "native delayed whole-head font settings",
+    "fontFaces": 261,
+    "autostart": false,
+    "head": "full-vocabulary-q16-two-pass",
+    "promptTokens": 1,
+    "generatedTokenLimit": 32,
+    "scheduler": "CSS receipts and SVG SMIL events",
+    "isolateHead": true,
+    "detachedOutput": true,
+    "headEpochTransport": "separate geometry",
+    "fontBackend": "original",
+    "teacherForcedInputs": null,
+    "teacherForcedTargets": null
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.48",
+    "revision": "@199a3a541d76237379e353b348e64045584db057",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "browserLaunchMilliseconds": 509.8620829958236,
+  "startupVerification": {
+    "fontReady": true,
+    "runChecked": true,
+    "runLatched": true,
+    "clickAttempts": 1
+  },
+  "setupMilliseconds": 38869.927250008914,
+  "sampledMemory": [
+    {
+      "seconds": 105674.330711333,
+      "browserTreeRssMiB": 1000.0,
+      "rendererRssMiB": 497.1875
+    },
+    {
+      "seconds": 105674.871323916,
+      "browserTreeRssMiB": 1474.03125,
+      "rendererRssMiB": 928.3125
+    },
+    {
+      "seconds": 105675.403499625,
+      "browserTreeRssMiB": 1477.921875,
+      "rendererRssMiB": 931.609375
+    },
+    {
+      "seconds": 105675.9422285,
+      "browserTreeRssMiB": 1481.734375,
+      "rendererRssMiB": 935.375
+    },
+    {
+      "seconds": 105676.485356416,
+      "browserTreeRssMiB": 1702.65625,
+      "rendererRssMiB": 1026.9375
+    },
+    {
+      "seconds": 105677.022140208,
+      "browserTreeRssMiB": 1503.71875,
+      "rendererRssMiB": 940.84375
+    },
+    {
+      "seconds": 105677.559372416,
+      "browserTreeRssMiB": 1504.828125,
+      "rendererRssMiB": 941.875
+    },
+    {
+      "seconds": 105678.096321125,
+      "browserTreeRssMiB": 1506.0,
+      "rendererRssMiB": 943.046875
+    },
+    {
+      "seconds": 105678.632375041,
+      "browserTreeRssMiB": 1507.171875,
+      "rendererRssMiB": 944.21875
+    },
+    {
+      "seconds": 105679.170791333,
+      "browserTreeRssMiB": 1509.0625,
+      "rendererRssMiB": 946.0625
+    },
+    {
+      "seconds": 105679.709784541,
+      "browserTreeRssMiB": 1511.171875,
+      "rendererRssMiB": 948.59375
+    },
+    {
+      "seconds": 105680.248541,
+      "browserTreeRssMiB": 1513.453125,
+      "rendererRssMiB": 950.875
+    },
+    {
+      "seconds": 105680.786606916,
+      "browserTreeRssMiB": 1515.90625,
+      "rendererRssMiB": 953.375
+    },
+    {
+      "seconds": 105681.321269458,
+      "browserTreeRssMiB": 1518.296875,
+      "rendererRssMiB": 955.765625
+    },
+    {
+      "seconds": 105681.858867291,
+      "browserTreeRssMiB": 1520.484375,
+      "rendererRssMiB": 958.0
+    },
+    {
+      "seconds": 105682.39559825,
+      "browserTreeRssMiB": 1521.953125,
+      "rendererRssMiB": 959.453125
+    },
+    {
+      "seconds": 105682.933758291,
+      "browserTreeRssMiB": 1523.28125,
+      "rendererRssMiB": 960.796875
+    },
+    {
+      "seconds": 105683.470510916,
+      "browserTreeRssMiB": 1524.453125,
+      "rendererRssMiB": 961.953125
+    },
+    {
+      "seconds": 105684.006174083,
+      "browserTreeRssMiB": 1526.796875,
+      "rendererRssMiB": 964.296875
+    },
+    {
+      "seconds": 105684.544985708,
+      "browserTreeRssMiB": 1528.6875,
+      "rendererRssMiB": 965.921875
+    },
+    {
+      "seconds": 105685.08189325,
+      "browserTreeRssMiB": 1530.5,
+      "rendererRssMiB": 967.734375
+    },
+    {
+      "seconds": 105685.615849875,
+      "browserTreeRssMiB": 1533.3125,
+      "rendererRssMiB": 970.53125
+    },
+    {
+      "seconds": 105686.154516291,
+      "browserTreeRssMiB": 1535.53125,
+      "rendererRssMiB": 972.40625
+    },
+    {
+      "seconds": 105686.692223833,
+      "browserTreeRssMiB": 1539.515625,
+      "rendererRssMiB": 974.421875
+    },
+    {
+      "seconds": 105687.227556875,
+      "browserTreeRssMiB": 1544.3125,
+      "rendererRssMiB": 976.15625
+    },
+    {
+      "seconds": 105687.763463125,
+      "browserTreeRssMiB": 1551.265625,
+      "rendererRssMiB": 978.03125
+    },
+    {
+      "seconds": 105688.298067416,
+      "browserTreeRssMiB": 1599.1875,
+      "rendererRssMiB": 981.53125
+    },
+    {
+      "seconds": 105688.835097041,
+      "browserTreeRssMiB": 1562.96875,
+      "rendererRssMiB": 982.828125
+    },
+    {
+      "seconds": 105689.372411416,
+      "browserTreeRssMiB": 1448.234375,
+      "rendererRssMiB": 866.171875
+    },
+    {
+      "seconds": 105689.911742416,
+      "browserTreeRssMiB": 1450.015625,
+      "rendererRssMiB": 867.953125
+    },
+    {
+      "seconds": 105690.447525375,
+      "browserTreeRssMiB": 1448.6875,
+      "rendererRssMiB": 870.4375
+    },
+    {
+      "seconds": 105690.985157,
+      "browserTreeRssMiB": 1450.859375,
+      "rendererRssMiB": 872.609375
+    },
+    {
+      "seconds": 105691.5227655,
+      "browserTreeRssMiB": 1452.8125,
+      "rendererRssMiB": 874.5625
+    },
+    {
+      "seconds": 105692.063124083,
+      "browserTreeRssMiB": 1454.734375,
+      "rendererRssMiB": 876.484375
+    },
+    {
+      "seconds": 105692.600734125,
+      "browserTreeRssMiB": 1456.984375,
+      "rendererRssMiB": 878.734375
+    },
+    {
+      "seconds": 105693.134758291,
+      "browserTreeRssMiB": 1481.84375,
+      "rendererRssMiB": 880.5625
+    },
+    {
+      "seconds": 105693.672353541,
+      "browserTreeRssMiB": 1486.0625,
+      "rendererRssMiB": 883.375
+    },
+    {
+      "seconds": 105694.2059695,
+      "browserTreeRssMiB": 1488.390625,
+      "rendererRssMiB": 885.703125
+    },
+    {
+      "seconds": 105694.739400958,
+      "browserTreeRssMiB": 1494.484375,
+      "rendererRssMiB": 891.3125
+    },
+    {
+      "seconds": 105695.276926083,
+      "browserTreeRssMiB": 1497.453125,
+      "rendererRssMiB": 894.25
+    },
+    {
+      "seconds": 105695.813328541,
+      "browserTreeRssMiB": 1500.109375,
+      "rendererRssMiB": 896.90625
+    },
+    {
+      "seconds": 105696.349513666,
+      "browserTreeRssMiB": 1500.8125,
+      "rendererRssMiB": 897.640625
+    },
+    {
+      "seconds": 105696.886323625,
+      "browserTreeRssMiB": 1503.546875,
+      "rendererRssMiB": 900.375
+    },
+    {
+      "seconds": 105697.425518708,
+      "browserTreeRssMiB": 1506.546875,
+      "rendererRssMiB": 903.390625
+    },
+    {
+      "seconds": 105697.964774583,
+      "browserTreeRssMiB": 1509.5,
+      "rendererRssMiB": 906.34375
+    },
+    {
+      "seconds": 105698.507412625,
+      "browserTreeRssMiB": 1511.984375,
+      "rendererRssMiB": 908.84375
+    },
+    {
+      "seconds": 105699.046136708,
+      "browserTreeRssMiB": 1514.21875,
+      "rendererRssMiB": 911.09375
+    },
+    {
+      "seconds": 105699.58495775,
+      "browserTreeRssMiB": 1516.921875,
+      "rendererRssMiB": 913.953125
+    },
+    {
+      "seconds": 105700.123122666,
+      "browserTreeRssMiB": 1518.71875,
+      "rendererRssMiB": 915.828125
+    },
+    {
+      "seconds": 105700.658872791,
+      "browserTreeRssMiB": 1521.46875,
+      "rendererRssMiB": 918.5625
+    },
+    {
+      "seconds": 105701.2004345,
+      "browserTreeRssMiB": 1525.328125,
+      "rendererRssMiB": 922.421875
+    },
+    {
+      "seconds": 105701.737874375,
+      "browserTreeRssMiB": 1529.515625,
+      "rendererRssMiB": 926.609375
+    },
+    {
+      "seconds": 105702.275218208,
+      "browserTreeRssMiB": 1534.375,
+      "rendererRssMiB": 931.46875
+    },
+    {
+      "seconds": 105702.813710166,
+      "browserTreeRssMiB": 1538.84375,
+      "rendererRssMiB": 935.921875
+    },
+    {
+      "seconds": 105703.352318208,
+      "browserTreeRssMiB": 1604.890625,
+      "rendererRssMiB": 1002.6875
+    },
+    {
+      "seconds": 105703.886704916,
+      "browserTreeRssMiB": 1622.5,
+      "rendererRssMiB": 1020.296875
+    },
+    {
+      "seconds": 105704.421819166,
+      "browserTreeRssMiB": 1533.21875,
+      "rendererRssMiB": 930.3125
+    },
+    {
+      "seconds": 105704.96011225,
+      "browserTreeRssMiB": 1670.46875,
+      "rendererRssMiB": 1067.234375
+    },
+    {
+      "seconds": 105705.56246025,
+      "browserTreeRssMiB": 2322.59375,
+      "rendererRssMiB": 1699.390625
+    },
+    {
+      "seconds": 105706.123395458,
+      "browserTreeRssMiB": 2545.765625,
+      "rendererRssMiB": 1923.140625
+    },
+    {
+      "seconds": 105706.668859416,
+      "browserTreeRssMiB": 2919.5625,
+      "rendererRssMiB": 2300.921875
+    },
+    {
+      "seconds": 105707.206819,
+      "browserTreeRssMiB": 2749.484375,
+      "rendererRssMiB": 2130.6875
+    },
+    {
+      "seconds": 105707.744993541,
+      "browserTreeRssMiB": 2752.203125,
+      "rendererRssMiB": 2133.390625
+    },
+    {
+      "seconds": 105708.28200675,
+      "browserTreeRssMiB": 2755.484375,
+      "rendererRssMiB": 2135.90625
+    },
+    {
+      "seconds": 105708.818559625,
+      "browserTreeRssMiB": 2756.703125,
+      "rendererRssMiB": 2137.078125
+    },
+    {
+      "seconds": 105709.357586041,
+      "browserTreeRssMiB": 2759.421875,
+      "rendererRssMiB": 2144.234375
+    },
+    {
+      "seconds": 105709.895113708,
+      "browserTreeRssMiB": 2760.609375,
+      "rendererRssMiB": 2145.453125
+    },
+    {
+      "seconds": 105710.436873833,
+      "browserTreeRssMiB": 2791.046875,
+      "rendererRssMiB": 2175.890625
+    },
+    {
+      "seconds": 105710.970336666,
+      "browserTreeRssMiB": 2790.9375,
+      "rendererRssMiB": 2200.03125
+    },
+    {
+      "seconds": 105711.507805791,
+      "browserTreeRssMiB": 3025.421875,
+      "rendererRssMiB": 2316.828125
+    },
+    {
+      "seconds": 105712.0455605,
+      "browserTreeRssMiB": 3083.109375,
+      "rendererRssMiB": 2356.796875
+    },
+    {
+      "seconds": 105712.584833333,
+      "browserTreeRssMiB": 3102.0625,
+      "rendererRssMiB": 2379.78125
+    },
+    {
+      "seconds": 105713.119791625,
+      "browserTreeRssMiB": 3142.03125,
+      "rendererRssMiB": 2419.75
+    },
+    {
+      "seconds": 105713.656507208,
+      "browserTreeRssMiB": 3221.328125,
+      "rendererRssMiB": 2499.109375
+    },
+    {
+      "seconds": 105714.195178041,
+      "browserTreeRssMiB": 3329.53125,
+      "rendererRssMiB": 2607.3125
+    },
+    {
+      "seconds": 105714.735246916,
+      "browserTreeRssMiB": 3336.125,
+      "rendererRssMiB": 2613.90625
+    },
+    {
+      "seconds": 105715.2739195,
+      "browserTreeRssMiB": 3400.28125,
+      "rendererRssMiB": 2673.984375
+    },
+    {
+      "seconds": 105715.813090833,
+      "browserTreeRssMiB": 3498.875,
+      "rendererRssMiB": 2772.5625
+    },
+    {
+      "seconds": 105716.354682041,
+      "browserTreeRssMiB": 3633.5625,
+      "rendererRssMiB": 2907.25
+    },
+    {
+      "seconds": 105716.892644916,
+      "browserTreeRssMiB": 3639.484375,
+      "rendererRssMiB": 2913.21875
+    },
+    {
+      "seconds": 105717.431685375,
+      "browserTreeRssMiB": 3640.21875,
+      "rendererRssMiB": 2917.96875
+    },
+    {
+      "seconds": 105717.970784583,
+      "browserTreeRssMiB": 3632.859375,
+      "rendererRssMiB": 2906.5625
+    },
+    {
+      "seconds": 105718.505190208,
+      "browserTreeRssMiB": 3641.578125,
+      "rendererRssMiB": 2915.328125
+    },
+    {
+      "seconds": 105719.037911,
+      "browserTreeRssMiB": 3678.015625,
+      "rendererRssMiB": 2951.6875
+    },
+    {
+      "seconds": 105719.575766708,
+      "browserTreeRssMiB": 3711.6875,
+      "rendererRssMiB": 2985.328125
+    },
+    {
+      "seconds": 105720.117692958,
+      "browserTreeRssMiB": 3797.796875,
+      "rendererRssMiB": 3075.484375
+    },
+    {
+      "seconds": 105720.658663083,
+      "browserTreeRssMiB": 3800.875,
+      "rendererRssMiB": 3078.609375
+    },
+    {
+      "seconds": 105721.195343,
+      "browserTreeRssMiB": 3864.890625,
+      "rendererRssMiB": 3138.546875
+    },
+    {
+      "seconds": 105721.731660083,
+      "browserTreeRssMiB": 3955.75,
+      "rendererRssMiB": 3229.375
+    },
+    {
+      "seconds": 105722.268914208,
+      "browserTreeRssMiB": 4092.515625,
+      "rendererRssMiB": 3366.140625
+    },
+    {
+      "seconds": 105722.807686541,
+      "browserTreeRssMiB": 4111.703125,
+      "rendererRssMiB": 3385.328125
+    },
+    {
+      "seconds": 105723.345679083,
+      "browserTreeRssMiB": 4176.375,
+      "rendererRssMiB": 3462.734375
+    },
+    {
+      "seconds": 105723.882875833,
+      "browserTreeRssMiB": 4213.890625,
+      "rendererRssMiB": 3502.9375
+    },
+    {
+      "seconds": 105724.427808666,
+      "browserTreeRssMiB": 4216.125,
+      "rendererRssMiB": 3506.46875
+    },
+    {
+      "seconds": 105724.967051875,
+      "browserTreeRssMiB": 4208.28125,
+      "rendererRssMiB": 3527.3125
+    },
+    {
+      "seconds": 105725.506074708,
+      "browserTreeRssMiB": 4208.15625,
+      "rendererRssMiB": 3527.1875
+    },
+    {
+      "seconds": 105726.045193583,
+      "browserTreeRssMiB": 4182.78125,
+      "rendererRssMiB": 3505.90625
+    },
+    {
+      "seconds": 105726.582235,
+      "browserTreeRssMiB": 4183.859375,
+      "rendererRssMiB": 3506.984375
+    },
+    {
+      "seconds": 105727.117859958,
+      "browserTreeRssMiB": 4189.53125,
+      "rendererRssMiB": 3508.625
+    },
+    {
+      "seconds": 105727.654867125,
+      "browserTreeRssMiB": 4197.484375,
+      "rendererRssMiB": 3516.5625
+    },
+    {
+      "seconds": 105728.198519958,
+      "browserTreeRssMiB": 4179.28125,
+      "rendererRssMiB": 3502.9375
+    },
+    {
+      "seconds": 105728.737322333,
+      "browserTreeRssMiB": 4157.984375,
+      "rendererRssMiB": 3481.671875
+    },
+    {
+      "seconds": 105729.277144583,
+      "browserTreeRssMiB": 4164.609375,
+      "rendererRssMiB": 3492.390625
+    },
+    {
+      "seconds": 105729.815461333,
+      "browserTreeRssMiB": 4173.40625,
+      "rendererRssMiB": 3501.1875
+    },
+    {
+      "seconds": 105730.351479541,
+      "browserTreeRssMiB": 4199.65625,
+      "rendererRssMiB": 3523.359375
+    },
+    {
+      "seconds": 105730.889793375,
+      "browserTreeRssMiB": 4251.921875,
+      "rendererRssMiB": 3575.609375
+    },
+    {
+      "seconds": 105731.426762583,
+      "browserTreeRssMiB": 4326.71875,
+      "rendererRssMiB": 3650.40625
+    },
+    {
+      "seconds": 105731.96562825,
+      "browserTreeRssMiB": 4369.125,
+      "rendererRssMiB": 3696.859375
+    },
+    {
+      "seconds": 105732.499538875,
+      "browserTreeRssMiB": 4425.984375,
+      "rendererRssMiB": 3753.71875
+    },
+    {
+      "seconds": 105733.036791458,
+      "browserTreeRssMiB": 4492.0,
+      "rendererRssMiB": 3815.703125
+    },
+    {
+      "seconds": 105733.575617166,
+      "browserTreeRssMiB": 4564.984375,
+      "rendererRssMiB": 3888.6875
+    },
+    {
+      "seconds": 105734.111742791,
+      "browserTreeRssMiB": 4601.34375,
+      "rendererRssMiB": 3923.421875
+    },
+    {
+      "seconds": 105734.645776666,
+      "browserTreeRssMiB": 4612.328125,
+      "rendererRssMiB": 3933.65625
+    },
+    {
+      "seconds": 105735.182122791,
+      "browserTreeRssMiB": 4619.640625,
+      "rendererRssMiB": 3940.890625
+    },
+    {
+      "seconds": 105735.718791166,
+      "browserTreeRssMiB": 4620.453125,
+      "rendererRssMiB": 3941.75
+    },
+    {
+      "seconds": 105736.253005666,
+      "browserTreeRssMiB": 4622.609375,
+      "rendererRssMiB": 3943.875
+    },
+    {
+      "seconds": 105736.7855075,
+      "browserTreeRssMiB": 4624.828125,
+      "rendererRssMiB": 3946.046875
+    },
+    {
+      "seconds": 105737.323773125,
+      "browserTreeRssMiB": 4630.609375,
+      "rendererRssMiB": 3951.828125
+    },
+    {
+      "seconds": 105737.862033875,
+      "browserTreeRssMiB": 4632.90625,
+      "rendererRssMiB": 3954.125
+    },
+    {
+      "seconds": 105738.396499041,
+      "browserTreeRssMiB": 4634.640625,
+      "rendererRssMiB": 3959.265625
+    },
+    {
+      "seconds": 105738.936267875,
+      "browserTreeRssMiB": 4641.578125,
+      "rendererRssMiB": 3966.203125
+    },
+    {
+      "seconds": 105739.473155833,
+      "browserTreeRssMiB": 4649.84375,
+      "rendererRssMiB": 3970.4375
+    },
+    {
+      "seconds": 105740.01152925,
+      "browserTreeRssMiB": 4672.96875,
+      "rendererRssMiB": 3993.5625
+    },
+    {
+      "seconds": 105740.544967291,
+      "browserTreeRssMiB": 4709.9375,
+      "rendererRssMiB": 4030.53125
+    },
+    {
+      "seconds": 105741.082425791,
+      "browserTreeRssMiB": 4722.078125,
+      "rendererRssMiB": 4046.71875
+    },
+    {
+      "seconds": 105741.617838208,
+      "browserTreeRssMiB": 4730.46875,
+      "rendererRssMiB": 4055.15625
+    },
+    {
+      "seconds": 105742.152600583,
+      "browserTreeRssMiB": 4747.015625,
+      "rendererRssMiB": 4067.625
+    },
+    {
+      "seconds": 105742.68876975,
+      "browserTreeRssMiB": 4792.09375,
+      "rendererRssMiB": 4112.6875
+    },
+    {
+      "seconds": 105743.226815583,
+      "browserTreeRssMiB": 4833.703125,
+      "rendererRssMiB": 4154.28125
+    },
+    {
+      "seconds": 105743.764635458,
+      "browserTreeRssMiB": 4839.203125,
+      "rendererRssMiB": 4159.78125
+    },
+    {
+      "seconds": 105744.304625708,
+      "browserTreeRssMiB": 4789.359375,
+      "rendererRssMiB": 4113.984375
+    },
+    {
+      "seconds": 105744.841241083,
+      "browserTreeRssMiB": 4790.28125,
+      "rendererRssMiB": 4114.953125
+    },
+    {
+      "seconds": 105745.382137541,
+      "browserTreeRssMiB": 4796.453125,
+      "rendererRssMiB": 4117.046875
+    },
+    {
+      "seconds": 105745.920768458,
+      "browserTreeRssMiB": 4799.0625,
+      "rendererRssMiB": 4119.640625
+    },
+    {
+      "seconds": 105746.452833166,
+      "browserTreeRssMiB": 4802.28125,
+      "rendererRssMiB": 4122.859375
+    },
+    {
+      "seconds": 105746.991516625,
+      "browserTreeRssMiB": 4804.3125,
+      "rendererRssMiB": 4124.890625
+    },
+    {
+      "seconds": 105747.533933166,
+      "browserTreeRssMiB": 4808.328125,
+      "rendererRssMiB": 4132.953125
+    },
+    {
+      "seconds": 105748.076169875,
+      "browserTreeRssMiB": 4626.421875,
+      "rendererRssMiB": 3953.46875
+    },
+    {
+      "seconds": 105748.620242375,
+      "browserTreeRssMiB": 4539.75,
+      "rendererRssMiB": 3914.75
+    },
+    {
+      "seconds": 105749.159882125,
+      "browserTreeRssMiB": 4557.796875,
+      "rendererRssMiB": 4011.4375
+    },
+    {
+      "seconds": 105749.696836166,
+      "browserTreeRssMiB": 4524.265625,
+      "rendererRssMiB": 3977.90625
+    },
+    {
+      "seconds": 105750.230866583,
+      "browserTreeRssMiB": 4518.59375,
+      "rendererRssMiB": 3972.125
+    },
+    {
+      "seconds": 105750.769839541,
+      "browserTreeRssMiB": 4455.953125,
+      "rendererRssMiB": 3909.40625
+    },
+    {
+      "seconds": 105751.308468333,
+      "browserTreeRssMiB": 4589.78125,
+      "rendererRssMiB": 4043.21875
+    },
+    {
+      "seconds": 105751.843547541,
+      "browserTreeRssMiB": 4591.8125,
+      "rendererRssMiB": 4045.25
+    },
+    {
+      "seconds": 105752.382709166,
+      "browserTreeRssMiB": 4591.6875,
+      "rendererRssMiB": 4045.234375
+    },
+    {
+      "seconds": 105752.922296625,
+      "browserTreeRssMiB": 4590.4375,
+      "rendererRssMiB": 4043.984375
+    },
+    {
+      "seconds": 105753.461226791,
+      "browserTreeRssMiB": 4591.84375,
+      "rendererRssMiB": 4045.25
+    },
+    {
+      "seconds": 105753.999643041,
+      "browserTreeRssMiB": 4591.0625,
+      "rendererRssMiB": 4044.484375
+    },
+    {
+      "seconds": 105754.536549708,
+      "browserTreeRssMiB": 4592.140625,
+      "rendererRssMiB": 4045.5625
+    },
+    {
+      "seconds": 105755.074573125,
+      "browserTreeRssMiB": 4591.21875,
+      "rendererRssMiB": 4044.640625
+    },
+    {
+      "seconds": 105755.612408333,
+      "browserTreeRssMiB": 4591.21875,
+      "rendererRssMiB": 4044.640625
+    },
+    {
+      "seconds": 105756.151584875,
+      "browserTreeRssMiB": 4591.0625,
+      "rendererRssMiB": 4044.6875
+    },
+    {
+      "seconds": 105756.687380083,
+      "browserTreeRssMiB": 4591.28125,
+      "rendererRssMiB": 4044.90625
+    }
+  ],
+  "workerExitStatus": 1,
+  "wallBudgetExpired": false,
+  "sourceUnchangedAfterRun": true
+}

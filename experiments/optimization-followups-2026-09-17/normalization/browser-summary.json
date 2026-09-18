@@ -1,0 +1,922 @@
+[
+  {
+    "pair": 0,
+    "stage": "qkv",
+    "candidate": "sigma-hoist",
+    "checks": [
+      {
+        "epoch": 1,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00018238849741880606,
+          "maximum": 0.0008874013713704443
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0001824936145043948,
+          "maximum": 0.0008874013713704443
+        },
+        "baselineMaximumDifference": 0.0009799999999997588,
+        "passed": false
+      },
+      {
+        "epoch": 2,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.0008211570284129135,
+          "maximum": 0.003200690724003863
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0008209675300382714,
+          "maximum": 0.003200690724003863
+        },
+        "baselineMaximumDifference": 9.999999999976694e-05,
+        "passed": false
+      },
+      {
+        "epoch": 3,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00015548606016040577,
+          "maximum": 0.0007623042494531163
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0001555667809102655,
+          "maximum": 0.0007523042494530507
+        },
+        "baselineMaximumDifference": 0.0008220000000000172,
+        "passed": false
+      },
+      {
+        "epoch": 4,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "baselineMaximumDifference": 0.0,
+        "passed": true
+      },
+      {
+        "epoch": 5,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00015548606016040577,
+          "maximum": 0.0007623042494531163
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0001555667809102655,
+          "maximum": 0.0007523042494530507
+        },
+        "baselineMaximumDifference": 0.0008220000000000172,
+        "passed": false
+      },
+      {
+        "epoch": 6,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "baselineMaximumDifference": 0.0,
+        "passed": true
+      }
+    ],
+    "passed": false,
+    "timing": {
+      "baseline": {
+        "freshMs": 324.07704199431464,
+        "revisitMs": 282.70472900476307,
+        "exception": null
+      },
+      "sigma-hoist": {
+        "freshMs": 323.33333299902733,
+        "revisitMs": 279.1991039994173,
+        "exception": null
+      },
+      "centered-safe": {
+        "freshMs": 342.3662089917343,
+        "revisitMs": 306.5570624967222,
+        "exception": null
+      }
+    }
+  },
+  {
+    "pair": 0,
+    "stage": "qkv",
+    "candidate": "centered-safe",
+    "checks": [
+      {
+        "epoch": 1,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00018238849741880606,
+          "maximum": 0.0008874013713704443
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.00019329094212778788,
+          "maximum": 0.0008093267096873635
+        },
+        "baselineMaximumDifference": 0.0011590000000000211,
+        "passed": true
+      },
+      {
+        "epoch": 2,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.0008211570284129135,
+          "maximum": 0.003200690724003863
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0008411932024025133,
+          "maximum": 0.004015043811786967
+        },
+        "baselineMaximumDifference": 0.004799999999999471,
+        "passed": false
+      },
+      {
+        "epoch": 3,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00015548606016040577,
+          "maximum": 0.0007623042494531163
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0001786506104327461,
+          "maximum": 0.0008093893602816316
+        },
+        "baselineMaximumDifference": 0.0010710000000000441,
+        "passed": true
+      },
+      {
+        "epoch": 4,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.000386416953499947,
+          "maximum": 0.0020078380058441425
+        },
+        "baselineMaximumDifference": 0.0019400000000000528,
+        "passed": false
+      },
+      {
+        "epoch": 5,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00015548606016040577,
+          "maximum": 0.0007623042494531163
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0001786506104327461,
+          "maximum": 0.0008093893602816316
+        },
+        "baselineMaximumDifference": 0.0010710000000000441,
+        "passed": true
+      },
+      {
+        "epoch": 6,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.000386416953499947,
+          "maximum": 0.0020078380058441425
+        },
+        "baselineMaximumDifference": 0.0019400000000000528,
+        "passed": false
+      }
+    ],
+    "passed": false,
+    "timing": {
+      "baseline": {
+        "freshMs": 324.07704199431464,
+        "revisitMs": 282.70472900476307,
+        "exception": null
+      },
+      "sigma-hoist": {
+        "freshMs": 323.33333299902733,
+        "revisitMs": 279.1991039994173,
+        "exception": null
+      },
+      "centered-safe": {
+        "freshMs": 342.3662089917343,
+        "revisitMs": 306.5570624967222,
+        "exception": null
+      }
+    }
+  },
+  {
+    "pair": 0,
+    "stage": "mlp",
+    "candidate": "sigma-hoist",
+    "checks": [
+      {
+        "epoch": 1,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.00799286453422236,
+          "maximum": 0.0986063712455092
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.007959684002522997,
+          "maximum": 0.0986063712455092
+        },
+        "baselineMaximumDifference": 0.021280000000000188,
+        "passed": false
+      },
+      {
+        "epoch": 2,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.002980044613141682,
+          "maximum": 0.03569186981626982
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.002980044613141682,
+          "maximum": 0.03569186981626982
+        },
+        "baselineMaximumDifference": 0.0,
+        "passed": true
+      },
+      {
+        "epoch": 3,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.001695392225796129,
+          "maximum": 0.018808088578004645
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.0017778350706190505,
+          "maximum": 0.018808088578004645
+        },
+        "baselineMaximumDifference": 0.017199999999999882,
+        "passed": false
+      },
+      {
+        "epoch": 4,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.005250061321193915,
+          "maximum": 0.047504625447572835
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.005143786498392287,
+          "maximum": 0.047504625447572835
+        },
+        "baselineMaximumDifference": 0.030000000000001137,
+        "passed": false
+      },
+      {
+        "epoch": 5,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.001695392225796129,
+          "maximum": 0.018808088578004645
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.0017778350706190505,
+          "maximum": 0.018808088578004645
+        },
+        "baselineMaximumDifference": 0.017199999999999882,
+        "passed": false
+      },
+      {
+        "epoch": 6,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.005250061321193915,
+          "maximum": 0.047504625447572835
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.005143786498392287,
+          "maximum": 0.047504625447572835
+        },
+        "baselineMaximumDifference": 0.030000000000001137,
+        "passed": false
+      }
+    ],
+    "passed": false,
+    "timing": {
+      "baseline": {
+        "freshMs": 758.3055830036756,
+        "revisitMs": 607.7899999945657,
+        "exception": null
+      },
+      "sigma-hoist": {
+        "freshMs": 785.62537500693,
+        "revisitMs": 617.1061459972407,
+        "exception": null
+      },
+      "centered-safe": {
+        "freshMs": 789.1368749988033,
+        "revisitMs": 688.6723749994417,
+        "exception": null
+      }
+    }
+  },
+  {
+    "pair": 0,
+    "stage": "mlp",
+    "candidate": "centered-safe",
+    "checks": [
+      {
+        "epoch": 1,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.00799286453422236,
+          "maximum": 0.0986063712455092
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.007997131323530896,
+          "maximum": 0.09720637124550535
+        },
+        "baselineMaximumDifference": 0.03270000000000195,
+        "passed": true
+      },
+      {
+        "epoch": 2,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.002980044613141682,
+          "maximum": 0.03569186981626982
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.0032835605214838366,
+          "maximum": 0.03321786981626984
+        },
+        "baselineMaximumDifference": 0.022202999999999973,
+        "passed": true
+      },
+      {
+        "epoch": 3,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.001695392225796129,
+          "maximum": 0.018808088578004645
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.001967415595610495,
+          "maximum": 0.02964413064452387
+        },
+        "baselineMaximumDifference": 0.04200000000000159,
+        "passed": false
+      },
+      {
+        "epoch": 4,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.005250061321193915,
+          "maximum": 0.047504625447572835
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.004833936476837724,
+          "maximum": 0.04366389432513529
+        },
+        "baselineMaximumDifference": 0.04800000000000182,
+        "passed": true
+      },
+      {
+        "epoch": 5,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.001695392225796129,
+          "maximum": 0.018808088578004645
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.001967415595610495,
+          "maximum": 0.02964413064452387
+        },
+        "baselineMaximumDifference": 0.04200000000000159,
+        "passed": false
+      },
+      {
+        "epoch": 6,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.005250061321193915,
+          "maximum": 0.047504625447572835
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.004833936476837724,
+          "maximum": 0.04366389432513529
+        },
+        "baselineMaximumDifference": 0.04800000000000182,
+        "passed": true
+      }
+    ],
+    "passed": false,
+    "timing": {
+      "baseline": {
+        "freshMs": 758.3055830036756,
+        "revisitMs": 607.7899999945657,
+        "exception": null
+      },
+      "sigma-hoist": {
+        "freshMs": 785.62537500693,
+        "revisitMs": 617.1061459972407,
+        "exception": null
+      },
+      "centered-safe": {
+        "freshMs": 789.1368749988033,
+        "revisitMs": 688.6723749994417,
+        "exception": null
+      }
+    }
+  },
+  {
+    "pair": 1,
+    "stage": "qkv",
+    "candidate": "sigma-hoist",
+    "checks": [
+      {
+        "epoch": 1,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00018238849741880606,
+          "maximum": 0.0008874013713704443
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0001824936145043948,
+          "maximum": 0.0008874013713704443
+        },
+        "baselineMaximumDifference": 0.0009799999999997588,
+        "passed": false
+      },
+      {
+        "epoch": 2,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.0008211570284129135,
+          "maximum": 0.003200690724003863
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0008209675300382714,
+          "maximum": 0.003200690724003863
+        },
+        "baselineMaximumDifference": 9.999999999976694e-05,
+        "passed": false
+      },
+      {
+        "epoch": 3,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00015548606016040577,
+          "maximum": 0.0007623042494531163
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0001555667809102655,
+          "maximum": 0.0007523042494530507
+        },
+        "baselineMaximumDifference": 0.0008220000000000172,
+        "passed": false
+      },
+      {
+        "epoch": 4,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "baselineMaximumDifference": 0.0,
+        "passed": true
+      },
+      {
+        "epoch": 5,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00015548606016040577,
+          "maximum": 0.0007623042494531163
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0001555667809102655,
+          "maximum": 0.0007523042494530507
+        },
+        "baselineMaximumDifference": 0.0008220000000000172,
+        "passed": false
+      },
+      {
+        "epoch": 6,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "baselineMaximumDifference": 0.0,
+        "passed": true
+      }
+    ],
+    "passed": false,
+    "timing": {
+      "centered-safe": {
+        "freshMs": 337.6814579969505,
+        "revisitMs": 310.63014599931194,
+        "exception": null
+      },
+      "sigma-hoist": {
+        "freshMs": 326.4203750004526,
+        "revisitMs": 289.57343750516884,
+        "exception": null
+      },
+      "baseline": {
+        "freshMs": 334.6412090031663,
+        "revisitMs": 285.48574950400507,
+        "exception": null
+      }
+    }
+  },
+  {
+    "pair": 1,
+    "stage": "qkv",
+    "candidate": "centered-safe",
+    "checks": [
+      {
+        "epoch": 1,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00018238849741880606,
+          "maximum": 0.0008874013713704443
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.00019329094212778788,
+          "maximum": 0.0008093267096873635
+        },
+        "baselineMaximumDifference": 0.0011590000000000211,
+        "passed": true
+      },
+      {
+        "epoch": 2,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.0008211570284129135,
+          "maximum": 0.003200690724003863
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0008411932024025133,
+          "maximum": 0.004015043811786967
+        },
+        "baselineMaximumDifference": 0.004799999999999471,
+        "passed": false
+      },
+      {
+        "epoch": 3,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00015548606016040577,
+          "maximum": 0.0007623042494531163
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0001786506104327461,
+          "maximum": 0.0008093893602816316
+        },
+        "baselineMaximumDifference": 0.0010710000000000441,
+        "passed": true
+      },
+      {
+        "epoch": 4,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.000386416953499947,
+          "maximum": 0.0020078380058441425
+        },
+        "baselineMaximumDifference": 0.0019400000000000528,
+        "passed": false
+      },
+      {
+        "epoch": 5,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00015548606016040577,
+          "maximum": 0.0007623042494531163
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.0001786506104327461,
+          "maximum": 0.0008093893602816316
+        },
+        "baselineMaximumDifference": 0.0010710000000000441,
+        "passed": true
+      },
+      {
+        "epoch": 6,
+        "baseline": {
+          "finite": 2304,
+          "rmse": 0.00023050411912128567,
+          "maximum": 0.0011865043061214386
+        },
+        "candidate": {
+          "finite": 2304,
+          "rmse": 0.000386416953499947,
+          "maximum": 0.0020078380058441425
+        },
+        "baselineMaximumDifference": 0.0019400000000000528,
+        "passed": false
+      }
+    ],
+    "passed": false,
+    "timing": {
+      "centered-safe": {
+        "freshMs": 337.6814579969505,
+        "revisitMs": 310.63014599931194,
+        "exception": null
+      },
+      "sigma-hoist": {
+        "freshMs": 326.4203750004526,
+        "revisitMs": 289.57343750516884,
+        "exception": null
+      },
+      "baseline": {
+        "freshMs": 334.6412090031663,
+        "revisitMs": 285.48574950400507,
+        "exception": null
+      }
+    }
+  },
+  {
+    "pair": 1,
+    "stage": "mlp",
+    "candidate": "sigma-hoist",
+    "checks": [
+      {
+        "epoch": 1,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.00799286453422236,
+          "maximum": 0.0986063712455092
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.007959684002522997,
+          "maximum": 0.0986063712455092
+        },
+        "baselineMaximumDifference": 0.021280000000000188,
+        "passed": false
+      },
+      {
+        "epoch": 2,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.002980044613141682,
+          "maximum": 0.03569186981626982
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.002980044613141682,
+          "maximum": 0.03569186981626982
+        },
+        "baselineMaximumDifference": 0.0,
+        "passed": true
+      },
+      {
+        "epoch": 3,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.001695392225796129,
+          "maximum": 0.018808088578004645
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.0017778350706190505,
+          "maximum": 0.018808088578004645
+        },
+        "baselineMaximumDifference": 0.017199999999999882,
+        "passed": false
+      },
+      {
+        "epoch": 4,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.005250061321193915,
+          "maximum": 0.047504625447572835
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.005143786498392287,
+          "maximum": 0.047504625447572835
+        },
+        "baselineMaximumDifference": 0.030000000000001137,
+        "passed": false
+      },
+      {
+        "epoch": 5,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.001695392225796129,
+          "maximum": 0.018808088578004645
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.0017778350706190505,
+          "maximum": 0.018808088578004645
+        },
+        "baselineMaximumDifference": 0.017199999999999882,
+        "passed": false
+      },
+      {
+        "epoch": 6,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.005250061321193915,
+          "maximum": 0.047504625447572835
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.005143786498392287,
+          "maximum": 0.047504625447572835
+        },
+        "baselineMaximumDifference": 0.030000000000001137,
+        "passed": false
+      }
+    ],
+    "passed": false,
+    "timing": {
+      "centered-safe": {
+        "freshMs": 789.8284169932595,
+        "revisitMs": 689.8064790002536,
+        "exception": null
+      },
+      "sigma-hoist": {
+        "freshMs": 749.9818329961272,
+        "revisitMs": 595.0462289983989,
+        "exception": null
+      },
+      "baseline": {
+        "freshMs": 744.5956659939839,
+        "revisitMs": 603.3353334933054,
+        "exception": null
+      }
+    }
+  },
+  {
+    "pair": 1,
+    "stage": "mlp",
+    "candidate": "centered-safe",
+    "checks": [
+      {
+        "epoch": 1,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.00799286453422236,
+          "maximum": 0.0986063712455092
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.007997131323530896,
+          "maximum": 0.09720637124550535
+        },
+        "baselineMaximumDifference": 0.03270000000000195,
+        "passed": true
+      },
+      {
+        "epoch": 2,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.002980044613141682,
+          "maximum": 0.03569186981626982
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.0032835605214838366,
+          "maximum": 0.03321786981626984
+        },
+        "baselineMaximumDifference": 0.022202999999999973,
+        "passed": true
+      },
+      {
+        "epoch": 3,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.001695392225796129,
+          "maximum": 0.018808088578004645
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.001967415595610495,
+          "maximum": 0.02964413064452387
+        },
+        "baselineMaximumDifference": 0.04200000000000159,
+        "passed": false
+      },
+      {
+        "epoch": 4,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.005250061321193915,
+          "maximum": 0.047504625447572835
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.004833936476837724,
+          "maximum": 0.04366389432513529
+        },
+        "baselineMaximumDifference": 0.04800000000000182,
+        "passed": true
+      },
+      {
+        "epoch": 5,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.001695392225796129,
+          "maximum": 0.018808088578004645
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.001967415595610495,
+          "maximum": 0.02964413064452387
+        },
+        "baselineMaximumDifference": 0.04200000000000159,
+        "passed": false
+      },
+      {
+        "epoch": 6,
+        "baseline": {
+          "finite": 768,
+          "rmse": 0.005250061321193915,
+          "maximum": 0.047504625447572835
+        },
+        "candidate": {
+          "finite": 768,
+          "rmse": 0.004833936476837724,
+          "maximum": 0.04366389432513529
+        },
+        "baselineMaximumDifference": 0.04800000000000182,
+        "passed": true
+      }
+    ],
+    "passed": false,
+    "timing": {
+      "centered-safe": {
+        "freshMs": 789.8284169932595,
+        "revisitMs": 689.8064790002536,
+        "exception": null
+      },
+      "sigma-hoist": {
+        "freshMs": 749.9818329961272,
+        "revisitMs": 595.0462289983989,
+        "exception": null
+      },
+      "baseline": {
+        "freshMs": 744.5956659939839,
+        "revisitMs": 603.3353334933054,
+        "exception": null
+      }
+    }
+  }
+]
