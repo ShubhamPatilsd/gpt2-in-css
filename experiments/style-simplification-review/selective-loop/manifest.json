@@ -1,0 +1,139 @@
+{
+  "scope": "Native full-width bank handoff with deterministic recurrent arithmetic; no GPT-2 matrices, KV, vocabulary, or token feedback.",
+  "width": 768,
+  "gatePrefixes": [
+    1,
+    2,
+    3,
+    4,
+    8,
+    24
+  ],
+  "timingSteps": 24,
+  "runtimeJavaScript": false,
+  "harnessJavaScript": false,
+  "externalWritesAfterNavigation": 0,
+  "scopeMatch": "Existing loop_parts, centered readback, private progress/saved/output fields and local pass controller as in reused native core. Numeric transform is a synthetic recurrence.",
+  "oracleMaximumErrorLimit": 0.003,
+  "pairedMaximumDifferenceLimit": 0.0001,
+  "timingProtocol": "Four fresh-process pairs, AB/BA/AB/BA. DOM-only capture queries every20ms. No computed-style or geometry reads until native completion. Report navigation interval and observed first-capture-to-final window separately; renderer counters accompany both.",
+  "sourceHashes": {
+    "tools/benchmark_selective_loop.py": "e47fe6923a356a056417f5f15e7bdbc87d6777c954330e5d4ae83c42bb2f2d0b",
+    "tools/probe_native_reused_loop.py": "85858ef74a3272f446f8a85614971b97c1b6da659c8a80af5d9d779f44d0e3da",
+    "tools/browser_gpt2_reused_core.py": "1bd88ce20e8e56ce6767b1af67cf46829aa82e362944b521e1316212bc4b4cef",
+    "tools/browser_gpt2_reused_adapter.py": "aec3080842fb702d1d3b3667d2baa7b16f5872166a6c48b3850786112ee1f2e6",
+    "tools/profile_hybrid_twelve_block.py": "9e10b25c78b76e982b19bf65e263b3775cb29beabfc83317922c7d8495dc9c18",
+    "tools/probe_native_value_latch.py": "9dbd9d892eac7fc8779c9d48be2aa6ade9f5072ed2f6931c140864b2c8fa1298",
+    "tools/build_hybrid_twelve_block.py": "5d688ec9bf96789067b6de89037382d32d1cdadc94557afbdfaa748d93041a1c"
+  },
+  "fixtures": [
+    {
+      "variant": "baseline",
+      "steps": 1,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p1",
+      "hashes": {
+        "index.html": "f3bb50ff71bb131f03f748fdd86f9f474ca9ddb0d5f5af9210ff4dc9623d2ed3",
+        "style.css": "6171215b908ae41b5723e6533e3871cde987c98f4e6bc7b876f3116011030330"
+      }
+    },
+    {
+      "variant": "selective",
+      "steps": 1,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p1",
+      "hashes": {
+        "index.html": "f3bb50ff71bb131f03f748fdd86f9f474ca9ddb0d5f5af9210ff4dc9623d2ed3",
+        "style.css": "df16e0345a4724fa8ba58585f700b8df228ce5ccac46df97046f20d5f0385928"
+      }
+    },
+    {
+      "variant": "baseline",
+      "steps": 2,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p2",
+      "hashes": {
+        "index.html": "3db62efc9b2cd7f8bfac06e940aca21e8c2b4b924423d730567a4b4a2c525159",
+        "style.css": "427ace595602b8c914710b5ff64f1a95024058af219e121ae4664b0889a0af88"
+      }
+    },
+    {
+      "variant": "selective",
+      "steps": 2,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p2",
+      "hashes": {
+        "index.html": "3db62efc9b2cd7f8bfac06e940aca21e8c2b4b924423d730567a4b4a2c525159",
+        "style.css": "58d846a4866de74fe81a4a8e9166ff2b10a5b4cf918b5fa917d93d0e53e37fd3"
+      }
+    },
+    {
+      "variant": "baseline",
+      "steps": 3,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p3",
+      "hashes": {
+        "index.html": "6953a8b72e74afcfbf0acee8dfe35f898416d8a4afa9a747db55ab0ab364b911",
+        "style.css": "9eaef6b0b28056ff5447fe2ffee7bf269ede3003a8dc3d6b8ac60642f363081a"
+      }
+    },
+    {
+      "variant": "selective",
+      "steps": 3,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p3",
+      "hashes": {
+        "index.html": "6953a8b72e74afcfbf0acee8dfe35f898416d8a4afa9a747db55ab0ab364b911",
+        "style.css": "75beb5f6d491d1b07600cd6c715957ce9d4b066a941830c9bf71b1a68057e46d"
+      }
+    },
+    {
+      "variant": "baseline",
+      "steps": 4,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p4",
+      "hashes": {
+        "index.html": "2f421c011fe60cf8e56aa0845267819052520098f722cca8786b902f4cadc680",
+        "style.css": "ad797a112322da9ed0f87f08c074e7abbd1e0c789e0f448dcdfc11eb50d5b914"
+      }
+    },
+    {
+      "variant": "selective",
+      "steps": 4,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p4",
+      "hashes": {
+        "index.html": "2f421c011fe60cf8e56aa0845267819052520098f722cca8786b902f4cadc680",
+        "style.css": "4576e8dc96d4b26305ce891cec9a9d426a6b238492dd3f2babbb8a8ebc470c4b"
+      }
+    },
+    {
+      "variant": "baseline",
+      "steps": 8,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p8",
+      "hashes": {
+        "index.html": "5b084e8e828d1a14e12de408ecdbf011889ae842654abb0cb1ae9bcb095b6014",
+        "style.css": "8ac7659c2804dfd29d415c1f66bcba3b14df008d308fa200f0c4d216e4bf76fc"
+      }
+    },
+    {
+      "variant": "selective",
+      "steps": 8,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p8",
+      "hashes": {
+        "index.html": "5b084e8e828d1a14e12de408ecdbf011889ae842654abb0cb1ae9bcb095b6014",
+        "style.css": "b8c68cf1949717273ba876661927a7e08f1901747573e46d86637e84e76546ff"
+      }
+    },
+    {
+      "variant": "baseline",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "e961e07040e75fbb8754d97d5c72ec6a058cfc64d95ac378b5f4839f7b60bb9a"
+      }
+    },
+    {
+      "variant": "selective",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "4a37f7087d44ac9336810b0d6b56c5492daf7daf8e8ee70a87139772c3d81a58"
+      }
+    }
+  ]
+}

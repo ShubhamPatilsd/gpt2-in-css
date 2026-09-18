@@ -1,0 +1,651 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "stage": "qkv",
+      "pair": 0,
+      "order": [
+        "baseline",
+        "layer-hoist"
+      ],
+      "cases": {
+        "baseline": {
+          "groups": {
+            "cold": {
+              "millisecondsMedian": 1262.9470840038266,
+              "millisecondsSum": 1262.9470840038266,
+              "sampleCount": 1,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.776149,
+                "LayoutDuration": 0.059034,
+                "TaskDuration": 1.065026,
+                "RecalcStyleCount": 6,
+                "LayoutCount": 4
+              }
+            },
+            "fresh": {
+              "millisecondsMedian": 335.55341699684504,
+              "millisecondsSum": 1013.3052919991314,
+              "sampleCount": 3,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.24266699999999997,
+                "LayoutDuration": 0.147732,
+                "TaskDuration": 0.7862059999999997,
+                "RecalcStyleCount": 6,
+                "LayoutCount": 6
+              }
+            },
+            "revisit": {
+              "millisecondsMedian": 290.8807500061812,
+              "millisecondsSum": 581.7615000123624,
+              "sampleCount": 2,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.165319,
+                "LayoutDuration": 0.028267999999999988,
+                "TaskDuration": 0.4373649999999998,
+                "RecalcStyleCount": 4,
+                "LayoutCount": 4
+              }
+            },
+            "warm": {
+              "millisecondsMedian": 322.99970800522715,
+              "millisecondsSum": 1595.0667920114938,
+              "sampleCount": 5,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.40798599999999996,
+                "LayoutDuration": 0.176,
+                "TaskDuration": 1.2235709999999995,
+                "RecalcStyleCount": 10,
+                "LayoutCount": 10
+              }
+            }
+          },
+          "maxRmse": 0.0008211570284129135,
+          "maxAbsoluteError": 0.003200690724003863,
+          "peak": {
+            "rendererRssMiB": 909.5,
+            "browserTreeRssMiB": 1587.625
+          },
+          "browser": {
+            "protocolVersion": "1.3",
+            "product": "Chrome/153.0.8010.48",
+            "revision": "@199a3a541d76237379e353b348e64045584db057",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+            "jsVersion": "15.3.76.12"
+          }
+        },
+        "layer-hoist": {
+          "groups": {
+            "cold": {
+              "millisecondsMedian": 1259.688374993857,
+              "millisecondsSum": 1259.688374993857,
+              "sampleCount": 1,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.77319,
+                "LayoutDuration": 0.062689,
+                "TaskDuration": 1.141432,
+                "RecalcStyleCount": 6,
+                "LayoutCount": 4
+              }
+            },
+            "fresh": {
+              "millisecondsMedian": 334.50966599048115,
+              "millisecondsSum": 1002.4610410036985,
+              "sampleCount": 3,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.23696399999999995,
+                "LayoutDuration": 0.143322,
+                "TaskDuration": 0.7664789999999999,
+                "RecalcStyleCount": 6,
+                "LayoutCount": 6
+              }
+            },
+            "revisit": {
+              "millisecondsMedian": 280.0947499999893,
+              "millisecondsSum": 560.1894999999786,
+              "sampleCount": 2,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.158377,
+                "LayoutDuration": 0.028143,
+                "TaskDuration": 0.4203260000000002,
+                "RecalcStyleCount": 4,
+                "LayoutCount": 4
+              }
+            },
+            "warm": {
+              "millisecondsMedian": 330.4043750104029,
+              "millisecondsSum": 1562.650541003677,
+              "sampleCount": 5,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.39534099999999994,
+                "LayoutDuration": 0.171465,
+                "TaskDuration": 1.186805,
+                "RecalcStyleCount": 10,
+                "LayoutCount": 10
+              }
+            }
+          },
+          "maxRmse": 0.0008211570284129135,
+          "maxAbsoluteError": 0.003200690724003863,
+          "peak": {
+            "rendererRssMiB": 910.8125,
+            "browserTreeRssMiB": 1595.4375
+          },
+          "browser": {
+            "protocolVersion": "1.3",
+            "product": "Chrome/153.0.8010.48",
+            "revision": "@199a3a541d76237379e353b348e64045584db057",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+            "jsVersion": "15.3.76.12"
+          }
+        }
+      }
+    },
+    {
+      "stage": "qkv",
+      "pair": 1,
+      "order": [
+        "layer-hoist",
+        "baseline"
+      ],
+      "cases": {
+        "baseline": {
+          "groups": {
+            "cold": {
+              "millisecondsMedian": 1256.47808299982,
+              "millisecondsSum": 1256.47808299982,
+              "sampleCount": 1,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.780771,
+                "LayoutDuration": 0.063924,
+                "TaskDuration": 1.07206,
+                "RecalcStyleCount": 6,
+                "LayoutCount": 4
+              }
+            },
+            "fresh": {
+              "millisecondsMedian": 330.39712499885354,
+              "millisecondsSum": 999.8521249799524,
+              "sampleCount": 3,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.23102600000000006,
+                "LayoutDuration": 0.143104,
+                "TaskDuration": 0.7637160000000001,
+                "RecalcStyleCount": 6,
+                "LayoutCount": 6
+              }
+            },
+            "revisit": {
+              "millisecondsMedian": 287.8895835019648,
+              "millisecondsSum": 575.7791670039296,
+              "sampleCount": 2,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.16053099999999998,
+                "LayoutDuration": 0.02817800000000001,
+                "TaskDuration": 0.4339689999999998,
+                "RecalcStyleCount": 4,
+                "LayoutCount": 4
+              }
+            },
+            "warm": {
+              "millisecondsMedian": 328.236499990453,
+              "millisecondsSum": 1575.631291983882,
+              "sampleCount": 5,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.39155700000000004,
+                "LayoutDuration": 0.171282,
+                "TaskDuration": 1.1976849999999999,
+                "RecalcStyleCount": 10,
+                "LayoutCount": 10
+              }
+            }
+          },
+          "maxRmse": 0.0008211570284129135,
+          "maxAbsoluteError": 0.003200690724003863,
+          "peak": {
+            "rendererRssMiB": 945.671875,
+            "browserTreeRssMiB": 1514.171875
+          },
+          "browser": {
+            "protocolVersion": "1.3",
+            "product": "Chrome/153.0.8010.48",
+            "revision": "@199a3a541d76237379e353b348e64045584db057",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+            "jsVersion": "15.3.76.12"
+          }
+        },
+        "layer-hoist": {
+          "groups": {
+            "cold": {
+              "millisecondsMedian": 1268.5760839958675,
+              "millisecondsSum": 1268.5760839958675,
+              "sampleCount": 1,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.763284,
+                "LayoutDuration": 0.060593,
+                "TaskDuration": 1.05661,
+                "RecalcStyleCount": 6,
+                "LayoutCount": 4
+              }
+            },
+            "fresh": {
+              "millisecondsMedian": 331.1409580055624,
+              "millisecondsSum": 1014.4558750180295,
+              "sampleCount": 3,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.24008799999999997,
+                "LayoutDuration": 0.147025,
+                "TaskDuration": 0.7948029999999999,
+                "RecalcStyleCount": 6,
+                "LayoutCount": 6
+              }
+            },
+            "revisit": {
+              "millisecondsMedian": 290.9121879929444,
+              "millisecondsSum": 581.8243759858888,
+              "sampleCount": 2,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.16519800000000018,
+                "LayoutDuration": 0.028143,
+                "TaskDuration": 0.4420010000000003,
+                "RecalcStyleCount": 4,
+                "LayoutCount": 4
+              }
+            },
+            "warm": {
+              "millisecondsMedian": 330.0988330011023,
+              "millisecondsSum": 1596.2802510039182,
+              "sampleCount": 5,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.40528600000000015,
+                "LayoutDuration": 0.175168,
+                "TaskDuration": 1.2368040000000002,
+                "RecalcStyleCount": 10,
+                "LayoutCount": 10
+              }
+            }
+          },
+          "maxRmse": 0.0008211570284129135,
+          "maxAbsoluteError": 0.003200690724003863,
+          "peak": {
+            "rendererRssMiB": 903.25,
+            "browserTreeRssMiB": 1587.4375
+          },
+          "browser": {
+            "protocolVersion": "1.3",
+            "product": "Chrome/153.0.8010.48",
+            "revision": "@199a3a541d76237379e353b348e64045584db057",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+            "jsVersion": "15.3.76.12"
+          }
+        }
+      }
+    },
+    {
+      "stage": "mlp",
+      "pair": 0,
+      "order": [
+        "baseline",
+        "layer-hoist"
+      ],
+      "cases": {
+        "baseline": {
+          "groups": {
+            "cold": {
+              "millisecondsMedian": 2332.5423750065966,
+              "millisecondsSum": 2332.5423750065966,
+              "sampleCount": 1,
+              "rendererTotals": {
+                "RecalcStyleDuration": 1.452302,
+                "LayoutDuration": 0.172959,
+                "TaskDuration": 2.1743460000000003,
+                "RecalcStyleCount": 7,
+                "LayoutCount": 5
+              }
+            },
+            "fresh": {
+              "millisecondsMedian": 763.9777500007767,
+              "millisecondsSum": 2332.81054199324,
+              "sampleCount": 3,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.8646669999999999,
+                "LayoutDuration": 0.423678,
+                "TaskDuration": 2.1639240000000006,
+                "RecalcStyleCount": 12,
+                "LayoutCount": 12
+              }
+            },
+            "revisit": {
+              "millisecondsMedian": 620.5079375067726,
+              "millisecondsSum": 1241.0158750135452,
+              "sampleCount": 2,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.5856130000000004,
+                "LayoutDuration": 0.07794200000000007,
+                "TaskDuration": 1.1511970000000007,
+                "RecalcStyleCount": 8,
+                "LayoutCount": 8
+              }
+            },
+            "warm": {
+              "millisecondsMedian": 763.7637089937925,
+              "millisecondsSum": 3573.826417006785,
+              "sampleCount": 5,
+              "rendererTotals": {
+                "RecalcStyleDuration": 1.4502800000000002,
+                "LayoutDuration": 0.5016200000000001,
+                "TaskDuration": 3.3151210000000013,
+                "RecalcStyleCount": 20,
+                "LayoutCount": 20
+              }
+            }
+          },
+          "maxRmse": 0.00799286453422236,
+          "maxAbsoluteError": 0.0986063712455092,
+          "peak": {
+            "rendererRssMiB": 1142.203125,
+            "browserTreeRssMiB": 1710.296875
+          },
+          "browser": {
+            "protocolVersion": "1.3",
+            "product": "Chrome/153.0.8010.48",
+            "revision": "@199a3a541d76237379e353b348e64045584db057",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+            "jsVersion": "15.3.76.12"
+          }
+        },
+        "layer-hoist": {
+          "groups": {
+            "cold": {
+              "millisecondsMedian": 2346.1295000015525,
+              "millisecondsSum": 2346.1295000015525,
+              "sampleCount": 1,
+              "rendererTotals": {
+                "RecalcStyleDuration": 1.45864,
+                "LayoutDuration": 0.175403,
+                "TaskDuration": 2.178754,
+                "RecalcStyleCount": 7,
+                "LayoutCount": 5
+              }
+            },
+            "fresh": {
+              "millisecondsMedian": 771.8003750051139,
+              "millisecondsSum": 2334.6851259993855,
+              "sampleCount": 3,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.85446,
+                "LayoutDuration": 0.418863,
+                "TaskDuration": 2.1687399999999997,
+                "RecalcStyleCount": 12,
+                "LayoutCount": 12
+              }
+            },
+            "revisit": {
+              "millisecondsMedian": 609.9793539979146,
+              "millisecondsSum": 1219.9587079958292,
+              "sampleCount": 2,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.573566,
+                "LayoutDuration": 0.07796600000000009,
+                "TaskDuration": 1.1287440000000002,
+                "RecalcStyleCount": 8,
+                "LayoutCount": 8
+              }
+            },
+            "warm": {
+              "millisecondsMedian": 751.9185839919373,
+              "millisecondsSum": 3554.6438339952147,
+              "sampleCount": 5,
+              "rendererTotals": {
+                "RecalcStyleDuration": 1.428026,
+                "LayoutDuration": 0.4968290000000001,
+                "TaskDuration": 3.297484,
+                "RecalcStyleCount": 20,
+                "LayoutCount": 20
+              }
+            }
+          },
+          "maxRmse": 0.00799286453422236,
+          "maxAbsoluteError": 0.0986063712455092,
+          "peak": {
+            "rendererRssMiB": 1140.6875,
+            "browserTreeRssMiB": 1699.859375
+          },
+          "browser": {
+            "protocolVersion": "1.3",
+            "product": "Chrome/153.0.8010.48",
+            "revision": "@199a3a541d76237379e353b348e64045584db057",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+            "jsVersion": "15.3.76.12"
+          }
+        }
+      }
+    },
+    {
+      "stage": "mlp",
+      "pair": 1,
+      "order": [
+        "layer-hoist",
+        "baseline"
+      ],
+      "cases": {
+        "baseline": {
+          "groups": {
+            "cold": {
+              "millisecondsMedian": 2302.4918330047512,
+              "millisecondsSum": 2302.4918330047512,
+              "sampleCount": 1,
+              "rendererTotals": {
+                "RecalcStyleDuration": 1.415766,
+                "LayoutDuration": 0.172815,
+                "TaskDuration": 2.123863,
+                "RecalcStyleCount": 7,
+                "LayoutCount": 5
+              }
+            },
+            "fresh": {
+              "millisecondsMedian": 760.6064589926973,
+              "millisecondsSum": 2271.088666981086,
+              "sampleCount": 3,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.8343579999999999,
+                "LayoutDuration": 0.415352,
+                "TaskDuration": 2.081042,
+                "RecalcStyleCount": 12,
+                "LayoutCount": 12
+              }
+            },
+            "revisit": {
+              "millisecondsMedian": 604.027417000907,
+              "millisecondsSum": 1208.054834001814,
+              "sampleCount": 2,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.5592160000000002,
+                "LayoutDuration": 0.07597399999999999,
+                "TaskDuration": 1.112463,
+                "RecalcStyleCount": 8,
+                "LayoutCount": 8
+              }
+            },
+            "warm": {
+              "millisecondsMedian": 748.4734159952495,
+              "millisecondsSum": 3479.1435009829,
+              "sampleCount": 5,
+              "rendererTotals": {
+                "RecalcStyleDuration": 1.393574,
+                "LayoutDuration": 0.491326,
+                "TaskDuration": 3.193505,
+                "RecalcStyleCount": 20,
+                "LayoutCount": 20
+              }
+            }
+          },
+          "maxRmse": 0.00799286453422236,
+          "maxAbsoluteError": 0.0986063712455092,
+          "peak": {
+            "rendererRssMiB": 1143.109375,
+            "browserTreeRssMiB": 1703.703125
+          },
+          "browser": {
+            "protocolVersion": "1.3",
+            "product": "Chrome/153.0.8010.48",
+            "revision": "@199a3a541d76237379e353b348e64045584db057",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+            "jsVersion": "15.3.76.12"
+          }
+        },
+        "layer-hoist": {
+          "groups": {
+            "cold": {
+              "millisecondsMedian": 2331.122999996296,
+              "millisecondsSum": 2331.122999996296,
+              "sampleCount": 1,
+              "rendererTotals": {
+                "RecalcStyleDuration": 1.447841,
+                "LayoutDuration": 0.169924,
+                "TaskDuration": 2.156936,
+                "RecalcStyleCount": 7,
+                "LayoutCount": 5
+              }
+            },
+            "fresh": {
+              "millisecondsMedian": 766.3732920045732,
+              "millisecondsSum": 2348.1907090026652,
+              "sampleCount": 3,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.8686929999999999,
+                "LayoutDuration": 0.420837,
+                "TaskDuration": 2.1744540000000003,
+                "RecalcStyleCount": 12,
+                "LayoutCount": 12
+              }
+            },
+            "revisit": {
+              "millisecondsMedian": 618.252083491825,
+              "millisecondsSum": 1236.50416698365,
+              "sampleCount": 2,
+              "rendererTotals": {
+                "RecalcStyleDuration": 0.5777209999999999,
+                "LayoutDuration": 0.07696500000000006,
+                "TaskDuration": 1.1411629999999997,
+                "RecalcStyleCount": 8,
+                "LayoutCount": 8
+              }
+            },
+            "warm": {
+              "millisecondsMedian": 766.1731249972945,
+              "millisecondsSum": 3584.6948759863153,
+              "sampleCount": 5,
+              "rendererTotals": {
+                "RecalcStyleDuration": 1.4464139999999999,
+                "LayoutDuration": 0.4978020000000001,
+                "TaskDuration": 3.315617,
+                "RecalcStyleCount": 20,
+                "LayoutCount": 20
+              }
+            }
+          },
+          "maxRmse": 0.00799286453422236,
+          "maxAbsoluteError": 0.0986063712455092,
+          "peak": {
+            "rendererRssMiB": 1141.71875,
+            "browserTreeRssMiB": 1708.265625
+          },
+          "browser": {
+            "protocolVersion": "1.3",
+            "product": "Chrome/153.0.8010.48",
+            "revision": "@199a3a541d76237379e353b348e64045584db057",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+            "jsVersion": "15.3.76.12"
+          }
+        }
+      }
+    }
+  ],
+  "compile": {
+    "baseline-qkv": {
+      "stylesheetBytes": 3192577,
+      "stats": {
+        "variant": "baseline",
+        "options": {
+          "private_normalized_inputs": false,
+          "projection_settings": false,
+          "hoist_layer_invariants": false,
+          "selective_loop_reads": false
+        },
+        "normalizedPrivatePropertyCount": 0,
+        "normalizedForwardingPropertyCount": 0,
+        "projectionPackListsMaterialized": 0,
+        "conditionalDeclarationsHoisted": 0,
+        "uniqueHoistedDeclarations": 0,
+        "stageStylesheetByteDelta": 0,
+        "loopReaderConfigurations": [],
+        "runtimeJavaScript": false
+      }
+    },
+    "layer-hoist-qkv": {
+      "stylesheetBytes": 3086800,
+      "stats": {
+        "variant": "layer-hoist",
+        "options": {
+          "private_normalized_inputs": false,
+          "projection_settings": false,
+          "hoist_layer_invariants": true,
+          "selective_loop_reads": false
+        },
+        "normalizedPrivatePropertyCount": 0,
+        "normalizedForwardingPropertyCount": 0,
+        "projectionPackListsMaterialized": 0,
+        "conditionalDeclarationsHoisted": 72,
+        "uniqueHoistedDeclarations": 36,
+        "stageStylesheetByteDelta": -105733,
+        "loopReaderConfigurations": [],
+        "runtimeJavaScript": false
+      }
+    },
+    "baseline-mlp": {
+      "stylesheetBytes": 4262437,
+      "stats": {
+        "variant": "baseline",
+        "options": {
+          "private_normalized_inputs": false,
+          "projection_settings": false,
+          "hoist_layer_invariants": false,
+          "selective_loop_reads": false
+        },
+        "normalizedPrivatePropertyCount": 0,
+        "normalizedForwardingPropertyCount": 0,
+        "projectionPackListsMaterialized": 0,
+        "conditionalDeclarationsHoisted": 0,
+        "uniqueHoistedDeclarations": 0,
+        "stageStylesheetByteDelta": 0,
+        "loopReaderConfigurations": [],
+        "runtimeJavaScript": false
+      }
+    },
+    "layer-hoist-mlp": {
+      "stylesheetBytes": 4093433,
+      "stats": {
+        "variant": "layer-hoist",
+        "options": {
+          "private_normalized_inputs": false,
+          "projection_settings": false,
+          "hoist_layer_invariants": true,
+          "selective_loop_reads": false
+        },
+        "normalizedPrivatePropertyCount": 0,
+        "normalizedForwardingPropertyCount": 0,
+        "projectionPackListsMaterialized": 0,
+        "conditionalDeclarationsHoisted": 120,
+        "uniqueHoistedDeclarations": 60,
+        "stageStylesheetByteDelta": -168916,
+        "loopReaderConfigurations": [],
+        "runtimeJavaScript": false
+      }
+    }
+  },
+  "timingIncludes": "External raw input writes, native arithmetic and freshness receipt, weighted all-output CSS geometry consumer, geometry polling",
+  "timingExcludes": "Post-timer all-coordinate oracle read, autonomous attention/KV, embeddings, vocabulary, native layer feedback",
+  "pollingFloorMilliseconds": 75,
+  "fullTokenExtrapolation": null
+}

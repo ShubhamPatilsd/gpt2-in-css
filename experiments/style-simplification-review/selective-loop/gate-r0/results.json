@@ -1,0 +1,1407 @@
+{
+  "passed": true,
+  "manifestSha256": "79fca70d0403b9aec812e687bffc3360e80bf9857e45c3909f22dd633c574b81",
+  "pairs": [
+    {
+      "steps": 1,
+      "maximumDifference": 0.0,
+      "passed": true
+    },
+    {
+      "steps": 2,
+      "maximumDifference": 0.0,
+      "passed": true
+    },
+    {
+      "steps": 3,
+      "maximumDifference": 0.0,
+      "passed": true
+    },
+    {
+      "steps": 4,
+      "maximumDifference": 0.0,
+      "passed": true
+    },
+    {
+      "steps": 8,
+      "maximumDifference": 0.0,
+      "passed": true
+    },
+    {
+      "steps": 24,
+      "maximumDifference": 0.0,
+      "passed": true
+    }
+  ],
+  "rows": [
+    {
+      "variant": "baseline",
+      "steps": 1,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p1",
+      "hashes": {
+        "index.html": "f3bb50ff71bb131f03f748fdd86f9f474ca9ddb0d5f5af9210ff4dc9623d2ed3",
+        "style.css": "6171215b908ae41b5723e6533e3871cde987c98f4e6bc7b876f3116011030330"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 574.2400839953916
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 574.6656249975786,
+      "observedContinuationMilliseconds": 0.42554100218694657,
+      "continuationPassCount": 0,
+      "rendererDelta": {
+        "LayoutCount": 2,
+        "RecalcStyleCount": 4,
+        "LayoutDuration": 0.006531,
+        "RecalcStyleDuration": 0.345298,
+        "DevToolsCommandDuration": 0.000356,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.531833,
+        "TaskOtherDuration": 0.179648
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 0,
+        "RecalcStyleCount": 0,
+        "LayoutDuration": 0.0,
+        "RecalcStyleDuration": 0.0,
+        "DevToolsCommandDuration": 5.700000000000003e-05,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 6.20000000000065e-05,
+        "TaskOtherDuration": 5.0000000000050004e-06
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 2.3315655505449133e-07,
+          "maximum": 5.000000000143778e-07
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 2.3315655505449133e-07,
+          "maximum": 5.000000000143778e-07
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 0.0,
+          "maximum": 0.0
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 1,
+          "actual": 1.0
+        },
+        {
+          "bank": 1,
+          "expected": 0,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "variant": "selective",
+      "steps": 1,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p1",
+      "hashes": {
+        "index.html": "f3bb50ff71bb131f03f748fdd86f9f474ca9ddb0d5f5af9210ff4dc9623d2ed3",
+        "style.css": "df16e0345a4724fa8ba58585f700b8df228ce5ccac46df97046f20d5f0385928"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 400.18720801163
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 400.5863330094144,
+      "observedContinuationMilliseconds": 0.3991249977843836,
+      "continuationPassCount": 0,
+      "rendererDelta": {
+        "LayoutCount": 2,
+        "RecalcStyleCount": 4,
+        "LayoutDuration": 0.006696,
+        "RecalcStyleDuration": 0.273715,
+        "DevToolsCommandDuration": 0.00035800000000000003,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.362761,
+        "TaskOtherDuration": 0.081992
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 0,
+        "RecalcStyleCount": 0,
+        "LayoutDuration": 0.0,
+        "RecalcStyleDuration": 0.0,
+        "DevToolsCommandDuration": 5.299999999999999e-05,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 5.900000000003125e-05,
+        "TaskOtherDuration": 5.999999999992123e-06
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 2.3315655505449133e-07,
+          "maximum": 5.000000000143778e-07
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 2.3315655505449133e-07,
+          "maximum": 5.000000000143778e-07
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 0.0,
+          "maximum": 0.0
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 1,
+          "actual": 1.0
+        },
+        {
+          "bank": 1,
+          "expected": 0,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "steps": 2,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p2",
+      "hashes": {
+        "index.html": "3db62efc9b2cd7f8bfac06e940aca21e8c2b4b924423d730567a4b4a2c525159",
+        "style.css": "427ace595602b8c914710b5ff64f1a95024058af219e121ae4664b0889a0af88"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 575.1274170033867
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 979.1179580060998
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 979.1197500017006,
+      "observedContinuationMilliseconds": 403.99233299831394,
+      "continuationPassCount": 1,
+      "rendererDelta": {
+        "LayoutCount": 5,
+        "RecalcStyleCount": 9,
+        "LayoutDuration": 0.007596,
+        "RecalcStyleDuration": 0.606671,
+        "DevToolsCommandDuration": 0.000396,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.908346,
+        "TaskOtherDuration": 0.293683
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 2,
+        "RecalcStyleCount": 5,
+        "LayoutDuration": 0.0007500000000000007,
+        "RecalcStyleDuration": 0.265433,
+        "DevToolsCommandDuration": 0.000132,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.3834169999999999,
+        "TaskOtherDuration": 0.11710200000000001
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 1.858871605514056e-07,
+          "maximum": 7.499999999938112e-07
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 2.401822224861829e-07,
+          "maximum": 5.000000000143778e-07
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 2.3315655505449133e-07,
+          "maximum": 5.000000000143778e-07
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 1.858871605514056e-07,
+          "maximum": 7.499999999938112e-07
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 1,
+          "actual": 1.0
+        },
+        {
+          "bank": 1,
+          "expected": 2,
+          "actual": 2.0
+        }
+      ]
+    },
+    {
+      "variant": "selective",
+      "steps": 2,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p2",
+      "hashes": {
+        "index.html": "3db62efc9b2cd7f8bfac06e940aca21e8c2b4b924423d730567a4b4a2c525159",
+        "style.css": "58d846a4866de74fe81a4a8e9166ff2b10a5b4cf918b5fa917d93d0e53e37fd3"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 417.94283299532253
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 836.9849169976078
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 836.9872080074856,
+      "observedContinuationMilliseconds": 419.0443750121631,
+      "continuationPassCount": 1,
+      "rendererDelta": {
+        "LayoutCount": 5,
+        "RecalcStyleCount": 9,
+        "LayoutDuration": 0.008078,
+        "RecalcStyleDuration": 0.593234,
+        "DevToolsCommandDuration": 0.00044100000000000004,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.764539,
+        "TaskOtherDuration": 0.162786
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 2,
+        "RecalcStyleCount": 5,
+        "LayoutDuration": 0.0008279999999999997,
+        "RecalcStyleDuration": 0.31499900000000003,
+        "DevToolsCommandDuration": 0.00015400000000000006,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.396919,
+        "TaskOtherDuration": 0.080938
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 1.858871605514056e-07,
+          "maximum": 7.499999999938112e-07
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 2.401822224861829e-07,
+          "maximum": 5.000000000143778e-07
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 2.3315655505449133e-07,
+          "maximum": 5.000000000143778e-07
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 1.858871605514056e-07,
+          "maximum": 7.499999999938112e-07
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 1,
+          "actual": 1.0
+        },
+        {
+          "bank": 1,
+          "expected": 2,
+          "actual": 2.0
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "steps": 3,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p3",
+      "hashes": {
+        "index.html": "6953a8b72e74afcfbf0acee8dfe35f898416d8a4afa9a747db55ab0ab364b911",
+        "style.css": "9eaef6b0b28056ff5447fe2ffee7bf269ede3003a8dc3d6b8ac60642f363081a"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 553.8627090136288
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 960.4837090009823
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1357.0197090011789
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 1357.021750009153,
+      "observedContinuationMilliseconds": 803.1590409955243,
+      "continuationPassCount": 2,
+      "rendererDelta": {
+        "LayoutCount": 8,
+        "RecalcStyleCount": 14,
+        "LayoutDuration": 0.008468,
+        "RecalcStyleDuration": 0.863139,
+        "DevToolsCommandDuration": 0.000497,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 1.2838340000000001,
+        "TaskOtherDuration": 0.41173
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 5,
+        "RecalcStyleCount": 10,
+        "LayoutDuration": 0.0015659999999999997,
+        "RecalcStyleDuration": 0.519485,
+        "DevToolsCommandDuration": 0.00021100000000000003,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.7606330000000001,
+        "TaskOtherDuration": 0.239371
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 1.4399661816003026e-07,
+          "maximum": 5.000000000005e-07
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 1.5023982563969869e-07,
+          "maximum": 5.000000000005e-07
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 1.4399661816003026e-07,
+          "maximum": 5.000000000005e-07
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 1.858871605514056e-07,
+          "maximum": 7.499999999938112e-07
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 3,
+          "actual": 3.0
+        },
+        {
+          "bank": 1,
+          "expected": 2,
+          "actual": 2.0
+        }
+      ]
+    },
+    {
+      "variant": "selective",
+      "steps": 3,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p3",
+      "hashes": {
+        "index.html": "6953a8b72e74afcfbf0acee8dfe35f898416d8a4afa9a747db55ab0ab364b911",
+        "style.css": "75beb5f6d491d1b07600cd6c715957ce9d4b066a941830c9bf71b1a68057e46d"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 397.8379999898607
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 817.9215830023168
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1233.609125003568
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 1233.610832990962,
+      "observedContinuationMilliseconds": 835.7728330011014,
+      "continuationPassCount": 2,
+      "rendererDelta": {
+        "LayoutCount": 8,
+        "RecalcStyleCount": 14,
+        "LayoutDuration": 0.008409,
+        "RecalcStyleDuration": 0.88573,
+        "DevToolsCommandDuration": 0.00047799999999999996,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 1.162611,
+        "TaskOtherDuration": 0.26799399999999995
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 5,
+        "RecalcStyleCount": 10,
+        "LayoutDuration": 0.0016179999999999996,
+        "RecalcStyleDuration": 0.607932,
+        "DevToolsCommandDuration": 0.000223,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.796961,
+        "TaskOtherDuration": 0.18718799999999997
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 1.4399661816003026e-07,
+          "maximum": 5.000000000005e-07
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 1.5023982563969869e-07,
+          "maximum": 5.000000000005e-07
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 1.4399661816003026e-07,
+          "maximum": 5.000000000005e-07
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 1.858871605514056e-07,
+          "maximum": 7.499999999938112e-07
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 3,
+          "actual": 3.0
+        },
+        {
+          "bank": 1,
+          "expected": 2,
+          "actual": 2.0
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "steps": 4,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p4",
+      "hashes": {
+        "index.html": "2f421c011fe60cf8e56aa0845267819052520098f722cca8786b902f4cadc680",
+        "style.css": "ad797a112322da9ed0f87f08c074e7abbd1e0c789e0f448dcdfc11eb50d5b914"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 562.4004999990575
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 953.5181250103051
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1355.983333007316
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1777.7418330078945
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 1777.7441660000477,
+      "observedContinuationMilliseconds": 1215.3436660009902,
+      "continuationPassCount": 3,
+      "rendererDelta": {
+        "LayoutCount": 11,
+        "RecalcStyleCount": 19,
+        "LayoutDuration": 0.008999,
+        "RecalcStyleDuration": 1.132179,
+        "DevToolsCommandDuration": 0.000709,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 1.694979,
+        "TaskOtherDuration": 0.5530919999999999
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 8,
+        "RecalcStyleCount": 14,
+        "LayoutDuration": 0.002452,
+        "RecalcStyleDuration": 0.7886630000000001,
+        "DevToolsCommandDuration": 0.000338,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 1.165604,
+        "TaskOtherDuration": 0.37415099999999996
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 1.4439393815173e-07,
+          "maximum": 5.624999999953584e-07
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 1.4539547362299983e-07,
+          "maximum": 6.250000000040945e-07
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 1.4399661816003026e-07,
+          "maximum": 5.000000000005e-07
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 1.4439393815173e-07,
+          "maximum": 5.624999999953584e-07
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 3,
+          "actual": 3.0
+        },
+        {
+          "bank": 1,
+          "expected": 4,
+          "actual": 4.0
+        }
+      ]
+    },
+    {
+      "variant": "selective",
+      "steps": 4,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p4",
+      "hashes": {
+        "index.html": "2f421c011fe60cf8e56aa0845267819052520098f722cca8786b902f4cadc680",
+        "style.css": "4576e8dc96d4b26305ce891cec9a9d426a6b238492dd3f2babbb8a8ebc470c4b"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 390.76433300215285
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 804.2414579977049
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1220.505958001013
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1671.4712910033995
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 1671.4741250034422,
+      "observedContinuationMilliseconds": 1280.7097920012893,
+      "continuationPassCount": 3,
+      "rendererDelta": {
+        "LayoutCount": 11,
+        "RecalcStyleCount": 19,
+        "LayoutDuration": 0.009301,
+        "RecalcStyleDuration": 1.171122,
+        "DevToolsCommandDuration": 0.000608,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 1.5975670000000002,
+        "TaskOtherDuration": 0.416536
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 8,
+        "RecalcStyleCount": 14,
+        "LayoutDuration": 0.002679,
+        "RecalcStyleDuration": 0.8949659999999999,
+        "DevToolsCommandDuration": 0.000323,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 1.2300870000000002,
+        "TaskOtherDuration": 0.332119
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 1.4439393815173e-07,
+          "maximum": 5.624999999953584e-07
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 1.4539547362299983e-07,
+          "maximum": 6.250000000040945e-07
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 1.4399661816003026e-07,
+          "maximum": 5.000000000005e-07
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 1.4439393815173e-07,
+          "maximum": 5.624999999953584e-07
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 3,
+          "actual": 3.0
+        },
+        {
+          "bank": 1,
+          "expected": 4,
+          "actual": 4.0
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "steps": 8,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p8",
+      "hashes": {
+        "index.html": "5b084e8e828d1a14e12de408ecdbf011889ae842654abb0cb1ae9bcb095b6014",
+        "style.css": "8ac7659c2804dfd29d415c1f66bcba3b14df008d308fa200f0c4d216e4bf76fc"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 556.0727909905836
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 950.4129999986617
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1343.9839159982512
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1750.9178750042338
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2152.265915996395
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2565.182874997845
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 2975.4937079997035
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3374.580749994493
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 3374.5830830011982,
+      "observedContinuationMilliseconds": 2818.5102920106146,
+      "continuationPassCount": 7,
+      "rendererDelta": {
+        "LayoutCount": 23,
+        "RecalcStyleCount": 39,
+        "LayoutDuration": 0.012171,
+        "RecalcStyleDuration": 2.134777,
+        "DevToolsCommandDuration": 0.000984,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 3.2833579999999998,
+        "TaskOtherDuration": 1.135426
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 20,
+        "RecalcStyleCount": 34,
+        "LayoutDuration": 0.005706999999999999,
+        "RecalcStyleDuration": 1.7910150000000002,
+        "DevToolsCommandDuration": 0.0006889999999999999,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 2.754343,
+        "TaskOtherDuration": 0.956932
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.627128262735148e-05,
+          "maximum": 6.175390625000332e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 7.254226510480224e-05,
+          "maximum": 0.00012258593750000268
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 1.4118396577079562e-07,
+          "maximum": 5.859375000055733e-07
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.627128262735148e-05,
+          "maximum": 6.175390625000332e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 7,
+          "actual": 7.0
+        },
+        {
+          "bank": 1,
+          "expected": 8,
+          "actual": 8.0
+        }
+      ]
+    },
+    {
+      "variant": "selective",
+      "steps": 8,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p8",
+      "hashes": {
+        "index.html": "5b084e8e828d1a14e12de408ecdbf011889ae842654abb0cb1ae9bcb095b6014",
+        "style.css": "b8c68cf1949717273ba876661927a7e08f1901747573e46d86637e84e76546ff"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 412.90833400853444
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 834.5597920124419
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1251.6539589996682
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1705.1075420022244
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2156.0761670116335
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2662.848000007216
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 3193.773417006014
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3754.1685000032885
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 3754.171000007773,
+      "observedContinuationMilliseconds": 3341.2626659992384,
+      "continuationPassCount": 7,
+      "rendererDelta": {
+        "LayoutCount": 23,
+        "RecalcStyleCount": 39,
+        "LayoutDuration": 0.013375,
+        "RecalcStyleDuration": 2.350791,
+        "DevToolsCommandDuration": 0.0009379999999999999,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 3.668977,
+        "TaskOtherDuration": 1.303873
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 20,
+        "RecalcStyleCount": 35,
+        "LayoutDuration": 0.006150999999999999,
+        "RecalcStyleDuration": 2.07229,
+        "DevToolsCommandDuration": 0.000619,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 3.29683,
+        "TaskOtherDuration": 1.21777
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.627128262735148e-05,
+          "maximum": 6.175390625000332e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 7.254226510480224e-05,
+          "maximum": 0.00012258593750000268
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 1.4118396577079562e-07,
+          "maximum": 5.859375000055733e-07
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.627128262735148e-05,
+          "maximum": 6.175390625000332e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 7,
+          "actual": 7.0
+        },
+        {
+          "bank": 1,
+          "expected": 8,
+          "actual": 8.0
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "e961e07040e75fbb8754d97d5c72ec6a058cfc64d95ac378b5f4839f7b60bb9a"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 565.4527919978136
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 958.9021669962676
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1348.788000002969
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1761.343374993885
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2169.1329589957604
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2582.2612499905517
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 2968.50399998948
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3376.088624994736
+        },
+        {
+          "completedPasses": 9,
+          "milliseconds": 3792.606208997313
+        },
+        {
+          "completedPasses": 10,
+          "milliseconds": 4202.806834000512
+        },
+        {
+          "completedPasses": 11,
+          "milliseconds": 4608.150375002879
+        },
+        {
+          "completedPasses": 12,
+          "milliseconds": 5026.784208996105
+        },
+        {
+          "completedPasses": 13,
+          "milliseconds": 5374.621583992848
+        },
+        {
+          "completedPasses": 14,
+          "milliseconds": 5799.015500000678
+        },
+        {
+          "completedPasses": 15,
+          "milliseconds": 6200.509749993216
+        },
+        {
+          "completedPasses": 16,
+          "milliseconds": 6548.450583999511
+        },
+        {
+          "completedPasses": 17,
+          "milliseconds": 6952.12708399049
+        },
+        {
+          "completedPasses": 18,
+          "milliseconds": 7367.282833991339
+        },
+        {
+          "completedPasses": 19,
+          "milliseconds": 7741.472084002453
+        },
+        {
+          "completedPasses": 20,
+          "milliseconds": 8160.172541989596
+        },
+        {
+          "completedPasses": 21,
+          "milliseconds": 8574.897291997331
+        },
+        {
+          "completedPasses": 22,
+          "milliseconds": 8959.176541990018
+        },
+        {
+          "completedPasses": 23,
+          "milliseconds": 9409.649875000468
+        },
+        {
+          "completedPasses": 24,
+          "milliseconds": 9863.196374994004
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 9863.198583989288,
+      "observedContinuationMilliseconds": 9297.745791991474,
+      "continuationPassCount": 23,
+      "rendererDelta": {
+        "LayoutCount": 71,
+        "RecalcStyleCount": 119,
+        "LayoutDuration": 0.025724,
+        "RecalcStyleDuration": 6.338796,
+        "DevToolsCommandDuration": 0.002668,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 9.678382,
+        "TaskOtherDuration": 3.311194
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 68,
+        "RecalcStyleCount": 114,
+        "LayoutDuration": 0.018845,
+        "RecalcStyleDuration": 5.9911840000000005,
+        "DevToolsCommandDuration": 0.002211,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 9.142733,
+        "TaskOtherDuration": 3.130493
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 6.920604486196679e-05,
+          "maximum": 0.0001627921228170362
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 3.371754888555582e-05,
+          "maximum": 8.145816860198607e-05
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 23,
+          "actual": 23.0
+        },
+        {
+          "bank": 1,
+          "expected": 24,
+          "actual": 24.0
+        }
+      ]
+    },
+    {
+      "variant": "selective",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "4a37f7087d44ac9336810b0d6b56c5492daf7daf8e8ee70a87139772c3d81a58"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 393.7836669938406
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 794.8168339935364
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1205.7980419922387
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1662.1864999906393
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2111.6412919946015
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2613.985624993802
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 3158.421250001993
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3711.352917001932
+        },
+        {
+          "completedPasses": 9,
+          "milliseconds": 4285.956459003501
+        },
+        {
+          "completedPasses": 10,
+          "milliseconds": 4890.052417002153
+        },
+        {
+          "completedPasses": 11,
+          "milliseconds": 5376.1706670047715
+        },
+        {
+          "completedPasses": 12,
+          "milliseconds": 5892.167625002912
+        },
+        {
+          "completedPasses": 13,
+          "milliseconds": 6405.9944589971565
+        },
+        {
+          "completedPasses": 14,
+          "milliseconds": 6944.243958991137
+        },
+        {
+          "completedPasses": 15,
+          "milliseconds": 7481.012916992768
+        },
+        {
+          "completedPasses": 16,
+          "milliseconds": 8051.161791998311
+        },
+        {
+          "completedPasses": 17,
+          "milliseconds": 8663.5675419966
+        },
+        {
+          "completedPasses": 18,
+          "milliseconds": 9131.91533400095
+        },
+        {
+          "completedPasses": 19,
+          "milliseconds": 9625.15337500372
+        },
+        {
+          "completedPasses": 20,
+          "milliseconds": 10141.99324999936
+        },
+        {
+          "completedPasses": 21,
+          "milliseconds": 10660.877374990378
+        },
+        {
+          "completedPasses": 22,
+          "milliseconds": 11155.646458995761
+        },
+        {
+          "completedPasses": 23,
+          "milliseconds": 11589.428459003102
+        },
+        {
+          "completedPasses": 24,
+          "milliseconds": 12038.829875004012
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 12038.832666992676,
+      "observedContinuationMilliseconds": 11645.048999998835,
+      "continuationPassCount": 23,
+      "rendererDelta": {
+        "LayoutCount": 71,
+        "RecalcStyleCount": 119,
+        "LayoutDuration": 0.031507,
+        "RecalcStyleDuration": 7.0614,
+        "DevToolsCommandDuration": 0.0026899999999999997,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 11.96016,
+        "TaskOtherDuration": 4.8645629999999995
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 68,
+        "RecalcStyleCount": 114,
+        "LayoutDuration": 0.024647000000000002,
+        "RecalcStyleDuration": 6.780282,
+        "DevToolsCommandDuration": 0.002255,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 11.587461999999999,
+        "TaskOtherDuration": 4.780278
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 6.920604486196679e-05,
+          "maximum": 0.0001627921228170362
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 3.371754888555582e-05,
+          "maximum": 8.145816860198607e-05
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 23,
+          "actual": 23.0
+        },
+        {
+          "bank": 1,
+          "expected": 24,
+          "actual": 24.0
+        }
+      ]
+    }
+  ],
+  "coordinateChecks": 36864
+}

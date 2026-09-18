@@ -1,0 +1,5924 @@
+{
+  "provenance": [
+    {
+      "path": "experiments/browser-gpt2-integration/dense/baseline-qkv-l0-11-r0/fixture.json",
+      "sha256": "4de94b22eb0208bdfc1c70de55c212f24c3024423fcdf46e96114180e9eef96e",
+      "uniqueCases": 4
+    },
+    {
+      "path": "experiments/browser-gpt2-integration/dense/baseline-mlp-l0-11-r1/fixture.json",
+      "sha256": "1d98ed14db17f827e990a023ea0c0367116c48460037095a6dab302fd5758f64",
+      "uniqueCases": 4
+    }
+  ],
+  "cases": [
+    {
+      "id": "saved-qkv-l0-p0-natural",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p0",
+      "variant": "natural",
+      "mean": -0.004913844081310496,
+      "std": 0.37944773969591794,
+      "maximumAbsoluteInput": 4.442546680569649
+    },
+    {
+      "id": "saved-qkv-l0-p0-shift-64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p0",
+      "variant": "shift-64std",
+      "mean": -24.289569184620053,
+      "std": 0.37944773969591794,
+      "maximumAbsoluteInput": 28.727202021108397
+    },
+    {
+      "id": "saved-qkv-l0-p0-shift-8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p0",
+      "variant": "shift-8std",
+      "mean": -3.0404957616486534,
+      "std": 0.37944773969591794,
+      "maximumAbsoluteInput": 7.478128598136992
+    },
+    {
+      "id": "saved-qkv-l0-p0-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p0",
+      "variant": "shift+8std",
+      "mean": 3.0306680734860323,
+      "std": 0.37944773969591794,
+      "maximumAbsoluteInput": 6.7183323214484165
+    },
+    {
+      "id": "saved-qkv-l0-p0-shift+64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p0",
+      "variant": "shift+64std",
+      "mean": 24.279741496457433,
+      "std": 0.37944773969591794,
+      "maximumAbsoluteInput": 27.96740574441982
+    },
+    {
+      "id": "saved-qkv-l0-p0-lowvariance",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p0",
+      "variant": "lowvariance",
+      "mean": -0.004913844081310496,
+      "std": 0.00037944773969591795,
+      "maximumAbsoluteInput": 0.009351476917798834
+    },
+    {
+      "id": "saved-qkv-l0-p0-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 3.030668073486033,
+      "std": 0.0003794477396959178,
+      "maximumAbsoluteInput": 3.0343557377339954
+    },
+    {
+      "id": "saved-qkv-l11-p0-natural",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p0",
+      "variant": "natural",
+      "mean": 4.823111615092864,
+      "std": 111.48220811811318,
+      "maximumAbsoluteInput": 2995.5533762301147
+    },
+    {
+      "id": "saved-qkv-l11-p0-shift-64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p0",
+      "variant": "shift-64std",
+      "mean": -7130.038207944151,
+      "std": 111.48220811811318,
+      "maximumAbsoluteInput": 7162.034233775197
+    },
+    {
+      "id": "saved-qkv-l11-p0-shift-8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p0",
+      "variant": "shift-8std",
+      "mean": -887.0345533298126,
+      "std": 111.48220811811318,
+      "maximumAbsoluteInput": 2103.695711285209
+    },
+    {
+      "id": "saved-qkv-l11-p0-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p0",
+      "variant": "shift+8std",
+      "mean": 896.6807765599982,
+      "std": 111.48220811811318,
+      "maximumAbsoluteInput": 3887.4110411750203
+    },
+    {
+      "id": "saved-qkv-l11-p0-shift+64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p0",
+      "variant": "shift+64std",
+      "mean": 7139.684431174336,
+      "std": 111.48220811811314,
+      "maximumAbsoluteInput": 10130.414695789357
+    },
+    {
+      "id": "saved-qkv-l11-p0-lowvariance",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p0",
+      "variant": "lowvariance",
+      "mean": 4.823111615092864,
+      "std": 0.11148220811811316,
+      "maximumAbsoluteInput": 7.813841879707885
+    },
+    {
+      "id": "saved-qkv-l11-p0-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 896.6807765599983,
+      "std": 0.11148220811811213,
+      "maximumAbsoluteInput": 899.6715068246133
+    },
+    {
+      "id": "saved-qkv-l0-p1-natural",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p1",
+      "variant": "natural",
+      "mean": -0.00013627952084031372,
+      "std": 0.2158712030535599,
+      "maximumAbsoluteInput": 1.8626641035079956
+    },
+    {
+      "id": "saved-qkv-l0-p1-shift-64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p1",
+      "variant": "shift-64std",
+      "mean": -13.815893274948673,
+      "std": 0.2158712030535599,
+      "maximumAbsoluteInput": 15.41901940313302
+    },
+    {
+      "id": "saved-qkv-l0-p1-shift-8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p1",
+      "variant": "shift-8std",
+      "mean": -1.7271059039493195,
+      "std": 0.2158712030535599,
+      "maximumAbsoluteInput": 3.330232032133667
+    },
+    {
+      "id": "saved-qkv-l0-p1-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p1",
+      "variant": "shift+8std",
+      "mean": 1.7268333449076387,
+      "std": 0.2158712030535599,
+      "maximumAbsoluteInput": 3.5896337279364747
+    },
+    {
+      "id": "saved-qkv-l0-p1-shift+64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p1",
+      "variant": "shift+64std",
+      "mean": 13.815620715906993,
+      "std": 0.2158712030535599,
+      "maximumAbsoluteInput": 15.678421098935829
+    },
+    {
+      "id": "saved-qkv-l0-p1-lowvariance",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p1",
+      "variant": "lowvariance",
+      "mean": -0.00013627952084031372,
+      "std": 0.00021587120305355988,
+      "maximumAbsoluteInput": 0.0017394056490246613
+    },
+    {
+      "id": "saved-qkv-l0-p1-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l0-p1",
+      "variant": "lowvariance-shift+8std",
+      "mean": 1.7268333449076387,
+      "std": 0.00021587120305356213,
+      "maximumAbsoluteInput": 1.7286961452906677
+    },
+    {
+      "id": "saved-qkv-l11-p1-natural",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p1",
+      "variant": "natural",
+      "mean": 0.2978227531682556,
+      "std": 9.508603713867199,
+      "maximumAbsoluteInput": 136.05666134988982
+    },
+    {
+      "id": "saved-qkv-l11-p1-shift-64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p1",
+      "variant": "shift-64std",
+      "mean": -608.2528149343325,
+      "std": 9.508603713867199,
+      "maximumAbsoluteInput": 744.6072990373906
+    },
+    {
+      "id": "saved-qkv-l11-p1-shift-8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p1",
+      "variant": "shift-8std",
+      "mean": -75.77100695776933,
+      "std": 9.508603713867199,
+      "maximumAbsoluteInput": 212.12549106082741
+    },
+    {
+      "id": "saved-qkv-l11-p1-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p1",
+      "variant": "shift+8std",
+      "mean": 76.36665246410585,
+      "std": 9.508603713867199,
+      "maximumAbsoluteInput": 207.00906456845385
+    },
+    {
+      "id": "saved-qkv-l11-p1-shift+64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p1",
+      "variant": "shift+64std",
+      "mean": 608.848460440669,
+      "std": 9.5086037138672,
+      "maximumAbsoluteInput": 739.490872545017
+    },
+    {
+      "id": "saved-qkv-l11-p1-lowvariance",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p1",
+      "variant": "lowvariance",
+      "mean": 0.2978227531682556,
+      "std": 0.009508603713867199,
+      "maximumAbsoluteInput": 0.42846516527260364
+    },
+    {
+      "id": "saved-qkv-l11-p1-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-qkv-l11-p1",
+      "variant": "lowvariance-shift+8std",
+      "mean": 76.36665246410584,
+      "std": 0.009508603713867154,
+      "maximumAbsoluteInput": 76.49729487621019
+    },
+    {
+      "id": "saved-fc-l0-p0-natural",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p0",
+      "variant": "natural",
+      "mean": 0.0028629888698365655,
+      "std": 1.169319827268993,
+      "maximumAbsoluteInput": 16.4402955505131
+    },
+    {
+      "id": "saved-fc-l0-p0-shift-64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p0",
+      "variant": "shift-64std",
+      "mean": -74.83360595634572,
+      "std": 1.1693198272689924,
+      "maximumAbsoluteInput": 90.01877753833396
+    },
+    {
+      "id": "saved-fc-l0-p0-shift-8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p0",
+      "variant": "shift-8std",
+      "mean": -9.351695629282109,
+      "std": 1.169319827268993,
+      "maximumAbsoluteInput": 24.536867211270355
+    },
+    {
+      "id": "saved-fc-l0-p0-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p0",
+      "variant": "shift+8std",
+      "mean": 9.357421607021783,
+      "std": 1.169319827268993,
+      "maximumAbsoluteInput": 25.794854168665044
+    },
+    {
+      "id": "saved-fc-l0-p0-shift+64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p0",
+      "variant": "shift+64std",
+      "mean": 74.8393319340854,
+      "std": 1.1693198272689924,
+      "maximumAbsoluteInput": 91.27676449572866
+    },
+    {
+      "id": "saved-fc-l0-p0-lowvariance",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p0",
+      "variant": "lowvariance",
+      "mean": 0.0028629888698365655,
+      "std": 0.001169319827268993,
+      "maximumAbsoluteInput": 0.019300421431479826
+    },
+    {
+      "id": "saved-fc-l0-p0-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 9.35742160702178,
+      "std": 0.0011693198272690014,
+      "maximumAbsoluteInput": 9.373859039583424
+    },
+    {
+      "id": "saved-fc-l11-p0-natural",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p0",
+      "variant": "natural",
+      "mean": 0.4817009678213083,
+      "std": 17.264497827177326,
+      "maximumAbsoluteInput": 445.46996444797514
+    },
+    {
+      "id": "saved-fc-l11-p0-shift-64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p0",
+      "variant": "shift-64std",
+      "mean": -1104.4461599715275,
+      "std": 17.264497827177326,
+      "maximumAbsoluteInput": 1159.4062151624275
+    },
+    {
+      "id": "saved-fc-l11-p0-shift-8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p0",
+      "variant": "shift-8std",
+      "mean": -137.63428164959728,
+      "std": 17.264497827177326,
+      "maximumAbsoluteInput": 307.35398183055656
+    },
+    {
+      "id": "saved-fc-l11-p0-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p0",
+      "variant": "shift+8std",
+      "mean": 138.5976835852399,
+      "std": 17.264497827177326,
+      "maximumAbsoluteInput": 583.5859470653937
+    },
+    {
+      "id": "saved-fc-l11-p0-shift+64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p0",
+      "variant": "shift+64std",
+      "mean": 1105.4095619071702,
+      "std": 17.264497827177326,
+      "maximumAbsoluteInput": 1550.397825387324
+    },
+    {
+      "id": "saved-fc-l11-p0-lowvariance",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p0",
+      "variant": "lowvariance",
+      "mean": 0.4817009678213083,
+      "std": 0.017264497827177323,
+      "maximumAbsoluteInput": 0.9266892313014621
+    },
+    {
+      "id": "saved-fc-l11-p0-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 138.59768358523993,
+      "std": 0.017264497827176855,
+      "maximumAbsoluteInput": 139.04267184872006
+    },
+    {
+      "id": "saved-fc-l0-p1-natural",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p1",
+      "variant": "natural",
+      "mean": 0.03364096856420073,
+      "std": 1.2803391027246134,
+      "maximumAbsoluteInput": 14.6731041129458
+    },
+    {
+      "id": "saved-fc-l0-p1-shift-64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p1",
+      "variant": "shift-64std",
+      "mean": -81.90806160581106,
+      "std": 1.2803391027246132,
+      "maximumAbsoluteInput": 96.61480668732105
+    },
+    {
+      "id": "saved-fc-l0-p1-shift-8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p1",
+      "variant": "shift-8std",
+      "mean": -10.209071853232706,
+      "std": 1.2803391027246134,
+      "maximumAbsoluteInput": 24.915816934742708
+    },
+    {
+      "id": "saved-fc-l0-p1-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p1",
+      "variant": "shift+8std",
+      "mean": 10.276353790361107,
+      "std": 1.2803391027246134,
+      "maximumAbsoluteInput": 24.065753293738126
+    },
+    {
+      "id": "saved-fc-l0-p1-shift+64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p1",
+      "variant": "shift+64std",
+      "mean": 81.97534354293946,
+      "std": 1.2803391027246132,
+      "maximumAbsoluteInput": 95.76474304631648
+    },
+    {
+      "id": "saved-fc-l0-p1-lowvariance",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p1",
+      "variant": "lowvariance",
+      "mean": 0.03364096856420073,
+      "std": 0.0012803391027246135,
+      "maximumAbsoluteInput": 0.04743036806757775
+    },
+    {
+      "id": "saved-fc-l0-p1-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l0-p1",
+      "variant": "lowvariance-shift+8std",
+      "mean": 10.276353790361107,
+      "std": 0.001280339102724663,
+      "maximumAbsoluteInput": 10.290143189864486
+    },
+    {
+      "id": "saved-fc-l11-p1-natural",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p1",
+      "variant": "natural",
+      "mean": 0.06270809479961696,
+      "std": 13.821617955308604,
+      "maximumAbsoluteInput": 178.27825626628237
+    },
+    {
+      "id": "saved-fc-l11-p1-shift-64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p1",
+      "variant": "shift-64std",
+      "mean": -884.520841044951,
+      "std": 13.821617955308602,
+      "maximumAbsoluteInput": 1054.5273555931078
+    },
+    {
+      "id": "saved-fc-l11-p1-shift-8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p1",
+      "variant": "shift-8std",
+      "mean": -110.51023554766921,
+      "std": 13.821617955308604,
+      "maximumAbsoluteInput": 280.51675009582607
+    },
+    {
+      "id": "saved-fc-l11-p1-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p1",
+      "variant": "shift+8std",
+      "mean": 110.63565173726845,
+      "std": 13.821617955308604,
+      "maximumAbsoluteInput": 288.8511999087512
+    },
+    {
+      "id": "saved-fc-l11-p1-shift+64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p1",
+      "variant": "shift+64std",
+      "mean": 884.6462572345503,
+      "std": 13.821617955308602,
+      "maximumAbsoluteInput": 1062.861805406033
+    },
+    {
+      "id": "saved-fc-l11-p1-lowvariance",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p1",
+      "variant": "lowvariance",
+      "mean": 0.06270809479961696,
+      "std": 0.013821617955308603,
+      "maximumAbsoluteInput": 0.24092364297109975
+    },
+    {
+      "id": "saved-fc-l11-p1-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 1,
+      "prompt": "Hello,",
+      "tokenIds": [
+        15496,
+        11
+      ],
+      "source": "saved reference-derived dense fixture",
+      "baseId": "saved-fc-l11-p1",
+      "variant": "lowvariance-shift+8std",
+      "mean": 110.63565173726846,
+      "std": 0.013821617955308502,
+      "maximumAbsoluteInput": 110.81386728543993
+    },
+    {
+      "id": "prompt0-qkv-l0-p0-natural",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p0",
+      "variant": "natural",
+      "mean": -0.006795192306142894,
+      "std": 0.36554483261032583,
+      "maximumAbsoluteInput": 4.562393927946687
+    },
+    {
+      "id": "prompt0-qkv-l0-p0-shift-64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p0",
+      "variant": "shift-64std",
+      "mean": -23.401664479366996,
+      "std": 0.36554483261032583,
+      "maximumAbsoluteInput": 27.95726321500754
+    },
+    {
+      "id": "prompt0-qkv-l0-p0-shift-8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p0",
+      "variant": "shift-8std",
+      "mean": -2.93115385318875,
+      "std": 0.36554483261032583,
+      "maximumAbsoluteInput": 7.486752588829294
+    },
+    {
+      "id": "prompt0-qkv-l0-p0-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p0",
+      "variant": "shift+8std",
+      "mean": 2.9175634685764638,
+      "std": 0.36554483261032583,
+      "maximumAbsoluteInput": 6.6274387189804465
+    },
+    {
+      "id": "prompt0-qkv-l0-p0-shift+64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p0",
+      "variant": "shift+64std",
+      "mean": 23.38807409475471,
+      "std": 0.36554483261032583,
+      "maximumAbsoluteInput": 27.097949345158693
+    },
+    {
+      "id": "prompt0-qkv-l0-p0-lowvariance",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p0",
+      "variant": "lowvariance",
+      "mean": -0.006795192306142894,
+      "std": 0.00036554483261032583,
+      "maximumAbsoluteInput": 0.011350791041783439
+    },
+    {
+      "id": "prompt0-qkv-l0-p0-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 2.917563468576464,
+      "std": 0.00036554483261032545,
+      "maximumAbsoluteInput": 2.9212733438268677
+    },
+    {
+      "id": "prompt0-fc-l0-p0-natural",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p0",
+      "variant": "natural",
+      "mean": 0.006005398949481292,
+      "std": 0.9678909007988002,
+      "maximumAbsoluteInput": 13.195510941336128
+    },
+    {
+      "id": "prompt0-fc-l0-p0-shift-64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p0",
+      "variant": "shift-64std",
+      "mean": -61.93901225217373,
+      "std": 0.9678909007988002,
+      "maximumAbsoluteInput": 74.54419160427246
+    },
+    {
+      "id": "prompt0-fc-l0-p0-shift-8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p0",
+      "variant": "shift-8std",
+      "mean": -7.7371218074409205,
+      "std": 0.9678909007988002,
+      "maximumAbsoluteInput": 20.342301159539645
+    },
+    {
+      "id": "prompt0-fc-l0-p0-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p0",
+      "variant": "shift+8std",
+      "mean": 7.7491326053398835,
+      "std": 0.9678909007988001,
+      "maximumAbsoluteInput": 20.93863814772653
+    },
+    {
+      "id": "prompt0-fc-l0-p0-shift+64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p0",
+      "variant": "shift+64std",
+      "mean": 61.9510230500727,
+      "std": 0.9678909007988004,
+      "maximumAbsoluteInput": 75.14052859245935
+    },
+    {
+      "id": "prompt0-fc-l0-p0-lowvariance",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p0",
+      "variant": "lowvariance",
+      "mean": 0.006005398949481292,
+      "std": 0.0009678909007988001,
+      "maximumAbsoluteInput": 0.019194904491867937
+    },
+    {
+      "id": "prompt0-fc-l0-p0-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 7.7491326053398835,
+      "std": 0.0009678909007988112,
+      "maximumAbsoluteInput": 7.76232211088227
+    },
+    {
+      "id": "prompt0-qkv-l0-p3-natural",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p3",
+      "variant": "natural",
+      "mean": -0.0018398590880200534,
+      "std": 0.20668641745440924,
+      "maximumAbsoluteInput": 1.32225367607316
+    },
+    {
+      "id": "prompt0-qkv-l0-p3-shift-64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p3",
+      "variant": "shift-64std",
+      "mean": -13.22977057617021,
+      "std": 0.20668641745440924,
+      "maximumAbsoluteInput": 14.442176476032902
+    },
+    {
+      "id": "prompt0-qkv-l0-p3-shift-8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p3",
+      "variant": "shift-8std",
+      "mean": -1.655331198723294,
+      "std": 0.20668641745440924,
+      "maximumAbsoluteInput": 2.8677370985859842
+    },
+    {
+      "id": "prompt0-qkv-l0-p3-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p3",
+      "variant": "shift+8std",
+      "mean": 1.6516514805472537,
+      "std": 0.20668641745440922,
+      "maximumAbsoluteInput": 2.975745015708434
+    },
+    {
+      "id": "prompt0-qkv-l0-p3-shift+64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p3",
+      "variant": "shift+64std",
+      "mean": 13.226090857994171,
+      "std": 0.20668641745440922,
+      "maximumAbsoluteInput": 14.550184393155352
+    },
+    {
+      "id": "prompt0-qkv-l0-p3-lowvariance",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p3",
+      "variant": "lowvariance",
+      "mean": -0.0018398590880200534,
+      "std": 0.00020668641745440924,
+      "maximumAbsoluteInput": 0.0030522649878827438
+    },
+    {
+      "id": "prompt0-qkv-l0-p3-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l0-p3",
+      "variant": "lowvariance-shift+8std",
+      "mean": 1.651651480547254,
+      "std": 0.00020668641745440655,
+      "maximumAbsoluteInput": 1.652975574082415
+    },
+    {
+      "id": "prompt0-fc-l0-p3-natural",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p3",
+      "variant": "natural",
+      "mean": 0.009463561477242104,
+      "std": 1.3546849002411596,
+      "maximumAbsoluteInput": 13.849850581336682
+    },
+    {
+      "id": "prompt0-fc-l0-p3-shift-64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p3",
+      "variant": "shift-64std",
+      "mean": -86.69037005395698,
+      "std": 1.3546849002411598,
+      "maximumAbsoluteInput": 100.5496841967709
+    },
+    {
+      "id": "prompt0-fc-l0-p3-shift-8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p3",
+      "variant": "shift-8std",
+      "mean": -10.828015640452035,
+      "std": 1.3546849002411596,
+      "maximumAbsoluteInput": 24.68732978326596
+    },
+    {
+      "id": "prompt0-fc-l0-p3-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p3",
+      "variant": "shift+8std",
+      "mean": 10.846942763406517,
+      "std": 1.3546849002411596,
+      "maximumAbsoluteInput": 24.002557445967355
+    },
+    {
+      "id": "prompt0-fc-l0-p3-shift+64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p3",
+      "variant": "shift+64std",
+      "mean": 86.70929717691145,
+      "std": 1.3546849002411598,
+      "maximumAbsoluteInput": 99.8649118594723
+    },
+    {
+      "id": "prompt0-fc-l0-p3-lowvariance",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p3",
+      "variant": "lowvariance",
+      "mean": 0.009463561477242104,
+      "std": 0.0013546849002411597,
+      "maximumAbsoluteInput": 0.02261917615980294
+    },
+    {
+      "id": "prompt0-fc-l0-p3-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l0-p3",
+      "variant": "lowvariance-shift+8std",
+      "mean": 10.846942763406517,
+      "std": 0.0013546849002411747,
+      "maximumAbsoluteInput": 10.86009837808908
+    },
+    {
+      "id": "prompt0-qkv-l5-p0-natural",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p0",
+      "variant": "natural",
+      "mean": 4.513048057177813,
+      "std": 104.42490864609823,
+      "maximumAbsoluteInput": 2784.762789364405
+    },
+    {
+      "id": "prompt0-qkv-l5-p0-shift-64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p0",
+      "variant": "shift-64std",
+      "mean": -6678.681105293109,
+      "std": 104.42490864609823,
+      "maximumAbsoluteInput": 6752.728111706194
+    },
+    {
+      "id": "prompt0-qkv-l5-p0-shift-8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p0",
+      "variant": "shift-8std",
+      "mean": -830.886221111608,
+      "std": 104.42490864609823,
+      "maximumAbsoluteInput": 1949.363520195619
+    },
+    {
+      "id": "prompt0-qkv-l5-p0-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p0",
+      "variant": "shift+8std",
+      "mean": 839.9123172259636,
+      "std": 104.42490864609823,
+      "maximumAbsoluteInput": 3620.1620585331907
+    },
+    {
+      "id": "prompt0-qkv-l5-p0-shift+64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p0",
+      "variant": "shift+64std",
+      "mean": 6687.707201407466,
+      "std": 104.42490864609826,
+      "maximumAbsoluteInput": 9467.956942714693
+    },
+    {
+      "id": "prompt0-qkv-l5-p0-lowvariance",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p0",
+      "variant": "lowvariance",
+      "mean": 4.513048057177813,
+      "std": 0.10442490864609827,
+      "maximumAbsoluteInput": 7.293297798485041
+    },
+    {
+      "id": "prompt0-qkv-l5-p0-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 839.9123172259636,
+      "std": 0.10442490864609714,
+      "maximumAbsoluteInput": 842.6925669672709
+    },
+    {
+      "id": "prompt0-fc-l5-p0-natural",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p0",
+      "variant": "natural",
+      "mean": 4.509794915892985,
+      "std": 104.3784154892449,
+      "maximumAbsoluteInput": 2783.4133909817674
+    },
+    {
+      "id": "prompt0-fc-l5-p0-shift-64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p0",
+      "variant": "shift-64std",
+      "mean": -6675.708796395781,
+      "std": 104.37841548924489,
+      "maximumAbsoluteInput": 6749.860918408786
+    },
+    {
+      "id": "prompt0-fc-l5-p0-shift-8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p0",
+      "variant": "shift-8std",
+      "mean": -830.5175289980662,
+      "std": 104.3784154892449,
+      "maximumAbsoluteInput": 1948.3860670678082
+    },
+    {
+      "id": "prompt0-fc-l5-p0-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p0",
+      "variant": "shift+8std",
+      "mean": 839.5371188298523,
+      "std": 104.37841548924489,
+      "maximumAbsoluteInput": 3618.4407148957266
+    },
+    {
+      "id": "prompt0-fc-l5-p0-shift+64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p0",
+      "variant": "shift+64std",
+      "mean": 6684.728386227566,
+      "std": 104.37841548924493,
+      "maximumAbsoluteInput": 9463.631982293442
+    },
+    {
+      "id": "prompt0-fc-l5-p0-lowvariance",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p0",
+      "variant": "lowvariance",
+      "mean": 4.509794915892985,
+      "std": 0.1043784154892449,
+      "maximumAbsoluteInput": 7.288698511958859
+    },
+    {
+      "id": "prompt0-fc-l5-p0-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 839.5371188298523,
+      "std": 0.10437841548924458,
+      "maximumAbsoluteInput": 842.316022425918
+    },
+    {
+      "id": "prompt0-qkv-l5-p3-natural",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p3",
+      "variant": "natural",
+      "mean": 0.01836982074197227,
+      "std": 3.117371027347968,
+      "maximumAbsoluteInput": 35.714569007265375
+    },
+    {
+      "id": "prompt0-qkv-l5-p3-shift-64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p3",
+      "variant": "shift-64std",
+      "mean": -199.49337592952793,
+      "std": 3.117371027347968,
+      "maximumAbsoluteInput": 226.72889839776226
+    },
+    {
+      "id": "prompt0-qkv-l5-p3-shift-8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p3",
+      "variant": "shift-8std",
+      "mean": -24.920598398041772,
+      "std": 3.117371027347968,
+      "maximumAbsoluteInput": 52.15612086627608
+    },
+    {
+      "id": "prompt0-qkv-l5-p3-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p3",
+      "variant": "shift+8std",
+      "mean": 24.957338039525713,
+      "std": 3.117371027347968,
+      "maximumAbsoluteInput": 60.65353722604912
+    },
+    {
+      "id": "prompt0-qkv-l5-p3-shift+64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p3",
+      "variant": "shift+64std",
+      "mean": 199.53011557101192,
+      "std": 3.117371027347968,
+      "maximumAbsoluteInput": 235.2263147575353
+    },
+    {
+      "id": "prompt0-qkv-l5-p3-lowvariance",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p3",
+      "variant": "lowvariance",
+      "mean": 0.01836982074197227,
+      "std": 0.0031173710273479675,
+      "maximumAbsoluteInput": 0.05406601992849567
+    },
+    {
+      "id": "prompt0-qkv-l5-p3-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l5-p3",
+      "variant": "lowvariance-shift+8std",
+      "mean": 24.957338039525713,
+      "std": 0.003117371027348008,
+      "maximumAbsoluteInput": 24.993034238712237
+    },
+    {
+      "id": "prompt0-fc-l5-p3-natural",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p3",
+      "variant": "natural",
+      "mean": 0.017353404769532715,
+      "std": 3.1619880866736865,
+      "maximumAbsoluteInput": 35.93973891100432
+    },
+    {
+      "id": "prompt0-fc-l5-p3-shift-64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p3",
+      "variant": "shift-64std",
+      "mean": -202.34988414234638,
+      "std": 3.161988086673687,
+      "maximumAbsoluteInput": 229.69821811716622
+    },
+    {
+      "id": "prompt0-fc-l5-p3-shift-8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p3",
+      "variant": "shift-8std",
+      "mean": -25.278551288619962,
+      "std": 3.161988086673686,
+      "maximumAbsoluteInput": 52.62688526343979
+    },
+    {
+      "id": "prompt0-fc-l5-p3-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p3",
+      "variant": "shift+8std",
+      "mean": 25.313258098159025,
+      "std": 3.1619880866736865,
+      "maximumAbsoluteInput": 61.235643604393815
+    },
+    {
+      "id": "prompt0-fc-l5-p3-shift+64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p3",
+      "variant": "shift+64std",
+      "mean": 202.38459095188546,
+      "std": 3.161988086673687,
+      "maximumAbsoluteInput": 238.30697645812026
+    },
+    {
+      "id": "prompt0-fc-l5-p3-lowvariance",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p3",
+      "variant": "lowvariance",
+      "mean": 0.017353404769532715,
+      "std": 0.0031619880866736866,
+      "maximumAbsoluteInput": 0.05327579027576751
+    },
+    {
+      "id": "prompt0-fc-l5-p3-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l5-p3",
+      "variant": "lowvariance-shift+8std",
+      "mean": 25.313258098159025,
+      "std": 0.003161988086673632,
+      "maximumAbsoluteInput": 25.349180483665258
+    },
+    {
+      "id": "prompt0-qkv-l11-p0-natural",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p0",
+      "variant": "natural",
+      "mean": 4.871656534953428,
+      "std": 112.16176663566229,
+      "maximumAbsoluteInput": 3011.954804013749
+    },
+    {
+      "id": "prompt0-qkv-l11-p0-shift-64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p0",
+      "variant": "shift-64std",
+      "mean": -7173.481408147432,
+      "std": 112.16176663566229,
+      "maximumAbsoluteInput": 7204.838828851321
+    },
+    {
+      "id": "prompt0-qkv-l11-p0-shift-8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p0",
+      "variant": "shift-8std",
+      "mean": -892.4224765503449,
+      "std": 112.16176663566229,
+      "maximumAbsoluteInput": 2114.6606709284506
+    },
+    {
+      "id": "prompt0-qkv-l11-p0-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p0",
+      "variant": "shift+8std",
+      "mean": 902.1657896202518,
+      "std": 112.16176663566229,
+      "maximumAbsoluteInput": 3909.248937099047
+    },
+    {
+      "id": "prompt0-qkv-l11-p0-shift+64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p0",
+      "variant": "shift+64std",
+      "mean": 7183.22472121734,
+      "std": 112.16176663566226,
+      "maximumAbsoluteInput": 10190.307868696134
+    },
+    {
+      "id": "prompt0-qkv-l11-p0-lowvariance",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p0",
+      "variant": "lowvariance",
+      "mean": 4.871656534953428,
+      "std": 0.11216176663566232,
+      "maximumAbsoluteInput": 7.878739682432224
+    },
+    {
+      "id": "prompt0-qkv-l11-p0-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 902.1657896202518,
+      "std": 0.11216176663566074,
+      "maximumAbsoluteInput": 905.1728727677305
+    },
+    {
+      "id": "prompt0-fc-l11-p0-natural",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p0",
+      "variant": "natural",
+      "mean": 0.4971837239432982,
+      "std": 17.30849531150529,
+      "maximumAbsoluteInput": 443.9810118844339
+    },
+    {
+      "id": "prompt0-fc-l11-p0-shift-64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p0",
+      "variant": "shift-64std",
+      "mean": -1107.2465162123954,
+      "std": 17.30849531150529,
+      "maximumAbsoluteInput": 1163.6449378087998
+    },
+    {
+      "id": "prompt0-fc-l11-p0-shift-8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p0",
+      "variant": "shift-8std",
+      "mean": -137.970778768099,
+      "std": 17.308495311505293,
+      "maximumAbsoluteInput": 305.51304939239157
+    },
+    {
+      "id": "prompt0-fc-l11-p0-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p0",
+      "variant": "shift+8std",
+      "mean": 138.9651462159856,
+      "std": 17.308495311505286,
+      "maximumAbsoluteInput": 582.4489743764761
+    },
+    {
+      "id": "prompt0-fc-l11-p0-shift+64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p0",
+      "variant": "shift+64std",
+      "mean": 1108.2408836602817,
+      "std": 17.30849531150529,
+      "maximumAbsoluteInput": 1551.7247118207724
+    },
+    {
+      "id": "prompt0-fc-l11-p0-lowvariance",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p0",
+      "variant": "lowvariance",
+      "mean": 0.4971837239432982,
+      "std": 0.017308495311505294,
+      "maximumAbsoluteInput": 0.9406675521037888
+    },
+    {
+      "id": "prompt0-fc-l11-p0-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 138.96514621598564,
+      "std": 0.017308495311504978,
+      "maximumAbsoluteInput": 139.4086300441461
+    },
+    {
+      "id": "prompt0-qkv-l11-p3-natural",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p3",
+      "variant": "natural",
+      "mean": 0.23474005258300434,
+      "std": 8.517669969548765,
+      "maximumAbsoluteInput": 118.10238487438271
+    },
+    {
+      "id": "prompt0-qkv-l11-p3-shift-64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p3",
+      "variant": "shift-64std",
+      "mean": -544.8961379985379,
+      "std": 8.517669969548765,
+      "maximumAbsoluteInput": 658.419172773653
+    },
+    {
+      "id": "prompt0-qkv-l11-p3-shift-8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p3",
+      "variant": "shift-8std",
+      "mean": -67.90661970380711,
+      "std": 8.517669969548765,
+      "maximumAbsoluteInput": 181.42965447892226
+    },
+    {
+      "id": "prompt0-qkv-l11-p3-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p3",
+      "variant": "shift+8std",
+      "mean": 68.37609980897311,
+      "std": 8.517669969548765,
+      "maximumAbsoluteInput": 186.24374463077282
+    },
+    {
+      "id": "prompt0-qkv-l11-p3-shift+64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p3",
+      "variant": "shift+64std",
+      "mean": 545.3656181037039,
+      "std": 8.517669969548765,
+      "maximumAbsoluteInput": 663.2332629255036
+    },
+    {
+      "id": "prompt0-qkv-l11-p3-lowvariance",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p3",
+      "variant": "lowvariance",
+      "mean": 0.23474005258300434,
+      "std": 0.008517669969548764,
+      "maximumAbsoluteInput": 0.352607697404804
+    },
+    {
+      "id": "prompt0-qkv-l11-p3-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-qkv-l11-p3",
+      "variant": "lowvariance-shift+8std",
+      "mean": 68.37609980897311,
+      "std": 0.008517669969548738,
+      "maximumAbsoluteInput": 68.49396745379492
+    },
+    {
+      "id": "prompt0-fc-l11-p3-natural",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p3",
+      "variant": "natural",
+      "mean": 0.030876395991560335,
+      "std": 11.456802017663417,
+      "maximumAbsoluteInput": 136.74133031089966
+    },
+    {
+      "id": "prompt0-fc-l11-p3-shift-64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p3",
+      "variant": "shift-64std",
+      "mean": -733.2044527344673,
+      "std": 11.456802017663415,
+      "maximumAbsoluteInput": 869.9766594413584
+    },
+    {
+      "id": "prompt0-fc-l11-p3-shift-8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p3",
+      "variant": "shift-8std",
+      "mean": -91.62353974531578,
+      "std": 11.456802017663417,
+      "maximumAbsoluteInput": 228.395746452207
+    },
+    {
+      "id": "prompt0-fc-l11-p3-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p3",
+      "variant": "shift+8std",
+      "mean": 91.68529253729889,
+      "std": 11.456802017663417,
+      "maximumAbsoluteInput": 223.0871467430584
+    },
+    {
+      "id": "prompt0-fc-l11-p3-shift+64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p3",
+      "variant": "shift+64std",
+      "mean": 733.2662055264503,
+      "std": 11.456802017663414,
+      "maximumAbsoluteInput": 864.6680597322097
+    },
+    {
+      "id": "prompt0-fc-l11-p3-lowvariance",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p3",
+      "variant": "lowvariance",
+      "mean": 0.030876395991560335,
+      "std": 0.011456802017663418,
+      "maximumAbsoluteInput": 0.16227825019731987
+    },
+    {
+      "id": "prompt0-fc-l11-p3-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 3,
+      "prompt": "The quick brown fox",
+      "tokenIds": [
+        464,
+        2068,
+        7586,
+        21831
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt0-fc-l11-p3",
+      "variant": "lowvariance-shift+8std",
+      "mean": 91.68529253729889,
+      "std": 0.011456802017663257,
+      "maximumAbsoluteInput": 91.81669439150465
+    },
+    {
+      "id": "prompt1-qkv-l0-p0-natural",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p0",
+      "variant": "natural",
+      "mean": -0.005208999383209327,
+      "std": 0.38325518864728564,
+      "maximumAbsoluteInput": 4.503932319581509
+    },
+    {
+      "id": "prompt1-qkv-l0-p0-shift-64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p0",
+      "variant": "shift-64std",
+      "mean": -24.533541072809484,
+      "std": 0.38325518864728564,
+      "maximumAbsoluteInput": 29.03226439300779
+    },
+    {
+      "id": "prompt1-qkv-l0-p0-shift-8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p0",
+      "variant": "shift-8std",
+      "mean": -3.0712505085614943,
+      "std": 0.38325518864728564,
+      "maximumAbsoluteInput": 7.569973828759794
+    },
+    {
+      "id": "prompt1-qkv-l0-p0-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p0",
+      "variant": "shift+8std",
+      "mean": 3.060832509795075,
+      "std": 0.3832551886472857,
+      "maximumAbsoluteInput": 6.919690007832651
+    },
+    {
+      "id": "prompt1-qkv-l0-p0-shift+64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p0",
+      "variant": "shift+64std",
+      "mean": 24.523123074043067,
+      "std": 0.38325518864728564,
+      "maximumAbsoluteInput": 28.381980572080646
+    },
+    {
+      "id": "prompt1-qkv-l0-p0-lowvariance",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p0",
+      "variant": "lowvariance",
+      "mean": -0.005208999383209327,
+      "std": 0.00038325518864728566,
+      "maximumAbsoluteInput": 0.009707722703407626
+    },
+    {
+      "id": "prompt1-qkv-l0-p0-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 3.0608325097950764,
+      "std": 0.0003832551886472893,
+      "maximumAbsoluteInput": 3.0646913672931135
+    },
+    {
+      "id": "prompt1-fc-l0-p0-natural",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p0",
+      "variant": "natural",
+      "mean": -0.009096972573886414,
+      "std": 1.1477681476009802,
+      "maximumAbsoluteInput": 15.186190128860833
+    },
+    {
+      "id": "prompt1-fc-l0-p0-shift-64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p0",
+      "variant": "shift-64std",
+      "mean": -73.46625841903662,
+      "std": 1.1477681476009802,
+      "maximumAbsoluteInput": 87.11589938828848
+    },
+    {
+      "id": "prompt1-fc-l0-p0-shift-8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p0",
+      "variant": "shift-8std",
+      "mean": -9.191242153381728,
+      "std": 1.1477681476009802,
+      "maximumAbsoluteInput": 22.840883122633596
+    },
+    {
+      "id": "prompt1-fc-l0-p0-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p0",
+      "variant": "shift+8std",
+      "mean": 9.173048208233956,
+      "std": 1.1477681476009802,
+      "maximumAbsoluteInput": 24.368335309668673
+    },
+    {
+      "id": "prompt1-fc-l0-p0-shift+64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p0",
+      "variant": "shift+64std",
+      "mean": 73.44806447388885,
+      "std": 1.1477681476009804,
+      "maximumAbsoluteInput": 88.64335157532356
+    },
+    {
+      "id": "prompt1-fc-l0-p0-lowvariance",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p0",
+      "variant": "lowvariance",
+      "mean": -0.009096972573886414,
+      "std": 0.0011477681476009802,
+      "maximumAbsoluteInput": 0.022746613543138283
+    },
+    {
+      "id": "prompt1-fc-l0-p0-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 9.173048208233956,
+      "std": 0.001147768147600956,
+      "maximumAbsoluteInput": 9.18824349533539
+    },
+    {
+      "id": "prompt1-qkv-l0-p4-natural",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p4",
+      "variant": "natural",
+      "mean": -0.004336901909676764,
+      "std": 0.17926509999441967,
+      "maximumAbsoluteInput": 1.236385913565755
+    },
+    {
+      "id": "prompt1-qkv-l0-p4-shift-64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p4",
+      "variant": "shift-64std",
+      "mean": -11.477303301552537,
+      "std": 0.17926509999441967,
+      "maximumAbsoluteInput": 12.709352313208614
+    },
+    {
+      "id": "prompt1-qkv-l0-p4-shift-8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p4",
+      "variant": "shift-8std",
+      "mean": -1.4384577018650344,
+      "std": 0.17926509999441967,
+      "maximumAbsoluteInput": 2.670506713521112
+    },
+    {
+      "id": "prompt1-qkv-l0-p4-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p4",
+      "variant": "shift+8std",
+      "mean": 1.4297838980456803,
+      "std": 0.17926509999441967,
+      "maximumAbsoluteInput": 2.638140815850724
+    },
+    {
+      "id": "prompt1-qkv-l0-p4-shift+64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p4",
+      "variant": "shift+64std",
+      "mean": 11.468629497733183,
+      "std": 0.17926509999441967,
+      "maximumAbsoluteInput": 12.676986415538225
+    },
+    {
+      "id": "prompt1-qkv-l0-p4-lowvariance",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p4",
+      "variant": "lowvariance",
+      "mean": -0.004336901909676764,
+      "std": 0.00017926509999441969,
+      "maximumAbsoluteInput": 0.005568950921332842
+    },
+    {
+      "id": "prompt1-qkv-l0-p4-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l0-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 1.4297838980456803,
+      "std": 0.00017926509999442245,
+      "maximumAbsoluteInput": 1.4309922549634857
+    },
+    {
+      "id": "prompt1-fc-l0-p4-natural",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p4",
+      "variant": "natural",
+      "mean": 0.03134120861080726,
+      "std": 1.1162589553711182,
+      "maximumAbsoluteInput": 13.92542312756843
+    },
+    {
+      "id": "prompt1-fc-l0-p4-shift-64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p4",
+      "variant": "shift-64std",
+      "mean": -71.40923193514075,
+      "std": 1.1162589553711182,
+      "maximumAbsoluteInput": 85.36599627132
+    },
+    {
+      "id": "prompt1-fc-l0-p4-shift-8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p4",
+      "variant": "shift-8std",
+      "mean": -8.898730434358137,
+      "std": 1.1162589553711182,
+      "maximumAbsoluteInput": 22.855494770537376
+    },
+    {
+      "id": "prompt1-fc-l0-p4-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p4",
+      "variant": "shift+8std",
+      "mean": 8.961412851579752,
+      "std": 1.1162589553711182,
+      "maximumAbsoluteInput": 21.21611523123751
+    },
+    {
+      "id": "prompt1-fc-l0-p4-shift+64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p4",
+      "variant": "shift+64std",
+      "mean": 71.47191435236238,
+      "std": 1.1162589553711182,
+      "maximumAbsoluteInput": 83.72661673202013
+    },
+    {
+      "id": "prompt1-fc-l0-p4-lowvariance",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p4",
+      "variant": "lowvariance",
+      "mean": 0.03134120861080727,
+      "std": 0.0011162589553711183,
+      "maximumAbsoluteInput": 0.04359591099046502
+    },
+    {
+      "id": "prompt1-fc-l0-p4-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l0-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 8.961412851579754,
+      "std": 0.0011162589553711196,
+      "maximumAbsoluteInput": 8.97366755395941
+    },
+    {
+      "id": "prompt1-qkv-l5-p0-natural",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p0",
+      "variant": "natural",
+      "mean": 4.544996305609773,
+      "std": 105.43743402627796,
+      "maximumAbsoluteInput": 2810.326653140809
+    },
+    {
+      "id": "prompt1-qkv-l5-p0-shift-64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p0",
+      "variant": "shift-64std",
+      "mean": -6743.45078137618,
+      "std": 105.43743402627796,
+      "maximumAbsoluteInput": 6818.468951373895
+    },
+    {
+      "id": "prompt1-qkv-l5-p0-shift-8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p0",
+      "variant": "shift-8std",
+      "mean": -838.9544759046139,
+      "std": 105.43743402627796,
+      "maximumAbsoluteInput": 1966.8271809305852
+    },
+    {
+      "id": "prompt1-qkv-l5-p0-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p0",
+      "variant": "shift+8std",
+      "mean": 848.0444685158335,
+      "std": 105.43743402627796,
+      "maximumAbsoluteInput": 3653.8261253510327
+    },
+    {
+      "id": "prompt1-qkv-l5-p0-shift+64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p0",
+      "variant": "shift+64std",
+      "mean": 6752.540773987398,
+      "std": 105.43743402627796,
+      "maximumAbsoluteInput": 9558.322430822598
+    },
+    {
+      "id": "prompt1-qkv-l5-p0-lowvariance",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p0",
+      "variant": "lowvariance",
+      "mean": 4.544996305609773,
+      "std": 0.10543743402627795,
+      "maximumAbsoluteInput": 7.3507779624449725
+    },
+    {
+      "id": "prompt1-qkv-l5-p0-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 848.0444685158333,
+      "std": 0.10543743402627948,
+      "maximumAbsoluteInput": 850.8502501726687
+    },
+    {
+      "id": "prompt1-fc-l5-p0-natural",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p0",
+      "variant": "natural",
+      "mean": 4.541885127619835,
+      "std": 105.39414762972416,
+      "maximumAbsoluteInput": 2809.067637064518
+    },
+    {
+      "id": "prompt1-fc-l5-p0-shift-64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p0",
+      "variant": "shift-64std",
+      "mean": -6740.683563174726,
+      "std": 105.39414762972416,
+      "maximumAbsoluteInput": 6815.8110941687855
+    },
+    {
+      "id": "prompt1-fc-l5-p0-shift-8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p0",
+      "variant": "shift-8std",
+      "mean": -838.6112959101735,
+      "std": 105.39414762972416,
+      "maximumAbsoluteInput": 1965.9144560267246
+    },
+    {
+      "id": "prompt1-fc-l5-p0-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p0",
+      "variant": "shift+8std",
+      "mean": 847.6950661654131,
+      "std": 105.39414762972415,
+      "maximumAbsoluteInput": 3652.220818102311
+    },
+    {
+      "id": "prompt1-fc-l5-p0-shift+64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p0",
+      "variant": "shift+64std",
+      "mean": 6749.767333429966,
+      "std": 105.39414762972416,
+      "maximumAbsoluteInput": 9554.293085366864
+    },
+    {
+      "id": "prompt1-fc-l5-p0-lowvariance",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p0",
+      "variant": "lowvariance",
+      "mean": 4.541885127619835,
+      "std": 0.10539414762972418,
+      "maximumAbsoluteInput": 7.346410879556734
+    },
+    {
+      "id": "prompt1-fc-l5-p0-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 847.6950661654131,
+      "std": 0.10539414762972395,
+      "maximumAbsoluteInput": 850.49959191735
+    },
+    {
+      "id": "prompt1-qkv-l5-p4-natural",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p4",
+      "variant": "natural",
+      "mean": 0.010054428755262435,
+      "std": 2.5799818915589654,
+      "maximumAbsoluteInput": 31.172963536923376
+    },
+    {
+      "id": "prompt1-qkv-l5-p4-shift-64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p4",
+      "variant": "shift-64std",
+      "mean": -165.10878663101855,
+      "std": 2.579981891558965,
+      "maximumAbsoluteInput": 188.8007678322787
+    },
+    {
+      "id": "prompt1-qkv-l5-p4-shift-8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p4",
+      "variant": "shift-8std",
+      "mean": -20.62980070371646,
+      "std": 2.5799818915589654,
+      "maximumAbsoluteInput": 44.32178190497663
+    },
+    {
+      "id": "prompt1-qkv-l5-p4-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p4",
+      "variant": "shift+8std",
+      "mean": 20.649909561226988,
+      "std": 2.5799818915589654,
+      "maximumAbsoluteInput": 51.8128186693951
+    },
+    {
+      "id": "prompt1-qkv-l5-p4-shift+64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p4",
+      "variant": "shift+64std",
+      "mean": 165.12889548852903,
+      "std": 2.579981891558965,
+      "maximumAbsoluteInput": 196.29180459669715
+    },
+    {
+      "id": "prompt1-qkv-l5-p4-lowvariance",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p4",
+      "variant": "lowvariance",
+      "mean": 0.010054428755262435,
+      "std": 0.002579981891558965,
+      "maximumAbsoluteInput": 0.04121733786343055
+    },
+    {
+      "id": "prompt1-qkv-l5-p4-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l5-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 20.649909561226988,
+      "std": 0.002579981891558992,
+      "maximumAbsoluteInput": 20.681072470335153
+    },
+    {
+      "id": "prompt1-fc-l5-p4-natural",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p4",
+      "variant": "natural",
+      "mean": 0.006230191247288634,
+      "std": 2.6628433472890642,
+      "maximumAbsoluteInput": 29.703225347849234
+    },
+    {
+      "id": "prompt1-fc-l5-p4-shift-64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p4",
+      "variant": "shift-64std",
+      "mean": -170.4157440352528,
+      "std": 2.6628433472890642,
+      "maximumAbsoluteInput": 194.16464514280565
+    },
+    {
+      "id": "prompt1-fc-l5-p4-shift-8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p4",
+      "variant": "shift-8std",
+      "mean": -21.296516587065224,
+      "std": 2.6628433472890642,
+      "maximumAbsoluteInput": 45.04541769461806
+    },
+    {
+      "id": "prompt1-fc-l5-p4-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p4",
+      "variant": "shift+8std",
+      "mean": 21.308976969559804,
+      "std": 2.6628433472890642,
+      "maximumAbsoluteInput": 51.00597212616175
+    },
+    {
+      "id": "prompt1-fc-l5-p4-shift+64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p4",
+      "variant": "shift+64std",
+      "mean": 170.4282044177474,
+      "std": 2.6628433472890647,
+      "maximumAbsoluteInput": 200.12519957434935
+    },
+    {
+      "id": "prompt1-fc-l5-p4-lowvariance",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p4",
+      "variant": "lowvariance",
+      "mean": 0.006230191247288634,
+      "std": 0.0026628433472890645,
+      "maximumAbsoluteInput": 0.03592718640389058
+    },
+    {
+      "id": "prompt1-fc-l5-p4-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l5-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 21.308976969559804,
+      "std": 0.0026628433472890155,
+      "maximumAbsoluteInput": 21.338673964716403
+    },
+    {
+      "id": "prompt1-qkv-l11-p0-natural",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p0",
+      "variant": "natural",
+      "mean": 4.908584902951718,
+      "std": 113.33858679588674,
+      "maximumAbsoluteInput": 3042.426533210089
+    },
+    {
+      "id": "prompt1-qkv-l11-p0-shift-64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p0",
+      "variant": "shift-64std",
+      "mean": -7248.7609700338,
+      "std": 113.33858679588671,
+      "maximumAbsoluteInput": 7280.518150704416
+    },
+    {
+      "id": "prompt1-qkv-l11-p0-shift-8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p0",
+      "variant": "shift-8std",
+      "mean": -901.8001094641422,
+      "std": 113.33858679588674,
+      "maximumAbsoluteInput": 2135.717838842995
+    },
+    {
+      "id": "prompt1-qkv-l11-p0-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p0",
+      "variant": "shift+8std",
+      "mean": 911.6172792700457,
+      "std": 113.33858679588671,
+      "maximumAbsoluteInput": 3949.135227577183
+    },
+    {
+      "id": "prompt1-qkv-l11-p0-shift+64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p0",
+      "variant": "shift+64std",
+      "mean": 7258.578139839704,
+      "std": 113.33858679588671,
+      "maximumAbsoluteInput": 10296.09608814684
+    },
+    {
+      "id": "prompt1-qkv-l11-p0-lowvariance",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p0",
+      "variant": "lowvariance",
+      "mean": 4.908584902951718,
+      "std": 0.11333858679588672,
+      "maximumAbsoluteInput": 7.946102851258855
+    },
+    {
+      "id": "prompt1-qkv-l11-p0-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 911.6172792700455,
+      "std": 0.11333858679588629,
+      "maximumAbsoluteInput": 914.6547972183528
+    },
+    {
+      "id": "prompt1-fc-l11-p0-natural",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p0",
+      "variant": "natural",
+      "mean": 0.5137645462887324,
+      "std": 17.92070148346637,
+      "maximumAbsoluteInput": 460.43087136254417
+    },
+    {
+      "id": "prompt1-fc-l11-p0-shift-64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p0",
+      "variant": "shift-64std",
+      "mean": -1146.411130395559,
+      "std": 17.92070148346637,
+      "maximumAbsoluteInput": 1202.020937900018
+    },
+    {
+      "id": "prompt1-fc-l11-p0-shift-8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p0",
+      "variant": "shift-8std",
+      "mean": -142.85184732144222,
+      "std": 17.92070148346637,
+      "maximumAbsoluteInput": 317.0652594948132
+    },
+    {
+      "id": "prompt1-fc-l11-p0-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p0",
+      "variant": "shift+8std",
+      "mean": 143.8793764140197,
+      "std": 17.92070148346637,
+      "maximumAbsoluteInput": 603.7964832302752
+    },
+    {
+      "id": "prompt1-fc-l11-p0-shift+64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p0",
+      "variant": "shift+64std",
+      "mean": 1147.4386594881364,
+      "std": 17.920701483466367,
+      "maximumAbsoluteInput": 1607.3557663043919
+    },
+    {
+      "id": "prompt1-fc-l11-p0-lowvariance",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p0",
+      "variant": "lowvariance",
+      "mean": 0.5137645462887324,
+      "std": 0.017920701483466372,
+      "maximumAbsoluteInput": 0.9736816531049879
+    },
+    {
+      "id": "prompt1-fc-l11-p0-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 143.8793764140197,
+      "std": 0.017920701483466337,
+      "maximumAbsoluteInput": 144.33929352083595
+    },
+    {
+      "id": "prompt1-qkv-l11-p4-natural",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p4",
+      "variant": "natural",
+      "mean": 0.2696837376953034,
+      "std": 9.162449913349752,
+      "maximumAbsoluteInput": 130.42365809574636
+    },
+    {
+      "id": "prompt1-qkv-l11-p4-shift-64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p4",
+      "variant": "shift-64std",
+      "mean": -586.1271107166889,
+      "std": 9.162449913349752,
+      "maximumAbsoluteInput": 716.6340047364727
+    },
+    {
+      "id": "prompt1-qkv-l11-p4-shift-8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p4",
+      "variant": "shift-8std",
+      "mean": -73.02991556910271,
+      "std": 9.162449913349752,
+      "maximumAbsoluteInput": 203.53680958888663
+    },
+    {
+      "id": "prompt1-qkv-l11-p4-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p4",
+      "variant": "shift+8std",
+      "mean": 73.56928304449332,
+      "std": 9.162449913349754,
+      "maximumAbsoluteInput": 203.7232574025444
+    },
+    {
+      "id": "prompt1-qkv-l11-p4-shift+64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p4",
+      "variant": "shift+64std",
+      "mean": 586.6664781920795,
+      "std": 9.162449913349752,
+      "maximumAbsoluteInput": 716.8204525501305
+    },
+    {
+      "id": "prompt1-qkv-l11-p4-lowvariance",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p4",
+      "variant": "lowvariance",
+      "mean": 0.2696837376953034,
+      "std": 0.009162449913349753,
+      "maximumAbsoluteInput": 0.39983771205335444
+    },
+    {
+      "id": "prompt1-qkv-l11-p4-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-qkv-l11-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 73.56928304449332,
+      "std": 0.009162449913350027,
+      "maximumAbsoluteInput": 73.69943701885137
+    },
+    {
+      "id": "prompt1-fc-l11-p4-natural",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p4",
+      "variant": "natural",
+      "mean": 0.014436892015378566,
+      "std": 13.376971652070267,
+      "maximumAbsoluteInput": 163.81637088331578
+    },
+    {
+      "id": "prompt1-fc-l11-p4-shift-64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p4",
+      "variant": "shift-64std",
+      "mean": -856.1117488404816,
+      "std": 13.376971652070267,
+      "maximumAbsoluteInput": 1019.9425566158129
+    },
+    {
+      "id": "prompt1-fc-l11-p4-shift-8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p4",
+      "variant": "shift-8std",
+      "mean": -107.00133632454676,
+      "std": 13.376971652070267,
+      "maximumAbsoluteInput": 270.83214409987795
+    },
+    {
+      "id": "prompt1-fc-l11-p4-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p4",
+      "variant": "shift+8std",
+      "mean": 107.03021010857752,
+      "std": 13.376971652070267,
+      "maximumAbsoluteInput": 262.09009173548344
+    },
+    {
+      "id": "prompt1-fc-l11-p4-shift+64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p4",
+      "variant": "shift+64std",
+      "mean": 856.1406226245126,
+      "std": 13.376971652070267,
+      "maximumAbsoluteInput": 1011.2005042514184
+    },
+    {
+      "id": "prompt1-fc-l11-p4-lowvariance",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p4",
+      "variant": "lowvariance",
+      "mean": 0.014436892015378566,
+      "std": 0.013376971652070269,
+      "maximumAbsoluteInput": 0.1694967736422845
+    },
+    {
+      "id": "prompt1-fc-l11-p4-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "Paris is the capital of",
+      "tokenIds": [
+        40313,
+        318,
+        262,
+        3139,
+        286
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt1-fc-l11-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 107.03021010857752,
+      "std": 0.013376971652070278,
+      "maximumAbsoluteInput": 107.18526999020442
+    },
+    {
+      "id": "prompt2-qkv-l0-p0-natural",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p0",
+      "variant": "natural",
+      "mean": -0.006543330345917771,
+      "std": 0.38515011110677627,
+      "maximumAbsoluteInput": 4.470836579799652
+    },
+    {
+      "id": "prompt2-qkv-l0-p0-shift-64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p0",
+      "variant": "shift-64std",
+      "mean": -24.6561504411796,
+      "std": 0.38515011110677627,
+      "maximumAbsoluteInput": 29.120443690633333
+    },
+    {
+      "id": "prompt2-qkv-l0-p0-shift-8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p0",
+      "variant": "shift-8std",
+      "mean": -3.0877442192001276,
+      "std": 0.38515011110677627,
+      "maximumAbsoluteInput": 7.552037468653863
+    },
+    {
+      "id": "prompt2-qkv-l0-p0-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p0",
+      "variant": "shift+8std",
+      "mean": 3.0746575585082923,
+      "std": 0.38515011110677627,
+      "maximumAbsoluteInput": 6.839779308539574
+    },
+    {
+      "id": "prompt2-qkv-l0-p0-shift+64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p0",
+      "variant": "shift+64std",
+      "mean": 24.64306378048776,
+      "std": 0.38515011110677627,
+      "maximumAbsoluteInput": 28.408185530519045
+    },
+    {
+      "id": "prompt2-qkv-l0-p0-lowvariance",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p0",
+      "variant": "lowvariance",
+      "mean": -0.006543330345917771,
+      "std": 0.0003851501111067763,
+      "maximumAbsoluteInput": 0.011007623595371507
+    },
+    {
+      "id": "prompt2-qkv-l0-p0-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 3.0746575585082923,
+      "std": 0.00038515011110677543,
+      "maximumAbsoluteInput": 3.0784226802583237
+    },
+    {
+      "id": "prompt2-fc-l0-p0-natural",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p0",
+      "variant": "natural",
+      "mean": -0.03049110584675317,
+      "std": 1.317812944240457,
+      "maximumAbsoluteInput": 18.061841474708878
+    },
+    {
+      "id": "prompt2-fc-l0-p0-shift-64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p0",
+      "variant": "shift-64std",
+      "mean": -84.370519537236,
+      "std": 1.3178129442404565,
+      "maximumAbsoluteInput": 100.53402327353854
+    },
+    {
+      "id": "prompt2-fc-l0-p0-shift-8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p0",
+      "variant": "shift-8std",
+      "mean": -10.572994659770409,
+      "std": 1.3178129442404567,
+      "maximumAbsoluteInput": 26.736498396072943
+    },
+    {
+      "id": "prompt2-fc-l0-p0-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p0",
+      "variant": "shift+8std",
+      "mean": 10.512012448076902,
+      "std": 1.3178129442404567,
+      "maximumAbsoluteInput": 28.604345028632533
+    },
+    {
+      "id": "prompt2-fc-l0-p0-shift+64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p0",
+      "variant": "shift+64std",
+      "mean": 84.30953732554248,
+      "std": 1.3178129442404565,
+      "maximumAbsoluteInput": 102.40186990609811
+    },
+    {
+      "id": "prompt2-fc-l0-p0-lowvariance",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p0",
+      "variant": "lowvariance",
+      "mean": -0.03049110584675317,
+      "std": 0.0013178129442404567,
+      "maximumAbsoluteInput": 0.0466546095830557
+    },
+    {
+      "id": "prompt2-fc-l0-p0-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 10.512012448076902,
+      "std": 0.0013178129442404667,
+      "maximumAbsoluteInput": 10.530104780657458
+    },
+    {
+      "id": "prompt2-qkv-l0-p4-natural",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p4",
+      "variant": "natural",
+      "mean": -0.0012910796472785553,
+      "std": 0.2145029114602445,
+      "maximumAbsoluteInput": 1.3219177350401878
+    },
+    {
+      "id": "prompt2-qkv-l0-p4-shift-64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p4",
+      "variant": "shift-64std",
+      "mean": -13.729477413102929,
+      "std": 0.2145029114602445,
+      "maximumAbsoluteInput": 15.050104068495836
+    },
+    {
+      "id": "prompt2-qkv-l0-p4-shift-8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p4",
+      "variant": "shift-8std",
+      "mean": -1.717314371329235,
+      "std": 0.21450291146024444,
+      "maximumAbsoluteInput": 3.0379410267221436
+    },
+    {
+      "id": "prompt2-qkv-l0-p4-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p4",
+      "variant": "shift+8std",
+      "mean": 1.7147322120346777,
+      "std": 0.21450291146024444,
+      "maximumAbsoluteInput": 2.9607555766003832
+    },
+    {
+      "id": "prompt2-qkv-l0-p4-shift+64std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p4",
+      "variant": "shift+64std",
+      "mean": 13.726895253808372,
+      "std": 0.2145029114602445,
+      "maximumAbsoluteInput": 14.972918618374075
+    },
+    {
+      "id": "prompt2-qkv-l0-p4-lowvariance",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p4",
+      "variant": "lowvariance",
+      "mean": -0.0012910796472785553,
+      "std": 0.00021450291146024448,
+      "maximumAbsoluteInput": 0.0026117063026714644
+    },
+    {
+      "id": "prompt2-qkv-l0-p4-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l0-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 1.7147322120346775,
+      "std": 0.00021450291146024554,
+      "maximumAbsoluteInput": 1.7159782353992432
+    },
+    {
+      "id": "prompt2-fc-l0-p4-natural",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p4",
+      "variant": "natural",
+      "mean": 0.012916120750968018,
+      "std": 1.4430598670926877,
+      "maximumAbsoluteInput": 15.173574328294356
+    },
+    {
+      "id": "prompt2-fc-l0-p4-shift-64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p4",
+      "variant": "shift-64std",
+      "mean": -92.34291537318104,
+      "std": 1.4430598670926877,
+      "maximumAbsoluteInput": 107.52940582222637
+    },
+    {
+      "id": "prompt2-fc-l0-p4-shift-8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p4",
+      "variant": "shift-8std",
+      "mean": -11.531562815990535,
+      "std": 1.4430598670926877,
+      "maximumAbsoluteInput": 26.718053265035856
+    },
+    {
+      "id": "prompt2-fc-l0-p4-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p4",
+      "variant": "shift+8std",
+      "mean": 11.55739505749247,
+      "std": 1.4430598670926877,
+      "maximumAbsoluteInput": 26.69562934232562
+    },
+    {
+      "id": "prompt2-fc-l0-p4-shift+64std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p4",
+      "variant": "shift+64std",
+      "mean": 92.368747614683,
+      "std": 1.4430598670926875,
+      "maximumAbsoluteInput": 107.50698189951613
+    },
+    {
+      "id": "prompt2-fc-l0-p4-lowvariance",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p4",
+      "variant": "lowvariance",
+      "mean": 0.012916120750968018,
+      "std": 0.0014430598670926878,
+      "maximumAbsoluteInput": 0.02805435503580117
+    },
+    {
+      "id": "prompt2-fc-l0-p4-lowvariance-shift+8std",
+      "layer": 0,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l0-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 11.55739505749247,
+      "std": 0.0014430598670926754,
+      "maximumAbsoluteInput": 11.572533291777303
+    },
+    {
+      "id": "prompt2-qkv-l5-p0-natural",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p0",
+      "variant": "natural",
+      "mean": 4.458009000941167,
+      "std": 104.53656451752623,
+      "maximumAbsoluteInput": 2788.4398264886654
+    },
+    {
+      "id": "prompt2-qkv-l5-p0-shift-64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p0",
+      "variant": "shift-64std",
+      "mean": -6685.8821201207365,
+      "std": 104.53656451752623,
+      "maximumAbsoluteInput": 6759.933270822875
+    },
+    {
+      "id": "prompt2-qkv-l5-p0-shift-8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p0",
+      "variant": "shift-8std",
+      "mean": -831.8345071392686,
+      "std": 104.53656451752623,
+      "maximumAbsoluteInput": 1952.1473103484554
+    },
+    {
+      "id": "prompt2-qkv-l5-p0-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p0",
+      "variant": "shift+8std",
+      "mean": 840.7505251411511,
+      "std": 104.53656451752623,
+      "maximumAbsoluteInput": 3624.7323426288754
+    },
+    {
+      "id": "prompt2-qkv-l5-p0-shift+64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p0",
+      "variant": "shift+64std",
+      "mean": 6694.79813812262,
+      "std": 104.5365645175262,
+      "maximumAbsoluteInput": 9478.779955610344
+    },
+    {
+      "id": "prompt2-qkv-l5-p0-lowvariance",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p0",
+      "variant": "lowvariance",
+      "mean": 4.458009000941167,
+      "std": 0.1045365645175262,
+      "maximumAbsoluteInput": 7.24199081842889
+    },
+    {
+      "id": "prompt2-qkv-l5-p0-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 840.7505251411511,
+      "std": 0.10453656451752753,
+      "maximumAbsoluteInput": 843.5345069586388
+    },
+    {
+      "id": "prompt2-fc-l5-p0-natural",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p0",
+      "variant": "natural",
+      "mean": 4.454578265131972,
+      "std": 104.49071903654935,
+      "maximumAbsoluteInput": 2787.1052303932643
+    },
+    {
+      "id": "prompt2-fc-l5-p0-shift-64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p0",
+      "variant": "shift-64std",
+      "mean": -6682.951440074026,
+      "std": 104.49071903654935,
+      "maximumAbsoluteInput": 6757.113902709447
+    },
+    {
+      "id": "prompt2-fc-l5-p0-shift-8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p0",
+      "variant": "shift-8std",
+      "mean": -831.4711740272628,
+      "std": 104.49071903654935,
+      "maximumAbsoluteInput": 1951.1794781008693
+    },
+    {
+      "id": "prompt2-fc-l5-p0-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p0",
+      "variant": "shift+8std",
+      "mean": 840.3803305575269,
+      "std": 104.49071903654935,
+      "maximumAbsoluteInput": 3623.030982685659
+    },
+    {
+      "id": "prompt2-fc-l5-p0-shift+64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p0",
+      "variant": "shift+64std",
+      "mean": 6691.8605966042915,
+      "std": 104.49071903654932,
+      "maximumAbsoluteInput": 9474.511248732422
+    },
+    {
+      "id": "prompt2-fc-l5-p0-lowvariance",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p0",
+      "variant": "lowvariance",
+      "mean": 4.454578265131972,
+      "std": 0.10449071903654936,
+      "maximumAbsoluteInput": 7.237228917260104
+    },
+    {
+      "id": "prompt2-fc-l5-p0-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 840.3803305575269,
+      "std": 0.10449071903655138,
+      "maximumAbsoluteInput": 843.162981209655
+    },
+    {
+      "id": "prompt2-qkv-l5-p4-natural",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p4",
+      "variant": "natural",
+      "mean": 0.04787153932525188,
+      "std": 3.4958496641062267,
+      "maximumAbsoluteInput": 45.087516621480944
+    },
+    {
+      "id": "prompt2-qkv-l5-p4-shift-64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p4",
+      "variant": "shift-64std",
+      "mean": -223.68650696347322,
+      "std": 3.4958496641062276,
+      "maximumAbsoluteInput": 253.31284569601925
+    },
+    {
+      "id": "prompt2-qkv-l5-p4-shift-8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p4",
+      "variant": "shift-8std",
+      "mean": -27.918925773524563,
+      "std": 3.495849664106226,
+      "maximumAbsoluteInput": 57.54526450607055
+    },
+    {
+      "id": "prompt2-qkv-l5-p4-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p4",
+      "variant": "shift+8std",
+      "mean": 28.014668852175067,
+      "std": 3.4958496641062267,
+      "maximumAbsoluteInput": 73.05431393433076
+    },
+    {
+      "id": "prompt2-qkv-l5-p4-shift+64std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p4",
+      "variant": "shift+64std",
+      "mean": 223.78225004212376,
+      "std": 3.4958496641062267,
+      "maximumAbsoluteInput": 268.8218951242794
+    },
+    {
+      "id": "prompt2-qkv-l5-p4-lowvariance",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p4",
+      "variant": "lowvariance",
+      "mean": 0.04787153932525188,
+      "std": 0.0034958496641062267,
+      "maximumAbsoluteInput": 0.09291118440740757
+    },
+    {
+      "id": "prompt2-qkv-l5-p4-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l5-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 28.014668852175067,
+      "std": 0.003495849664106284,
+      "maximumAbsoluteInput": 28.059708497257223
+    },
+    {
+      "id": "prompt2-fc-l5-p4-natural",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p4",
+      "variant": "natural",
+      "mean": 0.04772800839522473,
+      "std": 3.6638650707728995,
+      "maximumAbsoluteInput": 46.855674533360016
+    },
+    {
+      "id": "prompt2-fc-l5-p4-shift-64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p4",
+      "variant": "shift-64std",
+      "mean": -234.43963652107036,
+      "std": 3.6638650707729,
+      "maximumAbsoluteInput": 264.4764150609212
+    },
+    {
+      "id": "prompt2-fc-l5-p4-shift-8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p4",
+      "variant": "shift-8std",
+      "mean": -29.26319255778797,
+      "std": 3.6638650707729,
+      "maximumAbsoluteInput": 59.29997109763887
+    },
+    {
+      "id": "prompt2-fc-l5-p4-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p4",
+      "variant": "shift+8std",
+      "mean": 29.35864857457842,
+      "std": 3.6638650707729,
+      "maximumAbsoluteInput": 76.16659509954322
+    },
+    {
+      "id": "prompt2-fc-l5-p4-shift+64std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p4",
+      "variant": "shift+64std",
+      "mean": 234.5350925378608,
+      "std": 3.6638650707729,
+      "maximumAbsoluteInput": 281.3430390628256
+    },
+    {
+      "id": "prompt2-fc-l5-p4-lowvariance",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p4",
+      "variant": "lowvariance",
+      "mean": 0.04772800839522473,
+      "std": 0.0036638650707729,
+      "maximumAbsoluteInput": 0.09453595492018951
+    },
+    {
+      "id": "prompt2-fc-l5-p4-lowvariance-shift+8std",
+      "layer": 5,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l5-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 29.35864857457842,
+      "std": 0.003663865070772953,
+      "maximumAbsoluteInput": 29.405456521103385
+    },
+    {
+      "id": "prompt2-qkv-l11-p0-natural",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p0",
+      "variant": "natural",
+      "mean": 4.810987320893587,
+      "std": 112.18637012640815,
+      "maximumAbsoluteInput": 3013.0616817037167
+    },
+    {
+      "id": "prompt2-qkv-l11-p0-shift-64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p0",
+      "variant": "shift-64std",
+      "mean": -7175.1167007692275,
+      "std": 112.18637012640816,
+      "maximumAbsoluteInput": 7206.798709211436
+    },
+    {
+      "id": "prompt2-qkv-l11-p0-shift-8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p0",
+      "variant": "shift-8std",
+      "mean": -892.6799736903716,
+      "std": 112.18637012640816,
+      "maximumAbsoluteInput": 2115.5707206924517
+    },
+    {
+      "id": "prompt2-qkv-l11-p0-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p0",
+      "variant": "shift+8std",
+      "mean": 902.3019483321586,
+      "std": 112.18637012640815,
+      "maximumAbsoluteInput": 3910.5526427149816
+    },
+    {
+      "id": "prompt2-qkv-l11-p0-shift+64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p0",
+      "variant": "shift+64std",
+      "mean": 7184.738675411016,
+      "std": 112.18637012640816,
+      "maximumAbsoluteInput": 10192.989369793839
+    },
+    {
+      "id": "prompt2-qkv-l11-p0-lowvariance",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p0",
+      "variant": "lowvariance",
+      "mean": 4.810987320893587,
+      "std": 0.11218637012640813,
+      "maximumAbsoluteInput": 7.81923801527641
+    },
+    {
+      "id": "prompt2-qkv-l11-p0-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 902.3019483321588,
+      "std": 0.11218637012640646,
+      "maximumAbsoluteInput": 905.3101990265416
+    },
+    {
+      "id": "prompt2-fc-l11-p0-natural",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p0",
+      "variant": "natural",
+      "mean": 0.44313779126165037,
+      "std": 17.45696559331951,
+      "maximumAbsoluteInput": 449.1450421316158
+    },
+    {
+      "id": "prompt2-fc-l11-p0-shift-64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p0",
+      "variant": "shift-64std",
+      "mean": -1116.8026601811869,
+      "std": 17.45696559331951,
+      "maximumAbsoluteInput": 1172.9235442261365
+    },
+    {
+      "id": "prompt2-fc-l11-p0-shift-8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p0",
+      "variant": "shift-8std",
+      "mean": -139.21258695529443,
+      "std": 17.456965593319513,
+      "maximumAbsoluteInput": 309.48931738505973
+    },
+    {
+      "id": "prompt2-fc-l11-p0-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p0",
+      "variant": "shift+8std",
+      "mean": 140.09886253781772,
+      "std": 17.456965593319513,
+      "maximumAbsoluteInput": 588.8007668781719
+    },
+    {
+      "id": "prompt2-fc-l11-p0-shift+64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p0",
+      "variant": "shift+64std",
+      "mean": 1117.6889357637103,
+      "std": 17.456965593319513,
+      "maximumAbsoluteInput": 1566.3908401040644
+    },
+    {
+      "id": "prompt2-fc-l11-p0-lowvariance",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p0",
+      "variant": "lowvariance",
+      "mean": 0.44313779126165037,
+      "std": 0.017456965593319513,
+      "maximumAbsoluteInput": 0.8918396956020045
+    },
+    {
+      "id": "prompt2-fc-l11-p0-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 0,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p0",
+      "variant": "lowvariance-shift+8std",
+      "mean": 140.09886253781772,
+      "std": 0.01745696559331992,
+      "maximumAbsoluteInput": 140.5475644421581
+    },
+    {
+      "id": "prompt2-qkv-l11-p4-natural",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p4",
+      "variant": "natural",
+      "mean": 0.2523313631524331,
+      "std": 9.186152582006255,
+      "maximumAbsoluteInput": 117.961113130515
+    },
+    {
+      "id": "prompt2-qkv-l11-p4-shift-64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p4",
+      "variant": "shift-64std",
+      "mean": -587.6614338852479,
+      "std": 9.186152582006255,
+      "maximumAbsoluteInput": 705.8748783789154
+    },
+    {
+      "id": "prompt2-qkv-l11-p4-shift-8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p4",
+      "variant": "shift-8std",
+      "mean": -73.2368892928976,
+      "std": 9.186152582006255,
+      "maximumAbsoluteInput": 191.45033378656504
+    },
+    {
+      "id": "prompt2-qkv-l11-p4-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p4",
+      "variant": "shift+8std",
+      "mean": 73.74155201920247,
+      "std": 9.186152582006255,
+      "maximumAbsoluteInput": 189.27795245969259
+    },
+    {
+      "id": "prompt2-qkv-l11-p4-shift+64std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p4",
+      "variant": "shift+64std",
+      "mean": 588.1660966115527,
+      "std": 9.186152582006255,
+      "maximumAbsoluteInput": 703.7024970520429
+    },
+    {
+      "id": "prompt2-qkv-l11-p4-lowvariance",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p4",
+      "variant": "lowvariance",
+      "mean": 0.2523313631524331,
+      "std": 0.009186152582006252,
+      "maximumAbsoluteInput": 0.36786776359292317
+    },
+    {
+      "id": "prompt2-qkv-l11-p4-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "qkv",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-qkv-l11-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 73.74155201920247,
+      "std": 0.009186152582006347,
+      "maximumAbsoluteInput": 73.85708841964296
+    },
+    {
+      "id": "prompt2-fc-l11-p4-natural",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p4",
+      "variant": "natural",
+      "mean": -0.043344985115535785,
+      "std": 14.145574859656394,
+      "maximumAbsoluteInput": 155.83113209600305
+    },
+    {
+      "id": "prompt2-fc-l11-p4-shift-64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p4",
+      "variant": "shift-64std",
+      "mean": -905.3601360031247,
+      "std": 14.14557485965639,
+      "maximumAbsoluteInput": 1061.1479231140122
+    },
+    {
+      "id": "prompt2-fc-l11-p4-shift-8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p4",
+      "variant": "shift-8std",
+      "mean": -113.20794386236669,
+      "std": 14.145574859656394,
+      "maximumAbsoluteInput": 268.9957309732542
+    },
+    {
+      "id": "prompt2-fc-l11-p4-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p4",
+      "variant": "shift+8std",
+      "mean": 113.12125389213561,
+      "std": 14.145574859656394,
+      "maximumAbsoluteInput": 262.83495030228306
+    },
+    {
+      "id": "prompt2-fc-l11-p4-shift+64std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p4",
+      "variant": "shift+64std",
+      "mean": 905.2734460328937,
+      "std": 14.145574859656394,
+      "maximumAbsoluteInput": 1054.9871424430412
+    },
+    {
+      "id": "prompt2-fc-l11-p4-lowvariance",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p4",
+      "variant": "lowvariance",
+      "mean": -0.043344985115535785,
+      "std": 0.014145574859656394,
+      "maximumAbsoluteInput": 0.19913277222642328
+    },
+    {
+      "id": "prompt2-fc-l11-p4-lowvariance-shift+8std",
+      "layer": 11,
+      "boundary": "fc",
+      "position": 4,
+      "prompt": "CSS can perform matrix multiplication",
+      "tokenIds": [
+        49155,
+        460,
+        1620,
+        17593,
+        48473
+      ],
+      "source": "newly saved q9 reference-derived activation",
+      "baseId": "prompt2-fc-l11-p4",
+      "variant": "lowvariance-shift+8std",
+      "mean": 113.12125389213561,
+      "std": 0.014145574859656302,
+      "maximumAbsoluteInput": 113.27096758854576
+    }
+  ]
+}

@@ -1,0 +1,1470 @@
+{
+  "passed": true,
+  "gateSha256": "6cb76cab093f6ddc630e4b895422e54d0ce53db64d3ad0205c6e9691cceeb086",
+  "rows": [
+    {
+      "variant": "baseline",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "e961e07040e75fbb8754d97d5c72ec6a058cfc64d95ac378b5f4839f7b60bb9a"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 567.6468340097927
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 972.8464170038933
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1371.9883750018198
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1790.5198750086129
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2196.0930000059307
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2611.5647920087213
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 2997.6859590096865
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3404.4624170055613
+        },
+        {
+          "completedPasses": 9,
+          "milliseconds": 3809.612625002046
+        },
+        {
+          "completedPasses": 10,
+          "milliseconds": 4214.998499999638
+        },
+        {
+          "completedPasses": 11,
+          "milliseconds": 4620.913292004843
+        },
+        {
+          "completedPasses": 12,
+          "milliseconds": 5042.436875010026
+        },
+        {
+          "completedPasses": 13,
+          "milliseconds": 5386.78549999895
+        },
+        {
+          "completedPasses": 14,
+          "milliseconds": 5821.804459003033
+        },
+        {
+          "completedPasses": 15,
+          "milliseconds": 6231.655750001664
+        },
+        {
+          "completedPasses": 16,
+          "milliseconds": 6573.8763340050355
+        },
+        {
+          "completedPasses": 17,
+          "milliseconds": 6987.544625008013
+        },
+        {
+          "completedPasses": 18,
+          "milliseconds": 7412.884709003265
+        },
+        {
+          "completedPasses": 19,
+          "milliseconds": 7788.212958999793
+        },
+        {
+          "completedPasses": 20,
+          "milliseconds": 8210.371959008626
+        },
+        {
+          "completedPasses": 21,
+          "milliseconds": 8623.42066700512
+        },
+        {
+          "completedPasses": 22,
+          "milliseconds": 9004.338958999142
+        },
+        {
+          "completedPasses": 23,
+          "milliseconds": 9455.758084004628
+        },
+        {
+          "completedPasses": 24,
+          "milliseconds": 9911.513291997835
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 9911.516500011203,
+      "observedContinuationMilliseconds": 9343.86966600141,
+      "continuationPassCount": 23,
+      "rendererDelta": {
+        "LayoutCount": 71,
+        "RecalcStyleCount": 119,
+        "LayoutDuration": 0.026057,
+        "RecalcStyleDuration": 6.375032,
+        "DevToolsCommandDuration": 0.0026,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 9.718633,
+        "TaskOtherDuration": 3.314944
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 68,
+        "RecalcStyleCount": 115,
+        "LayoutDuration": 0.019225,
+        "RecalcStyleDuration": 6.028011,
+        "DevToolsCommandDuration": 0.002192,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 9.189251,
+        "TaskOtherDuration": 3.139823
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 6.920604486196679e-05,
+          "maximum": 0.0001627921228170362
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 3.371754888555582e-05,
+          "maximum": 8.145816860198607e-05
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 23,
+          "actual": 23.0
+        },
+        {
+          "bank": 1,
+          "expected": 24,
+          "actual": 24.0
+        }
+      ],
+      "pair": 0
+    },
+    {
+      "variant": "selective",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "4a37f7087d44ac9336810b0d6b56c5492daf7daf8e8ee70a87139772c3d81a58"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 417.25399999995716
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 829.9085409962572
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1247.2138330049347
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1697.2492080094526
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2148.6278750089696
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2651.76591600175
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 3120.3527500038035
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3603.1678750005085
+        },
+        {
+          "completedPasses": 9,
+          "milliseconds": 4092.350125007215
+        },
+        {
+          "completedPasses": 10,
+          "milliseconds": 4601.508374995319
+        },
+        {
+          "completedPasses": 11,
+          "milliseconds": 5098.244291002629
+        },
+        {
+          "completedPasses": 12,
+          "milliseconds": 5633.497500006342
+        },
+        {
+          "completedPasses": 13,
+          "milliseconds": 6146.525290998397
+        },
+        {
+          "completedPasses": 14,
+          "milliseconds": 6687.946416001068
+        },
+        {
+          "completedPasses": 15,
+          "milliseconds": 7250.680833007209
+        },
+        {
+          "completedPasses": 16,
+          "milliseconds": 7833.239333005622
+        },
+        {
+          "completedPasses": 17,
+          "milliseconds": 8315.584124997258
+        },
+        {
+          "completedPasses": 18,
+          "milliseconds": 8815.039416003856
+        },
+        {
+          "completedPasses": 19,
+          "milliseconds": 9316.08283300011
+        },
+        {
+          "completedPasses": 20,
+          "milliseconds": 9847.32349999831
+        },
+        {
+          "completedPasses": 21,
+          "milliseconds": 10381.519375005155
+        },
+        {
+          "completedPasses": 22,
+          "milliseconds": 10828.703916005907
+        },
+        {
+          "completedPasses": 23,
+          "milliseconds": 11297.198665997712
+        },
+        {
+          "completedPasses": 24,
+          "milliseconds": 11785.212415998103
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 11785.216415999457,
+      "observedContinuationMilliseconds": 11367.9624159995,
+      "continuationPassCount": 23,
+      "rendererDelta": {
+        "LayoutCount": 71,
+        "RecalcStyleCount": 119,
+        "LayoutDuration": 0.027332,
+        "RecalcStyleDuration": 7.040395,
+        "DevToolsCommandDuration": 0.0027549999999999996,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 11.650607,
+        "TaskOtherDuration": 4.580125
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 68,
+        "RecalcStyleCount": 114,
+        "LayoutDuration": 0.020096,
+        "RecalcStyleDuration": 6.759931,
+        "DevToolsCommandDuration": 0.0022429999999999998,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 11.277101,
+        "TaskOtherDuration": 4.4948310000000005
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 6.920604486196679e-05,
+          "maximum": 0.0001627921228170362
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 3.371754888555582e-05,
+          "maximum": 8.145816860198607e-05
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 23,
+          "actual": 23.0
+        },
+        {
+          "bank": 1,
+          "expected": 24,
+          "actual": 24.0
+        }
+      ],
+      "pair": 0
+    },
+    {
+      "variant": "selective",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "4a37f7087d44ac9336810b0d6b56c5492daf7daf8e8ee70a87139772c3d81a58"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 398.2200419995934
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 820.1502500014612
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1235.8811250014696
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1692.636791995028
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2155.6261670048116
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2652.7011669968488
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 3187.2323749994393
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3762.780749995727
+        },
+        {
+          "completedPasses": 9,
+          "milliseconds": 4343.754957997589
+        },
+        {
+          "completedPasses": 10,
+          "milliseconds": 4924.541250002221
+        },
+        {
+          "completedPasses": 11,
+          "milliseconds": 5538.162750002812
+        },
+        {
+          "completedPasses": 12,
+          "milliseconds": 6164.693333004834
+        },
+        {
+          "completedPasses": 13,
+          "milliseconds": 6833.852416995796
+        },
+        {
+          "completedPasses": 14,
+          "milliseconds": 7235.465707999538
+        },
+        {
+          "completedPasses": 15,
+          "milliseconds": 7657.645541999955
+        },
+        {
+          "completedPasses": 16,
+          "milliseconds": 8101.263749995269
+        },
+        {
+          "completedPasses": 17,
+          "milliseconds": 8539.954374995432
+        },
+        {
+          "completedPasses": 18,
+          "milliseconds": 8986.181291998946
+        },
+        {
+          "completedPasses": 19,
+          "milliseconds": 9468.210167004145
+        },
+        {
+          "completedPasses": 20,
+          "milliseconds": 9905.779958004132
+        },
+        {
+          "completedPasses": 21,
+          "milliseconds": 10371.380957993097
+        },
+        {
+          "completedPasses": 22,
+          "milliseconds": 10870.441457998822
+        },
+        {
+          "completedPasses": 23,
+          "milliseconds": 11319.646207994083
+        },
+        {
+          "completedPasses": 24,
+          "milliseconds": 11801.65749999287
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 11801.659791992279,
+      "observedContinuationMilliseconds": 11403.439749992685,
+      "continuationPassCount": 23,
+      "rendererDelta": {
+        "LayoutCount": 71,
+        "RecalcStyleCount": 119,
+        "LayoutDuration": 0.02763,
+        "RecalcStyleDuration": 7.058365,
+        "DevToolsCommandDuration": 0.002695,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 11.667817,
+        "TaskOtherDuration": 4.579127
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 68,
+        "RecalcStyleCount": 115,
+        "LayoutDuration": 0.020787,
+        "RecalcStyleDuration": 6.777431,
+        "DevToolsCommandDuration": 0.002261,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 11.296673,
+        "TaskOtherDuration": 4.496194
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 6.920604486196679e-05,
+          "maximum": 0.0001627921228170362
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 3.371754888555582e-05,
+          "maximum": 8.145816860198607e-05
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 23,
+          "actual": 23.0
+        },
+        {
+          "bank": 1,
+          "expected": 24,
+          "actual": 24.0
+        }
+      ],
+      "pair": 1
+    },
+    {
+      "variant": "baseline",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "e961e07040e75fbb8754d97d5c72ec6a058cfc64d95ac378b5f4839f7b60bb9a"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 554.6740419958951
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 947.5920419936301
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1334.8766249982873
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1745.6970000057481
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2142.89870900393
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2556.48441700032
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 2935.5241250013933
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3341.9649169954937
+        },
+        {
+          "completedPasses": 9,
+          "milliseconds": 3743.0910840048455
+        },
+        {
+          "completedPasses": 10,
+          "milliseconds": 4132.747958996333
+        },
+        {
+          "completedPasses": 11,
+          "milliseconds": 4540.387542001554
+        },
+        {
+          "completedPasses": 12,
+          "milliseconds": 4934.169208994717
+        },
+        {
+          "completedPasses": 13,
+          "milliseconds": 5273.239333997481
+        },
+        {
+          "completedPasses": 14,
+          "milliseconds": 5682.345249995706
+        },
+        {
+          "completedPasses": 15,
+          "milliseconds": 6087.983874997008
+        },
+        {
+          "completedPasses": 16,
+          "milliseconds": 6431.46908399649
+        },
+        {
+          "completedPasses": 17,
+          "milliseconds": 6833.525541995186
+        },
+        {
+          "completedPasses": 18,
+          "milliseconds": 7251.270541994018
+        },
+        {
+          "completedPasses": 19,
+          "milliseconds": 7607.706458991743
+        },
+        {
+          "completedPasses": 20,
+          "milliseconds": 8000.383209000574
+        },
+        {
+          "completedPasses": 21,
+          "milliseconds": 8415.185916994233
+        },
+        {
+          "completedPasses": 22,
+          "milliseconds": 8771.523250004975
+        },
+        {
+          "completedPasses": 23,
+          "milliseconds": 9209.006000004592
+        },
+        {
+          "completedPasses": 24,
+          "milliseconds": 9615.678458998445
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 9615.681291994406,
+      "observedContinuationMilliseconds": 9061.00724999851,
+      "continuationPassCount": 23,
+      "rendererDelta": {
+        "LayoutCount": 71,
+        "RecalcStyleCount": 119,
+        "LayoutDuration": 0.025426,
+        "RecalcStyleDuration": 6.235206,
+        "DevToolsCommandDuration": 0.002621,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 9.454262,
+        "TaskOtherDuration": 3.1910089999999998
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 68,
+        "RecalcStyleCount": 114,
+        "LayoutDuration": 0.018723,
+        "RecalcStyleDuration": 5.893749,
+        "DevToolsCommandDuration": 0.0021860000000000004,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 8.926721,
+        "TaskOtherDuration": 3.012063
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 6.920604486196679e-05,
+          "maximum": 0.0001627921228170362
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 3.371754888555582e-05,
+          "maximum": 8.145816860198607e-05
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 23,
+          "actual": 23.0
+        },
+        {
+          "bank": 1,
+          "expected": 24,
+          "actual": 24.0
+        }
+      ],
+      "pair": 1
+    },
+    {
+      "variant": "baseline",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "e961e07040e75fbb8754d97d5c72ec6a058cfc64d95ac378b5f4839f7b60bb9a"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 554.8035829997389
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 959.5732079906156
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1357.1756659948733
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1775.0102909922134
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2186.4163329883013
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2592.7021659881575
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 2990.9694159869105
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3399.7675409918884
+        },
+        {
+          "completedPasses": 9,
+          "milliseconds": 3798.4976659936365
+        },
+        {
+          "completedPasses": 10,
+          "milliseconds": 4190.892207989236
+        },
+        {
+          "completedPasses": 11,
+          "milliseconds": 4596.736457999214
+        },
+        {
+          "completedPasses": 12,
+          "milliseconds": 5000.31391599623
+        },
+        {
+          "completedPasses": 13,
+          "milliseconds": 5343.909082992468
+        },
+        {
+          "completedPasses": 14,
+          "milliseconds": 5748.118249990512
+        },
+        {
+          "completedPasses": 15,
+          "milliseconds": 6147.958790999837
+        },
+        {
+          "completedPasses": 16,
+          "milliseconds": 6490.768915988156
+        },
+        {
+          "completedPasses": 17,
+          "milliseconds": 6896.11375000095
+        },
+        {
+          "completedPasses": 18,
+          "milliseconds": 7311.370415991405
+        },
+        {
+          "completedPasses": 19,
+          "milliseconds": 7682.228207995649
+        },
+        {
+          "completedPasses": 20,
+          "milliseconds": 8091.23633299896
+        },
+        {
+          "completedPasses": 21,
+          "milliseconds": 8508.348415998626
+        },
+        {
+          "completedPasses": 22,
+          "milliseconds": 8867.105290992185
+        },
+        {
+          "completedPasses": 23,
+          "milliseconds": 9276.572374990792
+        },
+        {
+          "completedPasses": 24,
+          "milliseconds": 9708.488582997234
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 9708.49074999569,
+      "observedContinuationMilliseconds": 9153.687166995951,
+      "continuationPassCount": 23,
+      "rendererDelta": {
+        "LayoutCount": 71,
+        "RecalcStyleCount": 119,
+        "LayoutDuration": 0.025869,
+        "RecalcStyleDuration": 6.266516,
+        "DevToolsCommandDuration": 0.0026680000000000002,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 9.519968,
+        "TaskOtherDuration": 3.224915
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 68,
+        "RecalcStyleCount": 115,
+        "LayoutDuration": 0.019326,
+        "RecalcStyleDuration": 5.92347,
+        "DevToolsCommandDuration": 0.002241,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 8.995330000000001,
+        "TaskOtherDuration": 3.050293
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 6.920604486196679e-05,
+          "maximum": 0.0001627921228170362
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 3.371754888555582e-05,
+          "maximum": 8.145816860198607e-05
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 23,
+          "actual": 23.0
+        },
+        {
+          "bank": 1,
+          "expected": 24,
+          "actual": 24.0
+        }
+      ],
+      "pair": 2
+    },
+    {
+      "variant": "selective",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "4a37f7087d44ac9336810b0d6b56c5492daf7daf8e8ee70a87139772c3d81a58"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 388.9706250047311
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 788.1793750129873
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1196.9642090116395
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1637.9071670089616
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2088.2300000084797
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2591.276542007108
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 3065.280917013297
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3540.150500004529
+        },
+        {
+          "completedPasses": 9,
+          "milliseconds": 4020.8814590005204
+        },
+        {
+          "completedPasses": 10,
+          "milliseconds": 4527.576792010223
+        },
+        {
+          "completedPasses": 11,
+          "milliseconds": 5072.406959006912
+        },
+        {
+          "completedPasses": 12,
+          "milliseconds": 5614.179875003174
+        },
+        {
+          "completedPasses": 13,
+          "milliseconds": 6215.79025000392
+        },
+        {
+          "completedPasses": 14,
+          "milliseconds": 6839.844500005711
+        },
+        {
+          "completedPasses": 15,
+          "milliseconds": 7423.077542000101
+        },
+        {
+          "completedPasses": 16,
+          "milliseconds": 8015.5852919997415
+        },
+        {
+          "completedPasses": 17,
+          "milliseconds": 8647.80108400737
+        },
+        {
+          "completedPasses": 18,
+          "milliseconds": 9308.44595900271
+        },
+        {
+          "completedPasses": 19,
+          "milliseconds": 9999.218875003862
+        },
+        {
+          "completedPasses": 20,
+          "milliseconds": 10722.71433401329
+        },
+        {
+          "completedPasses": 21,
+          "milliseconds": 11465.387333999388
+        },
+        {
+          "completedPasses": 22,
+          "milliseconds": 12218.58416699979
+        },
+        {
+          "completedPasses": 23,
+          "milliseconds": 12823.236292009824
+        },
+        {
+          "completedPasses": 24,
+          "milliseconds": 13437.545792010496
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 13437.54812500265,
+      "observedContinuationMilliseconds": 13048.577499997918,
+      "continuationPassCount": 23,
+      "rendererDelta": {
+        "LayoutCount": 71,
+        "RecalcStyleCount": 119,
+        "LayoutDuration": 0.030434,
+        "RecalcStyleDuration": 7.0583,
+        "DevToolsCommandDuration": 0.002637,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 13.365886,
+        "TaskOtherDuration": 6.274515
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 68,
+        "RecalcStyleCount": 114,
+        "LayoutDuration": 0.023722,
+        "RecalcStyleDuration": 6.783938,
+        "DevToolsCommandDuration": 0.002235,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 12.998427,
+        "TaskOtherDuration": 6.1885319999999995
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 6.920604486196679e-05,
+          "maximum": 0.0001627921228170362
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 3.371754888555582e-05,
+          "maximum": 8.145816860198607e-05
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 23,
+          "actual": 23.0
+        },
+        {
+          "bank": 1,
+          "expected": 24,
+          "actual": 24.0
+        }
+      ],
+      "pair": 2
+    },
+    {
+      "variant": "selective",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/selective-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "4a37f7087d44ac9336810b0d6b56c5492daf7daf8e8ee70a87139772c3d81a58"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 392.02333299908787
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 805.442208002205
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1222.2964579996187
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1674.2190410004696
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2125.119624994113
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2624.9970000062604
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 3088.7500410026405
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3584.4483749970095
+        },
+        {
+          "completedPasses": 9,
+          "milliseconds": 4056.808583001839
+        },
+        {
+          "completedPasses": 10,
+          "milliseconds": 4579.428708006162
+        },
+        {
+          "completedPasses": 11,
+          "milliseconds": 5129.406874999404
+        },
+        {
+          "completedPasses": 12,
+          "milliseconds": 5692.339165994781
+        },
+        {
+          "completedPasses": 13,
+          "milliseconds": 6282.618333003484
+        },
+        {
+          "completedPasses": 14,
+          "milliseconds": 6901.5362079953775
+        },
+        {
+          "completedPasses": 15,
+          "milliseconds": 7553.105915998458
+        },
+        {
+          "completedPasses": 16,
+          "milliseconds": 8228.566874997341
+        },
+        {
+          "completedPasses": 17,
+          "milliseconds": 8958.586791006383
+        },
+        {
+          "completedPasses": 18,
+          "milliseconds": 9560.817749996204
+        },
+        {
+          "completedPasses": 19,
+          "milliseconds": 10091.363333005575
+        },
+        {
+          "completedPasses": 20,
+          "milliseconds": 10557.519499998307
+        },
+        {
+          "completedPasses": 21,
+          "milliseconds": 11075.942333001876
+        },
+        {
+          "completedPasses": 22,
+          "milliseconds": 11605.660790999536
+        },
+        {
+          "completedPasses": 23,
+          "milliseconds": 12107.235040995874
+        },
+        {
+          "completedPasses": 24,
+          "milliseconds": 12589.158250004402
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 12589.160791001632,
+      "observedContinuationMilliseconds": 12197.137458002544,
+      "continuationPassCount": 23,
+      "rendererDelta": {
+        "LayoutCount": 71,
+        "RecalcStyleCount": 119,
+        "LayoutDuration": 0.026384,
+        "RecalcStyleDuration": 6.991401,
+        "DevToolsCommandDuration": 0.002606,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 12.469972,
+        "TaskOtherDuration": 5.449581
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 68,
+        "RecalcStyleCount": 114,
+        "LayoutDuration": 0.020065,
+        "RecalcStyleDuration": 6.7150099999999995,
+        "DevToolsCommandDuration": 0.002211,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 12.100538,
+        "TaskOtherDuration": 5.363252
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 6.920604486196679e-05,
+          "maximum": 0.0001627921228170362
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 3.371754888555582e-05,
+          "maximum": 8.145816860198607e-05
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 23,
+          "actual": 23.0
+        },
+        {
+          "bank": 1,
+          "expected": 24,
+          "actual": 24.0
+        }
+      ],
+      "pair": 3
+    },
+    {
+      "variant": "baseline",
+      "steps": 24,
+      "directory": "experiments/style-simplification-review/selective-loop/fixtures/baseline-p24",
+      "hashes": {
+        "index.html": "2a30a63141a72502056e97642b54eb5e4621a8b23a0dfb5454ab19be2b7a7483",
+        "style.css": "e961e07040e75fbb8754d97d5c72ec6a058cfc64d95ac378b5f4839f7b60bb9a"
+      },
+      "passed": true,
+      "completionEvents": [
+        {
+          "completedPasses": 1,
+          "milliseconds": 548.3817909989739
+        },
+        {
+          "completedPasses": 2,
+          "milliseconds": 951.611333002802
+        },
+        {
+          "completedPasses": 3,
+          "milliseconds": 1339.7222079947824
+        },
+        {
+          "completedPasses": 4,
+          "milliseconds": 1751.0345829941798
+        },
+        {
+          "completedPasses": 5,
+          "milliseconds": 2160.6037080055103
+        },
+        {
+          "completedPasses": 6,
+          "milliseconds": 2568.577500001993
+        },
+        {
+          "completedPasses": 7,
+          "milliseconds": 2983.670957997674
+        },
+        {
+          "completedPasses": 8,
+          "milliseconds": 3401.8047909921734
+        },
+        {
+          "completedPasses": 9,
+          "milliseconds": 3817.6522080029827
+        },
+        {
+          "completedPasses": 10,
+          "milliseconds": 4229.174249994685
+        },
+        {
+          "completedPasses": 11,
+          "milliseconds": 4633.499791001668
+        },
+        {
+          "completedPasses": 12,
+          "milliseconds": 5052.259125004639
+        },
+        {
+          "completedPasses": 13,
+          "milliseconds": 5393.442582993885
+        },
+        {
+          "completedPasses": 14,
+          "milliseconds": 5803.978458003257
+        },
+        {
+          "completedPasses": 15,
+          "milliseconds": 6218.383665996953
+        },
+        {
+          "completedPasses": 16,
+          "milliseconds": 6567.470750000211
+        },
+        {
+          "completedPasses": 17,
+          "milliseconds": 6975.6882910005515
+        },
+        {
+          "completedPasses": 18,
+          "milliseconds": 7397.837083000923
+        },
+        {
+          "completedPasses": 19,
+          "milliseconds": 7767.309957998805
+        },
+        {
+          "completedPasses": 20,
+          "milliseconds": 8194.454333002795
+        },
+        {
+          "completedPasses": 21,
+          "milliseconds": 8603.31216600025
+        },
+        {
+          "completedPasses": 22,
+          "milliseconds": 8955.692499992438
+        },
+        {
+          "completedPasses": 23,
+          "milliseconds": 9373.895083001116
+        },
+        {
+          "completedPasses": 24,
+          "milliseconds": 9818.802249996224
+        }
+      ],
+      "externalWritesAfterNavigation": 0,
+      "observerDelaySeconds": 0,
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.48",
+        "revision": "@199a3a541d76237379e353b348e64045584db057",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "firstObservedCompletedPasses": 1,
+      "completed": true,
+      "navigationToCompletionMilliseconds": 9818.804833004833,
+      "observedContinuationMilliseconds": 9270.42304200586,
+      "continuationPassCount": 23,
+      "rendererDelta": {
+        "LayoutCount": 71,
+        "RecalcStyleCount": 119,
+        "LayoutDuration": 0.026843,
+        "RecalcStyleDuration": 6.312605,
+        "DevToolsCommandDuration": 0.002597,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 9.617826,
+        "TaskOtherDuration": 3.2757810000000003
+      },
+      "continuationRendererDelta": {
+        "LayoutCount": 68,
+        "RecalcStyleCount": 115,
+        "LayoutDuration": 0.019414,
+        "RecalcStyleDuration": 5.9715679999999995,
+        "DevToolsCommandDuration": 0.0021969999999999997,
+        "ScriptDuration": 0,
+        "V8CompileDuration": 0,
+        "TaskDuration": 9.095804,
+        "TaskOtherDuration": 3.102625
+      },
+      "checks": [
+        {
+          "name": "output",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        },
+        {
+          "name": "input",
+          "finite": 768,
+          "rmse": 6.920604486196679e-05,
+          "maximum": 0.0001627921228170362
+        },
+        {
+          "name": "bank0",
+          "finite": 768,
+          "rmse": 3.371754888555582e-05,
+          "maximum": 8.145816860198607e-05
+        },
+        {
+          "name": "bank1",
+          "finite": 768,
+          "rmse": 3.4596790626493906e-05,
+          "maximum": 8.139513008594522e-05
+        }
+      ],
+      "stamps": [
+        {
+          "bank": 0,
+          "expected": 23,
+          "actual": 23.0
+        },
+        {
+          "bank": 1,
+          "expected": 24,
+          "actual": 24.0
+        }
+      ],
+      "pair": 3
+    }
+  ]
+}
