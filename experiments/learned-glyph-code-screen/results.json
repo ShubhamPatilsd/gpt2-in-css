@@ -1,0 +1,1104 @@
+{
+  "scope": "offline learned activation codebooks; original block-0 FC, GELU and projection retained",
+  "runtime": "Python oracle/training only; no browser speed measured",
+  "seed": 20260917,
+  "numpy": "2.3.5",
+  "platform": "Darwin-25.0.0-arm64-arm-64bit-Mach-O",
+  "corpus": {
+    "totalSamples": 384,
+    "splitCounts": {
+      "train": 232,
+      "validation": 76,
+      "test": 76
+    },
+    "bySplitAndKind": {
+      "train": {
+        "uniform-random": 116,
+        "local-text": 116
+      },
+      "validation": {
+        "uniform-random": 38,
+        "local-text": 38
+      },
+      "test": {
+        "uniform-random": 38,
+        "local-text": 38
+      }
+    },
+    "contextLengths": [
+      8,
+      16
+    ],
+    "textSources": {
+      "train": [
+        "README.md",
+        "OPTIMIZATIONS.md"
+      ],
+      "validation": [
+        "FULL_GPT2.md"
+      ],
+      "test": [
+        "MODEL_CANDIDATES.md",
+        "experiments/CSS_TOKENIZER_FEASIBILITY.md"
+      ]
+    },
+    "isolation": {
+      "passed": true,
+      "checks": [
+        "sample IDs are globally unique",
+        "token-sequence hashes do not cross splits",
+        "local text source files do not cross splits",
+        "each split contains both random-token and local-text contexts"
+      ],
+      "pairwiseOverlapCounts": {
+        "train:validation": {
+          "tokenContextHashes": 0,
+          "localTextSources": 0
+        },
+        "train:test": {
+          "tokenContextHashes": 0,
+          "localTextSources": 0
+        },
+        "validation:test": {
+          "tokenContextHashes": 0,
+          "localTextSources": 0
+        }
+      }
+    }
+  },
+  "candidates": [
+    {
+      "groupWidth": 4,
+      "centroids": 16,
+      "groups": 192,
+      "codesPerInput": 192,
+      "codeBits": 4,
+      "tableContributions": 9437184,
+      "float32TableBytes": 37748736,
+      "naiveDistanceCoordinateTerms": 12288,
+      "selectedAdvanceContributions": 589824,
+      "evaluation": {
+        "train": {
+          "inputs": {
+            "rmse": 0.06535344098434306,
+            "relativeRmsError": 0.43113776644168117,
+            "maxAbsoluteError": 0.5125491246581078
+          },
+          "preactivation": {
+            "rmse": 0.2584967520554199,
+            "relativeRmsError": 0.21478278433461856,
+            "maxAbsoluteError": 2.217984527349472
+          },
+          "gelu": {
+            "rmse": 0.0986016517915578,
+            "relativeRmsError": 0.4457849737786396,
+            "maxAbsoluteError": 2.3404092613732352
+          },
+          "mlpOutput": {
+            "rmse": 0.502487805746019,
+            "relativeRmsError": 0.43200386845140293,
+            "maxAbsoluteError": 7.086651248464695
+          },
+          "explicitLookupSumMaxError": 2.6435690521076083e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.44642793476678183,
+              "relativeRmsError": 0.4041046594691753,
+              "maxAbsoluteError": 7.086651248464695
+            },
+            "uniform-random": {
+              "rmse": 0.5528924749956033,
+              "relativeRmsError": 0.4536438689984461,
+              "maxAbsoluteError": 5.782535284368431
+            }
+          }
+        },
+        "validation": {
+          "inputs": {
+            "rmse": 0.07496048994890378,
+            "relativeRmsError": 0.4940077310185682,
+            "maxAbsoluteError": 0.5023206025362015
+          },
+          "preactivation": {
+            "rmse": 0.29767043033585816,
+            "relativeRmsError": 0.2489405005650908,
+            "maxAbsoluteError": 2.212433010339737
+          },
+          "gelu": {
+            "rmse": 0.11139851451177746,
+            "relativeRmsError": 0.5050969455711859,
+            "maxAbsoluteError": 2.311444013775333
+          },
+          "mlpOutput": {
+            "rmse": 0.5727620701952829,
+            "relativeRmsError": 0.4878096600058106,
+            "maxAbsoluteError": 6.265906200244956
+          },
+          "explicitLookupSumMaxError": 3.3509114278906793e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.5068199914514703,
+              "relativeRmsError": 0.45392913856530004,
+              "maxAbsoluteError": 6.265906200244956
+            },
+            "uniform-random": {
+              "rmse": 0.6318593786388741,
+              "relativeRmsError": 0.5140896156521123,
+              "maxAbsoluteError": 5.823982407655399
+            }
+          }
+        },
+        "test": {
+          "inputs": {
+            "rmse": 0.07418650135311688,
+            "relativeRmsError": 0.4959360080992452,
+            "maxAbsoluteError": 0.4987330660223961
+          },
+          "preactivation": {
+            "rmse": 0.2921433522579846,
+            "relativeRmsError": 0.2510012670194167,
+            "maxAbsoluteError": 3.1181800365448
+          },
+          "gelu": {
+            "rmse": 0.11032841253641361,
+            "relativeRmsError": 0.4949342108173355,
+            "maxAbsoluteError": 3.275640979962635
+          },
+          "mlpOutput": {
+            "rmse": 0.5660527498401094,
+            "relativeRmsError": 0.4846410118381639,
+            "maxAbsoluteError": 7.249781085356437
+          },
+          "explicitLookupSumMaxError": 3.907807756498016e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.5194854944783632,
+              "relativeRmsError": 0.459881201250066,
+              "maxAbsoluteError": 7.195554868041519
+            },
+            "uniform-random": {
+              "rmse": 0.6090699895986253,
+              "relativeRmsError": 0.5053944886167798,
+              "maxAbsoluteError": 7.249781085356437
+            }
+          }
+        }
+      },
+      "trainingAndEvaluationSeconds": 0.3604110419983044
+    },
+    {
+      "groupWidth": 4,
+      "centroids": 64,
+      "groups": 192,
+      "codesPerInput": 192,
+      "codeBits": 6,
+      "tableContributions": 37748736,
+      "float32TableBytes": 150994944,
+      "naiveDistanceCoordinateTerms": 49152,
+      "selectedAdvanceContributions": 589824,
+      "evaluation": {
+        "train": {
+          "inputs": {
+            "rmse": 0.03702847169626644,
+            "relativeRmsError": 0.24427746024424266,
+            "maxAbsoluteError": 0.32327673584222794
+          },
+          "preactivation": {
+            "rmse": 0.141350881115877,
+            "relativeRmsError": 0.11744726219117367,
+            "maxAbsoluteError": 0.9820752143859863
+          },
+          "gelu": {
+            "rmse": 0.05040671838149577,
+            "relativeRmsError": 0.22789230427361132,
+            "maxAbsoluteError": 0.9331654740575934
+          },
+          "mlpOutput": {
+            "rmse": 0.2689734287754448,
+            "relativeRmsError": 0.23124454049012635,
+            "maxAbsoluteError": 3.911420371587359
+          },
+          "explicitLookupSumMaxError": 2.5910153440555916e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.2319397147455957,
+              "relativeRmsError": 0.20995083897160458,
+              "maxAbsoluteError": 3.911420371587359
+            },
+            "uniform-random": {
+              "rmse": 0.3014919227743427,
+              "relativeRmsError": 0.2473717196462498,
+              "maxAbsoluteError": 3.1084035720059964
+            }
+          }
+        },
+        "validation": {
+          "inputs": {
+            "rmse": 0.056748023106473845,
+            "relativeRmsError": 0.3739831763870214,
+            "maxAbsoluteError": 0.41108977794647217
+          },
+          "preactivation": {
+            "rmse": 0.220091211363776,
+            "relativeRmsError": 0.18406133341849606,
+            "maxAbsoluteError": 1.548776626586914
+          },
+          "gelu": {
+            "rmse": 0.08043514841931676,
+            "relativeRmsError": 0.36470457403511075,
+            "maxAbsoluteError": 1.5623887293019374
+          },
+          "mlpOutput": {
+            "rmse": 0.4148569640202435,
+            "relativeRmsError": 0.3533251328963865,
+            "maxAbsoluteError": 4.208997970451199
+          },
+          "explicitLookupSumMaxError": 3.0651668905257168e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.35386679039084346,
+              "relativeRmsError": 0.31693786756311104,
+              "maxAbsoluteError": 4.208997970451199
+            },
+            "uniform-random": {
+              "rmse": 0.46796463098258834,
+              "relativeRmsError": 0.38074255983801325,
+              "maxAbsoluteError": 3.620534737106981
+            }
+          }
+        },
+        "test": {
+          "inputs": {
+            "rmse": 0.056097753520512376,
+            "relativeRmsError": 0.3750129125496146,
+            "maxAbsoluteError": 0.3593167681246996
+          },
+          "preactivation": {
+            "rmse": 0.21806900989297295,
+            "relativeRmsError": 0.18735869687861417,
+            "maxAbsoluteError": 1.8165783882141113
+          },
+          "gelu": {
+            "rmse": 0.08041516345073683,
+            "relativeRmsError": 0.3607431172555077,
+            "maxAbsoluteError": 1.8399430268389256
+          },
+          "mlpOutput": {
+            "rmse": 0.42287491342808115,
+            "relativeRmsError": 0.36205552571319627,
+            "maxAbsoluteError": 5.652405059465728
+          },
+          "explicitLookupSumMaxError": 3.6761820991770833e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.37108877562989967,
+              "relativeRmsError": 0.32851110131276706,
+              "maxAbsoluteError": 4.780969679642492
+            },
+            "uniform-random": {
+              "rmse": 0.4689770841044541,
+              "relativeRmsError": 0.3891481071824821,
+              "maxAbsoluteError": 5.652405059465728
+            }
+          }
+        }
+      },
+      "trainingAndEvaluationSeconds": 0.6297167090015137
+    },
+    {
+      "groupWidth": 8,
+      "centroids": 16,
+      "groups": 96,
+      "codesPerInput": 96,
+      "codeBits": 4,
+      "tableContributions": 4718592,
+      "float32TableBytes": 18874368,
+      "naiveDistanceCoordinateTerms": 12288,
+      "selectedAdvanceContributions": 294912,
+      "evaluation": {
+        "train": {
+          "inputs": {
+            "rmse": 0.08569136674890955,
+            "relativeRmsError": 0.5653074100920071,
+            "maxAbsoluteError": 0.619871199131012
+          },
+          "preactivation": {
+            "rmse": 0.3520337437879255,
+            "relativeRmsError": 0.2925018866554267,
+            "maxAbsoluteError": 4.270127773284912
+          },
+          "gelu": {
+            "rmse": 0.1387855455065277,
+            "relativeRmsError": 0.6274591717314291,
+            "maxAbsoluteError": 4.348717342274442
+          },
+          "mlpOutput": {
+            "rmse": 0.7066493337072987,
+            "relativeRmsError": 0.6075276699440142,
+            "maxAbsoluteError": 9.385701958319082
+          },
+          "explicitLookupSumMaxError": 4.838675590868036e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.650072074479048,
+              "relativeRmsError": 0.5884424647956037,
+              "maxAbsoluteError": 9.385701958319082
+            },
+            "uniform-random": {
+              "rmse": 0.7590209876152605,
+              "relativeRmsError": 0.6227706706906194,
+              "maxAbsoluteError": 9.322244289423512
+            }
+          }
+        },
+        "validation": {
+          "inputs": {
+            "rmse": 0.09625241566185572,
+            "relativeRmsError": 0.634326663267291,
+            "maxAbsoluteError": 0.5266155079007149
+          },
+          "preactivation": {
+            "rmse": 0.39737442932624795,
+            "relativeRmsError": 0.3323225260790271,
+            "maxAbsoluteError": 3.55853670835495
+          },
+          "gelu": {
+            "rmse": 0.1531272282828005,
+            "relativeRmsError": 0.6943009574983798,
+            "maxAbsoluteError": 3.643482430974503
+          },
+          "mlpOutput": {
+            "rmse": 0.7806009456123856,
+            "relativeRmsError": 0.6648217500672902,
+            "maxAbsoluteError": 10.917818180812386
+          },
+          "explicitLookupSumMaxError": 3.0643623518678e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.7104854466353566,
+              "relativeRmsError": 0.6363404210452328,
+              "maxAbsoluteError": 10.917818180812386
+            },
+            "uniform-random": {
+              "rmse": 0.8449178082519382,
+              "relativeRmsError": 0.6874369297762932,
+              "maxAbsoluteError": 7.562546824343226
+            }
+          }
+        },
+        "test": {
+          "inputs": {
+            "rmse": 0.09531285470554691,
+            "relativeRmsError": 0.6371654656986506,
+            "maxAbsoluteError": 0.5840349942445755
+          },
+          "preactivation": {
+            "rmse": 0.3899840402761834,
+            "relativeRmsError": 0.33506320602576,
+            "maxAbsoluteError": 3.919860363006592
+          },
+          "gelu": {
+            "rmse": 0.15039793545940022,
+            "relativeRmsError": 0.674686436466101,
+            "maxAbsoluteError": 4.015181699793703
+          },
+          "mlpOutput": {
+            "rmse": 0.7746375345638116,
+            "relativeRmsError": 0.6632263842280952,
+            "maxAbsoluteError": 9.524456728500068
+          },
+          "explicitLookupSumMaxError": 2.8980951300994207e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.7387177324479534,
+              "relativeRmsError": 0.6539593536177923,
+              "maxAbsoluteError": 9.524456728500068
+            },
+            "uniform-random": {
+              "rmse": 0.8089639866379434,
+              "relativeRmsError": 0.6712626583452301,
+              "maxAbsoluteError": 9.318580653569532
+            }
+          }
+        }
+      },
+      "trainingAndEvaluationSeconds": 0.1771874590049265
+    },
+    {
+      "groupWidth": 8,
+      "centroids": 64,
+      "groups": 96,
+      "codesPerInput": 96,
+      "codeBits": 6,
+      "tableContributions": 18874368,
+      "float32TableBytes": 75497472,
+      "naiveDistanceCoordinateTerms": 49152,
+      "selectedAdvanceContributions": 294912,
+      "evaluation": {
+        "train": {
+          "inputs": {
+            "rmse": 0.05882132563044332,
+            "relativeRmsError": 0.3880452898803561,
+            "maxAbsoluteError": 0.48203954100608826
+          },
+          "preactivation": {
+            "rmse": 0.2310705513472731,
+            "relativeRmsError": 0.19199458407687245,
+            "maxAbsoluteError": 1.9800095558166504
+          },
+          "gelu": {
+            "rmse": 0.08690113367576288,
+            "relativeRmsError": 0.39288611187648315,
+            "maxAbsoluteError": 1.9800916803231319
+          },
+          "mlpOutput": {
+            "rmse": 0.45041730951311987,
+            "relativeRmsError": 0.3872372979046811,
+            "maxAbsoluteError": 6.977195044610923
+          },
+          "explicitLookupSumMaxError": 3.5827939042221146e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.40132025222390205,
+              "relativeRmsError": 0.3632733779254773,
+              "maxAbsoluteError": 6.977195044610923
+            },
+            "uniform-random": {
+              "rmse": 0.49466509940869974,
+              "relativeRmsError": 0.4058687714207866,
+              "maxAbsoluteError": 5.015359814101597
+            }
+          }
+        },
+        "validation": {
+          "inputs": {
+            "rmse": 0.0845490270936936,
+            "relativeRmsError": 0.5571985063445257,
+            "maxAbsoluteError": 0.5424828678369522
+          },
+          "preactivation": {
+            "rmse": 0.33451522827403046,
+            "relativeRmsError": 0.2797536466058292,
+            "maxAbsoluteError": 2.849534511566162
+          },
+          "gelu": {
+            "rmse": 0.12520355252266852,
+            "relativeRmsError": 0.5676909807192757,
+            "maxAbsoluteError": 2.9412662724451204
+          },
+          "mlpOutput": {
+            "rmse": 0.6430954035821521,
+            "relativeRmsError": 0.547711111641437,
+            "maxAbsoluteError": 7.266094447200631
+          },
+          "explicitLookupSumMaxError": 2.8201737447552944e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.5602328961748713,
+              "relativeRmsError": 0.5017679654433149,
+              "maxAbsoluteError": 7.266094447200631
+            },
+            "uniform-random": {
+              "rmse": 0.716437365204034,
+              "relativeRmsError": 0.5829034468238151,
+              "maxAbsoluteError": 6.309391873293989
+            }
+          }
+        },
+        "test": {
+          "inputs": {
+            "rmse": 0.08388030004806664,
+            "relativeRmsError": 0.560738953923689,
+            "maxAbsoluteError": 0.53476682305336
+          },
+          "preactivation": {
+            "rmse": 0.33064677905155604,
+            "relativeRmsError": 0.28408231724725624,
+            "maxAbsoluteError": 3.659778118133545
+          },
+          "gelu": {
+            "rmse": 0.12404203916386414,
+            "relativeRmsError": 0.5564536582222429,
+            "maxAbsoluteError": 3.810347634294107
+          },
+          "mlpOutput": {
+            "rmse": 0.6451396330684457,
+            "relativeRmsError": 0.5523533356838375,
+            "maxAbsoluteError": 8.391047474244086
+          },
+          "explicitLookupSumMaxError": 2.5759144715031823e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.5898039157124707,
+              "relativeRmsError": 0.5221314861393901,
+              "maxAbsoluteError": 8.391047474244086
+            },
+            "uniform-random": {
+              "rmse": 0.6960902479719236,
+              "relativeRmsError": 0.5776022147089084,
+              "maxAbsoluteError": 7.751440087295686
+            }
+          }
+        }
+      },
+      "trainingAndEvaluationSeconds": 0.333617708995007
+    },
+    {
+      "groupWidth": 16,
+      "centroids": 16,
+      "groups": 48,
+      "codesPerInput": 48,
+      "codeBits": 4,
+      "tableContributions": 2359296,
+      "float32TableBytes": 9437184,
+      "naiveDistanceCoordinateTerms": 12288,
+      "selectedAdvanceContributions": 147456,
+      "evaluation": {
+        "train": {
+          "inputs": {
+            "rmse": 0.09840200433145337,
+            "relativeRmsError": 0.6491597033278063,
+            "maxAbsoluteError": 0.7186933532357216
+          },
+          "preactivation": {
+            "rmse": 0.4143982445346966,
+            "relativeRmsError": 0.34432002753155705,
+            "maxAbsoluteError": 5.599303513765335
+          },
+          "gelu": {
+            "rmse": 0.16519382694808107,
+            "relativeRmsError": 0.7468528617565059,
+            "maxAbsoluteError": 5.725895112276004
+          },
+          "mlpOutput": {
+            "rmse": 0.8602736248168409,
+            "relativeRmsError": 0.7396030900607192,
+            "maxAbsoluteError": 12.903685939229163
+          },
+          "explicitLookupSumMaxError": 2.4661047146601334e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.8172575531576745,
+              "relativeRmsError": 0.73977804590101,
+              "maxAbsoluteError": 12.903685939229163
+            },
+            "uniform-random": {
+              "rmse": 0.9012388756138654,
+              "relativeRmsError": 0.7394593142699842,
+              "maxAbsoluteError": 9.270151536733252
+            }
+          }
+        },
+        "validation": {
+          "inputs": {
+            "rmse": 0.10902839486863194,
+            "relativeRmsError": 0.718523451519103,
+            "maxAbsoluteError": 0.6431733071804047
+          },
+          "preactivation": {
+            "rmse": 0.4593435650966146,
+            "relativeRmsError": 0.3841470477853164,
+            "maxAbsoluteError": 5.052121460437775
+          },
+          "gelu": {
+            "rmse": 0.1782514745552664,
+            "relativeRmsError": 0.808217916872727,
+            "maxAbsoluteError": 4.70337702699337
+          },
+          "mlpOutput": {
+            "rmse": 0.9258917660520789,
+            "relativeRmsError": 0.7885629497882974,
+            "maxAbsoluteError": 12.992293056990107
+          },
+          "explicitLookupSumMaxError": 2.6227363170150397e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.867514989107229,
+              "relativeRmsError": 0.776982633558244,
+              "maxAbsoluteError": 12.992293056990107
+            },
+            "uniform-random": {
+              "rmse": 0.9808001165173054,
+              "relativeRmsError": 0.7979926736516865,
+              "maxAbsoluteError": 9.117950311263101
+            }
+          }
+        },
+        "test": {
+          "inputs": {
+            "rmse": 0.1078057447006728,
+            "relativeRmsError": 0.72068030843689,
+            "maxAbsoluteError": 0.6182025372982025
+          },
+          "preactivation": {
+            "rmse": 0.45428778536808867,
+            "relativeRmsError": 0.39031115662060606,
+            "maxAbsoluteError": 5.72840216755867
+          },
+          "gelu": {
+            "rmse": 0.17675145194359743,
+            "relativeRmsError": 0.7929085388557543,
+            "maxAbsoluteError": 5.565854781083813
+          },
+          "mlpOutput": {
+            "rmse": 0.9260342539844785,
+            "relativeRmsError": 0.7928486841104577,
+            "maxAbsoluteError": 12.66673853975358
+          },
+          "explicitLookupSumMaxError": 2.5219234252027434e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.9012217575949628,
+              "relativeRmsError": 0.7978181275141062,
+              "maxAbsoluteError": 12.66673853975358
+            },
+            "uniform-random": {
+              "rmse": 0.9501990437495846,
+              "relativeRmsError": 0.78845677508498,
+              "maxAbsoluteError": 9.354321627776791
+            }
+          }
+        }
+      },
+      "trainingAndEvaluationSeconds": 0.11088804099563276
+    },
+    {
+      "groupWidth": 16,
+      "centroids": 64,
+      "groups": 48,
+      "codesPerInput": 48,
+      "codeBits": 6,
+      "tableContributions": 9437184,
+      "float32TableBytes": 37748736,
+      "naiveDistanceCoordinateTerms": 49152,
+      "selectedAdvanceContributions": 147456,
+      "evaluation": {
+        "train": {
+          "inputs": {
+            "rmse": 0.07423466545762007,
+            "relativeRmsError": 0.4897273559874432,
+            "maxAbsoluteError": 0.4868098944425583
+          },
+          "preactivation": {
+            "rmse": 0.2998743900995214,
+            "relativeRmsError": 0.2491631169215317,
+            "maxAbsoluteError": 3.3422948122024536
+          },
+          "gelu": {
+            "rmse": 0.11695064100838083,
+            "relativeRmsError": 0.5287420391853911,
+            "maxAbsoluteError": 3.4842782008647593
+          },
+          "mlpOutput": {
+            "rmse": 0.6094832012987067,
+            "relativeRmsError": 0.5239910256653475,
+            "maxAbsoluteError": 9.241250361864683
+          },
+          "explicitLookupSumMaxError": 2.3259671699804585e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.5622994270118977,
+              "relativeRmsError": 0.5089910392616028,
+              "maxAbsoluteError": 9.241250361864683
+            },
+            "uniform-random": {
+              "rmse": 0.6532678621459435,
+              "relativeRmsError": 0.5360010741303468,
+              "maxAbsoluteError": 6.9931579363727145
+            }
+          }
+        },
+        "validation": {
+          "inputs": {
+            "rmse": 0.10281820104569706,
+            "relativeRmsError": 0.6775967745223973,
+            "maxAbsoluteError": 0.5124464053660631
+          },
+          "preactivation": {
+            "rmse": 0.4205478299841976,
+            "relativeRmsError": 0.3517023413770281,
+            "maxAbsoluteError": 4.385680913925171
+          },
+          "gelu": {
+            "rmse": 0.15977314732355266,
+            "relativeRmsError": 0.7244345137913805,
+            "maxAbsoluteError": 4.4566080058780395
+          },
+          "mlpOutput": {
+            "rmse": 0.826950024556399,
+            "relativeRmsError": 0.7042963061138401,
+            "maxAbsoluteError": 9.132051647517034
+          },
+          "explicitLookupSumMaxError": 2.7453220177164894e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.7397425521949478,
+              "relativeRmsError": 0.6625443059502957,
+              "maxAbsoluteError": 9.132051647517034
+            },
+            "uniform-random": {
+              "rmse": 0.9058000014902643,
+              "relativeRmsError": 0.7369715325377044,
+              "maxAbsoluteError": 8.381535944943684
+            }
+          }
+        },
+        "test": {
+          "inputs": {
+            "rmse": 0.10179128789431134,
+            "relativeRmsError": 0.6804737257698544,
+            "maxAbsoluteError": 0.6369208917021751
+          },
+          "preactivation": {
+            "rmse": 0.41449917588891005,
+            "relativeRmsError": 0.356125913947703,
+            "maxAbsoluteError": 4.358979344367981
+          },
+          "gelu": {
+            "rmse": 0.15849647102914427,
+            "relativeRmsError": 0.7110165369256222,
+            "maxAbsoluteError": 4.508285007462747
+          },
+          "mlpOutput": {
+            "rmse": 0.8241398515317078,
+            "relativeRmsError": 0.7056091003096464,
+            "maxAbsoluteError": 10.259260644219594
+          },
+          "explicitLookupSumMaxError": 2.9584959722050996e-06,
+          "byKind": {
+            "local-text": {
+              "rmse": 0.7687036485098602,
+              "relativeRmsError": 0.6805047706615934,
+              "maxAbsoluteError": 10.259260644219594
+            },
+            "uniform-random": {
+              "rmse": 0.8760751626048077,
+              "relativeRmsError": 0.7269502132034092,
+              "maxAbsoluteError": 9.789121921800472
+            }
+          }
+        }
+      },
+      "trainingAndEvaluationSeconds": 0.18418849999579834
+    }
+  ],
+  "selectedByValidationIndex": 1,
+  "gate": {
+    "maximumHeldOutMlpRelativeRmsError": 0.05,
+    "passed": false,
+    "note": "A screening threshold, not a proof of generation quality. Failure rejects these trained configurations only."
+  },
+  "elapsedSeconds": 2.681887624996307,
+  "trainingContextHashes": [
+    "fd7899619afa7097c4a61dbcd5db4a601ea6b548979ae3f9c9935bc182cb0f01",
+    "c36cb3a81bbdbc3a64c02e0d1fbc96ff20e45dceedde1a4a8c8efabd7e3027a2",
+    "9e95d8dbd4cb00ea9e5f22241ae0ac90f62ded53f6fe273ac3e26acef97c8e1e",
+    "d6f40f1382729b2b30e40ed0363200f36b012b56854396f25aae5fef5cf4f5ea",
+    "d0eebc6ae0173e7f68609c35ce2ee84198051ffd25525b9a58e327d68c83ba0f",
+    "2a0497289687be36834d605bd2244976b5eae996d3d01135e8d285da0b03466d",
+    "b58135e59320c5e366b3a2fb89cf052055eec93afbc29e2ec601ca338c60e5ba",
+    "bc0a1005307697184b74fb811da08051ae67ea64f4f2b6f96e2ad52eb5588228",
+    "3fbcb78462f8e65edc8c6bfbc87cea05cf11677e3602524777fad6802241d338",
+    "aa1991145c6418ba393e683f779b86d063f50565c22feb6ef77b52d71745cb1d",
+    "2d2feab624e4e08d433be8fed13539bae420f15ec55c3d0825f2011099cc0d4e",
+    "0db6844979c0e5ddde498a539aac9313cad5c3f164685f0ce6227e52d6026200",
+    "d778a9df2a14bea147b6947b23d042ba15afce1325d044a7966b2489c2eb4e06",
+    "98ff5084d6051e5f16aaa06e527f2a2bcd09334f8b9a2bc4a860620ca265bfa0",
+    "707a68959af6d3ae64f65de713d14a85edd97885dbd23c2a21416cdadaa0e015",
+    "3b71e6d428cfecac8e7a7453b19ebccac2ad3b3b4c0d9a8011eee35e10b98a6d",
+    "6105dfec774aaeb769109b6ee1335a09c7973c8f06088fbedf270690e35fb05c",
+    "da5c7b34f4fbee47207aa75e64b177fb879790c353f9d87d75283fd94d447197",
+    "2313c9487a0e9176fd5cecec7b59dfe12807584b8d72b679eb32db8a908ce865",
+    "757d22c23f8909f1fc7404e27fbc41764f8356972ad353c63e0490cb3886f52d",
+    "a86fb7a5a1e993c9c2c46ce85cbc3cc41ab0252608188f34589099d2c0b5fe77",
+    "1290bd3a6852cc4f0081c07e14cd5dd764752ad998c42dc1ea4b3815ba04b145",
+    "9962d5af8097e11964c0bccd72c8300baaff493180da9c661e4741112d50e7ea",
+    "4bff728f3418b7d9e129d64362b8479b20efa71c1fb37dd5148fe037354dc152",
+    "5fbf7541fc1a61dc0b26cd983f015581728d3f3570aad95b71f9c3313a3eaa5e",
+    "ae122fd70a253fe833b0781cfa5d01e87dfd2f4934767b06d25121230bf5ede0",
+    "a289306b815febd6f151f20e3e017feacb5297f9f016562f2b1bb8105fb2037f",
+    "5108a8b3f8cc61804aef7276b086bac5090c9d2de29e2516cbd553a119404a2c",
+    "fad8ef37623b0b0caae173f83140c85693966c14e5589f5a9572156513c180da",
+    "cacedbe9efd50b6f10d056c1f68e8facbb12d0245d3040b42a83363c7d13a1ee",
+    "d21d448d7056b9e6506a792ef8acd6c74d4ddf0e4a01812c27c4722573c2113c",
+    "97c15b5a41bc3f773fd54f278cf27a285c2d15454a0f779be89a675308a76f0c",
+    "6bf8f05ea26b3e90194ccd40eb672bfa35608b864408657f4f5bec0b4bb6617f",
+    "032d14f599327c8d92399bb1ce50f1ea7294a0b979da6290997cb94e0975bb1a",
+    "24c95cabfc8d247a2463a143e41f4b84f2b50261d6375e4f2a802161521a35fd",
+    "6f8881fc86dc50f265f2eea4d429297944e1a97705b58601a4a14409c0529cde",
+    "7dbbf595741d7143af5656cdda8e20d637674b66ff52d603a837ec72933df822",
+    "f635e529724597c90634fb7930872053c40be623a6f93497b37d23824434faf3",
+    "aeebeffdd379cac8bdc656d435c42f984ebbceccb9f174af30e63544622e1fad",
+    "493c7476c0ebbf733d3f6ce4bc4ffdca12328e64dd780193ee11842e6cfa8a76",
+    "0d56e8524ea5ea33eea22d65e7efb43c192176489db30142e1c784b948d25567",
+    "48098c54752fc56288c0a3a0688dd1cc8af1d5f944149793e9ec14957423d460",
+    "7a871b2e86963baa0ac679bc69da30971f5617ee466bfe3167bfad891ab18394",
+    "3869dfc1505c324ca32e6f38d3a0831a04d3f98c72cda13a64ea2d3b511b19c7",
+    "95f5cf88ce1e99ef33e4cb937d0249a3e00f6e3140c7da5b366cdb34c288ced3",
+    "ad2f8c269ab2136b0126ad9885d6b2b0a0c01790971a2d4e7dd57dfc714f937b",
+    "8b0b17130f7e259bb81dcd3433732031bd484e109001aa7e45dc0c713b93a1e4",
+    "f51939cd9fef5a980886bac7fb08526f3697fe86bc7099c44e7113bd648a679a",
+    "afe1163583e725e4ca35448fd7f4cacaf40b3db6feab0c4c7b689d777aa096fc",
+    "ca210d82e9f634e2a03b3a9c2874bc8600ec357d109eb3770a6192c07233c2f7",
+    "24c234ee4cf7e2a2c64dacd207f56923f2ec2bd107d4342699f390cecb0a3285",
+    "1bf6175e99521bea5524f4c860a906f3032ed9e3bf6820441b257aab8f9763bb",
+    "78c666805a43faec2aed358c5dd624c6724945018e0ae8356e21e35a6ad0bee1",
+    "093716853298efbcf85f28674debcad2563ec6d112c7b3a3b64d44422a9ad318",
+    "0837c439866dc60c4442eddf0ef5b63f6a55538ec3fee913075a537be9119496",
+    "43b509609c8c8cba20eb894c2cb5b91f3bc5d7f1c4d030bbce9820b1ca579abc",
+    "ed9d28b369836cc162971263ab4deac1b3994f1d8f47061d4bed6a43d3b279ca",
+    "f207cdd76b89b661864dc0e06d6f1462beb2676840a55f51d015ca91edef49ca",
+    "978926f33f4091b1c810197d7a635524617f494fa868aa5b6f399b41ff9b7f67",
+    "dbf9393a01ed4d8316e7b9ba489564e24f9c1efd51747ace9db926e1fd54a61a",
+    "d70c09546c4c99da2adff4b03c5054214f604b705d5e817d4b3807c27e5ce8a8",
+    "b79ea12e3c34e3e9f2d3899c0b6c3f7227fd8dfa545bda61f0de883705025f36",
+    "1bbf476d9f00bd0c62658dd8d6d902f74fc1ca887e9048c07060f7ac5d7496da",
+    "168784044730e5fce1ca36e00462732c5380081bc15f2733bb7894a5a5d29c18",
+    "5ed665410b8f0c8048f2e8db00b8804f288a9c034c17dd5a7b7554ec1d35bb52",
+    "1a680f5fde4404c6a29e8b144ec38bb7fbc873d99d515a6756a85e895a0c46d9",
+    "afc461dac0ef3c95d8799a3563cbd9c55bbc2233b34d52be849cbf632bfe4ad5",
+    "1d8a2e1c9b42d2d3e67feb5cf97e2c4abef7976fa7978b52bf13989a524394da",
+    "f4fc85131f3b157c7fd415d2226affa1a114a08070a734e046f16ab371c2a4a8",
+    "026966bc11144c80ba760cb8c08912a257b7bc93a9254d69eb39527e84b6ff5f",
+    "3bdf5a70cae04c24b1a3d306cd23c61b201f5395c4c05f9d97131a8f17da5806",
+    "4a2372a42f2758b4a81bd25bd7b53a71c3f7d17b2b9ab58dbceb0395328b7ea8",
+    "554ce60922fbcf535f1605f9a99b0429f90d088d3555d66f36d92fd699d290dc",
+    "b3c87930b424922784547e4782d420b0f1848ddf05dbcec11fabdba0afbbef83",
+    "d9eaa6352cd0fbaa20f4f26e2fcee478d4756c8f391fafd8677369fe76206fc0",
+    "14caed45c5f447cca4de74935cb9302af06a761b766032a20fc0c58fcca4ce7d",
+    "c3f481d144620f76f1646a6adf6761ec7ce58495d4a15a80f8607dc1182a2b76",
+    "1b021cc0e874a9b1ba60ca158fa5dacde5f56287d751a641453bc6d51a1096eb",
+    "c10f52e623d06a29b3c24d81b882e857a3edc57793d2b84ed042c8f5d7fca584",
+    "d038159ccd97c91151efcadddecda32db286158d50212bc094662e8fb1fe0e31",
+    "53acf8714fd632bed0c4f3e9dfe39d62adbb016811f6434475bed82e8a00fa83",
+    "81f064e149ec12238a10410b89fb763c734499a43412670e77990eaff7aaad44",
+    "745742517be373dccad40505d435e7d92bab22e14ca358c411266e9e7bce2912",
+    "d1cb1a14e2ddbfaf54f34879a78a18671fb8a905fc7bf01181f68771f8570053",
+    "3ee65a5375536fbc5442109632b951b100a34f14f63821254b13c06ccc33e27f",
+    "0bf74ef2f0e94335aadc98d9fad99b3095d4e742da73c1791df05d7148b197a9",
+    "a8fea182f561c95c992782cdad0549df4147fd873273dc8045996c5960a4ad7c",
+    "1ffcfe56d9fe72f9b1bab80c39cae1f1db8bc28bcfd0c217d7a62cce17b60db9",
+    "b316ca841b23e5c68fdfe371bed5f0fc014c897e5de8d29a6ede12810d96d8f3",
+    "3b4a62694931759c962e864d4990294f4e0aaa2ceaa709ad3008cad1a311d454",
+    "62292036e4b92f387f4d48a13f84054faea0ff3d69c43bec1adc530c28335eb1",
+    "82a0bbfaa64a9cdeee1d048d39575739d88a5439274ce269d37b354ea8fe6932",
+    "97cb1f8c5e68eaa0c2d99924fbb6ae9590ef2e6f8708c9e63a62e72d2671dff6",
+    "5ff245b658660c110a44c1f1981e2ad70d3c2363da510b4235d75a200283534f",
+    "63352ae5578815c15d09e9c28795f91390854130cdcb34bea71681eab34f393f",
+    "520ee60377b1a23cdf6d865729bb684e868f16f20ab629b4e5d6f438f3f16e59",
+    "b97b9f78222aae495f6dbb8abbe55ef311784d2684e168bb3a2811543be5c83e",
+    "8270be2806e3119796325ec1e98e626e2d1460ceab915fed66d02560dcc4933c",
+    "5eb144778331c6ef6ffb2ce5a4488827c61c10a36f08154dd0f9eef7668f1c19",
+    "6d7f39294e5c08e894b9f6c043b87d7adab01dde8be1a5a84b4c522d42f0a93b",
+    "634d6a70c300976a8bb8ab80fe2887dfb0856cf540ee8bd357ec58fcb30936cb",
+    "7f026835da5deae2aaafba97912be4b85e51a69fc3e2d9e0c2d9ade24e700c7b",
+    "95757ad0b3672f3f6ac1e6c386b3227075cc23dc0add77732362c9395e2b84d7",
+    "7993dfeb755a22bd81db4b2457f667981bfdc592c443d25c1821bb339f9755d1",
+    "6c72374c3bb207cd8c3e1a03da9737dbdd4095b4f897a266050472b2fdf10622",
+    "1b49b7038207e411091e6d4bafab444fd0c20d8c63e17b3afee4bbee26a556fc",
+    "81b51c30628037355d752d6e87fb2efdd19b1542623cd5e198342f18b33cc1ff",
+    "c8e010a42229ef5f981fb72a3267ae2fdb3252e8862568e34b469cf7c18de977",
+    "6610a97467c9cd146825084a07c0a914a3a39eee0110063269848282c914a649",
+    "cb2b91bf89554b8bd4d3459c87e89eb087baf50a6edd632940d6171fd864085d",
+    "89c6bda24b3b746761572d9f25e283e2b3cf2bd2a196f3e65d33772388870e58",
+    "1d9e2ee4d4075d733573d1ed9d1f1313b9f82cd100633460dbfec6544d7fe32c",
+    "49db056ac31b3361e22a432a4f8f53ce8d75c34e02e1d1a7ef3cff85291edd4d",
+    "a65d8609d60e36b3d965b6b8bebcb64b4b952675d8b3a55e6efbdca95103cf21",
+    "d9d0fd32cfdf93a363a33ad94c9afbb9403508cce08c39e2a2ba2bc4433d7858",
+    "e191c4848a9b394a4dae9c453e41d2107d8a163c7d23f16f51b2e97a0bca532c",
+    "d806164cf3f3ecece96a9e5a160fe7973dbbdc8a9e193d41a74e1416f1bb075f",
+    "3bac12532b6b4da3370aad16d2dd07ce61bd36ec3326f9d27b4e2a86211ca6a1",
+    "b0a14df72162c6995af1dcaa64ed61ac821927a383a2bb610366493bf18c9782",
+    "66ba7f975721092842d9dfefce2832db0162c2fbeff70d7dfc8d95b5f2353342",
+    "50441d3425ed323c98cb13c8ac397b19198bf7e27ade18a4e21b2d6960f1f907",
+    "401109af5355cfd6d8e524e026b1f83306e155ba1a06c3a4a1c0a4a87529c29c",
+    "beb367ce8bc86db5b1efaadb7d16ec90433a555baba624b9871c4178718c6bad",
+    "608c5b4190c156aaa187e561c71f38a00227d8c982f1fc807001d644c937ef81",
+    "cc1eb389863d05993594326c60f4e4f39cda72882bda2a8ceae384880c4176c0",
+    "0001beb43979793038d7894a6112767d978e6529d20cca532fdf6a196aaad8cb",
+    "7419c94ebeb9fdb60471012a8674bccbde3397b99078ed88e971e2ec9b94bc09",
+    "413151416d964c3e6bb6a9a0be89757c8c297e2e0b5b87da610c656e35072b00",
+    "2ec8c11af03d345a90b2b2b4d500861eb44c77301dfa357c806dd8913f2e4749",
+    "17251340f6774865ff1c255a3c75149ba82b4ec98c01bee89bb3011d450ceef4",
+    "95ff980485f1391c51c156245684aeb6c5df89a829076de01ad6f97bbc8eff80",
+    "22e4da00709ea11449f990e938e2ba7877d4c9a0aee8886e6ce8f8969751f0c4",
+    "b01308e5aa1c63a8e423a664e20db4b0d921da4034e76d6d710dbf411000953a",
+    "2704683b50e9ba5e1a9e003c1c203e6842e6f52086edcb3d4de008611bc90e9f",
+    "148cfe0207511d90abc2ab83e1e0dc6073ccd181eaeb79f8f9e5c368c6372612",
+    "b5ae55468fdde633cd23eb4781e05c42b1d7f8dd0787eddb4e0955d7355489b9",
+    "7a53fc4eff332a7db2e975ee096afaeb2d2b64096e5e0d681b4c4cfef0a61090",
+    "f91a500a7f308efc6115d753e39330a2bade031d6a40c5b3fdd1981677a627e2",
+    "c3c9dd7b50fd16c8f88b6b083fd8af7d7ed001324d1e85695377c48bb4b15351",
+    "94582085e4d7f1d3f14fb486f4e763f7cf487384b0d3dd72f8dee51d7f4cc5d8",
+    "b65c0a803cf912f76c19eb201e61a0de9f2eeb433d8ab72ec54f16ddcf7614ec",
+    "1f4e7ccc656dfb6142bd863d30fa189d80d9dbeabd3f0485f969afa73f1f3a9e",
+    "373ad7b981314d63a7147baa053587dff9ae82fc6f49f2b8ca87561563925cfe",
+    "5646ba143bb27973195779e2c510a6bcff3f7004a748c6471c9d96cfc81d513a",
+    "94627e0b82161161906b2507b1504e028bac46308d9c2e01fb8ab95b57a9ff4f",
+    "d591195b72e792ebd2dee8d743b7573d4a0b606171b96ce740625bfe101a4763",
+    "e0ab06470213d92c132a085cd1cb766ecc8e60918e74c28eccfd13454b0e87bd",
+    "518d9bd2ea0cf60c8bc6ec7e9d75e042ee8667399dcb07322ae793096b094a6c",
+    "a423d5cecd3ceca86f73ddc288138b985b1b1790d8a15d11f3c3c23e0b72f044",
+    "9aa363cbf51bb90b9a5d1bb84a3401e9cfb9af00c195020e4f350c2e7fcd7b55",
+    "a9b85805dede8281afafb73cc777aa0ea3c81da4545694cf22b234a692315766",
+    "808d5beddd44d054e67ac2e596adf513319be66ffbc568b9bfa98fcb9fdd1e05",
+    "c6e65924e3ea257f3779b2649afa48ce51f2d8c0df27028e376e80fffef65789",
+    "5057871d5af286bb33cfe721712efca9841dd520c4f76787b734a88c52fa47be",
+    "72a3222d642efea29fdcb15b0f60ee8627364dc281e0c84786014ef0105183a5",
+    "403136afb992962369ff363cfa39c9662e2698bb7affad61b02a48264ae1865b",
+    "39c3061eea99fcf080e75d1443b930befbe304eb5cf630621ff695ad294de370",
+    "7da89236208c0da318356c6d90ade6f1bd2ef14104219efa6839f87d5bd070cc",
+    "1cb26c97902952aed530c3b189b58e130e954db9624a99c7cbf379a96c80f7db",
+    "064baf158543ba9a7bf0469edda37fcc428fd65ffc924cb7173126cc525889ba",
+    "002ff00b60a62791a4e93bc4d6b7a2d153c6aaf38699f4d67b3e71d0e4cde706",
+    "e4c73239585603917476c6d7c5a12b4c624d3ce70f1fe65a0b7043b32b1eb73d",
+    "61998007ad8978b4b5c51a0b41723267946e757cbb41eb22303b91cbb76a5693",
+    "fa0ead87aa94b56278cdfc8d25549be6d2a6283c17a22bae6b481baec91c6735",
+    "a41da1050407217da83b3fad8cdd45c26c21d3eb2ff839d0d92652fd66252792",
+    "65def565b385f9192c01ef78db2ab84a7bf0c462677a9b583f13a5cea2dbcf3c",
+    "60b9c0edfb91e865d5d12d72b01c6927b750ab87eab8c2abbe264ad4c7b38734",
+    "600f0db4401041687d33a38ce67c61c782a3954abbe55d66e6c77e76211afc54",
+    "11b5a0e6b0f72bee81f8de04626fa337ec17b5d2d08a633cadeea2af5a95b3d6",
+    "e73b5e72ed58779ee78e506f1891ad5fdf629ffa153204acf09f10896862131c",
+    "d07280e54c28069aaefb3971e47518ff618bd9748576305c31f6abb0ff6dfc13",
+    "4c8d4de49c46743c4ce37f4782c701ba3d1135b6083275ab8e609671e3c267eb",
+    "aa81874a313759b215ac4a35266631e6ea4c3e11248e9d39de8a3b8d6f0d74fb",
+    "5a939b908eb3770b75fe24b8de6dc86f06b8cfa3e3a95d24b9b428cea4625bbc",
+    "b818fc20782533bc8ca1d8f8681b78e21b47c64e74cc3c972a9aebd5be3526e5",
+    "56cea11553acff8d5a2af9c1d187ed6a1e495d65dbb97b141460cb03ebe3db45",
+    "5d4021b36df989edade2eb65dc10a4c794f32dee74e672752aa3b54dede617a9",
+    "7e7f8cf7994cbba8eef248738dd051f4f8e62adfda962b55db856e530391171e",
+    "57387ad4b4c5fc4e931974df0af06576b8b67d670c5579dce6b76e321785a0d5",
+    "ec137d747f5e31a41228698f99e2cfb4c20c5ae4bb8a743949b055e9644bab9f",
+    "94ae5675e31fbe67bb1ff9ce9a99044f661a8694112c2aada22331ec80242680",
+    "ba0d6271bb140d0d651f110b8f474bd229196a8b164270e8d4b5053a4f12f33d",
+    "c99fef62e0bc8e4d86ba94d1e8200831862d4f07036a0704aca06603c868d4c1",
+    "e5589e953ec006513ef9a29148c5cc39d63a3e18eb92bee7b10107109f03701f",
+    "d7f2cc165b74eb825968288b23ad98c56e94d5006453e7b2e7a8799199cfab36",
+    "020f208dc9a9bbe1f11fc43183b3c851d571c6cc580dbfde4ce39fe652779903",
+    "e6961353359d71f3e04468a96c3e64a2b1daa5037c4b2b9d56ed77cd5b03757c",
+    "ac8ba3d4020fbc99e2b23082276a0977353e7216e282d6c72cf1926372e42611",
+    "72312d411f3f49b20efa5fd205a76a4ea48f45c7bb383ee8c7f33b5841afdadc",
+    "5904e162d46ed9f170995ea7cdf9632a66870a42889d0bcee0b4c11a11a7eb14",
+    "1fc043561e5a1c6acdbe8337474c4a98c1649d135f451c6852a0bc4eaea6f11d",
+    "f48b7e54130f2d1d6e26f2438ba21525a067c188c31676f64741f6f1fdad97d1",
+    "55d67ac85a226eee8d6420a226e2b402e6b7c719b3c0b97f2f044ed56a22e96a",
+    "4131c04132598323e82c46cf84024fe7fa4dd4d2d71373bf246613251cc46270",
+    "902cbaa846c91a06719ca02b87e01f4308352331ce4f21cbf65b51bd67d0d1e4",
+    "612dbfb6df044de7f7092100bdfd8130f0b828503d40c89dd2265095c99ff515",
+    "c51196a0ece9e17b5f144e100cf9afdf5986a507c67e584efb8c3259b300cdb7",
+    "4af0da69bae68f06a810a3d59422d8603274a102cd726b017385fb4524641ca3",
+    "6a54a43e7eb7b42f069e258eb2ba30696e73f321798b1ff13ffe2f80ac02f039",
+    "a54b9b01732663eccd3c65e3caa304ab9ca384396d655acc5b5be0225fd75aae",
+    "bb9cb92d184c8c97f56e60f1ab5d079e137a01e17127ed515f9a819324fe1502",
+    "e40a9930f3c1af672f99f458983c79ef7385b9247537c63759ce064bfd440def",
+    "f0f5f1f2596417270696817ba49316864da0e0c230c62af97cede7f2f97e874a",
+    "1c85916bc791ddbece609b19b4960f24880c56fdd7e6108b4f19d00047be875e",
+    "093b3a494ec1d2d59d4bb0c931502e36764c2a182e2aa6d9e5f2a046e98e0c32",
+    "f6e171da9887d63858a64a02411ee207adc3250e4c93c1bba585345d8bdb3c6d",
+    "a10fdc7e87431b6ff04b748eca4a1d41a50e6b7f1a747f147e46195909dc8522",
+    "b34763876cece195afcd6bbbcc8c62f56c2648c3518188f887ddb2d215604dc4",
+    "72dd70224cd065d90f3f997c9b44a93f421ffd02f0dc3d25e0ee3aa7a83037ca",
+    "10b7aa10910f472f6ca94f81681e6c5b905090c6ed4e7a47e7f1672ad8156705",
+    "109d01c49c381cd44e17df4da83c601a62a2ce0a51f5e2b5c034d73d09e62ebf",
+    "2ba193245dbb33ed31ea736f0b3da21e7ce903f901137bca818ccc15a0ae62af",
+    "f77cbf286eef301be5e66632990900e6c2dc49570608fc94b189d0b3343a1ab5",
+    "1c5a046fc30931ee98f0498c375112e4417dee1797019c3204163b89331afb63",
+    "59687572b313916f87101a9b6e87d7781abb8a9c1770a8a57e70d89e08a0d739",
+    "4d5d40f7f197e0b77043150eb3652013eb0cc013dcfd6f1e5acc5a38b89b08e6",
+    "ba9c5b27faee89230ee920e6c8fb8a858a25a7d51e90d8f2afc6cd0d08236651",
+    "72b29a43d9ff12c83ce873ebf1b253efbaf8efe2cd06150cfce68816dbb321ba",
+    "a7263a5ca364d64c3b3ee2ff3cb3650a84c86f7c89272baa204115d227d71c81",
+    "9aa1462ad721728603a86baa1c8c9d4a180feec869079483a71476eef0770e80",
+    "6af5138cf56be6894083d4077224f2185236d8990732e11fa2080f7df6156ebc",
+    "42d86567d509aea1fcd73789486b90c2faaadb339aea9a13ff85f0e9918ada44",
+    "078a9daff4f829fef8aff503a4a25c00e274629212f03568414659f2d69d9333",
+    "2f0e3e781854b338dde67005d7c31f92f039d87c415349f048b7b6e938e02572",
+    "fc7e31b4c66cd77b5b3e381d43b03849566af5f553fb7753d4ebbba7c3815f1c",
+    "2d8b3d41f0af834d73ab9187f25806264d98adc2bc319466672bff46b4d819d7",
+    "06a8370c0981111902c59d55af597090409ebc7449b71f917339f40ee2340403",
+    "eb3410ee79889ba15d07648f706de3cb8f85e782cdf82397054a24cf11968c46",
+    "39794c0c96ba23c9fba25c686fc65660a98078cd26707566e08588106d40447f",
+    "45f5444735a63ca0ee8559c493cf79218c593ff9626bcee0b3262a8ea8d51bbf",
+    "dd9e7c9c3f241a4dee6ea3292be99c898bc9b6a924124aa7b767b4b47bd5213f",
+    "fb2befa0caccdc95c68df9882f5e7689bebe2b064e8e59ee311139f49f02cbf6"
+  ],
+  "testContextHashes": [
+    "7b87cad06de801244120b00ea77ad24f5ce98eeb0b4ff2ba52c3c9a2c1210fe8",
+    "e52bef93e6e1b73ce5c642b6bd25d4d2e67bd1f7fe94b70ab01fb2d872ad6b0a",
+    "2edc8d8835bfb590fb6ed9d42477409a9e7052e2b3025da04226d8cba30dcea7",
+    "31601fd5fff0b2e1593a944dc831e8589c09066c4e8eaa6b6b0496ac3426b0d9",
+    "ea30432866995b5fee9ef1392db19efe771b35d14cc8f7fa09ce2eb29262bd55",
+    "1084f9c2d3fa987c0058b2776633c88c693c54679575a16f3eeca86b140b8b22",
+    "0588d0dcc1c7dea3d905a44140d38364e1bc3ea705f3f652b132e70ae3e7f0ff",
+    "99ba7fed09973a6032a02e42ae3c4e4ee96b0e069b563c76a09ee89921a2d976",
+    "28a23cd6d14bf383805dcf934d5cb149949e41d8dcfc1082f0aa11bc3b708395",
+    "9a04a86d8776204c49f7509c73d186cd2c73724e7e5ecc92c528be8ca1c2fa71",
+    "a5d0cb613faa0f61387657c7daae338a628965b6094de5215fc30964f8741ed5",
+    "12f29336455e12f441364d2d5020f4c906a006d9f2260b4f0caf994fead74ecd",
+    "fc663f920a8ac756b54695a1cabf7d26bf7b4c18c4f913278bce612c8c753b8e",
+    "fe6df5f27b5b542e3b3881fc864cfb25f64c0433a5a6173615b242d4d8d06ed5",
+    "907a02b5f42f1a7facfba14e204a67fdc1405893204c3964c1b26674731afec4",
+    "def5ee3696caa9bc46c9f609d961ce7ec8a49ffc27b1a38bdacf5ee4f648952b",
+    "53485d26aab54e669a172f5675142f80d7415ee2351a7c8a0880591fd4626c28",
+    "d31bfc8ba5637f9fbdcb1194768c84022d98e67fce7739361370699ec85532e2",
+    "fa5da9b29c335aaed14bb336612e870ab159cc7e38d1fc4f198038628a905d1b",
+    "ee447f9502cb74de8a85f4347e036c1a938d75450a8f0f7d0d6eb04c8a10c00d",
+    "2b8acc8fa02f9d711d546920b821e58963662f01b03f81816b8af34ff7ba13f6",
+    "0bf66beec002b1b8459515ff64f2edcd19c3835f39b9c9a83564ba6647500ee0",
+    "4434e74f2d200d85d4872e643b7fc79d1de26f2f9fc2e91565b2d4c73ac70e97",
+    "68ecdc9cd597d8ddd3a466b7ca92cf09be57a507b9f81a1471ef62df517da4bc",
+    "689e3b97b805978d97d4098ea6dcf7bfe6ab5f70ae5632cfba2b12985117f753",
+    "ad67b79beed3fd36d8a09295e9ac901fe02ce3fd8c2b9471a27217c156a7f705",
+    "82bc1a59131a4eec5524bb3432def93fbb9a9655012e0aa2af168512b6d0f376",
+    "2792d155e42e24ec4869a27109311c0db8d6c7e964ef78edf14bc9242d021b52",
+    "71a77afbcffe23b2f16cff5c17b800dca9c75aa83412cb0203ac89b7c7162cba",
+    "c2e76814046765c3c3f886106cd6ec73d51e133e412c99c6beeb4a3a98e346c9",
+    "471030a47816d524fcb69344ecac815956d17afc5f7a4a55fb30af1e33a6b556",
+    "4773811ab5879a24d6496835d5b0f02a3bda1a66c2381ba9e9f629344366c4e5",
+    "cab8b224d4897ec85e9179acf29a2490500cd0ea4f8b755ca7779a8ac68251c6",
+    "bc7313b43d6f63e439cca1260aa267dacfe20ce32b4dbb492930e7eb5d5d7827",
+    "41ddfc90c4fdc2a35eb83eea87afa605b35d021b7d898feb17d1e84fe3ab9717",
+    "8e08c73102020427d597f399824a23d2cd35d4f3854220f170146aaabb85568e",
+    "e2d25e4957257ea901ec39678047757fae8ba84f57d0dcafed4d22b875416994",
+    "f5ddf16c873c69176a319728ff7a461114d4c8ccd896a3e42e889a36ca9b7761",
+    "33a09980b4acd8bf62fe3b17d1edb0cdef4b9a1b204f81a0dfa817d33c3a3e23",
+    "2903656516b2cb9f8cc8c7c705b6d19348f267c10553364ef4fe161245e06167",
+    "2e80aa30be3ada96af89cff27737a2f0c15c8fcdcc91ac9d616d9c776a890c55",
+    "fc60b98ea7aa4e7cd8a75200290fca53e3ec4f6ace30d0a437a585fd129c4319",
+    "84a57165bb3d672a33d27240ae250cf33e7246d18821c8b234a424c1644e2d39",
+    "5fa55e29c4bd5bd85a5e0ba5c84a9e001e6833259ad1d0accfa3111b9f3d991f",
+    "1f8601681272d840e6e1a50ba0a28494c1070f93e16da9f736026a82b7a3fd38",
+    "b9a3ca820a4584a116140cf7ed00578476f1e1d188adaa276b2037a6eb15276f",
+    "7f5c702ebfd7d5b3c9ecb8efc6b9a9637e3164a516ec3943845e45b8451ca36c",
+    "0e5e82ee2668685cfca67ea0ac95b47a6fb3b63c89940335be67b8654ca1c433",
+    "3456d175e1deb31ca89eef33dbed901fe750f1a27ef4f84d3e0ac5940d74ecd6",
+    "cc39378add21370c49688cf0a076bbb6e1a59781f4f84dfa50d9968d4d66df95",
+    "103ffffb4e5882d554031ac732c125ddae3c62e49f285d6cc5e1b0dea15b9f94",
+    "98d5d4047763381c79a4735bbf9cddfa52bf5bdbdd35296c385329aa9526f23c",
+    "2bf289e2f432089da5c7c71092535f006a98a1d609e97e6d245ca727d8619bae",
+    "fee453ad1a0bb5389fa7fcb19b25dd01a5097a0533cd005b2f815fa337ea24bc",
+    "e9579ed712a33131b5efa8248343c2d1c10db9e59b431e173b59bbc74c841672",
+    "52683f18c36495cd3b68067b2edf8857bf1a5a3142487d9bee16ce5156d1a1e6",
+    "ed50511424b81702c1103764371df856816b39ff56baa1036a1f8d925143a9d7",
+    "988c86a7fcedddd83b7223791abf25c916a12d1ee3c18f956828ccc47d08a17d",
+    "80560f82a5b82cb2a35df0b1ef46720cd83bbbbd8c031dfa6df4530385a183ed",
+    "b5d53f4e34bb1a88ad82bbb9309541dee43f39b8054c00ed4e12af9d560a0370",
+    "4e8a9fefddf51d265ffe2470fd4d99c9267cd76cd12567a978e0d5fc93656467",
+    "87cb6d6a63d69a57a0e9a1adfb59990c59999f2fd31e93c204b347cc1bb81ef7",
+    "7fce0a689ec7f90d2172661c9061c6830c121a2e5dfd69be7eb1fec44de18dc6",
+    "eb817fd2894bb641597595a2562c1f8309edc1e902c935ac0d209e0953483881",
+    "e0e87b2dc997cb265e2146a27d78bb9fdaf27025b7593d54fa2bf054db3cf016",
+    "3fddfa56ee389ae246c7b190c53ede5a37a490c888ce52e218abd2bfc0fe52ee",
+    "7a762ddc9bd220640f76dae2d73d7fda57d737c83509428809333a5ada3a7f63",
+    "b22778b347eb0abce5125852a6eed09163e15c17c724ccfedcc4f4766c75dd48",
+    "7f2f1b2aa2f90e499f6b64fbb8b6b6243b8172a7ccb4e18b0e501bfedadc04bb",
+    "386cd7493995d5a3e31ac174406c5080ada69d9bd44dca2e184bde6f1f8d229b",
+    "547782a67ed059758777859e71e69e01d716cdd4e2e6d5c8a4f795cf0ffdc189",
+    "44743d06aa4b9ba8fe71f2f0250caf8f15a3974c2288bc2448f6ea0ce1a31a6b",
+    "36d5c85e80bf22fcaa7559b2162f08e3a3e02c19da8db7a9910e1cd9059f59be",
+    "8caac30d3475fb309e38c177bad09069ff9bb98527ed4c5eaab1fac12b67cbaa",
+    "ddc6f6a622fb508f1117c05037169b9d24a349bb13055fc4e50ccbbd1bd9071f",
+    "9eb2d7fb38778f420016fcffc0a44247f8ade26ccd489732ec9f46b7d5504333"
+  ]
+}

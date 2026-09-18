@@ -1,0 +1,244 @@
+{
+  "scope": "supervised additive lookup-table distillation on fixed learned activation codes",
+  "baseCandidate": {
+    "groupWidth": 4,
+    "centroids": 64
+  },
+  "training": "Ridge fit to FC preactivation residuals; validation selects penalty; test does not fit tables.",
+  "candidates": [
+    {
+      "ridgePenalty": 0.001,
+      "evaluation": {
+        "train": {
+          "preactivation": {
+            "rmse": 0.0001552048073493404,
+            "relativeRmsError": 0.0001289583733627049,
+            "maxAbsoluteError": 0.0015415047761830891
+          },
+          "mlpOutput": {
+            "rmse": 0.00030178448903915133,
+            "relativeRmsError": 0.0002594531951078621,
+            "maxAbsoluteError": 0.005001072705336895
+          }
+        },
+        "validation": {
+          "preactivation": {
+            "rmse": 0.2189596231438187,
+            "relativeRmsError": 0.183114991057275,
+            "maxAbsoluteError": 1.5838311831873315
+          },
+          "mlpOutput": {
+            "rmse": 0.4099125894797362,
+            "relativeRmsError": 0.3491141109222465,
+            "maxAbsoluteError": 3.6744571055298376
+          }
+        },
+        "test": {
+          "preactivation": {
+            "rmse": 0.21741341731729447,
+            "relativeRmsError": 0.18679543036622573,
+            "maxAbsoluteError": 1.6753211726699173
+          },
+          "mlpOutput": {
+            "rmse": 0.4183978451376465,
+            "relativeRmsError": 0.3582223654521469,
+            "maxAbsoluteError": 5.431454368691137
+          }
+        }
+      }
+    },
+    {
+      "ridgePenalty": 0.01,
+      "evaluation": {
+        "train": {
+          "preactivation": {
+            "rmse": 0.0015349320842576266,
+            "relativeRmsError": 0.0012753622016523903,
+            "maxAbsoluteError": 0.01498767224455455
+          },
+          "mlpOutput": {
+            "rmse": 0.002983895676310299,
+            "relativeRmsError": 0.0025653447914177107,
+            "maxAbsoluteError": 0.04945156852254762
+          }
+        },
+        "validation": {
+          "preactivation": {
+            "rmse": 0.2189404824291085,
+            "relativeRmsError": 0.1830989837598899,
+            "maxAbsoluteError": 1.5833674445635761
+          },
+          "mlpOutput": {
+            "rmse": 0.40991144899853327,
+            "relativeRmsError": 0.3491131395978925,
+            "maxAbsoluteError": 3.673743196353213
+          }
+        },
+        "test": {
+          "preactivation": {
+            "rmse": 0.21739270001331143,
+            "relativeRmsError": 0.18677763064732478,
+            "maxAbsoluteError": 1.6776261824158354
+          },
+          "mlpOutput": {
+            "rmse": 0.41838829920606047,
+            "relativeRmsError": 0.3582141924507012,
+            "maxAbsoluteError": 5.434366231650535
+          }
+        }
+      }
+    },
+    {
+      "ridgePenalty": 0.1,
+      "evaluation": {
+        "train": {
+          "preactivation": {
+            "rmse": 0.013854795152199456,
+            "relativeRmsError": 0.01151183314882498,
+            "maxAbsoluteError": 0.11814827006579254
+          },
+          "mlpOutput": {
+            "rmse": 0.02688853316555402,
+            "relativeRmsError": 0.0231168800748459,
+            "maxAbsoluteError": 0.44503430463877436
+          }
+        },
+        "validation": {
+          "preactivation": {
+            "rmse": 0.21879396334715223,
+            "relativeRmsError": 0.18297645048185024,
+            "maxAbsoluteError": 1.579321670646069
+          },
+          "mlpOutput": {
+            "rmse": 0.4099425526944766,
+            "relativeRmsError": 0.34913962997519327,
+            "maxAbsoluteError": 3.6671170259938233
+          }
+        },
+        "test": {
+          "preactivation": {
+            "rmse": 0.21722957881490196,
+            "relativeRmsError": 0.1866374815487331,
+            "maxAbsoluteError": 1.6970582129498886
+          },
+          "mlpOutput": {
+            "rmse": 0.41834909312109053,
+            "relativeRmsError": 0.3581806251255793,
+            "maxAbsoluteError": 5.459268177852006
+          }
+        }
+      }
+    },
+    {
+      "ridgePenalty": 1.0,
+      "evaluation": {
+        "train": {
+          "preactivation": {
+            "rmse": 0.07232735803503748,
+            "relativeRmsError": 0.060096195479476165,
+            "maxAbsoluteError": 0.4980834744569824
+          },
+          "mlpOutput": {
+            "rmse": 0.13936809062061906,
+            "relativeRmsError": 0.1198189360981724,
+            "maxAbsoluteError": 2.2151645459134306
+          }
+        },
+        "validation": {
+          "preactivation": {
+            "rmse": 0.21869510585908344,
+            "relativeRmsError": 0.18289377638977908,
+            "maxAbsoluteError": 1.5628555640148019
+          },
+          "mlpOutput": {
+            "rmse": 0.4110825190553298,
+            "relativeRmsError": 0.350110515848827,
+            "maxAbsoluteError": 3.640113948167416
+          }
+        },
+        "test": {
+          "preactivation": {
+            "rmse": 0.2170021284922078,
+            "relativeRmsError": 0.1864420626944653,
+            "maxAbsoluteError": 1.7666781377664038
+          },
+          "mlpOutput": {
+            "rmse": 0.41926709949980784,
+            "relativeRmsError": 0.35896660053225493,
+            "maxAbsoluteError": 5.559300414746906
+          }
+        }
+      }
+    },
+    {
+      "ridgePenalty": 10.0,
+      "evaluation": {
+        "train": {
+          "preactivation": {
+            "rmse": 0.12866020067785972,
+            "relativeRmsError": 0.10690268219972432,
+            "maxAbsoluteError": 0.8929009952886675
+          },
+          "mlpOutput": {
+            "rmse": 0.24551553457570507,
+            "relativeRmsError": 0.21107708383918142,
+            "maxAbsoluteError": 3.638637145729157
+          }
+        },
+        "validation": {
+          "preactivation": {
+            "rmse": 0.2196688527949343,
+            "relativeRmsError": 0.18370811676400078,
+            "maxAbsoluteError": 1.5511012199103975
+          },
+          "mlpOutput": {
+            "rmse": 0.4139225431978835,
+            "relativeRmsError": 0.35252930592498394,
+            "maxAbsoluteError": 4.039156674546755
+          }
+        },
+        "test": {
+          "preactivation": {
+            "rmse": 0.2177417793791597,
+            "relativeRmsError": 0.18707754971938662,
+            "maxAbsoluteError": 1.8093464479474983
+          },
+          "mlpOutput": {
+            "rmse": 0.4219898490427484,
+            "relativeRmsError": 0.3612977544641903,
+            "maxAbsoluteError": 5.635103446827765
+          }
+        }
+      }
+    }
+  ],
+  "selectedByValidationIndex": 1,
+  "testMlpRelativeRmsError": 0.3582141924507012,
+  "explicitLearnedTableVsKernelMaxError": 6.596138000386498e-09,
+  "correctionTableBytes": 150994944,
+  "elapsedSeconds": 6.4876647499986575,
+  "corpusIsolation": {
+    "passed": true,
+    "checks": [
+      "sample IDs are globally unique",
+      "token-sequence hashes do not cross splits",
+      "local text source files do not cross splits",
+      "each split contains both random-token and local-text contexts"
+    ],
+    "pairwiseOverlapCounts": {
+      "train:validation": {
+        "tokenContextHashes": 0,
+        "localTextSources": 0
+      },
+      "train:test": {
+        "tokenContextHashes": 0,
+        "localTextSources": 0
+      },
+      "validation:test": {
+        "tokenContextHashes": 0,
+        "localTextSources": 0
+      }
+    }
+  },
+  "browserMeasured": false
+}
