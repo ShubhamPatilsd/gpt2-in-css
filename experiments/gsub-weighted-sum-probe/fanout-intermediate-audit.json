@@ -1,0 +1,260 @@
+{
+  "description": "Exhaustive internal four-channel check of the same fanout font before channel summation",
+  "scope": "HarfBuzz CLI internal glyph observation, separate engine build from Chromium. Native Chromium final output is tested by the browser harness.",
+  "harfbuzzVersion": "hb-shape (HarfBuzz) 14.2.1",
+  "fontFile": "experiments/gsub-weighted-sum-probe/w4-fanouttree/weighted.ttf",
+  "fontSha256": "dbc0be735c526bda558af4bb0e2f64709af9d3262fab3dd8b7f4afa9dc8bd807",
+  "browserFontFile": "experiments/gsub-weighted-sum-probe/w4-fanouttree/weighted.woff2",
+  "browserFontSha256": "e1d57de4bb307b3b4750e3fe6f084a3b5ac90fcfb4e81fe8852c6ec35e5e04a5",
+  "ttfToBrowserWoff2Equivalence": {
+    "GSUBTableIdentical": true,
+    "glyphOrderIdentical": true,
+    "cmapIdentical": true,
+    "horizontalMetricsIdentical": true
+  },
+  "verifierSha256": "e278500d8b40bc98cc0c7332d4d4dbf7fe14810343dd4285dfc741f1b823a4eb",
+  "features": "ss01=1,ss02=1,ss03=0,ss04=0,ss05=0",
+  "expectedGlyphSequence": "nonce0 followed by n6d0v{0..15} through n6d15v{0..15}",
+  "oracleMatrix": [
+    [
+      3,
+      -2,
+      5,
+      1
+    ],
+    [
+      -1,
+      4,
+      2,
+      -3
+    ],
+    [
+      2,
+      1,
+      -2,
+      5
+    ],
+    [
+      5,
+      -2,
+      1,
+      2
+    ]
+  ],
+  "channelOffsets": [
+    86,
+    76,
+    78,
+    78
+  ],
+  "inputCases": 65536,
+  "channelChecks": [
+    65536,
+    65536,
+    65536,
+    65536
+  ],
+  "totalChannelChecks": 262144,
+  "failureCount": 0,
+  "failures": [],
+  "examples": [
+    {
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "channelOutputs": [
+        -56,
+        -16,
+        -48,
+        -48
+      ],
+      "expected": [
+        -56,
+        -16,
+        -48,
+        -48
+      ],
+      "glyphs": [
+        "nonce0",
+        "n6d0v14",
+        "n6d1v1",
+        "n6d2v0",
+        "n6d3v0",
+        "n6d4v12",
+        "n6d5v3",
+        "n6d6v0",
+        "n6d7v0",
+        "n6d8v14",
+        "n6d9v1",
+        "n6d10v0",
+        "n6d11v0",
+        "n6d12v14",
+        "n6d13v1",
+        "n6d14v0",
+        "n6d15v0"
+      ]
+    },
+    {
+      "input": [
+        -7,
+        -8,
+        -8,
+        -8
+      ],
+      "channelOutputs": [
+        -53,
+        -17,
+        -46,
+        -43
+      ],
+      "expected": [
+        -53,
+        -17,
+        -46,
+        -43
+      ],
+      "glyphs": [
+        "nonce0",
+        "n6d0v1",
+        "n6d1v2",
+        "n6d2v0",
+        "n6d3v0",
+        "n6d4v11",
+        "n6d5v3",
+        "n6d6v0",
+        "n6d7v0",
+        "n6d8v0",
+        "n6d9v2",
+        "n6d10v0",
+        "n6d11v0",
+        "n6d12v3",
+        "n6d13v2",
+        "n6d14v0",
+        "n6d15v0"
+      ]
+    },
+    {
+      "input": [
+        -4,
+        -5,
+        -6,
+        -7
+      ],
+      "channelOutputs": [
+        -39,
+        -7,
+        -36,
+        -30
+      ],
+      "expected": [
+        -39,
+        -7,
+        -36,
+        -30
+      ],
+      "glyphs": [
+        "nonce0",
+        "n6d0v15",
+        "n6d1v2",
+        "n6d2v0",
+        "n6d3v0",
+        "n6d4v5",
+        "n6d5v4",
+        "n6d6v0",
+        "n6d7v0",
+        "n6d8v10",
+        "n6d9v2",
+        "n6d10v0",
+        "n6d11v0",
+        "n6d12v0",
+        "n6d13v3",
+        "n6d14v0",
+        "n6d15v0"
+      ]
+    },
+    {
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "channelOutputs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "glyphs": [
+        "nonce0",
+        "n6d0v6",
+        "n6d1v5",
+        "n6d2v0",
+        "n6d3v0",
+        "n6d4v12",
+        "n6d5v4",
+        "n6d6v0",
+        "n6d7v0",
+        "n6d8v14",
+        "n6d9v4",
+        "n6d10v0",
+        "n6d11v0",
+        "n6d12v14",
+        "n6d13v4",
+        "n6d14v0",
+        "n6d15v0"
+      ]
+    },
+    {
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "channelOutputs": [
+        49,
+        14,
+        42,
+        42
+      ],
+      "expected": [
+        49,
+        14,
+        42,
+        42
+      ],
+      "glyphs": [
+        "nonce0",
+        "n6d0v7",
+        "n6d1v8",
+        "n6d2v0",
+        "n6d3v0",
+        "n6d4v10",
+        "n6d5v5",
+        "n6d6v0",
+        "n6d7v0",
+        "n6d8v8",
+        "n6d9v7",
+        "n6d10v0",
+        "n6d11v0",
+        "n6d12v8",
+        "n6d13v7",
+        "n6d14v0",
+        "n6d15v0"
+      ]
+    }
+  ],
+  "wallSecondsIncludingShapingAndAudit": 6.408951707999222,
+  "performanceInterpretation": "This wall time includes subprocess IO and Python checking; it is not a browser performance measurement.",
+  "stderr": ""
+}

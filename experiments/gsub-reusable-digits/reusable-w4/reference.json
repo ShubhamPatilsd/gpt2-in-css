@@ -1,0 +1,153 @@
+{
+  "id": "reusable-w4",
+  "width": 4,
+  "topology": "reusable-sequential",
+  "weights": [
+    3,
+    -2,
+    5,
+    1
+  ],
+  "fontFile": "reusable-w4/weighted.woff2",
+  "fontFamily": "ReusableDigits4",
+  "inputCodepoints": [
+    57344,
+    57376,
+    57392,
+    57408
+  ],
+  "nonceCodepoint": 59392,
+  "nonces": 65,
+  "features": [
+    "ss01",
+    "ss02",
+    "ss03",
+    "ss04"
+  ],
+  "dependent": {
+    "kind": "affine",
+    "multiplier": 2,
+    "bias": 1
+  },
+  "output": {
+    "offset": 236,
+    "unitsPerEm": 1024,
+    "fontSize": 1024
+  },
+  "disableControls": [
+    {
+      "feature": "ss01",
+      "label": "products and markers"
+    },
+    {
+      "feature": "ss02",
+      "label": "connected reduction"
+    },
+    {
+      "feature": "ss03",
+      "label": "dependent operation"
+    },
+    {
+      "feature": "ss04",
+      "label": "publication"
+    }
+  ],
+  "representation": {
+    "digitGlyphs": 16,
+    "temporaryDigitGlyphs": 32,
+    "digitsPerNumber": 4,
+    "radix": 16,
+    "sumOffset": 86,
+    "signedSumMin": -86,
+    "signedSumMax": 79,
+    "Pmax": 165,
+    "Qmax": 331,
+    "inputAlphabetCount": 5,
+    "markerGlyphs": [
+      "acc",
+      "operand",
+      "consumed"
+    ],
+    "maximumBacktrackGlyphs": 9,
+    "maximumAbsorptionLigatureComponents": 6,
+    "invariant": "Exactly one acc marker; its four following digits hold the total. Each remaining operand marker precedes four unprocessed product digits."
+  },
+  "structure": {
+    "fontGlyphs": 262,
+    "fontLookups": 53,
+    "topLevelLookups": 28,
+    "ruleCounts": {
+      "productRules": 80,
+      "sharedDigitAddition": 272,
+      "sharedConsumedMapping": 16,
+      "sharedNormalization": 32,
+      "digitContextWrappers": 336,
+      "consumedContextWrappers": 3,
+      "consumedLigatures": 3,
+      "normalizationContextWrappers": 3,
+      "dependentSharedMappings": 32,
+      "dependentContexts": 7,
+      "publishDigitMappings": 128,
+      "publishContexts": 1,
+      "publishBase": 1
+    },
+    "ruleCountTotal": 914,
+    "reductionPasses": 3,
+    "inputTextGlyphs": 5,
+    "peakGlyphBuffer": 21,
+    "finalGlyphs": 6,
+    "lookupCallsByFeature": {
+      "ss01": [
+        "Products"
+      ],
+      "ss02": [
+        "Pass0Digit0",
+        "Pass0Digit1",
+        "Pass0Digit2",
+        "Pass0Digit3",
+        "Pass0Mark",
+        "Pass0Absorb",
+        "Pass0Normalize",
+        "Pass1Digit0",
+        "Pass1Digit1",
+        "Pass1Digit2",
+        "Pass1Digit3",
+        "Pass1Mark",
+        "Pass1Absorb",
+        "Pass1Normalize",
+        "Pass2Digit0",
+        "Pass2Digit1",
+        "Pass2Digit2",
+        "Pass2Digit3",
+        "Pass2Mark",
+        "Pass2Absorb",
+        "Pass2Normalize"
+      ],
+      "ss03": [
+        "DependentLow",
+        "Dependent1",
+        "Dependent2",
+        "Dependent3"
+      ],
+      "ss04": [
+        "PublishDigits",
+        "PublishBase"
+      ]
+    }
+  },
+  "compilerSourceAtBuildSha256": "9bb9fdeb2a04130b9456b24bcc86a7050de97c017b8966d68a02b9ed441336bb",
+  "files": {
+    "reusable-w4/program.fea": {
+      "bytes": 33092,
+      "sha256": "f0f2ecf5eb50943b7916c00b0c19aeaa7db62185bc21c7553280a9bf1841a429"
+    },
+    "reusable-w4/weighted.ttf": {
+      "bytes": 16528,
+      "sha256": "6a5df529fa5aa0cd1187abac5b0b3319f09d23ca62a771ddcadc93024a80f5a0"
+    },
+    "reusable-w4/weighted.woff2": {
+      "bytes": 2448,
+      "sha256": "578c6fd3a1859c6af4cc259d5ff90a7330f2077e2d49e02a2a600cd0db90516e"
+    }
+  }
+}

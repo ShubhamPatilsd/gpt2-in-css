@@ -1,0 +1,539 @@
+{
+  "scope": "Synthetic four-bit integer arithmetic. Repeated coefficient rows in the shared-output test. No model speed claim.",
+  "medianConvention": "Upper middle sample of20 measured rounds per repetition; median of3 fresh-browser repetition medians.",
+  "correctnessOutputChecks": 485428,
+  "timedOutputChecksIncludingWarmup": 72000,
+  "sourceFiles": [
+    {
+      "path": "experiments/gsub-partitioned-digits/results-correctness-main.json",
+      "sha256": "e3468f4d8cbb5e4664a8b113ae3c78218f7b62ae666993fd7ff9417e68d57628"
+    },
+    {
+      "path": "experiments/gsub-partitioned-digits/results-correctness-256.json",
+      "sha256": "5bb584fc44aa45bc52580654cc4d7cd84924f3b20a6fd63b6f79fb232cf7cccc"
+    },
+    {
+      "path": "experiments/gsub-partitioned-digits/results-timing-main.json",
+      "sha256": "09df16c25c2f13216a1e11a7b1ea078c362733a4d0dc97e3f02e2a6d6143d424"
+    },
+    {
+      "path": "experiments/gsub-partitioned-digits/results-timing-256.json",
+      "sha256": "9590caaf73cbb3536a0d80c9ae69f41513cee2a738208034d55929aaf9cbf131"
+    }
+  ],
+  "summarizerSha256": "2779c073c79522371224ce9095bdd29a808f3790158157ba698fec47e09d8f9e",
+  "configurations": [
+    {
+      "id": "css-w4",
+      "inputs": 4,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        0.7000000029802322,
+        0.699999988079071,
+        0.699999988079071
+      ],
+      "medianMilliseconds": 0.699999988079071,
+      "minimumRunMedianMilliseconds": 0.699999988079071,
+      "maximumRunMedianMilliseconds": 0.7000000029802322,
+      "millisecondsPerOutput": 0.02187499962747097,
+      "millisecondsPerVector": 0.02187499962747097
+    },
+    {
+      "id": "global-reuse-w4",
+      "inputs": 4,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        4.0999999940395355,
+        4,
+        4
+      ],
+      "medianMilliseconds": 4,
+      "minimumRunMedianMilliseconds": 4,
+      "maximumRunMedianMilliseconds": 4.0999999940395355,
+      "millisecondsPerOutput": 0.125,
+      "millisecondsPerVector": 0.125
+    },
+    {
+      "id": "hvar-w4",
+      "inputs": 4,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        5.199999988079071,
+        5.0999999940395355,
+        5
+      ],
+      "medianMilliseconds": 5.0999999940395355,
+      "minimumRunMedianMilliseconds": 5,
+      "maximumRunMedianMilliseconds": 5.199999988079071,
+      "millisecondsPerOutput": 0.15937499981373549,
+      "millisecondsPerVector": 0.15937499981373549
+    },
+    {
+      "id": "retained-w4",
+      "inputs": 4,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        2.2000000029802322,
+        2.1000000089406967,
+        2.0999999940395355
+      ],
+      "medianMilliseconds": 2.1000000089406967,
+      "minimumRunMedianMilliseconds": 2.0999999940395355,
+      "maximumRunMedianMilliseconds": 2.2000000029802322,
+      "millisecondsPerOutput": 0.06562500027939677,
+      "millisecondsPerVector": 0.06562500027939677
+    },
+    {
+      "id": "slot-coverage-w4",
+      "inputs": 4,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        2.5999999940395355,
+        2.5999999940395355,
+        2.7000000029802322
+      ],
+      "medianMilliseconds": 2.5999999940395355,
+      "minimumRunMedianMilliseconds": 2.5999999940395355,
+      "maximumRunMedianMilliseconds": 2.7000000029802322,
+      "millisecondsPerOutput": 0.08124999981373549,
+      "millisecondsPerVector": 0.08124999981373549
+    },
+    {
+      "id": "slot-packed-w4",
+      "inputs": 4,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        2.7000000029802322,
+        2.5999999940395355,
+        2.6000000089406967
+      ],
+      "medianMilliseconds": 2.6000000089406967,
+      "minimumRunMedianMilliseconds": 2.5999999940395355,
+      "maximumRunMedianMilliseconds": 2.7000000029802322,
+      "millisecondsPerOutput": 0.08125000027939677,
+      "millisecondsPerVector": 0.08125000027939677
+    },
+    {
+      "id": "static-w4",
+      "inputs": 4,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        1.8999999910593033,
+        1.9000000059604645,
+        1.7999999970197678
+      ],
+      "medianMilliseconds": 1.8999999910593033,
+      "minimumRunMedianMilliseconds": 1.7999999970197678,
+      "maximumRunMedianMilliseconds": 1.9000000059604645,
+      "millisecondsPerOutput": 0.05937499972060323,
+      "millisecondsPerVector": 0.05937499972060323
+    },
+    {
+      "id": "css-w16",
+      "inputs": 16,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        1.2999999970197678,
+        1.2000000029802322,
+        1.2000000029802322
+      ],
+      "medianMilliseconds": 1.2000000029802322,
+      "minimumRunMedianMilliseconds": 1.2000000029802322,
+      "maximumRunMedianMilliseconds": 1.2999999970197678,
+      "millisecondsPerOutput": 0.03750000009313226,
+      "millisecondsPerVector": 0.03750000009313226
+    },
+    {
+      "id": "global-reuse-w16",
+      "inputs": 16,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        40.6000000089407,
+        40.5,
+        40
+      ],
+      "medianMilliseconds": 40.5,
+      "minimumRunMedianMilliseconds": 40,
+      "maximumRunMedianMilliseconds": 40.6000000089407,
+      "millisecondsPerOutput": 1.265625,
+      "millisecondsPerVector": 1.265625
+    },
+    {
+      "id": "hvar-w16",
+      "inputs": 16,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        9.299999997019768,
+        9.200000002980232,
+        9.599999994039536
+      ],
+      "medianMilliseconds": 9.299999997019768,
+      "minimumRunMedianMilliseconds": 9.200000002980232,
+      "maximumRunMedianMilliseconds": 9.599999994039536,
+      "millisecondsPerOutput": 0.29062499990686774,
+      "millisecondsPerVector": 0.29062499990686774
+    },
+    {
+      "id": "retained-w16",
+      "inputs": 16,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        4.799999997019768,
+        4.799999997019768,
+        4.800000011920929
+      ],
+      "medianMilliseconds": 4.799999997019768,
+      "minimumRunMedianMilliseconds": 4.799999997019768,
+      "maximumRunMedianMilliseconds": 4.800000011920929,
+      "millisecondsPerOutput": 0.14999999990686774,
+      "millisecondsPerVector": 0.14999999990686774
+    },
+    {
+      "id": "slot-coverage-w16",
+      "inputs": 16,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        14.599999994039536,
+        14.5,
+        14.399999991059303
+      ],
+      "medianMilliseconds": 14.5,
+      "minimumRunMedianMilliseconds": 14.399999991059303,
+      "maximumRunMedianMilliseconds": 14.599999994039536,
+      "millisecondsPerOutput": 0.453125,
+      "millisecondsPerVector": 0.453125
+    },
+    {
+      "id": "slot-packed-w16",
+      "inputs": 16,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        15.599999994039536,
+        15.599999994039536,
+        15.299999997019768
+      ],
+      "medianMilliseconds": 15.599999994039536,
+      "minimumRunMedianMilliseconds": 15.299999997019768,
+      "maximumRunMedianMilliseconds": 15.599999994039536,
+      "millisecondsPerOutput": 0.4874999998137355,
+      "millisecondsPerVector": 0.4874999998137355
+    },
+    {
+      "id": "static-w16",
+      "inputs": 16,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        3.7000000029802322,
+        3.7999999970197678,
+        3.4000000059604645
+      ],
+      "medianMilliseconds": 3.7000000029802322,
+      "minimumRunMedianMilliseconds": 3.4000000059604645,
+      "maximumRunMedianMilliseconds": 3.7999999970197678,
+      "millisecondsPerOutput": 0.11562500009313226,
+      "millisecondsPerVector": 0.11562500009313226
+    },
+    {
+      "id": "css-w64",
+      "inputs": 64,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        3.1000000089406967,
+        3.2999999970197678,
+        3
+      ],
+      "medianMilliseconds": 3.1000000089406967,
+      "minimumRunMedianMilliseconds": 3,
+      "maximumRunMedianMilliseconds": 3.2999999970197678,
+      "millisecondsPerOutput": 0.09687500027939677,
+      "millisecondsPerVector": 0.09687500027939677
+    },
+    {
+      "id": "global-reuse-w64",
+      "inputs": 64,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        595.8000000119209,
+        594.5,
+        589.8999999910593
+      ],
+      "medianMilliseconds": 594.5,
+      "minimumRunMedianMilliseconds": 589.8999999910593,
+      "maximumRunMedianMilliseconds": 595.8000000119209,
+      "millisecondsPerOutput": 18.578125,
+      "millisecondsPerVector": 18.578125
+    },
+    {
+      "id": "hvar-w64",
+      "inputs": 64,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        41.20000000298023,
+        41.19999998807907,
+        40.20000000298023
+      ],
+      "medianMilliseconds": 41.19999998807907,
+      "minimumRunMedianMilliseconds": 40.20000000298023,
+      "maximumRunMedianMilliseconds": 41.20000000298023,
+      "millisecondsPerOutput": 1.287499999627471,
+      "millisecondsPerVector": 1.287499999627471
+    },
+    {
+      "id": "retained-w64",
+      "inputs": 64,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        17.400000005960464,
+        17.399999991059303,
+        17
+      ],
+      "medianMilliseconds": 17.399999991059303,
+      "minimumRunMedianMilliseconds": 17,
+      "maximumRunMedianMilliseconds": 17.400000005960464,
+      "millisecondsPerOutput": 0.5437499997206032,
+      "millisecondsPerVector": 0.5437499997206032
+    },
+    {
+      "id": "slot-coverage-w64",
+      "inputs": 64,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        181.09999999403954,
+        179.8999999910593,
+        178.20000000298023
+      ],
+      "medianMilliseconds": 179.8999999910593,
+      "minimumRunMedianMilliseconds": 178.20000000298023,
+      "maximumRunMedianMilliseconds": 181.09999999403954,
+      "millisecondsPerOutput": 5.621874999720603,
+      "millisecondsPerVector": 5.621874999720603
+    },
+    {
+      "id": "slot-packed-w64",
+      "inputs": 64,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        195.3999999910593,
+        194.40000000596046,
+        193
+      ],
+      "medianMilliseconds": 194.40000000596046,
+      "minimumRunMedianMilliseconds": 193,
+      "maximumRunMedianMilliseconds": 195.3999999910593,
+      "millisecondsPerOutput": 6.0750000001862645,
+      "millisecondsPerVector": 6.0750000001862645
+    },
+    {
+      "id": "static-w64",
+      "inputs": 64,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        10.199999988079071,
+        10.200000002980232,
+        10.199999988079071
+      ],
+      "medianMilliseconds": 10.199999988079071,
+      "minimumRunMedianMilliseconds": 10.199999988079071,
+      "maximumRunMedianMilliseconds": 10.200000002980232,
+      "millisecondsPerOutput": 0.31874999962747097,
+      "millisecondsPerVector": 0.31874999962747097
+    },
+    {
+      "id": "css-w64",
+      "inputs": 64,
+      "outputsPerVector": 16,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        0.4000000059604645,
+        0.5,
+        0.5
+      ],
+      "medianMilliseconds": 0.5,
+      "minimumRunMedianMilliseconds": 0.4000000059604645,
+      "maximumRunMedianMilliseconds": 0.5,
+      "millisecondsPerOutput": 0.015625,
+      "millisecondsPerVector": 0.25
+    },
+    {
+      "id": "global-reuse-w64",
+      "inputs": 64,
+      "outputsPerVector": 16,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        593.2000000029802,
+        593.9000000059605,
+        595.3999999910593
+      ],
+      "medianMilliseconds": 593.9000000059605,
+      "minimumRunMedianMilliseconds": 593.2000000029802,
+      "maximumRunMedianMilliseconds": 595.3999999910593,
+      "millisecondsPerOutput": 18.559375000186265,
+      "millisecondsPerVector": 296.95000000298023
+    },
+    {
+      "id": "hvar-w64",
+      "inputs": 64,
+      "outputsPerVector": 16,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        8,
+        7.899999991059303,
+        8
+      ],
+      "medianMilliseconds": 8,
+      "minimumRunMedianMilliseconds": 7.899999991059303,
+      "maximumRunMedianMilliseconds": 8,
+      "millisecondsPerOutput": 0.25,
+      "millisecondsPerVector": 4.0
+    },
+    {
+      "id": "retained-w64",
+      "inputs": 64,
+      "outputsPerVector": 16,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        15.900000005960464,
+        15.299999997019768,
+        15.700000002980232
+      ],
+      "medianMilliseconds": 15.700000002980232,
+      "minimumRunMedianMilliseconds": 15.299999997019768,
+      "maximumRunMedianMilliseconds": 15.900000005960464,
+      "millisecondsPerOutput": 0.49062500009313226,
+      "millisecondsPerVector": 7.850000001490116
+    },
+    {
+      "id": "slot-coverage-w64",
+      "inputs": 64,
+      "outputsPerVector": 16,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        178.79999999701977,
+        178.5,
+        178.90000000596046
+      ],
+      "medianMilliseconds": 178.79999999701977,
+      "minimumRunMedianMilliseconds": 178.5,
+      "maximumRunMedianMilliseconds": 178.90000000596046,
+      "millisecondsPerOutput": 5.587499999906868,
+      "millisecondsPerVector": 89.39999999850988
+    },
+    {
+      "id": "slot-packed-w64",
+      "inputs": 64,
+      "outputsPerVector": 16,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        193.79999999701977,
+        193.40000000596046,
+        193.8999999910593
+      ],
+      "medianMilliseconds": 193.79999999701977,
+      "minimumRunMedianMilliseconds": 193.40000000596046,
+      "maximumRunMedianMilliseconds": 193.8999999910593,
+      "millisecondsPerOutput": 6.056249999906868,
+      "millisecondsPerVector": 96.89999999850988
+    },
+    {
+      "id": "static-w64",
+      "inputs": 64,
+      "outputsPerVector": 16,
+      "outputsPerBatch": 32,
+      "runMediansMilliseconds": [
+        8.699999988079071,
+        8.599999994039536,
+        8.600000008940697
+      ],
+      "medianMilliseconds": 8.600000008940697,
+      "minimumRunMedianMilliseconds": 8.599999994039536,
+      "maximumRunMedianMilliseconds": 8.699999988079071,
+      "millisecondsPerOutput": 0.2687500002793968,
+      "millisecondsPerVector": 4.300000004470348
+    },
+    {
+      "id": "css-w256",
+      "inputs": 256,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 16,
+      "runMediansMilliseconds": [
+        5.799999997019768,
+        5.799999997019768,
+        5.699999988079071
+      ],
+      "medianMilliseconds": 5.799999997019768,
+      "minimumRunMedianMilliseconds": 5.699999988079071,
+      "maximumRunMedianMilliseconds": 5.799999997019768,
+      "millisecondsPerOutput": 0.3624999998137355,
+      "millisecondsPerVector": 0.3624999998137355
+    },
+    {
+      "id": "hvar-w256",
+      "inputs": 256,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 16,
+      "runMediansMilliseconds": [
+        39.599999994039536,
+        38.70000000298023,
+        37.20000000298023
+      ],
+      "medianMilliseconds": 38.70000000298023,
+      "minimumRunMedianMilliseconds": 37.20000000298023,
+      "maximumRunMedianMilliseconds": 39.599999994039536,
+      "millisecondsPerOutput": 2.4187500001862645,
+      "millisecondsPerVector": 2.4187500001862645
+    },
+    {
+      "id": "slot-packed-w256",
+      "inputs": 256,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 16,
+      "runMediansMilliseconds": [
+        1475.5999999940395,
+        1473.0999999940395,
+        1445.0999999940395
+      ],
+      "medianMilliseconds": 1473.0999999940395,
+      "minimumRunMedianMilliseconds": 1445.0999999940395,
+      "maximumRunMedianMilliseconds": 1475.5999999940395,
+      "millisecondsPerOutput": 92.06874999962747,
+      "millisecondsPerVector": 92.06874999962747
+    },
+    {
+      "id": "static-w256",
+      "inputs": 256,
+      "outputsPerVector": 1,
+      "outputsPerBatch": 16,
+      "runMediansMilliseconds": [
+        14.5,
+        14.700000002980232,
+        13.799999997019768
+      ],
+      "medianMilliseconds": 14.5,
+      "minimumRunMedianMilliseconds": 13.799999997019768,
+      "maximumRunMedianMilliseconds": 14.700000002980232,
+      "millisecondsPerOutput": 0.90625,
+      "millisecondsPerVector": 0.90625
+    }
+  ]
+}

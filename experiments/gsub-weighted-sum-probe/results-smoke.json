@@ -1,0 +1,971 @@
+{
+  "startedAt": "2026-09-18T01:38:18.464Z",
+  "mode": "smoke",
+  "batch": 256,
+  "reference": {
+    "description": "Signed fixed weighted sums followed by a dependent 2*S+1 operation inside GSUB",
+    "runtimeScripts": 0,
+    "variants": [
+      {
+        "id": "w4-sequential",
+        "width": 4,
+        "topology": "sequential",
+        "weights": [
+          3,
+          -2,
+          5,
+          1
+        ],
+        "fontFile": "w4-sequential/weighted.woff2",
+        "fontFamily": "GSUBWeightedw4sequential",
+        "inputCodepoints": [
+          57344,
+          57360,
+          57376,
+          57392
+        ],
+        "nonceCodepoint": 59392,
+        "nonces": 65,
+        "features": [
+          "ss01",
+          "ss02",
+          "ss03",
+          "ss04"
+        ],
+        "disableControls": [
+          {
+            "label": "fixed-weight products",
+            "feature": "ss01"
+          },
+          {
+            "label": "connected reduction",
+            "feature": "ss02"
+          },
+          {
+            "label": "dependent double-plus-one",
+            "feature": "ss03"
+          },
+          {
+            "label": "numeric publication",
+            "feature": "ss04"
+          }
+        ],
+        "output": {
+          "offset": 236,
+          "unitsPerEm": 1024,
+          "fontSize": 1024,
+          "advanceBase": 64,
+          "advanceFormula": "64 + 2*P + 1",
+          "decodedFormula": "2*S + 1"
+        },
+        "dependent": {
+          "kind": "affine",
+          "multiplier": 2,
+          "bias": 1
+        },
+        "representation": {
+          "signedInputMin": -8,
+          "signedInputMax": 7,
+          "inputCounterBias": 8,
+          "digits": 4,
+          "radix": 16,
+          "digitOrder": "little endian",
+          "productOffsets": [
+            24,
+            14,
+            40,
+            8
+          ],
+          "sumOffset": 86,
+          "Pmax": 165,
+          "Qmax": 331,
+          "signedSumMin": -86,
+          "signedSumMax": 79,
+          "intermediateAdvances": 0,
+          "routing": "position-tagged contextual lookups across adjacent four-digit words",
+          "consumption": "left digits map to zero-width consumed glyphs, then four consumed glyphs and the first result digit form one ligature"
+        },
+        "structure": {
+          "mergeNodes": 3,
+          "reductionLevels": 3,
+          "fontGlyphs": 1284,
+          "fontLookups": 44,
+          "topLevelLookups": 25,
+          "lookupCallsByFeature": {
+            "ss01": [
+              "Products"
+            ],
+            "ss02": [
+              "Level0Digit0",
+              "Level0Digit1",
+              "Level0Digit2",
+              "Level0Digit3",
+              "Level0Normalize",
+              "Level0ConsumeLeft",
+              "Level1Digit0",
+              "Level1Digit1",
+              "Level1Digit2",
+              "Level1Digit3",
+              "Level1Normalize",
+              "Level1ConsumeLeft",
+              "Level2Digit0",
+              "Level2Digit1",
+              "Level2Digit2",
+              "Level2Digit3",
+              "Level2Normalize",
+              "Level2ConsumeLeft"
+            ],
+            "ss03": [
+              "DependentLow",
+              "DependentDigit1",
+              "DependentDigit2",
+              "DependentDigit3",
+              "DependentNormalize"
+            ],
+            "ss04": [
+              "Publish"
+            ]
+          },
+          "ruleCounts": {
+            "products": 64,
+            "digitAddMappings": 3264,
+            "routingContexts": 336,
+            "digitNormalization": 576,
+            "consumedDigitAbsorption": 48,
+            "dependentDigitMappings": 128,
+            "dependentContexts": 22,
+            "dependentNormalization": 128,
+            "publish": 129
+          },
+          "ruleCountTotal": 4695,
+          "inputTextGlyphs": 5,
+          "afterProductGlyphs": 17,
+          "finalGlyphs": 5,
+          "maxEnumeratedLocalDigitPairStates": 256
+        },
+        "files": {
+          "w4-sequential/weighted.ttf": {
+            "bytes": 42200,
+            "sha256": "65a7b1d4837d8d1040cdc3ea2b21a12fc226cdf123f3064aa80862a225d2447e"
+          },
+          "w4-sequential/weighted.woff2": {
+            "bytes": 4692,
+            "sha256": "ae53b8996f0321065bbb9a1e1bbbe91f0ac55cc0341d9e5c1c54bc1caad060ff"
+          },
+          "w4-sequential/program.fea": {
+            "bytes": 137013,
+            "sha256": "02143e6080b7027ca5909c105b5b8bf4f3ad3616f22698c3c6db9bd0a6dfdc3c"
+          }
+        }
+      },
+      {
+        "id": "w4-tree",
+        "width": 4,
+        "topology": "tree",
+        "weights": [
+          3,
+          -2,
+          5,
+          1
+        ],
+        "fontFile": "w4-tree/weighted.woff2",
+        "fontFamily": "GSUBWeightedw4tree",
+        "inputCodepoints": [
+          57344,
+          57360,
+          57376,
+          57392
+        ],
+        "nonceCodepoint": 59392,
+        "nonces": 65,
+        "features": [
+          "ss01",
+          "ss02",
+          "ss03",
+          "ss04"
+        ],
+        "disableControls": [
+          {
+            "label": "fixed-weight products",
+            "feature": "ss01"
+          },
+          {
+            "label": "connected reduction",
+            "feature": "ss02"
+          },
+          {
+            "label": "dependent double-plus-one",
+            "feature": "ss03"
+          },
+          {
+            "label": "numeric publication",
+            "feature": "ss04"
+          }
+        ],
+        "output": {
+          "offset": 236,
+          "unitsPerEm": 1024,
+          "fontSize": 1024,
+          "advanceBase": 64,
+          "advanceFormula": "64 + 2*P + 1",
+          "decodedFormula": "2*S + 1"
+        },
+        "dependent": {
+          "kind": "affine",
+          "multiplier": 2,
+          "bias": 1
+        },
+        "representation": {
+          "signedInputMin": -8,
+          "signedInputMax": 7,
+          "inputCounterBias": 8,
+          "digits": 4,
+          "radix": 16,
+          "digitOrder": "little endian",
+          "productOffsets": [
+            24,
+            14,
+            40,
+            8
+          ],
+          "sumOffset": 86,
+          "Pmax": 165,
+          "Qmax": 331,
+          "signedSumMin": -86,
+          "signedSumMax": 79,
+          "intermediateAdvances": 0,
+          "routing": "position-tagged contextual lookups across adjacent four-digit words",
+          "consumption": "left digits map to zero-width consumed glyphs, then four consumed glyphs and the first result digit form one ligature"
+        },
+        "structure": {
+          "mergeNodes": 3,
+          "reductionLevels": 2,
+          "fontGlyphs": 1284,
+          "fontLookups": 38,
+          "topLevelLookups": 19,
+          "lookupCallsByFeature": {
+            "ss01": [
+              "Products"
+            ],
+            "ss02": [
+              "Level0Digit0",
+              "Level0Digit1",
+              "Level0Digit2",
+              "Level0Digit3",
+              "Level0Normalize",
+              "Level0ConsumeLeft",
+              "Level1Digit0",
+              "Level1Digit1",
+              "Level1Digit2",
+              "Level1Digit3",
+              "Level1Normalize",
+              "Level1ConsumeLeft"
+            ],
+            "ss03": [
+              "DependentLow",
+              "DependentDigit1",
+              "DependentDigit2",
+              "DependentDigit3",
+              "DependentNormalize"
+            ],
+            "ss04": [
+              "Publish"
+            ]
+          },
+          "ruleCounts": {
+            "products": 64,
+            "digitAddMappings": 3264,
+            "routingContexts": 336,
+            "digitNormalization": 576,
+            "consumedDigitAbsorption": 48,
+            "dependentDigitMappings": 128,
+            "dependentContexts": 22,
+            "dependentNormalization": 128,
+            "publish": 129
+          },
+          "ruleCountTotal": 4695,
+          "inputTextGlyphs": 5,
+          "afterProductGlyphs": 17,
+          "finalGlyphs": 5,
+          "maxEnumeratedLocalDigitPairStates": 256
+        },
+        "files": {
+          "w4-tree/weighted.ttf": {
+            "bytes": 42096,
+            "sha256": "407975da664ec87dea0d7ff1fc75f9772192bd3a719488e7781c117e06d93cd3"
+          },
+          "w4-tree/weighted.woff2": {
+            "bytes": 5268,
+            "sha256": "4d8c1becc1d429ebca5d8b0bb48749dde193eccc52c4666ab0ea5ae6f88aabe3"
+          },
+          "w4-tree/program.fea": {
+            "bytes": 136557,
+            "sha256": "42ac22a36ba840edc49da26ae0dc56e5bbd5bbe6783faaf780d6af5a257d760a"
+          }
+        }
+      }
+    ],
+    "compilerSha256": "36d984d67e11a301694e2da12ef3c609f170e94edf3d1dfe31889e7df60568b2"
+  },
+  "harnessSha256": "0ef87d776c0c8a77041ebf53b23662a174f37d039cbbc00a66a3f19cb1e2c670",
+  "environment": {
+    "node": "v26.5.0",
+    "cpu": "Apple M2 Pro",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "methodology": {
+    "formula": "S = sum_i ([3,-2,5,1][i mod 4] * x_i); y = 2*S + 1; x_i are integers in [-8,7]",
+    "oracle": "Independent arithmetic in external Node driver; browser receives only raw inputs and nonce, never an answer or product",
+    "nativePath": "CSS signed input properties -> CSS counters -> GSUB product/reduction/dependent/publish -> glyph advance -> CSS anchor-size/container units -> decoded numeric y -> width(consumerOffset + 3*y)",
+    "directCssPath": "Same input properties -> direct CSS calc weighted sum and dependent expression -> width(consumerOffset + 3*y); no font/anchor/container return trip",
+    "timedRegion": "Raw input and nonce style writes through forced final dependent width reads, including JavaScript mutation/read loop overhead; stimulus generation, oracle, CDP transport and font loading excluded",
+    "order": "Alternates GSUB-first and direct-CSS-first each sample; 40 samples, first5 warmups excluded",
+    "cachePhases": "repeated-state uses nonce0; unique-text changes a zero-advance nonce each round. This prevents identical full text reuse, not all internal font caches.",
+    "scope": "Synthetic signed integer weighted sums and affine continuation; not GPT-2 inference or a full model speedup"
+  },
+  "fontSha256": {
+    "w4-sequential": "ae53b8996f0321065bbb9a1e1bbbe91f0ac55cc0341d9e5c1c54bc1caad060ff",
+    "w4-tree": "4d8c1becc1d429ebca5d8b0bb48749dde193eccc52c4666ab0ea5ae6f88aabe3"
+  },
+  "correctness": [
+    {
+      "variant": "w4-sequential",
+      "width": 4,
+      "topology": "sequential",
+      "backend": "gsub",
+      "cases": 512,
+      "categories": {
+        "constant": 7,
+        "minimum-sum": 1,
+        "maximum-sum": 1,
+        "alternating": 1,
+        "cancellation": 1,
+        "cancellation-negative": 1,
+        "individual-coordinate": 64,
+        "seeded-random": 427,
+        "signed-sum-boundary": 9
+      },
+      "minimumSum": -86,
+      "maximumSum": 79,
+      "mismatches": 0,
+      "failures": [],
+      "runtimeScripts": 0,
+      "passed": true
+    },
+    {
+      "variant": "w4-sequential",
+      "width": 4,
+      "topology": "sequential",
+      "backend": "direct-css",
+      "cases": 512,
+      "categories": {
+        "constant": 7,
+        "minimum-sum": 1,
+        "maximum-sum": 1,
+        "alternating": 1,
+        "cancellation": 1,
+        "cancellation-negative": 1,
+        "individual-coordinate": 64,
+        "seeded-random": 427,
+        "signed-sum-boundary": 9
+      },
+      "minimumSum": -86,
+      "maximumSum": 79,
+      "mismatches": 0,
+      "failures": [],
+      "runtimeScripts": 0,
+      "passed": true
+    },
+    {
+      "variant": "w4-tree",
+      "width": 4,
+      "topology": "tree",
+      "backend": "gsub",
+      "cases": 512,
+      "categories": {
+        "constant": 7,
+        "minimum-sum": 1,
+        "maximum-sum": 1,
+        "alternating": 1,
+        "cancellation": 1,
+        "cancellation-negative": 1,
+        "individual-coordinate": 64,
+        "seeded-random": 427,
+        "signed-sum-boundary": 9
+      },
+      "minimumSum": -86,
+      "maximumSum": 79,
+      "mismatches": 0,
+      "failures": [],
+      "runtimeScripts": 0,
+      "passed": true
+    },
+    {
+      "variant": "w4-tree",
+      "width": 4,
+      "topology": "tree",
+      "backend": "direct-css",
+      "cases": 512,
+      "categories": {
+        "constant": 7,
+        "minimum-sum": 1,
+        "maximum-sum": 1,
+        "alternating": 1,
+        "cancellation": 1,
+        "cancellation-negative": 1,
+        "individual-coordinate": 64,
+        "seeded-random": 427,
+        "signed-sum-boundary": 9
+      },
+      "minimumSum": -86,
+      "maximumSum": 79,
+      "mismatches": 0,
+      "failures": [],
+      "runtimeScripts": 0,
+      "passed": true
+    }
+  ],
+  "disabledStageControls": [
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss01",
+      "inputLabel": "constant--8",
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "intactWidth": 125,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss02",
+      "inputLabel": "constant--8",
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "intactWidth": 125,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss03",
+      "inputLabel": "constant--8",
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "intactWidth": 125,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss04",
+      "inputLabel": "constant--8",
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "intactWidth": 125,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "all",
+      "inputLabel": "constant--8",
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "intactWidth": 125,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss01",
+      "inputLabel": "constant-0",
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "intactWidth": 237,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss02",
+      "inputLabel": "constant-0",
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "intactWidth": 237,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss03",
+      "inputLabel": "constant-0",
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "intactWidth": 237,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss04",
+      "inputLabel": "constant-0",
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "intactWidth": 237,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "all",
+      "inputLabel": "constant-0",
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "intactWidth": 237,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss01",
+      "inputLabel": "constant-7",
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "intactWidth": 335,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss02",
+      "inputLabel": "constant-7",
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "intactWidth": 335,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss03",
+      "inputLabel": "constant-7",
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "intactWidth": 335,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss04",
+      "inputLabel": "constant-7",
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "intactWidth": 335,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "all",
+      "inputLabel": "constant-7",
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "intactWidth": 335,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss01",
+      "inputLabel": "maximum-signed-sum",
+      "input": [
+        7,
+        -8,
+        7,
+        7
+      ],
+      "intactWidth": 395,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss02",
+      "inputLabel": "maximum-signed-sum",
+      "input": [
+        7,
+        -8,
+        7,
+        7
+      ],
+      "intactWidth": 395,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss03",
+      "inputLabel": "maximum-signed-sum",
+      "input": [
+        7,
+        -8,
+        7,
+        7
+      ],
+      "intactWidth": 395,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "ss04",
+      "inputLabel": "maximum-signed-sum",
+      "input": [
+        7,
+        -8,
+        7,
+        7
+      ],
+      "intactWidth": 395,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-sequential",
+      "disabledFeature": "all",
+      "inputLabel": "maximum-signed-sum",
+      "input": [
+        7,
+        -8,
+        7,
+        7
+      ],
+      "intactWidth": 395,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss01",
+      "inputLabel": "constant--8",
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "intactWidth": 125,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss02",
+      "inputLabel": "constant--8",
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "intactWidth": 125,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss03",
+      "inputLabel": "constant--8",
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "intactWidth": 125,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss04",
+      "inputLabel": "constant--8",
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "intactWidth": 125,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "all",
+      "inputLabel": "constant--8",
+      "input": [
+        -8,
+        -8,
+        -8,
+        -8
+      ],
+      "intactWidth": 125,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss01",
+      "inputLabel": "constant-0",
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "intactWidth": 237,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss02",
+      "inputLabel": "constant-0",
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "intactWidth": 237,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss03",
+      "inputLabel": "constant-0",
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "intactWidth": 237,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss04",
+      "inputLabel": "constant-0",
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "intactWidth": 237,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "all",
+      "inputLabel": "constant-0",
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "intactWidth": 237,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss01",
+      "inputLabel": "constant-7",
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "intactWidth": 335,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss02",
+      "inputLabel": "constant-7",
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "intactWidth": 335,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss03",
+      "inputLabel": "constant-7",
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "intactWidth": 335,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss04",
+      "inputLabel": "constant-7",
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "intactWidth": 335,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "all",
+      "inputLabel": "constant-7",
+      "input": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "intactWidth": 335,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss01",
+      "inputLabel": "maximum-signed-sum",
+      "input": [
+        7,
+        -8,
+        7,
+        7
+      ],
+      "intactWidth": 395,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss02",
+      "inputLabel": "maximum-signed-sum",
+      "input": [
+        7,
+        -8,
+        7,
+        7
+      ],
+      "intactWidth": 395,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss03",
+      "inputLabel": "maximum-signed-sum",
+      "input": [
+        7,
+        -8,
+        7,
+        7
+      ],
+      "intactWidth": 395,
+      "brokenWidth": 64
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "ss04",
+      "inputLabel": "maximum-signed-sum",
+      "input": [
+        7,
+        -8,
+        7,
+        7
+      ],
+      "intactWidth": 395,
+      "brokenWidth": 0
+    },
+    {
+      "variant": "w4-tree",
+      "disabledFeature": "all",
+      "inputLabel": "maximum-signed-sum",
+      "input": [
+        7,
+        -8,
+        7,
+        7
+      ],
+      "intactWidth": 395,
+      "brokenWidth": 0
+    }
+  ],
+  "splitRunControls": [
+    {
+      "variant": "w4-sequential",
+      "splitInputAtoms": 4,
+      "sourceWidth": 0
+    },
+    {
+      "variant": "w4-tree",
+      "splitInputAtoms": 4,
+      "sourceWidth": 0
+    }
+  ],
+  "timings": [],
+  "errors": [],
+  "browserVersion": "153.0.8010.48",
+  "browserConsoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "passed": true,
+  "completedAt": "2026-09-18T01:38:19.518Z"
+}

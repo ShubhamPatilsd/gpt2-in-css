@@ -1,0 +1,49 @@
+body{margin:0}.group{position:relative;contain:layout}.item{display:inline-block;vertical-align:top}.source{display:inline-block;white-space:pre;font-size:1024px;line-height:1;font-kerning:none}
+.source{font-feature-settings:"ss01" 1,"ss02" 1,"ss03" 1,"ss04" 1,"ss05" 1,"ss06" 1,"ss07" 1,"ss08" 1,"ss09" 1,"ss10" 1,"ss11" 1,"ss12" 1,"ss13" 1,"ss14" 1,"ss15" 1,"ss16" 1,"ss20" 1}
+.gsub::before{counter-reset:a var(--a) b var(--b) nonce var(--nonce);content:counter(nonce,nonce) counter(a,x) counter(b,y)}
+.receiver{position:absolute;container-type:inline-size}.decoded{--packed:calc(100cqw/1px - 64);--dx:round(down,var(--packed)/16,1);--dy:mod(var(--packed),16);width:calc((64 + 16*var(--dx) + var(--dy))*1px);height:1px}
+@property --a{syntax:"<integer>";inherits:true;initial-value:0}
+@property --b{syntax:"<integer>";inherits:true;initial-value:0}
+@property --nonce{syntax:"<integer>";inherits:true;initial-value:0}
+@property --packed{syntax:"<number>";inherits:false;initial-value:-999}
+@property --dx{syntax:"<number>";inherits:false;initial-value:-999}
+@property --dy{syntax:"<number>";inherits:false;initial-value:-999}
+@property --x0{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y0{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x1{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y1{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x2{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y2{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x3{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y3{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x4{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y4{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x5{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y5{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x6{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y6{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x7{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y7{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x8{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y8{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x9{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y9{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x10{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y10{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x11{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y11{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x12{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y12{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x13{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y13{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x14{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y14{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x15{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y15{syntax:"<integer>";inherits:false;initial-value:0}
+@property --x16{syntax:"<integer>";inherits:false;initial-value:0}
+@property --y16{syntax:"<integer>";inherits:false;initial-value:0}
+@counter-style x{system:fixed 0;symbols:"\e000" "\e001" "\e002" "\e003" "\e004" "\e005" "\e006" "\e007" "\e008" "\e009" "\e00a" "\e00b" "\e00c" "\e00d" "\e00e" "\e00f";suffix:''}
+@counter-style y{system:fixed 0;symbols:"\e010" "\e011" "\e012" "\e013" "\e014" "\e015" "\e016" "\e017" "\e018" "\e019" "\e01a" "\e01b" "\e01c" "\e01d" "\e01e" "\e01f";suffix:''}
+@counter-style nonce{system:fixed 0;symbols:"\e100" "\e101" "\e102" "\e103" "\e104" "\e105" "\e106" "\e107" "\e108" "\e109" "\e10a" "\e10b" "\e10c" "\e10d" "\e10e" "\e10f" "\e110" "\e111" "\e112" "\e113" "\e114" "\e115" "\e116" "\e117" "\e118" "\e119" "\e11a" "\e11b" "\e11c" "\e11d" "\e11e" "\e11f" "\e120" "\e121" "\e122" "\e123" "\e124" "\e125" "\e126" "\e127" "\e128" "\e129" "\e12a" "\e12b" "\e12c" "\e12d" "\e12e" "\e12f" "\e130" "\e131" "\e132" "\e133" "\e134" "\e135" "\e136" "\e137" "\e138" "\e139" "\e13a" "\e13b" "\e13c" "\e13d" "\e13e" "\e13f" "\e140";suffix:''}
+@font-face{font-family:Depth16;src:url("depth16.woff2")}.d16.gsub{font-family:Depth16}
+.d16.control{--x0:var(--a);--y0:var(--b);--x1:var(--y0);--y1:mod(var(--x0) + var(--y0)*var(--y0) + 3*var(--y0) + 1,16);--x2:var(--y1);--y2:mod(var(--x1) + var(--y1)*var(--y1) + 3*var(--y1) + 2,16);--x3:var(--y2);--y3:mod(var(--x2) + var(--y2)*var(--y2) + 3*var(--y2) + 3,16);--x4:var(--y3);--y4:mod(var(--x3) + var(--y3)*var(--y3) + 3*var(--y3) + 4,16);--x5:var(--y4);--y5:mod(var(--x4) + var(--y4)*var(--y4) + 3*var(--y4) + 5,16);--x6:var(--y5);--y6:mod(var(--x5) + var(--y5)*var(--y5) + 3*var(--y5) + 6,16);--x7:var(--y6);--y7:mod(var(--x6) + var(--y6)*var(--y6) + 3*var(--y6) + 7,16);--x8:var(--y7);--y8:mod(var(--x7) + var(--y7)*var(--y7) + 3*var(--y7) + 8,16);--x9:var(--y8);--y9:mod(var(--x8) + var(--y8)*var(--y8) + 3*var(--y8) + 9,16);--x10:var(--y9);--y10:mod(var(--x9) + var(--y9)*var(--y9) + 3*var(--y9) + 10,16);--x11:var(--y10);--y11:mod(var(--x10) + var(--y10)*var(--y10) + 3*var(--y10) + 11,16);--x12:var(--y11);--y12:mod(var(--x11) + var(--y11)*var(--y11) + 3*var(--y11) + 12,16);--x13:var(--y12);--y13:mod(var(--x12) + var(--y12)*var(--y12) + 3*var(--y12) + 13,16);--x14:var(--y13);--y14:mod(var(--x13) + var(--y13)*var(--y13) + 3*var(--y13) + 14,16);--x15:var(--y14);--y15:mod(var(--x14) + var(--y14)*var(--y14) + 3*var(--y14) + 15,16);--x16:var(--y15);--y16:mod(var(--x15) + var(--y15)*var(--y15) + 3*var(--y15) + 16,16);width:calc((64 + 16*var(--x16) + var(--y16))*1px);height:1px}

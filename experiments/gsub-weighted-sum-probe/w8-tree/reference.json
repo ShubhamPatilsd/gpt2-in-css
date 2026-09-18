@@ -1,0 +1,165 @@
+{
+  "id": "w8-tree",
+  "compilerSourceAtBuildSha256": "36d984d67e11a301694e2da12ef3c609f170e94edf3d1dfe31889e7df60568b2",
+  "width": 8,
+  "topology": "tree",
+  "weights": [
+    3,
+    -2,
+    5,
+    1,
+    3,
+    -2,
+    5,
+    1
+  ],
+  "fontFile": "w8-tree/weighted.woff2",
+  "fontFamily": "GSUBWeightedw8tree",
+  "inputCodepoints": [
+    57344,
+    57360,
+    57376,
+    57392,
+    57408,
+    57424,
+    57440,
+    57456
+  ],
+  "nonceCodepoint": 59392,
+  "nonces": 65,
+  "features": [
+    "ss01",
+    "ss02",
+    "ss03",
+    "ss04"
+  ],
+  "disableControls": [
+    {
+      "label": "fixed-weight products",
+      "feature": "ss01"
+    },
+    {
+      "label": "connected reduction",
+      "feature": "ss02"
+    },
+    {
+      "label": "dependent double-plus-one",
+      "feature": "ss03"
+    },
+    {
+      "label": "numeric publication",
+      "feature": "ss04"
+    }
+  ],
+  "output": {
+    "offset": 408,
+    "unitsPerEm": 1024,
+    "fontSize": 1024,
+    "advanceBase": 64,
+    "advanceFormula": "64 + 2*P + 1",
+    "decodedFormula": "2*S + 1"
+  },
+  "dependent": {
+    "kind": "affine",
+    "multiplier": 2,
+    "bias": 1
+  },
+  "representation": {
+    "signedInputMin": -8,
+    "signedInputMax": 7,
+    "inputCounterBias": 8,
+    "digits": 4,
+    "radix": 16,
+    "digitOrder": "little endian",
+    "productOffsets": [
+      24,
+      14,
+      40,
+      8,
+      24,
+      14,
+      40,
+      8
+    ],
+    "sumOffset": 172,
+    "Pmax": 330,
+    "Qmax": 661,
+    "signedSumMin": -172,
+    "signedSumMax": 158,
+    "intermediateAdvances": 0,
+    "routing": "position-tagged contextual lookups across adjacent four-digit words",
+    "consumption": "left digits map to zero-width consumed glyphs, then four consumed glyphs and the first result digit form one ligature"
+  },
+  "structure": {
+    "mergeNodes": 7,
+    "reductionLevels": 3,
+    "fontGlyphs": 2372,
+    "fontLookups": 44,
+    "topLevelLookups": 25,
+    "lookupCallsByFeature": {
+      "ss01": [
+        "Products"
+      ],
+      "ss02": [
+        "Level0Digit0",
+        "Level0Digit1",
+        "Level0Digit2",
+        "Level0Digit3",
+        "Level0Normalize",
+        "Level0ConsumeLeft",
+        "Level1Digit0",
+        "Level1Digit1",
+        "Level1Digit2",
+        "Level1Digit3",
+        "Level1Normalize",
+        "Level1ConsumeLeft",
+        "Level2Digit0",
+        "Level2Digit1",
+        "Level2Digit2",
+        "Level2Digit3",
+        "Level2Normalize",
+        "Level2ConsumeLeft"
+      ],
+      "ss03": [
+        "DependentLow",
+        "DependentDigit1",
+        "DependentDigit2",
+        "DependentDigit3",
+        "DependentNormalize"
+      ],
+      "ss04": [
+        "Publish"
+      ]
+    },
+    "ruleCounts": {
+      "products": 128,
+      "digitAddMappings": 7616,
+      "routingContexts": 784,
+      "digitNormalization": 1344,
+      "consumedDigitAbsorption": 112,
+      "dependentDigitMappings": 128,
+      "dependentContexts": 22,
+      "dependentNormalization": 128,
+      "publish": 129
+    },
+    "ruleCountTotal": 10391,
+    "inputTextGlyphs": 9,
+    "afterProductGlyphs": 33,
+    "finalGlyphs": 5,
+    "maxEnumeratedLocalDigitPairStates": 256
+  },
+  "files": {
+    "w8-tree/weighted.ttf": {
+      "bytes": 84688,
+      "sha256": "0c2dd8b1efffd70384845ae6ac97abef8b4ba2098e642e6f88bc10f6168f60ad"
+    },
+    "w8-tree/weighted.woff2": {
+      "bytes": 9196,
+      "sha256": "826d6faaad893ce5692c77e2b53860623e96ef1f071cd11c70345945d979cc4b"
+    },
+    "w8-tree/program.fea": {
+      "bytes": 311799,
+      "sha256": "d6040d06a8fd0e91e0dc26fbfba16084e849a46d3775dff041602c6ba54457f2"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "startedAt": "2026-09-17T10:25:25.194Z",
+  "reference": {
+    "fontGlyphs": 1635,
+    "fontLookups": 13,
+    "adderTopLevelLookups": 6,
+    "adderNestedCarryLookups": 1,
+    "nonlinearExtraLookups": 1,
+    "networkLookups": 5,
+    "inputCodepointBase": 57344,
+    "outputAdvanceBase": 64,
+    "fontUnitsPerEm": 1000,
+    "fontSizePx": 1000,
+    "network": {
+      "inputs": "x,y in [0,15]",
+      "h0": "max(0,2*x+y-16)",
+      "h1": "max(0,x-2*y+8)",
+      "output": "max(0,3*h0-2*h1+5)",
+      "firstLayerJointInputStates": 256,
+      "secondLayerJointHiddenStates": 720
+    },
+    "nonlinear": "min(255,floor((a+b-128)^2/128))",
+    "runtimeScripts": 0,
+    "files": {
+      "experiments/gsub-arithmetic-probe/arithmetic.ttf": {
+        "bytes": 47580,
+        "sha256": "68d2a46b14cf2324e5ac0ac4b726098cb97e14f5516071a7681f6e42fc2a20c2"
+      },
+      "experiments/gsub-arithmetic-probe/arithmetic.woff2": {
+        "bytes": 7496,
+        "sha256": "b634c0ef71819c1db54f7323df3ad2dcde8bf50dadb7a3678e5ab5e82ba41db5"
+      },
+      "experiments/gsub-arithmetic-probe/program.fea": {
+        "bytes": 80777,
+        "sha256": "1b07d95ede25f240efe0a39daab5b879015088741b7f8ee6fd0da08a3aa3733d"
+      },
+      "experiments/gsub-arithmetic-probe/index.css": {
+        "bytes": 2175,
+        "sha256": "6ee1550532ee3a8c4203958f8b7fd5c245a9753938249f6a1289d7e8238ec4ba"
+      },
+      "experiments/gsub-arithmetic-probe/index.html": {
+        "bytes": 225,
+        "sha256": "b941716270372345ee315680f174f22e1a224b73655a4069a7b840d4ee3a3e46"
+      },
+      "tools/build_gsub_arithmetic_probe.py": {
+        "bytes": 8092,
+        "sha256": "981cec9f64a433502748000a6e7d8bba30dbfe7de593601aa587b647a5181619"
+      }
+    }
+  },
+  "correctness": [
+    {
+      "operation": "sum",
+      "mode": "text",
+      "cases": 65536,
+      "passed": 65138,
+      "maxAbsoluteError": 0.015625,
+      "failures": [
+        {
+          "a": 0,
+          "b": 190,
+          "wanted": 190,
+          "actual": 190.015625
+        },
+        {
+          "a": 1,
+          "b": 189,
+          "wanted": 190,
+          "actual": 190.015625
+        },
+        {
+          "a": 2,
+          "b": 188,
+          "wanted": 190,
+          "actual": 190.015625
+        },
+        {
+          "a": 3,
+          "b": 187,
+          "wanted": 190,
+          "actual": 190.015625
+        },
+        {
+          "a": 4,
+          "b": 186,
+          "wanted": 190,
+          "actual": 190.015625
+        },
+        {
+          "a": 5,
+          "b": 185,
+          "wanted": 190,
+          "actual": 190.015625
+        },
+        {
+          "a": 6,
+          "b": 184,
+          "wanted": 190,
+          "actual": 190.015625
+        },
+        {
+          "a": 7,
+          "b": 183,
+          "wanted": 190,
+          "actual": 190.015625
+        }
+      ],
+      "wallMilliseconds": 1409.750292,
+      "allPassed": false
+    }
+  ],
+  "timings": [],
+  "errors": [
+    "Error: GSUB sum primitive failed; stopped downstream tests\n    at file:///Users/shubhampatil/Documents/programming/gpt2-css/tools/test_gsub_arithmetic_probe.mjs:105:55"
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "limitations": [
+    "External harness stimulates inputs and reads layout; this is not autonomous GPT-2.",
+    "Font programs contain only the declared addition/nonlinear/tiny-network tables, not test answers from the harness.",
+    "The tiny network uses two-input lookup tables; this does not establish scalability to dense 768-input neurons."
+  ],
+  "browserVersion": "153.0.8010.48",
+  "loadMilliseconds": 67.04341699999998,
+  "capabilities": {
+    "fontLoaded": true,
+    "scripts": 0,
+    "counterRound": true,
+    "nonlinearWidth": true
+  },
+  "allRequiredPassed": false,
+  "completedAt": "2026-09-17T10:25:27.202Z"
+}

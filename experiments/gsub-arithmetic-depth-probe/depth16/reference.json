@@ -1,0 +1,49 @@
+{
+  "depths": [
+    16
+  ],
+  "cell": "(x,y) -> (y, mod(x+y*y+3*y+layer+1,16)); zero-indexed layer",
+  "kind": "Reversible nonlinear two-coordinate digital cell, not a real MLP",
+  "inputs": "all256 pairs x,y in[0,15]",
+  "perLayer": "Pair ligature consumes BOTH tagged inputs; multiple substitution emits BOTH separately tagged next-layer coordinates",
+  "noWholeChainLookup": true,
+  "nonces": 65,
+  "fonts": [
+    {
+      "depth": 16,
+      "glyphs": 4962,
+      "lookups": 33,
+      "layerJointInputEntries": 4096,
+      "layerExpansionEntries": 4096,
+      "finalReadoutEntries": 256,
+      "woff2Bytes": 13868,
+      "ttfBytes": 144124
+    }
+  ],
+  "files": {
+    "experiments/gsub-arithmetic-depth-probe/depth16/depth16.woff2": {
+      "bytes": 13868,
+      "sha256": "158b63dc872e96c535ee956fe397957e1ae0008affa99973422e43a7fd09bd46"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth16/index.html": {
+      "bytes": 231,
+      "sha256": "ee01de4b134d91620390cd896e4b3017ba2b78086edf8d2ed7ff64f3b86ff7bf"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth16/index.css": {
+      "bytes": 5806,
+      "sha256": "1595a26f39461ece82ea17653b8759fc01ea7edb559a1b78853f3d902d2fb90f"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth16/depth16.fea": {
+      "bytes": 225962,
+      "sha256": "a96b2ee75dd3374ef9e66f45b2bc58f7d3d4cc062f77663b942448f81e3513c2"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth16/depth16.ttf": {
+      "bytes": 144124,
+      "sha256": "81ec53f08fc3339054453f1ca7340cf6c12c998ea5b0b7b6fa024871984a6698"
+    },
+    "tools/build_gsub_arithmetic_depth_probe.py": {
+      "bytes": 7106,
+      "sha256": "9f4982dec65d30b192d436aec4d8734a43ae731127d840d5a344037e3e6c638f"
+    }
+  }
+}

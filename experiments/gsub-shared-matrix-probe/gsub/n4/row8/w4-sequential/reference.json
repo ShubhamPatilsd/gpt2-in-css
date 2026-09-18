@@ -1,0 +1,161 @@
+{
+  "id": "w4-sequential",
+  "width": 4,
+  "topology": "sequential",
+  "weights": [
+    3,
+    3,
+    2,
+    -3
+  ],
+  "compilerSourceAtBuildSha256": "8729b258a643e460cc84d46819ed6c4d0a4b47a1f32cfddef4ccd2b03ebb4da1",
+  "fontFile": "w4-sequential/weighted.woff2",
+  "fontFamily": "GSUBWeightedw4sequential",
+  "inputCodepoints": [
+    57344,
+    57360,
+    57376,
+    57392
+  ],
+  "nonceCodepoint": 59392,
+  "nonces": 65,
+  "features": [
+    "ss01",
+    "ss02",
+    "ss03",
+    "ss04"
+  ],
+  "disableControls": [
+    {
+      "label": "fixed-weight products",
+      "feature": "ss01"
+    },
+    {
+      "label": "connected reduction",
+      "feature": "ss02"
+    },
+    {
+      "label": "dependent double-plus-one",
+      "feature": "ss03"
+    },
+    {
+      "label": "numeric publication",
+      "feature": "ss04"
+    }
+  ],
+  "output": {
+    "offset": 234,
+    "unitsPerEm": 1024,
+    "fontSize": 1024,
+    "advanceBase": 64,
+    "advanceFormula": "64 + 2*P + 1",
+    "decodedFormula": "2*S + 1"
+  },
+  "dependent": {
+    "kind": "affine",
+    "multiplier": 2,
+    "bias": 1
+  },
+  "representation": {
+    "signedInputMin": -8,
+    "signedInputMax": 7,
+    "inputCounterBias": 8,
+    "digits": 4,
+    "radix": 16,
+    "digitOrder": "little endian",
+    "productOffsets": [
+      24,
+      24,
+      16,
+      21
+    ],
+    "sumOffset": 85,
+    "Pmax": 165,
+    "Qmax": 331,
+    "signedSumMin": -85,
+    "signedSumMax": 80,
+    "intermediateAdvances": 0,
+    "routing": "position-tagged contextual lookups across adjacent four-digit words",
+    "consumption": "left digits map to zero-width consumed glyphs, then the consumed word block and the first result digit form one ligature",
+    "channels": 1,
+    "channelWeightMatrix": null,
+    "channelOffsets": [
+      85
+    ],
+    "fanoutGlyphsPerInput": 4,
+    "maximumBacktrackGlyphs": 4,
+    "maximumAbsorptionLigatureComponents": 5
+  },
+  "structure": {
+    "mergeNodes": 3,
+    "reductionLevels": 3,
+    "fontGlyphs": 1284,
+    "fontLookups": 44,
+    "topLevelLookups": 25,
+    "lookupCallsByFeature": {
+      "ss01": [
+        "Products"
+      ],
+      "ss02": [
+        "Level0Digit0",
+        "Level0Digit1",
+        "Level0Digit2",
+        "Level0Digit3",
+        "Level0Normalize",
+        "Level0ConsumeLeft",
+        "Level1Digit0",
+        "Level1Digit1",
+        "Level1Digit2",
+        "Level1Digit3",
+        "Level1Normalize",
+        "Level1ConsumeLeft",
+        "Level2Digit0",
+        "Level2Digit1",
+        "Level2Digit2",
+        "Level2Digit3",
+        "Level2Normalize",
+        "Level2ConsumeLeft"
+      ],
+      "ss03": [
+        "DependentLow",
+        "DependentDigit1",
+        "DependentDigit2",
+        "DependentDigit3",
+        "DependentNormalize"
+      ],
+      "ss04": [
+        "Publish"
+      ]
+    },
+    "ruleCounts": {
+      "products": 64,
+      "digitAddMappings": 3264,
+      "routingContexts": 336,
+      "digitNormalization": 576,
+      "consumedDigitAbsorption": 48,
+      "dependentDigitMappings": 128,
+      "dependentContexts": 22,
+      "dependentNormalization": 128,
+      "publish": 129
+    },
+    "ruleCountTotal": 4695,
+    "inputTextGlyphs": 5,
+    "afterProductGlyphs": 17,
+    "finalGlyphs": 5,
+    "maxEnumeratedLocalDigitPairStates": 256
+  },
+  "files": {
+    "w4-sequential/weighted.ttf": {
+      "bytes": 42200,
+      "sha256": "16f8d52aac2044ac48867bd59fab627cdff3eebb91169913b6099d6f9a463ec7"
+    },
+    "w4-sequential/weighted.woff2": {
+      "bytes": 4756,
+      "sha256": "7d1bd7c952b86e2d1e66269aa7b42d98453d471862f3ae5fd20b12869f810512"
+    },
+    "w4-sequential/program.fea": {
+      "bytes": 137013,
+      "sha256": "4ab4d95e79448f1b6ded5fa053adc301c40c6a86277b31b0d2678cc241660285"
+    }
+  }
+}

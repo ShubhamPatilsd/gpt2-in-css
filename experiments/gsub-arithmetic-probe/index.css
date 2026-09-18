@@ -1,0 +1,18 @@
+@font-face{font-family:Arithmetic;src:url("arithmetic.woff2")}
+@property --a{syntax:"<integer>";inherits:true;initial-value:0}
+@property --b{syntax:"<integer>";inherits:true;initial-value:0}
+.probe{display:inline-block;vertical-align:top;font:1024px/1 Arithmetic;white-space:pre;font-kerning:none;font-feature-settings:"rlig" 1,"ss01" 0}
+.probe.nonlinear{font-feature-settings:"rlig" 1,"ss01" 1}
+.probe>*{display:inline-block}
+.encoded::before{counter-reset:al mod(var(--a),16) bl mod(var(--b),16) ah round(down,var(--a)/16,1) bh round(down,var(--b)/16,1);content:counter(al,al) counter(bl,bl) counter(ah,ah) counter(bh,bh)}
+.encoded.network::before{counter-reset:x var(--a) y var(--b);content:counter(x,x) counter(y,y)}
+.control{height:1px;width:calc((64 + var(--a) + var(--b))*1px)}
+.control.nonlinear{width:calc((64 + min(255,round(down,(var(--a) + var(--b) - 128)*(var(--a) + var(--b) - 128)/128,1)))*1px)}
+.control.network{width:calc((64 + max(0,3*max(0,2*var(--a) + var(--b) - 16) - 2*max(0,var(--a) - 2*var(--b) + 8) + 5))*1px)}
+body{margin:0}#rows{position:absolute;inset:0;contain:layout}
+@counter-style al{system:fixed 0;symbols:"\e000" "\e001" "\e002" "\e003" "\e004" "\e005" "\e006" "\e007" "\e008" "\e009" "\e00a" "\e00b" "\e00c" "\e00d" "\e00e" "\e00f";suffix:''}
+@counter-style bl{system:fixed 0;symbols:"\e010" "\e011" "\e012" "\e013" "\e014" "\e015" "\e016" "\e017" "\e018" "\e019" "\e01a" "\e01b" "\e01c" "\e01d" "\e01e" "\e01f";suffix:''}
+@counter-style ah{system:fixed 0;symbols:"\e020" "\e021" "\e022" "\e023" "\e024" "\e025" "\e026" "\e027" "\e028" "\e029" "\e02a" "\e02b" "\e02c" "\e02d" "\e02e" "\e02f";suffix:''}
+@counter-style bh{system:fixed 0;symbols:"\e030" "\e031" "\e032" "\e033" "\e034" "\e035" "\e036" "\e037" "\e038" "\e039" "\e03a" "\e03b" "\e03c" "\e03d" "\e03e" "\e03f";suffix:''}
+@counter-style x{system:fixed 0;symbols:"\e040" "\e041" "\e042" "\e043" "\e044" "\e045" "\e046" "\e047" "\e048" "\e049" "\e04a" "\e04b" "\e04c" "\e04d" "\e04e" "\e04f";suffix:''}
+@counter-style y{system:fixed 0;symbols:"\e050" "\e051" "\e052" "\e053" "\e054" "\e055" "\e056" "\e057" "\e058" "\e059" "\e05a" "\e05b" "\e05c" "\e05d" "\e05e" "\e05f";suffix:''}

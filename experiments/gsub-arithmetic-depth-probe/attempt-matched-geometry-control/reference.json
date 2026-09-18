@@ -1,0 +1,118 @@
+{
+  "depths": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "cell": "(x,y) -> (y, mod(x+y*y+3*y+layer+1,16)); zero-indexed layer",
+  "kind": "Reversible nonlinear two-coordinate digital cell, not a real MLP",
+  "inputs": "all256 pairs x,y in[0,15]",
+  "perLayer": "Pair ligature consumes BOTH tagged inputs; multiple substitution emits BOTH separately tagged next-layer coordinates",
+  "noWholeChainLookup": true,
+  "nonces": 65,
+  "fonts": [
+    {
+      "depth": 1,
+      "glyphs": 642,
+      "lookups": 3,
+      "layerJointInputEntries": 256,
+      "layerExpansionEntries": 256,
+      "finalReadoutEntries": 256,
+      "woff2Bytes": 3144,
+      "ttfBytes": 16544
+    },
+    {
+      "depth": 2,
+      "glyphs": 930,
+      "lookups": 5,
+      "layerJointInputEntries": 512,
+      "layerExpansionEntries": 512,
+      "finalReadoutEntries": 256,
+      "woff2Bytes": 3768,
+      "ttfBytes": 24932
+    },
+    {
+      "depth": 4,
+      "glyphs": 1506,
+      "lookups": 9,
+      "layerJointInputEntries": 1024,
+      "layerExpansionEntries": 1024,
+      "finalReadoutEntries": 256,
+      "woff2Bytes": 5440,
+      "ttfBytes": 41704
+    },
+    {
+      "depth": 8,
+      "glyphs": 2658,
+      "lookups": 17,
+      "layerJointInputEntries": 2048,
+      "layerExpansionEntries": 2048,
+      "finalReadoutEntries": 256,
+      "woff2Bytes": 8656,
+      "ttfBytes": 75248
+    }
+  ],
+  "files": {
+    "experiments/gsub-arithmetic-depth-probe/index.html": {
+      "bytes": 231,
+      "sha256": "ee01de4b134d91620390cd896e4b3017ba2b78086edf8d2ed7ff64f3b86ff7bf"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth8.woff2": {
+      "bytes": 8656,
+      "sha256": "d05fb0fe57a2e346f05fd2334a5056521e5cae6ed3cbd26f57097f2c13071f6a"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth4.ttf": {
+      "bytes": 41704,
+      "sha256": "367bacf5ea74adb17191bef361fdfe2c80a3b43b3bf1211c867f5cded3e11adb"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth4.fea": {
+      "bytes": 58858,
+      "sha256": "f95c79cfa90e61edb6a13a10d3153e399470119913cfa636a98c191469d4c2be"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth2.ttf": {
+      "bytes": 24932,
+      "sha256": "9bbf1c6c10a3eb4b706765c72edbe372eb95f5ccca24456997d286d56d09bf5c"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth2.fea": {
+      "bytes": 32720,
+      "sha256": "1e2ed7393e671ad0c2f133c375022a4a2f9c18f87781d5af50afa076c16e2ee4"
+    },
+    "experiments/gsub-arithmetic-depth-probe/index.css": {
+      "bytes": 5077,
+      "sha256": "013337b4541f2f0e244ee3ac718b17ec224c8db6a790d86cccf9735661a8e864"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth1.ttf": {
+      "bytes": 16544,
+      "sha256": "3dda41e73ca1429478eae06c7a034b492c3e5433fd765cba130a5bb798691a59"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth1.fea": {
+      "bytes": 19651,
+      "sha256": "3f3f6844a1870f77801a8659635981ba251f04ce3aceba85df29f5d41c4cd3d5"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth1.woff2": {
+      "bytes": 3144,
+      "sha256": "6e09b9fe6c2c2cbb633e82cbb0b0363cfa0b4f158ceb7f8432999f3cdeed88f6"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth8.ttf": {
+      "bytes": 75248,
+      "sha256": "6c52d949a3d4e955891232adaeecd5d177f1474bfc25651612e554091feecd3f"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth8.fea": {
+      "bytes": 111134,
+      "sha256": "6973c31f84444bb16ea7cb5c9ad6bd8ca2512505145bc1b8114e3d1803659290"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth4.woff2": {
+      "bytes": 5440,
+      "sha256": "6cf6bf6b441fff6bffe9f07e15c208738d1949153c96c6f42de6508d01baf2fa"
+    },
+    "experiments/gsub-arithmetic-depth-probe/depth2.woff2": {
+      "bytes": 3768,
+      "sha256": "0d91378054b9f349a489895e512aa3e9e90dc50b3e8330bd4cc0d41e3ac1647b"
+    },
+    "tools/build_gsub_arithmetic_depth_probe.py": {
+      "bytes": 6750,
+      "sha256": "bb6522d96a4088fd9d0cb1747e0f5a5b8d0205df5d916b03e0f5de8cc250629d"
+    }
+  }
+}

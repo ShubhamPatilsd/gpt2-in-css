@@ -1,0 +1,163 @@
+{
+  "id": "slot-packed-w4",
+  "width": 4,
+  "topology": "slot-sequential-packed",
+  "weights": [
+    3,
+    -2,
+    5,
+    1
+  ],
+  "fontFile": "slot-packed-w4/weighted.woff2",
+  "fontFamily": "PartitionedPacked4",
+  "inputCodepoints": [
+    57344,
+    57376,
+    57392,
+    57408
+  ],
+  "nonceCodepoint": 59392,
+  "nonces": 65,
+  "features": [
+    "ss01",
+    "ss02",
+    "ss03",
+    "ss04"
+  ],
+  "dependent": {
+    "kind": "affine",
+    "multiplier": 2,
+    "bias": 1
+  },
+  "output": {
+    "offset": 236,
+    "unitsPerEm": 1024,
+    "fontSize": 1024
+  },
+  "disableControls": [
+    {
+      "feature": "ss01",
+      "label": "products and markers"
+    },
+    {
+      "feature": "ss02",
+      "label": "connected reduction"
+    },
+    {
+      "feature": "ss03",
+      "label": "dependent operation"
+    },
+    {
+      "feature": "ss04",
+      "label": "publication"
+    }
+  ],
+  "representation": {
+    "digitGlyphs": 64,
+    "temporaryDigitGlyphs": 128,
+    "digitsPerNumber": 4,
+    "radix": 16,
+    "alphabetScope": "digit slot shared across all operands and stages",
+    "sumOffset": 86,
+    "signedSumMin": -86,
+    "signedSumMax": 79,
+    "Pmax": 165,
+    "Qmax": 331,
+    "inputAlphabetCount": 5,
+    "markerGlyphs": [
+      "acc",
+      "operand",
+      "consumed"
+    ],
+    "maximumBacktrackGlyphs": 9,
+    "maximumAbsorptionLigatureComponents": 6,
+    "invariant": "Exactly one accumulator marker followed by four slot-tagged digits; each remaining operand has four slot-tagged digits"
+  },
+  "structure": {
+    "fontGlyphs": 406,
+    "fontLookups": 110,
+    "topLevelLookups": 28,
+    "ruleCounts": {
+      "productRules": 80,
+      "sharedDigitAddition": 1088,
+      "sharedConsumedMapping": 64,
+      "sharedNormalization": 128,
+      "digitContextWrappers": 336,
+      "consumedContextWrappers": 3,
+      "consumedLigatures": 3,
+      "normalizationContextWrappers": 3,
+      "dependentSharedMappings": 128,
+      "dependentContexts": 7,
+      "publishDigitMappings": 128,
+      "publishContexts": 1,
+      "publishBase": 1
+    },
+    "ruleCountTotal": 1970,
+    "referencedSubtablesBeforePacking": 437,
+    "referencedSubtables": 110,
+    "rawGsubBytes": 9792,
+    "reductionPasses": 3,
+    "inputTextGlyphs": 5,
+    "peakGlyphBuffer": 21,
+    "finalGlyphs": 6,
+    "lookupCallsByFeature": {
+      "ss01": [
+        "Products"
+      ],
+      "ss02": [
+        "Pass0Digit0",
+        "Pass0Digit1",
+        "Pass0Digit2",
+        "Pass0Digit3",
+        "Pass0Mark",
+        "Pass0Absorb",
+        "Pass0Normalize",
+        "Pass1Digit0",
+        "Pass1Digit1",
+        "Pass1Digit2",
+        "Pass1Digit3",
+        "Pass1Mark",
+        "Pass1Absorb",
+        "Pass1Normalize",
+        "Pass2Digit0",
+        "Pass2Digit1",
+        "Pass2Digit2",
+        "Pass2Digit3",
+        "Pass2Mark",
+        "Pass2Absorb",
+        "Pass2Normalize"
+      ],
+      "ss03": [
+        "DependentLow",
+        "Dependent1",
+        "Dependent2",
+        "Dependent3"
+      ],
+      "ss04": [
+        "PublishDigits",
+        "PublishBase"
+      ]
+    },
+    "packing": {
+      "packedLookups": 23,
+      "originalContextFormat3Subtables": 350,
+      "rulesDropped": 0,
+      "classCoverageInvariant": "All distinct coverage sets on each side are disjoint; no rule expansion"
+    }
+  },
+  "compilerSourceAtBuildSha256": "e0718996e537696206f25e1c2261ad612361e6ebf9939b5165faf481a1b20372",
+  "files": {
+    "slot-packed-w4/program.fea": {
+      "bytes": 63085,
+      "sha256": "b8aee76a2f5bc9cfdece01c65fc975e8da08f96dda5635bf35e979a08859e4c8"
+    },
+    "slot-packed-w4/weighted.ttf": {
+      "bytes": 15924,
+      "sha256": "241d7f0fd9df3c1560682664d2f93882e804738c331eb1787696b758208fcdbb"
+    },
+    "slot-packed-w4/weighted.woff2": {
+      "bytes": 3152,
+      "sha256": "5a9d287164fc857f222a3dc09d48a1727f6523f3c47c6b048831213a978abc32"
+    }
+  }
+}

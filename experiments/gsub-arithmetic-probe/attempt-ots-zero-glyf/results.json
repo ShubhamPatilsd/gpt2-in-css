@@ -1,0 +1,78 @@
+{
+  "startedAt": "2026-09-17T10:23:59.200Z",
+  "reference": {
+    "fontGlyphs": 1635,
+    "fontLookups": 13,
+    "adderTopLevelLookups": 6,
+    "adderNestedCarryLookups": 1,
+    "nonlinearExtraLookups": 1,
+    "networkLookups": 5,
+    "inputCodepointBase": 57344,
+    "outputAdvanceBase": 64,
+    "fontUnitsPerEm": 1000,
+    "fontSizePx": 1000,
+    "network": {
+      "inputs": "x,y in [0,15]",
+      "h0": "max(0,2*x+y-16)",
+      "h1": "max(0,x-2*y+8)",
+      "output": "max(0,3*h0-2*h1+5)",
+      "firstLayerJointInputStates": 256,
+      "secondLayerJointHiddenStates": 720
+    },
+    "nonlinear": "min(255,floor((a+b-128)^2/128))",
+    "runtimeScripts": 0,
+    "files": {
+      "experiments/gsub-arithmetic-probe/arithmetic.ttf": {
+        "bytes": 47564,
+        "sha256": "785788402e68927ce80df7df7aeb699f42daa1abeda0f3e3631ed9281ed850b9"
+      },
+      "experiments/gsub-arithmetic-probe/arithmetic.woff2": {
+        "bytes": 7472,
+        "sha256": "795942c24d7a3900a2a0d48a8beb43ba2a43ce09caf0b3a4030c3d4543776c5d"
+      },
+      "experiments/gsub-arithmetic-probe/program.fea": {
+        "bytes": 80777,
+        "sha256": "1b07d95ede25f240efe0a39daab5b879015088741b7f8ee6fd0da08a3aa3733d"
+      },
+      "experiments/gsub-arithmetic-probe/index.css": {
+        "bytes": 2175,
+        "sha256": "6ee1550532ee3a8c4203958f8b7fd5c245a9753938249f6a1289d7e8238ec4ba"
+      },
+      "experiments/gsub-arithmetic-probe/index.html": {
+        "bytes": 225,
+        "sha256": "b941716270372345ee315680f174f22e1a224b73655a4069a7b840d4ee3a3e46"
+      },
+      "tools/build_gsub_arithmetic_probe.py": {
+        "bytes": 7896,
+        "sha256": "c1b7e9fb1a5730eb6b17564951cb26627ccacfc4e544382f4fd36bdf488914c0"
+      }
+    }
+  },
+  "correctness": [],
+  "timings": [],
+  "errors": [
+    "page.evaluate: NetworkError: A network error occurred.\n    at /Users/shubhampatil/Documents/programming/gpt2-css/tools/test_gsub_arithmetic_probe.mjs:50:14"
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "warning",
+      "text": "Failed to decode downloaded font: http://127.0.0.1:64308/arithmetic.woff2"
+    },
+    {
+      "type": "warning",
+      "text": "OTS parsing error: glyf: zero-length table"
+    }
+  ],
+  "limitations": [
+    "External harness stimulates inputs and reads layout; this is not autonomous GPT-2.",
+    "Font programs contain only the declared addition/nonlinear/tiny-network tables, not test answers from the harness.",
+    "The tiny network uses two-input lookup tables; this does not establish scalability to dense 768-input neurons."
+  ],
+  "browserVersion": "153.0.8010.48",
+  "allRequiredPassed": false,
+  "completedAt": "2026-09-17T10:23:59.740Z"
+}

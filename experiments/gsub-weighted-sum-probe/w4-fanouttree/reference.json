@@ -1,0 +1,248 @@
+{
+  "id": "w4-fanouttree",
+  "compilerSourceAtBuildSha256": "9774ea1076b52fd0507b62c300e4df180355af2c1be9438cc6df05cda585f6b4",
+  "width": 4,
+  "topology": "tree",
+  "weights": [
+    9,
+    1,
+    6,
+    5
+  ],
+  "fontFile": "w4-fanouttree/weighted.woff2",
+  "fontFamily": "GSUBWeightedw4fanouttree",
+  "inputCodepoints": [
+    57344,
+    57360,
+    57376,
+    57392
+  ],
+  "nonceCodepoint": 59392,
+  "nonces": 65,
+  "features": [
+    "ss01",
+    "ss02",
+    "ss03",
+    "ss04",
+    "ss05"
+  ],
+  "disableControls": [
+    {
+      "label": "fixed-weight products and input fanout",
+      "feature": "ss01"
+    },
+    {
+      "label": "per-channel connected reduction",
+      "feature": "ss02"
+    },
+    {
+      "label": "cross-channel connected reduction",
+      "feature": "ss03"
+    },
+    {
+      "label": "dependent double-plus-one",
+      "feature": "ss04"
+    },
+    {
+      "label": "numeric publication",
+      "feature": "ss05"
+    }
+  ],
+  "output": {
+    "offset": 700,
+    "unitsPerEm": 1024,
+    "fontSize": 1024,
+    "advanceBase": 64,
+    "advanceFormula": "64 + 2*P + 1",
+    "decodedFormula": "2*S + 1"
+  },
+  "dependent": {
+    "kind": "affine",
+    "multiplier": 2,
+    "bias": 1
+  },
+  "representation": {
+    "signedInputMin": -8,
+    "signedInputMax": 7,
+    "inputCounterBias": 8,
+    "digits": 4,
+    "radix": 16,
+    "digitOrder": "little endian",
+    "productOffsets": [
+      [
+        24,
+        14,
+        40,
+        8
+      ],
+      [
+        7,
+        32,
+        16,
+        21
+      ],
+      [
+        16,
+        8,
+        14,
+        40
+      ],
+      [
+        40,
+        14,
+        8,
+        16
+      ]
+    ],
+    "sumOffset": 318,
+    "Pmax": 465,
+    "Qmax": 931,
+    "signedSumMin": -168,
+    "signedSumMax": 147,
+    "intermediateAdvances": 0,
+    "routing": "position-tagged contextual lookups across adjacent four-digit words",
+    "consumption": "left digits map to zero-width consumed glyphs, then the consumed word block and the first result digit form one ligature",
+    "channels": 4,
+    "channelWeightMatrix": [
+      [
+        3,
+        -2,
+        5,
+        1
+      ],
+      [
+        -1,
+        4,
+        2,
+        -3
+      ],
+      [
+        2,
+        1,
+        -2,
+        5
+      ],
+      [
+        5,
+        -2,
+        1,
+        2
+      ]
+    ],
+    "channelOffsets": [
+      86,
+      76,
+      78,
+      78
+    ],
+    "fanoutGlyphsPerInput": 16,
+    "maximumBacktrackGlyphs": 16,
+    "maximumAbsorptionLigatureComponents": 17
+  },
+  "structure": {
+    "mergeNodes": 6,
+    "reductionLevels": 4,
+    "fontGlyphs": 4612,
+    "fontLookups": 75,
+    "topLevelLookups": 56,
+    "lookupCallsByFeature": {
+      "ss01": [
+        "Products"
+      ],
+      "ss02": [
+        "Level0Digit0",
+        "Level0Digit1",
+        "Level0Digit2",
+        "Level0Digit3",
+        "Level0Digit4",
+        "Level0Digit5",
+        "Level0Digit6",
+        "Level0Digit7",
+        "Level0Digit8",
+        "Level0Digit9",
+        "Level0Digit10",
+        "Level0Digit11",
+        "Level0Digit12",
+        "Level0Digit13",
+        "Level0Digit14",
+        "Level0Digit15",
+        "Level0Normalize",
+        "Level0ConsumeLeft",
+        "Level1Digit0",
+        "Level1Digit1",
+        "Level1Digit2",
+        "Level1Digit3",
+        "Level1Digit4",
+        "Level1Digit5",
+        "Level1Digit6",
+        "Level1Digit7",
+        "Level1Digit8",
+        "Level1Digit9",
+        "Level1Digit10",
+        "Level1Digit11",
+        "Level1Digit12",
+        "Level1Digit13",
+        "Level1Digit14",
+        "Level1Digit15",
+        "Level1Normalize",
+        "Level1ConsumeLeft"
+      ],
+      "ss03": [
+        "ExposeChannels",
+        "Level2Digit0",
+        "Level2Digit1",
+        "Level2Digit2",
+        "Level2Digit3",
+        "Level2Normalize",
+        "Level2ConsumeLeft",
+        "Level3Digit0",
+        "Level3Digit1",
+        "Level3Digit2",
+        "Level3Digit3",
+        "Level3Normalize",
+        "Level3ConsumeLeft"
+      ],
+      "ss04": [
+        "DependentLow",
+        "DependentDigit1",
+        "DependentDigit2",
+        "DependentDigit3",
+        "DependentNormalize"
+      ],
+      "ss05": [
+        "Publish"
+      ]
+    },
+    "ruleCounts": {
+      "products": 64,
+      "digitAddMappings": 16320,
+      "routingContexts": 1680,
+      "digitNormalization": 2880,
+      "consumedDigitAbsorption": 96,
+      "channelRouting": 256,
+      "dependentDigitMappings": 128,
+      "dependentContexts": 22,
+      "dependentNormalization": 128,
+      "publish": 129
+    },
+    "ruleCountTotal": 21703,
+    "inputTextGlyphs": 5,
+    "afterProductGlyphs": 65,
+    "finalGlyphs": 5,
+    "maxEnumeratedLocalDigitPairStates": 256
+  },
+  "files": {
+    "w4-fanouttree/weighted.ttf": {
+      "bytes": 203592,
+      "sha256": "dbc0be735c526bda558af4bb0e2f64709af9d3262fab3dd8b7f4afa9dc8bd807"
+    },
+    "w4-fanouttree/weighted.woff2": {
+      "bytes": 16332,
+      "sha256": "e1d57de4bb307b3b4750e3fe6f084a3b5ac90fcfb4e81fe8852c6ec35e5e04a5"
+    },
+    "w4-fanouttree/program.fea": {
+      "bytes": 754530,
+      "sha256": "5baa5cd3bed54cad01798e93916534419e7e209daecda27fd72ad006e242d95d"
+    }
+  }
+}

@@ -1,0 +1,884 @@
+{
+  "startedAt": "2026-09-18T01:58:18.208Z",
+  "smoke": true,
+  "repetitions": 1,
+  "rounds": 7,
+  "warmup": 5,
+  "batch": 32,
+  "widths": [
+    4
+  ],
+  "harnessSha256": "9e35432580b592b511c2a8f710f48de11e2ea9045c412736949dd9808e83e07c",
+  "environment": {
+    "cpu": "Apple M2 Pro",
+    "node": "v26.5.0",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "methodology": {
+    "formula": "F=2*sum(w*x)+1, repeated weights [3,-2,5,1], x integers[-8,7]",
+    "endpoints": "source: force source width; full: anchor-size -> container units -> decoded CSS number -> offset+3*F dependent width; direct: direct CSS arithmetic to same dependent width",
+    "conditions": "Each source/full pair lives in separate browser contexts/pages, with matched input/nonce writes and one forced geometry read per output.",
+    "diagnostics": "precomputed-font and precomputed-css receive externally prepared answers AND all raw input writes. They cannot be claimed as native arithmetic. Compare their own source/full pair; subtraction from GSUB is not an exact cost decomposition.",
+    "timing": "Input writes through forced geometry reads; stimuli, oracle, font loading, correctness comparisons and browser protocol excluded. Mutation/read loops included.",
+    "replication": "Exhaustive/full correctness uses a separate browser before timing. Each timed repetition starts a fresh browser and the same small precheck. Different deterministic seed per repetition and width, shared across conditions. Width order rotates and backend blocks rotate by two positions; source/full order alternates each round. Five warmups excluded.",
+    "profiles": "Separate pass with independently seeded inputs, five warmups then ten measured rounds; metrics broad browser categories, not pure font CPU. Each profiled output checked.",
+    "inference": "Matched source/full difference is the effect of adding reader DOM and dependencies under these fixtures, not an isolated CSS instruction."
+  },
+  "fonts": {
+    "/font-4-sequential.woff2": {
+      "path": "/Users/shubhampatil/Documents/programming/gpt2-css/experiments/gsub-weighted-sum-probe/w4-sequential/weighted.woff2",
+      "sha256": "f892bf538d7471c3804d00abd719569ec2d23f042a252c6d0c3a5f5fe4e9c7a2"
+    },
+    "/font-4-tree.woff2": {
+      "path": "/Users/shubhampatil/Documents/programming/gpt2-css/experiments/gsub-weighted-sum-probe/w4-tree/weighted.woff2",
+      "sha256": "dfbe92861272fd1f65be7ae9b50a717227f43011236c0f2ccf38621cbcd403ad"
+    },
+    "/font-4-hvar.woff2": {
+      "path": "/Users/shubhampatil/Documents/programming/gpt2-css/experiments/gsub-weighted-sum-probe/hvar-control/hvar4.woff2",
+      "sha256": "e11a90e19e1c125aff73950d4c9fb36977ef81d5dc27cfebcfac58139b7f6c30"
+    },
+    "/font-4-precomputed-font.woff2": {
+      "path": "/Users/shubhampatil/Documents/programming/gpt2-css/experiments/gsub-reader-isolation/answer-control.woff2",
+      "sha256": "8d5bcbd0ce777b2dd00a06147e6639219a3a6f63f65d1c9b6ffd55102520336e"
+    }
+  },
+  "correctness": [
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "sequential",
+      "endpoint": "source",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "sequential",
+      "endpoint": "full",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "tree",
+      "endpoint": "source",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "tree",
+      "endpoint": "full",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "hvar",
+      "endpoint": "source",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "hvar",
+      "endpoint": "full",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "precomputed-font",
+      "endpoint": "source",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "precomputed-font",
+      "endpoint": "full",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "precomputed-css",
+      "endpoint": "source",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "precomputed-css",
+      "endpoint": "full",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": -1,
+      "correctnessOnly": true,
+      "width": 4,
+      "kind": "direct-css",
+      "endpoint": "direct",
+      "cases": 107,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "sequential",
+      "endpoint": "source",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "sequential",
+      "endpoint": "full",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "tree",
+      "endpoint": "source",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "tree",
+      "endpoint": "full",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "hvar",
+      "endpoint": "source",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "hvar",
+      "endpoint": "full",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "precomputed-font",
+      "endpoint": "source",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "precomputed-font",
+      "endpoint": "full",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "precomputed-css",
+      "endpoint": "source",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "precomputed-css",
+      "endpoint": "full",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "correctnessOnly": false,
+      "width": 4,
+      "kind": "direct-css",
+      "endpoint": "direct",
+      "cases": 32,
+      "exhaustive": false,
+      "passed": true
+    }
+  ],
+  "timings": [
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "sequential",
+      "endpoint": "source",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        0.800000011920929,
+        0.9000000059604645,
+        0.9000000059604645,
+        1.1000000089406967,
+        0.7999999970197678,
+        0.7000000029802322,
+        0.9000000059604645
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 0.9000000059604645,
+        "min": 0.7000000029802322,
+        "max": 0.9000000059604645,
+        "p95": 0.7000000029802322
+      },
+      "orders": [
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "sequential",
+      "endpoint": "full",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        1.2000000029802322,
+        1.2000000029802322,
+        1.0999999940395355,
+        1.5,
+        1.2999999970197678,
+        1.0999999940395355,
+        1.1000000089406967
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 1.1000000089406967,
+        "min": 1.0999999940395355,
+        "max": 1.1000000089406967,
+        "p95": 1.0999999940395355
+      },
+      "orders": [
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "tree",
+      "endpoint": "source",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        0.800000011920929,
+        0.7999999970197678,
+        0.7000000029802322,
+        0.8999999910593033,
+        0.7000000029802322,
+        0.7999999970197678,
+        0.7999999970197678
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 0.7999999970197678,
+        "min": 0.7999999970197678,
+        "max": 0.7999999970197678,
+        "p95": 0.7999999970197678
+      },
+      "orders": [
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "tree",
+      "endpoint": "full",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        1.2000000029802322,
+        1.0999999940395355,
+        1.2000000029802322,
+        1,
+        1.0999999940395355,
+        1.0999999940395355,
+        1.300000011920929
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 1.300000011920929,
+        "min": 1.0999999940395355,
+        "max": 1.300000011920929,
+        "p95": 1.0999999940395355
+      },
+      "orders": [
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "hvar",
+      "endpoint": "source",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        3.2999999970197678,
+        2.9000000059604645,
+        2.7999999970197678,
+        3.2000000029802322,
+        2.7999999970197678,
+        2.7000000029802322,
+        3
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 3,
+        "min": 2.7000000029802322,
+        "max": 3,
+        "p95": 2.7000000029802322
+      },
+      "orders": [
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "hvar",
+      "endpoint": "full",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        3.7999999970197678,
+        3.4000000059604645,
+        3.4000000059604645,
+        3,
+        3.7000000029802322,
+        3.0999999940395355,
+        3.4000000059604645
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 3.4000000059604645,
+        "min": 3.0999999940395355,
+        "max": 3.4000000059604645,
+        "p95": 3.0999999940395355
+      },
+      "orders": [
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "precomputed-font",
+      "endpoint": "source",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        0.5,
+        0.5,
+        0.4000000059604645,
+        0.5,
+        0.7000000029802322,
+        0.5999999940395355,
+        0.5
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 0.5999999940395355,
+        "min": 0.5,
+        "max": 0.5999999940395355,
+        "p95": 0.5
+      },
+      "orders": [
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "precomputed-font",
+      "endpoint": "full",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        1.1000000089406967,
+        0.7999999970197678,
+        0.9000000059604645,
+        0.7999999970197678,
+        0.8999999910593033,
+        0.7000000029802322,
+        1.0999999940395355
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 1.0999999940395355,
+        "min": 0.7000000029802322,
+        "max": 1.0999999940395355,
+        "p95": 0.7000000029802322
+      },
+      "orders": [
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "precomputed-css",
+      "endpoint": "source",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        0.20000000298023224,
+        0.20000000298023224,
+        0.20000000298023224,
+        0.20000000298023224,
+        0.20000000298023224,
+        0.30000001192092896,
+        0.29999999701976776
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 0.30000001192092896,
+        "min": 0.29999999701976776,
+        "max": 0.30000001192092896,
+        "p95": 0.29999999701976776
+      },
+      "orders": [
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "precomputed-css",
+      "endpoint": "full",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        0.5999999940395355,
+        0.5,
+        0.699999988079071,
+        0.7000000029802322,
+        0.5999999940395355,
+        0.3999999910593033,
+        0.5999999940395355
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 0.5999999940395355,
+        "min": 0.3999999910593033,
+        "max": 0.5999999940395355,
+        "p95": 0.3999999910593033
+      },
+      "orders": [
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ],
+        [
+          "full",
+          "source"
+        ],
+        [
+          "source",
+          "full"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "rep": 0,
+      "width": 4,
+      "kind": "direct-css",
+      "endpoint": "direct",
+      "seed": 26462087,
+      "batch": 32,
+      "checkedOutputs": 224,
+      "rawMilliseconds": [
+        0.4000000059604645,
+        0.29999999701976776,
+        0.29999999701976776,
+        0.29999999701976776,
+        0.30000001192092896,
+        0.4000000059604645,
+        0.29999999701976776
+      ],
+      "warmup": 5,
+      "statistics": {
+        "median": 0.4000000059604645,
+        "min": 0.29999999701976776,
+        "max": 0.4000000059604645,
+        "p95": 0.29999999701976776
+      },
+      "orders": [
+        [
+          "direct"
+        ],
+        [
+          "direct"
+        ],
+        [
+          "direct"
+        ],
+        [
+          "direct"
+        ],
+        [
+          "direct"
+        ],
+        [
+          "direct"
+        ],
+        [
+          "direct"
+        ]
+      ],
+      "passed": true
+    }
+  ],
+  "profiles": [],
+  "errors": [],
+  "browserVersion": "153.0.8010.48",
+  "passed": true,
+  "completedAt": "2026-09-18T01:58:22.805Z"
+}

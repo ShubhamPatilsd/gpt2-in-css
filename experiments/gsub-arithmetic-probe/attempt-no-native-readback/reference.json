@@ -1,0 +1,48 @@
+{
+  "fontGlyphs": 1635,
+  "fontLookups": 13,
+  "adderTopLevelLookups": 6,
+  "adderNestedCarryLookups": 1,
+  "nonlinearExtraLookups": 1,
+  "networkLookups": 5,
+  "inputCodepointBase": 57344,
+  "outputAdvanceBase": 64,
+  "fontUnitsPerEm": 1024,
+  "fontSizePx": 1024,
+  "network": {
+    "inputs": "x,y in [0,15]",
+    "h0": "max(0,2*x+y-16)",
+    "h1": "max(0,x-2*y+8)",
+    "output": "max(0,3*h0-2*h1+5)",
+    "firstLayerJointInputStates": 256,
+    "secondLayerJointHiddenStates": 720
+  },
+  "nonlinear": "min(255,floor((a+b-128)^2/128))",
+  "runtimeScripts": 0,
+  "files": {
+    "experiments/gsub-arithmetic-probe/arithmetic.ttf": {
+      "bytes": 47580,
+      "sha256": "b140e9f04a1856d1a5e1e49d06729f9ff96de5d84302f3f1dcd4f8c566b85fcf"
+    },
+    "experiments/gsub-arithmetic-probe/arithmetic.woff2": {
+      "bytes": 7508,
+      "sha256": "8c16e3bfac8126da93cf75dfa4ebd05b4d5a29797651daf5f3bda27128f74206"
+    },
+    "experiments/gsub-arithmetic-probe/program.fea": {
+      "bytes": 80777,
+      "sha256": "1b07d95ede25f240efe0a39daab5b879015088741b7f8ee6fd0da08a3aa3733d"
+    },
+    "experiments/gsub-arithmetic-probe/index.css": {
+      "bytes": 2175,
+      "sha256": "bf0d35a1e9135063e00edc0cf3f018980670e9269aaadf8df42b81cf07e0397e"
+    },
+    "experiments/gsub-arithmetic-probe/index.html": {
+      "bytes": 225,
+      "sha256": "b941716270372345ee315680f174f22e1a224b73655a4069a7b840d4ee3a3e46"
+    },
+    "tools/build_gsub_arithmetic_probe.py": {
+      "bytes": 8196,
+      "sha256": "c520cacd4754c2db9be9c39806f559c991d94c4bfa8f96a36629c249268e86ce"
+    }
+  }
+}
