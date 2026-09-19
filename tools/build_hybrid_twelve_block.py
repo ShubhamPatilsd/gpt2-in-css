@@ -27,6 +27,11 @@ OUT = ROOT / "experiments/hybrid-12block-profile"
 ASSET_OUT = OUT / "fonts"
 W = 768
 STAGES = ("ln1", "qkv", "mix", "attn", "ln2", "fc", "proj")
+# F2: replace the per-output --gelu() @function call (≈+10 µs each, M1 MB5) by the same
+# arithmetic split over three typed declarations on the consumer element. Same double ops
+# in the same order: --fz = pre-activation, --ft = clamped tanh argument, output = tanh form.
+INLINE_GELU = True
+GELU_K = ".7978845608028654"
 
 
 def names(stem, count):
@@ -164,6 +169,10 @@ def matvec(
         families = ",".join(
             f"{family}S{s}" for s in range(first, len(group.names) if global_axes else min(first + 3, len(group.names)))
         )
+        if compact and packs == 1:
+            # F2: the `font:` shorthand below resets this list and the stage
+            # rule re-declares it afterwards; the early copy never wins.
+            continue
         selector = f".{stem}" if compact and packs == 1 else f".{stem}-pack{pack}"
         css += f"{selector}{{font-family:{families};font-variation-settings:{settings(first)}}}"
     metrics = []
@@ -221,7 +230,15 @@ def matvec(
             gain = f"{num(quantized.scales[i])} * var(--range-{kind})" if dynamic_range else num(activation_range * quantized.scales[i])
             value = f"calc({raw} * {gain} + ({num(bias[i])}))"
             if kind == "fc":
-                value = f"--gelu({value})"
+                if INLINE_GELU:
+                    z, t = f"--fz-{i:03d}", f"--ft-{i:03d}"
+                    result.append(f"{z}:{value}")
+                    result.append(
+                        f"{t}:clamp(-20,calc({GELU_K} * (var({z}) + .044715 * pow(var({z}),3))),20)"
+                    )
+                    value = f"calc(.5 * var({z}) * (1 + (exp(2 * var({t})) - 1) / (exp(2 * var({t})) + 1)))"
+                else:
+                    value = f"--gelu({value})"
             elif kind == "attn":
                 value = f"calc(var(--x-{i:03d}) + {value})"
             elif kind == "proj":

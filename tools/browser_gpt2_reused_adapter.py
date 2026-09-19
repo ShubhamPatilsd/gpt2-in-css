@@ -8,6 +8,9 @@ ticks, cached reference activations, or JavaScript participate in this handshake
 import re
 
 import build_hybrid_twelve_block as hybrid
+import f3_chain_mlp as f3
+import f4_packing as f4
+import f5_scoping as f5
 from browser_gpt2_reused_core import compile_reused
 
 
@@ -21,6 +24,7 @@ def compile_reused_runtime_core(
     isolate_metrics=False,
     value_layout="runs",
     global_projection=False,
+    value_weight_once=True,
 ):
     body, css = compile_reused(
         blocks,
@@ -33,6 +37,7 @@ def compile_reused_runtime_core(
         isolate_metrics=isolate_metrics,
         value_layout=value_layout,
         global_projection=global_projection,
+        value_weight_once=value_weight_once,
     )
     # The enclosing token controller owns root --epoch. Only matrix generation
     # receipts use the finer-grained pass counter, scoped to the shared core.
@@ -109,8 +114,50 @@ def compile_reused_runtime_core(
         css,
     )
     css += hybrid.regs(["--native-pass"])
-    for step in range(1, blocks * capacity + 1):
-        css += f"@container loopcontrol style(--pass:{step}){{.core-block{{--native-pass:{step}}}}}"
+    if f5.SCOPED_HANDSHAKE:
+        # F5: the pass counter and the layer handshake flags are read by a
+        # handful of elements but, inherited, restyled the whole open core
+        # (P2 Table 3: ~12.27k-element passes). Register them non-inherited
+        # and stamp the current pass directly onto every reader.
+        receipts = [
+            f".shared-{kind}-receipt" for kind in ("qkv", "attn", "fc", "proj")
+        ] + [".cache-bridge-receipt", ".fvs-score-receipt"]
+        pass_readers = ",".join(
+            [
+                ".loop-input",
+                ".loop-bank-0",
+                ".loop-bank-1",
+                ".reused-input",
+                ".fvs-query",
+                ".fvs-score-reader",
+                ".pass-reader",
+            ]
+            + receipts
+        )
+        for step in range(1, blocks * capacity + 1):
+            css += f"@container loopcontrol style(--pass:{step}){{{pass_readers}{{--native-pass:{step}}}}}"
+        css += (
+            ",".join([".pass-reader"] + receipts) + "{--epoch:var(--native-pass)}"
+            ".reused-input,.core-valid,.fvs-query,.fvs-score-reader,.pass-reader{--position:calc(round(down,calc((var(--native-pass) - 1) / "
+            + str(blocks)
+            + "),1) + 1)}"
+        )
+        css = f5.make_private(
+            css, ["--loop-ready", "--loop-ack", "--native-pass", "--position"]
+        )
+        body, tagged = f5.tag_inline_readers(body, "var(--epoch)", "pass-reader")
+        body, tagged_position = f5.tag_inline_readers(
+            body, "var(--position)", "pass-reader"
+        )
+        # F3: the fc and proj generation markers no longer exist (no timeline hop).
+        expected_epoch_readers = 5 if f3.CHAIN_MLP else 7
+        if tagged != expected_epoch_readers or tagged_position != 2:
+            raise ValueError(
+                f"Unexpected inline pass readers: {tagged} epoch, {tagged_position} position"
+            )
+    else:
+        for step in range(1, blocks * capacity + 1):
+            css += f"@container loopcontrol style(--pass:{step}){{.core-block{{--native-pass:{step}}}}}"
     # Style-container invalidation itself can cross private-property boundaries.
     # Move per-layer containers off body entirely, outside the head's ancestry.
     css = re.sub(r"\bbody(?=[{:\s])", ".core-controller", css)
@@ -153,6 +200,7 @@ def compile_reused_runtime_core(
         "isolatedMetricState": isolate_metrics,
         "valueLayout": value_layout,
         "globalProjection": global_projection,
+        "valueWeightOnce": value_weight_once and value_layout == "runs",
         "fontVectorOperatorVersion": 2 if codec == "font-vector" else None,
         "attentionMask": "full causal"
         if not kv_window or kv_window == capacity
@@ -166,6 +214,16 @@ def compile_reused_runtime_core(
         "nativeLayerTokenHandshake": True,
         "privateLayerControl": True,
         "localLayerContainer": True,
+        "f5ScopedHandshake": f5.SCOPED_HANDSHAKE,
+        "f5ScopedEpoch": f5.SCOPED_EPOCH,
+        "f5ScopedFeedback": f5.SCOPED_FEEDBACK,
+        "f5InlineForward": f5.INLINE_FORWARD,
+        "f5BankFilledAliases": f5.BANK_FILLED_ALIASES,
+        "f5BankLiteralLists": f5.BANK_LITERAL_LISTS,
+        "f4PackedBanks": f4.PACKED_BANKS and codec == "font-vector",
+        "f4PackedHead": f4.PACKED_HEAD,
+        "f4NumericLists": f4.NUMERIC_LISTS and codec == "font-vector",
+        **f3.metadata(),
         "kvStorage": "native remembered layout"
         if codec == "geometry"
         else "native delayed whole-head font settings"
