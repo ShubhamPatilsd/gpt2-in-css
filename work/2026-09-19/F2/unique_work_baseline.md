@@ -1,0 +1,56 @@
+# baseline: core-block subtree = 19964 elements
+| element class | n | shared rule B/elem (var,calc,@fn) | unique B/elem (var,calc) | MPC groups | est. µs/pass (floor + unique + shared once per group) |
+|---|---:|---:|---:|---:|---:|
+| i.metric | 7687 | 111 (0,0,0) | 43 (0,0) | 1 | 46,224 |
+| i.fvs-v-N-N | 6144 | 231 (4,1,0) | 0 (0,0) | 96 | 28,149 |
+| i.shared-proj-packN | 3072 | 39,766 (1536,768,0) | 0 (0,0) | 4 | 19,476 |
+| div.shared-fc-cN | 6 | 80,081 (1024,512,512) | 0 (0,0) | 6 | 48,285 |
+| i.loop-metric | 1538 | 41 (0,0,0) | 104 (1,1) | 1 | 12,668 |
+| div.shared-qkv-cN | 5 | 68,396 (922,461,0) | 0 (0,0) | 5 | 12,505 |
+| div.core-reset.core-valid.reused-input | 1 | 330,135 (777,0,0) | 0 (0,0) | 1 | 12,054 |
+| div.shared-lnN | 2 | 138,744 (6144,770,0) | 0 (0,0) | 2 | 10,137 |
+| span.metric.fvs-value-row | 768 | 169 (0,0,0) | 153 (2,1) | 1 | 7,718 |
+| div.fvs-query | 1 | 198,026 (6914,2305,0) | 0 (0,0) | 1 | 7,232 |
+| div.shared-fc | 1 | 138,154 (3840,1537,0) | 0 (0,0) | 1 | 5,047 |
+| div.shared-proj-cN | 2 | 66,888 (1152,768,0) | 0 (0,0) | 2 | 4,892 |
+| div.shared-attn-cN | 2 | 64,782 (1152,768,0) | 0 (0,0) | 2 | 4,738 |
+| div.shared-qkv | 1 | 128,180 (3840,1537,0) | 0 (0,0) | 1 | 4,683 |
+| div.shared-attn | 1 | 103,846 (3840,1537,0) | 0 (0,0) | 1 | 3,795 |
+| div.shared-proj | 1 | 87,360 (3072,1,0) | 0 (0,0) | 1 | 3,193 |
+| div.cache-bridge-cN | 2 | 41,859 (384,384,0) | 0 (0,0) | 2 | 3,065 |
+| div.loop-input | 1 | 79,321 (1537,0,0) | 0 (0,0) | 1 | 2,900 |
+| div.loop-scroll | 2 | 33,710 (0,0,0) | 0 (0,0) | 2 | 2,470 |
+| div.loop-reader | 1 | 61,828 (768,0,0) | 0 (0,0) | 1 | 2,261 |
+| div.loop-bank-N | 2 | 28,316 (0,0,0) | 0 (0,0) | 2 | 2,076 |
+| i.metric.fvs-score-N-N | 96 | 339 (4,1,0) | 36 (0,0) | 96 | 1,741 |
+| g. | 384 | 0 (0,0,0) | 0 (0,0) | 1 | 1,709 |
+| div.loop-track | 2 | 33,659 (0,0,0) | 0 (0,0) | 1 | 1,237 |
+| i.readback | 4 | 74 (0,0,0) | 8,223 (385,2) | 2 | 1,224 |
+| div.fvs-score-reader | 1 | 25,083 (584,204,0) | 0 (0,0) | 1 | 920 |
+| set. | 192 | 0 (0,0,0) | 0 (0,0) | 1 | 854 |
+| div.reused-output | 1 | 22,929 (768,0,0) | 0 (0,0) | 1 | 841 |
+| div.fvs-bank.fvs-bank-N | 12 | 1,203 (37,0,0) | 0 (0,0) | 12 | 580 |
+| div.track | 7 | 28 (0,0,0) | 0 (0,0) | 4 | 35 |
+| div.scroller | 4 | 114 (0,0,0) | 0 (0,0) | 4 | 34 |
+| div.shared-proj-receipt | 1 | 254 (2,1,0) | 0 (0,0) | 1 | 14 |
+| div.shared-attn-receipt | 1 | 252 (2,1,0) | 0 (0,0) | 1 | 14 |
+| div.shared-qkv-receipt | 1 | 247 (2,1,0) | 0 (0,0) | 1 | 13 |
+| div.shared-fc-receipt | 1 | 242 (2,1,0) | 0 (0,0) | 1 | 13 |
+| div.cache-bridge-receipt | 1 | 229 (2,1,0) | 0 (0,0) | 1 | 13 |
+| div.fvs-score-receipt | 1 | 211 (2,1,0) | 0 (0,0) | 1 | 12 |
+| div.scroller.fvs-score-source | 1 | 128 (0,0,0) | 0 (0,0) | 1 | 9 |
+| div.scroller.cache-bridge-source | 1 | 128 (0,0,0) | 0 (0,0) | 1 | 9 |
+| div.scroller.bN-bridge-source | 1 | 128 (0,0,0) | 0 (0,0) | 1 | 9 |
+| div.core-block | 1 | 71 (0,0,0) | 0 (0,0) | 1 | 7 |
+| div.loop-compute | 1 | 56 (0,0,0) | 0 (0,0) | 1 | 6 |
+| div.shared-qkv-gate | 1 | 56 (0,0,0) | 0 (0,0) | 1 | 6 |
+| div.fvs-score-gate | 1 | 56 (0,0,0) | 0 (0,0) | 1 | 6 |
+| div.cache-bridge-gate | 1 | 56 (0,0,0) | 0 (0,0) | 1 | 6 |
+| div.shared-attn-gate | 1 | 56 (0,0,0) | 0 (0,0) | 1 | 6 |
+| div.shared-fc-gate | 1 | 56 (0,0,0) | 0 (0,0) | 1 | 6 |
+| div.shared-proj-gate | 1 | 56 (0,0,0) | 0 (0,0) | 1 | 6 |
+| svg.loop-signals | 1 | 48 (0,0,0) | 0 (0,0) | 1 | 6 |
+| div.reused-final-export | 1 | 12 (0,0,0) | 0 (0,0) | 1 | 5 |
+| div.fvs-softmax | 1 | 0 (0,0,0) | 0 (0,0) | 1 | 4 |
+| i. | 1 | 0 (0,0,0) | 0 (0,0) | 1 | 4 |
+| **total** | 19964 | | | | **252.9 ms** |

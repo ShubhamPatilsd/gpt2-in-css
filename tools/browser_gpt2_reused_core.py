@@ -101,7 +101,6 @@ def compile_reused(
     isolate_metrics=False,
     value_layout="runs",
     global_projection=False,
-    value_weight_once=True,
 ):
     if global_projection and isolate_metrics:
         raise ValueError("Do not combine global projection and metric isolation ablations")
@@ -194,13 +193,6 @@ def compile_reused(
 
     if isolate_metrics:
         css = isolate_metric_state(css)
-    if h.INLINE_GELU:
-        # private scratch of the fc consumers; never inherited, never reset
-        css += "".join(
-            f'@property {p}{{syntax:"<number>";inherits:false;initial-value:0}}'
-            for stem in ("fz", "ft")
-            for p in h.names(stem, 4 * W)
-        )
 
     # Cache storage stays outside the dense MLP subtree. Only the selected
     # layer exports a context vector through layout. Scalar banks are siblings;
@@ -233,7 +225,6 @@ def compile_reused(
             kv_window=kv_window,
             kv_sinks=kv_sinks,
             value_layout=value_layout,
-            value_weight_once=value_weight_once,
         )
         css += font_css
     if geometry_cache:

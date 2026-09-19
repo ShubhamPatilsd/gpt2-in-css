@@ -9,7 +9,6 @@ import re
 
 import build_hybrid_twelve_block as hybrid
 import f3_chain_mlp as f3
-import f4_packing as f4
 import f5_scoping as f5
 from browser_gpt2_reused_core import compile_reused
 
@@ -24,7 +23,6 @@ def compile_reused_runtime_core(
     isolate_metrics=False,
     value_layout="runs",
     global_projection=False,
-    value_weight_once=True,
 ):
     body, css = compile_reused(
         blocks,
@@ -37,7 +35,6 @@ def compile_reused_runtime_core(
         isolate_metrics=isolate_metrics,
         value_layout=value_layout,
         global_projection=global_projection,
-        value_weight_once=value_weight_once,
     )
     # The enclosing token controller owns root --epoch. Only matrix generation
     # receipts use the finer-grained pass counter, scoped to the shared core.
@@ -200,7 +197,6 @@ def compile_reused_runtime_core(
         "isolatedMetricState": isolate_metrics,
         "valueLayout": value_layout,
         "globalProjection": global_projection,
-        "valueWeightOnce": value_weight_once and value_layout == "runs",
         "fontVectorOperatorVersion": 2 if codec == "font-vector" else None,
         "attentionMask": "full causal"
         if not kv_window or kv_window == capacity
@@ -220,9 +216,6 @@ def compile_reused_runtime_core(
         "f5InlineForward": f5.INLINE_FORWARD,
         "f5BankFilledAliases": f5.BANK_FILLED_ALIASES,
         "f5BankLiteralLists": f5.BANK_LITERAL_LISTS,
-        "f4PackedBanks": f4.PACKED_BANKS and codec == "font-vector",
-        "f4PackedHead": f4.PACKED_HEAD,
-        "f4NumericLists": f4.NUMERIC_LISTS and codec == "font-vector",
         **f3.metadata(),
         "kvStorage": "native remembered layout"
         if codec == "geometry"

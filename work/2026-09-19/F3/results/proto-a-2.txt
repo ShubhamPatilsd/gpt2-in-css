@@ -1,0 +1,13 @@
+[proto] chrome 153.0.8010.48 trials=2 warmup=1 trace=true
+a-shadow-D500-B100 t0: load 607ms | ULT 1x 4.55ms elems=[1005] | Layout 1x 27.91ms | frames BMF=0 commit=1 | busy 35.7 active 52 wall 575 | RSC 101 LC 1 | exact 200/1000 (+0 close) before 200/1000 | rss 175MB
+   bad: [{"i":200,"got":"0","want":4033},{"i":201,"got":"0","want":3266},{"i":202,"got":"0","want":311},{"i":203,"got":"0","want":1660},{"i":204,"got":"0","want":859},{"i":205,"got":"0","want":4060}]
+a-shadow-D500-B100 t1: load 611ms | ULT 1x 4.47ms elems=[1005] | Layout 1x 27.66ms | frames BMF=0 commit=1 | busy 35.3 active 52 wall 574 | RSC 101 LC 1 | exact 200/1000 (+0 close) before 200/1000 | rss 173MB
+   bad: [{"i":200,"got":"0","want":4047},{"i":201,"got":"0","want":3280},{"i":202,"got":"0","want":325},{"i":203,"got":"0","want":1674},{"i":204,"got":"0","want":873},{"i":205,"got":"0","want":4074}]
+a-fixed-D500-B100 t0: load 613ms | ULT 1x 4.61ms elems=[1005] | Layout 1x 28.64ms | frames BMF=0 commit=1 | busy 36.8 active 52 wall 573 | RSC 256 LC 1 | exact 508/1000 (+0 close) before 508/1000 | rss 174MB
+   bad: [{"i":508,"got":"-1","want":1216},{"i":509,"got":"-1","want":2108},{"i":510,"got":"-1","want":1528},{"i":511,"got":"-1","want":3531},{"i":512,"got":"-1","want":1896},{"i":513,"got":"-1","want":3321}]
+a-fixed-D500-B100 t1: load 613ms | ULT 1x 4.46ms elems=[1005] | Layout 1x 28.39ms | frames BMF=0 commit=1 | busy 36.4 active 52 wall 573 | RSC 256 LC 1 | exact 508/1000 (+0 close) before 508/1000 | rss 174MB
+   bad: [{"i":508,"got":"-1","want":1230},{"i":509,"got":"-1","want":2122},{"i":510,"got":"-1","want":1542},{"i":511,"got":"-1","want":3545},{"i":512,"got":"-1","want":1910},{"i":513,"got":"-1","want":3335}]
+a-fixed-D128-B33554000 t0: load 557ms | ULT 1x 1.32ms elems=[261] | Layout 1x 5.44ms | frames BMF=0 commit=1 | busy 8.8 active 52 wall 571 | RSC 129 LC 1 | exact 7/256 (+0 close) before 5/256 | rss 175MB
+   bad: [{"i":0,"got":"300","want":331},{"i":1,"got":"100","want":57},{"i":2,"got":"200","want":186},{"i":3,"got":"100","want":78},{"i":4,"got":"300","want":342},{"i":5,"got":"400","want":390}]
+a-fixed-D128-B33554000 t1: load 551ms | ULT 1x 1.28ms elems=[261] | Layout 1x 5.54ms | frames BMF=0 commit=1 | busy 9.0 active 52 wall 574 | RSC 129 LC 1 | exact 4/256 (+0 close) before 3/256 | rss 175MB
+   bad: [{"i":0,"got":"300","want":345},{"i":1,"got":"100","want":71},{"i":3,"got":"100","want":92},{"i":4,"got":"400","want":356},{"i":5,"got":"400","want":404},{"i":6,"got":"400","want":413}]

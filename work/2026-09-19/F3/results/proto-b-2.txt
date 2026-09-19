@@ -1,0 +1,10 @@
+[proto] chrome 153.0.8010.48 trials=2 warmup=1 trace=true
+order-probe t0: load 539ms | ULT 1x 0.27ms elems=[28] | Layout 1x 0.21ms | frames BMF=0 commit=1 | busy 1.8 active 53 wall 579 | RSC 6 LC 1 | k=1 exact 5/13 (+0 close) maxAbs 1.11e+3 rmse 8.72e+2 nan 0 | before exact 5 close 0 maxAbs 1.11e+3 | rss 174MB
+   bad: [{"i":0,"got":"0","want":1113},{"i":2,"got":"0","want":1112},{"i":3,"got":"0","want":1108},{"i":4,"got":"0","want":1113},{"i":5,"got":"0","want":1113},{"i":6,"got":"0","want":1110}]
+order-probe t1: load 543ms | ULT 1x 0.30ms elems=[28] | Layout 1x 0.23ms | frames BMF=0 commit=1 | busy 1.9 active 51 wall 573 | RSC 6 LC 1 | k=3 exact 5/13 (+0 close) maxAbs 1.13e+3 rmse 8.83e+2 nan 0 | before exact 5 close 0 maxAbs 1.12e+3 | rss 174MB
+   bad: [{"i":0,"got":"0","want":1127},{"i":2,"got":"0","want":1126},{"i":3,"got":"0","want":1122},{"i":4,"got":"0","want":1127},{"i":5,"got":"0","want":1127},{"i":6,"got":"0","want":1124}]
+b-chain-L0 t0: load 1426ms | ULT 1x 13.74ms elems=[3090] | Layout 1x 380.99ms | frames BMF=0 commit=1 | busy 462.0 active 460 wall 984 | RSC 1921 LC 1 | k=1 exact 0/768 (+4 close) maxAbs 1.80e+2 rmse 8.62e+0 nan 0 | before exact 0 close 1 maxAbs 1.85e+2 | rss 595MB
+   bad: [{"i":0,"got":"0.0450233","want":-0.8463728468438861},{"i":1,"got":"0.0322631","want":2.0854385797691735},{"i":2,"got":"-0.0885454","want":0.4138579267634014},{"i":3,"got":"-0.00816247","want":-1.9884220256309708},{"i":4,"got":"0.117716","want":-0.7701636726533186},{"i":5,"got":"-0.238876","want":-1.5551599339908306}]
+b-chain-L0 t1: load 1349ms | ULT 1x 13.87ms elems=[3091] | Layout 1x 399.01ms | frames BMF=0 commit=1 | busy 485.3 active 483 wall 1015 | RSC 1921 LC 1 | k=3 exact 0/768 (+1 close) maxAbs 1.96e+2 rmse 9.34e+0 nan 0 | before exact 0 close 5 maxAbs 1.99e+2 | rss 581MB
+   bad: [{"i":0,"got":"0.0450233","want":2.1642701745464623},{"i":1,"got":"0.0322631","want":1.0556155570594692},{"i":2,"got":"-0.0885454","want":1.7187862897400927},{"i":3,"got":"-0.00816247","want":-2.1949472348828882},{"i":4,"got":"0.117716","want":-0.15416246911990295},{"i":5,"got":"-0.238876","want":-2.955219960226398}]
+exit 0

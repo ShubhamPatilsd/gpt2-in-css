@@ -17,7 +17,6 @@ from urllib.parse import quote, unquote, urlparse
 
 import build_gpt2_block_css as b
 import build_hybrid_twelve_block as hybrid
-import f4_packing as f4
 import f5_scoping as f5
 import numpy as np
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
@@ -198,7 +197,6 @@ def compile_runtime(
     font_backend="original",
     value_layout="runs",
     global_projection=False,
-    value_weight_once=True,
 ):
     if global_projection and not reuse_core:
         raise ValueError("Global projection currently requires the reused core")
@@ -238,7 +236,6 @@ def compile_runtime(
             isolate_metrics,
             value_layout,
             global_projection,
-            value_weight_once,
         )
     else:
         core, core_css, metadata = compile_core(
@@ -257,11 +254,6 @@ def compile_runtime(
     head_css = (head_dir / "head.css").read_text()
     if capacity > 8:
         head, head_css = split_head_receipt(head, head_css)
-    head_bank_regs = head_bank_decls = ""
-    if f4.PACKED_HEAD:
-        # F4: the head reads its 768 inputs only through two identical
-        # font-variation-settings lists; latch that list once instead of 768 numbers.
-        head_css, head_bank_regs, head_bank_decls = f4.pack_head_input(head_css)
     front, output, control_css, timeline_names = feedback(capacity)
     output_receiver = ""
     if detached_output:
@@ -295,14 +287,7 @@ def compile_runtime(
         reset = [
             p
             for p in reset
-            if not re.fullmatch(r"--h\d+", p)
-            and p != "--head-input-epoch"
-            # F4: the packed head list must cross the wall; --hq-* never inherit
-            and p != "--head-fvs"
-            and not re.fullmatch(r"--hq-\d+", p)
-            and not re.fullmatch(r"--fvn-[kv]-\d+-\d+", p)
-            # F2: inherits:false fc scratch cannot reach the head; no wall needed
-            and not re.fullmatch(r"--f[zt]-\d+", p)
+            if not re.fullmatch(r"--h\d+", p) and p != "--head-input-epoch"
         ]
         css += (
             ".head-isolation{"
@@ -340,22 +325,13 @@ def compile_runtime(
         "final-var",
     )
     css += ".final-normalization{" + ";".join(norm) + "}"
-    if f4.PACKED_HEAD:
-        css += head_bank_regs
-        css += (
-            ".head-input-bank{"
-            + head_bank_decls
-            + ";--head-input-epoch:calc(var(--epoch)*var(--bridge-ready));transition-property:--head-fvs,--head-input-epoch"
-            + ";transition-duration:1ms;transition-delay:86400s;transition-timing-function:steps(1,end);transition-behavior:allow-discrete}"
-        )
-    else:
-        css += (
-            ".head-input-bank{"
-            + ";".join(f"--h{i}:var(--final-h-{i:03d})" for i in range(768))
-            + ";--head-input-epoch:calc(var(--epoch)*var(--bridge-ready));transition-property:"
-            + ",".join([f"--h{i}" for i in range(768)] + ["--head-input-epoch"])
-            + ";transition-duration:1ms;transition-delay:86400s;transition-timing-function:steps(1,end)}"
-        )
+    css += (
+        ".head-input-bank{"
+        + ";".join(f"--h{i}:var(--final-h-{i:03d})" for i in range(768))
+        + ";--head-input-epoch:calc(var(--epoch)*var(--bridge-ready));transition-property:"
+        + ",".join([f"--h{i}" for i in range(768)] + ["--head-input-epoch"])
+        + ";transition-duration:1ms;transition-delay:86400s;transition-timing-function:steps(1,end)}"
+    )
     css += f"@container b{blocks - 1}-bridge style(--bridge-ready:1){{.head-input-bank{{transition-property:none}}}}"
     # Probes load all head faces independently. Do not lay out the 50k-row
     # scorer on fallback fonts or provisional zero inputs during cold load.
@@ -531,9 +507,7 @@ def compile_runtime(
     # There is no local-file URL dependency and no inference API endpoint.
     def relative_asset(match):
         parsed = urlparse(match[1])
-        relative = os.path.relpath(
-            Path(unquote(parsed.path)).resolve(), directory.resolve()
-        )
+        relative = os.path.relpath(Path(unquote(parsed.path)), directory.resolve())
         return (
             'url("'
             + quote(relative, safe="/.-_")
@@ -608,16 +582,7 @@ def main():
     parser.add_argument(
         "--value-layout", choices=("runs", "fallback", "widths"), default="runs"
     )
-    # F2 round: both leaf-slimming changes default ON; --no-* restores the old emitter.
-    parser.add_argument(
-        "--global-projection", action=argparse.BooleanOptionalAction, default=True
-    )
-    parser.add_argument(
-        "--value-weight-once", action=argparse.BooleanOptionalAction, default=True
-    )
-    parser.add_argument(
-        "--inline-gelu", action=argparse.BooleanOptionalAction, default=True
-    )
+    parser.add_argument("--global-projection", action="store_true")
     parser.add_argument(
         "--kv-window",
         type=int,
@@ -646,7 +611,6 @@ def main():
         default="scalar",
     )
     args = parser.parse_args()
-    hybrid.INLINE_GELU = args.inline_gelu
     if not 1 <= args.blocks <= 12 or not 2 <= args.capacity <= 32:
         parser.error("blocks must be 1–12; capacity must be 2–32")
     args.output.mkdir(parents=True, exist_ok=True)
@@ -672,7 +636,6 @@ def main():
         args.font_backend,
         args.value_layout,
         args.global_projection,
-        args.value_weight_once,
     )
 
 
