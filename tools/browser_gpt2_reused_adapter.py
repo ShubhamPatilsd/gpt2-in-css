@@ -8,9 +8,10 @@ ticks, cached reference activations, or JavaScript participate in this handshake
 import re
 
 import build_hybrid_twelve_block as hybrid
-import f3_chain_mlp as f3
+import f4_packing as f4
 import f5_scoping as f5
 from browser_gpt2_reused_core import compile_reused
+import r2f_lean_handshake as r2f
 
 
 def compile_reused_runtime_core(
@@ -23,6 +24,7 @@ def compile_reused_runtime_core(
     isolate_metrics=False,
     value_layout="runs",
     global_projection=False,
+    value_weight_once=True,
 ):
     body, css = compile_reused(
         blocks,
@@ -35,6 +37,7 @@ def compile_reused_runtime_core(
         isolate_metrics=isolate_metrics,
         value_layout=value_layout,
         global_projection=global_projection,
+        value_weight_once=value_weight_once,
     )
     # The enclosing token controller owns root --epoch. Only matrix generation
     # receipts use the finer-grained pass counter, scoped to the shared core.
@@ -48,7 +51,14 @@ def compile_reused_runtime_core(
         "@container runtime style(--layer:0){.loop-input{--loop-ready:1;",
         "@container runtime style(--layer:0){.loop-input{--loop-ready:var(--embed-ready);",
     )
+    if r2f.LEAN_HANDSHAKE:
+        # R2F: the controller reads the bank pass markers itself; no SMIL relay,
+        # no pulse-end / pass-advance frames. Token boundaries raise --pass-cap.
+        css = r2f.apply_css(css, blocks, capacity)
+        body = r2f.apply_body(body)
     for token in range(1, capacity):
+        if r2f.LEAN_HANDSHAKE:
+            break
         step = token * blocks
         old = f"body:has(#loop-advanced-{step}.done){{--pass:{step + 1}}}"
         new = f"body:has(#token-{token}-advanced.done){{--pass:{step + 1}}}"
@@ -146,9 +156,7 @@ def compile_reused_runtime_core(
         body, tagged_position = f5.tag_inline_readers(
             body, "var(--position)", "pass-reader"
         )
-        # F3: the fc and proj generation markers no longer exist (no timeline hop).
-        expected_epoch_readers = 5 if f3.CHAIN_MLP else 7
-        if tagged != expected_epoch_readers or tagged_position != 2:
+        if tagged != 7 or tagged_position != 2:
             raise ValueError(
                 f"Unexpected inline pass readers: {tagged} epoch, {tagged_position} position"
             )
@@ -183,8 +191,10 @@ def compile_reused_runtime_core(
         '<div class="core-controller"><div class="core-block" id="block-0">'
         + body
         + "</div></div>"
-        + receiver
     )
+    if r2f.LEAN_HANDSHAKE:
+        body = r2f.wrap_controller(body)
+    body += receiver
     metadata = {
         "blocks": blocks,
         "capacity": capacity,
@@ -197,6 +207,7 @@ def compile_reused_runtime_core(
         "isolatedMetricState": isolate_metrics,
         "valueLayout": value_layout,
         "globalProjection": global_projection,
+        "valueWeightOnce": value_weight_once and value_layout == "runs",
         "fontVectorOperatorVersion": 2 if codec == "font-vector" else None,
         "attentionMask": "full causal"
         if not kv_window or kv_window == capacity
@@ -210,13 +221,16 @@ def compile_reused_runtime_core(
         "nativeLayerTokenHandshake": True,
         "privateLayerControl": True,
         "localLayerContainer": True,
+        "r2fLeanHandshake": r2f.LEAN_HANDSHAKE,
         "f5ScopedHandshake": f5.SCOPED_HANDSHAKE,
         "f5ScopedEpoch": f5.SCOPED_EPOCH,
         "f5ScopedFeedback": f5.SCOPED_FEEDBACK,
         "f5InlineForward": f5.INLINE_FORWARD,
         "f5BankFilledAliases": f5.BANK_FILLED_ALIASES,
         "f5BankLiteralLists": f5.BANK_LITERAL_LISTS,
-        **f3.metadata(),
+        "f4PackedBanks": f4.PACKED_BANKS and codec == "font-vector",
+        "f4PackedHead": f4.PACKED_HEAD,
+        "f4NumericLists": f4.NUMERIC_LISTS and codec == "font-vector",
         "kvStorage": "native remembered layout"
         if codec == "geometry"
         else "native delayed whole-head font settings"

@@ -1,0 +1,18 @@
+bytes 40760148
+declarations 247
+
+| selector (digits→N) | ctx | decls | bytes/decl | entries/decl | var()/decl | calc()/decl | round()/decl | axis-tags/decl | sample |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---|
+| `.shared-proj` | @container corestate style(--layer:N) | 12 | 158,743 | 3072 | 6144 | 3072 | 0 | 3072 | `"X000" calc(var(--hidden-000) / var(--range-proj)),"X001" calc(var(--hidden-001) / var(--range-proj)),"X002" c` |
+| `.shared-attn` | @container corestate style(--layer:N) | 12 | 36,863 | 768 | 1536 | 768 | 0 | 768 | `"A000" calc(var(--ctx-000) / var(--range-attn)),"A001" calc(var(--ctx-001) / var(--range-attn)),"A002" calc(va` |
+| `.shared-qkv` | @container corestate style(--layer:N) | 12 | 35,327 | 768 | 1536 | 768 | 0 | 768 | `"A000" calc(var(--n1-000) / var(--range-qkv)),"A001" calc(var(--n1-001) / var(--range-qkv)),"A002" calc(var(--` |
+| `.shared-fc` | @container corestate style(--layer:N) | 12 | 34,559 | 768 | 1536 | 768 | 0 | 768 | `"A000" calc(var(--n2-000) / var(--range-fc)),"A001" calc(var(--n2-001) / var(--range-fc)),"A002" calc(var(--n2` |
+| `.fvs-v-N-N` |  | 96 | 34 | 2 | 2 | 0 | 0 | 1 | `var(--fr-v-0),"P000" var(--fw-0-0)` |
+| `.fvs-score-N-N` |  | 96 | 32 | 2 | 2 | 0 | 0 | 0 | `var(--fr-k-0),var(--fvs-query-0)` |
+| `.embedding-source` |  | 1 | 74 | 5 | 2 | 1 | 1 | 2 | `"GRUP" round(down,calc(var(--token) / 256),1),"LOCL" mod(var(--token),256)` |
+| `.full-head` |  | 1 | 15 | 1 | 1 | 0 | 0 | 0 | `var(--head-fvs)` |
+| `.head-fine` |  | 1 | 15 | 1 | 1 | 0 | 0 | 0 | `var(--head-fvs)` |
+| `.core-reset` |  | 1 | 6 | 0 | 0 | 0 | 0 | 0 | `normal` |
+| `.head-isolation` |  | 1 | 6 | 0 | 0 | 0 | 0 | 0 | `normal` |
+| `.position-embedding` |  | 1 | 6 | 0 | 0 | 0 | 0 | 0 | `normal` |
+| `.font-witness` |  | 1 | 6 | 0 | 0 | 0 | 0 | 0 | `normal` |

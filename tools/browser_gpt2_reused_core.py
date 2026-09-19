@@ -13,7 +13,6 @@ from pathlib import Path
 
 import build_gpt2_block_css as b
 import build_hybrid_twelve_block as h
-import f3_chain_mlp as f3
 import f5_scoping as f5
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 from browser_gpt2_core import (
@@ -101,14 +100,10 @@ def compile_reused(
     isolate_metrics=False,
     value_layout="runs",
     global_projection=False,
+    value_weight_once=True,
 ):
     if global_projection and isolate_metrics:
         raise ValueError("Do not combine global projection and metric isolation ablations")
-    if f3.CHAIN_MLP:
-        # F3: the proj hop no longer has packs or a global axis list; both
-        # ablations only shaped the timeline proj matvec and are moot here.
-        isolate_metrics = False
-        global_projection = False
     geometry_cache = codec == "geometry"
     font_vector_cache = codec == "font-vector"
     custom_cache = geometry_cache or font_vector_cache
@@ -137,11 +132,6 @@ def compile_reused(
         for kind in h.STAGES:
             if kind == "mix":
                 continue
-            if f3.CHAIN_MLP and kind == "proj":
-                # F3: the fc hop's anchor chains already host the proj shard
-                # columns and the out chain; nothing separate to nest here.
-                layouts[kind] = "{child}"
-                continue
             if kind in ("ln1", "ln2"):
                 n = 1 if kind == "ln1" else 2
                 html, rule = h.wrapper(
@@ -157,15 +147,6 @@ def compile_reused(
                         )
                     ),
                 )
-            elif f3.CHAIN_MLP and kind == "fc":
-                # F3 (Fix 3 + Fix 6 for the MLP hops): fc glyph rows are anchors,
-                # 12 fixed size-container chains gather them into --hidden-*,
-                # per-shard proj glyph columns hang under each chain bottom and
-                # one out chain sums the 12 shard advances into --out-*; no
-                # view-timeline, no generation receipt, no gate for fc/proj.
-                html, rule, once = f3.mlp_chain(layer, matrices[2], biases[2], matrices[3], biases[3])
-                if layer == 0:
-                    css += once
             else:
                 i = ("qkv", "attn", "fc", "proj").index(kind)
                 src, count = (("n1", W), ("ctx", W), ("n2", W), ("hidden", 4 * W))[i]
@@ -193,6 +174,13 @@ def compile_reused(
 
     if isolate_metrics:
         css = isolate_metric_state(css)
+    if h.INLINE_GELU:
+        # private scratch of the fc consumers; never inherited, never reset
+        css += "".join(
+            f'@property {p}{{syntax:"<number>";inherits:false;initial-value:0}}'
+            for stem in ("fz", "ft")
+            for p in h.names(stem, 4 * W)
+        )
 
     # Cache storage stays outside the dense MLP subtree. Only the selected
     # layer exports a context vector through layout. Scalar banks are siblings;
@@ -225,6 +213,7 @@ def compile_reused(
             kv_window=kv_window,
             kv_sinks=kv_sinks,
             value_layout=value_layout,
+            value_weight_once=value_weight_once,
         )
         css += font_css
     if geometry_cache:

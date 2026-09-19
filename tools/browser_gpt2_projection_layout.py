@@ -13,7 +13,8 @@ import build_gpt2_block_css as block
 from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSETS = ROOT / "experiments/browser-gpt2/global-projection-assets"
+# F2 round: retagged shards are generated next to this tools copy.
+ASSETS = Path(__file__).resolve().parents[1] / "global-projection-assets"
 
 
 def global_projection_fonts(directory, group):
