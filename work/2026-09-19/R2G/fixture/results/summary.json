@@ -1,0 +1,3311 @@
+[
+ {
+  "variant": "pa-demo",
+  "family": "pa",
+  "params": {
+   "has": "demo",
+   "core_fill": 16311,
+   "head_fill": 51149,
+   "svg": true,
+   "anims": false
+  },
+  "bytes": 1138201,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 31.335,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.06,
+   "prePaintMs": 0.072,
+   "paintMs": 0.039,
+   "animMs": 0.056,
+   "busyMs": 33.692,
+   "activeMs": 52.66333300000042,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 31.336000000000002,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.068,
+   "threadTimeMs": 33.78399999999999,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.041294343448245854,
+   "idleRecalcs": 0,
+   "rssMB": 174.234375
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 31.174,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.059,
+   "prePaintMs": 0.07,
+   "paintMs": 0.035,
+   "animMs": 0.054,
+   "busyMs": 33.636,
+   "activeMs": 52.62366699999984,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 31.173000000000005,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.067,
+   "threadTimeMs": 33.69399999999999,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.037298332987939435,
+   "idleRecalcs": 0,
+   "rssMB": 174.078125
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 31.429,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.061,
+   "prePaintMs": 0.073,
+   "paintMs": 0.046,
+   "animMs": 0.059,
+   "busyMs": 35.06,
+   "activeMs": 52.67774999999983,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 31.429,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06900000000000002,
+   "threadTimeMs": 33.82299999999999,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.04162842518566334,
+   "idleRecalcs": 0,
+   "rssMB": 174.8125
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 92,
+    "byReason": {
+     "Related style rule": 90,
+     "Affected by :has()": 1,
+     "Animation": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 92,
+    "byReason": {
+     "Invalidation set matched id": 88,
+     "Element has pending invalidation list": 2,
+     "Invalidation set matched class": 2
+    }
+   },
+   "scheduleStyle": {
+    "count": 2,
+    "byKey": {
+     "pseudo has": 2
+    }
+   },
+   "layoutInvalidation": {
+    "count": 4,
+    "byReason": {
+     "Style changed": 2,
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 30189,
+    "selfUs": 30189,
+    "maxUs": 30175
+   },
+   {
+    "name": "RunTask",
+    "count": 24,
+    "inclUs": 35060,
+    "selfUs": 2944,
+    "maxUs": 32014
+   },
+   {
+    "name": "Document::updateStyleInvalidationIfNeeded",
+    "count": 1,
+    "inclUs": 939,
+    "selfUs": 939,
+    "maxUs": 939
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 31989,
+    "selfUs": 472,
+    "maxUs": 31922
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 55,
+    "selfUs": 54,
+    "maxUs": 38
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 51,
+    "selfUs": 51,
+    "maxUs": 51
+   },
+   {
+    "name": "Commit",
+    "count": 2,
+    "inclUs": 60,
+    "selfUs": 35,
+    "maxUs": 44
+   },
+   {
+    "name": "PaintArtifactCompositor::Update",
+    "count": 2,
+    "inclUs": 34,
+    "selfUs": 33,
+    "maxUs": 25
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 2,
+    "inclUs": 31304,
+    "selfUs": 32,
+    "maxUs": 31281
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 2,
+    "inclUs": 68,
+    "selfUs": 32,
+    "maxUs": 65
+   },
+   {
+    "name": "Paint",
+    "count": 2,
+    "inclUs": 39,
+    "selfUs": 27,
+    "maxUs": 27
+   },
+   {
+    "name": "LocalFrameView::ScheduleAnimation",
+    "count": 4,
+    "inclUs": 22,
+    "selfUs": 22,
+    "maxUs": 15
+   }
+  ]
+ },
+ {
+  "variant": "pa-nofill",
+  "family": "pa",
+  "params": {
+   "has": "demo",
+   "core_fill": 0,
+   "head_fill": 0,
+   "svg": true,
+   "anims": false
+  },
+  "bytes": 665982,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 5.135,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.062,
+   "prePaintMs": 0.088,
+   "paintMs": 0.027,
+   "animMs": 0.056,
+   "busyMs": 7.26,
+   "activeMs": 52.58812500000204,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 5.1339999999999995,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06899999999999999,
+   "threadTimeMs": 7.4549999999999965,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.038964954270712684,
+   "idleRecalcs": 0,
+   "rssMB": 174.6875
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 5.083,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.06,
+   "prePaintMs": 0.079,
+   "paintMs": 0.027,
+   "animMs": 0.056,
+   "busyMs": 7.228,
+   "activeMs": 52.116290999998455,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 5.082999999999999,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06699999999999998,
+   "threadTimeMs": 7.422999999999999,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.03829730460786023,
+   "idleRecalcs": 0,
+   "rssMB": 174.421875
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 5.211,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.065,
+   "prePaintMs": 0.088,
+   "paintMs": 0.029,
+   "animMs": 0.07,
+   "busyMs": 7.343,
+   "activeMs": 52.822791999999026,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 5.209999999999999,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.07299999999999998,
+   "threadTimeMs": 7.5450000000000035,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.040628703098149935,
+   "idleRecalcs": 0,
+   "rssMB": 175.15625
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 92,
+    "byReason": {
+     "Related style rule": 90,
+     "Affected by :has()": 1,
+     "Animation": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 92,
+    "byReason": {
+     "Invalidation set matched id": 88,
+     "Element has pending invalidation list": 2,
+     "Invalidation set matched class": 2
+    }
+   },
+   "scheduleStyle": {
+    "count": 2,
+    "byKey": {
+     "pseudo has": 2
+    }
+   },
+   "layoutInvalidation": {
+    "count": 4,
+    "byReason": {
+     "Style changed": 2,
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 4600,
+    "selfUs": 4600,
+    "maxUs": 4580
+   },
+   {
+    "name": "RunTask",
+    "count": 24,
+    "inclUs": 7343,
+    "selfUs": 1619,
+    "maxUs": 5586
+   },
+   {
+    "name": "Document::updateStyleInvalidationIfNeeded",
+    "count": 1,
+    "inclUs": 569,
+    "selfUs": 569,
+    "maxUs": 569
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 62,
+    "selfUs": 61,
+    "maxUs": 40
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 53,
+    "selfUs": 53,
+    "maxUs": 53
+   },
+   {
+    "name": "Commit",
+    "count": 2,
+    "inclUs": 67,
+    "selfUs": 38,
+    "maxUs": 43
+   },
+   {
+    "name": "PaintArtifactCompositor::Update",
+    "count": 2,
+    "inclUs": 41,
+    "selfUs": 37,
+    "maxUs": 23
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 2,
+    "inclUs": 61,
+    "selfUs": 32,
+    "maxUs": 56
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 2,
+    "inclUs": 5344,
+    "selfUs": 31,
+    "maxUs": 5313
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 5588,
+    "selfUs": 26,
+    "maxUs": 5496
+   },
+   {
+    "name": "LocalFrameView::ScheduleAnimation",
+    "count": 4,
+    "inclUs": 23,
+    "selfUs": 23,
+    "maxUs": 18
+   },
+   {
+    "name": "Paint",
+    "count": 2,
+    "inclUs": 29,
+    "selfUs": 22,
+    "maxUs": 22
+   }
+  ]
+ },
+ {
+  "variant": "pa-corefill",
+  "family": "pa",
+  "params": {
+   "has": "demo",
+   "core_fill": 16311,
+   "head_fill": 0,
+   "svg": true,
+   "anims": false
+  },
+  "bytes": 780161,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 27.016,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.057,
+   "prePaintMs": 0.067,
+   "paintMs": 0.029,
+   "animMs": 0.057,
+   "busyMs": 29.205,
+   "activeMs": 52.580957999998645,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 27.014999999999997,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.07299999999999998,
+   "threadTimeMs": 29.386999999999997,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.0456229611321368,
+   "idleRecalcs": 0,
+   "rssMB": 174.515625
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 26.818,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.054,
+   "prePaintMs": 0.067,
+   "paintMs": 0.027,
+   "animMs": 0.045,
+   "busyMs": 29.076,
+   "activeMs": 52.575417000000016,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 26.817000000000007,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.061999999999999986,
+   "threadTimeMs": 29.188000000000006,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.040630071378073854,
+   "idleRecalcs": 0,
+   "rssMB": 174.296875
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 27.284,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.071,
+   "prePaintMs": 0.076,
+   "paintMs": 0.032,
+   "animMs": 0.059,
+   "busyMs": 29.332,
+   "activeMs": 53.266999999999825,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 27.284000000000002,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.08000000000000002,
+   "threadTimeMs": 29.493000000000006,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.046957417448611045,
+   "idleRecalcs": 0,
+   "rssMB": 175.40625
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 92,
+    "byReason": {
+     "Related style rule": 90,
+     "Affected by :has()": 1,
+     "Animation": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 92,
+    "byReason": {
+     "Invalidation set matched id": 88,
+     "Element has pending invalidation list": 2,
+     "Invalidation set matched class": 2
+    }
+   },
+   "scheduleStyle": {
+    "count": 2,
+    "byKey": {
+     "pseudo has": 2
+    }
+   },
+   "layoutInvalidation": {
+    "count": 4,
+    "byReason": {
+     "Style changed": 2,
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 26375,
+    "selfUs": 26375,
+    "maxUs": 26364
+   },
+   {
+    "name": "RunTask",
+    "count": 24,
+    "inclUs": 29205,
+    "selfUs": 1611,
+    "maxUs": 27503
+   },
+   {
+    "name": "Document::updateStyleInvalidationIfNeeded",
+    "count": 1,
+    "inclUs": 589,
+    "selfUs": 589,
+    "maxUs": 589
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 27460,
+    "selfUs": 85,
+    "maxUs": 27403
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 56,
+    "selfUs": 56,
+    "maxUs": 56
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 50,
+    "selfUs": 48,
+    "maxUs": 39
+   },
+   {
+    "name": "Commit",
+    "count": 2,
+    "inclUs": 66,
+    "selfUs": 40,
+    "maxUs": 48
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 2,
+    "inclUs": 65,
+    "selfUs": 35,
+    "maxUs": 62
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 2,
+    "inclUs": 27163,
+    "selfUs": 31,
+    "maxUs": 27142
+   },
+   {
+    "name": "PaintArtifactCompositor::Update",
+    "count": 2,
+    "inclUs": 33,
+    "selfUs": 31,
+    "maxUs": 23
+   },
+   {
+    "name": "Document::rebuildLayoutTree",
+    "count": 1,
+    "inclUs": 28,
+    "selfUs": 28,
+    "maxUs": 28
+   },
+   {
+    "name": "LocalFrameView::ScheduleAnimation",
+    "count": 4,
+    "inclUs": 27,
+    "selfUs": 27,
+    "maxUs": 22
+   }
+  ]
+ },
+ {
+  "variant": "pa-fixed",
+  "family": "pa",
+  "params": {
+   "has": "fixed",
+   "core_fill": 16311,
+   "head_fill": 51149,
+   "svg": true,
+   "anims": false
+  },
+  "bytes": 1155009,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 7.828,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.061,
+   "prePaintMs": 0.068,
+   "paintMs": 0.03,
+   "animMs": 0.054,
+   "busyMs": 10.162,
+   "activeMs": 52.566791999997804,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 7.826,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.071,
+   "threadTimeMs": 10.370000000000005,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.040294444721492524,
+   "idleRecalcs": 0,
+   "rssMB": 174.46875
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 7.72,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.055,
+   "prePaintMs": 0.065,
+   "paintMs": 0.029,
+   "animMs": 0.051,
+   "busyMs": 9.941,
+   "activeMs": 52.37287500000093,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 7.719,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06100000000000002,
+   "threadTimeMs": 10.151999999999994,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.03929712812944096,
+   "idleRecalcs": 0,
+   "rssMB": 174.0625
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 8.016,
+   "ultElements": 381,
+   "layoutCount": 1,
+   "layoutMs": 0.063,
+   "prePaintMs": 0.075,
+   "paintMs": 0.047,
+   "animMs": 0.059,
+   "busyMs": 10.396,
+   "activeMs": 52.63133299999754,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 8.015,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.07299999999999998,
+   "threadTimeMs": 10.561000000000002,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.04229495946906571,
+   "idleRecalcs": 0,
+   "rssMB": 175.078125
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 92,
+    "byReason": {
+     "Related style rule": 90,
+     "Affected by :has()": 1,
+     "Animation": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 92,
+    "byReason": {
+     "Invalidation set matched id": 88,
+     "Element has pending invalidation list": 2,
+     "Invalidation set matched class": 2
+    }
+   },
+   "scheduleStyle": {
+    "count": 2,
+    "byKey": {
+     "pseudo has": 2
+    }
+   },
+   "layoutInvalidation": {
+    "count": 4,
+    "byReason": {
+     "Style changed": 2,
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 6757,
+    "selfUs": 6757,
+    "maxUs": 6747
+   },
+   {
+    "name": "RunTask",
+    "count": 24,
+    "inclUs": 10162,
+    "selfUs": 1645,
+    "maxUs": 8438
+   },
+   {
+    "name": "Document::updateStyleInvalidationIfNeeded",
+    "count": 1,
+    "inclUs": 1024,
+    "selfUs": 1024,
+    "maxUs": 1024
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 8396,
+    "selfUs": 240,
+    "maxUs": 8344
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 52,
+    "selfUs": 52,
+    "maxUs": 52
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 50,
+    "selfUs": 48,
+    "maxUs": 39
+   },
+   {
+    "name": "PaintArtifactCompositor::Update",
+    "count": 2,
+    "inclUs": 32,
+    "selfUs": 31,
+    "maxUs": 24
+   },
+   {
+    "name": "LocalFrameView::ScheduleAnimation",
+    "count": 4,
+    "inclUs": 30,
+    "selfUs": 30,
+    "maxUs": 25
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 2,
+    "inclUs": 59,
+    "selfUs": 29,
+    "maxUs": 56
+   },
+   {
+    "name": "Commit",
+    "count": 2,
+    "inclUs": 57,
+    "selfUs": 29,
+    "maxUs": 41
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 2,
+    "inclUs": 7964,
+    "selfUs": 27,
+    "maxUs": 7946
+   },
+   {
+    "name": "Document::rebuildLayoutTree",
+    "count": 1,
+    "inclUs": 24,
+    "selfUs": 24,
+    "maxUs": 24
+   }
+  ]
+ },
+ {
+  "variant": "pa-nohas",
+  "family": "pa",
+  "params": {
+   "has": "none",
+   "core_fill": 16311,
+   "head_fill": 51149,
+   "svg": true,
+   "anims": false
+  },
+  "bytes": 1116274,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 3.068,
+   "ultElements": 292,
+   "layoutCount": 1,
+   "layoutMs": 0.06,
+   "prePaintMs": 0.077,
+   "paintMs": 0.032,
+   "animMs": 0.059,
+   "busyMs": 5.38,
+   "activeMs": 52.13300000000163,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 3.0679999999999996,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06899999999999999,
+   "threadTimeMs": 5.6129999999999995,
+   "invalidations": 2,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.03929854266100327,
+   "idleRecalcs": 0,
+   "rssMB": 174.953125
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 3.04,
+   "ultElements": 292,
+   "layoutCount": 1,
+   "layoutMs": 0.055,
+   "prePaintMs": 0.067,
+   "paintMs": 0.03,
+   "animMs": 0.048,
+   "busyMs": 5.163,
+   "activeMs": 51.74495799999568,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 3.039,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06800000000000003,
+   "threadTimeMs": 5.348999999999999,
+   "invalidations": 2,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.03863200035704391,
+   "idleRecalcs": 0,
+   "rssMB": 173.578125
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 3.215,
+   "ultElements": 292,
+   "layoutCount": 1,
+   "layoutMs": 0.061,
+   "prePaintMs": 0.083,
+   "paintMs": 0.033,
+   "animMs": 0.062,
+   "busyMs": 5.447,
+   "activeMs": 52.58833300000697,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 3.2150000000000007,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06999999999999999,
+   "threadTimeMs": 5.618000000000005,
+   "invalidations": 2,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.03963112745312343,
+   "idleRecalcs": 0,
+   "rssMB": 176.484375
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 2,
+    "byReason": {
+     "Style attribute change": 1,
+     "Animation": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 4,
+    "byReason": {
+     "Style changed": 2,
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 3025,
+    "selfUs": 3025,
+    "maxUs": 3007
+   },
+   {
+    "name": "RunTask",
+    "count": 25,
+    "inclUs": 5380,
+    "selfUs": 1577,
+    "maxUs": 3651
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 3659,
+    "selfUs": 241,
+    "maxUs": 3559
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 60,
+    "selfUs": 59,
+    "maxUs": 38
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 52,
+    "selfUs": 52,
+    "maxUs": 52
+   },
+   {
+    "name": "PaintArtifactCompositor::Update",
+    "count": 2,
+    "inclUs": 39,
+    "selfUs": 37,
+    "maxUs": 23
+   },
+   {
+    "name": "Commit",
+    "count": 2,
+    "inclUs": 68,
+    "selfUs": 37,
+    "maxUs": 44
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 2,
+    "inclUs": 64,
+    "selfUs": 35,
+    "maxUs": 58
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 2,
+    "inclUs": 3193,
+    "selfUs": 26,
+    "maxUs": 3161
+   },
+   {
+    "name": "LocalFrameView::RunPaintLifecyclePhase",
+    "count": 2,
+    "inclUs": 135,
+    "selfUs": 24,
+    "maxUs": 102
+   },
+   {
+    "name": "LocalFrameView::ScheduleAnimation",
+    "count": 4,
+    "inclUs": 22,
+    "selfUs": 22,
+    "maxUs": 17
+   },
+   {
+    "name": "Paint",
+    "count": 2,
+    "inclUs": 30,
+    "selfUs": 22,
+    "maxUs": 22
+   }
+  ]
+ },
+ {
+  "variant": "pa-nohas-nosvg",
+  "family": "pa",
+  "params": {
+   "has": "none",
+   "core_fill": 16311,
+   "head_fill": 51149,
+   "svg": false,
+   "anims": false
+  },
+  "bytes": 1092283,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 1,
+   "ultMs": 1.961,
+   "ultElements": 3,
+   "layoutCount": 1,
+   "layoutMs": 0.047,
+   "prePaintMs": 0.039,
+   "paintMs": 0.014,
+   "animMs": 0.007,
+   "busyMs": 4.046,
+   "activeMs": 52.63541699999769,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 1.961000000000001,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06400000000000002,
+   "threadTimeMs": 4.205,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.0426248913178481,
+   "idleRecalcs": 0,
+   "rssMB": 174.109375
+  },
+  "min": {
+   "ultCount": 1,
+   "ultMs": 1.958,
+   "ultElements": 3,
+   "layoutCount": 1,
+   "layoutMs": 0.045,
+   "prePaintMs": 0.037,
+   "paintMs": 0.013,
+   "animMs": 0.006,
+   "busyMs": 4.023,
+   "activeMs": 51.045916999995825,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 1.9569999999999996,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06099999999999999,
+   "threadTimeMs": 4.1940000000000035,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.04196235393575288,
+   "idleRecalcs": 0,
+   "rssMB": 173.546875
+  },
+  "max": {
+   "ultCount": 1,
+   "ultMs": 1.995,
+   "ultElements": 3,
+   "layoutCount": 1,
+   "layoutMs": 0.057,
+   "prePaintMs": 0.04,
+   "paintMs": 0.014,
+   "animMs": 0.012,
+   "busyMs": 4.092,
+   "activeMs": 52.6596669999999,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 1.9940000000000009,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.065,
+   "threadTimeMs": 4.282999999999995,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.04529314637020902,
+   "idleRecalcs": 0,
+   "rssMB": 174.140625
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 1,
+    "byReason": {
+     "Style attribute change": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 2,
+    "byReason": {
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 1,
+    "inclUs": 1954,
+    "selfUs": 1954,
+    "maxUs": 1954
+   },
+   {
+    "name": "RunTask",
+    "count": 23,
+    "inclUs": 4092,
+    "selfUs": 1486,
+    "maxUs": 2615
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 1,
+    "inclUs": 2535,
+    "selfUs": 339,
+    "maxUs": 2535
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 40,
+    "selfUs": 40,
+    "maxUs": 40
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 1,
+    "inclUs": 30,
+    "selfUs": 29,
+    "maxUs": 30
+   },
+   {
+    "name": "Document::rebuildLayoutTree",
+    "count": 1,
+    "inclUs": 27,
+    "selfUs": 27,
+    "maxUs": 27
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 1,
+    "inclUs": 47,
+    "selfUs": 26,
+    "maxUs": 47
+   },
+   {
+    "name": "PaintArtifactCompositor::Update",
+    "count": 1,
+    "inclUs": 23,
+    "selfUs": 22,
+    "maxUs": 23
+   },
+   {
+    "name": "Commit",
+    "count": 1,
+    "inclUs": 40,
+    "selfUs": 22,
+    "maxUs": 40
+   },
+   {
+    "name": "Blink.Layout.UpdateTime",
+    "count": 1,
+    "inclUs": 62,
+    "selfUs": 15,
+    "maxUs": 62
+   },
+   {
+    "name": "Paint",
+    "count": 1,
+    "inclUs": 14,
+    "selfUs": 14,
+    "maxUs": 14
+   },
+   {
+    "name": "ProxyMain::BeginMainFrame",
+    "count": 1,
+    "inclUs": 2603,
+    "selfUs": 11,
+    "maxUs": 2603
+   }
+  ]
+ },
+ {
+  "variant": "pa-demo-anims",
+  "family": "pa",
+  "params": {
+   "has": "demo",
+   "core_fill": 16311,
+   "head_fill": 51149,
+   "svg": true,
+   "anims": true
+  },
+  "bytes": 1626088,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 43.027,
+   "ultElements": 2126,
+   "layoutCount": 1,
+   "layoutMs": 0.076,
+   "prePaintMs": 0.136,
+   "paintMs": 0.036,
+   "animMs": 6.089,
+   "busyMs": 56.803,
+   "activeMs": 55.48004199999559,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 43.02600000000001,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.085,
+   "threadTimeMs": 56.90699999999998,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.049285550991640684,
+   "idleRecalcs": 0,
+   "rssMB": 200.1875
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 42.342,
+   "ultElements": 2126,
+   "layoutCount": 1,
+   "layoutMs": 0.072,
+   "prePaintMs": 0.128,
+   "paintMs": 0.036,
+   "animMs": 6.029,
+   "busyMs": 55.327,
+   "activeMs": 53.982334000000264,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 42.34099999999999,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.08200000000000048,
+   "threadTimeMs": 55.457000000000036,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.04429318402766423,
+   "idleRecalcs": 0,
+   "rssMB": 200.171875
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 44.469,
+   "ultElements": 2126,
+   "layoutCount": 1,
+   "layoutMs": 0.076,
+   "prePaintMs": 0.141,
+   "paintMs": 0.049,
+   "animMs": 6.172,
+   "busyMs": 57.469,
+   "activeMs": 56.06404199999815,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 44.467000000000006,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.08700000000000027,
+   "threadTimeMs": 57.583,
+   "invalidations": 92,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.0506546523624449,
+   "idleRecalcs": 0,
+   "rssMB": 200.265625
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 92,
+    "byReason": {
+     "Related style rule": 90,
+     "Affected by :has()": 1,
+     "Animation": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 92,
+    "byReason": {
+     "Invalidation set matched id": 88,
+     "Element has pending invalidation list": 2,
+     "Invalidation set matched class": 2
+    }
+   },
+   "scheduleStyle": {
+    "count": 2,
+    "byKey": {
+     "pseudo has": 2
+    }
+   },
+   "layoutInvalidation": {
+    "count": 4,
+    "byReason": {
+     "Style changed": 2,
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 43373,
+    "selfUs": 43373,
+    "maxUs": 43349
+   },
+   {
+    "name": "PageAnimator::serviceScriptedAnimations",
+    "count": 2,
+    "inclUs": 6065,
+    "selfUs": 4231,
+    "maxUs": 3345
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 49609,
+    "selfUs": 2740,
+    "maxUs": 47863
+   },
+   {
+    "name": "LocalFrameView::RunPaintLifecyclePhase",
+    "count": 2,
+    "inclUs": 2047,
+    "selfUs": 1899,
+    "maxUs": 1263
+   },
+   {
+    "name": "AnimationTimeline::serviceAnimations",
+    "count": 1763,
+    "inclUs": 1834,
+    "selfUs": 1834,
+    "maxUs": 43
+   },
+   {
+    "name": "RunTask",
+    "count": 25,
+    "inclUs": 57469,
+    "selfUs": 1687,
+    "maxUs": 51302
+   },
+   {
+    "name": "Document::updateStyleInvalidationIfNeeded",
+    "count": 1,
+    "inclUs": 988,
+    "selfUs": 988,
+    "maxUs": 988
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 116,
+    "selfUs": 115,
+    "maxUs": 68
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 2,
+    "inclUs": 44673,
+    "selfUs": 94,
+    "maxUs": 44577
+   },
+   {
+    "name": "UpdateLayoutTree",
+    "count": 2,
+    "inclUs": 44469,
+    "selfUs": 70,
+    "maxUs": 44407
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 54,
+    "selfUs": 54,
+    "maxUs": 54
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 2,
+    "inclUs": 85,
+    "selfUs": 50,
+    "maxUs": 77
+   }
+  ]
+ },
+ {
+  "variant": "pa-nohas-anims",
+  "family": "pa",
+  "params": {
+   "has": "none",
+   "core_fill": 16311,
+   "head_fill": 51149,
+   "svg": true,
+   "anims": true
+  },
+  "bytes": 1604132,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 12.095,
+   "ultElements": 2125,
+   "layoutCount": 1,
+   "layoutMs": 0.076,
+   "prePaintMs": 0.138,
+   "paintMs": 0.036,
+   "animMs": 6.019,
+   "busyMs": 25.159,
+   "activeMs": 52.62300000000687,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 12.093999999999994,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.09200000000000007,
+   "threadTimeMs": 25.330999999999992,
+   "invalidations": 2,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.05395091216910127,
+   "idleRecalcs": 0,
+   "rssMB": 202.484375
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 11.873,
+   "ultElements": 2125,
+   "layoutCount": 1,
+   "layoutMs": 0.071,
+   "prePaintMs": 0.122,
+   "paintMs": 0.032,
+   "animMs": 5.934,
+   "busyMs": 24.029,
+   "activeMs": 52.5162919999857,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 11.87100000000002,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.08100000000000035,
+   "threadTimeMs": 24.139999999999993,
+   "invalidations": 2,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.05261805635227035,
+   "idleRecalcs": 0,
+   "rssMB": 196.171875
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 14.307,
+   "ultElements": 2125,
+   "layoutCount": 1,
+   "layoutMs": 0.091,
+   "prePaintMs": 0.164,
+   "paintMs": 0.048,
+   "animMs": 7.243,
+   "busyMs": 30.234,
+   "activeMs": 52.64845800001058,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 14.305999999999985,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.10700000000000032,
+   "threadTimeMs": 30.39000000000003,
+   "invalidations": 2,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.05395211451301778,
+   "idleRecalcs": 0,
+   "rssMB": 202.625
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 2,
+    "byReason": {
+     "Style attribute change": 1,
+     "Animation": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 4,
+    "byReason": {
+     "Style changed": 2,
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 14185,
+    "selfUs": 14185,
+    "maxUs": 14159
+   },
+   {
+    "name": "PageAnimator::serviceScriptedAnimations",
+    "count": 2,
+    "inclUs": 7211,
+    "selfUs": 5201,
+    "maxUs": 4231
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 21184,
+    "selfUs": 4260,
+    "maxUs": 19379
+   },
+   {
+    "name": "LocalFrameView::RunPaintLifecyclePhase",
+    "count": 2,
+    "inclUs": 2176,
+    "selfUs": 2027,
+    "maxUs": 1385
+   },
+   {
+    "name": "AnimationTimeline::serviceAnimations",
+    "count": 1827,
+    "inclUs": 2010,
+    "selfUs": 2010,
+    "maxUs": 47
+   },
+   {
+    "name": "RunTask",
+    "count": 24,
+    "inclUs": 30234,
+    "selfUs": 1681,
+    "maxUs": 23716
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 133,
+    "selfUs": 132,
+    "maxUs": 81
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 2,
+    "inclUs": 14562,
+    "selfUs": 105,
+    "maxUs": 14459
+   },
+   {
+    "name": "UpdateLayoutTree",
+    "count": 2,
+    "inclUs": 14307,
+    "selfUs": 72,
+    "maxUs": 14241
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 70,
+    "selfUs": 70,
+    "maxUs": 70
+   },
+   {
+    "name": "Commit",
+    "count": 2,
+    "inclUs": 99,
+    "selfUs": 54,
+    "maxUs": 51
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 2,
+    "inclUs": 87,
+    "selfUs": 48,
+    "maxUs": 81
+   }
+  ]
+ },
+ {
+  "variant": "svg-demo",
+  "family": "svg",
+  "params": {
+   "has": "demo",
+   "svg": true
+  },
+  "bytes": 1138306,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 1,
+   "ultMs": 13.515,
+   "ultElements": 579,
+   "layoutCount": 1,
+   "layoutMs": 0.055,
+   "prePaintMs": 0.048,
+   "paintMs": 0.015,
+   "animMs": 0.01,
+   "busyMs": 16.019,
+   "activeMs": 50.93424999999115,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 13.518000000000002,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06600000000000003,
+   "threadTimeMs": 16.172000000000004,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.06825801345956815,
+   "idleRecalcs": 0,
+   "rssMB": 174.53125
+  },
+  "min": {
+   "ultCount": 1,
+   "ultMs": 13.414,
+   "ultElements": 579,
+   "layoutCount": 1,
+   "layoutMs": 0.054,
+   "prePaintMs": 0.046,
+   "paintMs": 0.014,
+   "animMs": 0.009,
+   "busyMs": 15.483,
+   "activeMs": 50.78033300000243,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 13.412999999999995,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06300000000000001,
+   "threadTimeMs": 15.63400000000001,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.04396694480086886,
+   "idleRecalcs": 0,
+   "rssMB": 174.140625
+  },
+  "max": {
+   "ultCount": 1,
+   "ultMs": 18.715,
+   "ultElements": 579,
+   "layoutCount": 1,
+   "layoutMs": 0.062,
+   "prePaintMs": 0.055,
+   "paintMs": 0.016,
+   "animMs": 0.013,
+   "busyMs": 22.87,
+   "activeMs": 52.602249999996275,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 18.713999999999995,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.07499999999999998,
+   "threadTimeMs": 23.196000000000023,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.08555373693167098,
+   "idleRecalcs": 0,
+   "rssMB": 176.28125
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 1,
+    "byReason": {
+     "Style attribute change": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 2,
+    "byReason": {
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 1,
+    "inclUs": 13363,
+    "selfUs": 13363,
+    "maxUs": 13363
+   },
+   {
+    "name": "RunTask",
+    "count": 23,
+    "inclUs": 15483,
+    "selfUs": 1505,
+    "maxUs": 13989
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 1,
+    "inclUs": 13891,
+    "selfUs": 251,
+    "maxUs": 13891
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 45,
+    "selfUs": 45,
+    "maxUs": 45
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 1,
+    "inclUs": 38,
+    "selfUs": 37,
+    "maxUs": 38
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 1,
+    "inclUs": 58,
+    "selfUs": 36,
+    "maxUs": 58
+   },
+   {
+    "name": "Document::rebuildLayoutTree",
+    "count": 1,
+    "inclUs": 31,
+    "selfUs": 31,
+    "maxUs": 31
+   },
+   {
+    "name": "PaintArtifactCompositor::Update",
+    "count": 1,
+    "inclUs": 26,
+    "selfUs": 26,
+    "maxUs": 26
+   },
+   {
+    "name": "Commit",
+    "count": 1,
+    "inclUs": 49,
+    "selfUs": 26,
+    "maxUs": 49
+   },
+   {
+    "name": "Paint",
+    "count": 1,
+    "inclUs": 15,
+    "selfUs": 15,
+    "maxUs": 15
+   },
+   {
+    "name": "MainFrameAborted",
+    "count": 1,
+    "inclUs": 19,
+    "selfUs": 15,
+    "maxUs": 19
+   },
+   {
+    "name": "ProxyMain::BeginMainFrame",
+    "count": 1,
+    "inclUs": 13976,
+    "selfUs": 14,
+    "maxUs": 13976
+   }
+  ]
+ },
+ {
+  "variant": "svg-nohas",
+  "family": "svg",
+  "params": {
+   "has": "none",
+   "svg": true
+  },
+  "bytes": 1116379,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 1,
+   "ultMs": 5.196,
+   "ultElements": 579,
+   "layoutCount": 1,
+   "layoutMs": 0.056,
+   "prePaintMs": 0.049,
+   "paintMs": 0.016,
+   "animMs": 0.018,
+   "busyMs": 9.626,
+   "activeMs": 53.438166000007186,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 5.1979999999999995,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.07000000000000002,
+   "threadTimeMs": 9.953999999999997,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.0789007603857037,
+   "idleRecalcs": 0,
+   "rssMB": 175.484375
+  },
+  "min": {
+   "ultCount": 1,
+   "ultMs": 2.56,
+   "ultElements": 579,
+   "layoutCount": 1,
+   "layoutMs": 0.055,
+   "prePaintMs": 0.047,
+   "paintMs": 0.013,
+   "animMs": 0.006,
+   "busyMs": 5.419,
+   "activeMs": 53.18400000000838,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 2.558999999999999,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.06400000000000002,
+   "threadTimeMs": 5.7290000000000045,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.0639391228577959,
+   "idleRecalcs": 0,
+   "rssMB": 173.875
+  },
+  "max": {
+   "ultCount": 1,
+   "ultMs": 7.458,
+   "ultElements": 579,
+   "layoutCount": 1,
+   "layoutMs": 0.063,
+   "prePaintMs": 0.054,
+   "paintMs": 0.018,
+   "animMs": 0.019,
+   "busyMs": 11.656,
+   "activeMs": 53.62675000002491,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 7.458000000000001,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.07300000000000001,
+   "threadTimeMs": 12.108999999999995,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.08322319553443425,
+   "idleRecalcs": 0,
+   "rssMB": 177.296875
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 1,
+    "byReason": {
+     "Style attribute change": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 2,
+    "byReason": {
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 1,
+    "inclUs": 2512,
+    "selfUs": 2512,
+    "maxUs": 2512
+   },
+   {
+    "name": "RunTask",
+    "count": 23,
+    "inclUs": 5419,
+    "selfUs": 2204,
+    "maxUs": 3225
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 1,
+    "inclUs": 3142,
+    "selfUs": 363,
+    "maxUs": 3142
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 44,
+    "selfUs": 44,
+    "maxUs": 44
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 1,
+    "inclUs": 36,
+    "selfUs": 35,
+    "maxUs": 36
+   },
+   {
+    "name": "Document::rebuildLayoutTree",
+    "count": 1,
+    "inclUs": 32,
+    "selfUs": 32,
+    "maxUs": 32
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 1,
+    "inclUs": 56,
+    "selfUs": 32,
+    "maxUs": 56
+   },
+   {
+    "name": "PaintArtifactCompositor::Update",
+    "count": 1,
+    "inclUs": 24,
+    "selfUs": 24,
+    "maxUs": 24
+   },
+   {
+    "name": "Commit",
+    "count": 1,
+    "inclUs": 40,
+    "selfUs": 23,
+    "maxUs": 40
+   },
+   {
+    "name": "Paint",
+    "count": 1,
+    "inclUs": 16,
+    "selfUs": 16,
+    "maxUs": 16
+   },
+   {
+    "name": "ProxyMain::BeginMainFrame",
+    "count": 1,
+    "inclUs": 3212,
+    "selfUs": 11,
+    "maxUs": 3212
+   },
+   {
+    "name": "Layout",
+    "count": 1,
+    "inclUs": 55,
+    "selfUs": 11,
+    "maxUs": 55
+   }
+  ]
+ },
+ {
+  "variant": "svg-plain",
+  "family": "svg",
+  "params": {
+   "has": "none",
+   "svg": false
+  },
+  "bytes": 1096343,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 1,
+   "ultMs": 4.717,
+   "ultElements": 3,
+   "layoutCount": 1,
+   "layoutMs": 0.056,
+   "prePaintMs": 0.043,
+   "paintMs": 0.017,
+   "animMs": 0.013,
+   "busyMs": 8.821,
+   "activeMs": 53.24799999999232,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 4.715000000000001,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.07800000000000082,
+   "threadTimeMs": 9.190000000000003,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.0752743485796083,
+   "idleRecalcs": 0,
+   "rssMB": 174.34375
+  },
+  "min": {
+   "ultCount": 1,
+   "ultMs": 4.159,
+   "ultElements": 3,
+   "layoutCount": 1,
+   "layoutMs": 0.052,
+   "prePaintMs": 0.043,
+   "paintMs": 0.014,
+   "animMs": 0.012,
+   "busyMs": 8.283,
+   "activeMs": 51.81220800001756,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 4.157000000000001,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.07099999999999988,
+   "threadTimeMs": 8.543999999999997,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.07425274952212711,
+   "idleRecalcs": 0,
+   "rssMB": 174.296875
+  },
+  "max": {
+   "ultCount": 1,
+   "ultMs": 4.953,
+   "ultElements": 3,
+   "layoutCount": 1,
+   "layoutMs": 0.065,
+   "prePaintMs": 0.055,
+   "paintMs": 0.017,
+   "animMs": 0.014,
+   "busyMs": 9.052,
+   "activeMs": 53.46587499999441,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 4.9479999999999995,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.0830000000000006,
+   "threadTimeMs": 9.354000000000001,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.07859985241672049,
+   "idleRecalcs": 0,
+   "rssMB": 175.078125
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 1,
+    "byReason": {
+     "Style attribute change": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 2,
+    "byReason": {
+     "Removed from layout": 1,
+     "Added to layout": 1
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 1,
+    "inclUs": 4655,
+    "selfUs": 4655,
+    "maxUs": 4655
+   },
+   {
+    "name": "RunTask",
+    "count": 23,
+    "inclUs": 8283,
+    "selfUs": 2675,
+    "maxUs": 5619
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 1,
+    "inclUs": 5501,
+    "selfUs": 519,
+    "maxUs": 5501
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 49,
+    "selfUs": 49,
+    "maxUs": 49
+   },
+   {
+    "name": "Document::rebuildLayoutTree",
+    "count": 1,
+    "inclUs": 38,
+    "selfUs": 38,
+    "maxUs": 38
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 1,
+    "inclUs": 63,
+    "selfUs": 37,
+    "maxUs": 63
+   },
+   {
+    "name": "Commit",
+    "count": 1,
+    "inclUs": 50,
+    "selfUs": 33,
+    "maxUs": 50
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 1,
+    "inclUs": 33,
+    "selfUs": 32,
+    "maxUs": 33
+   },
+   {
+    "name": "Blink.Layout.UpdateTime",
+    "count": 1,
+    "inclUs": 85,
+    "selfUs": 27,
+    "maxUs": 85
+   },
+   {
+    "name": "PaintArtifactCompositor::Update",
+    "count": 1,
+    "inclUs": 27,
+    "selfUs": 26,
+    "maxUs": 27
+   },
+   {
+    "name": "ProxyMain::BeginMainFrame",
+    "count": 1,
+    "inclUs": 5603,
+    "selfUs": 19,
+    "maxUs": 5603
+   },
+   {
+    "name": "Paint",
+    "count": 1,
+    "inclUs": 17,
+    "selfUs": 17,
+    "maxUs": 17
+   }
+  ]
+ },
+ {
+  "variant": "rd-change",
+  "family": "rd",
+  "params": {
+   "split": false,
+   "svg": true,
+   "latch": false,
+   "mutation": "bank"
+  },
+  "bytes": 1246146,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 40.509,
+   "ultElements": 19209,
+   "layoutCount": 1,
+   "layoutMs": 0.471,
+   "prePaintMs": 0.588,
+   "paintMs": 0,
+   "animMs": 12.151,
+   "busyMs": 121.746,
+   "activeMs": 112.60399999999208,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 40.50499999999999,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.47899999999999676,
+   "threadTimeMs": 121.91400000000002,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.08224235158050341,
+   "idleRecalcs": 0,
+   "rssMB": 225.65625
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 37.022,
+   "ultElements": 19209,
+   "layoutCount": 1,
+   "layoutMs": 0.464,
+   "prePaintMs": 0.569,
+   "paintMs": 0,
+   "animMs": 11.729,
+   "busyMs": 115.671,
+   "activeMs": 107.93275000000722,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 37.017999999999994,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.4720000000000002,
+   "threadTimeMs": 115.84600000000006,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.05993550689728884,
+   "idleRecalcs": 0,
+   "rssMB": 225.59375
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 43.051,
+   "ultElements": 19209,
+   "layoutCount": 1,
+   "layoutMs": 0.545,
+   "prePaintMs": 0.631,
+   "paintMs": 0,
+   "animMs": 13.492,
+   "busyMs": 122.294,
+   "activeMs": 115.78008300001966,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 43.050000000000004,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.562,
+   "threadTimeMs": 122.32700000000001,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.08530311470496092,
+   "idleRecalcs": 0,
+   "rssMB": 225.6875
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 770,
+    "byReason": {
+     "ScrollTimeline": 769,
+     "Style attribute change": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 769,
+    "byReason": {
+     "Style changed": 769
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "LocalFrameView::RunPaintLifecyclePhase",
+    "count": 2,
+    "inclUs": 62218,
+    "selfUs": 62149,
+    "maxUs": 61652
+   },
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 38225,
+    "selfUs": 38225,
+    "maxUs": 30506
+   },
+   {
+    "name": "PageAnimator::serviceScriptedAnimations",
+    "count": 2,
+    "inclUs": 10710,
+    "selfUs": 7522,
+    "maxUs": 7229
+   },
+   {
+    "name": "AnimationTimeline::serviceAnimations",
+    "count": 4059,
+    "inclUs": 4539,
+    "selfUs": 4539,
+    "maxUs": 15
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 109645,
+    "selfUs": 4142,
+    "maxUs": 108145
+   },
+   {
+    "name": "RunTask",
+    "count": 26,
+    "inclUs": 122294,
+    "selfUs": 1787,
+    "maxUs": 115520
+   },
+   {
+    "name": "LocalFrameView::ScheduleAnimation",
+    "count": 1229,
+    "inclUs": 1428,
+    "selfUs": 1428,
+    "maxUs": 15
+   },
+   {
+    "name": "UpdateLayoutTree",
+    "count": 2,
+    "inclUs": 40509,
+    "selfUs": 906,
+    "maxUs": 32695
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 535,
+    "selfUs": 535,
+    "maxUs": 535
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 426,
+    "selfUs": 424,
+    "maxUs": 401
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 3,
+    "inclUs": 41248,
+    "selfUs": 168,
+    "maxUs": 32753
+   },
+   {
+    "name": "Blink.CompositingInputs.UpdateTime",
+    "count": 2,
+    "inclUs": 149,
+    "selfUs": 148,
+    "maxUs": 148
+   }
+  ]
+ },
+ {
+  "variant": "rd-change-split",
+  "family": "rd",
+  "params": {
+   "split": true,
+   "svg": true,
+   "latch": false,
+   "mutation": "bank"
+  },
+  "bytes": 1260882,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 39.275,
+   "ultElements": 19209,
+   "layoutCount": 1,
+   "layoutMs": 0.531,
+   "prePaintMs": 0.707,
+   "paintMs": 0,
+   "animMs": 13.61,
+   "busyMs": 91.199,
+   "activeMs": 82.33841699999175,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 39.271,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.5389999999999978,
+   "threadTimeMs": 91.393,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.07892511761108596,
+   "idleRecalcs": 0,
+   "rssMB": 227.828125
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 35.894,
+   "ultElements": 19209,
+   "layoutCount": 1,
+   "layoutMs": 0.498,
+   "prePaintMs": 0.629,
+   "paintMs": 0,
+   "animMs": 13.051,
+   "busyMs": 90.96,
+   "activeMs": 81.76091700000688,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 35.89200000000001,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.5059999999999996,
+   "threadTimeMs": 90.99800000000002,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.07824873666789856,
+   "idleRecalcs": 0,
+   "rssMB": 227.71875
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 40.023,
+   "ultElements": 19209,
+   "layoutCount": 1,
+   "layoutMs": 1.367,
+   "prePaintMs": 0.747,
+   "paintMs": 0,
+   "animMs": 15.947,
+   "busyMs": 97.466,
+   "activeMs": 89.56462499999907,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 40.021,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 1.384,
+   "threadTimeMs": 97.555,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.09456961853604715,
+   "idleRecalcs": 0,
+   "rssMB": 229.875
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 770,
+    "byReason": {
+     "ScrollTimeline": 769,
+     "Style attribute change": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 769,
+    "byReason": {
+     "Style changed": 769
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 37215,
+    "selfUs": 37215,
+    "maxUs": 30508
+   },
+   {
+    "name": "LocalFrameView::RunPaintLifecyclePhase",
+    "count": 2,
+    "inclUs": 31194,
+    "selfUs": 31136,
+    "maxUs": 30614
+   },
+   {
+    "name": "PageAnimator::serviceScriptedAnimations",
+    "count": 2,
+    "inclUs": 11506,
+    "selfUs": 9097,
+    "maxUs": 7967
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 82882,
+    "selfUs": 6513,
+    "maxUs": 81202
+   },
+   {
+    "name": "AnimationTimeline::serviceAnimations",
+    "count": 3451,
+    "inclUs": 3951,
+    "selfUs": 3951,
+    "maxUs": 14
+   },
+   {
+    "name": "RunTask",
+    "count": 26,
+    "inclUs": 97466,
+    "selfUs": 2915,
+    "maxUs": 89304
+   },
+   {
+    "name": "LocalFrameView::ScheduleAnimation",
+    "count": 1538,
+    "inclUs": 2897,
+    "selfUs": 2897,
+    "maxUs": 24
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 1352,
+    "selfUs": 1352,
+    "maxUs": 1352
+   },
+   {
+    "name": "UpdateLayoutTree",
+    "count": 2,
+    "inclUs": 40023,
+    "selfUs": 1226,
+    "maxUs": 33237
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 469,
+    "selfUs": 463,
+    "maxUs": 444
+   },
+   {
+    "name": "Blink.CompositingInputs.UpdateTime",
+    "count": 2,
+    "inclUs": 231,
+    "selfUs": 229,
+    "maxUs": 229
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 3,
+    "inclUs": 41547,
+    "selfUs": 121,
+    "maxUs": 33276
+   }
+  ]
+ },
+ {
+  "variant": "rd-change-nosvg",
+  "family": "rd",
+  "params": {
+   "split": false,
+   "svg": false,
+   "latch": false,
+   "mutation": "bank"
+  },
+  "bytes": 1222207,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 44.327,
+   "ultElements": 18632,
+   "layoutCount": 1,
+   "layoutMs": 0.474,
+   "prePaintMs": 0.579,
+   "paintMs": 0,
+   "animMs": 12.503,
+   "busyMs": 126.639,
+   "activeMs": 118.34387500002049,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 44.325,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.48300000000000076,
+   "threadTimeMs": 126.63499999999999,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.09257099195449409,
+   "idleRecalcs": 0,
+   "rssMB": 224.53125
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 35.843,
+   "ultElements": 18632,
+   "layoutCount": 1,
+   "layoutMs": 0.466,
+   "prePaintMs": 0.529,
+   "paintMs": 0,
+   "animMs": 12.311,
+   "busyMs": 114.873,
+   "activeMs": 106.16191599998274,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 35.84200000000001,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.47399999999999876,
+   "threadTimeMs": 115.02800000000002,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.06727883467397416,
+   "idleRecalcs": 0,
+   "rssMB": 224.515625
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 48.16,
+   "ultElements": 18632,
+   "layoutCount": 1,
+   "layoutMs": 0.517,
+   "prePaintMs": 0.62,
+   "paintMs": 0,
+   "animMs": 14.864,
+   "busyMs": 128.068,
+   "activeMs": 120.12462499999674,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 48.15800000000001,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.5299999999999992,
+   "threadTimeMs": 128.23499999999999,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.09524250769693325,
+   "idleRecalcs": 0,
+   "rssMB": 224.53125
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 770,
+    "byReason": {
+     "ScrollTimeline": 769,
+     "Style attribute change": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 769,
+    "byReason": {
+     "Style changed": 769
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "LocalFrameView::RunPaintLifecyclePhase",
+    "count": 2,
+    "inclUs": 60581,
+    "selfUs": 60522,
+    "maxUs": 59981
+   },
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 41827,
+    "selfUs": 41827,
+    "maxUs": 34221
+   },
+   {
+    "name": "PageAnimator::serviceScriptedAnimations",
+    "count": 2,
+    "inclUs": 12000,
+    "selfUs": 9010,
+    "maxUs": 8595
+   },
+   {
+    "name": "AnimationTimeline::serviceAnimations",
+    "count": 3978,
+    "inclUs": 4446,
+    "selfUs": 4446,
+    "maxUs": 38
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 111762,
+    "selfUs": 4241,
+    "maxUs": 109292
+   },
+   {
+    "name": "RunTask",
+    "count": 26,
+    "inclUs": 126639,
+    "selfUs": 2719,
+    "maxUs": 118015
+   },
+   {
+    "name": "LocalFrameView::ScheduleAnimation",
+    "count": 1249,
+    "inclUs": 1405,
+    "selfUs": 1405,
+    "maxUs": 23
+   },
+   {
+    "name": "UpdateLayoutTree",
+    "count": 2,
+    "inclUs": 44327,
+    "selfUs": 1011,
+    "maxUs": 36638
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 467,
+    "selfUs": 467,
+    "maxUs": 467
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 396,
+    "selfUs": 396,
+    "maxUs": 371
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 3,
+    "inclUs": 44982,
+    "selfUs": 159,
+    "maxUs": 36697
+   },
+   {
+    "name": "Blink.CompositingInputs.UpdateTime",
+    "count": 2,
+    "inclUs": 124,
+    "selfUs": 123,
+    "maxUs": 122
+   }
+  ]
+ },
+ {
+  "variant": "rd-change-latch",
+  "family": "rd",
+  "params": {
+   "split": false,
+   "svg": true,
+   "latch": true,
+   "mutation": "bank"
+  },
+  "bytes": 1267819,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 2,
+   "ultMs": 39.493,
+   "ultElements": 19209,
+   "layoutCount": 1,
+   "layoutMs": 0.544,
+   "prePaintMs": 0.536,
+   "paintMs": 0,
+   "animMs": 10.122,
+   "busyMs": 113.973,
+   "activeMs": 107.43074999999953,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 39.492,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.5520000000000004,
+   "threadTimeMs": 114.01799999999996,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.07557690438040345,
+   "idleRecalcs": 0,
+   "rssMB": 226.25
+  },
+  "min": {
+   "ultCount": 2,
+   "ultMs": 38.394,
+   "ultElements": 19209,
+   "layoutCount": 1,
+   "layoutMs": 0.476,
+   "prePaintMs": 0.529,
+   "paintMs": 0,
+   "animMs": 9.562,
+   "busyMs": 113.649,
+   "activeMs": 107.28812499999185,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 38.39300000000001,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.48400000000000176,
+   "threadTimeMs": 113.80800000000002,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.05760784105349111,
+   "idleRecalcs": 0,
+   "rssMB": 226.171875
+  },
+  "max": {
+   "ultCount": 2,
+   "ultMs": 39.803,
+   "ultElements": 19209,
+   "layoutCount": 1,
+   "layoutMs": 0.614,
+   "prePaintMs": 0.565,
+   "paintMs": 0,
+   "animMs": 11.931,
+   "busyMs": 119.629,
+   "activeMs": 111.3823749999865,
+   "recalcStyleCount": 2,
+   "recalcStyleMs": 39.802999999999976,
+   "layoutCountMetric": 1,
+   "layoutMsMetric": 0.6290000000000011,
+   "threadTimeMs": 119.803,
+   "invalidations": 770,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.08456578673023812,
+   "idleRecalcs": 0,
+   "rssMB": 226.328125
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 770,
+    "byReason": {
+     "ScrollTimeline": 769,
+     "Style attribute change": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 769,
+    "byReason": {
+     "Style changed": 769
+    }
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "LocalFrameView::RunPaintLifecyclePhase",
+    "count": 2,
+    "inclUs": 58350,
+    "selfUs": 58297,
+    "maxUs": 57763
+   },
+   {
+    "name": "Document::recalcStyle",
+    "count": 2,
+    "inclUs": 37701,
+    "selfUs": 37701,
+    "maxUs": 32097
+   },
+   {
+    "name": "PageAnimator::serviceScriptedAnimations",
+    "count": 2,
+    "inclUs": 7514,
+    "selfUs": 5683,
+    "maxUs": 4901
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 2,
+    "inclUs": 103547,
+    "selfUs": 3051,
+    "maxUs": 102078
+   },
+   {
+    "name": "AnimationTimeline::serviceAnimations",
+    "count": 2807,
+    "inclUs": 2941,
+    "selfUs": 2941,
+    "maxUs": 13
+   },
+   {
+    "name": "RunTask",
+    "count": 26,
+    "inclUs": 113973,
+    "selfUs": 2757,
+    "maxUs": 107114
+   },
+   {
+    "name": "LocalFrameView::ScheduleAnimation",
+    "count": 1248,
+    "inclUs": 1496,
+    "selfUs": 1496,
+    "maxUs": 15
+   },
+   {
+    "name": "UpdateLayoutTree",
+    "count": 2,
+    "inclUs": 39493,
+    "selfUs": 656,
+    "maxUs": 33836
+   },
+   {
+    "name": "LocalFrameView::performLayout",
+    "count": 1,
+    "inclUs": 469,
+    "selfUs": 469,
+    "maxUs": 469
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 2,
+    "inclUs": 404,
+    "selfUs": 402,
+    "maxUs": 380
+   },
+   {
+    "name": "Blink.CompositingInputs.UpdateTime",
+    "count": 2,
+    "inclUs": 123,
+    "selfUs": 121,
+    "maxUs": 122
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 3,
+    "inclUs": 40093,
+    "selfUs": 101,
+    "maxUs": 33876
+   }
+  ]
+ },
+ {
+  "variant": "rd-unrelated",
+  "family": "rd",
+  "params": {
+   "split": false,
+   "svg": true,
+   "latch": false,
+   "mutation": "reader"
+  },
+  "bytes": 1246188,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 1,
+   "ultMs": 6.455,
+   "ultElements": 2,
+   "layoutCount": 0,
+   "layoutMs": 0,
+   "prePaintMs": 0.032,
+   "paintMs": 0,
+   "animMs": 6.375,
+   "busyMs": 18.76,
+   "activeMs": 50.797666000027675,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 6.452000000000013,
+   "layoutCountMetric": 0,
+   "layoutMsMetric": 0,
+   "threadTimeMs": 19.075999999999983,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.08989212073557966,
+   "idleRecalcs": 0,
+   "rssMB": 203.5
+  },
+  "min": {
+   "ultCount": 1,
+   "ultMs": 6.438,
+   "ultElements": 2,
+   "layoutCount": 0,
+   "layoutMs": 0,
+   "prePaintMs": 0.031,
+   "paintMs": 0,
+   "animMs": 3.586,
+   "busyMs": 13.914,
+   "activeMs": 50.72100000001956,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 6.434999999999996,
+   "layoutCountMetric": 0,
+   "layoutMsMetric": 0,
+   "threadTimeMs": 14.172000000000018,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.07389255611006333,
+   "idleRecalcs": 0,
+   "rssMB": 203.484375
+  },
+  "max": {
+   "ultCount": 1,
+   "ultMs": 6.592,
+   "ultElements": 2,
+   "layoutCount": 0,
+   "layoutMs": 0,
+   "prePaintMs": 0.036,
+   "paintMs": 0,
+   "animMs": 6.807,
+   "busyMs": 20.698,
+   "activeMs": 52.61129199998686,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 6.590000000000012,
+   "layoutCountMetric": 0,
+   "layoutMsMetric": 0,
+   "threadTimeMs": 21.038,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.09923408409950206,
+   "idleRecalcs": 0,
+   "rssMB": 204.3125
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 1,
+    "byReason": {
+     "Style attribute change": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 0,
+    "byReason": {}
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "Document::recalcStyle",
+    "count": 1,
+    "inclUs": 6385,
+    "selfUs": 6385,
+    "maxUs": 6385
+   },
+   {
+    "name": "PageAnimator::serviceScriptedAnimations",
+    "count": 1,
+    "inclUs": 3585,
+    "selfUs": 2656,
+    "maxUs": 3585
+   },
+   {
+    "name": "RunTask",
+    "count": 22,
+    "inclUs": 13914,
+    "selfUs": 2020,
+    "maxUs": 11906
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 1,
+    "inclUs": 8232,
+    "selfUs": 1091,
+    "maxUs": 8232
+   },
+   {
+    "name": "AnimationTimeline::serviceAnimations",
+    "count": 904,
+    "inclUs": 929,
+    "selfUs": 929,
+    "maxUs": 11
+   },
+   {
+    "name": "LocalFrameView::RunPaintLifecyclePhase",
+    "count": 1,
+    "inclUs": 602,
+    "selfUs": 570,
+    "maxUs": 602
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 1,
+    "inclUs": 6499,
+    "selfUs": 58,
+    "maxUs": 6499
+   },
+   {
+    "name": "UpdateLayoutTree",
+    "count": 1,
+    "inclUs": 6438,
+    "selfUs": 36,
+    "maxUs": 6438
+   },
+   {
+    "name": "Commit",
+    "count": 1,
+    "inclUs": 49,
+    "selfUs": 32,
+    "maxUs": 49
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 1,
+    "inclUs": 26,
+    "selfUs": 26,
+    "maxUs": 26
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 1,
+    "inclUs": 24,
+    "selfUs": 23,
+    "maxUs": 24
+   },
+   {
+    "name": "Document::updateStyle",
+    "count": 1,
+    "inclUs": 6401,
+    "selfUs": 16,
+    "maxUs": 6401
+   }
+  ]
+ },
+ {
+  "variant": "rd-unrelated-split",
+  "family": "rd",
+  "params": {
+   "split": true,
+   "svg": true,
+   "latch": false,
+   "mutation": "reader"
+  },
+  "bytes": 1260866,
+  "trials": 3,
+  "errors": 0,
+  "median": {
+   "ultCount": 1,
+   "ultMs": 4.136,
+   "ultElements": 2,
+   "layoutCount": 0,
+   "layoutMs": 0,
+   "prePaintMs": 0.033,
+   "paintMs": 0,
+   "animMs": 6.595,
+   "busyMs": 15.52,
+   "activeMs": 53.24133300001267,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 4.131999999999997,
+   "layoutCountMetric": 0,
+   "layoutMsMetric": 0,
+   "threadTimeMs": 15.71399999999995,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.09057271130611709,
+   "idleRecalcs": 0,
+   "rssMB": 204.03125
+  },
+  "min": {
+   "ultCount": 1,
+   "ultMs": 3.9,
+   "ultElements": 2,
+   "layoutCount": 0,
+   "layoutMs": 0,
+   "prePaintMs": 0.032,
+   "paintMs": 0,
+   "animMs": 5.115,
+   "busyMs": 15.038,
+   "activeMs": 53.20091700000921,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 3.898999999999986,
+   "layoutCountMetric": 0,
+   "layoutMsMetric": 0,
+   "threadTimeMs": 15.388999999999985,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.08689120497042918,
+   "idleRecalcs": 0,
+   "rssMB": 203.8125
+  },
+  "max": {
+   "ultCount": 1,
+   "ultMs": 4.618,
+   "ultElements": 2,
+   "layoutCount": 0,
+   "layoutMs": 0,
+   "prePaintMs": 0.035,
+   "paintMs": 0,
+   "animMs": 6.612,
+   "busyMs": 17.273,
+   "activeMs": 53.325209000031464,
+   "recalcStyleCount": 1,
+   "recalcStyleMs": 4.61700000000001,
+   "layoutCountMetric": 0,
+   "layoutMsMetric": 0,
+   "threadTimeMs": 17.634999999999955,
+   "invalidations": 1,
+   "verified": null,
+   "forced": null,
+   "idleTaskMsPerS": 0.10022107600676029,
+   "idleRecalcs": 0,
+   "rssMB": 204.03125
+  },
+  "invalidationReasons": {
+   "styleRecalc": {
+    "count": 1,
+    "byReason": {
+     "Style attribute change": 1
+    }
+   },
+   "styleInvalidator": {
+    "count": 0,
+    "byReason": {}
+   },
+   "scheduleStyle": {
+    "count": 0,
+    "byKey": {}
+   },
+   "layoutInvalidation": {
+    "count": 0,
+    "byReason": {}
+   },
+   "paintInvalidation": 0
+  },
+  "topSelf": [
+   {
+    "name": "PageAnimator::serviceScriptedAnimations",
+    "count": 1,
+    "inclUs": 6611,
+    "selfUs": 5603,
+    "maxUs": 6611
+   },
+   {
+    "name": "Document::recalcStyle",
+    "count": 1,
+    "inclUs": 3848,
+    "selfUs": 3848,
+    "maxUs": 3848
+   },
+   {
+    "name": "RunTask",
+    "count": 22,
+    "inclUs": 15520,
+    "selfUs": 2530,
+    "maxUs": 13003
+   },
+   {
+    "name": "WebFrameWidgetImpl::UpdateLifecycle",
+    "count": 1,
+    "inclUs": 6274,
+    "selfUs": 1640,
+    "maxUs": 6274
+   },
+   {
+    "name": "AnimationTimeline::serviceAnimations",
+    "count": 1000,
+    "inclUs": 1008,
+    "selfUs": 1008,
+    "maxUs": 7
+   },
+   {
+    "name": "LocalFrameView::RunPaintLifecyclePhase",
+    "count": 1,
+    "inclUs": 602,
+    "selfUs": 575,
+    "maxUs": 602
+   },
+   {
+    "name": "LocalFrameView::UpdateStyleAndLayout",
+    "count": 1,
+    "inclUs": 3989,
+    "selfUs": 83,
+    "maxUs": 3989
+   },
+   {
+    "name": "UpdateLayoutTree",
+    "count": 1,
+    "inclUs": 3900,
+    "selfUs": 38,
+    "maxUs": 3900
+   },
+   {
+    "name": "Commit",
+    "count": 1,
+    "inclUs": 53,
+    "selfUs": 37,
+    "maxUs": 53
+   },
+   {
+    "name": "Blink.PrePaint.UpdateTime",
+    "count": 1,
+    "inclUs": 25,
+    "selfUs": 25,
+    "maxUs": 25
+   },
+   {
+    "name": "Blink.Paint.UpdateTime",
+    "count": 1,
+    "inclUs": 25,
+    "selfUs": 23,
+    "maxUs": 25
+   },
+   {
+    "name": "ProxyMain::BeginMainFrame",
+    "count": 1,
+    "inclUs": 12984,
+    "selfUs": 21,
+    "maxUs": 12984
+   }
+  ]
+ }
+]

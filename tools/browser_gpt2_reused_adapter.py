@@ -11,7 +11,6 @@ import build_hybrid_twelve_block as hybrid
 import f4_packing as f4
 import f5_scoping as f5
 from browser_gpt2_reused_core import compile_reused
-import r2f_lean_handshake as r2f
 
 
 def compile_reused_runtime_core(
@@ -51,14 +50,7 @@ def compile_reused_runtime_core(
         "@container runtime style(--layer:0){.loop-input{--loop-ready:1;",
         "@container runtime style(--layer:0){.loop-input{--loop-ready:var(--embed-ready);",
     )
-    if r2f.LEAN_HANDSHAKE:
-        # R2F: the controller reads the bank pass markers itself; no SMIL relay,
-        # no pulse-end / pass-advance frames. Token boundaries raise --pass-cap.
-        css = r2f.apply_css(css, blocks, capacity)
-        body = r2f.apply_body(body)
     for token in range(1, capacity):
-        if r2f.LEAN_HANDSHAKE:
-            break
         step = token * blocks
         old = f"body:has(#loop-advanced-{step}.done){{--pass:{step + 1}}}"
         new = f"body:has(#token-{token}-advanced.done){{--pass:{step + 1}}}"
@@ -191,10 +183,8 @@ def compile_reused_runtime_core(
         '<div class="core-controller"><div class="core-block" id="block-0">'
         + body
         + "</div></div>"
+        + receiver
     )
-    if r2f.LEAN_HANDSHAKE:
-        body = r2f.wrap_controller(body)
-    body += receiver
     metadata = {
         "blocks": blocks,
         "capacity": capacity,
@@ -221,7 +211,6 @@ def compile_reused_runtime_core(
         "nativeLayerTokenHandshake": True,
         "privateLayerControl": True,
         "localLayerContainer": True,
-        "r2fLeanHandshake": r2f.LEAN_HANDSHAKE,
         "f5ScopedHandshake": f5.SCOPED_HANDSHAKE,
         "f5ScopedEpoch": f5.SCOPED_EPOCH,
         "f5ScopedFeedback": f5.SCOPED_FEEDBACK,

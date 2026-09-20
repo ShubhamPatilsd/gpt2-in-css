@@ -19,6 +19,7 @@ import build_gpt2_block_css as b
 import build_hybrid_twelve_block as hybrid
 import f4_packing as f4
 import f5_scoping as f5
+import r2g_has_scope as r2g
 import numpy as np
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 from browser_gpt2_core import compile_core
@@ -542,8 +543,7 @@ def compile_runtime(
         )
 
     css = re.sub(r'url\("(file:[^\"]+)"\)', relative_asset, css)
-    (directory / "runtime.css").write_text(css)
-    (directory / "index.html").write_text(
+    page = (
         '<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="script-src \'none\';object-src \'none\'"><title>Native GPT-2 • Chromium • no JavaScript</title><link rel="stylesheet" href="runtime.css"></head><body>'
         + controls
         + font_html
@@ -551,7 +551,14 @@ def compile_runtime(
         + f'<i id="core-epoch-observer" style="position:fixed;top:-30px;width:anchor-size(--block-{blocks - 1}-probe-epoch width,0px);height:1px"></i>'
         + "</body></html>"
     )
+    r2g_stats = None
+    if r2g.SCOPED_HAS:
+        # R2G: fixed-depth `:has()` arguments for the loop/token handshake (verified against the page).
+        css, r2g_stats = r2g.scope_has_arguments(css, page, capacity)
+    (directory / "runtime.css").write_text(css)
+    (directory / "index.html").write_text(page)
     metadata.update(
+        r2gScopedHas=r2g_stats,
         fontFaces=font_count,
         autostart=autostart,
         head="full-vocabulary-q16-two-pass",
