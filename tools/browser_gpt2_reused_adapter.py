@@ -14,6 +14,7 @@ import r2c_hoist as r2c
 from browser_gpt2_reused_core import compile_reused
 import r2f_lean_handshake as r2f
 import r3r_fold_hop as r3r
+import r4d_flags as r4d
 
 
 def compile_reused_runtime_core(
@@ -243,6 +244,11 @@ def compile_reused_runtime_core(
         "f4PackedBanks": f4.PACKED_BANKS and codec == "font-vector",
         "f4PackedHead": f4.PACKED_HEAD,
         "f4NumericLists": f4.NUMERIC_LISTS and codec == "font-vector",
+        "r4dEmptyUnfilled": r4d.EMPTY_UNFILLED and codec == "font-vector",
+        "r4dLeanLatch": r4d.LEAN_LATCH and codec == "font-vector",
+        "r4dUnpackV": r4d.UNPACK_V and codec == "font-vector",
+        "r4dHideUnfilled": r4d.HIDE_UNFILLED and codec == "font-vector",
+        "r4dGateScores": r4d.GATE_SCORES and codec == "font-vector",
         "r2cHoistFvs": r2c.HOIST_FVS,
         "r2cHoistStages": r2c.HOIST_STAGES,
         "r2cHoistQuery": r2c.HOIST_QUERY and codec == "font-vector",

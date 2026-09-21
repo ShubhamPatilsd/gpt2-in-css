@@ -1,0 +1,195 @@
+<!doctype html><html><head><meta charset="utf-8"><title>R4X Chrome 153 support probe</title>
+<style>
+@property --n { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --len { syntax: "<length>"; inherits: true; initial-value: 0px; }
+@property --lenA { syntax: "<length>"; inherits: true; initial-value: 0px; }
+@property --lenC { syntax: "<length>"; inherits: true; initial-value: 0px; }
+#anch { anchor-name: --a; width: 123px; height: 10px; background:#ccc; }
+#cont { container-type: size; container-name: --cq; width: 300px; height: 50px; position: fixed; left: 0; top: 200px; }
+#cont2 { container-type: size; container-name: --cq2; width: 200px; height: 20px; }
+/* live tests */
+#t1 { --n: calc(100cqw / 1px); }                       /* container unit -> number (catalog: yes) */
+#t2 { --len: 100cqw; }                                  /* registered length from cq */
+#t3 { font-size: 100cqw; }                              /* font-size from cq */
+#t4 { --n: progress(100cqw, 0px, 1000px); }             /* progress() with cq length */
+#t5 { --n: container-progress(width, 0px, 1000px); }    /* container-progress() nearest */
+#t6 { --n: container-progress(width of --cq, 0px, 1000px); } /* named container */
+#t7 { --n: media-progress(width, 0px, 4000px); }
+#t8 { --lenA: anchor-size(--a width); position: fixed; }        /* anchor-size in registered length */
+#t9 { font-size: anchor-size(--a width); position: fixed; }     /* anchor-size in font-size */
+#t10 { letter-spacing: anchor-size(--a width); position: fixed; }
+#t11 { --n: sibling-index(); }
+#t12 { --n: random(0, 100); }
+#t13 { --n: calc(1ch / 1px); font-family: monospace; font-size: 20px; }  /* metric unit -> number */
+#t14 { --lenC: calc-size(max-content, size); }
+#t15 { --n: if(style(--flag: 1): 7; else: 3); --flag: 1; }
+#t16 { --n: attr(data-v type(<number>), 0); }
+#t17 { --n: env(safe-area-inset-left, 42); }
+#t18 { --n: 2; }
+@container --cq (width > 100px) { #t18 { --n: 5; } }             /* size query on named container */
+#t19 { --n: 2; --v: 7; }
+@container style(--v > 5) { #t19 { --n: 9; } }                   /* style range query */
+#t19b { --n: 2; --v: 7; }
+@container style(--v: 7) { #t19b { --n: 9; } }                    /* style equality query (catalog) */
+#t20 { --n: 2; }
+@container scroll-state(scrollable: none) { #t20 { --n: 6; } }
+#sc { container-type: scroll-state; overflow: hidden; width: 50px; height: 20px; }
+#t21 { --n: calc(100cqh / 1px); }
+#t22 { --n: calc(1lh / 1px); line-height: 30px; }
+#t23 { --n: calc(1cap / 1px); font-family: monospace; font-size: 20px; }
+#t24 { --n: calc(1ic / 1px); font-family: monospace; font-size: 20px; }
+#t25 { --n: calc(1ex / 1px); font-family: monospace; font-size: 20px; }
+#t26 { --n: calc(100cqw / 1px); zoom: 2; }   /* zoom interplay */
+#t27 { --n: calc(1em / 1px); font-size: 100cqw; } /* em of a cq-derived font-size */
+#t28 { --n: calc(100cqmin / 1px); }
+#t29 { --n: calc(100cqmax / 1px); }
+#t30 { --n: calc(100cqi / 1px); font-optical-sizing: auto; }
+#t31 { width: calc(container-progress(width, 0px, 1000px) * 100px); }
+#t32 { --n: container-progress(inline-size, 0px, 1000px); }
+#t33 { --n: calc(container-progress(width, 0px, 1000px) * 1); }
+#t34 { --n: media-progress(width, 0px, 1000px); }
+#t35 { --len: calc(progress(100cqw, 0px, 1000px) * 1px); }
+#t36 { --n: container-progress(width of --cq, 0px, 1000px); position: fixed; }
+#t37 { --n: progress(100cqw, 0px, 1000px); }
+
+
+/* pseudo-element as view-timeline subject */
+html { timeline-scope: --pt, --pe; }
+#psc { position: fixed; top: 400px; left: 0; width: 1000px; height: 30px; overflow-x: scroll; }
+#ptrack { width: 20000px; height: 20px; white-space: pre; }
+#pv::before { content: ""; display: inline-block; width: 1000px; height: 10px; view-timeline: --pt inline; }
+#pe { display: inline-block; width: 1000px; height: 10px; view-timeline: --pe inline; }
+@keyframes pk { from { --n: 0; } to { --n: 1; } }
+#pr { --n: -1; animation: pk 1s linear both; animation-timeline: --pt; }
+#pr2 { --n: -1; animation: pk 1s linear both; animation-timeline: --pe; }
+</style></head><body>
+<div id="anch"></div>
+<div id="cont">
+  <div id="t1"></div><div id="t2"></div><div id="t3">x</div><div id="t4"></div><div id="t5"></div><div id="t6"></div><div id="t7"></div>
+  <div id="t8"></div><div id="t9">x</div><div id="t10">x</div><div id="t11"></div><div id="t12"></div><div id="t13">0</div><div id="t14"></div>
+  <div id="t15"></div><div id="t16" data-v="11"></div><div id="t17"></div><div id="t18"></div><div id="t19"></div><div id="t19b"></div>
+  <div id="sc"><div id="t20"></div></div>
+  <div id="t21"></div><div id="t22"></div><div id="t23"></div><div id="t24"></div><div id="t25"></div><div id="t26"></div><div id="t27">x</div><div id="t28"></div><div id="t31"></div><div id="t32"></div><div id="t33"></div><div id="t34"></div><div id="t35"></div><div id="t36"></div><div id="t37"></div><div id="t29"></div><div id="t30"></div>
+  <div id="cont2"><div id="t6b" style="--n: container-progress(width of --cq, 0px, 1000px)"></div></div>
+</div>
+
+<div id="psc"><div id="ptrack"><span id="pv"></span><span id="pe"></span></div></div>
+<div id="pr"></div><div id="pr2"></div>
+<pre id="out"></pre>
+<script>
+const S = (p, v) => CSS.supports(p, v);
+const sup = {
+  "progress(<length>) in --n":            S("--n", "progress(10px, 0px, 100px)"),
+  "progress(<number>) in width":          S("width", "calc(progress(0.5, 0, 1) * 100px)"),
+  "container-progress(width) in --n":     S("--n", "container-progress(width, 0px, 100px)"),
+  "container-progress(width of --cq)":    S("--n", "container-progress(width of --cq, 0px, 100px)"),
+  "media-progress(width) in --n":         S("--n", "media-progress(width, 0px, 100px)"),
+  "random(0,100)":                         S("--n", "random(0, 100)"),
+  "random(0px,100px) in width":            S("width", "random(0px, 100px)"),
+  "sibling-index()":                       S("--n", "sibling-index()"),
+  "sibling-count()":                       S("--n", "sibling-count()"),
+  "font-size: anchor-size()":              S("font-size", "anchor-size(--a width)"),
+  "letter-spacing: anchor-size()":         S("letter-spacing", "anchor-size(--a width)"),
+  "width: anchor-size()":                  S("width", "anchor-size(--a width)"),
+  "margin-left: anchor-size()":            S("margin-left", "anchor-size(--a width)"),
+  "padding-left: anchor-size()":           S("padding-left", "anchor-size(--a width)"),
+  "left: anchor(--a right)":               S("left", "anchor(--a right)"),
+  "font-size: calc(100cqw)":               S("font-size", "calc(100cqw)"),
+  "font-size: calc-size(max-content, size)": S("font-size", "calc-size(max-content, size)"),
+  "width: calc-size(max-content, size)":   S("width", "calc-size(max-content, size)"),
+  "--n: calc(100cqw / 1px)":               S("--n", "calc(100cqw / 1px)"),
+  "--n: calc(1ch / 1px)":                  S("--n", "calc(1ch / 1px)"),
+  "--n: calc(100% / 1px)":                 S("--n", "calc(100% / 1px)"),
+  "--n: calc(1vw / 1px)":                  S("--n", "calc(1vw / 1px)"),
+  "if(style())":                           S("--n", "if(style(--x: 1): 1; else: 2)"),
+  "if(media())":                           S("--n", "if(media(width > 100px): 1; else: 2)"),
+  "attr() type(<number>)":                 S("--n", "attr(data-v type(<number>), 0)"),
+  "inherit(--n)":                          S("--n", "inherit(--n)"),
+  "env(safe-area-inset-left)":             S("--len", "env(safe-area-inset-left)"),
+  "field-sizing: content":                 S("field-sizing", "content"),
+  "text-box-trim: trim-both":              S("text-box-trim", "trim-both"),
+  "interpolate-size: allow-keywords":      S("interpolate-size", "allow-keywords"),
+  "scroll-initial-target: nearest":        S("scroll-initial-target", "nearest"),
+  "scroll-start: 10px":                    S("scroll-start", "10px"),
+  "scroll-marker-group: after":            S("scroll-marker-group", "after"),
+  "container-type: scroll-state":          S("container-type", "scroll-state"),
+  "animation-timeline: scroll()":          S("animation-timeline", "scroll()"),
+  "animation-timeline: view()":            S("animation-timeline", "view()"),
+  "animation-range: entry 0% exit 100%":   S("animation-range", "entry 0% exit 100%"),
+  "animation-composition: add":            S("animation-composition", "add"),
+  "timeline-scope: --x":                   S("timeline-scope", "--x"),
+  "position-try-fallbacks: flip-block":    S("position-try-fallbacks", "flip-block"),
+  "position-area: top":                    S("position-area", "top"),
+  "position-visibility: no-overflow":      S("position-visibility", "no-overflow"),
+  "anchor-scope: all":                     S("anchor-scope", "all"),
+  "font-optical-sizing: auto":             S("font-optical-sizing", "auto"),
+  "font-size-adjust: ex-height 0.5":       S("font-size-adjust", "ex-height 0.5"),
+  "font-size-adjust: ch-width from-font":  S("font-size-adjust", "ch-width from-font"),
+  "font-width: 87.5%":                     S("font-width", "87.5%"),
+  "font-stretch: 87.5%":                   S("font-stretch", "87.5%"),
+  "word-spacing: 50%":                     S("word-spacing", "50%"),
+  "letter-spacing: 10%":                   S("letter-spacing", "10%"),
+  "tab-size: 3.5":                         S("tab-size", "3.5"),
+  "tab-size: calc(100cqw)":                S("tab-size", "calc(100cqw)"),
+  "zoom: 1.5":                             S("zoom", "1.5"),
+  "text-indent: 100cqw":                   S("text-indent", "100cqw"),
+  "line-height: calc(100cqw / 1px)":       S("line-height", "calc(100cqw / 1px)"),
+  "font-weight: calc(100cqw / 1px)":       S("font-weight", "calc(100cqw / 1px)"),
+  "font-variation-settings: 'A000' calc(100cqw/1px)": S("font-variation-settings", "'A000' calc(100cqw / 1px)"),
+  "font-variation-settings: 'A000' calc(1ch/1px)":    S("font-variation-settings", "'A000' calc(1ch / 1px)"),
+  "font-variation-settings: 'A000' progress(100cqw,0px,10px)": S("font-variation-settings", "'A000' progress(100cqw, 0px, 10px)"),
+  "font-variation-settings: 'A000' sibling-index()": S("font-variation-settings", "'A000' sibling-index()"),
+  "font-variation-settings: 'A000' anchor-size(--a width)": S("font-variation-settings", "'A000' calc(anchor-size(--a width) / 1px)"),
+  "reading-flow: grid-order":              S("reading-flow", "grid-order"),
+  "corner-shape: squircle":                S("corner-shape", "squircle"),
+  "contrast-color(red)":                   S("color", "contrast-color(red)"),
+  "@function (via CSS.supports fn)":       (()=>{ try { return S("--n", "--f(1)"); } catch(e){ return "err"; } })(),
+};
+const cs = (id, p) => getComputedStyle(document.getElementById(id)).getPropertyValue(p);
+const live = {
+  "pr --n via ::before view-timeline subject (expect 0.5 = 1000/(1000+1000); -1 if unsupported)": cs("pr","--n"),
+  "pr2 --n via element view-timeline subject at offset 1000 (control)": cs("pr2","--n"),
+  "t1 --n = 100cqw/1px (expect 300)": cs("t1","--n"),
+  "t2 --len = 100cqw (expect 300px)": cs("t2","--len"),
+  "t3 font-size = 100cqw (expect 300px)": cs("t3","font-size"),
+  "t4 --n = progress(100cqw,0,1000px) (expect 0.3)": cs("t4","--n"),
+  "t5 --n = container-progress(width,...) (expect 0.3)": cs("t5","--n"),
+  "t6 --n = container-progress(width of --cq) (expect 0.3)": cs("t6","--n"),
+  "t6b (inside cont2) container-progress(width of --cq) (expect 0.3, not 0.2)": cs("t6b","--n"),
+  "t7 --n = media-progress(width,...)": cs("t7","--n"),
+  "t8 --lenA = anchor-size(--a width) (expect 123px)": cs("t8","--lenA"),
+  "t9 font-size = anchor-size(--a width) (expect 123px)": cs("t9","font-size"),
+  "t10 letter-spacing = anchor-size (expect 123px)": cs("t10","letter-spacing"),
+  "t11 --n = sibling-index() (expect 11)": cs("t11","--n"),
+  "t12 --n = random(0,100)": cs("t12","--n"),
+  "t13 --n = 1ch/1px monospace 20px (expect ~12)": cs("t13","--n"),
+  "t14 --lenC = calc-size(max-content,size)": cs("t14","--lenC"),
+  "t15 --n = if(style()) (expect 7)": cs("t15","--n"),
+  "t16 --n = attr(type(<number>)) (expect 11)": cs("t16","--n"),
+  "t17 --n = env(...,42)": cs("t17","--n"),
+  "t18 @container --cq (width>100px) (expect 5)": cs("t18","--n"),
+  "t19 @container style(--v > 5) range (expect 9 if supported)": cs("t19","--n"),
+  "t19b @container style(--v: 7) equality (expect 9)": cs("t19b","--n"),
+  "t20 @container scroll-state(scrollable: none) (expect 6 if supported)": cs("t20","--n"),
+  "t21 --n = 100cqh/1px (expect 50)": cs("t21","--n"),
+  "t22 --n = 1lh/1px line-height 30px (expect 30)": cs("t22","--n"),
+  "t23 --n = 1cap/1px": cs("t23","--n"),
+  "t24 --n = 1ic/1px": cs("t24","--n"),
+  "t25 --n = 1ex/1px": cs("t25","--n"),
+  "t26 --n = 100cqw/1px with zoom:2": cs("t26","--n"),
+  "t27 --n = 1em/1px with font-size:100cqw (expect 300)": cs("t27","--n"),
+  "t28 --n = 100cqmin/1px (expect 50)": cs("t28","--n"),
+  "t29 --n = 100cqmax/1px (expect 300)": cs("t29","--n"),
+  "t30 --n = 100cqi/1px (expect 300)": cs("t30","--n"),
+  "t31 width = container-progress(width)*100px (expect 30px)": cs("t31","width"),
+  "t32 --n = container-progress(inline-size,...) (expect 0.3)": cs("t32","--n"),
+  "t33 --n = calc(container-progress(width)*1) (expect 0.3)": cs("t33","--n"),
+  "t34 --n = media-progress(width,0,1000px) (expect 0.8 at 800px viewport)": cs("t34","--n"),
+  "t35 --len = progress(100cqw)*1px (expect 0.3px)": cs("t35","--len"),
+  "t36 --n = container-progress(width of --cq) on fixed el (expect 0.3)": cs("t36","--n"),
+  "t37 --n = progress(100cqw,0,1000px) (expect 0.3)": cs("t37","--n"),
+};
+const res0 = null; const res = { ua: navigator.userAgent, supports: sup, live };
+document.getElementById("out").textContent = JSON.stringify(res, null, 1);
+window.__r4x = res; requestAnimationFrame(()=>requestAnimationFrame(()=>{ res.live["pr (after 2 frames)"] = cs("pr","--n"); res.live["pr2 (after 2 frames)"] = cs("pr2","--n"); window.__r4x = res; document.getElementById("out").textContent = JSON.stringify(res, null, 1); }));
+</script></body></html>

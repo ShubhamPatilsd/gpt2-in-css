@@ -13,6 +13,8 @@ from pathlib import Path
 import build_hybrid_twelve_block as hybrid
 import f4_packing as f4
 import f5_scoping as f5
+import r4d_flags as r4d
+import r4w_precat as r4w
 import r2c_hoist as r2c
 import numpy as np
 from build_bilinear_projected_kv_qk import CODEPOINT_BASE, build_head_font
@@ -88,7 +90,13 @@ def storage_names(capacity):
         # the 24 per-head scales: 26 latched fields per slot instead of 48.
         names = []
         for slot in range(capacity):
-            names += [f"--fc-k-{slot}", f"--fc-v-{slot}"]
+            names += [f"--fc-k-{slot}"]
+            if r4d.UNPACK_V:
+                # R4D: 12 per-head 64-axis V lists (each V glyph parses 65 axes
+                # instead of 769); the K list stays packed (12 score glyphs/slot).
+                names += [f"--fc-v-{slot}-{head}" for head in range(HEADS)]
+            else:
+                names += [f"--fc-v-{slot}"]
             names += [
                 f"--fc-{kind}-{slot}-{head}"
                 for head in range(HEADS)
@@ -171,8 +179,16 @@ def attention(
         raise ValueError("Early value preparation requires fixed font widths")
     operators = fonts()
     packed = f4.PACKED_BANKS
-    if packed and value_layout != "runs":
-        raise ValueError("F4 packed banks are implemented for the runs value layout only")
+    if packed and value_layout not in ("runs", "widths"):
+        # R4D: the widths layout (fixed V font location, weight applied to the
+        # shaped width) uses the same per-slot lists and leaf structure as runs.
+        raise ValueError("F4 packed banks are implemented for the runs/widths value layouts only")
+    # R4W: V-leaf allocation fix (see r4w_precat.py); only defined for the widths
+    # layout with F4 packed banks and R4D per-head V lists.
+    precat = r4w.mode() if (value_layout == "widths" and packed and r4d.UNPACK_V) else "off"
+    wrapper_v, alias_v = precat == "wrapper", precat == "alias"
+    if wrapper_v and not value_weight_once:
+        raise ValueError("R4W_V_PRECAT=wrapper requires the slim (weight-once) V leaves")
     zero = ",".join(f'"K{i:03d}" 0' for i in range(DIM))
     all_fields = storage_names(capacity)
     css = ""
@@ -181,6 +197,20 @@ def attention(
             kind = f4.kind_of(name)
             vector = kind in ("k", "v")
             initial = (f4.zero_list(kind) if packed else zero) if vector else "0"
+            if vector and packed and r4d.head_of(name) is not None:
+                initial = ",".join(
+                    f'"{f4.head_axis(kind, r4d.head_of(name), i)}" 0' for i in range(DIM)
+                )
+                if wrapper_v:
+                    # R4W: per-slot tags (one font per slot, see r4w_precat.py).
+                    initial = ",".join(f'"{value_axis(f4.slot_of(name), i)}" 0' for i in range(DIM))
+            if vector and r4d.EMPTY_UNFILLED:
+                # R4D: one explicit zero axis (fvar defaults are 0) instead of
+                # every axis at zero: unfilled slots substitute 12 B, not ~7.7 KB.
+                head = r4d.head_of(name)
+                initial = f'"{f4.head_axis(kind, 0 if head is None else head, 0) if packed else "K000"}" 0'
+                if wrapper_v and head is not None:
+                    initial = f'"{value_axis(f4.slot_of(name), 0)}" 0'
             css += f'@property {name.replace("--fc-", f"--{alias}-")}{{syntax:"{"*" if vector else "<number>"}";inherits:{inherits};initial-value:{initial}}}'
     css += hybrid.regs([f"--fqs-{h}" for h in range(HEADS)] + ["--fvs-write-slot"])
     css += (
@@ -195,6 +225,23 @@ def attention(
         + (",".join(all_fields) if literal else "var(--fvs-all-fields)")
         + ";transition-duration:1ms;transition-delay:86400s;transition-timing-function:steps(1,end);transition-behavior:allow-discrete}"
     )
+    sequential = kv_window is None or (kv_sinks == 0 and capacity == positions)
+    lean = r4d.LEAN_LATCH and sequential
+    if lean:
+        # R4D: with a full causal window slots fill in order; at write-slot W only
+        # slots 0..W can hold a value (W in the banks of layers already written
+        # this token), so only their fields need a retaining transition-property
+        # entry. Slots > W have no running transition, so unlisting them cancels
+        # nothing. The full-list base rule above stays for the no-match state.
+        for write_slot in range(capacity):
+            listed = ",".join(n for n in all_fields if f4.slot_of(n) <= write_slot)
+            if not literal:
+                css += f".fvs-query{{--fvs-base-{write_slot}:{listed}}}"
+            css += (
+                f"@container fvscache style(--fvs-write-slot:{write_slot}){{.fvs-bank{{transition-property:"
+                + (listed if literal else f"var(--fvs-base-{write_slot})")
+                + "}}"
+            )
     for head in range(HEADS):
         maximum = ",".join(f"abs(var(--qkv-{head * DIM + i:03d}))" for i in range(DIM))
         css += f".fvs-query{{--fqs-{head}:max(.000001,{maximum})}}"
@@ -246,7 +293,15 @@ def attention(
 
                 return ",".join(f'"{tag(i)}" {entry(i)}' for i in range(DIM))
 
-            if kind == "v" and value_layout == "fallback":
+            if kind == "v" and wrapper_v and r4w.LIVE_V == "lists":
+                # R4W fallback form: one slot-tagged live list per (head, slot);
+                # the write rule for slot S references --fvs-live-v-H-S.
+                css += ".fvs-query{" + ";".join(
+                    f"--fvs-live-v-{head}-{slot}:{settings_for(slot)}" for slot in range(capacity)
+                ) + "}"
+                settings = settings_for(0)
+            elif kind == "v" and (value_layout == "fallback" or wrapper_v):
+                # (R4W wrapper: the latched list must carry the write slot's tags.)
                 settings = (
                     "if("
                     + ";".join(
@@ -261,12 +316,24 @@ def attention(
             css += f".fvs-query{{{scale}:max(.000001,{maximum});--fvs-live-{kind}-{head}:{settings}}}"
     for slot in range(capacity):
         fields = {name for name in all_fields if f4.slot_of(name) == slot}
-        retained = ",".join(name for name in all_fields if name not in fields) or "none"
+        retained = ",".join(
+            name for name in all_fields
+            if name not in fields and (not lean or f4.slot_of(name) < slot)
+        ) or "none"
         css += f".fvs-query{{--fvs-retained-{slot}:{retained}}}"
         writes = []
         if packed:
             # F4: the 12 live head lists concatenate into one latched list per kind.
             for kind in ("k", "v"):
+                if kind == "v" and r4d.UNPACK_V:
+                    # R4W alias: latch the COMPLETE leaf value (list + P000) once.
+                    suffix = ',"P000" 1' if alias_v else ""
+                    live_slot = f"-{slot}" if (wrapper_v and r4w.LIVE_V == "lists") else ""
+                    writes += [
+                        f"--fc-v-{slot}-{head}:var(--fvs-live-v-{head}{live_slot}){suffix}"
+                        for head in range(HEADS)
+                    ]
+                    continue
                 writes.append(
                     f"--fc-{kind}-{slot}:"
                     + ",".join(f"var(--fvs-live-{kind}-{head})" for head in range(HEADS))
@@ -285,7 +352,6 @@ def attention(
         retained_value = retained if literal else f"var(--fvs-retained-{slot})"
         for layer in range(blocks):
             css += f"@container runtime style(--layer:{layer}){{@container fvscache style(--fvs-write-slot:{slot}){{.fvs-bank-{layer}{{transition-property:{retained_value};{';'.join(writes)}}}}}}}"
-    sequential = kv_window is None or (kv_sinks == 0 and capacity == positions)
     if f5.BANK_FILLED_ALIASES and sequential:
         # F5: with a full causal window slots fill in order, so while slot S
         # is being written only slots 0..S hold values; the others equal the
@@ -308,7 +374,13 @@ def attention(
         # F4: 12 dot + 12 value fonts, K axes retagged per head (F2's recipe).
         for head, (dot_path, value_path) in enumerate(f4.packed_operator_fonts(FONT_DIR)):
             css += f'@font-face{{font-family:FvsDot{head};src:url("{dot_path.as_uri()}")}}'
-            css += f'@font-face{{font-family:FvsValue{head};src:url("{value_path.as_uri()}")}}'
+            if not wrapper_v:
+                css += f'@font-face{{font-family:FvsValue{head};src:url("{value_path.as_uri()}")}}'
+        if wrapper_v:
+            # R4W: one value font per KV slot (retagged v2 operator, cmap shifted),
+            # selected per leaf by its character through unicode-range.
+            for slot, (path, start) in enumerate(r4w.slot_fonts(FONT_DIR / "value.woff2", capacity, CODEPOINT_BASE)):
+                css += f'@font-face{{font-family:FvsValueSlot{slot};src:url("{path.as_uri()}");unicode-range:U+{start:X}-{start + DIM - 1:X}}}'
     else:
         for kind, family in (("dot", "FvsDot"), ("value", "FvsValue")):
             css += f'@font-face{{font-family:{family};src:url("{(FONT_DIR / (kind + ".woff2")).as_uri()}")}}'
@@ -404,7 +476,16 @@ def attention(
     css += ".fvs-score-reader{" + ";".join(soft) + "}"
     value = operators["value"]
     value_unit = VALUE_SIZE / UNITS_PER_EM
-    slim_glyphs = value_weight_once and value_layout == "runs"
+    slim_glyphs = value_weight_once and value_layout in ("runs", "widths")
+    hide_unfilled = r4d.HIDE_UNFILLED and sequential and value_layout in ("runs", "widths")
+    if hide_unfilled:
+        # R4D: unfilled slots' V glyphs have no box; the row subtracts one base
+        # advance per PRESENT glyph ((W+1)·base, W = write slot = position-1)
+        # instead of capacity·base, so (size - subtracted) is the same sum of
+        # weighted deltas as before (minus the snapped-advance residue of absent
+        # glyphs, see r4d_flags.py).
+        css += '@property --fvs-nbase{syntax:"<length>";inherits:true;initial-value:0px}'
+        css += f".fvs-query{{--fvs-nbase:calc((var(--fvs-write-slot) + 1) * {value['base'] * value_unit:.12g}px)}}"
     if slim_glyphs:
         # F2: each (head, slot) softmax weight is one registered number on the
         # score reader; every V glyph references it instead of re-evaluating
@@ -446,31 +527,65 @@ def attention(
                     settings = '"P000" 1'
                     base_pixels = value["base"] * value_unit
                     width_rule = f"width:calc-size(max-content,calc({base_pixels:.12g}px + (size - {base_pixels:.12g}px) * {weight}));min-width:0;"
-                fr_v = f"--fr-v-{slot}" if packed else f"--fr-v-{slot}-{head}"
+                fr_v = (
+                    f"--fr-v-{slot}"
+                    if packed and not r4d.UNPACK_V
+                    else f"--fr-v-{slot}-{head}"
+                )
                 value_family = f"FvsValue{head}" if packed else "FvsValue"
-                if slim_glyphs:
+                if wrapper_v:
+                    # R4W: no font property on the leaf at all — font (family
+                    # list, size, kerning) and the head's font-variation-settings
+                    # are inherited by pointer from .fvs-value-head-H; the leaf's
+                    # character selects the slot font via unicode-range.
+                    css += f".fvs-v-{head}-{slot}{{{width_rule}flex:none}}"
+                elif slim_glyphs:
                     # font-family/size/kerning/white-space inherit from the row
                     # rule below; flex items are blockified; .metric i already
                     # sets font-style. Only the per-(head, slot) list remains
                     # (+ the per-head family when the banks are packed, F4).
                     family_decl = f"font-family:{value_family};" if packed else ""
-                    css += f".fvs-v-{head}-{slot}{{{family_decl}font-variation-settings:var({fr_v}),{settings};flex:none}}"
+                    # R4D: the widths rule (if any) is merged into the same rule.
+                    # R4W alias: the latched list already ends in "P000" 1.
+                    fvs_decl = f"var({fr_v})" if alias_v else f"var({fr_v}),{settings}"
+                    css += f".fvs-v-{head}-{slot}{{{family_decl}font-variation-settings:{fvs_decl};{width_rule}flex:none}}"
                 else:
                     css += f".fvs-v-{head}-{slot}{{font-family:{value_family};font-size:{VALUE_SIZE}px;font-variation-settings:var({fr_v}),{settings};font-kerning:none;font-style:normal;display:block;white-space:pre;flex:none}}"
-                if width_rule:
-                    css += f".fvs-v-{head}-{slot}{{{width_rule}}}"
+                    if width_rule:
+                        css += f".fvs-v-{head}-{slot}{{{width_rule}}}"
         if value_layout == "fallback":
             families = ",".join(f"FvsValueSlot{slot}" for slot in range(capacity))
             css += f".fvs-value-head-{head}{{display:contents;font:{VALUE_SIZE}px {families};font-variation-settings:{','.join(combined_settings)};font-kerning:none}}"
+        if wrapper_v:
+            # R4W: the head's complete V settings, substituted + parsed once per
+            # head per pass; `font` (shorthand) precedes font-variation-settings
+            # because it resets it. P000 = 1: the weight stays in the leaf width.
+            families = ",".join(f"FvsValueSlot{slot}" for slot in range(capacity))
+            wrapper_settings = ",".join(f"var(--fr-v-{slot}-{head})" for slot in range(capacity)) + ',"P000" 1'
+            css += f".fvs-value-head-{head}{{display:contents;font:{VALUE_SIZE}px {families};font-kerning:none;font-style:normal;font-variation-settings:{wrapper_settings}}}"
     pattern = r'<i class="metric" style="width:calc\(262144px \+ var\(--(?:ctx|out)-(\d+)\) \* 128px\);view-timeline:([^ ]+) inline"></i>'
 
     def row(match):
         coordinate, timeline = int(match[1]), match[2]
         head, local = divmod(coordinate, DIM)
-        dimensions = f"calc-size(max-content,calc(262144px + (size - {capacity * value['base'] * value_unit:.12g}px) * var(--fb-{head}) / var(--fd-{head}) * {128 / (value['coefficient'] * value_unit):.12g}))"
+        subtracted = (
+            "var(--fvs-nbase)"
+            if hide_unfilled
+            else f"{capacity * value['base'] * value_unit:.12g}px"
+        )
+        dimensions = f"calc-size(max-content,calc(262144px + (size - {subtracted}) * var(--fb-{head}) / var(--fd-{head}) * {128 / (value['coefficient'] * value_unit):.12g}))"
         if value_layout == "fallback":
             runs = "".join(
                 f"&#x{CODEPOINT_BASE + slot * DIM + local:X};"
+                for slot in range(capacity)
+            )
+            prefix = f'<div class="fvs-value-head-{head}">' if local == 0 else ""
+            suffix = "</div>" if local == DIM - 1 else ""
+            return f'{prefix}<span class="metric fvs-value-row" style="width:{dimensions};view-timeline:{timeline} inline">{runs}</span>{suffix}'
+        if wrapper_v:
+            # R4W: slot S's character lives in slot font S's unicode-range.
+            runs = "".join(
+                f'<i class="fvs-v-{head}-{slot}">&#x{CODEPOINT_BASE + slot * DIM + local:X};</i>'
                 for slot in range(capacity)
             )
             prefix = f'<div class="fvs-value-head-{head}">' if local == 0 else ""
@@ -502,6 +617,10 @@ def attention(
     css += (
         ".fvs-value-row{display:block;white-space:pre;font-style:normal;line-height:1}"
         if value_layout == "fallback"
+        # R4W: no font property on the row either (a `font:` shorthand here would
+        # reset the inherited font-variation-settings and re-create a Font per row).
+        else ".fvs-value-row{display:inline-flex;gap:0;line-height:1;white-space:pre}"
+        if wrapper_v
         else f".fvs-value-row{{display:inline-flex;gap:0;font:{VALUE_SIZE}px {'FvsValue0' if packed else 'FvsValue'};line-height:1;font-kerning:none;white-space:pre}}"
         if slim_glyphs
         else ".fvs-value-row{display:inline-flex;gap:0;font:0px monospace;line-height:1}"
@@ -519,6 +638,29 @@ def attention(
             + "</div>"
         )
     body = '<div class="fvs-query">' + body + "</div>"
+    gate_scores = r4d.GATE_SCORES and sequential
+    if hide_unfilled or gate_scores:
+        # R4D: per-slot filled flag on the fvscache container (same expression
+        # as --fv-S on the score reader, which is inherits:false and therefore
+        # invisible to the glyph leaves).
+        css += hybrid.regs([f"--fvq-{slot}" for slot in range(capacity)]).replace(
+            "inherits:true", "inherits:false"
+        )
+        css += ".fvs-query{" + ";".join(
+            f"--fvq-{slot}:clamp(0,sign(var({write_epoch}) - {slot + 1}) + 1,1)"
+            for slot in range(capacity)
+        ) + "}"
+    if hide_unfilled:
+        for slot in range(capacity):
+            selectors = ",".join(f".fvs-v-{head}-{slot}" for head in range(HEADS))
+            css += f"@container fvscache style(--fvq-{slot}:0){{{selectors}{{display:none}}}}"
+    if gate_scores:
+        # R4D (opt-in): unfilled slots' score carriers have no box, so their 12
+        # view-timelines are inactive; --fs/--fe of those slots are masked by
+        # --fv-S anyway (both branches give the same masked values).
+        for slot in range(capacity):
+            selectors = ",".join(f".fvs-score-source .fvs-score-{head}-{slot}" for head in range(HEADS))
+            css += f"@container fvscache style(--fvq-{slot}:0){{{selectors}{{display:none}}}}"
     css += "html{timeline-scope:" + ",".join(timelines + ["--fvs-score-stamp"]) + "}"
     return (
         body,
@@ -533,6 +675,12 @@ def attention(
             "f4PackedBanks": packed,
             "f4NumericLists": f4.NUMERIC_LISTS,
             "latchedFieldsPerSlot": len(all_fields) // capacity,
+            "r4dEmptyUnfilled": r4d.EMPTY_UNFILLED,
+            "r4dLeanLatch": lean,
+            "r4dUnpackV": r4d.UNPACK_V,
+            "r4dHideUnfilled": hide_unfilled,
+            "r4dGateScores": r4d.GATE_SCORES and sequential,
+            "r4wVPrecat": precat,
             "prewarmValues": prewarm_values,
             "attentionMask": "full causal"
             if capacity == positions
