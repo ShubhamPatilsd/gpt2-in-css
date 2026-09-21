@@ -1,0 +1,40 @@
+bytes index.html                                           cap8  5,603,748 cap32  6,286,974  delta   +683,226  per slot  +28467.8
+bytes runtime.css                                          cap8 38,973,628 cap32 50,063,071  delta +11,089,443  per slot +462060.1
+elements (open tags)                                       cap8     67,401 cap32     86,315  delta    +18,914  per slot    +788.1
+rules (approx '{' count)                                   cap8     71,010 cap32     77,828  delta     +6,818  per slot    +284.1
+@property                                                  cap8     39,426 cap32     41,946  delta     +2,520  per slot    +105.0
+@property inherits:true                                    cap8     15,938 cap32     17,186  delta     +1,248  per slot     +52.0
+86400s latch declarations                                  cap8         12 cap32         36  delta        +24  per slot      +1.0
+view-timeline-name declarations                            cap8          0 cap32          0  delta         +0  per slot      +0.0
+animation-timeline declarations                            cap8        219 cap32        219  delta         +0  per slot      +0.0
+@keyframes                                                 cap8      9,329 cap32      9,641  delta       +312  per slot     +13.0
+timeline names declared (timeline-scope entries)           cap8     80,117 cap32     80,717  delta       +600  per slot     +25.0
+font-variation-settings decls                              cap8        247 cap32        823  delta       +576  per slot     +24.0
+`--fc-` (bank latch) tokens in css                         cap8     33,488 cap32    513,344  delta   +479,856  per slot  +19994.0
+`--fr-` (bank alias) tokens in css                         cap8     12,128 cap32    168,320  delta   +156,192  per slot   +6508.0
+`--fs-H-S` score tokens                                    cap8        480 cap32      1,920  delta     +1,440  per slot     +60.0
+`--fw-H-S` weight tokens                                   cap8        384 cap32      1,536  delta     +1,152  per slot     +48.0
+`--fe-H-S` exp tokens                                      cap8        480 cap32      1,920  delta     +1,440  per slot     +60.0
+`--fv-S` tokens                                            cap8        216 cap32        864  delta       +648  per slot     +27.0
+transition-property name count (all decls)                 cap8     17,710 cap32    310,438  delta   +292,728  per slot  +12197.0
+token-N-captured mentions (css)                            cap8         33 cap32        129  delta        +96  per slot      +4.0
+:has( occurrences                                          cap8         85 cap32        301  delta       +216  per slot      +9.0
+@container occurrences                                     cap8        660 cap32      2,244  delta     +1,584  per slot     +66.0
+
+class families (digits -> N) with different counts:
+  fvs-v-N-N                                cap8    6,144 cap32   24,576 delta  +18,432 per slot   +768.0
+  metric                                   cap8    8,551 cap32    8,839 delta     +288 per slot    +12.0
+  fvs-score-N-N                            cap8       96 cap32      384 delta     +288 per slot    +12.0
+  token-slot-N                             cap8        8 cap32       32 delta      +24 per slot     +1.0
+  feedback-metric-N                        cap8        8 cap32       32 delta      +24 per slot     +1.0
+  feedback-metric                          cap8        8 cap32       32 delta      +24 per slot     +1.0
+  head-score-state                         cap8        0 cap32        1 delta       +1 per slot     +0.0
+  head-epoch-reader                        cap8        0 cap32        1 delta       +1 per slot     +0.0
+
+cap8: .fvs-bank-* rules 0, avg transition-property names 0, total bank rule bytes 0
+
+cap32: .fvs-bank-* rules 0, avg transition-property names 0, total bank rule bytes 0
+cap8: rules referencing FvsValue 109, bytes 11,286
+cap8: rules referencing FvsDot 108, bytes 24,600
+cap32: rules referencing FvsValue 397, bytes 41,310
+cap32: rules referencing FvsDot 396, bytes 95,040
