@@ -13,6 +13,7 @@ from pathlib import Path
 import build_hybrid_twelve_block as hybrid
 import f4_packing as f4
 import f5_scoping as f5
+import r2c_hoist as r2c
 import numpy as np
 from build_bilinear_projected_kv_qk import CODEPOINT_BASE, build_head_font
 from build_gpt2_block_css import UNITS_PER_EM
@@ -201,6 +202,14 @@ def attention(
             f'"Q{i:03d}" calc(var(--qkv-{head * DIM + i:03d}) / var(--fqs-{head}))'
             for i in range(DIM)
         )
+        if r2c.HOIST_QUERY:
+            # R2C: every score glyph of this head (one per slot) re-parsed these 64
+            # calc()s; evaluate them once here as typed numbers (F4's --fvn pattern).
+            query, pairs = r2c.hoist_settings(
+                query, lambda _src, i, head=head: f"--fq-q-{head}-{i}"
+            )
+            css += r2c.private_regs(name for name, _ in pairs)
+            css += ".fvs-query{" + r2c.declarations(pairs) + "}"
         css += f".fvs-query{{--fvs-query-{head}:{query}}}"
         for kind, offset in (("k", WIDTH), ("v", 2 * WIDTH)):
             scale = f"--fvs-live-{kind}s-{head}"

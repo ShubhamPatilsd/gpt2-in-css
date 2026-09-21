@@ -1,0 +1,6433 @@
+{
+ "trace": "R3K/runs/combined3-keyboard-trace.json.gz",
+ "events": 6623851,
+ "main_pid": 35244,
+ "main_tid": 4577333,
+ "main_thread_name": "CrRendererMain",
+ "proc_name": "Renderer",
+ "t_nav": 208296498162,
+ "t_run": 208301307159,
+ "t_end": 208353335658,
+ "marks_ms_after_nav": {
+  "domComplete": -4.5,
+  "loadEventStart": -4.4,
+  "loadEventEnd": -4.4,
+  "fetchStart": 0.7,
+  "responseEnd": 0.9,
+  "domInteractive": 0.9,
+  "domContentLoadedEventEnd": 1.0,
+  "P2-run": 4809.0,
+  "P2-end": 56837.5
+ },
+ "dom_elements": 68947,
+ "dom_nodes_from_metrics": 133459,
+ "other_thread_busy_ms": {
+  "ThreadPoolForegroundWorker": 3911.0,
+  "Compositor": 387.8,
+  "PerfettoTrace": 24.0,
+  "Chrome_ChildIOThread": 15.3,
+  "MemoryInfra": 3.1,
+  "ThreadPoolServiceThread": 0.2
+ },
+ "load_phase": {
+  "wall_ms": 4809.0,
+  "busy_ms": 1875.3,
+  "idle_ms": 2933.7,
+  "frames": 17,
+  "style_ms": 888.0,
+  "style_count": 21,
+  "recalcStyle_ms": 846.3,
+  "recalcStyle_count": 11,
+  "updateStyle_ms": 863.9,
+  "styleInvalidation_ms": 0.3,
+  "layout_ms": 347.6,
+  "layout_count": 17,
+  "of_which_text_shaping_ms": 75.9,
+  "text_shaping_count": 12558,
+  "animate_ms": 47.4,
+  "prepaint_ms": 26.7,
+  "of_which_compositing_inputs_ms": 16.9,
+  "paint_lifecycle_ms": 32.7,
+  "of_which_Paint_ms": 3.0,
+  "hittest_ms": 0.0,
+  "hittest_count": 0,
+  "gc_nested_ms": 47.3,
+  "gc_count": 1013,
+  "recalcStyle_self_ms": 843.0,
+  "gc_by_name": [
+   [
+    "V8.GC_MC_INCREMENTAL",
+    13.8
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+    13.1
+   ],
+   [
+    "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+    6.1
+   ],
+   [
+    "MajorGC",
+    4.2
+   ],
+   [
+    "V8.GC_MARK_COMPACTOR",
+    4.1
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL_START",
+    0.9
+   ]
+  ],
+  "majorGC_count": 4,
+  "other_busy_ms": 532.9,
+  "animation_regex_ms": 67.7,
+  "animation_regex_count": 17164,
+  "paint_prepaint_composite_ms": 75.3,
+  "self_top": [
+   [
+    "Document::recalcStyle",
+    [
+     11,
+     843.0
+    ]
+   ],
+   [
+    "LocalFrameView::performLayout",
+    [
+     17,
+     265.8
+    ]
+   ],
+   [
+    "RunTask",
+    [
+     16796,
+     187.7
+    ]
+   ],
+   [
+    "ParseHTML",
+    [
+     10,
+     156.6
+    ]
+   ],
+   [
+    "InlineNode::ShapeTextIncludingFirstLine",
+    [
+     12558,
+     75.9
+    ]
+   ],
+   [
+    "CSSParserImpl::parseStyleSheet.parse",
+    [
+     3,
+     58.8
+    ]
+   ],
+   [
+    "ResponseBodyLoader::DidFinishLoadingBody",
+    [
+     2,
+     41.5
+    ]
+   ],
+   [
+    "PageAnimator::serviceScriptedAnimations",
+    [
+     17,
+     30.2
+    ]
+   ],
+   [
+    "LocalFrameView::RunPaintLifecyclePhase",
+    [
+     17,
+     28.5
+    ]
+   ],
+   [
+    "TextResourceDecoder::Decode",
+    [
+     267,
+     24.3
+    ]
+   ],
+   [
+    "WebFrameWidgetImpl::UpdateLifecycle",
+    [
+     17,
+     19.4
+    ]
+   ],
+   [
+    "Blink.CompositingInputs.UpdateTime",
+    [
+     17,
+     16.8
+    ]
+   ],
+   [
+    "StyleEngine::updateActiveStyleSheets",
+    [
+     2,
+     16.2
+    ]
+   ],
+   [
+    "AnimationTimeline::serviceAnimations",
+    [
+     14634,
+     15.0
+    ]
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+    [
+     369,
+     13.1
+    ]
+   ],
+   [
+    "Document::updateStyle",
+    [
+     21,
+     11.6
+    ]
+   ],
+   [
+    "Blink.PrePaint.UpdateTime",
+    [
+     17,
+     9.7
+    ]
+   ],
+   [
+    "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+    [
+     4,
+     6.1
+    ]
+   ],
+   [
+    "Document::FinishedParsing",
+    [
+     2,
+     4.9
+    ]
+   ],
+   [
+    "Resource::appendData",
+    [
+     468,
+     4.9
+    ]
+   ],
+   [
+    "LocalFrameView::UpdateStyleAndLayout",
+    [
+     43,
+     4.5
+    ]
+   ],
+   [
+    "BeginRemoteFontLoad",
+    [
+     283,
+     4.3
+    ]
+   ],
+   [
+    "DocumentLoader::BodyLoadingFinished",
+    [
+     1,
+     3.5
+    ]
+   ],
+   [
+    "LocalFrameView::ScheduleAnimation",
+    [
+     2503,
+     2.7
+    ]
+   ],
+   [
+    "Paint",
+    [
+     18,
+     2.4
+    ]
+   ],
+   [
+    "V8.GC_MARK_COMPACTOR",
+    [
+     4,
+     2.0
+    ]
+   ],
+   [
+    "Node::MarkSubtreeNeedsStyleRecalcForFontUpdates",
+    [
+     14,
+     1.9
+    ]
+   ],
+   [
+    "Document::rebuildLayoutTree",
+    [
+     7,
+     1.7
+    ]
+   ],
+   [
+    "UpdateLayoutTree",
+    [
+     21,
+     1.5
+    ]
+   ],
+   [
+    "ResourceFetcher::requestResource",
+    [
+     285,
+     1.5
+    ]
+   ],
+   [
+    "ResponseBodyLoader::OnStateChange",
+    [
+     375,
+     1.5
+    ]
+   ],
+   [
+    "HitTest",
+    [
+     6,
+     1.4
+    ]
+   ],
+   [
+    "DocumentLoader::CreateParserPostCommit",
+    [
+     2,
+     1.0
+    ]
+   ],
+   [
+    "LayoutObject::InvalidateSubtreeForFontUpdates",
+    [
+     14,
+     1.0
+    ]
+   ],
+   [
+    "DocumentLoader::BodyDataReceivedImpl",
+    [
+     7,
+     0.9
+    ]
+   ],
+   [
+    "RuleSet::addRulesFromSheet",
+    [
+     2,
+     0.8
+    ]
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL",
+    [
+     379,
+     0.7
+    ]
+   ],
+   [
+    "Blink.Paint.UpdateTime",
+    [
+     17,
+     0.6
+    ]
+   ],
+   [
+    "CullRectUpdate",
+    [
+     16,
+     0.6
+    ]
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE",
+    [
+     4,
+     0.6
+    ]
+   ]
+  ],
+  "incl_top": [
+   [
+    "RunTask",
+    [
+     16796,
+     1875.3
+    ]
+   ],
+   [
+    "ProxyMain::BeginMainFrame",
+    [
+     17,
+     1231.3
+    ]
+   ],
+   [
+    "LocalFrameView::UpdateStyleAndLayout",
+    [
+     43,
+     1214.6
+    ]
+   ],
+   [
+    "WebFrameWidgetImpl::UpdateLifecycle",
+    [
+     17,
+     1181.3
+    ]
+   ],
+   [
+    "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+    [
+     18,
+     1101.5
+    ]
+   ],
+   [
+    "Blink.Style.UpdateTime",
+    [
+     21,
+     888.1
+    ]
+   ],
+   [
+    "UpdateLayoutTree",
+    [
+     21,
+     888.0
+    ]
+   ],
+   [
+    "Document::updateStyle",
+    [
+     21,
+     863.9
+    ]
+   ],
+   [
+    "Document::recalcStyle",
+    [
+     11,
+     846.3
+    ]
+   ],
+   [
+    "Blink.Layout.UpdateTime",
+    [
+     17,
+     347.8
+    ]
+   ],
+   [
+    "LocalFrameView::layout",
+    [
+     17,
+     347.6
+    ]
+   ],
+   [
+    "Layout",
+    [
+     17,
+     347.6
+    ]
+   ],
+   [
+    "LocalFrameView::performLayout",
+    [
+     17,
+     347.0
+    ]
+   ],
+   [
+    "HTMLDocumentParser::PumpTokenizerIfPossible",
+    [
+     10,
+     238.4
+    ]
+   ],
+   [
+    "HTMLDocumentParser::DeferredPumpTokenizerIfPossible",
+    [
+     8,
+     238.4
+    ]
+   ],
+   [
+    "HTMLDocumentParser::PumpTokenizer",
+    [
+     10,
+     159.1
+    ]
+   ],
+   [
+    "ParseHTML",
+    [
+     10,
+     159.1
+    ]
+   ],
+   [
+    "ResponseBodyLoader::OnStateChange",
+    [
+     375,
+     122.0
+    ]
+   ],
+   [
+    "Document::UpdateStyleAndLayout",
+    [
+     26,
+     113.1
+    ]
+   ],
+   [
+    "Blink.ForcedStyleAndLayout.UpdateTime",
+    [
+     26,
+     113.1
+    ]
+   ],
+   [
+    "ResponseBodyLoader::DidFinishLoadingBody",
+    [
+     2,
+     110.3
+    ]
+   ],
+   [
+    "HTMLDocumentParser::AttemptToEnd",
+    [
+     2,
+     79.1
+    ]
+   ],
+   [
+    "HTMLDocumentParser::PrepareToStopParsing",
+    [
+     2,
+     79.1
+    ]
+   ],
+   [
+    "Document::FinishedParsing",
+    [
+     2,
+     79.0
+    ]
+   ],
+   [
+    "InlineNode::ShapeTextIncludingFirstLine",
+    [
+     12558,
+     75.9
+    ]
+   ],
+   [
+    "ParseAuthorStyleSheet",
+    [
+     1,
+     58.8
+    ]
+   ],
+   [
+    "Blink.ParseStyleSheet.UpdateTime",
+    [
+     1,
+     58.8
+    ]
+   ],
+   [
+    "CSSParserImpl::parseStyleSheet",
+    [
+     3,
+     58.8
+    ]
+   ],
+   [
+    "CSSParserImpl::parseStyleSheet.parse",
+    [
+     3,
+     58.8
+    ]
+   ],
+   [
+    "WebFrameWidgetImpl::BeginMainFrame",
+    [
+     17,
+     47.4
+    ]
+   ],
+   [
+    "Blink.Animate.UpdateTime",
+    [
+     17,
+     47.4
+    ]
+   ],
+   [
+    "PageAnimator::serviceScriptedAnimations",
+    [
+     17,
+     47.3
+    ]
+   ],
+   [
+    "LocalFrameView::RunPaintLifecyclePhase",
+    [
+     17,
+     32.7
+    ]
+   ],
+   [
+    "PrePaint",
+    [
+     17,
+     26.7
+    ]
+   ],
+   [
+    "TextResourceDecoder::Decode",
+    [
+     267,
+     24.3
+    ]
+   ],
+   [
+    "NavigationBodyLoader::OnReadable",
+    [
+     7,
+     19.1
+    ]
+   ],
+   [
+    "NavigationBodyLoader::ReadFromDataPipe",
+    [
+     7,
+     19.0
+    ]
+   ],
+   [
+    "Document::updateActiveStyle",
+    [
+     17,
+     18.2
+    ]
+   ],
+   [
+    "StyleEngine::updateActiveStyleSheets",
+    [
+     2,
+     18.2
+    ]
+   ],
+   [
+    "AnimationTimeline::serviceAnimations",
+    [
+     14634,
+     17.7
+    ]
+   ]
+  ]
+ },
+ "load_big_events": [
+  [
+   73.2,
+   110.5,
+   "RunTask",
+   0
+  ],
+  [
+   73.2,
+   110.4,
+   "ResponseBodyLoader::OnStateChange",
+   1
+  ],
+  [
+   73.3,
+   110.3,
+   "ResponseBodyLoader::DidFinishLoadingBody",
+   2
+  ],
+  [
+   183.6,
+   821.9,
+   "RunTask",
+   0
+  ],
+  [
+   183.6,
+   820.6,
+   "ProxyMain::BeginMainFrame",
+   1
+  ],
+  [
+   183.7,
+   820.5,
+   "WebFrameWidgetImpl::UpdateLifecycle",
+   2
+  ],
+  [
+   1037.1,
+   26.0,
+   "RunTask",
+   0
+  ],
+  [
+   1037.1,
+   26.0,
+   "ProxyMain::BeginMainFrame",
+   1
+  ],
+  [
+   1040.0,
+   23.0,
+   "WebFrameWidgetImpl::UpdateLifecycle",
+   2
+  ],
+  [
+   1085.7,
+   32.0,
+   "RunTask",
+   0
+  ],
+  [
+   1085.7,
+   31.9,
+   "ProxyMain::BeginMainFrame",
+   1
+  ],
+  [
+   1088.7,
+   28.5,
+   "WebFrameWidgetImpl::UpdateLifecycle",
+   2
+  ],
+  [
+   1131.0,
+   168.2,
+   "RunTask",
+   0
+  ],
+  [
+   1131.0,
+   168.2,
+   "HTMLDocumentParser::DeferredPumpTokenizerIfPossible",
+   1
+  ],
+  [
+   1131.0,
+   168.2,
+   "HTMLDocumentParser::PumpTokenizerIfPossible",
+   2
+  ],
+  [
+   1335.7,
+   84.5,
+   "RunTask",
+   0
+  ],
+  [
+   1335.7,
+   84.4,
+   "ProxyMain::BeginMainFrame",
+   1
+  ],
+  [
+   1338.7,
+   81.4,
+   "WebFrameWidgetImpl::UpdateLifecycle",
+   2
+  ],
+  [
+   1448.0,
+   50.1,
+   "RunTask",
+   0
+  ],
+  [
+   1448.0,
+   50.1,
+   "ProxyMain::BeginMainFrame",
+   1
+  ],
+  [
+   1454.1,
+   43.9,
+   "WebFrameWidgetImpl::UpdateLifecycle",
+   2
+  ],
+  [
+   1507.5,
+   39.4,
+   "RunTask",
+   0
+  ],
+  [
+   1507.5,
+   39.4,
+   "ProxyMain::BeginMainFrame",
+   1
+  ],
+  [
+   1510.8,
+   36.1,
+   "WebFrameWidgetImpl::UpdateLifecycle",
+   2
+  ],
+  [
+   2380.1,
+   71.3,
+   "RunTask",
+   0
+  ],
+  [
+   2384.2,
+   65.7,
+   "Document::UpdateStyleAndLayout",
+   1
+  ],
+  [
+   2384.2,
+   65.7,
+   "Blink.ForcedStyleAndLayout.UpdateTime",
+   2
+  ],
+  [
+   2451.4,
+   60.3,
+   "RunTask",
+   0
+  ],
+  [
+   2451.4,
+   60.3,
+   "ProxyMain::BeginMainFrame",
+   1
+  ],
+  [
+   2454.9,
+   56.3,
+   "WebFrameWidgetImpl::UpdateLifecycle",
+   2
+  ],
+  [
+   2527.2,
+   29.9,
+   "RunTask",
+   0
+  ],
+  [
+   2527.2,
+   29.9,
+   "ProxyMain::BeginMainFrame",
+   1
+  ],
+  [
+   2529.9,
+   27.2,
+   "WebFrameWidgetImpl::UpdateLifecycle",
+   2
+  ]
+ ],
+ "load_named": {
+  "ParseAuthorStyleSheet": [
+   1,
+   58.8
+  ],
+  "CSSParserImpl::parseStyleSheet": [
+   3,
+   58.8
+  ],
+  "CSSParserImpl::parseStyleSheet.parse": [
+   3,
+   58.8
+  ],
+  "StyleEngine::updateActiveStyleSheets": [
+   2,
+   18.2
+  ],
+  "RuleSet::addRulesFromSheet": [
+   2,
+   0.8
+  ],
+  "ParseHTML": [
+   10,
+   159.1
+  ]
+ },
+ "generate_phase": {
+  "wall_ms": 52028.5,
+  "busy_ms": 51895.3,
+  "idle_ms": 133.2,
+  "frames": 102,
+  "style_ms": 23800.7,
+  "style_count": 193,
+  "recalcStyle_ms": 21815.2,
+  "recalcStyle_count": 193,
+  "updateStyle_ms": 22414.4,
+  "styleInvalidation_ms": 6.3,
+  "layout_ms": 9184.0,
+  "layout_count": 186,
+  "of_which_text_shaping_ms": 3811.3,
+  "text_shaping_count": 315837,
+  "animate_ms": 3551.7,
+  "prepaint_ms": 3506.4,
+  "of_which_compositing_inputs_ms": 3185.0,
+  "paint_lifecycle_ms": 9291.3,
+  "of_which_Paint_ms": 18.1,
+  "hittest_ms": 0.0,
+  "hittest_count": 0,
+  "gc_nested_ms": 1819.0,
+  "gc_count": 64491,
+  "recalcStyle_self_ms": 20855.2,
+  "gc_by_name": [
+   [
+    "V8.GC_MC_INCREMENTAL",
+    577.5
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+    544.8
+   ],
+   [
+    "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+    447.5
+   ],
+   [
+    "MajorGC",
+    91.1
+   ],
+   [
+    "V8.GC_MARK_COMPACTOR",
+    90.9
+   ],
+   [
+    "V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE",
+    20.6
+   ]
+  ],
+  "majorGC_count": 7,
+  "other_busy_ms": 2561.2,
+  "animation_regex_ms": 5748.6,
+  "animation_regex_count": 2015234,
+  "paint_prepaint_composite_ms": 13173.3,
+  "self_top": [
+   [
+    "Document::recalcStyle",
+    [
+     193,
+     20855.2
+    ]
+   ],
+   [
+    "LocalFrameView::RunPaintLifecyclePhase",
+    [
+     102,
+     9254.4
+    ]
+   ],
+   [
+    "LocalFrameView::performLayout",
+    [
+     186,
+     5199.8
+    ]
+   ],
+   [
+    "InlineNode::ShapeTextIncludingFirstLine",
+    [
+     315837,
+     3804.6
+    ]
+   ],
+   [
+    "Blink.CompositingInputs.UpdateTime",
+    [
+     102,
+     3184.7
+    ]
+   ],
+   [
+    "PageAnimator::serviceScriptedAnimations",
+    [
+     102,
+     2401.9
+    ]
+   ],
+   [
+    "WebFrameWidgetImpl::UpdateLifecycle",
+    [
+     102,
+     2020.7
+    ]
+   ],
+   [
+    "AnimationTimeline::serviceAnimations",
+    [
+     1687174,
+     1852.4
+    ]
+   ],
+   [
+    "UpdateLayoutTree",
+    [
+     193,
+     576.7
+    ]
+   ],
+   [
+    "Document::updateStyle",
+    [
+     193,
+     552.5
+    ]
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+    [
+     31777,
+     544.8
+    ]
+   ],
+   [
+    "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+    [
+     7,
+     447.5
+    ]
+   ],
+   [
+    "LocalFrameView::ScheduleAnimation",
+    [
+     327866,
+     340.0
+    ]
+   ],
+   [
+    "Blink.PrePaint.UpdateTime",
+    [
+     102,
+     319.1
+    ]
+   ],
+   [
+    "LocalFrameView::UpdateStyleAndLayout",
+    [
+     197,
+     160.6
+    ]
+   ],
+   [
+    "RunTask",
+    [
+     626,
+     79.7
+    ]
+   ],
+   [
+    "V8.GC_MARK_COMPACTOR",
+    [
+     7,
+     62.9
+    ]
+   ],
+   [
+    "Document::rebuildLayoutTree",
+    [
+     13,
+     45.3
+    ]
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL",
+    [
+     32253,
+     32.7
+    ]
+   ],
+   [
+    "Layout",
+    [
+     186,
+     30.2
+    ]
+   ],
+   [
+    "HitTest",
+    [
+     70,
+     20.8
+    ]
+   ],
+   [
+    "V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE",
+    [
+     7,
+     20.6
+    ]
+   ],
+   [
+    "CullRectUpdate",
+    [
+     102,
+     11.1
+    ]
+   ],
+   [
+    "Paint",
+    [
+     199,
+     10.5
+    ]
+   ],
+   [
+    "V8.GC_HEAP_EXTERNAL_PROLOGUE",
+    [
+     7,
+     10.2
+    ]
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE",
+    [
+     7,
+     9.3
+    ]
+   ],
+   [
+    "Blink.Paint.UpdateTime",
+    [
+     102,
+     8.9
+    ]
+   ],
+   [
+    "Document::updateStyleInvalidationIfNeeded",
+    [
+     6,
+     6.3
+    ]
+   ],
+   [
+    "PaintArtifactCompositor::Update",
+    [
+     101,
+     3.9
+    ]
+   ],
+   [
+    "Commit",
+    [
+     102,
+     3.7
+    ]
+   ],
+   [
+    "V8.GC_MC_MARK",
+    [
+     7,
+     2.4
+    ]
+   ],
+   [
+    "Blink.Layout.UpdateTime",
+    [
+     186,
+     2.0
+    ]
+   ],
+   [
+    "V8.GC_MC_MARK_EMBEDDER_TRACING",
+    [
+     15,
+     1.7
+    ]
+   ],
+   [
+    "MainFrameAborted",
+    [
+     93,
+     1.5
+    ]
+   ],
+   [
+    "ProxyMain::BeginMainFrame",
+    [
+     102,
+     1.1
+    ]
+   ],
+   [
+    "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+    [
+     195,
+     0.9
+    ]
+   ],
+   [
+    "Blink.Style.UpdateTime",
+    [
+     193,
+     0.9
+    ]
+   ],
+   [
+    "EventDispatch",
+    [
+     15,
+     0.8
+    ]
+   ],
+   [
+    "V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL",
+    [
+     7,
+     0.8
+    ]
+   ],
+   [
+    "TimerBase::run",
+    [
+     8,
+     0.8
+    ]
+   ]
+  ],
+  "incl_top": [
+   [
+    "RunTask",
+    [
+     626,
+     51895.3
+    ]
+   ],
+   [
+    "ProxyMain::BeginMainFrame",
+    [
+     102,
+     51803.0
+    ]
+   ],
+   [
+    "WebFrameWidgetImpl::UpdateLifecycle",
+    [
+     102,
+     48221.8
+    ]
+   ],
+   [
+    "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+    [
+     195,
+     33214.3
+    ]
+   ],
+   [
+    "LocalFrameView::UpdateStyleAndLayout",
+    [
+     197,
+     33213.4
+    ]
+   ],
+   [
+    "Blink.Style.UpdateTime",
+    [
+     193,
+     23801.5
+    ]
+   ],
+   [
+    "UpdateLayoutTree",
+    [
+     193,
+     23800.7
+    ]
+   ],
+   [
+    "Document::updateStyle",
+    [
+     193,
+     22414.4
+    ]
+   ],
+   [
+    "Document::recalcStyle",
+    [
+     193,
+     21815.2
+    ]
+   ],
+   [
+    "LocalFrameView::RunPaintLifecyclePhase",
+    [
+     102,
+     9291.3
+    ]
+   ],
+   [
+    "Blink.Layout.UpdateTime",
+    [
+     186,
+     9186.5
+    ]
+   ],
+   [
+    "LocalFrameView::layout",
+    [
+     186,
+     9184.4
+    ]
+   ],
+   [
+    "Layout",
+    [
+     186,
+     9184.0
+    ]
+   ],
+   [
+    "LocalFrameView::performLayout",
+    [
+     186,
+     9153.8
+    ]
+   ],
+   [
+    "InlineNode::ShapeTextIncludingFirstLine",
+    [
+     315837,
+     3811.3
+    ]
+   ],
+   [
+    "WebFrameWidgetImpl::BeginMainFrame",
+    [
+     102,
+     3552.1
+    ]
+   ],
+   [
+    "Blink.Animate.UpdateTime",
+    [
+     102,
+     3551.7
+    ]
+   ],
+   [
+    "PageAnimator::serviceScriptedAnimations",
+    [
+     102,
+     3551.2
+    ]
+   ],
+   [
+    "PrePaint",
+    [
+     102,
+     3506.4
+    ]
+   ],
+   [
+    "LocalFrameView::RunCompositingInputsLifecyclePhase",
+    [
+     102,
+     3185.3
+    ]
+   ],
+   [
+    "Blink.CompositingInputs.UpdateTime",
+    [
+     102,
+     3185.0
+    ]
+   ],
+   [
+    "AnimationTimeline::serviceAnimations",
+    [
+     1687174,
+     1857.2
+    ]
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL",
+    [
+     32253,
+     577.5
+    ]
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+    [
+     31777,
+     544.8
+    ]
+   ],
+   [
+    "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+    [
+     7,
+     447.5
+    ]
+   ],
+   [
+    "LocalFrameView::ScheduleAnimation",
+    [
+     327866,
+     340.0
+    ]
+   ],
+   [
+    "LocalFrameView::RunPrePaintLifecyclePhase",
+    [
+     102,
+     320.9
+    ]
+   ],
+   [
+    "Blink.PrePaint.UpdateTime",
+    [
+     102,
+     320.6
+    ]
+   ],
+   [
+    "MajorGC",
+    [
+     7,
+     91.1
+    ]
+   ],
+   [
+    "V8.GC_MARK_COMPACTOR",
+    [
+     7,
+     90.9
+    ]
+   ],
+   [
+    "Document::rebuildLayoutTree",
+    [
+     13,
+     46.6
+    ]
+   ],
+   [
+    "Blink.Paint.UpdateTime",
+    [
+     102,
+     30.7
+    ]
+   ],
+   [
+    "Commit",
+    [
+     102,
+     27.7
+    ]
+   ],
+   [
+    "HitTest",
+    [
+     70,
+     20.8
+    ]
+   ],
+   [
+    "V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE",
+    [
+     7,
+     20.6
+    ]
+   ],
+   [
+    "Paint",
+    [
+     199,
+     18.1
+    ]
+   ],
+   [
+    "OverlayInterstitialAdDetector::MaybeFireDetection",
+    [
+     35,
+     15.9
+    ]
+   ],
+   [
+    "CullRectUpdate",
+    [
+     102,
+     11.1
+    ]
+   ],
+   [
+    "V8.GC_HEAP_EXTERNAL_PROLOGUE",
+    [
+     7,
+     10.2
+    ]
+   ],
+   [
+    "V8.GC_MC_INCREMENTAL_START",
+    [
+     7,
+     9.9
+    ]
+   ]
+  ]
+ },
+ "tokens": [
+  {
+   "wall_ms": 26426.6,
+   "busy_ms": 26586.3,
+   "idle_ms": -159.7,
+   "frames": 51,
+   "style_ms": 13413.4,
+   "style_count": 93,
+   "recalcStyle_ms": 12565.9,
+   "recalcStyle_count": 93,
+   "updateStyle_ms": 12778.4,
+   "styleInvalidation_ms": 3.3,
+   "layout_ms": 4307.4,
+   "layout_count": 88,
+   "of_which_text_shaping_ms": 1847.6,
+   "text_shaping_count": 147607,
+   "animate_ms": 1644.0,
+   "prepaint_ms": 1707.0,
+   "of_which_compositing_inputs_ms": 1552.2,
+   "paint_lifecycle_ms": 4117.8,
+   "of_which_Paint_ms": 8.8,
+   "hittest_ms": 0.0,
+   "hittest_count": 0,
+   "gc_nested_ms": 729.2,
+   "gc_count": 28806,
+   "recalcStyle_self_ms": 12193.2,
+   "gc_by_name": [
+    [
+     "V8.GC_MC_INCREMENTAL",
+     251.8
+    ],
+    [
+     "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+     237.7
+    ],
+    [
+     "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+     145.5
+    ],
+    [
+     "MajorGC",
+     33.5
+    ],
+    [
+     "V8.GC_MARK_COMPACTOR",
+     33.4
+    ],
+    [
+     "V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE",
+     9.8
+    ]
+   ],
+   "majorGC_count": 3,
+   "other_busy_ms": 1396.7,
+   "animation_regex_ms": 2668.1,
+   "animation_regex_count": 951655,
+   "paint_prepaint_composite_ms": 6005.6,
+   "incl_top10": [
+    [
+     "RunTask",
+     [
+      305,
+      26586.3
+     ]
+    ],
+    [
+     "ProxyMain::BeginMainFrame",
+     [
+      51,
+      26560.1
+     ]
+    ],
+    [
+     "WebFrameWidgetImpl::UpdateLifecycle",
+     [
+      51,
+      24901.8
+     ]
+    ],
+    [
+     "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+     [
+      95,
+      17844.4
+     ]
+    ],
+    [
+     "LocalFrameView::UpdateStyleAndLayout",
+     [
+      97,
+      17844.0
+     ]
+    ],
+    [
+     "Blink.Style.UpdateTime",
+     [
+      93,
+      13413.8
+     ]
+    ],
+    [
+     "UpdateLayoutTree",
+     [
+      93,
+      13413.4
+     ]
+    ],
+    [
+     "Document::updateStyle",
+     [
+      93,
+      12778.4
+     ]
+    ],
+    [
+     "Document::recalcStyle",
+     [
+      93,
+      12565.9
+     ]
+    ],
+    [
+     "Blink.Layout.UpdateTime",
+     [
+      88,
+      4308.6
+     ]
+    ]
+   ],
+   "token_index": 1,
+   "start_ms_after_run": 0.0,
+   "end_ms_after_run": 26426.6,
+   "style_hist": {
+    "1-9": [
+     5,
+     15.1,
+     13
+    ],
+    "10-99": [
+     2,
+     60.2,
+     79
+    ],
+    "1k-9,999": [
+     48,
+     8884.0,
+     167439
+    ],
+    "100-999": [
+     37,
+     3992.5,
+     21144
+    ],
+    ">=50%DOM": [
+     1,
+     461.5,
+     50892
+    ]
+   },
+   "layout_dirty_hist": {
+    "<100": 2,
+    "1k-9,999": 72,
+    "100-999": 12,
+    ">=10k": 2
+   },
+   "layout_total_objects_max": 140920,
+   "ult_biggest": [
+    [
+     1999.2,
+     2381,
+     69.9
+    ],
+    [
+     1744.4,
+     3089,
+     3428.8
+    ],
+    [
+     570.1,
+     127,
+     2127.4
+    ],
+    [
+     487.3,
+     780,
+     2909.4
+    ],
+    [
+     461.5,
+     50892,
+     23073.4
+    ],
+    [
+     397.2,
+     784,
+     5335.4
+    ],
+    [
+     247.1,
+     1553,
+     11724.9
+    ],
+    [
+     246.7,
+     2326,
+     22765.6
+    ]
+   ],
+   "handshakes": [
+    [
+     51.2,
+     "g id='run-start'"
+    ],
+    [
+     24883.9,
+     "g id='token-1-ready'"
+    ],
+    [
+     26126.0,
+     "g id='token-1-ack'"
+    ]
+   ],
+   "style_by_elementCount": [
+    [
+     3089,
+     12,
+     2952.6
+    ],
+    [
+     1553,
+     11,
+     2408.2
+    ],
+    [
+     2381,
+     1,
+     1999.2
+    ],
+    [
+     784,
+     12,
+     1633.5
+    ],
+    [
+     126,
+     11,
+     886.0
+    ],
+    [
+     2323,
+     11,
+     831.9
+    ],
+    [
+     780,
+     12,
+     831.3
+    ],
+    [
+     127,
+     1,
+     570.1
+    ],
+    [
+     50892,
+     1,
+     461.5
+    ],
+    [
+     6919,
+     12,
+     445.4
+    ],
+    [
+     2326,
+     1,
+     246.7
+    ],
+    [
+     863,
+     1,
+     71.6
+    ],
+    [
+     39,
+     1,
+     31.8
+    ],
+    [
+     40,
+     1,
+     28.4
+    ],
+    [
+     7,
+     1,
+     10.7
+    ],
+    [
+     3,
+     1,
+     4.0
+    ],
+    [
+     1,
+     3,
+     0.4
+    ]
+   ],
+   "inval_by_reason": []
+  },
+  {
+   "wall_ms": 23127.3,
+   "busy_ms": 23054.8,
+   "idle_ms": 72.5,
+   "frames": 46,
+   "style_ms": 9292.6,
+   "style_count": 89,
+   "recalcStyle_ms": 8286.6,
+   "recalcStyle_count": 89,
+   "updateStyle_ms": 8630.5,
+   "styleInvalidation_ms": 2.9,
+   "layout_ms": 4482.3,
+   "layout_count": 87,
+   "of_which_text_shaping_ms": 1855.8,
+   "text_shaping_count": 153716,
+   "animate_ms": 1715.4,
+   "prepaint_ms": 1711.6,
+   "of_which_compositing_inputs_ms": 1560.9,
+   "paint_lifecycle_ms": 4647.9,
+   "of_which_Paint_ms": 8.2,
+   "hittest_ms": 0.0,
+   "hittest_count": 0,
+   "gc_nested_ms": 909.0,
+   "gc_count": 33780,
+   "recalcStyle_self_ms": 7814.9,
+   "gc_by_name": [
+    [
+     "V8.GC_MC_INCREMENTAL",
+     285.6
+    ],
+    [
+     "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+     268.4
+    ],
+    [
+     "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+     226.3
+    ],
+    [
+     "MajorGC",
+     48.9
+    ],
+    [
+     "V8.GC_MARK_COMPACTOR",
+     48.9
+    ],
+    [
+     "V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE",
+     8.2
+    ]
+   ],
+   "majorGC_count": 3,
+   "other_busy_ms": 1205.0,
+   "animation_regex_ms": 2762.9,
+   "animation_regex_count": 949970,
+   "paint_prepaint_composite_ms": 6535.0,
+   "incl_top10": [
+    [
+     "RunTask",
+     [
+      282,
+      23054.8
+     ]
+    ],
+    [
+     "ProxyMain::BeginMainFrame",
+     [
+      46,
+      23009.7
+     ]
+    ],
+    [
+     "WebFrameWidgetImpl::UpdateLifecycle",
+     [
+      46,
+      21280.5
+     ]
+    ],
+    [
+     "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+     [
+      89,
+      13871.6
+     ]
+    ],
+    [
+     "LocalFrameView::UpdateStyleAndLayout",
+     [
+      89,
+      13871.1
+     ]
+    ],
+    [
+     "Blink.Style.UpdateTime",
+     [
+      89,
+      9293.0
+     ]
+    ],
+    [
+     "UpdateLayoutTree",
+     [
+      89,
+      9292.6
+     ]
+    ],
+    [
+     "Document::updateStyle",
+     [
+      89,
+      8630.5
+     ]
+    ],
+    [
+     "Document::recalcStyle",
+     [
+      89,
+      8286.6
+     ]
+    ],
+    [
+     "LocalFrameView::RunPaintLifecyclePhase",
+     [
+      46,
+      4647.9
+     ]
+    ]
+   ],
+   "token_index": 2,
+   "start_ms_after_run": 26426.6,
+   "end_ms_after_run": 49553.8,
+   "style_hist": {
+    "1k-9,999": [
+     48,
+     5888.9,
+     167411
+    ],
+    "100-999": [
+     37,
+     2936.7,
+     21143
+    ],
+    ">=50%DOM": [
+     1,
+     428.0,
+     50892
+    ],
+    "1-9": [
+     2,
+     10.8,
+     8
+    ],
+    "10-99": [
+     1,
+     28.2,
+     39
+    ]
+   },
+   "layout_dirty_hist": {
+    "1k-9,999": 73,
+    "100-999": 12,
+    ">=10k": 1,
+    "<100": 1
+   },
+   "layout_total_objects_max": 140920,
+   "ult_biggest": [
+    [
+     428.0,
+     50892,
+     46315.6
+    ],
+    [
+     264.3,
+     2323,
+     31465.3
+    ],
+    [
+     252.6,
+     1553,
+     37658.3
+    ],
+    [
+     250.8,
+     1553,
+     27586.1
+    ],
+    [
+     250.7,
+     1553,
+     29421.3
+    ],
+    [
+     247.5,
+     1553,
+     34361.0
+    ],
+    [
+     245.1,
+     1553,
+     41019.7
+    ],
+    [
+     240.7,
+     2326,
+     46015.7
+    ]
+   ],
+   "handshakes": [
+    [
+     48008.5,
+     "g id='token-2-ready'"
+    ],
+    [
+     49271.4,
+     "g id='token-2-ack'"
+    ]
+   ],
+   "style_by_elementCount": [
+    [
+     1553,
+     11,
+     2640.0
+    ],
+    [
+     784,
+     12,
+     1386.7
+    ],
+    [
+     3089,
+     12,
+     1333.4
+    ],
+    [
+     126,
+     12,
+     1094.3
+    ],
+    [
+     2323,
+     10,
+     975.4
+    ],
+    [
+     6919,
+     12,
+     485.8
+    ],
+    [
+     50892,
+     1,
+     428.0
+    ],
+    [
+     780,
+     12,
+     392.3
+    ],
+    [
+     2326,
+     1,
+     240.7
+    ],
+    [
+     2342,
+     1,
+     116.6
+    ],
+    [
+     2334,
+     1,
+     97.0
+    ],
+    [
+     863,
+     1,
+     63.3
+    ],
+    [
+     39,
+     1,
+     28.2
+    ],
+    [
+     7,
+     1,
+     10.5
+    ],
+    [
+     1,
+     1,
+     0.3
+    ]
+   ],
+   "inval_by_reason": []
+  },
+  {
+   "wall_ms": 2474.7,
+   "busy_ms": 2254.2,
+   "idle_ms": 220.4,
+   "frames": 5,
+   "style_ms": 1094.7,
+   "style_count": 11,
+   "recalcStyle_ms": 962.7,
+   "recalcStyle_count": 11,
+   "updateStyle_ms": 1005.4,
+   "styleInvalidation_ms": 0.0,
+   "layout_ms": 394.2,
+   "layout_count": 11,
+   "of_which_text_shaping_ms": 107.9,
+   "text_shaping_count": 14514,
+   "animate_ms": 192.2,
+   "prepaint_ms": 87.8,
+   "of_which_compositing_inputs_ms": 71.9,
+   "paint_lifecycle_ms": 525.6,
+   "of_which_Paint_ms": 1.1,
+   "hittest_ms": 0.0,
+   "hittest_count": 0,
+   "gc_nested_ms": 180.7,
+   "gc_count": 1905,
+   "recalcStyle_self_ms": 847.1,
+   "gc_by_name": [
+    [
+     "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+     75.7
+    ],
+    [
+     "V8.GC_MC_INCREMENTAL",
+     40.1
+    ],
+    [
+     "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+     38.8
+    ],
+    [
+     "MajorGC",
+     8.7
+    ],
+    [
+     "V8.GC_MARK_COMPACTOR",
+     8.7
+    ],
+    [
+     "V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE",
+     2.7
+    ]
+   ],
+   "majorGC_count": 1,
+   "other_busy_ms": -40.3,
+   "animation_regex_ms": 317.7,
+   "animation_regex_count": 113609,
+   "paint_prepaint_composite_ms": 632.6,
+   "incl_top10": [
+    [
+     "RunTask",
+     [
+      39,
+      2254.2
+     ]
+    ],
+    [
+     "ProxyMain::BeginMainFrame",
+     [
+      5,
+      2233.3
+     ]
+    ],
+    [
+     "WebFrameWidgetImpl::UpdateLifecycle",
+     [
+      5,
+      2039.4
+     ]
+    ],
+    [
+     "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+     [
+      11,
+      1498.4
+     ]
+    ],
+    [
+     "LocalFrameView::UpdateStyleAndLayout",
+     [
+      11,
+      1498.3
+     ]
+    ],
+    [
+     "Blink.Style.UpdateTime",
+     [
+      11,
+      1094.8
+     ]
+    ],
+    [
+     "UpdateLayoutTree",
+     [
+      11,
+      1094.7
+     ]
+    ],
+    [
+     "Document::updateStyle",
+     [
+      11,
+      1005.4
+     ]
+    ],
+    [
+     "Document::recalcStyle",
+     [
+      11,
+      962.7
+     ]
+    ],
+    [
+     "LocalFrameView::RunPaintLifecyclePhase",
+     [
+      6,
+      525.6
+     ]
+    ]
+   ],
+   "token_index": "3(partial-to-end)",
+   "start_ms_after_run": 49553.8,
+   "end_ms_after_run": 52028.5,
+   "style_hist": {
+    "1k-9,999": [
+     6,
+     634.5,
+     23156
+    ],
+    "100-999": [
+     5,
+     460.2,
+     2596
+    ]
+   },
+   "layout_dirty_hist": {
+    "1k-9,999": 9,
+    "100-999": 2
+   },
+   "layout_total_objects_max": 38239,
+   "ult_biggest": [
+    [
+     249.0,
+     1553,
+     50802.0
+    ],
+    [
+     213.9,
+     784,
+     50507.4
+    ],
+    [
+     108.3,
+     3089,
+     50227.5
+    ],
+    [
+     106.2,
+     2342,
+     49578.1
+    ],
+    [
+     102.4,
+     126,
+     51501.1
+    ],
+    [
+     91.7,
+     2334,
+     51345.7
+    ],
+    [
+     80.9,
+     126,
+     49807.6
+    ],
+    [
+     45.7,
+     6919,
+     49953.4
+    ]
+   ],
+   "handshakes": [],
+   "style_by_elementCount": [
+    [
+     1553,
+     1,
+     249.0
+    ],
+    [
+     784,
+     1,
+     213.9
+    ],
+    [
+     126,
+     2,
+     183.3
+    ],
+    [
+     3089,
+     1,
+     108.3
+    ],
+    [
+     2342,
+     1,
+     106.2
+    ],
+    [
+     2334,
+     1,
+     91.7
+    ],
+    [
+     6919,
+     2,
+     79.3
+    ],
+    [
+     780,
+     2,
+     63.0
+    ]
+   ],
+   "inval_by_reason": []
+  }
+ ],
+ "style_hist_generate": {
+  "1-9": {
+   "count": 7,
+   "ms": 25.8,
+   "elements": 21,
+   "max_ms": 10.67,
+   "min_ms": 0.059,
+   "us_per_element": 1228.57
+  },
+  "10-99": {
+   "count": 3,
+   "ms": 88.4,
+   "elements": 118,
+   "max_ms": 31.79,
+   "min_ms": 28.245,
+   "us_per_element": 749.15
+  },
+  "1k-9,999": {
+   "count": 102,
+   "ms": 15407.4,
+   "elements": 358006,
+   "max_ms": 1999.18,
+   "min_ms": 26.297,
+   "us_per_element": 43.04
+  },
+  "100-999": {
+   "count": 79,
+   "ms": 7389.4,
+   "elements": 44883,
+   "max_ms": 570.13,
+   "min_ms": 22.12,
+   "us_per_element": 164.64
+  },
+  ">=50%DOM": {
+   "count": 2,
+   "ms": 889.6,
+   "elements": 101784,
+   "max_ms": 461.53,
+   "min_ms": 428.046,
+   "us_per_element": 8.74
+  }
+ },
+ "style_by_elementCount_top": [
+  [
+   1553,
+   23,
+   5297.2
+  ],
+  [
+   3089,
+   25,
+   4394.3
+  ],
+  [
+   784,
+   25,
+   3234.1
+  ],
+  [
+   126,
+   25,
+   2163.7
+  ],
+  [
+   2381,
+   1,
+   1999.2
+  ],
+  [
+   2323,
+   21,
+   1807.3
+  ],
+  [
+   780,
+   26,
+   1286.6
+  ],
+  [
+   6919,
+   26,
+   1010.5
+  ],
+  [
+   50892,
+   2,
+   889.6
+  ],
+  [
+   127,
+   1,
+   570.1
+  ],
+  [
+   2326,
+   2,
+   487.4
+  ],
+  [
+   2342,
+   2,
+   222.8
+  ],
+  [
+   2334,
+   2,
+   188.7
+  ],
+  [
+   863,
+   2,
+   134.9
+  ],
+  [
+   39,
+   2,
+   60.0
+  ],
+  [
+   40,
+   1,
+   28.4
+  ],
+  [
+   7,
+   2,
+   21.2
+  ],
+  [
+   3,
+   1,
+   4.0
+  ],
+  [
+   1,
+   4,
+   0.7
+  ]
+ ],
+ "style_passes_generate": [
+  [
+   5.7,
+   0.1,
+   1
+  ],
+  [
+   20.0,
+   28.4,
+   40
+  ],
+  [
+   56.5,
+   0.1,
+   1
+  ],
+  [
+   69.9,
+   1999.2,
+   2381
+  ],
+  [
+   2127.4,
+   570.1,
+   127
+  ],
+  [
+   2797.6,
+   4.0,
+   3
+  ],
+  [
+   2805.9,
+   41.4,
+   6919
+  ],
+  [
+   2909.4,
+   487.3,
+   780
+  ],
+  [
+   3428.8,
+   1744.4,
+   3089
+  ],
+  [
+   5335.4,
+   397.2,
+   784
+  ],
+  [
+   5933.7,
+   55.6,
+   1553
+  ],
+  [
+   6080.5,
+   72.2,
+   2323
+  ],
+  [
+   6216.3,
+   83.2,
+   126
+  ],
+  [
+   6526.7,
+   30.0,
+   6919
+  ],
+  [
+   6597.8,
+   37.2,
+   780
+  ],
+  [
+   6728.7,
+   104.3,
+   3089
+  ],
+  [
+   6912.5,
+   119.3,
+   784
+  ],
+  [
+   7282.6,
+   234.1,
+   1553
+  ],
+  [
+   7567.7,
+   83.8,
+   2323
+  ],
+  [
+   7847.4,
+   70.9,
+   126
+  ],
+  [
+   7964.2,
+   45.4,
+   6919
+  ],
+  [
+   8141.2,
+   24.5,
+   780
+  ],
+  [
+   8206.7,
+   122.8,
+   3089
+  ],
+  [
+   8510.6,
+   87.1,
+   784
+  ],
+  [
+   8671.5,
+   237.0,
+   1553
+  ],
+  [
+   9132.4,
+   60.5,
+   2323
+  ],
+  [
+   9253.7,
+   85.6,
+   126
+  ],
+  [
+   9551.9,
+   31.0,
+   6919
+  ],
+  [
+   9624.4,
+   36.8,
+   780
+  ],
+  [
+   9760.3,
+   104.5,
+   3089
+  ],
+  [
+   9941.3,
+   116.9,
+   784
+  ],
+  [
+   10315.9,
+   228.4,
+   1553
+  ],
+  [
+   10599.9,
+   86.8,
+   2323
+  ],
+  [
+   10897.7,
+   75.7,
+   126
+  ],
+  [
+   11016.1,
+   44.7,
+   6919
+  ],
+  [
+   11192.1,
+   25.2,
+   780
+  ],
+  [
+   11256.9,
+   117.8,
+   3089
+  ],
+  [
+   11544.4,
+   101.2,
+   784
+  ],
+  [
+   11724.9,
+   247.1,
+   1553
+  ],
+  [
+   12201.8,
+   68.4,
+   2323
+  ],
+  [
+   12333.4,
+   86.0,
+   126
+  ],
+  [
+   12623.6,
+   30.2,
+   6919
+  ],
+  [
+   12694.8,
+   36.5,
+   780
+  ],
+  [
+   12828.2,
+   102.5,
+   3089
+  ],
+  [
+   13006.0,
+   114.7,
+   784
+  ],
+  [
+   13375.6,
+   225.0,
+   1553
+  ],
+  [
+   13654.3,
+   85.5,
+   2323
+  ],
+  [
+   13961.1,
+   72.4,
+   126
+  ],
+  [
+   14077.8,
+   44.4,
+   6919
+  ],
+  [
+   14261.1,
+   23.6,
+   780
+  ],
+  [
+   14326.7,
+   117.9,
+   3089
+  ],
+  [
+   14606.7,
+   101.7,
+   784
+  ],
+  [
+   14787.8,
+   242.2,
+   1553
+  ],
+  [
+   15301.8,
+   61.9,
+   2323
+  ],
+  [
+   15422.4,
+   79.9,
+   126
+  ],
+  [
+   15718.2,
+   26.3,
+   6919
+  ],
+  [
+   15783.1,
+   34.5,
+   780
+  ],
+  [
+   15913.0,
+   87.5,
+   3089
+  ],
+  [
+   16069.8,
+   151.1,
+   784
+  ],
+  [
+   16478.6,
+   229.8,
+   1553
+  ],
+  [
+   16763.1,
+   83.3,
+   2323
+  ],
+  [
+   17072.6,
+   72.5,
+   126
+  ],
+  [
+   17190.4,
+   45.1,
+   6919
+  ],
+  [
+   17375.6,
+   23.6,
+   780
+  ],
+  [
+   17440.8,
+   119.2,
+   3089
+  ],
+  [
+   17729.7,
+   97.5,
+   784
+  ],
+  [
+   17903.5,
+   238.7,
+   1553
+  ],
+  [
+   18393.7,
+   70.1,
+   2323
+  ],
+  [
+   18527.0,
+   88.4,
+   126
+  ],
+  [
+   18820.3,
+   31.2,
+   6919
+  ],
+  [
+   18890.3,
+   38.2,
+   780
+  ],
+  [
+   19025.5,
+   101.3,
+   3089
+  ],
+  [
+   19204.6,
+   116.1,
+   784
+  ],
+  [
+   19575.7,
+   227.3,
+   1553
+  ],
+  [
+   19857.3,
+   83.7,
+   2323
+  ],
+  [
+   20179.1,
+   75.1,
+   126
+  ],
+  [
+   20297.5,
+   44.8,
+   6919
+  ],
+  [
+   20480.3,
+   24.9,
+   780
+  ],
+  [
+   20545.7,
+   124.0,
+   3089
+  ],
+  [
+   20838.2,
+   112.8,
+   784
+  ],
+  [
+   21027.2,
+   243.1,
+   1553
+  ],
+  [
+   21535.2,
+   75.8,
+   2323
+  ],
+  [
+   21677.3,
+   96.4,
+   126
+  ],
+  [
+   21985.6,
+   30.8,
+   6919
+  ],
+  [
+   22058.9,
+   38.8,
+   780
+  ],
+  [
+   22200.0,
+   106.4,
+   3089
+  ],
+  [
+   22389.0,
+   118.0,
+   784
+  ],
+  [
+   22765.6,
+   246.7,
+   2326
+  ],
+  [
+   23073.4,
+   461.5,
+   50892
+  ],
+  [
+   26007.7,
+   10.7,
+   7
+  ],
+  [
+   26085.8,
+   31.8,
+   39
+  ],
+  [
+   26201.4,
+   0.3,
+   1
+  ],
+  [
+   26269.1,
+   71.6,
+   863
+  ],
+  [
+   26448.4,
+   116.6,
+   2342
+  ],
+  [
+   26694.4,
+   81.0,
+   126
+  ],
+  [
+   26832.6,
+   48.3,
+   6919
+  ],
+  [
+   27033.0,
+   26.2,
+   780
+  ],
+  [
+   27102.9,
+   122.8,
+   3089
+  ],
+  [
+   27400.0,
+   104.6,
+   784
+  ],
+  [
+   27586.1,
+   250.8,
+   1553
+  ],
+  [
+   28133.1,
+   97.0,
+   2334
+  ],
+  [
+   28296.1,
+   96.6,
+   126
+  ],
+  [
+   28607.4,
+   34.3,
+   6919
+  ],
+  [
+   28693.8,
+   39.7,
+   780
+  ],
+  [
+   28833.5,
+   110.1,
+   3089
+  ],
+  [
+   29024.2,
+   124.0,
+   784
+  ],
+  [
+   29421.3,
+   250.7,
+   1553
+  ],
+  [
+   29729.4,
+   88.2,
+   2323
+  ],
+  [
+   30073.0,
+   87.2,
+   126
+  ],
+  [
+   30218.4,
+   48.0,
+   6919
+  ],
+  [
+   30421.8,
+   22.8,
+   780
+  ],
+  [
+   30483.9,
+   106.9,
+   3089
+  ],
+  [
+   30762.9,
+   88.6,
+   784
+  ],
+  [
+   30930.6,
+   239.2,
+   1553
+  ],
+  [
+   31465.3,
+   264.3,
+   2323
+  ],
+  [
+   31794.4,
+   96.1,
+   126
+  ],
+  [
+   32103.2,
+   32.5,
+   6919
+  ],
+  [
+   32184.9,
+   38.0,
+   780
+  ],
+  [
+   32326.2,
+   103.8,
+   3089
+  ],
+  [
+   32508.2,
+   115.6,
+   784
+  ],
+  [
+   32891.8,
+   232.8,
+   1553
+  ],
+  [
+   33184.4,
+   85.5,
+   2323
+  ],
+  [
+   33499.5,
+   79.7,
+   126
+  ],
+  [
+   33632.5,
+   46.1,
+   6919
+  ],
+  [
+   33822.9,
+   25.4,
+   780
+  ],
+  [
+   33893.5,
+   120.5,
+   3089
+  ],
+  [
+   34182.5,
+   97.5,
+   784
+  ],
+  [
+   34361.0,
+   247.5,
+   1553
+  ],
+  [
+   34913.4,
+   73.2,
+   2323
+  ],
+  [
+   35052.8,
+   99.6,
+   126
+  ],
+  [
+   35371.1,
+   35.2,
+   6919
+  ],
+  [
+   35459.7,
+   40.6,
+   780
+  ],
+  [
+   35599.7,
+   103.6,
+   3089
+  ],
+  [
+   35780.7,
+   115.1,
+   784
+  ],
+  [
+   36165.6,
+   229.8,
+   1553
+  ],
+  [
+   36450.4,
+   87.7,
+   2323
+  ],
+  [
+   36773.5,
+   84.2,
+   126
+  ],
+  [
+   36911.1,
+   48.2,
+   6919
+  ],
+  [
+   37103.3,
+   26.5,
+   780
+  ],
+  [
+   37171.0,
+   124.5,
+   3089
+  ],
+  [
+   37471.6,
+   106.1,
+   784
+  ],
+  [
+   37658.3,
+   252.6,
+   1553
+  ],
+  [
+   38233.0,
+   75.8,
+   2323
+  ],
+  [
+   38376.4,
+   104.8,
+   126
+  ],
+  [
+   38703.3,
+   36.0,
+   6919
+  ],
+  [
+   38791.2,
+   46.1,
+   780
+  ],
+  [
+   38943.8,
+   117.6,
+   3089
+  ],
+  [
+   39141.5,
+   134.7,
+   784
+  ],
+  [
+   39550.9,
+   220.2,
+   1553
+  ],
+  [
+   39822.9,
+   73.1,
+   2323
+  ],
+  [
+   40132.8,
+   73.4,
+   126
+  ],
+  [
+   40258.2,
+   41.7,
+   6919
+  ],
+  [
+   40445.0,
+   22.1,
+   780
+  ],
+  [
+   40504.5,
+   100.6,
+   3089
+  ],
+  [
+   40762.3,
+   164.0,
+   784
+  ],
+  [
+   41019.7,
+   245.1,
+   1553
+  ],
+  [
+   41525.3,
+   71.0,
+   2323
+  ],
+  [
+   41661.6,
+   103.3,
+   126
+  ],
+  [
+   41983.4,
+   33.3,
+   6919
+  ],
+  [
+   42067.5,
+   40.4,
+   780
+  ],
+  [
+   42209.0,
+   103.8,
+   3089
+  ],
+  [
+   42389.2,
+   119.7,
+   784
+  ],
+  [
+   42773.9,
+   232.6,
+   1553
+  ],
+  [
+   43065.8,
+   84.5,
+   2323
+  ],
+  [
+   43420.5,
+   85.7,
+   126
+  ],
+  [
+   43559.3,
+   46.2,
+   6919
+  ],
+  [
+   43749.8,
+   25.4,
+   780
+  ],
+  [
+   43815.0,
+   115.7,
+   3089
+  ],
+  [
+   44092.9,
+   98.2,
+   784
+  ],
+  [
+   44270.1,
+   238.8,
+   1553
+  ],
+  [
+   44781.3,
+   72.0,
+   2323
+  ],
+  [
+   44920.7,
+   102.7,
+   126
+  ],
+  [
+   45242.6,
+   35.9,
+   6919
+  ],
+  [
+   45328.9,
+   39.1,
+   780
+  ],
+  [
+   45467.5,
+   103.6,
+   3089
+  ],
+  [
+   45648.7,
+   118.7,
+   784
+  ],
+  [
+   46015.7,
+   240.7,
+   2326
+  ],
+  [
+   46315.6,
+   428.0,
+   50892
+  ],
+  [
+   49147.2,
+   10.5,
+   7
+  ],
+  [
+   49236.0,
+   28.2,
+   39
+  ],
+  [
+   49344.4,
+   0.3,
+   1
+  ],
+  [
+   49421.0,
+   63.3,
+   863
+  ],
+  [
+   49578.1,
+   106.2,
+   2342
+  ],
+  [
+   49807.6,
+   80.9,
+   126
+  ],
+  [
+   49953.4,
+   45.7,
+   6919
+  ],
+  [
+   50162.4,
+   24.1,
+   780
+  ],
+  [
+   50227.5,
+   108.3,
+   3089
+  ],
+  [
+   50507.4,
+   213.9,
+   784
+  ],
+  [
+   50802.0,
+   249.0,
+   1553
+  ],
+  [
+   51345.7,
+   91.7,
+   2334
+  ],
+  [
+   51501.1,
+   102.4,
+   126
+  ],
+  [
+   51826.5,
+   33.7,
+   6919
+  ],
+  [
+   51916.2,
+   38.9,
+   780
+  ]
+ ],
+ "layout_generate": [
+  [
+   48.4,
+   2.7,
+   17,
+   2538,
+   0
+  ],
+  [
+   2069.1,
+   37.3,
+   6947,
+   9467,
+   0
+  ],
+  [
+   2697.5,
+   23.9,
+   339,
+   9778,
+   0
+  ],
+  [
+   2847.4,
+   38.1,
+   13104,
+   22838,
+   0
+  ],
+  [
+   3396.8,
+   18.9,
+   2344,
+   25150,
+   0
+  ],
+  [
+   5173.2,
+   49.0,
+   9266,
+   34379,
+   0
+  ],
+  [
+   5732.6,
+   56.9,
+   2359,
+   36691,
+   0
+  ],
+  [
+   5989.2,
+   28.3,
+   1600,
+   38239,
+   0
+  ],
+  [
+   6152.7,
+   39.1,
+   6943,
+   9467,
+   0
+  ],
+  [
+   6299.5,
+   23.6,
+   339,
+   9778,
+   0
+  ],
+  [
+   6556.8,
+   19.5,
+   2352,
+   22838,
+   0
+  ],
+  [
+   6635.1,
+   18.5,
+   2344,
+   25150,
+   0
+  ],
+  [
+   6833.0,
+   49.5,
+   9266,
+   34379,
+   0
+  ],
+  [
+   7031.9,
+   54.9,
+   2359,
+   36691,
+   0
+  ],
+  [
+   7516.7,
+   28.1,
+   1600,
+   38239,
+   0
+  ],
+  [
+   7651.5,
+   39.0,
+   6943,
+   9467,
+   0
+  ],
+  [
+   7918.4,
+   24.3,
+   339,
+   9778,
+   0
+  ],
+  [
+   8009.6,
+   19.7,
+   2352,
+   22838,
+   0
+  ],
+  [
+   8165.7,
+   18.9,
+   2344,
+   25150,
+   0
+  ],
+  [
+   8329.5,
+   56.4,
+   9266,
+   34379,
+   0
+  ],
+  [
+   8597.7,
+   53.5,
+   2359,
+   36691,
+   0
+  ],
+  [
+   8908.5,
+   27.4,
+   1600,
+   38239,
+   0
+  ],
+  [
+   9192.9,
+   35.8,
+   6943,
+   9467,
+   0
+  ],
+  [
+   9339.3,
+   28.8,
+   339,
+   9778,
+   0
+  ],
+  [
+   9583.0,
+   19.3,
+   2352,
+   22838,
+   0
+  ],
+  [
+   9661.2,
+   18.7,
+   2344,
+   25150,
+   0
+  ],
+  [
+   9864.8,
+   50.1,
+   9266,
+   34379,
+   0
+  ],
+  [
+   10058.3,
+   55.7,
+   2359,
+   36691,
+   0
+  ],
+  [
+   10544.4,
+   28.5,
+   1600,
+   38239,
+   0
+  ],
+  [
+   10686.7,
+   40.1,
+   6943,
+   9467,
+   0
+  ],
+  [
+   10973.4,
+   23.8,
+   339,
+   9778,
+   0
+  ],
+  [
+   11060.9,
+   19.2,
+   2352,
+   22838,
+   0
+  ],
+  [
+   11217.3,
+   18.9,
+   2344,
+   25150,
+   0
+  ],
+  [
+   11374.7,
+   50.3,
+   9266,
+   34379,
+   0
+  ],
+  [
+   11645.6,
+   56.2,
+   2359,
+   36691,
+   0
+  ],
+  [
+   11972.0,
+   28.9,
+   1600,
+   38239,
+   0
+  ],
+  [
+   12270.2,
+   39.3,
+   6943,
+   9467,
+   0
+  ],
+  [
+   12419.4,
+   23.6,
+   339,
+   9778,
+   0
+  ],
+  [
+   12653.8,
+   20.0,
+   2352,
+   22838,
+   0
+  ],
+  [
+   12731.3,
+   18.7,
+   2344,
+   25150,
+   0
+  ],
+  [
+   12930.7,
+   48.9,
+   9266,
+   34379,
+   0
+  ],
+  [
+   13120.7,
+   55.7,
+   2359,
+   36691,
+   0
+  ],
+  [
+   13600.7,
+   27.9,
+   1600,
+   38239,
+   0
+  ],
+  [
+   13739.8,
+   39.4,
+   6943,
+   9467,
+   0
+  ],
+  [
+   14033.6,
+   24.2,
+   339,
+   9778,
+   0
+  ],
+  [
+   14122.2,
+   20.6,
+   2352,
+   22838,
+   0
+  ],
+  [
+   14284.7,
+   19.4,
+   2344,
+   25150,
+   0
+  ],
+  [
+   14444.5,
+   50.0,
+   9266,
+   34379,
+   0
+  ],
+  [
+   14708.4,
+   58.3,
+   2359,
+   36691,
+   0
+  ],
+  [
+   15030.1,
+   40.5,
+   1600,
+   38239,
+   0
+  ],
+  [
+   15363.7,
+   35.1,
+   6943,
+   9467,
+   0
+  ],
+  [
+   15502.4,
+   24.0,
+   339,
+   9778,
+   0
+  ],
+  [
+   15744.5,
+   17.6,
+   2352,
+   22838,
+   0
+  ],
+  [
+   15817.7,
+   16.6,
+   2344,
+   25150,
+   0
+  ],
+  [
+   16000.5,
+   43.8,
+   9266,
+   34379,
+   0
+  ],
+  [
+   16220.9,
+   55.4,
+   2359,
+   36691,
+   0
+  ],
+  [
+   16708.4,
+   28.0,
+   1600,
+   38239,
+   0
+  ],
+  [
+   16846.4,
+   39.0,
+   6943,
+   9467,
+   0
+  ],
+  [
+   17145.2,
+   24.1,
+   339,
+   9778,
+   0
+  ],
+  [
+   17235.6,
+   19.0,
+   2352,
+   22838,
+   0
+  ],
+  [
+   17399.2,
+   18.9,
+   2344,
+   25150,
+   0
+  ],
+  [
+   17560.1,
+   49.7,
+   9266,
+   34379,
+   0
+  ],
+  [
+   17827.3,
+   55.3,
+   2359,
+   36691,
+   0
+  ],
+  [
+   18142.3,
+   27.6,
+   1600,
+   38239,
+   0
+  ],
+  [
+   18463.8,
+   39.2,
+   6943,
+   9467,
+   0
+  ],
+  [
+   18615.3,
+   24.0,
+   339,
+   9778,
+   0
+  ],
+  [
+   18851.6,
+   19.2,
+   2352,
+   22838,
+   0
+  ],
+  [
+   18928.5,
+   18.9,
+   2344,
+   25150,
+   0
+  ],
+  [
+   19126.8,
+   49.3,
+   9266,
+   34379,
+   0
+  ],
+  [
+   19320.7,
+   55.5,
+   2359,
+   36691,
+   0
+  ],
+  [
+   19803.0,
+   28.0,
+   1600,
+   38239,
+   0
+  ],
+  [
+   19940.9,
+   39.4,
+   6943,
+   9467,
+   0
+  ],
+  [
+   20254.2,
+   24.0,
+   339,
+   9778,
+   0
+  ],
+  [
+   20342.3,
+   20.4,
+   2352,
+   22838,
+   0
+  ],
+  [
+   20505.3,
+   19.4,
+   2344,
+   25150,
+   0
+  ],
+  [
+   20669.7,
+   51.2,
+   9266,
+   34379,
+   0
+  ],
+  [
+   20951.0,
+   55.5,
+   2359,
+   36691,
+   0
+  ],
+  [
+   21270.3,
+   27.8,
+   1600,
+   38239,
+   0
+  ],
+  [
+   21611.0,
+   39.8,
+   6943,
+   9467,
+   0
+  ],
+  [
+   21773.7,
+   24.3,
+   339,
+   9778,
+   0
+  ],
+  [
+   22016.4,
+   20.3,
+   2352,
+   22838,
+   0
+  ],
+  [
+   22097.7,
+   21.5,
+   2344,
+   25150,
+   0
+  ],
+  [
+   22306.3,
+   53.9,
+   9266,
+   34379,
+   0
+  ],
+  [
+   22507.0,
+   61.5,
+   2359,
+   36691,
+   0
+  ],
+  [
+   23012.3,
+   29.2,
+   2374,
+   39013,
+   0
+  ],
+  [
+   23534.9,
+   1348.9,
+   101157,
+   140147,
+   0
+  ],
+  [
+   26117.6,
+   8.3,
+   7,
+   140920,
+   0
+  ],
+  [
+   26340.7,
+   85.7,
+   1571,
+   2542,
+   0
+  ],
+  [
+   26565.1,
+   41.1,
+   6944,
+   9467,
+   0
+  ],
+  [
+   26775.4,
+   34.0,
+   339,
+   9778,
+   0
+  ],
+  [
+   26880.9,
+   30.2,
+   3888,
+   22838,
+   0
+  ],
+  [
+   27059.3,
+   19.4,
+   2344,
+   25150,
+   0
+  ],
+  [
+   27225.7,
+   51.5,
+   9266,
+   34379,
+   0
+  ],
+  [
+   27504.6,
+   58.2,
+   2359,
+   36691,
+   0
+  ],
+  [
+   27836.9,
+   29.2,
+   1600,
+   38239,
+   0
+  ],
+  [
+   28230.1,
+   41.2,
+   6944,
+   9467,
+   0
+  ],
+  [
+   28392.7,
+   34.0,
+   339,
+   9778,
+   0
+  ],
+  [
+   28641.8,
+   29.9,
+   3888,
+   22838,
+   0
+  ],
+  [
+   28733.5,
+   19.9,
+   2344,
+   25150,
+   0
+  ],
+  [
+   28943.6,
+   52.7,
+   9266,
+   34379,
+   0
+  ],
+  [
+   29148.2,
+   62.8,
+   2359,
+   36691,
+   0
+  ],
+  [
+   29672.0,
+   28.2,
+   1600,
+   38239,
+   0
+  ],
+  [
+   29817.7,
+   62.7,
+   6943,
+   9467,
+   0
+  ],
+  [
+   30160.2,
+   35.4,
+   339,
+   9778,
+   0
+  ],
+  [
+   30266.5,
+   28.7,
+   3888,
+   22838,
+   0
+  ],
+  [
+   30444.5,
+   17.5,
+   2344,
+   25150,
+   0
+  ],
+  [
+   30590.8,
+   46.3,
+   9266,
+   34379,
+   0
+  ],
+  [
+   30851.6,
+   57.0,
+   2359,
+   36691,
+   0
+  ],
+  [
+   31169.8,
+   27.0,
+   1600,
+   38239,
+   0
+  ],
+  [
+   31729.6,
+   39.6,
+   6943,
+   9467,
+   0
+  ],
+  [
+   31890.5,
+   33.1,
+   339,
+   9778,
+   0
+  ],
+  [
+   32135.7,
+   27.9,
+   3888,
+   22838,
+   0
+  ],
+  [
+   32222.9,
+   18.8,
+   2344,
+   25150,
+   0
+  ],
+  [
+   32430.0,
+   49.5,
+   9266,
+   34379,
+   0
+  ],
+  [
+   32623.7,
+   56.9,
+   2359,
+   36691,
+   0
+  ],
+  [
+   33124.6,
+   28.8,
+   1600,
+   38239,
+   0
+  ],
+  [
+   33269.9,
+   39.1,
+   6943,
+   9467,
+   0
+  ],
+  [
+   33579.1,
+   33.9,
+   339,
+   9778,
+   0
+  ],
+  [
+   33678.6,
+   28.8,
+   3888,
+   22838,
+   0
+  ],
+  [
+   33848.3,
+   19.4,
+   2344,
+   25150,
+   0
+  ],
+  [
+   34014.0,
+   50.1,
+   9266,
+   34379,
+   0
+  ],
+  [
+   34280.0,
+   58.2,
+   2359,
+   36691,
+   0
+  ],
+  [
+   34608.5,
+   27.8,
+   1600,
+   38239,
+   0
+  ],
+  [
+   34986.6,
+   39.5,
+   6943,
+   9467,
+   0
+  ],
+  [
+   35152.3,
+   34.7,
+   339,
+   9778,
+   0
+  ],
+  [
+   35406.3,
+   29.9,
+   3888,
+   22838,
+   0
+  ],
+  [
+   35500.3,
+   20.2,
+   2344,
+   25150,
+   0
+  ],
+  [
+   35703.3,
+   50.2,
+   9266,
+   34379,
+   0
+  ],
+  [
+   35895.8,
+   58.7,
+   2359,
+   36691,
+   0
+  ],
+  [
+   36395.4,
+   29.0,
+   1600,
+   38239,
+   0
+  ],
+  [
+   36538.2,
+   41.5,
+   6943,
+   9467,
+   0
+  ],
+  [
+   36857.7,
+   33.9,
+   339,
+   9778,
+   0
+  ],
+  [
+   36959.4,
+   29.9,
+   3888,
+   22838,
+   0
+  ],
+  [
+   37129.7,
+   19.8,
+   2344,
+   25150,
+   0
+  ],
+  [
+   37295.5,
+   52.7,
+   9266,
+   34379,
+   0
+  ],
+  [
+   37577.7,
+   59.5,
+   2359,
+   36691,
+   0
+  ],
+  [
+   37910.9,
+   28.5,
+   1600,
+   38239,
+   0
+  ],
+  [
+   38308.8,
+   41.7,
+   6943,
+   9467,
+   0
+  ],
+  [
+   38481.3,
+   34.9,
+   339,
+   9778,
+   0
+  ],
+  [
+   38739.3,
+   31.2,
+   3888,
+   22838,
+   0
+  ],
+  [
+   38837.3,
+   19.9,
+   2344,
+   25150,
+   0
+  ],
+  [
+   39061.4,
+   52.7,
+   9266,
+   34379,
+   0
+  ],
+  [
+   39276.2,
+   56.8,
+   2359,
+   36691,
+   0
+  ],
+  [
+   39771.1,
+   27.1,
+   1600,
+   38239,
+   0
+  ],
+  [
+   39895.9,
+   34.2,
+   6943,
+   9467,
+   0
+  ],
+  [
+   40206.2,
+   32.8,
+   339,
+   9778,
+   0
+  ],
+  [
+   40299.9,
+   26.3,
+   3888,
+   22838,
+   0
+  ],
+  [
+   40467.1,
+   17.1,
+   2344,
+   25150,
+   0
+  ],
+  [
+   40605.1,
+   45.0,
+   9266,
+   34379,
+   0
+  ],
+  [
+   40926.3,
+   70.0,
+   2359,
+   36691,
+   0
+  ],
+  [
+   41264.8,
+   28.3,
+   1600,
+   38239,
+   0
+  ],
+  [
+   41596.3,
+   39.6,
+   6943,
+   9467,
+   0
+  ],
+  [
+   41764.9,
+   35.3,
+   339,
+   9778,
+   0
+  ],
+  [
+   42016.7,
+   29.0,
+   3888,
+   22838,
+   0
+  ],
+  [
+   42107.9,
+   19.0,
+   2344,
+   25150,
+   0
+  ],
+  [
+   42312.8,
+   49.8,
+   9266,
+   34379,
+   0
+  ],
+  [
+   42508.9,
+   57.6,
+   2359,
+   36691,
+   0
+  ],
+  [
+   43006.5,
+   29.1,
+   1600,
+   38239,
+   0
+  ],
+  [
+   43150.3,
+   40.3,
+   6943,
+   9467,
+   0
+  ],
+  [
+   43506.2,
+   33.6,
+   339,
+   9778,
+   0
+  ],
+  [
+   43605.5,
+   29.0,
+   3888,
+   22838,
+   0
+  ],
+  [
+   43775.2,
+   19.2,
+   2344,
+   25150,
+   0
+  ],
+  [
+   43930.7,
+   49.9,
+   9266,
+   34379,
+   0
+  ],
+  [
+   44191.2,
+   57.6,
+   2359,
+   36691,
+   0
+  ],
+  [
+   44508.9,
+   28.0,
+   1600,
+   38239,
+   0
+  ],
+  [
+   44853.4,
+   41.0,
+   6943,
+   9467,
+   0
+  ],
+  [
+   45023.5,
+   34.9,
+   339,
+   9778,
+   0
+  ],
+  [
+   45278.5,
+   29.5,
+   3888,
+   22838,
+   0
+  ],
+  [
+   45368.0,
+   18.9,
+   2344,
+   25150,
+   0
+  ],
+  [
+   45571.1,
+   50.0,
+   9266,
+   34379,
+   0
+  ],
+  [
+   45767.4,
+   56.3,
+   2359,
+   36691,
+   0
+  ],
+  [
+   46256.4,
+   29.0,
+   2374,
+   39013,
+   0
+  ],
+  [
+   46743.7,
+   1264.7,
+   101162,
+   140920,
+   0
+  ],
+  [
+   49264.2,
+   7.1,
+   7,
+   140920,
+   0
+  ],
+  [
+   49484.4,
+   69.3,
+   1571,
+   2542,
+   0
+  ],
+  [
+   49684.2,
+   36.2,
+   6944,
+   9467,
+   0
+  ],
+  [
+   49888.5,
+   43.5,
+   339,
+   9778,
+   0
+  ],
+  [
+   49999.0,
+   34.3,
+   5424,
+   22838,
+   0
+  ],
+  [
+   50186.5,
+   18.3,
+   2344,
+   25150,
+   0
+  ],
+  [
+   50335.8,
+   44.8,
+   9266,
+   34379,
+   0
+  ],
+  [
+   50721.3,
+   56.0,
+   2359,
+   36691,
+   0
+  ],
+  [
+   51051.0,
+   28.3,
+   1600,
+   38239,
+   0
+  ],
+  [
+   51437.4,
+   37.6,
+   6944,
+   9467,
+   0
+  ],
+  [
+   51603.6,
+   42.5,
+   339,
+   9778,
+   0
+  ],
+  [
+   51860.2,
+   34.7,
+   5424,
+   22838,
+   0
+  ],
+  [
+   51955.1,
+   17.9,
+   2344,
+   25150,
+   0
+  ]
+ ],
+ "per_second": [
+  {
+   "s": 0,
+   "busy": 2758.6,
+   "UpdateLayoutTree": 2027.7,
+   "Layout": 2.7,
+   "PrePaint": 0.6,
+   "LocalFrameView::RunPaintLifecyclePhase": 2.3,
+   "Blink.Animate.UpdateTime": 7.8,
+   "gc": 0.0
+  },
+  {
+   "s": 1,
+   "busy": 0.0,
+   "UpdateLayoutTree": 0.0,
+   "Layout": 0.0,
+   "PrePaint": 0.0,
+   "LocalFrameView::RunPaintLifecyclePhase": 0.0,
+   "Blink.Animate.UpdateTime": 0.0,
+   "gc": 0.0
+  },
+  {
+   "s": 2,
+   "busy": 2506.2,
+   "UpdateLayoutTree": 1102.9,
+   "Layout": 99.3,
+   "PrePaint": 20.3,
+   "LocalFrameView::RunPaintLifecyclePhase": 45.5,
+   "Blink.Animate.UpdateTime": 28.3,
+   "gc": 10.0
+  },
+  {
+   "s": 3,
+   "busy": 0.0,
+   "UpdateLayoutTree": 1744.4,
+   "Layout": 18.9,
+   "PrePaint": 0.0,
+   "LocalFrameView::RunPaintLifecyclePhase": 0.0,
+   "Blink.Animate.UpdateTime": 0.0,
+   "gc": 7.7
+  },
+  {
+   "s": 4,
+   "busy": 0.0,
+   "UpdateLayoutTree": 0.0,
+   "Layout": 0.0,
+   "PrePaint": 0.0,
+   "LocalFrameView::RunPaintLifecyclePhase": 0.0,
+   "Blink.Animate.UpdateTime": 0.0,
+   "gc": 4.7
+  },
+  {
+   "s": 5,
+   "busy": 750.2,
+   "UpdateLayoutTree": 452.8,
+   "Layout": 134.1,
+   "PrePaint": 41.7,
+   "LocalFrameView::RunPaintLifecyclePhase": 102.5,
+   "Blink.Animate.UpdateTime": 62.4,
+   "gc": 16.1
+  },
+  {
+   "s": 6,
+   "busy": 1204.0,
+   "UpdateLayoutTree": 446.3,
+   "Layout": 150.2,
+   "PrePaint": 24.9,
+   "LocalFrameView::RunPaintLifecyclePhase": 206.8,
+   "Blink.Animate.UpdateTime": 101.5,
+   "gc": 29.5
+  },
+  {
+   "s": 7,
+   "busy": 860.8,
+   "UpdateLayoutTree": 434.2,
+   "Layout": 146.3,
+   "PrePaint": 60.6,
+   "LocalFrameView::RunPaintLifecyclePhase": 215.4,
+   "Blink.Animate.UpdateTime": 72.3,
+   "gc": 17.8
+  },
+  {
+   "s": 8,
+   "busy": 972.1,
+   "UpdateLayoutTree": 471.3,
+   "Layout": 175.9,
+   "PrePaint": 46.4,
+   "LocalFrameView::RunPaintLifecyclePhase": 252.6,
+   "Blink.Animate.UpdateTime": 72.1,
+   "gc": 26.7
+  },
+  {
+   "s": 9,
+   "busy": 1191.0,
+   "UpdateLayoutTree": 435.3,
+   "Layout": 152.7,
+   "PrePaint": 24.2,
+   "LocalFrameView::RunPaintLifecyclePhase": 168.4,
+   "Blink.Animate.UpdateTime": 109.9,
+   "gc": 36.1
+  },
+  {
+   "s": 10,
+   "busy": 878.3,
+   "UpdateLayoutTree": 390.9,
+   "Layout": 148.1,
+   "PrePaint": 62.7,
+   "LocalFrameView::RunPaintLifecyclePhase": 229.8,
+   "Blink.Animate.UpdateTime": 75.4,
+   "gc": 21.4
+  },
+  {
+   "s": 11,
+   "busy": 1001.7,
+   "UpdateLayoutTree": 536.0,
+   "Layout": 173.5,
+   "PrePaint": 28.6,
+   "LocalFrameView::RunPaintLifecyclePhase": 127.1,
+   "Blink.Animate.UpdateTime": 71.9,
+   "gc": 27.0
+  },
+  {
+   "s": 12,
+   "busy": 1172.3,
+   "UpdateLayoutTree": 323.6,
+   "Layout": 150.5,
+   "PrePaint": 41.7,
+   "LocalFrameView::RunPaintLifecyclePhase": 301.8,
+   "Blink.Animate.UpdateTime": 104.8,
+   "gc": 24.8
+  },
+  {
+   "s": 13,
+   "busy": 885.1,
+   "UpdateLayoutTree": 497.6,
+   "Layout": 123.0,
+   "PrePaint": 62.1,
+   "LocalFrameView::RunPaintLifecyclePhase": 240.1,
+   "Blink.Animate.UpdateTime": 74.0,
+   "gc": 20.5
+  },
+  {
+   "s": 14,
+   "busy": 1025.4,
+   "UpdateLayoutTree": 529.8,
+   "Layout": 172.5,
+   "PrePaint": 28.8,
+   "LocalFrameView::RunPaintLifecyclePhase": 127.8,
+   "Blink.Animate.UpdateTime": 70.9,
+   "gc": 25.3
+  },
+  {
+   "s": 15,
+   "busy": 1184.0,
+   "UpdateLayoutTree": 290.1,
+   "Layout": 133.9,
+   "PrePaint": 41.7,
+   "LocalFrameView::RunPaintLifecyclePhase": 324.1,
+   "Blink.Animate.UpdateTime": 114.4,
+   "gc": 28.1
+  },
+  {
+   "s": 16,
+   "busy": 593.8,
+   "UpdateLayoutTree": 464.2,
+   "Layout": 166.1,
+   "PrePaint": 62.0,
+   "LocalFrameView::RunPaintLifecyclePhase": 249.8,
+   "Blink.Animate.UpdateTime": 36.9,
+   "gc": 56.2
+  },
+  {
+   "s": 17,
+   "busy": 1317.4,
+   "UpdateLayoutTree": 596.8,
+   "Layout": 167.0,
+   "PrePaint": 29.6,
+   "LocalFrameView::RunPaintLifecyclePhase": 129.8,
+   "Blink.Animate.UpdateTime": 113.7,
+   "gc": 30.3
+  },
+  {
+   "s": 18,
+   "busy": 1181.3,
+   "UpdateLayoutTree": 227.9,
+   "Layout": 129.0,
+   "PrePaint": 40.6,
+   "LocalFrameView::RunPaintLifecyclePhase": 326.0,
+   "Blink.Animate.UpdateTime": 104.3,
+   "gc": 18.3
+  },
+  {
+   "s": 19,
+   "busy": 598.1,
+   "UpdateLayoutTree": 528.3,
+   "Layout": 172.3,
+   "PrePaint": 63.8,
+   "LocalFrameView::RunPaintLifecyclePhase": 257.4,
+   "Blink.Animate.UpdateTime": 34.1,
+   "gc": 27.1
+  },
+  {
+   "s": 20,
+   "busy": 1352.3,
+   "UpdateLayoutTree": 381.6,
+   "Layout": 170.5,
+   "PrePaint": 29.6,
+   "LocalFrameView::RunPaintLifecyclePhase": 129.1,
+   "Blink.Animate.UpdateTime": 110.9,
+   "gc": 34.2
+  },
+  {
+   "s": 21,
+   "busy": 665.6,
+   "UpdateLayoutTree": 446.0,
+   "Layout": 91.9,
+   "PrePaint": 33.5,
+   "LocalFrameView::RunPaintLifecyclePhase": 307.6,
+   "Blink.Animate.UpdateTime": 73.4,
+   "gc": 16.1
+  },
+  {
+   "s": 22,
+   "busy": 3807.5,
+   "UpdateLayoutTree": 509.9,
+   "Layout": 157.2,
+   "PrePaint": 56.4,
+   "LocalFrameView::RunPaintLifecyclePhase": 143.9,
+   "Blink.Animate.UpdateTime": 73.5,
+   "gc": 24.4
+  },
+  {
+   "s": 23,
+   "busy": 0.0,
+   "UpdateLayoutTree": 461.5,
+   "Layout": 1378.1,
+   "PrePaint": 0.0,
+   "LocalFrameView::RunPaintLifecyclePhase": 0.0,
+   "Blink.Animate.UpdateTime": 0.0,
+   "gc": 203.6
+  },
+  {
+   "s": 24,
+   "busy": 0.0,
+   "UpdateLayoutTree": 0.0,
+   "Layout": 0.0,
+   "PrePaint": 904.8,
+   "LocalFrameView::RunPaintLifecyclePhase": 0.0,
+   "Blink.Animate.UpdateTime": 0.0,
+   "gc": 17.3
+  },
+  {
+   "s": 25,
+   "busy": 80.5,
+   "UpdateLayoutTree": 0.0,
+   "Layout": 0.0,
+   "PrePaint": 0.0,
+   "LocalFrameView::RunPaintLifecyclePhase": 183.1,
+   "Blink.Animate.UpdateTime": 34.2,
+   "gc": 1.9
+  },
+  {
+   "s": 26,
+   "busy": 1299.4,
+   "UpdateLayoutTree": 360.2,
+   "Layout": 199.4,
+   "PrePaint": 24.9,
+   "LocalFrameView::RunPaintLifecyclePhase": 154.3,
+   "Blink.Animate.UpdateTime": 173.1,
+   "gc": 20.3
+  },
+  {
+   "s": 27,
+   "busy": 734.7,
+   "UpdateLayoutTree": 504.4,
+   "Layout": 158.3,
+   "PrePaint": 42.6,
+   "LocalFrameView::RunPaintLifecyclePhase": 250.5,
+   "Blink.Animate.UpdateTime": 43.9,
+   "gc": 28.9
+  },
+  {
+   "s": 28,
+   "busy": 1286.9,
+   "UpdateLayoutTree": 377.7,
+   "Layout": 177.6,
+   "PrePaint": 24.8,
+   "LocalFrameView::RunPaintLifecyclePhase": 167.0,
+   "Blink.Animate.UpdateTime": 105.3,
+   "gc": 33.7
+  },
+  {
+   "s": 29,
+   "busy": 643.7,
+   "UpdateLayoutTree": 462.9,
+   "Layout": 153.8,
+   "PrePaint": 67.2,
+   "LocalFrameView::RunPaintLifecyclePhase": 247.5,
+   "Blink.Animate.UpdateTime": 38.0,
+   "gc": 62.9
+  },
+  {
+   "s": 30,
+   "busy": 1390.6,
+   "UpdateLayoutTree": 592.7,
+   "Layout": 185.0,
+   "PrePaint": 29.3,
+   "LocalFrameView::RunPaintLifecyclePhase": 129.3,
+   "Blink.Animate.UpdateTime": 123.8,
+   "gc": 0.0
+  },
+  {
+   "s": 31,
+   "busy": 646.7,
+   "UpdateLayoutTree": 360.4,
+   "Layout": 99.7,
+   "PrePaint": 31.8,
+   "LocalFrameView::RunPaintLifecyclePhase": 331.7,
+   "Blink.Animate.UpdateTime": 37.2,
+   "gc": 203.6
+  },
+  {
+   "s": 32,
+   "busy": 1385.2,
+   "UpdateLayoutTree": 522.7,
+   "Layout": 153.0,
+   "PrePaint": 58.8,
+   "LocalFrameView::RunPaintLifecyclePhase": 152.8,
+   "Blink.Animate.UpdateTime": 112.2,
+   "gc": 28.1
+  },
+  {
+   "s": 33,
+   "busy": 679.1,
+   "UpdateLayoutTree": 357.2,
+   "Layout": 150.0,
+   "PrePaint": 19.4,
+   "LocalFrameView::RunPaintLifecyclePhase": 208.3,
+   "Blink.Animate.UpdateTime": 72.8,
+   "gc": 27.9
+  },
+  {
+   "s": 34,
+   "busy": 1191.8,
+   "UpdateLayoutTree": 418.2,
+   "Layout": 175.5,
+   "PrePaint": 41.7,
+   "LocalFrameView::RunPaintLifecyclePhase": 265.4,
+   "Blink.Animate.UpdateTime": 78.2,
+   "gc": 19.9
+  },
+  {
+   "s": 35,
+   "busy": 786.2,
+   "UpdateLayoutTree": 394.0,
+   "Layout": 193.7,
+   "PrePaint": 74.5,
+   "LocalFrameView::RunPaintLifecyclePhase": 166.4,
+   "Blink.Animate.UpdateTime": 68.0,
+   "gc": 29.2
+  },
+  {
+   "s": 36,
+   "busy": 942.4,
+   "UpdateLayoutTree": 450.0,
+   "Layout": 134.2,
+   "PrePaint": 19.7,
+   "LocalFrameView::RunPaintLifecyclePhase": 329.5,
+   "Blink.Animate.UpdateTime": 79.5,
+   "gc": 18.3
+  },
+  {
+   "s": 37,
+   "busy": 1120.5,
+   "UpdateLayoutTree": 509.6,
+   "Layout": 160.5,
+   "PrePaint": 43.4,
+   "LocalFrameView::RunPaintLifecyclePhase": 279.1,
+   "Blink.Animate.UpdateTime": 77.5,
+   "gc": 25.1
+  },
+  {
+   "s": 38,
+   "busy": 1304.6,
+   "UpdateLayoutTree": 380.3,
+   "Layout": 127.7,
+   "PrePaint": 26.1,
+   "LocalFrameView::RunPaintLifecyclePhase": 168.2,
+   "Blink.Animate.UpdateTime": 113.3,
+   "gc": 21.4
+  },
+  {
+   "s": 39,
+   "busy": 587.6,
+   "UpdateLayoutTree": 427.9,
+   "Layout": 170.9,
+   "PrePaint": 62.1,
+   "LocalFrameView::RunPaintLifecyclePhase": 264.0,
+   "Blink.Animate.UpdateTime": 43.1,
+   "gc": 45.2
+  },
+  {
+   "s": 40,
+   "busy": 1390.3,
+   "UpdateLayoutTree": 401.7,
+   "Layout": 191.2,
+   "PrePaint": 27.4,
+   "LocalFrameView::RunPaintLifecyclePhase": 124.1,
+   "Blink.Animate.UpdateTime": 106.5,
+   "gc": 100.9
+  },
+  {
+   "s": 41,
+   "busy": 684.1,
+   "UpdateLayoutTree": 452.7,
+   "Layout": 103.3,
+   "PrePaint": 33.3,
+   "LocalFrameView::RunPaintLifecyclePhase": 299.0,
+   "Blink.Animate.UpdateTime": 70.9,
+   "gc": 17.8
+  },
+  {
+   "s": 42,
+   "busy": 1203.3,
+   "UpdateLayoutTree": 496.5,
+   "Layout": 155.3,
+   "PrePaint": 56.5,
+   "LocalFrameView::RunPaintLifecyclePhase": 153.9,
+   "Blink.Animate.UpdateTime": 74.2,
+   "gc": 26.6
+  },
+  {
+   "s": 43,
+   "busy": 674.5,
+   "UpdateLayoutTree": 357.5,
+   "Layout": 201.0,
+   "PrePaint": 43.3,
+   "LocalFrameView::RunPaintLifecyclePhase": 248.2,
+   "Blink.Animate.UpdateTime": 72.4,
+   "gc": 27.4
+  },
+  {
+   "s": 44,
+   "busy": 1148.7,
+   "UpdateLayoutTree": 511.8,
+   "Layout": 126.6,
+   "PrePaint": 17.8,
+   "LocalFrameView::RunPaintLifecyclePhase": 225.8,
+   "Blink.Animate.UpdateTime": 78.9,
+   "gc": 20.9
+  },
+  {
+   "s": 45,
+   "busy": 3897.2,
+   "UpdateLayoutTree": 297.4,
+   "Layout": 189.6,
+   "PrePaint": 72.1,
+   "LocalFrameView::RunPaintLifecyclePhase": 272.7,
+   "Blink.Animate.UpdateTime": 104.6,
+   "gc": 26.0
+  },
+  {
+   "s": 46,
+   "busy": 0.0,
+   "UpdateLayoutTree": 668.7,
+   "Layout": 1293.6,
+   "PrePaint": 0.0,
+   "LocalFrameView::RunPaintLifecyclePhase": 0.0,
+   "Blink.Animate.UpdateTime": 0.0,
+   "gc": 65.8
+  },
+  {
+   "s": 47,
+   "busy": 0.0,
+   "UpdateLayoutTree": 0.0,
+   "Layout": 0.0,
+   "PrePaint": 0.0,
+   "LocalFrameView::RunPaintLifecyclePhase": 0.0,
+   "Blink.Animate.UpdateTime": 0.0,
+   "gc": 63.5
+  },
+  {
+   "s": 48,
+   "busy": 0.0,
+   "UpdateLayoutTree": 0.0,
+   "Layout": 0.0,
+   "PrePaint": 895.4,
+   "LocalFrameView::RunPaintLifecyclePhase": 204.3,
+   "Blink.Animate.UpdateTime": 0.0,
+   "gc": 0.0
+  },
+  {
+   "s": 49,
+   "busy": 1006.8,
+   "UpdateLayoutTree": 335.1,
+   "Layout": 190.4,
+   "PrePaint": 18.0,
+   "LocalFrameView::RunPaintLifecyclePhase": 83.4,
+   "Blink.Animate.UpdateTime": 179.0,
+   "gc": 0.0
+  },
+  {
+   "s": 50,
+   "busy": 1183.7,
+   "UpdateLayoutTree": 595.3,
+   "Layout": 119.2,
+   "PrePaint": 28.9,
+   "LocalFrameView::RunPaintLifecyclePhase": 130.4,
+   "Blink.Animate.UpdateTime": 81.4,
+   "gc": 136.7
+  },
+  {
+   "s": 51,
+   "busy": 710.6,
+   "UpdateLayoutTree": 266.7,
+   "Layout": 161.1,
+   "PrePaint": 42.8,
+   "LocalFrameView::RunPaintLifecyclePhase": 364.9,
+   "Blink.Animate.UpdateTime": 71.4,
+   "gc": 21.7
+  },
+  {
+   "s": 52,
+   "busy": 1102.7,
+   "UpdateLayoutTree": 505.9,
+   "Layout": 164.2,
+   "PrePaint": 59.9,
+   "LocalFrameView::RunPaintLifecyclePhase": 113.7,
+   "Blink.Animate.UpdateTime": 75.7,
+   "gc": 22.3
+  }
+ ],
+ "invalidation_by_event_reason": [],
+ "invalidation_by_event_reason_part": [],
+ "invalidation_samples": {},
+ "invalidation_event_names": {},
+ "animation_names_top": [
+  [
+   "",
+   "n",
+   292900
+  ],
+  [
+   "",
+   "running",
+   34730
+  ],
+  [
+   "",
+   "e",
+   22309
+  ],
+  [
+   "--saved-0-147",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-232",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-239",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-568",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-679",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-459",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-381",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-198",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-1",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-77",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-675",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-79",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-102",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-724",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-427",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-114",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-550",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-346",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-37",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-341",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-546",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-35",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-625",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-481",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-567",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-399",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-88",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-516",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-748",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-268",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-81",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-164",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-431",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-540",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-25",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-92",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-577",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-387",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-545",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-721",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-418",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-69",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-83",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-4",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-93",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-296",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-619",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-710",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-365",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-500",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-655",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-436",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-72",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-725",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-345",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-385",
+   "running",
+   15
+  ],
+  [
+   "--saved-0-238",
+   "running",
+   15
+  ]
+ ],
+ "animation_name_count_distinct": 11719,
+ "handshake_events": [
+  [
+   -2359.2,
+   "g id='fonts-detected'"
+  ],
+  [
+   51.2,
+   "g id='run-start'"
+  ],
+  [
+   24883.9,
+   "g id='token-1-ready'"
+  ],
+  [
+   26126.0,
+   "g id='token-1-ack'"
+  ],
+  [
+   48008.5,
+   "g id='token-2-ready'"
+  ],
+  [
+   49271.4,
+   "g id='token-2-ack'"
+  ]
+ ],
+ "token_bounds_ms_after_run": [
+  [
+   1,
+   26426.6
+  ],
+  [
+   2,
+   49553.8
+  ]
+ ],
+ "gc_total_ms_generate": 1819.3,
+ "gc_by_name": [
+  [
+   "V8.GC_MC_INCREMENTAL",
+   36373
+  ],
+  [
+   "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+   35840
+  ],
+  [
+   "V8.GC_MC_CLEAR_STRING_TABLE",
+   65
+  ],
+  [
+   "V8.GC_MC_SWEEP",
+   44
+  ],
+  [
+   "V8.GC_MC_MARK_ROOTS",
+   42
+  ],
+  [
+   "V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_MARKING",
+   40
+  ],
+  [
+   "V8.GC_MC_MARK_EMBEDDER_PROLOGUE",
+   28
+  ],
+  [
+   "V8.GC_MC_EVACUATE",
+   28
+  ],
+  [
+   "V8.GC_MC_MARK_EMBEDDER_TRACING",
+   26
+  ],
+  [
+   "V8.GC_TIME_TO_SAFEPOINT",
+   20
+  ],
+  [
+   "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+   15
+  ],
+  [
+   "V8.GC_HEAP_EXTERNAL_PROLOGUE",
+   15
+  ],
+  [
+   "V8.GC_HEAP_EPILOGUE_SAFEPOINT",
+   15
+  ],
+  [
+   "V8.GC_HEAP_EPILOGUE",
+   15
+  ],
+  [
+   "V8.GC_HEAP_EXTERNAL_EPILOGUE",
+   15
+  ],
+  [
+   "V8.GC_MC_INCREMENTAL_START",
+   14
+  ],
+  [
+   "V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE",
+   14
+  ],
+  [
+   "V8.GC_MC_INCREMENTAL_EXTERNAL_EPILOGUE",
+   14
+  ],
+  [
+   "MajorGC",
+   14
+  ],
+  [
+   "V8.GC_MARK_COMPACTOR",
+   14
+  ]
+ ],
+ "name_inventory_main": [
+  [
+   "Document::recalcStyle",
+   242,
+   26463.9,
+   25113.5
+  ],
+  [
+   "LocalFrameView::RunPaintLifecyclePhase",
+   138,
+   11241.6,
+   11194.4
+  ],
+  [
+   "LocalFrameView::performLayout",
+   241,
+   10969.7,
+   6479.0
+  ],
+  [
+   "InlineNode::ShapeTextIncludingFirstLine",
+   378772,
+   4334.0,
+   4326.8
+  ],
+  [
+   "Blink.CompositingInputs.UpdateTime",
+   138,
+   3522.0,
+   3521.5
+  ],
+  [
+   "PageAnimator::serviceScriptedAnimations",
+   138,
+   4356.0,
+   2944.7
+  ],
+  [
+   "WebFrameWidgetImpl::UpdateLifecycle",
+   138,
+   57894.6,
+   2444.3
+  ],
+  [
+   "AnimationTimeline::serviceAnimations",
+   2098885,
+   2320.6,
+   2312.4
+  ],
+  [
+   "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED",
+   15,
+   747.6,
+   747.5
+  ],
+  [
+   "UpdateLayoutTree",
+   259,
+   29025.7,
+   737.9
+  ],
+  [
+   "Document::updateStyle",
+   259,
+   27230.0,
+   713.5
+  ],
+  [
+   "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+   35840,
+   652.6,
+   652.6
+  ],
+  [
+   "LocalFrameView::ScheduleAnimation",
+   399123,
+   416.6,
+   416.6
+  ],
+  [
+   "Blink.PrePaint.UpdateTime",
+   138,
+   382.0,
+   380.5
+  ],
+  [
+   "RunTask",
+   17574,
+   63211.9,
+   326.2
+  ],
+  [
+   "LocalFrameView::UpdateStyleAndLayout",
+   284,
+   40243.2,
+   196.3
+  ],
+  [
+   "ParseHTML",
+   10,
+   159.1,
+   156.6
+  ],
+  [
+   "V8.GC_MARK_COMPACTOR",
+   14,
+   119.2,
+   79.1
+  ],
+  [
+   "CSSParserImpl::parseStyleSheet.parse",
+   3,
+   58.8,
+   58.8
+  ],
+  [
+   "Document::rebuildLayoutTree",
+   20,
+   52.6,
+   47.0
+  ],
+  [
+   "ResponseBodyLoader::DidFinishLoadingBody",
+   2,
+   110.3,
+   41.5
+  ],
+  [
+   "V8.GC_MC_INCREMENTAL",
+   36373,
+   690.7,
+   38.1
+  ],
+  [
+   "Layout",
+   241,
+   11006.4,
+   36.7
+  ],
+  [
+   "V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE",
+   14,
+   28.6,
+   28.6
+  ],
+  [
+   "HitTest",
+   92,
+   27.3,
+   27.3
+  ],
+  [
+   "TextResourceDecoder::Decode",
+   267,
+   24.3,
+   24.3
+  ],
+  [
+   "StyleEngine::updateActiveStyleSheets",
+   2,
+   18.2,
+   16.2
+  ],
+  [
+   "Paint",
+   255,
+   24.3,
+   14.8
+  ],
+  [
+   "V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE",
+   14,
+   13.8,
+   13.8
+  ],
+  [
+   "V8.GC_HEAP_EXTERNAL_PROLOGUE",
+   15,
+   13.5,
+   13.5
+  ],
+  [
+   "CullRectUpdate",
+   137,
+   13.4,
+   13.4
+  ],
+  [
+   "Blink.Paint.UpdateTime",
+   138,
+   39.2,
+   10.8
+  ],
+  [
+   "Document::updateStyleInvalidationIfNeeded",
+   10,
+   6.6,
+   6.6
+  ],
+  [
+   "PaintArtifactCompositor::Update",
+   128,
+   5.4,
+   5.0
+  ],
+  [
+   "Document::FinishedParsing",
+   2,
+   79.0,
+   4.9
+  ],
+  [
+   "Commit",
+   138,
+   36.5,
+   4.9
+  ],
+  [
+   "Resource::appendData",
+   468,
+   4.9,
+   4.9
+  ],
+  [
+   "BeginRemoteFontLoad",
+   283,
+   4.3,
+   4.3
+  ],
+  [
+   "DocumentLoader::BodyLoadingFinished",
+   1,
+   13.0,
+   3.5
+  ],
+  [
+   "V8.GC_MC_MARK",
+   14,
+   6.4,
+   3.0
+  ],
+  [
+   "Blink.Layout.UpdateTime",
+   241,
+   11009.5,
+   2.6
+  ],
+  [
+   "MainFrameAborted",
+   119,
+   2.6,
+   2.0
+  ],
+  [
+   "Node::MarkSubtreeNeedsStyleRecalcForFontUpdates",
+   14,
+   1.9,
+   1.9
+  ],
+  [
+   "V8.GC_MC_MARK_EMBEDDER_TRACING",
+   26,
+   1.9,
+   1.9
+  ],
+  [
+   "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_PROCESS",
+   1,
+   2.0,
+   1.9
+  ],
+  [
+   "ProxyMain::BeginMainFrame",
+   138,
+   62290.2,
+   1.5
+  ],
+  [
+   "ResourceFetcher::requestResource",
+   285,
+   1.5,
+   1.5
+  ],
+  [
+   "ResponseBodyLoader::OnStateChange",
+   375,
+   122.0,
+   1.5
+  ],
+  [
+   "LocalFrameView::RunStyleAndLayoutLifecyclePhases",
+   251,
+   40075.5,
+   1.1
+  ],
+  [
+   "Blink.Style.UpdateTime",
+   259,
+   29026.9,
+   1.1
+  ],
+  [
+   "V8.GC_MC_CLEAR_JOIN_JOB",
+   14,
+   2.4,
+   1.1
+  ],
+  [
+   "DocumentLoader::CreateParserPostCommit",
+   2,
+   2.2,
+   1.0
+  ],
+  [
+   "LayoutObject::InvalidateSubtreeForFontUpdates",
+   14,
+   1.0,
+   1.0
+  ],
+  [
+   "V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL",
+   14,
+   2.8,
+   1.0
+  ],
+  [
+   "TimerBase::run",
+   20,
+   1.0,
+   1.0
+  ],
+  [
+   "EventDispatch",
+   35,
+   1.4,
+   0.9
+  ],
+  [
+   "PageTimingMetricsSender::SendNow",
+   50,
+   0.9,
+   0.9
+  ],
+  [
+   "DocumentLoader::BodyDataReceivedImpl",
+   7,
+   6.0,
+   0.9
+  ],
+  [
+   "EvaluateScript",
+   2,
+   11.0,
+   0.9
+  ],
+  [
+   "LayerTreeHost::WaitForCommitCompletion",
+   138,
+   0.8,
+   0.8
+  ],
+  [
+   "RuleSet::addRulesFromSheet",
+   2,
+   0.8,
+   0.8
+  ],
+  [
+   "V8.GC_MC_MARK_EMBEDDER_PROLOGUE",
+   28,
+   0.8,
+   0.8
+  ],
+  [
+   "WebFrameWidgetImpl::BeginMainFrame",
+   138,
+   4357.2,
+   0.6
+  ],
+  [
+   "Blink.Animate.UpdateTime",
+   138,
+   4356.6,
+   0.6
+  ],
+  [
+   "LocalFrameView::layout",
+   241,
+   11006.9,
+   0.6
+  ],
+  [
+   "LocalFrameView::performPostLayoutTasks",
+   241,
+   0.8,
+   0.6
+  ],
+  [
+   "V8.GC_MC_CLEAR_SWEEP_EXTERNAL_POINTER_TABLE",
+   8,
+   0.6,
+   0.6
+  ],
+  [
+   "LocalFrameView::DidFinishLifecycleUpdate",
+   131,
+   0.5,
+   0.5
+  ],
+  [
+   "V8.GC_MC_MARK_ROOTS",
+   42,
+   0.5,
+   0.5
+  ],
+  [
+   "V8.GC_MC_EVACUATE_UPDATE_POINTERS_TO_NEW_ROOTS",
+   14,
+   0.5,
+   0.5
+  ],
+  [
+   "ProxyMain::Stop",
+   1,
+   0.5,
+   0.5
+  ],
+  [
+   "Editor::HandleKeyboardEvent",
+   1,
+   0.5,
+   0.5
+  ],
+  [
+   "LocalFrameView::RunPrePaintLifecyclePhase",
+   138,
+   382.4,
+   0.4
+  ],
+  [
+   "Layerize",
+   138,
+   5.8,
+   0.4
+  ],
+  [
+   "Frame::Detach",
+   3,
+   0.5,
+   0.4
+  ],
+  [
+   "Document::updateActiveStyle",
+   219,
+   18.5,
+   0.4
+  ],
+  [
+   "V8.GC_MC_INCREMENTAL_START",
+   14,
+   15.4,
+   0.4
+  ],
+  [
+   "ScrollTree::SetScrollOffset",
+   266,
+   0.4,
+   0.4
+  ],
+  [
+   "V8.GC_MC_EVACUATE_UPDATE_POINTERS_POINTER_TABLES",
+   14,
+   0.4,
+   0.4
+  ],
+  [
+   "DocumentLoader::CommitNavigation",
+   2,
+   2.9,
+   0.3
+  ],
+  [
+   "HTMLDocumentParser::PumpTokenizerIfPossible",
+   10,
+   238.4,
+   0.3
+  ],
+  [
+   "PrePaint",
+   138,
+   3905.1,
+   0.3
+  ],
+  [
+   "LocalFrameView::RunCompositingInputsLifecyclePhase",
+   138,
+   3522.3,
+   0.3
+  ],
+  [
+   "PaintController::commitNewDisplayItems",
+   130,
+   0.3,
+   0.3
+  ],
+  [
+   "MajorGC",
+   14,
+   119.6,
+   0.3
+  ],
+  [
+   "V8.GC_MC_CLEAR_STRING_TABLE",
+   65,
+   0.3,
+   0.3
+  ],
+  [
+   "V8.GC_MC_SWEEP",
+   44,
+   0.3,
+   0.3
+  ],
+  [
+   "V8.GC_MC_EVACUATE_COPY_PARALLEL",
+   7,
+   0.5,
+   0.3
+  ],
+  [
+   "OverlayInterstitialAdDetector::MaybeFireDetection",
+   46,
+   20.8,
+   0.3
+  ],
+  [
+   "LayerTreeHost::ApplyCompositorChanges",
+   138,
+   0.2,
+   0.2
+  ],
+  [
+   "LocalFrameView::WillStartLifecycleUpdate",
+   129,
+   0.2,
+   0.2
+  ],
+  [
+   "Blink.CompositingCommit.UpdateTime",
+   138,
+   6.0,
+   0.2
+  ],
+  [
+   "LayerTreeHost::DoUpdateLayers",
+   19,
+   0.3,
+   0.2
+  ],
+  [
+   "LocalFrameView::RunAccessibilitySteps",
+   138,
+   0.4,
+   0.2
+  ],
+  [
+   "Blink.Accessibility.UpdateTime",
+   127,
+   0.2,
+   0.2
+  ],
+  [
+   "ResourceLoadPriorityOptimizer::UpdateImagePrioritiesAndSpeculativeDecodes",
+   192,
+   0.2,
+   0.2
+  ],
+  [
+   "RootScrollerController::PerformRootScrollerSelection",
+   190,
+   0.2,
+   0.2
+  ],
+  [
+   "LocalFrameView::NotifyResizeObservers",
+   129,
+   0.2,
+   0.2
+  ],
+  [
+   "Blink.IntersectionObservation.UpdateTime",
+   127,
+   0.2,
+   0.2
+  ],
+  [
+   "RemoteFontLoaded",
+   179,
+   0.2,
+   0.2
+  ],
+  [
+   "AnimationHost::TickAnimations",
+   120,
+   0.2,
+   0.2
+  ],
+  [
+   "V8.GC_MC_EVACUATE_COPY",
+   13,
+   0.8,
+   0.2
+  ],
+  [
+   "StickyAdDetector::MaybeFireDetection",
+   46,
+   7.0,
+   0.2
+  ],
+  [
+   "V8.GC_SCAVENGER_TRACED_HANDLES_RESET_PARALLEL",
+   1,
+   0.2,
+   0.2
+  ],
+  [
+   "DocumentLoader::InitializeWindow",
+   2,
+   0.1,
+   0.1
+  ],
+  [
+   "DocumentLoader::FinishedLoading",
+   2,
+   0.2,
+   0.1
+  ],
+  [
+   "Document::SetReadyState",
+   6,
+   0.3,
+   0.1
+  ],
+  [
+   "LayerTreeHost::InitializeForReal",
+   1,
+   0.1,
+   0.1
+  ],
+  [
+   "auto cc::LayerTreeHost::SetViewportRectAndScale(const gfx::Rect &, float, const viz::LocalSurfaceId &)::(lambda)::operator()()::(lambda)::operator()(uint32_t) const",
+   10,
+   0.1,
+   0.1
+  ],
+  [
+   "auto cc::LayerTreeHost::SetNeedsCommit(bool)::(lambda)::operator()()::(lambda)::operator()(uint32_t) const",
+   27,
+   0.1,
+   0.1
+  ],
+  [
+   "LocalFrameView::UpdateLifecyclePhases - start of lifecycle tasks",
+   97,
+   0.1,
+   0.1
+  ],
+  [
+   "LayoutView::commitPendingSelection",
+   112,
+   0.1,
+   0.1
+  ],
+  [
+   "LocalFrameView::pushPaintArtifactToCompositor",
+   138,
+   6.1,
+   0.1
+  ],
+  [
+   "ProxyMain::BeginMainFrame::commit",
+   19,
+   0.2,
+   0.1
+  ],
+  [
+   "LocalFrameView::UpdateViewportIntersectionsForSubtree",
+   138,
+   0.3,
+   0.1
+  ],
+  [
+   "Document::shutdown",
+   3,
+   0.1,
+   0.1
+  ],
+  [
+   "NavigationBodyLoader::ReadFromDataPipe",
+   7,
+   19.0,
+   0.1
+  ],
+  [
+   "AsyncTask Run",
+   13,
+   0.2,
+   0.1
+  ],
+  [
+   "V8.GC_MC_INCREMENTAL_EXTERNAL_EPILOGUE",
+   14,
+   0.1,
+   0.1
+  ],
+  [
+   "UpdateLayer",
+   41,
+   0.1,
+   0.1
+  ]
+ ]
+}

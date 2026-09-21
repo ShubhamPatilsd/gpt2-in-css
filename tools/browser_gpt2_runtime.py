@@ -18,8 +18,11 @@ from urllib.parse import quote, unquote, urlparse
 import build_gpt2_block_css as b
 import build_hybrid_twelve_block as hybrid
 import f4_packing as f4
+import r2d_knobs as r2d
 import f5_scoping as f5
+import r2c_hoist as r2c
 import r2g_has_scope as r2g
+import r3h_blockflow_max as r3h
 import numpy as np
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 from browser_gpt2_core import compile_core
@@ -263,6 +266,11 @@ def compile_runtime(
         # F4: the head reads its 768 inputs only through two identical
         # font-variation-settings lists; latch that list once instead of 768 numbers.
         head_css, head_bank_regs, head_bank_decls = f4.pack_head_input(head_css)
+    if r3h.BLOCKFLOW_MAX:
+        # R3H #1 (#176): coarse groups become block containers of in-flow
+        # zero-height rows; a block's max-content width is the max child width,
+        # i.e. the same quantity the single max-content grid track computed.
+        head_css = r3h.blockflow_max(head_css)
     front, output, control_css, timeline_names = feedback(capacity)
     output_receiver = ""
     if detached_output:
@@ -302,6 +310,8 @@ def compile_runtime(
             and p != "--head-fvs"
             and not re.fullmatch(r"--hq-\d+", p)
             and not re.fullmatch(r"--fvn-[kv]-\d+-\d+", p)
+            # R2C: hoisted list quotients are inherits:false scratch; no wall needed
+            and not p.startswith(r2c.PREFIX)
             # F2: inherits:false fc scratch cannot reach the head; no wall needed
             and not re.fullmatch(r"--f[zt]-\d+", p)
         ]
@@ -362,7 +372,17 @@ def compile_runtime(
     # scorer on fallback fonts or provisional zero inputs during cold load.
     # The retained epoch never returns to zero after the first complete core,
     # so feedback geometry stays alive throughout subsequent iterations.
-    css += ".head-input-bank{container-name:headinput}.full-head{content-visibility:hidden;contain-intrinsic-size:0px 0px}@container headinput not style(--head-input-epoch:0){.full-head{content-visibility:visible}}"
+    if r2d.HEAD_LOCK:
+        # R2D: the head is skipped (style, layout, paint, compositing inputs,
+        # hit test) except while --bridge-ready:1, i.e. from the end of layer
+        # 11 until the epoch advances. The token slots live outside the head
+        # (detached output) and retain the winner by transition, so nothing
+        # reads the head's geometry while it is locked.
+        if not detached_output:
+            raise ValueError("R2D_HEAD_LOCK requires --detached-output")
+        css += r2d.head_lock_css(blocks)
+    else:
+        css += ".head-input-bank{container-name:headinput}.full-head{content-visibility:hidden;contain-intrinsic-size:0px 0px}@container headinput not style(--head-input-epoch:0){.full-head{content-visibility:visible}}"
     core = core.replace(
         "{child}",
         '<div class="final-normalization"><div class="head-input-bank"><i id="head-input-observer" style="position:fixed;top:-30px;width:calc(var(--head-input-epoch)*1px);height:1px"></i>'
@@ -542,6 +562,12 @@ def compile_runtime(
             + '")'
         )
 
+    if r2d.OVERFLOW_CLIP:
+        css = r2d.overflow_clip(css)
+    if r2d.POINTER_EVENTS:
+        css += r2d.pointer_events_css()
+    if r2d.CONTAIN_PAINT:
+        css += r2d.contain_paint_css()
     css = re.sub(r'url\("(file:[^\"]+)"\)', relative_asset, css)
     page = (
         '<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="script-src \'none\';object-src \'none\'"><title>Native GPT-2 • Chromium • no JavaScript</title><link rel="stylesheet" href="runtime.css"></head><body>'
@@ -553,7 +579,7 @@ def compile_runtime(
     )
     r2g_stats = None
     if r2g.SCOPED_HAS:
-        # R2G: fixed-depth `:has()` arguments for the loop/token handshake (verified against the page).
+        # R2G/R3F: fixed-depth `:has()` arguments for every handshake rule (chains verified against the page).
         css, r2g_stats = r2g.scope_has_arguments(css, page, capacity)
     (directory / "runtime.css").write_text(css)
     (directory / "index.html").write_text(page)
@@ -572,6 +598,8 @@ def compile_runtime(
         scheduler="CSS receipts and SVG SMIL events",
         isolateHead=isolate_head,
         detachedOutput=detached_output,
+        **r2d.manifest(),
+        r3hBlockflowMax=r3h.BLOCKFLOW_MAX,
         headEpochTransport="separate geometry" if capacity > 8 else "packed four bits",
         fontBackend=font_backend,
         teacherForcedInputs=teacher_forced_tokens[:capacity]

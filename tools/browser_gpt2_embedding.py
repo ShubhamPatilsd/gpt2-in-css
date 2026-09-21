@@ -9,6 +9,7 @@ from pathlib import Path
 
 import build_hvar_token_embedding_lookup as lookup
 import numpy as np
+import r2c_hoist as r2c
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,6 +34,19 @@ TOKENS = [
 ]
 
 
+TOKEN_GROUP = "round(down,calc(var(--token) / 256),1)"
+TOKEN_LOCAL = "mod(var(--token),256)"
+if r2c.HOIST_EMBEDDING:
+    # R2C: the two token-derived axis values as typed numbers on the same element.
+    TOKEN_SETTINGS = '"GRUP" var(--fq-token-group),"LOCL" var(--fq-token-local)'
+    TOKEN_HOIST = r2c.private_regs(["--fq-token-group", "--fq-token-local"]) + (
+        f".embedding-source{{--fq-token-group:{TOKEN_GROUP};--fq-token-local:{TOKEN_LOCAL}}}"
+    )
+else:
+    TOKEN_SETTINGS = f'"GRUP" {TOKEN_GROUP},"LOCL" {TOKEN_LOCAL}'
+    TOKEN_HOIST = ""
+
+
 def compile_embedding(directory=OUT, with_epoch=False):
     properties = "".join(
         f'@property --embed-{i:03d}{{syntax:"<number>";inherits:true;initial-value:0}}'
@@ -40,11 +54,11 @@ def compile_embedding(directory=OUT, with_epoch=False):
         f"@keyframes embedk{i}{{from{{--embedp-{i:03d}:0}}to{{--embedp-{i:03d}:1}}}}"
         for i in range(768)
     )
-    css = properties + (
+    css = properties + TOKEN_HOIST + (
         '@property --token{syntax:"<number>";inherits:true;initial-value:15496}'
         f'@font-face{{font-family:EmbeddingLookup;src:url("{(directory / "embedding-lookup.woff2").resolve().as_uri()}") format("woff2")}}'
         ".embedding-source{font:1000px EmbeddingLookup;font-kerning:none;"
-        'font-variation-settings:"GRUP" round(down,calc(var(--token) / 256),1),"LOCL" mod(var(--token),256);'
+        f"font-variation-settings:{TOKEN_SETTINGS};"
         "timeline-scope:" + ",".join(f"--embed-t{i}" for i in range(768)) + "}"
         ".embedding-scroller{position:fixed;left:0;top:-50000px;width:65536px;height:1px;overflow-x:scroll;overflow-y:hidden}"
         ".embedding-track{position:relative;width:196608px;height:1px}"

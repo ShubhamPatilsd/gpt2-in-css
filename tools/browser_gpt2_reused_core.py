@@ -14,6 +14,8 @@ from pathlib import Path
 import build_gpt2_block_css as b
 import build_hybrid_twelve_block as h
 import f5_scoping as f5
+import r2c_hoist as r2c
+import r3r_fold_hop as r3r
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 from browser_gpt2_core import (
     TOKENS,
@@ -76,8 +78,17 @@ def specialize(html, css, layer, kind):
         m[0] for m in re.finditer(r"@(?:font-face|property)\b[^{}]*\{[^{}]*\}", css)
     )
     css = re.sub(r"@(?:font-face|property)\b[^{}]*\{[^{}]*\}", "", css)
+    if r3r.FOLD_HOP:
+        # R3R: html-scoped timeline names cannot live inside the layer container block
+        scopes = re.findall(r"html\{timeline-scope:[^{}]*\}", css)
+        css = re.sub(r"html\{timeline-scope:[^{}]*\}", "", css)
+        globals_css += "".join(scopes).replace(f"b{layer}-", "shared-")
     html = html.replace(f"b{layer}-", "shared-")
     css = css.replace(f"b{layer}-", "shared-")
+    if r2c.HOIST_STAGES:
+        # R2C: the hoisted quotient declarations are layer-independent; one copy.
+        css, lifted = r2c.lift_stage_rules(css)
+        globals_css += lifted
     marker = re.search(r"width:calc\((\d+)px \+ var\(--epoch\) \* 1024px\)", html)
     if marker:
         css += f".shared-{kind}{{--markerbase-{kind}:{marker[1]}px}}"
@@ -164,6 +175,7 @@ def compile_reused(
                     gated=True,
                     dynamic_range=True,
                     global_axes=global_projection and kind == "proj",
+                    fold=r3r.FOLD_HOP and kind == "proj",
                 )
             html, rule = specialize(html, rule, layer, kind)
             if kind in layouts and html != layouts[kind]:
@@ -256,9 +268,12 @@ def compile_reused(
         mix_source = "".join(banks)
     layouts["mix"] = mix_source + ctx_receiver
 
-    source, output, loop_css = loop_parts(
-        W, blocks * capacity, centered=True, selective=liveness
-    )
+    if r3r.FOLD_HOP:
+        source, output, loop_css = r3r.loop_parts(W, blocks, capacity)
+    else:
+        source, output, loop_css = loop_parts(
+            W, blocks * capacity, centered=True, selective=liveness
+        )
     css += loop_css
     css += (
         "body{container-name:runtime loopcontrol;--epoch:var(--pass);--layer:mod(calc(var(--pass) - 1),"
@@ -279,11 +294,12 @@ def compile_reused(
         + ";".join(f"--x-{i:03d}:var(--loop-in-{i})" for i in range(W))
         + "}"
     )
-    css += (
-        ".reused-output{"
-        + ";".join(f"--loop-out-{i}:var(--out-{i:03d})" for i in range(W))
-        + "}"
-    )
+    if not r3r.FOLD_HOP:  # R3R: no banks, nothing consumes --loop-out-*
+        css += (
+            ".reused-output{"
+            + ";".join(f"--loop-out-{i}:var(--out-{i:03d})" for i in range(W))
+            + "}"
+        )
     inner = (
         '<div class="reused-output" id="reused-result">'
         + h.probe("reused-probe", "out", W)
@@ -327,9 +343,12 @@ def compile_reused(
                 f"--stamp-{kind}",
                 f"--gate-{kind}",
             ]
-        lp = [f"--lp-{bank}-{i}" for bank in range(2) for i in range(W + 1)]
-        saved = [f"--saved-{bank}-{i}" for bank in range(2) for i in range(W + 1)]
-        outputs = [f"--loop-out-{i}" for i in range(W)]
+        if r3r.FOLD_HOP:
+            lp, saved, outputs = r3r.reader_names(W), [], []
+        else:
+            lp = [f"--lp-{bank}-{i}" for bank in range(2) for i in range(W + 1)]
+            saved = [f"--saved-{bank}-{i}" for bank in range(2) for i in range(W + 1)]
+            outputs = [f"--loop-out-{i}" for i in range(W)]
         private = set(progress + lp + saved + outputs + bank_props)
         css = re.sub(
             r"@property (--[\w-]+)\{[^{}]+\}",
@@ -345,9 +364,12 @@ def compile_reused(
             return selector + "{" + ";".join(f"{p}:inherit" for p in names) + "}"
 
         css += forward(".loop-input", lp)
-        css += forward(".loop-bank-0,.loop-bank-1", outputs)
-        css += forward(".loop-scroll,.loop-track", saved)
-        if f5.INLINE_FORWARD:
+        if r3r.FOLD_HOP:
+            pass  # no banks, no bank carriers
+        elif f5.INLINE_FORWARD:
+            css += forward(".loop-bank-0,.loop-bank-1", outputs)
+            css += forward(".loop-scroll,.loop-track", saved)
+
             # F5: 1,538 `.loop-metric:nth-child(N)` rules share one class
             # bucket, so every loop-metric tested all 1,538 selectors on each
             # restyle (P2: 153 us/element on the 1,553-element pass). The
@@ -360,6 +382,8 @@ def compile_reused(
             if count != 2 * (W + 1):
                 raise ValueError(f"Expected {2 * (W + 1)} loop carriers, found {count}")
         else:
+            css += forward(".loop-bank-0,.loop-bank-1", outputs)
+            css += forward(".loop-scroll,.loop-track", saved)
             for bank in range(2):
                 for i in range(W + 1):
                     css += forward(

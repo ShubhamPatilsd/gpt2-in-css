@@ -10,7 +10,10 @@ import re
 import build_hybrid_twelve_block as hybrid
 import f4_packing as f4
 import f5_scoping as f5
+import r2c_hoist as r2c
 from browser_gpt2_reused_core import compile_reused
+import r2f_lean_handshake as r2f
+import r3r_fold_hop as r3r
 
 
 def compile_reused_runtime_core(
@@ -50,7 +53,16 @@ def compile_reused_runtime_core(
         "@container runtime style(--layer:0){.loop-input{--loop-ready:1;",
         "@container runtime style(--layer:0){.loop-input{--loop-ready:var(--embed-ready);",
     )
+    if r3r.FOLD_HOP:
+        pass  # R3R: r3r.loop_parts() already emits the lean controller (no relay, --pass-cap)
+    elif r2f.LEAN_HANDSHAKE:
+        # R2F: the controller reads the bank pass markers itself; no SMIL relay,
+        # no pulse-end / pass-advance frames. Token boundaries raise --pass-cap.
+        css = r2f.apply_css(css, blocks, capacity)
+        body = r2f.apply_body(body)
     for token in range(1, capacity):
+        if r2f.LEAN_HANDSHAKE or r3r.FOLD_HOP:
+            break
         step = token * blocks
         old = f"body:has(#loop-advanced-{step}.done){{--pass:{step + 1}}}"
         new = f"body:has(#token-{token}-advanced.done){{--pass:{step + 1}}}"
@@ -78,7 +90,12 @@ def compile_reused_runtime_core(
     needle = '<div class="reused-output" id="reused-result">'
     if body.count(needle) != 1:
         raise ValueError("Missing unique shared-core output")
-    body = body.replace(needle, needle + export)
+    if r3r.FOLD_HOP:
+        # R3R: the export reads the decoded layer output at .loop-input, outside the
+        # display-locked .loop-compute, and is shown only while the pass is held.
+        body, css = r3r.move_export(body, css, export, last)
+    else:
+        body = body.replace(needle, needle + export)
     css += bridge_css
     # Center the added output transport just like the shared context bridge.
     css = re.sub(
@@ -86,7 +103,8 @@ def compile_reused_runtime_core(
         r"1572864 / (var(\1) + 2)",
         css,
     )
-    css += f".reused-final-export{{display:none}}@container runtime style(--layer:{last}){{.reused-final-export{{display:block}}}}"
+    if not r3r.FOLD_HOP:
+        css += f".reused-final-export{{display:none}}@container runtime style(--layer:{last}){{.reused-final-export{{display:block}}}}"
     # Per-layer controller changes must not invalidate the 50k-row vocabulary
     # sibling. Keep root-only query state non-inherited and explicitly publish
     # just the current pass into the core. Token epoch still inherits normally.
@@ -124,8 +142,9 @@ def compile_reused_runtime_core(
         pass_readers = ",".join(
             [
                 ".loop-input",
-                ".loop-bank-0",
-                ".loop-bank-1",
+            ]
+            + ([] if r3r.FOLD_HOP else [".loop-bank-0", ".loop-bank-1"])
+            + [
                 ".reused-input",
                 ".fvs-query",
                 ".fvs-score-reader",
@@ -183,8 +202,10 @@ def compile_reused_runtime_core(
         '<div class="core-controller"><div class="core-block" id="block-0">'
         + body
         + "</div></div>"
-        + receiver
     )
+    if r2f.LEAN_HANDSHAKE or r3r.FOLD_HOP:
+        body = r2f.wrap_controller(body)
+    body += receiver
     metadata = {
         "blocks": blocks,
         "capacity": capacity,
@@ -211,6 +232,8 @@ def compile_reused_runtime_core(
         "nativeLayerTokenHandshake": True,
         "privateLayerControl": True,
         "localLayerContainer": True,
+        "r2fLeanHandshake": r2f.LEAN_HANDSHAKE,
+        "r3rFoldHop": r3r.FOLD_HOP,
         "f5ScopedHandshake": f5.SCOPED_HANDSHAKE,
         "f5ScopedEpoch": f5.SCOPED_EPOCH,
         "f5ScopedFeedback": f5.SCOPED_FEEDBACK,
@@ -220,6 +243,10 @@ def compile_reused_runtime_core(
         "f4PackedBanks": f4.PACKED_BANKS and codec == "font-vector",
         "f4PackedHead": f4.PACKED_HEAD,
         "f4NumericLists": f4.NUMERIC_LISTS and codec == "font-vector",
+        "r2cHoistFvs": r2c.HOIST_FVS,
+        "r2cHoistStages": r2c.HOIST_STAGES,
+        "r2cHoistQuery": r2c.HOIST_QUERY and codec == "font-vector",
+        "r2cHoistEmbedding": r2c.HOIST_EMBEDDING,
         "kvStorage": "native remembered layout"
         if codec == "geometry"
         else "native delayed whole-head font settings"

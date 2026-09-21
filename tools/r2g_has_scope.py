@@ -1,18 +1,19 @@
-"""R2G: bound the traversal of the loop-handshake `:has()` arguments.
+"""R2G (as applied by R3F): bound the traversal of every handshake `:has()` argument.
 
-Why: `.core-controller` carries 272 rules of the form `.core-controller:where(:has(#loop-captured-N.done))`
-(+ 88 with a `#loop-ack-N` subject) and 7 `:where(body:has(#token-N-advanced.done)) .core-controller`
-rules; `.core-block` has `body:has(#fonts-loaded.done):has(#run-latched.done)`.  Blink's `:has()` matcher
-walks the anchor's WHOLE subtree once per distinct argument (the fast-reject bloom filter cannot reject
-`#id.done` once any `.done` exists), in reverse DOM order, so every restyle of `.core-controller`
-(pass advance, R2A population 485) visits ~184 x 16.9k + 7 x 69.5k ~ 3.6 M elements and every restyle
-of the 88 `#loop-ack-N` <g>s another 88 x 16.9k.  With only child combinators in the argument Blink
-limits the traversal to a fixed depth (check_pseudo_has_argument_context.cc), i.e. to the ~600-element
-signal svg.
-
-This module rewrites the arguments to exact direct-child chains and VERIFIES each chain against the
-emitted HTML (the id's ancestor path must equal the chain), so a DOM change makes the build fail
-instead of emitting a handshake that never fires.  Flag: R2G_SCOPED_HAS (default on).
+Why (R2G.md §3b/§4): Blink's `:has()` matcher walks the anchor's WHOLE subtree once per distinct argument
+(the fast-reject filter cannot reject `#id.done` once any `.done` exists), in reverse DOM order. With only
+child combinators in the argument Blink limits the traversal to a fixed depth
+(check_pseudo_has_argument_context.cc). R2G rewrote the 272 `.core-controller:where(:has(#loop-…))` rules
+(gone since R2F's lean handshake), the 7 `:where(body:has(#token-N-advanced.done)) .core-controller` rules
+and the `.core-block` visibility rule. R3F generalises the rewrite to EVERY body-anchored `:has(#id…)`
+argument in the sheet (token captured/advanced, run/run-latched/fonts-loaded/eos-done, N-ready/ack
+subjects): each `:has(#id.done)` / `:has(#id:checked)` becomes `:has(> .a > .b > … > #id.done)` with the
+exact ancestor chain read from the emitted HTML, and the chain is VERIFIED (the id's ancestor path must
+start at the anchor and equal the chain), so a DOM change fails the build instead of emitting a handshake
+that never fires. `:has()` takes the specificity of its most specific argument, so every chain step is
+written as `> :where(.a)` (zero specificity): the rewritten rules keep exactly their original specificity and
+cascade order (the token-slot / epoch / handshake rules compete with @container rules on the same properties).
+Flag: R2G_SCOPED_HAS (default on).
 """
 from __future__ import annotations
 
@@ -23,11 +24,10 @@ import re
 SCOPED_HAS = os.environ.get("R2G_SCOPED_HAS", "1") not in ("0", "false", "no", "off")
 
 LOOP_CHAIN = [".core-block", ".loop-reader", ".loop-input", ".loop-signals"]
-VOID = {"br", "meta", "link", "input", "img", "hr", "set", "option"}
 
 
 class _Paths(html.parser.HTMLParser):
-    """Ancestor path (as class selectors / tag) of every element with an id we care about."""
+    """Ancestor path (tag, classes) of every element with an id we care about."""
 
     def __init__(self, wanted):
         super().__init__()
@@ -39,34 +39,38 @@ class _Paths(html.parser.HTMLParser):
         d = dict(attrs)
         if d.get("id") in self.wanted:
             self.paths[d["id"]] = list(self.stack)
-        if tag not in VOID:
-            classes = d.get("class", "").split()
-            self.stack.append((tag, classes))
+        if tag not in {"br", "meta", "link", "input", "img", "hr", "set", "option"}:
+            self.stack.append((tag, d.get("class", "").split()))
 
     def handle_startendtag(self, tag, attrs):
-        self.handle_starttag(tag, attrs)
+        d = dict(attrs)
+        if d.get("id") in self.wanted:
+            self.paths[d["id"]] = list(self.stack)
 
     def handle_endtag(self, tag):
         if self.stack and self.stack[-1][0] == tag:
             self.stack.pop()
 
 
-def _chain_matches(path, anchor_index, chain):
-    """path[anchor_index] is the anchor; the elements strictly below it must carry chain[i] classes in order."""
-    below = path[anchor_index + 1 :]
-    if len(below) != len(chain):
-        return False
-    return all(sel.lstrip(".") in classes for sel, (tag, classes) in zip(chain, below))
+def _step(tag, classes):
+    return f".{classes[0]}" if classes else tag
+
+
+def _chain_from(path, anchor_index):
+    steps = [_step(t, c) for t, c in path[anchor_index + 1 :]]
+    return " ".join(f"> :where({s})" for s in steps)
 
 
 def scope_has_arguments(css: str, page_html: str, capacity: int) -> tuple[str, dict]:
-    """Rewrite the handshake `:has()` arguments to fixed-depth child chains; verify against page_html."""
-    ids = {f"loop-captured-1", f"loop-advanced-1", "fonts-loaded", "run-latched"} | {
-        f"token-{t}-advanced" for t in range(1, capacity)
-    }
+    """Rewrite every handshake `:has()` argument to a fixed-depth child chain; verify against page_html."""
+    id_args = sorted(set(re.findall(r":has\((#[\w-]+)(?:\.done|:checked)\)", css)))
+    ids = set(a.lstrip("#") for a in id_args)
     parser = _Paths(ids)
     parser.feed(page_html)
     paths = parser.paths
+    missing = ids - set(paths)
+    if missing:
+        raise ValueError(f"R2G: :has() ids not found in the page: {sorted(missing)[:8]}")
 
     def anchor(path, klass):
         for i, (tag, classes) in enumerate(path):
@@ -74,48 +78,78 @@ def scope_has_arguments(css: str, page_html: str, capacity: int) -> tuple[str, d
                 return i
         raise ValueError(f"anchor {klass} not found in path {path}")
 
-    # 1. loop rules: .core-controller:where(:has(#loop-x-N.done)) [ #loop-ack-N]
-    for key in ("loop-captured-1", "loop-advanced-1"):
+    stats = {"rewritten": {}, "chains": {}}
+    total = 0
+
+    # 1. R2G's original loop rules (absent when R2F's lean handshake is on): anchor .core-controller.
+    n_loop = 0
+    if re.search(r"\.core-controller:where\(:has\(#loop-", css):
+        for key in ("loop-captured-1", "loop-advanced-1"):
+            p = paths[key]
+            below = p[anchor(p, "core-controller") + 1 :]
+            if [c[0] for t, c in below] != [s.lstrip(".") for s in LOOP_CHAIN]:
+                raise ValueError(f"loop signal chain mismatch for {key}: {below}")
+        loop_chain = " ".join(f"> :where({s})" for s in LOOP_CHAIN)
+        css, n_loop = re.subn(
+            r"\.core-controller:where\(:has\((#loop-(?:captured|advanced)-\d+\.done)\)\)",
+            lambda m: f".core-controller:where(:has({loop_chain} > {m[1]}))",
+            css,
+        )
+        stats["chains"]["loop"] = loop_chain
+    stats["rewritten"]["loop"] = n_loop
+    total += n_loop
+
+    # 2. every body-anchored `:has(#id.done)` / `:has(#id:checked)`: chain = ancestors strictly below body.
+    #    A compound may carry several :has() (`body:has(#run:checked):has(#token-N-captured.done)`); each
+    #    occurrence is rewritten in place after verifying that, skipping earlier balanced `:has(...)` groups,
+    #    the compound is anchored on `body`.
+    chains = {}
+    for arg in id_args:
+        key = arg.lstrip("#")
+        if key.startswith("loop-"):
+            continue
         p = paths[key]
-        if not _chain_matches(p, anchor(p, "core-controller"), LOOP_CHAIN):
-            raise ValueError(f"loop signal chain mismatch for {key}: {p[anchor(p, 'core-controller'):]}")
-    loop_chain = " ".join(f"> {sel}" for sel in LOOP_CHAIN)
-    css, n_loop = re.subn(
-        r"\.core-controller:where\(:has\((#loop-(?:captured|advanced)-\d+\.done)\)\)",
-        lambda m: f".core-controller:where(:has({loop_chain} > {m[1]}))",
-        css,
-    )
+        chain = _chain_from(p, anchor(p, "body"))
+        if not chain:
+            raise ValueError(f"{key} is a direct child of body (nothing to scope)")
+        chains[key] = chain
+        stats["rewritten"][key] = 0
+        stats["chains"][key] = chain
 
-    # 2. token boundary rules: :where(body:has(#token-N-advanced.done)) .core-controller
-    p = paths[f"token-1-advanced"]
-    bi = anchor(p, "body")
-    token_chain = [f".{c[0]}" if c else t for t, c in p[bi + 1 :]]
-    if not (token_chain[0] == ".detached-head-reader" and token_chain[-1] == ".native-signals"):
-        raise ValueError(f"unexpected token signal chain {token_chain}")
-    for t in range(2, capacity):
-        if paths[f"token-{t}-advanced"][bi + 1 :] != p[bi + 1 :]:
-            raise ValueError(f"token-{t}-advanced sits in a different chain")
-    tc = " ".join(f"> {sel}" for sel in token_chain)
-    css, n_token = re.subn(
-        r":where\(body:has\((#token-\d+-advanced\.done)\)\) \.core-controller",
-        lambda m: f":where(body:has({tc} > {m[1]})) .core-controller",
-        css,
-    )
+    def anchored_on_body(text, pos):
+        """text[:pos] ends with the compound preceding `:has(`: skip balanced `:has(...)` groups, expect `body`."""
+        i = pos
+        while text.endswith(")", 0, i):
+            depth, j = 0, i - 1
+            while j >= 0:
+                if text[j] == ")":
+                    depth += 1
+                elif text[j] == "(":
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j -= 1
+            if j < 4 or text[j - 4 : j + 1] != ":has(":
+                return False
+            i = j - 4
+        return text.endswith("body", 0, i)
 
-    # 3. core-block visibility: body:has(#fonts-loaded.done):has(#run-latched.done) .core-block
-    pf, pr = paths["fonts-loaded"], paths["run-latched"]
-    fchain = [f".{c[0]}" for t, c in pf[anchor(pf, "body") + 1 :]]
-    rchain = [f".{c[0]}" for t, c in pr[anchor(pr, "body") + 1 :]]
-    fc = " ".join(f"> {s}" for s in fchain)
-    rc = " ".join(f"> {s}" for s in rchain)
-    css, n_block = re.subn(
-        re.escape("body:has(#fonts-loaded.done):has(#run-latched.done) .core-block"),
-        f"body:has({fc} > #fonts-loaded.done):has({rc} > #run-latched.done) .core-block",
-        css,
-    )
+    def rewrite(m):
+        key = m[1].lstrip("#")
+        if key.startswith("loop-") or key not in chains:
+            return m[0]
+        if not anchored_on_body(css, m.start()):
+            raise ValueError(f"R2G: :has({m[1]}) not anchored on body at {css[max(0, m.start() - 80):m.start()]!r}")
+        stats["rewritten"][key] += 1
+        return f":has({chains[key]} > {m[1]}{m[2]})"
 
-    stats = {"loopRules": n_loop, "tokenRules": n_token, "coreBlockRules": n_block,
-             "loopChain": loop_chain, "tokenChain": tc, "fontsChain": fc, "runChain": rc}
-    if n_loop == 0 or n_token != capacity - 1 or n_block != 1:
-        raise ValueError(f"unexpected :has() rule counts {stats}")
+    css = re.sub(r":has\((#[\w-]+)(\.done|:checked)\)", rewrite, css)
+    total += sum(v for k, v in stats["rewritten"].items() if k != "loop")
+
+    left = re.findall(r":has\(#[\w-]+(?:\.done|:checked)\)", css)
+    if left:
+        raise ValueError(f"R2G: unscoped :has() arguments left: {sorted(set(left))[:8]}")
+    if stats["rewritten"].get("token-1-advanced", 0) != 2 or total == 0:
+        raise ValueError(f"R2G: unexpected :has() rule counts {stats['rewritten']}")
+    stats["total"] = total
     return css, stats

@@ -17,6 +17,8 @@ from pathlib import Path
 import numpy as np
 
 import build_gpt2_block_css as b
+import r2c_hoist as r2c
+import r3r_fold_hop as r3r
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 from build_pretrained_gpt2 import css_number as num
 from build_signed_hvar_chain import quantize_float_rows
@@ -117,6 +119,7 @@ def matvec(
     easing_bounds=None,
     dynamic_range=False,
     global_axes=False,
+    fold=False,
 ):
     directory, group = font_group(layer, kind, quantized)
     if global_axes:
@@ -133,16 +136,33 @@ def matvec(
         css += regs([f"--range-{kind}"])
         css += f".{stem}{{--range-{kind}:calc(max(.000001,{','.join(f'abs(var({p}))' for p in source)}) * 1.001)}}"
 
+    hoist_stage = dynamic_range and r2c.HOIST_STAGES
+    hoisted = {}
+    index_of = {name: i for i, name in enumerate(source)}
+
     def settings(first):
         if global_axes:
             divisor = f"var(--range-{kind})" if dynamic_range else num(activation_range)
-            return ",".join(f'"{b.global_axis_tag(i)}" calc(var({name}) / {divisor})' for i, name in enumerate(source))
-        fixed = b.pack_font_settings(source, 1 if dynamic_range else activation_range, first)
-        return fixed.replace(" / 1)", f" / var(--range-{kind}))") if dynamic_range else fixed
+            text = ",".join(f'"{b.global_axis_tag(i)}" calc(var({name}) / {divisor})' for i, name in enumerate(source))
+        else:
+            fixed = b.pack_font_settings(source, 1 if dynamic_range else activation_range, first)
+            text = fixed.replace(" / 1)", f" / var(--range-{kind}))") if dynamic_range else fixed
+        if hoist_stage:
+            # R2C: `"TAG" calc(var(--src) / var(--range-kind))` -> `"TAG" var(--fq-kind-idx)`;
+            # the quotient (same text) is declared once below as a typed number on this element.
+            text, pairs = r2c.hoist_settings(
+                text, lambda src, _k: f"--fq-{kind}-{index_of[src]:03d}"
+            )
+            hoisted.update(pairs)
+        return text
     bases = np.sum(np.stack(group.row_bases), axis=0)
     viewport = 2 ** math.ceil(
         math.log2(max(1024, max(bases) * b.FONT_SIZE / b.UNITS_PER_EM * 1.5))
     )
+    if fold:
+        # R3R: the carriers publish 262144 + 128 * out (the loop bank's encoding);
+        # one viewport for every layer so the top-level decode is layer independent.
+        viewport = r3r.VIEWPORT
     timelines = [f"--{stem}-t{i}" for i in range(count)]
     marker = f"--{stem}-generation"
     progress = names(f"{kind}p", count)
@@ -189,22 +209,34 @@ def matvec(
                 else f'<i class="{stem}-pack{pack}">{chars}</i>'
             )
         metric_style = f"view-timeline:{timelines[i]} inline"
+        if fold:
+            metric_style += ";" + r3r.carrier_width(i)
         if easing_bounds is not None:
             factor = activation_range * quantized.scales[i]
             multiplier = ease_scale * factor * b.UNITS_PER_EM / b.FONT_SIZE
             shift = ease_offset + ease_scale * bias[i] - ease_scale * factor * bases[i]
             metric_style += f";width:calc-size(max-content,size * {num(multiplier)} + {num(shift)}px)"
         metrics.append(f'<i class="metric" style="{metric_style}">{content}</i>')
-    css += (
-        f".{stem}{{timeline-scope:{','.join(timelines + ([marker] if gated else []))};font:normal {b.FONT_SIZE}px {family}S0;"
-        f"font-kerning:none}}.{stem}>.scroller{{width:{viewport}px}}.{stem}>.scroller>.track{{width:{3 * viewport}px}}"
-    )
+    scope_names = ','.join(timelines + ([marker] if gated else []))
+    if fold:
+        # R3R: readers above the stage (.loop-reader, .core-pass-reader) need the names on html
+        css += f"html{{timeline-scope:{scope_names}}}"
+        css += f".{stem}{{font:normal {b.FONT_SIZE}px {family}S0;font-kerning:none}}"
+    else:
+        css += f".{stem}{{timeline-scope:{scope_names};font:normal {b.FONT_SIZE}px {family}S0;font-kerning:none}}"
+    css += f".{stem}>.scroller{{width:{viewport}px}}.{stem}>.scroller>.track{{width:{3 * viewport}px}}"
     if compact and packs == 1:
         # The shorthand above resets family; restore the entire shard fallback.
         css += (
             f".{stem}{{font-family:{','.join(f'{family}S{s}' for s in range(len(group.names)))};"
             f"font-variation-settings:{settings(0)}}}"
         )
+    if hoist_stage:
+        if len(hoisted) != len(source):
+            raise ValueError(f"R2C hoist covered {len(hoisted)} of {len(source)} {kind} inputs")
+        pairs = sorted(hoisted.items())
+        css += r2c.private_regs(name for name, _ in pairs)
+        css += f".{stem}{{{r2c.declarations(pairs)}}}"
     inner = "{child}"
     if gated:
         # A generation tag travels through the same layout pass as the glyph
@@ -220,7 +252,13 @@ def matvec(
             f".{stem}-gate{{display:none}}@container {stem}-receipt style(--gate-{kind}:1){{.{stem}-gate{{display:block}}}}"
         )
         inner = f'<div class="{stem}-receipt"><div class="{stem}-gate">{{child}}</div></div>'
-    for start in reversed(range(0, count, chunk)):
+    if fold:
+        # R3R: no number consumers for this stage; the carriers carry the residual sum
+        # (constants live in this layer's block, the width expression is inline and shared).
+        css += r3r.stage_constants(stem, bases, quantized.scales, bias, b.UNITS_PER_EM, b.FONT_SIZE)
+        if layer == 0:
+            css += r3r.constant_regs(count)
+    for start in [] if fold else reversed(range(0, count, chunk)):
         stop = min(count, start + chunk)
         result = []
         for i in range(start, stop):

@@ -1,0 +1,191 @@
+trace R3K/runs/combined3-keyboard-trace.json.gz: 6623851 events; main thread 35244/4577333 CrRendererMain; DOM nodes 68947
+marks after nav: {'domComplete': -4.5, 'loadEventStart': -4.4, 'loadEventEnd': -4.4, 'fetchStart': 0.7, 'responseEnd': 0.9, 'domInteractive': 0.9, 'domContentLoadedEventEnd': 1.0, 'P2-run': 4809.0, 'P2-end': 56837.5}
+
+== LOAD (nav -> run click) {"wall_ms": 4809.0, "busy_ms": 1875.3, "idle_ms": 2933.7, "frames": 17, "style_ms": 888.0, "style_count": 21, "recalcStyle_ms": 846.3, "recalcStyle_count": 11, "updateStyle_ms": 863.9, "styleInvalidation_ms": 0.3, "layout_ms": 347.6, "layout_count": 17, "of_which_text_shaping_ms": 75.9, "text_shaping_count": 12558, "animate_ms": 47.4, "prepaint_ms": 26.7, "of_which_compositing_inputs_ms": 16.9, "paint_lifecycle_ms": 32.7, "of_which_Paint_ms": 3.0, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 47.3, "gc_count": 1013, "recalcStyle_self_ms": 843.0, "gc_by_name": [["V8.GC_MC_INCREMENTAL", 13.8], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 13.1], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 6.1], ["MajorGC", 4.2], ["V8.GC_MARK_COMPACTOR", 4.1], ["V8.GC_MC_INCREMENTAL_START", 0.9]], "majorGC_count": 4, "other_busy_ms": 532.9, "animation_regex_ms": 67.7, "animation_regex_count": 17164, "paint_prepaint_composite_ms": 75.3}
+  named: {"ParseAuthorStyleSheet": [1, 58.8], "CSSParserImpl::parseStyleSheet": [3, 58.8], "CSSParserImpl::parseStyleSheet.parse": [3, 58.8], "StyleEngine::updateActiveStyleSheets": [2, 18.2], "RuleSet::addRulesFromSheet": [2, 0.8], "ParseHTML": [10, 159.1]}
+  self top: Document::recalcStyle=843.0ms(n=11), LocalFrameView::performLayout=265.8ms(n=17), RunTask=187.7ms(n=16796), ParseHTML=156.6ms(n=10), InlineNode::ShapeTextIncludingFirstLine=75.9ms(n=12558), CSSParserImpl::parseStyleSheet.parse=58.8ms(n=3), ResponseBodyLoader::DidFinishLoadingBody=41.5ms(n=2), PageAnimator::serviceScriptedAnimations=30.2ms(n=17), LocalFrameView::RunPaintLifecyclePhase=28.5ms(n=17), TextResourceDecoder::Decode=24.3ms(n=267), WebFrameWidgetImpl::UpdateLifecycle=19.4ms(n=17), Blink.CompositingInputs.UpdateTime=16.8ms(n=17), StyleEngine::updateActiveStyleSheets=16.2ms(n=2), AnimationTimeline::serviceAnimations=15.0ms(n=14634), V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING=13.1ms(n=369)
+  big events (t, dur, name, depth): [[73.2, 110.5, "RunTask", 0], [73.2, 110.4, "ResponseBodyLoader::OnStateChange", 1], [73.3, 110.3, "ResponseBodyLoader::DidFinishLoadingBody", 2], [183.6, 821.9, "RunTask", 0], [183.6, 820.6, "ProxyMain::BeginMainFrame", 1], [183.7, 820.5, "WebFrameWidgetImpl::UpdateLifecycle", 2], [1037.1, 26.0, "RunTask", 0], [1037.1, 26.0, "ProxyMain::BeginMainFrame", 1], [1040.0, 23.0, "WebFrameWidgetImpl::UpdateLifecycle", 2], [1085.7, 32.0, "RunTask", 0], [1085.7, 31.9, "ProxyMain::BeginMainFrame", 1], [1088.7, 28.5, "WebFrameWidgetImpl::UpdateLifecycle", 2], [1131.0, 168.2, "RunTask", 0], [1131.0, 168.2, "HTMLDocumentParser::DeferredPumpTokenizerIfPossible", 1], [1131.0, 168.2, "HTMLDocumentParser::PumpTokenizerIfPossible", 2], [1335.7, 84.5, "RunTask", 0], [1335.7, 84.4, "ProxyMain::BeginMainFrame", 1], [1338.7, 81.4, "WebFrameWidgetImpl::UpdateLifecycle", 2], [1448.0, 50.1, "RunTask", 0], [1448.0, 50.1, "ProxyMain::BeginMainFrame", 1], [1454.1, 43.9, "WebFrameWidgetImpl::UpdateLifecycle", 2], [1507.5, 39.4, "RunTask", 0], [1507.5, 39.4, "ProxyMain::BeginMainFrame", 1], [1510.8, 36.1, "WebFrameWidgetImpl::UpdateLifecycle", 2], [2380.1, 71.3, "RunTask", 0], [2384.2, 65.7, "Document::UpdateStyleAndLayout", 1], [2384.2, 65.7, "Blink.ForcedStyleAndLayout.UpdateTime", 2], [2451.4, 60.3, "RunTask", 0], [2451.4, 60.3, "ProxyMain::BeginMainFrame", 1], [2454.9, 56.3, "WebFrameWidgetImpl::UpdateLifecycle", 2], [2527.2, 29.9, "RunTask", 0], [2527.2, 29.9, "ProxyMain::BeginMainFrame", 1], [2529.9, 27.2, "WebFrameWidgetImpl::UpdateLifecycle", 2]]
+
+== GENERATE (run -> end) {"wall_ms": 52028.5, "busy_ms": 51895.3, "idle_ms": 133.2, "frames": 102, "style_ms": 23800.7, "style_count": 193, "recalcStyle_ms": 21815.2, "recalcStyle_count": 193, "updateStyle_ms": 22414.4, "styleInvalidation_ms": 6.3, "layout_ms": 9184.0, "layout_count": 186, "of_which_text_shaping_ms": 3811.3, "text_shaping_count": 315837, "animate_ms": 3551.7, "prepaint_ms": 3506.4, "of_which_compositing_inputs_ms": 3185.0, "paint_lifecycle_ms": 9291.3, "of_which_Paint_ms": 18.1, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 1819.0, "gc_count": 64491, "recalcStyle_self_ms": 20855.2, "gc_by_name": [["V8.GC_MC_INCREMENTAL", 577.5], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 544.8], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 447.5], ["MajorGC", 91.1], ["V8.GC_MARK_COMPACTOR", 90.9], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 20.6]], "majorGC_count": 7, "other_busy_ms": 2561.2, "animation_regex_ms": 5748.6, "animation_regex_count": 2015234, "paint_prepaint_composite_ms": 13173.3}
+  self top: Document::recalcStyle=20855.2ms(n=193), LocalFrameView::RunPaintLifecyclePhase=9254.4ms(n=102), LocalFrameView::performLayout=5199.8ms(n=186), InlineNode::ShapeTextIncludingFirstLine=3804.6ms(n=315837), Blink.CompositingInputs.UpdateTime=3184.7ms(n=102), PageAnimator::serviceScriptedAnimations=2401.9ms(n=102), WebFrameWidgetImpl::UpdateLifecycle=2020.7ms(n=102), AnimationTimeline::serviceAnimations=1852.4ms(n=1687174), UpdateLayoutTree=576.7ms(n=193), Document::updateStyle=552.5ms(n=193), V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING=544.8ms(n=31777), V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED=447.5ms(n=7), LocalFrameView::ScheduleAnimation=340.0ms(n=327866), Blink.PrePaint.UpdateTime=319.1ms(n=102), LocalFrameView::UpdateStyleAndLayout=160.6ms(n=197), RunTask=79.7ms(n=626), V8.GC_MARK_COMPACTOR=62.9ms(n=7), Document::rebuildLayoutTree=45.3ms(n=13), V8.GC_MC_INCREMENTAL=32.7ms(n=32253), Layout=30.2ms(n=186), HitTest=20.8ms(n=70), V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE=20.6ms(n=7), CullRectUpdate=11.1ms(n=102), Paint=10.5ms(n=199), V8.GC_HEAP_EXTERNAL_PROLOGUE=10.2ms(n=7), V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE=9.3ms(n=7), Blink.Paint.UpdateTime=8.9ms(n=102), Document::updateStyleInvalidationIfNeeded=6.3ms(n=6), PaintArtifactCompositor::Update=3.9ms(n=101), Commit=3.7ms(n=102)
+  incl top: RunTask=51895.3ms(n=626), ProxyMain::BeginMainFrame=51803.0ms(n=102), WebFrameWidgetImpl::UpdateLifecycle=48221.8ms(n=102), LocalFrameView::RunStyleAndLayoutLifecyclePhases=33214.3ms(n=195), LocalFrameView::UpdateStyleAndLayout=33213.4ms(n=197), Blink.Style.UpdateTime=23801.5ms(n=193), UpdateLayoutTree=23800.7ms(n=193), Document::updateStyle=22414.4ms(n=193), Document::recalcStyle=21815.2ms(n=193), LocalFrameView::RunPaintLifecyclePhase=9291.3ms(n=102), Blink.Layout.UpdateTime=9186.5ms(n=186), LocalFrameView::layout=9184.4ms(n=186), Layout=9184.0ms(n=186), LocalFrameView::performLayout=9153.8ms(n=186), InlineNode::ShapeTextIncludingFirstLine=3811.3ms(n=315837), WebFrameWidgetImpl::BeginMainFrame=3552.1ms(n=102), Blink.Animate.UpdateTime=3551.7ms(n=102), PageAnimator::serviceScriptedAnimations=3551.2ms(n=102), PrePaint=3506.4ms(n=102), LocalFrameView::RunCompositingInputsLifecyclePhase=3185.3ms(n=102), Blink.CompositingInputs.UpdateTime=3185.0ms(n=102), AnimationTimeline::serviceAnimations=1857.2ms(n=1687174), V8.GC_MC_INCREMENTAL=577.5ms(n=32253), V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING=544.8ms(n=31777), V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED=447.5ms(n=7), LocalFrameView::ScheduleAnimation=340.0ms(n=327866), LocalFrameView::RunPrePaintLifecyclePhase=320.9ms(n=102), Blink.PrePaint.UpdateTime=320.6ms(n=102), MajorGC=91.1ms(n=7), V8.GC_MARK_COMPACTOR=90.9ms(n=7)
+  other threads busy ms: {"ThreadPoolForegroundWorker": 3911.0, "Compositor": 387.8, "PerfettoTrace": 24.0, "Chrome_ChildIOThread": 15.3, "MemoryInfra": 3.1, "ThreadPoolServiceThread": 0.2}
+  token bounds: [(1, 26426.6), (2, 49553.8)]
+
+== PER TOKEN
+{"wall_ms": 26426.6, "busy_ms": 26586.3, "idle_ms": -159.7, "frames": 51, "style_ms": 13413.4, "style_count": 93, "recalcStyle_ms": 12565.9, "recalcStyle_count": 93, "updateStyle_ms": 12778.4, "styleInvalidation_ms": 3.3, "layout_ms": 4307.4, "layout_count": 88, "of_which_text_shaping_ms": 1847.6, "text_shaping_count": 147607, "animate_ms": 1644.0, "prepaint_ms": 1707.0, "of_which_compositing_inputs_ms": 1552.2, "paint_lifecycle_ms": 4117.8, "of_which_Paint_ms": 8.8, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 729.2, "gc_count": 28806, "recalcStyle_self_ms": 12193.2, "gc_by_name": [["V8.GC_MC_INCREMENTAL", 251.8], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 237.7], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 145.5], ["MajorGC", 33.5], ["V8.GC_MARK_COMPACTOR", 33.4], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 9.8]], "majorGC_count": 3, "other_busy_ms": 1396.7, "animation_regex_ms": 2668.1, "animation_regex_count": 951655, "paint_prepaint_composite_ms": 6005.6, "token_index": 1, "start_ms_after_run": 0.0, "end_ms_after_run": 26426.6, "style_hist": {"1-9": [5, 15.1, 13], "10-99": [2, 60.2, 79], "1k-9,999": [48, 8884.0, 167439], "100-999": [37, 3992.5, 21144], ">=50%DOM": [1, 461.5, 50892]}, "layout_total_objects_max": 140920}
+   incl top10: [["RunTask", [305, 26586.3]], ["ProxyMain::BeginMainFrame", [51, 26560.1]], ["WebFrameWidgetImpl::UpdateLifecycle", [51, 24901.8]], ["LocalFrameView::RunStyleAndLayoutLifecyclePhases", [95, 17844.4]], ["LocalFrameView::UpdateStyleAndLayout", [97, 17844.0]], ["Blink.Style.UpdateTime", [93, 13413.8]], ["UpdateLayoutTree", [93, 13413.4]], ["Document::updateStyle", [93, 12778.4]], ["Document::recalcStyle", [93, 12565.9]], ["Blink.Layout.UpdateTime", [88, 4308.6]]]
+   biggest style passes (ms, elementCount, t): [[1999.2, 2381, 69.9], [1744.4, 3089, 3428.8], [570.1, 127, 2127.4], [487.3, 780, 2909.4], [461.5, 50892, 23073.4], [397.2, 784, 5335.4], [247.1, 1553, 11724.9], [246.7, 2326, 22765.6]]
+   layout dirty hist: {"<100": 2, "1k-9,999": 72, "100-999": 12, ">=10k": 2} total objects max 140920
+   handshakes: [[51.2, "g id='run-start'"], [24883.9, "g id='token-1-ready'"], [26126.0, "g id='token-1-ack'"]]
+   style by elementCount (ec, n, ms): [[3089, 12, 2952.6], [1553, 11, 2408.2], [2381, 1, 1999.2], [784, 12, 1633.5], [126, 11, 886.0], [2323, 11, 831.9], [780, 12, 831.3], [127, 1, 570.1], [50892, 1, 461.5], [6919, 12, 445.4], [2326, 1, 246.7], [863, 1, 71.6], [39, 1, 31.8], [40, 1, 28.4], [7, 1, 10.7], [3, 1, 4.0], [1, 3, 0.4]]
+   inval by reason: []
+{"wall_ms": 23127.3, "busy_ms": 23054.8, "idle_ms": 72.5, "frames": 46, "style_ms": 9292.6, "style_count": 89, "recalcStyle_ms": 8286.6, "recalcStyle_count": 89, "updateStyle_ms": 8630.5, "styleInvalidation_ms": 2.9, "layout_ms": 4482.3, "layout_count": 87, "of_which_text_shaping_ms": 1855.8, "text_shaping_count": 153716, "animate_ms": 1715.4, "prepaint_ms": 1711.6, "of_which_compositing_inputs_ms": 1560.9, "paint_lifecycle_ms": 4647.9, "of_which_Paint_ms": 8.2, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 909.0, "gc_count": 33780, "recalcStyle_self_ms": 7814.9, "gc_by_name": [["V8.GC_MC_INCREMENTAL", 285.6], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 268.4], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 226.3], ["MajorGC", 48.9], ["V8.GC_MARK_COMPACTOR", 48.9], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 8.2]], "majorGC_count": 3, "other_busy_ms": 1205.0, "animation_regex_ms": 2762.9, "animation_regex_count": 949970, "paint_prepaint_composite_ms": 6535.0, "token_index": 2, "start_ms_after_run": 26426.6, "end_ms_after_run": 49553.8, "style_hist": {"1k-9,999": [48, 5888.9, 167411], "100-999": [37, 2936.7, 21143], ">=50%DOM": [1, 428.0, 50892], "1-9": [2, 10.8, 8], "10-99": [1, 28.2, 39]}, "layout_total_objects_max": 140920}
+   incl top10: [["RunTask", [282, 23054.8]], ["ProxyMain::BeginMainFrame", [46, 23009.7]], ["WebFrameWidgetImpl::UpdateLifecycle", [46, 21280.5]], ["LocalFrameView::RunStyleAndLayoutLifecyclePhases", [89, 13871.6]], ["LocalFrameView::UpdateStyleAndLayout", [89, 13871.1]], ["Blink.Style.UpdateTime", [89, 9293.0]], ["UpdateLayoutTree", [89, 9292.6]], ["Document::updateStyle", [89, 8630.5]], ["Document::recalcStyle", [89, 8286.6]], ["LocalFrameView::RunPaintLifecyclePhase", [46, 4647.9]]]
+   biggest style passes (ms, elementCount, t): [[428.0, 50892, 46315.6], [264.3, 2323, 31465.3], [252.6, 1553, 37658.3], [250.8, 1553, 27586.1], [250.7, 1553, 29421.3], [247.5, 1553, 34361.0], [245.1, 1553, 41019.7], [240.7, 2326, 46015.7]]
+   layout dirty hist: {"1k-9,999": 73, "100-999": 12, ">=10k": 1, "<100": 1} total objects max 140920
+   handshakes: [[48008.5, "g id='token-2-ready'"], [49271.4, "g id='token-2-ack'"]]
+   style by elementCount (ec, n, ms): [[1553, 11, 2640.0], [784, 12, 1386.7], [3089, 12, 1333.4], [126, 12, 1094.3], [2323, 10, 975.4], [6919, 12, 485.8], [50892, 1, 428.0], [780, 12, 392.3], [2326, 1, 240.7], [2342, 1, 116.6], [2334, 1, 97.0], [863, 1, 63.3], [39, 1, 28.2], [7, 1, 10.5], [1, 1, 0.3]]
+   inval by reason: []
+{"wall_ms": 2474.7, "busy_ms": 2254.2, "idle_ms": 220.4, "frames": 5, "style_ms": 1094.7, "style_count": 11, "recalcStyle_ms": 962.7, "recalcStyle_count": 11, "updateStyle_ms": 1005.4, "styleInvalidation_ms": 0.0, "layout_ms": 394.2, "layout_count": 11, "of_which_text_shaping_ms": 107.9, "text_shaping_count": 14514, "animate_ms": 192.2, "prepaint_ms": 87.8, "of_which_compositing_inputs_ms": 71.9, "paint_lifecycle_ms": 525.6, "of_which_Paint_ms": 1.1, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 180.7, "gc_count": 1905, "recalcStyle_self_ms": 847.1, "gc_by_name": [["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 75.7], ["V8.GC_MC_INCREMENTAL", 40.1], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 38.8], ["MajorGC", 8.7], ["V8.GC_MARK_COMPACTOR", 8.7], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 2.7]], "majorGC_count": 1, "other_busy_ms": -40.3, "animation_regex_ms": 317.7, "animation_regex_count": 113609, "paint_prepaint_composite_ms": 632.6, "token_index": "3(partial-to-end)", "start_ms_after_run": 49553.8, "end_ms_after_run": 52028.5, "style_hist": {"1k-9,999": [6, 634.5, 23156], "100-999": [5, 460.2, 2596]}, "layout_total_objects_max": 38239}
+   incl top10: [["RunTask", [39, 2254.2]], ["ProxyMain::BeginMainFrame", [5, 2233.3]], ["WebFrameWidgetImpl::UpdateLifecycle", [5, 2039.4]], ["LocalFrameView::RunStyleAndLayoutLifecyclePhases", [11, 1498.4]], ["LocalFrameView::UpdateStyleAndLayout", [11, 1498.3]], ["Blink.Style.UpdateTime", [11, 1094.8]], ["UpdateLayoutTree", [11, 1094.7]], ["Document::updateStyle", [11, 1005.4]], ["Document::recalcStyle", [11, 962.7]], ["LocalFrameView::RunPaintLifecyclePhase", [6, 525.6]]]
+   biggest style passes (ms, elementCount, t): [[249.0, 1553, 50802.0], [213.9, 784, 50507.4], [108.3, 3089, 50227.5], [106.2, 2342, 49578.1], [102.4, 126, 51501.1], [91.7, 2334, 51345.7], [80.9, 126, 49807.6], [45.7, 6919, 49953.4]]
+   layout dirty hist: {"1k-9,999": 9, "100-999": 2} total objects max 38239
+   handshakes: []
+   style by elementCount (ec, n, ms): [[1553, 1, 249.0], [784, 1, 213.9], [126, 2, 183.3], [3089, 1, 108.3], [2342, 1, 106.2], [2334, 1, 91.7], [6919, 2, 79.3], [780, 2, 63.0]]
+   inval by reason: []
+
+== STYLE PASS HISTOGRAM (generate window)
+           1-9: {"count": 7, "ms": 25.8, "elements": 21, "max_ms": 10.67, "min_ms": 0.059, "us_per_element": 1228.57}
+         10-99: {"count": 3, "ms": 88.4, "elements": 118, "max_ms": 31.79, "min_ms": 28.245, "us_per_element": 749.15}
+       100-999: {"count": 79, "ms": 7389.4, "elements": 44883, "max_ms": 570.13, "min_ms": 22.12, "us_per_element": 164.64}
+      1k-9,999: {"count": 102, "ms": 15407.4, "elements": 358006, "max_ms": 1999.18, "min_ms": 26.297, "us_per_element": 43.04}
+      >=50%DOM: {"count": 2, "ms": 889.6, "elements": 101784, "max_ms": 461.53, "min_ms": 428.046, "us_per_element": 8.74}
+  by exact elementCount (top by ms): [[1553, 23, 5297.2], [3089, 25, 4394.3], [784, 25, 3234.1], [126, 25, 2163.7], [2381, 1, 1999.2], [2323, 21, 1807.3], [780, 26, 1286.6], [6919, 26, 1010.5], [50892, 2, 889.6], [127, 1, 570.1], [2326, 2, 487.4], [2342, 2, 222.8], [2334, 2, 188.7], [863, 2, 134.9], [39, 2, 60.0], [40, 1, 28.4], [7, 2, 21.2], [3, 1, 4.0], [1, 4, 0.7]]
+
+== INVALIDATION (generate window)
+  events: {}
+  with selector part / extra:
+  samples: {}
+
+== ANIMATION names (top): [["", "n", 292900], ["", "running", 34730], ["", "e", 22309], ["--saved-0-147", "running", 15], ["--saved-0-232", "running", 15], ["--saved-0-239", "running", 15], ["--saved-0-568", "running", 15], ["--saved-0-679", "running", 15], ["--saved-0-459", "running", 15], ["--saved-0-381", "running", 15], ["--saved-0-198", "running", 15], ["--saved-0-1", "running", 15], ["--saved-0-77", "running", 15], ["--saved-0-675", "running", 15], ["--saved-0-79", "running", 15], ["--saved-0-102", "running", 15], ["--saved-0-724", "running", 15], ["--saved-0-427", "running", 15], ["--saved-0-114", "running", 15], ["--saved-0-550", "running", 15], ["--saved-0-346", "running", 15], ["--saved-0-37", "running", 15], ["--saved-0-341", "running", 15], ["--saved-0-546", "running", 15], ["--saved-0-35", "running", 15], ["--saved-0-625", "running", 15], ["--saved-0-481", "running", 15], ["--saved-0-567", "running", 15], ["--saved-0-399", "running", 15], ["--saved-0-88", "running", 15], ["--saved-0-516", "running", 15], ["--saved-0-748", "running", 15], ["--saved-0-268", "running", 15], ["--saved-0-81", "running", 15], ["--saved-0-164", "running", 15], ["--saved-0-431", "running", 15], ["--saved-0-540", "running", 15], ["--saved-0-25", "running", 15], ["--saved-0-92", "running", 15], ["--saved-0-577", "running", 15]] distinct 11719
+  handshake events (t, node): [[-2359.2, "g id='fonts-detected'"], [51.2, "g id='run-start'"], [24883.9, "g id='token-1-ready'"], [26126.0, "g id='token-1-ack'"], [48008.5, "g id='token-2-ready'"], [49271.4, "g id='token-2-ack'"]]
+
+== GC: total 1819.3 by name [["V8.GC_MC_INCREMENTAL", 36373], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 35840], ["V8.GC_MC_CLEAR_STRING_TABLE", 65], ["V8.GC_MC_SWEEP", 44], ["V8.GC_MC_MARK_ROOTS", 42], ["V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_MARKING", 40], ["V8.GC_MC_MARK_EMBEDDER_PROLOGUE", 28], ["V8.GC_MC_EVACUATE", 28], ["V8.GC_MC_MARK_EMBEDDER_TRACING", 26], ["V8.GC_TIME_TO_SAFEPOINT", 20], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 15], ["V8.GC_HEAP_EXTERNAL_PROLOGUE", 15], ["V8.GC_HEAP_EPILOGUE_SAFEPOINT", 15], ["V8.GC_HEAP_EPILOGUE", 15], ["V8.GC_HEAP_EXTERNAL_EPILOGUE", 15], ["V8.GC_MC_INCREMENTAL_START", 14], ["V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE", 14], ["V8.GC_MC_INCREMENTAL_EXTERNAL_EPILOGUE", 14], ["MajorGC", 14], ["V8.GC_MARK_COMPACTOR", 14]]
+
+== main-thread name inventory (name, count, incl ms, self ms): 
+  ["Document::recalcStyle", 242, 26463.9, 25113.5]
+  ["LocalFrameView::RunPaintLifecyclePhase", 138, 11241.6, 11194.4]
+  ["LocalFrameView::performLayout", 241, 10969.7, 6479.0]
+  ["InlineNode::ShapeTextIncludingFirstLine", 378772, 4334.0, 4326.8]
+  ["Blink.CompositingInputs.UpdateTime", 138, 3522.0, 3521.5]
+  ["PageAnimator::serviceScriptedAnimations", 138, 4356.0, 2944.7]
+  ["WebFrameWidgetImpl::UpdateLifecycle", 138, 57894.6, 2444.3]
+  ["AnimationTimeline::serviceAnimations", 2098885, 2320.6, 2312.4]
+  ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 15, 747.6, 747.5]
+  ["UpdateLayoutTree", 259, 29025.7, 737.9]
+  ["Document::updateStyle", 259, 27230.0, 713.5]
+  ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 35840, 652.6, 652.6]
+  ["LocalFrameView::ScheduleAnimation", 399123, 416.6, 416.6]
+  ["Blink.PrePaint.UpdateTime", 138, 382.0, 380.5]
+  ["RunTask", 17574, 63211.9, 326.2]
+  ["LocalFrameView::UpdateStyleAndLayout", 284, 40243.2, 196.3]
+  ["ParseHTML", 10, 159.1, 156.6]
+  ["V8.GC_MARK_COMPACTOR", 14, 119.2, 79.1]
+  ["CSSParserImpl::parseStyleSheet.parse", 3, 58.8, 58.8]
+  ["Document::rebuildLayoutTree", 20, 52.6, 47.0]
+  ["ResponseBodyLoader::DidFinishLoadingBody", 2, 110.3, 41.5]
+  ["V8.GC_MC_INCREMENTAL", 36373, 690.7, 38.1]
+  ["Layout", 241, 11006.4, 36.7]
+  ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 14, 28.6, 28.6]
+  ["HitTest", 92, 27.3, 27.3]
+  ["TextResourceDecoder::Decode", 267, 24.3, 24.3]
+  ["StyleEngine::updateActiveStyleSheets", 2, 18.2, 16.2]
+  ["Paint", 255, 24.3, 14.8]
+  ["V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE", 14, 13.8, 13.8]
+  ["V8.GC_HEAP_EXTERNAL_PROLOGUE", 15, 13.5, 13.5]
+  ["CullRectUpdate", 137, 13.4, 13.4]
+  ["Blink.Paint.UpdateTime", 138, 39.2, 10.8]
+  ["Document::updateStyleInvalidationIfNeeded", 10, 6.6, 6.6]
+  ["PaintArtifactCompositor::Update", 128, 5.4, 5.0]
+  ["Document::FinishedParsing", 2, 79.0, 4.9]
+  ["Commit", 138, 36.5, 4.9]
+  ["Resource::appendData", 468, 4.9, 4.9]
+  ["BeginRemoteFontLoad", 283, 4.3, 4.3]
+  ["DocumentLoader::BodyLoadingFinished", 1, 13.0, 3.5]
+  ["V8.GC_MC_MARK", 14, 6.4, 3.0]
+  ["Blink.Layout.UpdateTime", 241, 11009.5, 2.6]
+  ["MainFrameAborted", 119, 2.6, 2.0]
+  ["Node::MarkSubtreeNeedsStyleRecalcForFontUpdates", 14, 1.9, 1.9]
+  ["V8.GC_MC_MARK_EMBEDDER_TRACING", 26, 1.9, 1.9]
+  ["V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_PROCESS", 1, 2.0, 1.9]
+  ["ProxyMain::BeginMainFrame", 138, 62290.2, 1.5]
+  ["ResourceFetcher::requestResource", 285, 1.5, 1.5]
+  ["ResponseBodyLoader::OnStateChange", 375, 122.0, 1.5]
+  ["LocalFrameView::RunStyleAndLayoutLifecyclePhases", 251, 40075.5, 1.1]
+  ["Blink.Style.UpdateTime", 259, 29026.9, 1.1]
+  ["V8.GC_MC_CLEAR_JOIN_JOB", 14, 2.4, 1.1]
+  ["DocumentLoader::CreateParserPostCommit", 2, 2.2, 1.0]
+  ["LayoutObject::InvalidateSubtreeForFontUpdates", 14, 1.0, 1.0]
+  ["V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL", 14, 2.8, 1.0]
+  ["TimerBase::run", 20, 1.0, 1.0]
+  ["EventDispatch", 35, 1.4, 0.9]
+  ["PageTimingMetricsSender::SendNow", 50, 0.9, 0.9]
+  ["DocumentLoader::BodyDataReceivedImpl", 7, 6.0, 0.9]
+  ["EvaluateScript", 2, 11.0, 0.9]
+  ["LayerTreeHost::WaitForCommitCompletion", 138, 0.8, 0.8]
+  ["RuleSet::addRulesFromSheet", 2, 0.8, 0.8]
+  ["V8.GC_MC_MARK_EMBEDDER_PROLOGUE", 28, 0.8, 0.8]
+  ["WebFrameWidgetImpl::BeginMainFrame", 138, 4357.2, 0.6]
+  ["Blink.Animate.UpdateTime", 138, 4356.6, 0.6]
+  ["LocalFrameView::layout", 241, 11006.9, 0.6]
+  ["LocalFrameView::performPostLayoutTasks", 241, 0.8, 0.6]
+  ["V8.GC_MC_CLEAR_SWEEP_EXTERNAL_POINTER_TABLE", 8, 0.6, 0.6]
+  ["LocalFrameView::DidFinishLifecycleUpdate", 131, 0.5, 0.5]
+  ["V8.GC_MC_MARK_ROOTS", 42, 0.5, 0.5]
+  ["V8.GC_MC_EVACUATE_UPDATE_POINTERS_TO_NEW_ROOTS", 14, 0.5, 0.5]
+  ["ProxyMain::Stop", 1, 0.5, 0.5]
+  ["Editor::HandleKeyboardEvent", 1, 0.5, 0.5]
+  ["LocalFrameView::RunPrePaintLifecyclePhase", 138, 382.4, 0.4]
+  ["Layerize", 138, 5.8, 0.4]
+  ["Frame::Detach", 3, 0.5, 0.4]
+  ["Document::updateActiveStyle", 219, 18.5, 0.4]
+  ["V8.GC_MC_INCREMENTAL_START", 14, 15.4, 0.4]
+  ["ScrollTree::SetScrollOffset", 266, 0.4, 0.4]
+  ["V8.GC_MC_EVACUATE_UPDATE_POINTERS_POINTER_TABLES", 14, 0.4, 0.4]
+  ["DocumentLoader::CommitNavigation", 2, 2.9, 0.3]
+
+== per-second timeline (s, busy, style, layout, ...) first 400 rows
+  {"s": 0, "busy": 2758.6, "UpdateLayoutTree": 2027.7, "Layout": 2.7, "PrePaint": 0.6, "LocalFrameView::RunPaintLifecyclePhase": 2.3, "Blink.Animate.UpdateTime": 7.8, "gc": 0.0}
+  {"s": 1, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "LocalFrameView::RunPaintLifecyclePhase": 0.0, "Blink.Animate.UpdateTime": 0.0, "gc": 0.0}
+  {"s": 2, "busy": 2506.2, "UpdateLayoutTree": 1102.9, "Layout": 99.3, "PrePaint": 20.3, "LocalFrameView::RunPaintLifecyclePhase": 45.5, "Blink.Animate.UpdateTime": 28.3, "gc": 10.0}
+  {"s": 3, "busy": 0.0, "UpdateLayoutTree": 1744.4, "Layout": 18.9, "PrePaint": 0.0, "LocalFrameView::RunPaintLifecyclePhase": 0.0, "Blink.Animate.UpdateTime": 0.0, "gc": 7.7}
+  {"s": 4, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "LocalFrameView::RunPaintLifecyclePhase": 0.0, "Blink.Animate.UpdateTime": 0.0, "gc": 4.7}
+  {"s": 5, "busy": 750.2, "UpdateLayoutTree": 452.8, "Layout": 134.1, "PrePaint": 41.7, "LocalFrameView::RunPaintLifecyclePhase": 102.5, "Blink.Animate.UpdateTime": 62.4, "gc": 16.1}
+  {"s": 6, "busy": 1204.0, "UpdateLayoutTree": 446.3, "Layout": 150.2, "PrePaint": 24.9, "LocalFrameView::RunPaintLifecyclePhase": 206.8, "Blink.Animate.UpdateTime": 101.5, "gc": 29.5}
+  {"s": 7, "busy": 860.8, "UpdateLayoutTree": 434.2, "Layout": 146.3, "PrePaint": 60.6, "LocalFrameView::RunPaintLifecyclePhase": 215.4, "Blink.Animate.UpdateTime": 72.3, "gc": 17.8}
+  {"s": 8, "busy": 972.1, "UpdateLayoutTree": 471.3, "Layout": 175.9, "PrePaint": 46.4, "LocalFrameView::RunPaintLifecyclePhase": 252.6, "Blink.Animate.UpdateTime": 72.1, "gc": 26.7}
+  {"s": 9, "busy": 1191.0, "UpdateLayoutTree": 435.3, "Layout": 152.7, "PrePaint": 24.2, "LocalFrameView::RunPaintLifecyclePhase": 168.4, "Blink.Animate.UpdateTime": 109.9, "gc": 36.1}
+  {"s": 10, "busy": 878.3, "UpdateLayoutTree": 390.9, "Layout": 148.1, "PrePaint": 62.7, "LocalFrameView::RunPaintLifecyclePhase": 229.8, "Blink.Animate.UpdateTime": 75.4, "gc": 21.4}
+  {"s": 11, "busy": 1001.7, "UpdateLayoutTree": 536.0, "Layout": 173.5, "PrePaint": 28.6, "LocalFrameView::RunPaintLifecyclePhase": 127.1, "Blink.Animate.UpdateTime": 71.9, "gc": 27.0}
+  {"s": 12, "busy": 1172.3, "UpdateLayoutTree": 323.6, "Layout": 150.5, "PrePaint": 41.7, "LocalFrameView::RunPaintLifecyclePhase": 301.8, "Blink.Animate.UpdateTime": 104.8, "gc": 24.8}
+  {"s": 13, "busy": 885.1, "UpdateLayoutTree": 497.6, "Layout": 123.0, "PrePaint": 62.1, "LocalFrameView::RunPaintLifecyclePhase": 240.1, "Blink.Animate.UpdateTime": 74.0, "gc": 20.5}
+  {"s": 14, "busy": 1025.4, "UpdateLayoutTree": 529.8, "Layout": 172.5, "PrePaint": 28.8, "LocalFrameView::RunPaintLifecyclePhase": 127.8, "Blink.Animate.UpdateTime": 70.9, "gc": 25.3}
+  {"s": 15, "busy": 1184.0, "UpdateLayoutTree": 290.1, "Layout": 133.9, "PrePaint": 41.7, "LocalFrameView::RunPaintLifecyclePhase": 324.1, "Blink.Animate.UpdateTime": 114.4, "gc": 28.1}
+  {"s": 16, "busy": 593.8, "UpdateLayoutTree": 464.2, "Layout": 166.1, "PrePaint": 62.0, "LocalFrameView::RunPaintLifecyclePhase": 249.8, "Blink.Animate.UpdateTime": 36.9, "gc": 56.2}
+  {"s": 17, "busy": 1317.4, "UpdateLayoutTree": 596.8, "Layout": 167.0, "PrePaint": 29.6, "LocalFrameView::RunPaintLifecyclePhase": 129.8, "Blink.Animate.UpdateTime": 113.7, "gc": 30.3}
+  {"s": 18, "busy": 1181.3, "UpdateLayoutTree": 227.9, "Layout": 129.0, "PrePaint": 40.6, "LocalFrameView::RunPaintLifecyclePhase": 326.0, "Blink.Animate.UpdateTime": 104.3, "gc": 18.3}
+  {"s": 19, "busy": 598.1, "UpdateLayoutTree": 528.3, "Layout": 172.3, "PrePaint": 63.8, "LocalFrameView::RunPaintLifecyclePhase": 257.4, "Blink.Animate.UpdateTime": 34.1, "gc": 27.1}
+  {"s": 20, "busy": 1352.3, "UpdateLayoutTree": 381.6, "Layout": 170.5, "PrePaint": 29.6, "LocalFrameView::RunPaintLifecyclePhase": 129.1, "Blink.Animate.UpdateTime": 110.9, "gc": 34.2}
+  {"s": 21, "busy": 665.6, "UpdateLayoutTree": 446.0, "Layout": 91.9, "PrePaint": 33.5, "LocalFrameView::RunPaintLifecyclePhase": 307.6, "Blink.Animate.UpdateTime": 73.4, "gc": 16.1}
+  {"s": 22, "busy": 3807.5, "UpdateLayoutTree": 509.9, "Layout": 157.2, "PrePaint": 56.4, "LocalFrameView::RunPaintLifecyclePhase": 143.9, "Blink.Animate.UpdateTime": 73.5, "gc": 24.4}
+  {"s": 23, "busy": 0.0, "UpdateLayoutTree": 461.5, "Layout": 1378.1, "PrePaint": 0.0, "LocalFrameView::RunPaintLifecyclePhase": 0.0, "Blink.Animate.UpdateTime": 0.0, "gc": 203.6}
+  {"s": 24, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 904.8, "LocalFrameView::RunPaintLifecyclePhase": 0.0, "Blink.Animate.UpdateTime": 0.0, "gc": 17.3}
+  {"s": 25, "busy": 80.5, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "LocalFrameView::RunPaintLifecyclePhase": 183.1, "Blink.Animate.UpdateTime": 34.2, "gc": 1.9}
+  {"s": 26, "busy": 1299.4, "UpdateLayoutTree": 360.2, "Layout": 199.4, "PrePaint": 24.9, "LocalFrameView::RunPaintLifecyclePhase": 154.3, "Blink.Animate.UpdateTime": 173.1, "gc": 20.3}
+  {"s": 27, "busy": 734.7, "UpdateLayoutTree": 504.4, "Layout": 158.3, "PrePaint": 42.6, "LocalFrameView::RunPaintLifecyclePhase": 250.5, "Blink.Animate.UpdateTime": 43.9, "gc": 28.9}
+  {"s": 28, "busy": 1286.9, "UpdateLayoutTree": 377.7, "Layout": 177.6, "PrePaint": 24.8, "LocalFrameView::RunPaintLifecyclePhase": 167.0, "Blink.Animate.UpdateTime": 105.3, "gc": 33.7}
+  {"s": 29, "busy": 643.7, "UpdateLayoutTree": 462.9, "Layout": 153.8, "PrePaint": 67.2, "LocalFrameView::RunPaintLifecyclePhase": 247.5, "Blink.Animate.UpdateTime": 38.0, "gc": 62.9}
+  {"s": 30, "busy": 1390.6, "UpdateLayoutTree": 592.7, "Layout": 185.0, "PrePaint": 29.3, "LocalFrameView::RunPaintLifecyclePhase": 129.3, "Blink.Animate.UpdateTime": 123.8, "gc": 0.0}
+  {"s": 31, "busy": 646.7, "UpdateLayoutTree": 360.4, "Layout": 99.7, "PrePaint": 31.8, "LocalFrameView::RunPaintLifecyclePhase": 331.7, "Blink.Animate.UpdateTime": 37.2, "gc": 203.6}
+  {"s": 32, "busy": 1385.2, "UpdateLayoutTree": 522.7, "Layout": 153.0, "PrePaint": 58.8, "LocalFrameView::RunPaintLifecyclePhase": 152.8, "Blink.Animate.UpdateTime": 112.2, "gc": 28.1}
+  {"s": 33, "busy": 679.1, "UpdateLayoutTree": 357.2, "Layout": 150.0, "PrePaint": 19.4, "LocalFrameView::RunPaintLifecyclePhase": 208.3, "Blink.Animate.UpdateTime": 72.8, "gc": 27.9}
+  {"s": 34, "busy": 1191.8, "UpdateLayoutTree": 418.2, "Layout": 175.5, "PrePaint": 41.7, "LocalFrameView::RunPaintLifecyclePhase": 265.4, "Blink.Animate.UpdateTime": 78.2, "gc": 19.9}
+  {"s": 35, "busy": 786.2, "UpdateLayoutTree": 394.0, "Layout": 193.7, "PrePaint": 74.5, "LocalFrameView::RunPaintLifecyclePhase": 166.4, "Blink.Animate.UpdateTime": 68.0, "gc": 29.2}
+  {"s": 36, "busy": 942.4, "UpdateLayoutTree": 450.0, "Layout": 134.2, "PrePaint": 19.7, "LocalFrameView::RunPaintLifecyclePhase": 329.5, "Blink.Animate.UpdateTime": 79.5, "gc": 18.3}
+  {"s": 37, "busy": 1120.5, "UpdateLayoutTree": 509.6, "Layout": 160.5, "PrePaint": 43.4, "LocalFrameView::RunPaintLifecyclePhase": 279.1, "Blink.Animate.UpdateTime": 77.5, "gc": 25.1}
+  {"s": 38, "busy": 1304.6, "UpdateLayoutTree": 380.3, "Layout": 127.7, "PrePaint": 26.1, "LocalFrameView::RunPaintLifecyclePhase": 168.2, "Blink.Animate.UpdateTime": 113.3, "gc": 21.4}
+  {"s": 39, "busy": 587.6, "UpdateLayoutTree": 427.9, "Layout": 170.9, "PrePaint": 62.1, "LocalFrameView::RunPaintLifecyclePhase": 264.0, "Blink.Animate.UpdateTime": 43.1, "gc": 45.2}
+  {"s": 40, "busy": 1390.3, "UpdateLayoutTree": 401.7, "Layout": 191.2, "PrePaint": 27.4, "LocalFrameView::RunPaintLifecyclePhase": 124.1, "Blink.Animate.UpdateTime": 106.5, "gc": 100.9}
+  {"s": 41, "busy": 684.1, "UpdateLayoutTree": 452.7, "Layout": 103.3, "PrePaint": 33.3, "LocalFrameView::RunPaintLifecyclePhase": 299.0, "Blink.Animate.UpdateTime": 70.9, "gc": 17.8}
+  {"s": 42, "busy": 1203.3, "UpdateLayoutTree": 496.5, "Layout": 155.3, "PrePaint": 56.5, "LocalFrameView::RunPaintLifecyclePhase": 153.9, "Blink.Animate.UpdateTime": 74.2, "gc": 26.6}
+  {"s": 43, "busy": 674.5, "UpdateLayoutTree": 357.5, "Layout": 201.0, "PrePaint": 43.3, "LocalFrameView::RunPaintLifecyclePhase": 248.2, "Blink.Animate.UpdateTime": 72.4, "gc": 27.4}
+  {"s": 44, "busy": 1148.7, "UpdateLayoutTree": 511.8, "Layout": 126.6, "PrePaint": 17.8, "LocalFrameView::RunPaintLifecyclePhase": 225.8, "Blink.Animate.UpdateTime": 78.9, "gc": 20.9}
+  {"s": 45, "busy": 3897.2, "UpdateLayoutTree": 297.4, "Layout": 189.6, "PrePaint": 72.1, "LocalFrameView::RunPaintLifecyclePhase": 272.7, "Blink.Animate.UpdateTime": 104.6, "gc": 26.0}
+  {"s": 46, "busy": 0.0, "UpdateLayoutTree": 668.7, "Layout": 1293.6, "PrePaint": 0.0, "LocalFrameView::RunPaintLifecyclePhase": 0.0, "Blink.Animate.UpdateTime": 0.0, "gc": 65.8}
+  {"s": 47, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "LocalFrameView::RunPaintLifecyclePhase": 0.0, "Blink.Animate.UpdateTime": 0.0, "gc": 63.5}
+  {"s": 48, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 895.4, "LocalFrameView::RunPaintLifecyclePhase": 204.3, "Blink.Animate.UpdateTime": 0.0, "gc": 0.0}
+  {"s": 49, "busy": 1006.8, "UpdateLayoutTree": 335.1, "Layout": 190.4, "PrePaint": 18.0, "LocalFrameView::RunPaintLifecyclePhase": 83.4, "Blink.Animate.UpdateTime": 179.0, "gc": 0.0}
+  {"s": 50, "busy": 1183.7, "UpdateLayoutTree": 595.3, "Layout": 119.2, "PrePaint": 28.9, "LocalFrameView::RunPaintLifecyclePhase": 130.4, "Blink.Animate.UpdateTime": 81.4, "gc": 136.7}
+  {"s": 51, "busy": 710.6, "UpdateLayoutTree": 266.7, "Layout": 161.1, "PrePaint": 42.8, "LocalFrameView::RunPaintLifecyclePhase": 364.9, "Blink.Animate.UpdateTime": 71.4, "gc": 21.7}
+  {"s": 52, "busy": 1102.7, "UpdateLayoutTree": 505.9, "Layout": 164.2, "PrePaint": 59.9, "LocalFrameView::RunPaintLifecyclePhase": 113.7, "Blink.Animate.UpdateTime": 75.7, "gc": 22.3}

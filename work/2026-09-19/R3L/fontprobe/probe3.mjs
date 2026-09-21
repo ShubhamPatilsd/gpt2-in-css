@@ -1,0 +1,10 @@
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
+const { chromium } = require("/Users/shubhampatil/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright");
+const browser = await chromium.launch({ executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", headless: true });
+const page = await browser.newPage();
+page.on("console", (m) => { if (/OTS|decode/.test(m.text())) console.log("console:", m.text().slice(0, 160)); });
+await page.goto(process.env.URL, { waitUntil: "load" });
+await page.evaluate(() => document.fonts.ready); await new Promise((r) => setTimeout(r, 1500));
+console.log(JSON.stringify(await page.evaluate(() => Object.fromEntries([...document.fonts].map((f) => [f.family, `${f.status} witness=${document.getElementById("w" + f.family.slice(1)).getBoundingClientRect().width} H000x1000=${document.getElementById("v" + f.family.slice(1)).getBoundingClientRect().width}`])))));
+await browser.close();
