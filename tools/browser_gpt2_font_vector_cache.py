@@ -14,8 +14,10 @@ import build_hybrid_twelve_block as hybrid
 import f4_packing as f4
 import f5_scoping as f5
 import r4d_flags as r4d
-import r4w_precat as r4w
+import r5e_dead_weight as r5e
 import r2c_hoist as r2c
+import r4s_small_hops as r4s
+import r5h_ch_scores as r5h  # R5H: forces r4s.SMALL_HOPS off when R5H_CH_SCORES is on
 import numpy as np
 from build_bilinear_projected_kv_qk import CODEPOINT_BASE, build_head_font
 from build_gpt2_block_css import UNITS_PER_EM
@@ -177,18 +179,16 @@ def attention(
         raise ValueError("Unknown value layout")
     if prewarm_values and value_layout != "widths":
         raise ValueError("Early value preparation requires fixed font widths")
+    if prewarm_values and r4s.SMALL_HOPS:
+        raise ValueError("R4S: the score chain has no score gate to prewarm against")
+    if prewarm_values and r5h.CH_SCORES:
+        raise ValueError("R5H: the ch score readback has no score gate to prewarm against")
     operators = fonts()
     packed = f4.PACKED_BANKS
     if packed and value_layout not in ("runs", "widths"):
         # R4D: the widths layout (fixed V font location, weight applied to the
         # shaped width) uses the same per-slot lists and leaf structure as runs.
         raise ValueError("F4 packed banks are implemented for the runs/widths value layouts only")
-    # R4W: V-leaf allocation fix (see r4w_precat.py); only defined for the widths
-    # layout with F4 packed banks and R4D per-head V lists.
-    precat = r4w.mode() if (value_layout == "widths" and packed and r4d.UNPACK_V) else "off"
-    wrapper_v, alias_v = precat == "wrapper", precat == "alias"
-    if wrapper_v and not value_weight_once:
-        raise ValueError("R4W_V_PRECAT=wrapper requires the slim (weight-once) V leaves")
     zero = ",".join(f'"K{i:03d}" 0' for i in range(DIM))
     all_fields = storage_names(capacity)
     css = ""
@@ -201,16 +201,11 @@ def attention(
                 initial = ",".join(
                     f'"{f4.head_axis(kind, r4d.head_of(name), i)}" 0' for i in range(DIM)
                 )
-                if wrapper_v:
-                    # R4W: per-slot tags (one font per slot, see r4w_precat.py).
-                    initial = ",".join(f'"{value_axis(f4.slot_of(name), i)}" 0' for i in range(DIM))
             if vector and r4d.EMPTY_UNFILLED:
                 # R4D: one explicit zero axis (fvar defaults are 0) instead of
                 # every axis at zero: unfilled slots substitute 12 B, not ~7.7 KB.
                 head = r4d.head_of(name)
                 initial = f'"{f4.head_axis(kind, 0 if head is None else head, 0) if packed else "K000"}" 0'
-                if wrapper_v and head is not None:
-                    initial = f'"{value_axis(f4.slot_of(name), 0)}" 0'
             css += f'@property {name.replace("--fc-", f"--{alias}-")}{{syntax:"{"*" if vector else "<number>"}";inherits:{inherits};initial-value:{initial}}}'
     css += hybrid.regs([f"--fqs-{h}" for h in range(HEADS)] + ["--fvs-write-slot"])
     css += (
@@ -219,9 +214,8 @@ def attention(
     )
     literal = f5.BANK_LITERAL_LISTS
     css += (
-        ".fvs-query{--fvs-all-fields:"
-        + ",".join(all_fields)
-        + "}.fvs-bank{transition-property:"
+        ("" if (literal and r5e.DROP_DEAD_LISTS) else ".fvs-query{--fvs-all-fields:" + ",".join(all_fields) + "}")  # R5E: unread when literal
+        + ".fvs-bank{transition-property:"
         + (",".join(all_fields) if literal else "var(--fvs-all-fields)")
         + ";transition-duration:1ms;transition-delay:86400s;transition-timing-function:steps(1,end);transition-behavior:allow-discrete}"
     )
@@ -293,15 +287,7 @@ def attention(
 
                 return ",".join(f'"{tag(i)}" {entry(i)}' for i in range(DIM))
 
-            if kind == "v" and wrapper_v and r4w.LIVE_V == "lists":
-                # R4W fallback form: one slot-tagged live list per (head, slot);
-                # the write rule for slot S references --fvs-live-v-H-S.
-                css += ".fvs-query{" + ";".join(
-                    f"--fvs-live-v-{head}-{slot}:{settings_for(slot)}" for slot in range(capacity)
-                ) + "}"
-                settings = settings_for(0)
-            elif kind == "v" and (value_layout == "fallback" or wrapper_v):
-                # (R4W wrapper: the latched list must carry the write slot's tags.)
+            if kind == "v" and value_layout == "fallback":
                 settings = (
                     "if("
                     + ";".join(
@@ -320,17 +306,15 @@ def attention(
             name for name in all_fields
             if name not in fields and (not lean or f4.slot_of(name) < slot)
         ) or "none"
-        css += f".fvs-query{{--fvs-retained-{slot}:{retained}}}"
+        if not (literal and r5e.DROP_DEAD_LISTS):  # R5E: unread when literal
+            css += f".fvs-query{{--fvs-retained-{slot}:{retained}}}"
         writes = []
         if packed:
             # F4: the 12 live head lists concatenate into one latched list per kind.
             for kind in ("k", "v"):
                 if kind == "v" and r4d.UNPACK_V:
-                    # R4W alias: latch the COMPLETE leaf value (list + P000) once.
-                    suffix = ',"P000" 1' if alias_v else ""
-                    live_slot = f"-{slot}" if (wrapper_v and r4w.LIVE_V == "lists") else ""
                     writes += [
-                        f"--fc-v-{slot}-{head}:var(--fvs-live-v-{head}{live_slot}){suffix}"
+                        f"--fc-v-{slot}-{head}:var(--fvs-live-v-{head})"
                         for head in range(HEADS)
                     ]
                     continue
@@ -373,17 +357,17 @@ def attention(
     if packed:
         # F4: 12 dot + 12 value fonts, K axes retagged per head (F2's recipe).
         for head, (dot_path, value_path) in enumerate(f4.packed_operator_fonts(FONT_DIR)):
+            if r5h.CH_SCORES:
+                # R5H: same dot font + cmap U+0030 -> dot (so `1ch` is the score advance)
+                dot_path = r5h.ch_dot_font(dot_path)
             css += f'@font-face{{font-family:FvsDot{head};src:url("{dot_path.as_uri()}")}}'
-            if not wrapper_v:
-                css += f'@font-face{{font-family:FvsValue{head};src:url("{value_path.as_uri()}")}}'
-        if wrapper_v:
-            # R4W: one value font per KV slot (retagged v2 operator, cmap shifted),
-            # selected per leaf by its character through unicode-range.
-            for slot, (path, start) in enumerate(r4w.slot_fonts(FONT_DIR / "value.woff2", capacity, CODEPOINT_BASE)):
-                css += f'@font-face{{font-family:FvsValueSlot{slot};src:url("{path.as_uri()}");unicode-range:U+{start:X}-{start + DIM - 1:X}}}'
+            css += f'@font-face{{font-family:FvsValue{head};src:url("{value_path.as_uri()}")}}'
     else:
         for kind, family in (("dot", "FvsDot"), ("value", "FvsValue")):
-            css += f'@font-face{{font-family:{family};src:url("{(FONT_DIR / (kind + ".woff2")).as_uri()}")}}'
+            face_path = FONT_DIR / (kind + ".woff2")
+            if kind == "dot" and r5h.CH_SCORES:
+                face_path = r5h.ch_dot_font(face_path)
+            css += f'@font-face{{font-family:{family};src:url("{face_path.as_uri()}")}}'
     if value_layout == "fallback":
         for slot, path in enumerate(fallback_value_fonts(capacity)):
             start = CODEPOINT_BASE + slot * DIM
@@ -392,54 +376,88 @@ def attention(
     unit = QK_SIZE / UNITS_PER_EM
     score_fields = [f"--fs-{h}-{s}" for h in range(HEADS) for s in range(capacity)]
     progress_fields = [f"--fsp-{h}-{s}" for h in range(HEADS) for s in range(capacity)]
-    css += hybrid.regs(
-        score_fields + progress_fields + ["--fss", "--fvs-score-ready"]
-    ).replace("inherits:true", "inherits:false")
+    if r4s.SMALL_HOPS or r5h.CH_SCORES:
+        # R4S: the scores are published by the chain containers and inherit down to
+        # the chain bottom (the softmax element); no progress/stamp/ready scratch.
+        # R5H: each score element publishes its own `--fs` from `1ch`; same inheritance.
+        css += hybrid.regs(score_fields)
+    else:
+        css += hybrid.regs(
+            score_fields + progress_fields + ["--fss", "--fvs-score-ready"]
+        ).replace("inherits:true", "inherits:false")
     metrics, timelines, animations, reads = [], [], [], []
     for head in range(HEADS):
         for slot in range(capacity):
             name, timeline = f"fvs-score-{head}-{slot}", f"--fvs-score-{head}-{slot}"
             progress = f"--fsp-{head}-{slot}"
-            timelines.append(timeline)
-            animations.append(name)
-            css += f"@keyframes {name}{{from{{{progress}:-2}}to{{{progress}:1}}}}"
+            if not r5h.no_score_hop():  # R4S / R5H: no score timelines or keyframes
+                timelines.append(timeline)
+                animations.append(name)
+                css += f"@keyframes {name}{{from{{{progress}:-2}}to{{{progress}:1}}}}"
             dot_family = f"FvsDot{head}" if packed else "FvsDot"
             fr_k = f"--fr-k-{slot}" if packed else f"--fr-k-{slot}-{head}"
+            if r5h.CH_SCORES:
+                # R5H: empty block element with the same font instance; the score is
+                # (1ch - base) * fqs * frks / (8 * coef * unit) = the width decode
+                # ((width - 262144) / 128) of the carrier rule below, without the carrier.
+                css += r5h.slot_rule(
+                    head, slot, QK_SIZE, dot_family, fr_k,
+                    dot["base"] * unit, 1 / (8 * dot["coefficient"] * unit),
+                )
+                continue
             css += (
                 f".{name}{{font:{QK_SIZE}px {dot_family};line-height:1;font-kerning:none;font-variation-settings:var({fr_k}),var(--fvs-query-{head});"
                 f"width:calc-size(max-content,calc(262144px + (size - {dot['base'] * unit:.12g}px) * var(--fqs-{head}) * var(--fr-ks-{slot}-{head}) * {128 / (8 * dot['coefficient'] * unit):.12g}))}}"
             )
+            if r4s.SMALL_HOPS:
+                # R4S: in-flow anchor row of the fixed score stage; same class = same
+                # font / width expression, read by the container chain below.
+                metrics.append(r4s.carrier(head, slot, name, f"&#x{CODEPOINT_BASE:X};"))
+                continue
             metrics.append(
                 f'<i class="metric {name}" style="view-timeline:{timeline} inline">&#x{CODEPOINT_BASE:X};</i>'
             )
             reads.append(
                 f"--fs-{head}-{slot}:calc((1572864 / (var({progress}) + 2) - 786432) / 128)"
             )
-    metrics.append(
-        '<i class="metric" style="width:calc(262144px + var(--epoch)*1024px);view-timeline:--fvs-score-stamp inline"></i>'
-    )
-    score_source = (
-        '<div class="scroller fvs-score-source"><div class="track">'
-        + "".join(metrics)
-        + "</div></div>"
-    )
-    css += ".fvs-score-source{width:524288px}.fvs-score-source>.track{width:1572864px}"
-    css += (
-        ".fvs-score-reader{animation-name:"
-        + ",".join(animations)
-        + ";animation-duration:1s;animation-fill-mode:both;animation-timing-function:linear;animation-timeline:"
-        + ",".join(timelines)
-        + ";"
-        + ";".join(reads)
-        + "}"
-        "@keyframes fvs-score-stamp{from{--fss:0}to{--fss:1}}"
-        ".fvs-score-receipt{container-name:fvsscore;animation:fvs-score-stamp 1s linear both;animation-timeline:--fvs-score-stamp;"
-        "--fvs-score-ready:calc(1 - min(1,abs(round(nearest,(524288 / var(--fss) - 786432) / 1024,1) - var(--epoch))))}"
-        ".fvs-score-gate{content-visibility:hidden;contain-intrinsic-size:0px 0px}@container fvsscore style(--fvs-score-ready:1){.fvs-score-gate{content-visibility:visible}}"
-    )
-    soft = []
+    if r5h.CH_SCORES:
+        # R5H: no carriers at all; the per-head slot chains are emitted around the V rows (row()).
+        score_source = ""
+    elif r4s.SMALL_HOPS:
+        # R4S: fixed stage of 12*capacity anchors, then the chain; no stamp, receipt or gate
+        # (the scores resolve in the same layout as the glyphs they come from).
+        score_source = r4s.stage(metrics)
+        chain_open, chain_close, chain_css = r4s.chain(
+            [(head, slot) for head in range(HEADS) for slot in range(capacity)]
+        )
+        css += chain_css
+    else:
+        metrics.append(
+            '<i class="metric" style="width:calc(262144px + var(--epoch)*1024px);view-timeline:--fvs-score-stamp inline"></i>'
+        )
+        score_source = (
+            '<div class="scroller fvs-score-source"><div class="track">'
+            + "".join(metrics)
+            + "</div></div>"
+        )
+        css += ".fvs-score-source{width:524288px}.fvs-score-source>.track{width:1572864px}"
+        css += (
+            ".fvs-score-reader{animation-name:"
+            + ",".join(animations)
+            + ";animation-duration:1s;animation-fill-mode:both;animation-timing-function:linear;animation-timeline:"
+            + ",".join(timelines)
+            + ";"
+            + ";".join(reads)
+            + "}"
+            "@keyframes fvs-score-stamp{from{--fss:0}to{--fss:1}}"
+            ".fvs-score-receipt{container-name:fvsscore;animation:fvs-score-stamp 1s linear both;animation-timeline:--fvs-score-stamp;"
+            "--fvs-score-ready:calc(1 - min(1,abs(round(nearest,(524288 / var(--fss) - 786432) / 1024,1) - var(--epoch))))}"
+            ".fvs-score-gate{content-visibility:hidden;contain-intrinsic-size:0px 0px}@container fvsscore style(--fvs-score-ready:1){.fvs-score-gate{content-visibility:visible}}"
+        )
+    soft_by_head = [[] for _ in range(HEADS)]
     soft_fields = []
     for head in range(HEADS):
+        soft = soft_by_head[head]
         maximum, denominator, bases = f"--fm-{head}", f"--fd-{head}", f"--fb-{head}"
         soft_fields += [maximum, denominator, bases]
         valid_scores = ",".join(
@@ -473,7 +491,13 @@ def attention(
     )
     # Scores and their animated progress are local scratch. Resolve softmax
     # on the same element so these arrays need not inherit into every V glyph.
-    css += ".fvs-score-reader{" + ";".join(soft) + "}"
+    if r5h.CH_SCORES:
+        # R5H: one softmax element per head (the bottom of that head's slot chain).
+        for head in range(HEADS):
+            css += f".{r5h.head_class(head)}{{" + ";".join(soft_by_head[head]) + "}"
+    else:
+        soft = [d for head in range(HEADS) for d in soft_by_head[head]]
+        css += ".fvs-score-reader{" + ";".join(soft) + "}"
     value = operators["value"]
     value_unit = VALUE_SIZE / UNITS_PER_EM
     slim_glyphs = value_weight_once and value_layout in ("runs", "widths")
@@ -495,11 +519,18 @@ def attention(
             f"--fw-{head}-{slot}" for head in range(HEADS) for slot in range(capacity)
         ]
         css += hybrid.regs(weight_fields)
-        css += ".fvs-score-reader{" + ";".join(
-            f"--fw-{head}-{slot}:calc(var(--fe-{head}-{slot}) * var(--fr-vs-{slot}-{head}) / var(--fb-{head}))"
-            for head in range(HEADS)
-            for slot in range(capacity)
-        ) + "}"
+        if r5h.CH_SCORES:
+            for head in range(HEADS):
+                css += f".{r5h.head_class(head)}{{" + ";".join(
+                    f"--fw-{head}-{slot}:calc(var(--fe-{head}-{slot}) * var(--fr-vs-{slot}-{head}) / var(--fb-{head}))"
+                    for slot in range(capacity)
+                ) + "}"
+        else:
+            css += ".fvs-score-reader{" + ";".join(
+                f"--fw-{head}-{slot}:calc(var(--fe-{head}-{slot}) * var(--fr-vs-{slot}-{head}) / var(--fb-{head}))"
+                for head in range(HEADS)
+                for slot in range(capacity)
+            ) + "}"
     for head in range(HEADS):
         combined_settings = []
         for slot in range(capacity):
@@ -533,22 +564,14 @@ def attention(
                     else f"--fr-v-{slot}-{head}"
                 )
                 value_family = f"FvsValue{head}" if packed else "FvsValue"
-                if wrapper_v:
-                    # R4W: no font property on the leaf at all — font (family
-                    # list, size, kerning) and the head's font-variation-settings
-                    # are inherited by pointer from .fvs-value-head-H; the leaf's
-                    # character selects the slot font via unicode-range.
-                    css += f".fvs-v-{head}-{slot}{{{width_rule}flex:none}}"
-                elif slim_glyphs:
+                if slim_glyphs:
                     # font-family/size/kerning/white-space inherit from the row
                     # rule below; flex items are blockified; .metric i already
                     # sets font-style. Only the per-(head, slot) list remains
                     # (+ the per-head family when the banks are packed, F4).
                     family_decl = f"font-family:{value_family};" if packed else ""
                     # R4D: the widths rule (if any) is merged into the same rule.
-                    # R4W alias: the latched list already ends in "P000" 1.
-                    fvs_decl = f"var({fr_v})" if alias_v else f"var({fr_v}),{settings}"
-                    css += f".fvs-v-{head}-{slot}{{{family_decl}font-variation-settings:{fvs_decl};{width_rule}flex:none}}"
+                    css += f".fvs-v-{head}-{slot}{{{family_decl}font-variation-settings:var({fr_v}),{settings};{width_rule}flex:none}}"
                 else:
                     css += f".fvs-v-{head}-{slot}{{font-family:{value_family};font-size:{VALUE_SIZE}px;font-variation-settings:var({fr_v}),{settings};font-kerning:none;font-style:normal;display:block;white-space:pre;flex:none}}"
                     if width_rule:
@@ -556,18 +579,14 @@ def attention(
         if value_layout == "fallback":
             families = ",".join(f"FvsValueSlot{slot}" for slot in range(capacity))
             css += f".fvs-value-head-{head}{{display:contents;font:{VALUE_SIZE}px {families};font-variation-settings:{','.join(combined_settings)};font-kerning:none}}"
-        if wrapper_v:
-            # R4W: the head's complete V settings, substituted + parsed once per
-            # head per pass; `font` (shorthand) precedes font-variation-settings
-            # because it resets it. P000 = 1: the weight stays in the leaf width.
-            families = ",".join(f"FvsValueSlot{slot}" for slot in range(capacity))
-            wrapper_settings = ",".join(f"var(--fr-v-{slot}-{head})" for slot in range(capacity)) + ',"P000" 1'
-            css += f".fvs-value-head-{head}{{display:contents;font:{VALUE_SIZE}px {families};font-kerning:none;font-style:normal;font-variation-settings:{wrapper_settings}}}"
     pattern = r'<i class="metric" style="width:calc\(262144px \+ var\(--(?:ctx|out)-(\d+)\) \* 128px\);view-timeline:([^ ]+) inline"></i>'
+
+    row_order = []
 
     def row(match):
         coordinate, timeline = int(match[1]), match[2]
         head, local = divmod(coordinate, DIM)
+        row_order.append(coordinate)
         subtracted = (
             "var(--fvs-nbase)"
             if hide_unfilled
@@ -582,24 +601,23 @@ def attention(
             prefix = f'<div class="fvs-value-head-{head}">' if local == 0 else ""
             suffix = "</div>" if local == DIM - 1 else ""
             return f'{prefix}<span class="metric fvs-value-row" style="width:{dimensions};view-timeline:{timeline} inline">{runs}</span>{suffix}'
-        if wrapper_v:
-            # R4W: slot S's character lives in slot font S's unicode-range.
-            runs = "".join(
-                f'<i class="fvs-v-{head}-{slot}">&#x{CODEPOINT_BASE + slot * DIM + local:X};</i>'
-                for slot in range(capacity)
-            )
-            prefix = f'<div class="fvs-value-head-{head}">' if local == 0 else ""
-            suffix = "</div>" if local == DIM - 1 else ""
-            return f'{prefix}<span class="metric fvs-value-row" style="width:{dimensions};view-timeline:{timeline} inline">{runs}</span>{suffix}'
         runs = "".join(
             f'<i class="fvs-v-{head}-{slot}">&#x{CODEPOINT_BASE + local:X};</i>'
             for slot in range(capacity)
         )
-        return f'<span class="metric fvs-value-row" style="width:{dimensions};view-timeline:{timeline} inline">{runs}</span>'
+        prefix = suffix = ""
+        if r5h.CH_SCORES:
+            # R5H: head H's 64 rows sit inside head H's slot chain + softmax bottom
+            # (in the track: the rows stay position:absolute against .track).
+            prefix = r5h.chain_open(head, capacity) if local == 0 else ""
+            suffix = r5h.chain_close(capacity) if local == DIM - 1 else ""
+        return f'{prefix}<span class="metric fvs-value-row" style="width:{dimensions};view-timeline:{timeline} inline">{runs}</span>{suffix}'
 
     value_source, count = re.subn(pattern, row, context_carrier)
     if count != WIDTH:
         raise ValueError(f"Expected 768 native context carriers, found {count}")
+    if r5h.CH_SCORES and row_order != list(range(WIDTH)):
+        raise ValueError("R5H: context carriers are not in coordinate order (per-head chains need contiguous heads)")
     if prewarm_values:
         # Let fixed V fonts shape before attention scores are ready. Keep the
         # output generation marker blocked, so speculative geometry cannot
@@ -617,20 +635,29 @@ def attention(
     css += (
         ".fvs-value-row{display:block;white-space:pre;font-style:normal;line-height:1}"
         if value_layout == "fallback"
-        # R4W: no font property on the row either (a `font:` shorthand here would
-        # reset the inherited font-variation-settings and re-create a Font per row).
-        else ".fvs-value-row{display:inline-flex;gap:0;line-height:1;white-space:pre}"
-        if wrapper_v
         else f".fvs-value-row{{display:inline-flex;gap:0;font:{VALUE_SIZE}px {'FvsValue0' if packed else 'FvsValue'};line-height:1;font-kerning:none;white-space:pre}}"
         if slim_glyphs
         else ".fvs-value-row{display:inline-flex;gap:0;font:0px monospace;line-height:1}"
     )
-    body = (
-        score_source
-        + '<div class="fvs-score-reader"><div class="fvs-score-receipt"><div class="fvs-score-gate"><div class="fvs-softmax">'
-        + value_source
-        + "</div></div></div></div>"
-    )
+    if r5h.CH_SCORES:
+        # R5H: the 12 per-head chains + softmax bottoms are inside value_source's track.
+        body = '<div class="fvs-softmax">' + value_source + "</div>"
+    elif r4s.SMALL_HOPS:
+        body = (
+            score_source
+            + chain_open
+            + '<div class="fvs-score-reader"><div class="fvs-softmax">'
+            + value_source
+            + "</div></div>"
+            + chain_close
+        )
+    else:
+        body = (
+            score_source
+            + '<div class="fvs-score-reader"><div class="fvs-score-receipt"><div class="fvs-score-gate"><div class="fvs-softmax">'
+            + value_source
+            + "</div></div></div></div>"
+        )
     for layer in reversed(range(blocks)):
         body = (
             f'<div class="fvs-bank fvs-bank-{layer}" data-layer="{layer}">'
@@ -638,7 +665,9 @@ def attention(
             + "</div>"
         )
     body = '<div class="fvs-query">' + body + "</div>"
-    gate_scores = r4d.GATE_SCORES and sequential
+    # R4M merge: R4D_GATE_SCORES is off under R4S (no score scroller; display:none on an
+    # anchor row would invalidate the chain's anchor-size()); --fv-S masking is unchanged.
+    gate_scores = r4d.GATE_SCORES and sequential and not r5h.no_score_hop()
     if hide_unfilled or gate_scores:
         # R4D: per-slot filled flag on the fvscache container (same expression
         # as --fv-S on the score reader, which is inherits:false and therefore
@@ -661,7 +690,8 @@ def attention(
         for slot in range(capacity):
             selectors = ",".join(f".fvs-score-source .fvs-score-{head}-{slot}" for head in range(HEADS))
             css += f"@container fvscache style(--fvq-{slot}:0){{{selectors}{{display:none}}}}"
-    css += "html{timeline-scope:" + ",".join(timelines + ["--fvs-score-stamp"]) + "}"
+    if not r5h.no_score_hop():  # R4S / R5H: no score timelines
+        css += "html{timeline-scope:" + ",".join(timelines + ["--fvs-score-stamp"]) + "}"
     return (
         body,
         css,
@@ -679,9 +709,10 @@ def attention(
             "r4dLeanLatch": lean,
             "r4dUnpackV": r4d.UNPACK_V,
             "r4dHideUnfilled": hide_unfilled,
-            "r4dGateScores": r4d.GATE_SCORES and sequential,
-            "r4wVPrecat": precat,
+            "r4dGateScores": gate_scores,
             "prewarmValues": prewarm_values,
+            **r4s.manifest(capacity),
+            **r5h.manifest(capacity),
             "attentionMask": "full causal"
             if capacity == positions
             else "initial sinks plus rolling recent context",

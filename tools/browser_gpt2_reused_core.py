@@ -16,6 +16,8 @@ import build_hybrid_twelve_block as h
 import f5_scoping as f5
 import r2c_hoist as r2c
 import r3r_fold_hop as r3r
+import r5e_dead_weight as r5e
+import r4t_consumer_chunk as r4t
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 from browser_gpt2_core import (
     TOKENS,
@@ -170,7 +172,7 @@ def compile_reused(
                     h.names(src, count),
                     h.names(target, len(biases[i])),
                     1,
-                    512,
+                    r4t.chunk(512),
                     compact=True,
                     gated=True,
                     dynamic_range=True,
@@ -197,7 +199,7 @@ def compile_reused(
     # Cache storage stays outside the dense MLP subtree. Only the selected
     # layer exports a context vector through layout. Scalar banks are siblings;
     # whole-font-vector banks nest private state around one attention graph.
-    ctx_source, ctx_receiver, ctx_css, _ = h.bridge(100, 512)
+    ctx_source, ctx_receiver, ctx_css, _ = h.bridge(100, r4t.chunk(512))
     ctx_source = ctx_source.replace("b100-bridge", "cache-bridge").replace(
         "--out-", "--ctx-"
     )
@@ -302,7 +304,7 @@ def compile_reused(
         )
     inner = (
         '<div class="reused-output" id="reused-result">'
-        + h.probe("reused-probe", "out", W)
+        + (h.probe("reused-probe", "out", W) if r5e.KEEP_DIAG else "")  # R5E
         + output.replace("{child}", '<i id="loop-result"></i>')
         + "</div>"
     )
@@ -344,7 +346,8 @@ def compile_reused(
                 f"--gate-{kind}",
             ]
         if r3r.FOLD_HOP:
-            lp, saved, outputs = r3r.reader_names(W), [], []
+            # R5E: --lp-* stay inherits:true (no forwards) under R5E_LP_INHERIT
+            lp, saved, outputs = ([] if r5e.LP_INHERIT else r3r.reader_names(W)), [], []
         else:
             lp = [f"--lp-{bank}-{i}" for bank in range(2) for i in range(W + 1)]
             saved = [f"--saved-{bank}-{i}" for bank in range(2) for i in range(W + 1)]

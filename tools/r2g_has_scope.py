@@ -23,7 +23,9 @@ import re
 
 SCOPED_HAS = os.environ.get("R2G_SCOPED_HAS", "1") not in ("0", "false", "no", "off")
 
-LOOP_CHAIN = [".core-block", ".loop-reader", ".loop-input", ".loop-signals"]
+import r4t_consumer_chunk as _r4t
+
+LOOP_CHAIN = [".core-block", ".loop-reader", *(f".{c}" for c in _r4t.loop_reader_classes(768)), ".loop-input", ".loop-signals"]
 
 
 class _Paths(html.parser.HTMLParser):

@@ -46,6 +46,8 @@ only while held (it used to be shown at --layer:11 under the proj gate).
 
 import os
 
+import r4t_consumer_chunk as r4t
+import r5e_dead_weight as r5e
 from build_pretrained_gpt2 import css_number as num
 
 
@@ -124,13 +126,30 @@ def loop_parts(width, blocks, capacity):
         "@keyframes prstamp{from{--pr-stamp:-2}to{--pr-stamp:1}}"
     )
     css += "".join(f"@keyframes lpk{i}{{from{{--lp-{i}:-2}}to{{--lp-{i}:1}}}}" for i in range(width))
-    css += (
-        ".loop-reader{animation-name:"
-        + ",".join(f"lpk{i}" for i in range(width))
-        + ";animation-duration:1s;animation-timing-function:linear;animation-fill-mode:both;animation-timeline:"
-        + ",".join(TIMELINE.format(i=i) for i in range(width))
-        + ";animation-range:cover}"
-    )
+    chunk_classes = r4t.loop_reader_classes(width)
+    if chunk_classes:
+        # R4T: the 768 reader animations spread over nested .loop-reader-cK elements (≤ R4T_CONSUMER_CHUNK each);
+        # --lp-* are inherited registered numbers, so .loop-input reads them unchanged.
+        for k, cls in enumerate(chunk_classes):
+            ids = range(k * r4t.CHUNK, min(width, (k + 1) * r4t.CHUNK))
+            # --lp-* are registered inherits:false by the core's scoped_state and forwarded with `inherit` at .loop-input
+            # (one level): every chunk element must forward the earlier chunks' values so the innermost one holds all of them.
+            forward = "" if r5e.LP_INHERIT else "".join(f";--lp-{i}:inherit" for i in range(0, k * r4t.CHUNK))  # R5E
+            css += (
+                f".{cls}{{animation-name:"
+                + ",".join(f"lpk{i}" for i in ids)
+                + ";animation-duration:1s;animation-timing-function:linear;animation-fill-mode:both;animation-timeline:"
+                + ",".join(TIMELINE.format(i=i) for i in ids)
+                + ";animation-range:cover" + forward + "}"
+            )
+    else:
+        css += (
+            ".loop-reader{animation-name:"
+            + ",".join(f"lpk{i}" for i in range(width))
+            + ";animation-duration:1s;animation-timing-function:linear;animation-fill-mode:both;animation-timeline:"
+            + ",".join(TIMELINE.format(i=i) for i in range(width))
+            + ";animation-range:cover}"
+        )
     css += (
         ".loop-input{"
         + ";".join(f"--loop-in-{i}:calc({DECODE.format(p=f'--lp-{i}')})" for i in range(width))
@@ -145,8 +164,12 @@ def loop_parts(width, blocks, capacity):
     for token in range(1, capacity):
         css += f"body:has(#token-{token}-advanced.done){{--pass-cap:{(token + 1) * blocks}}}"
     source = (
-        '<div class="loop-reader"><div class="loop-input"><svg class="loop-signals"></svg>'
-        '<div class="loop-compute">{child}</div></div></div>'
+        '<div class="loop-reader">'
+        + "".join(f'<div class="{cls}">' for cls in chunk_classes)
+        + '<div class="loop-input"><svg class="loop-signals"></svg>'
+        '<div class="loop-compute">{child}</div></div>'
+        + "</div>" * len(chunk_classes)
+        + "</div>"
     )
     return source, "{child}", css
 

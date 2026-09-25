@@ -23,19 +23,15 @@ import os
 _raw = os.environ.get("R4T_CONSUMER_CHUNK", "64").strip().lower()
 CHUNK = 0 if _raw in ("", "0", "false", "no", "off") else int(_raw)
 ENABLED = CHUNK > 0
-# R4T2: which sites are chunked (R4T_CHUNK_SITES, comma list of matvec,bridge,loop,embedding; default = all four).
-# `matvec,bridge` keeps the knee on the per-layer hops (qkv/attn/fc + the two 768 bridges) and leaves the loop reader (768) and the
-# embedding consumers (256) whole -> no `--lp-*:inherit` fan-out chain (see R4T.md §Step-2 failure / §R4T2).
-SITES = frozenset(x.strip() for x in os.environ.get("R4T_CHUNK_SITES", "matvec,bridge,loop,embedding").split(",") if x.strip())
 
 
-def chunk(default, site="matvec"):
+def chunk(default):
     """Animations per consumer element for a site whose historical chunk is `default`."""
-    return min(CHUNK, default) if ENABLED and site in SITES else default
+    return min(CHUNK, default) if ENABLED else default
 
 
 def loop_reader_classes(width):
     """Classes of the nested chunk elements between .loop-reader and .loop-input (outermost first)."""
-    if not (ENABLED and "loop" in SITES):
+    if not ENABLED:
         return []
     return [f"loop-reader-c{k}" for k in range(0, (width + CHUNK - 1) // CHUNK)]

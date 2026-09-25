@@ -1,0 +1,27 @@
+### compare twin-off (R5M_HEAD_LITERAL=0) vs combined7
+index.html: IDENTICAL (6517186 vs 6517186 B)
+runtime.css (url-normalised): IDENTICAL (raw 39073951 vs 39073102 chars)
+manifest: 1 differing keys: r5mHeadLiteral: false -> None
+font-witnesses: 283/283 identical (keys modulo tools dir); only in A 0, only in B 0
+### compare R5M vs combined7
+index.html: DIFFER (9905965 vs 6517186 B)
+runtime.css (url-normalised): IDENTICAL (raw 39073102 vs 39073102 chars)
+manifest: 1 differing keys: r5mHeadLiteral: true -> None
+font-witnesses: 283/283 identical (keys modulo tools dir); only in A 0, only in B 0
+### offline_check_r5m
+runtime.css identical (url-normalised): True
+witnesses identical: True
+manifest diff keys: ['r5mHeadLiteral']
+head rows: 50257 50257
+index.html identical modulo head-row style attributes: True
+row literals == ref --base with factor 120.777609693 offset 211968px: 50257/50257 ok
+two-pass rule after tie rule: True
+script tags: 0 | inline style bytes: 4623936 vs 1235157
+RESULT: PASS
+### static check
+  "assetBytes": 288991457,
+  "runtimeJavaScript": false
+}
+### tools diff
+Files R4M/tools7/browser_gpt2_runtime.py and R5M/tools/browser_gpt2_runtime.py differ
+Only in R5M/tools: r5m_flags.py

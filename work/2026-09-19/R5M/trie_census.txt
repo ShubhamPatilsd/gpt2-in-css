@@ -1,0 +1,14 @@
+elements 67569
+elements declaring inherited custom props: 50687 (entries 145110); declaring non-inherited: 106
+declaring elements by class (top 15): [('head-row', 50257), ('head-fine-row', 256), ('shared-fc-cN', 48), ('shared-qkv-cN', 36), ('embedding-consumer-N', 12), ('fvs-bank fvs-bank-N', 12), ('cache-bridge-cN', 12), ('shared-attn-cN', 12), ('bN-bridge-cN', 12), ('loop-reader-cN', 11), ('token-slot-N', 8), ('metric pass-reader', 6), ('epoch-reader', 2), ('readback pass-reader', 2), ('shared-lnN', 2)]
+head-row: depth 41, inherited custom props declared on self+ancestors = 15313 ; by declaring class: [('head-isolation', 15309), ('head-row', 2), ('head-input-bank', 2)]
+fvs-v leaf: depth 146, inherited custom props declared on self+ancestors = 12936 ; by declaring class: [('core-reset core-valid', 6946), ('shared-qkv-cN', 2304), ('shared-lnN', 770), ('loop-input', 768), ('loop-reader', 768), ('embedding-consumer-N', 768), ('fvs-bank fvs-bank-N', 296), ('fvs-score-reader', 230)]
+metric carrier: depth 41, inherited custom props declared on self+ancestors = 3073 ; by declaring class: [('loop-input', 768), ('loop-reader', 768), ('position-embedding', 768), ('embedding-consumer-N', 768), ('embedding-receipt', 1)]
+shared-fc consumer: depth 111, inherited custom props declared on self+ancestors = 12332 ; by declaring class: [('core-reset core-valid', 4576), ('shared-qkv-cN', 2304), ('shared-lnN', 1540), ('shared-attn-cN', 768), ('cache-bridge-cN', 768), ('loop-input', 768), ('loop-reader', 768), ('embedding-consumer-N', 768)]
+
+(A) garbage budget per token (KB per restyle are estimates from R4W/R5A, not measured here):
+  V-leaf subtree (6,144 leaves + 768 rows + wrappers)           25351 x 12 restyles x 3.5 KB =    1040 MB/token  (R4W: 1,069 B list copy + 65-entry CSSValueList + FontVariationSettings + ComputedStyle)
+  head rows (50,257 unique inline styles)                       50257 x  1 restyles x 2.5 KB =     123 MB/token  (ComputedStyle + var(--base) substitution + calc-size parse + 2-entry trie path copy)
+  query/bank/reader passes (414+782+3,089+2,324)                 6609 x 12 restyles x 3.0 KB =     232 MB/token  (K-list/alias substitutions dominate (12.7 KB per score glyph))
+  rest of the whole-document pass                               -8920 x  1 restyles x 1.5 KB =     -13 MB/token  (carriers/consumers/controller)
+  total ≈ 1382 MB/token; R5A: Oilpan +130–730 MB/token net, 3.0 GB committed-but-free at the end

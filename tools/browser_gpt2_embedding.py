@@ -10,6 +10,7 @@ from pathlib import Path
 import build_hvar_token_embedding_lookup as lookup
 import numpy as np
 import r2c_hoist as r2c
+import r4t_consumer_chunk as r4t
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -69,16 +70,18 @@ def compile_embedding(directory=OUT, with_epoch=False):
         for i in range(768)
     )
     child = '<div id="embedding-result">{child}</div>'
-    for start in reversed(range(0, 768, 256)):
+    step = r4t.chunk(256)  # R4T: animations per consumer element
+    for start in reversed(range(0, 768, step)):
+        stop = min(768, start + step)
         css += (
             f".embedding-consumer-{start}{{animation-name:"
-            + ",".join(f"embedk{i}" for i in range(start, start + 256))
+            + ",".join(f"embedk{i}" for i in range(start, stop))
             + ";animation-duration:1s;animation-timing-function:linear;animation-fill-mode:both;animation-timeline:"
-            + ",".join(f"--embed-t{i}" for i in range(start, start + 256))
+            + ",".join(f"--embed-t{i}" for i in range(start, stop))
             + ";"
             + ";".join(
                 f"--embed-{i:03d}:calc((65536 / var(--embedp-{i:03d}) - 65536 - 20000) / 4096)"
-                for i in range(start, start + 256)
+                for i in range(start, stop)
             )
             + "}"
         )

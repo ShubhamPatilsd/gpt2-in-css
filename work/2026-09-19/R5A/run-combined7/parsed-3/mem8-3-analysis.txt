@@ -1,0 +1,314 @@
+trace R5A/run-combined7/mem8-3-trace.json.gz: 1338797 events; main thread 99300/8767222 CrRendererMain; DOM nodes 67569
+marks after nav: {'domComplete': -0.8, 'loadEventStart': -0.8, 'loadEventEnd': -0.4, 'responseEnd': 0.1, 'fetchStart': 0.6, 'domInteractive': 0.7, 'domContentLoadedEventEnd': 0.8, 'P2-run': 5073.8, 'P2-end': 145915.0}
+
+== LOAD (nav -> run click) {"wall_ms": 5073.8, "busy_ms": 1602.5, "idle_ms": 3471.3, "frames": 0, "style_ms": 960.4, "style_count": 26, "recalcStyle_ms": 0.0, "recalcStyle_count": 0, "updateStyle_ms": 0.0, "styleInvalidation_ms": 0.0, "layout_ms": 367.4, "layout_count": 22, "of_which_text_shaping_ms": 0.0, "text_shaping_count": 0, "animate_ms": 0.0, "prepaint_ms": 33.2, "of_which_compositing_inputs_ms": 0.0, "paint_lifecycle_ms": 0.0, "of_which_Paint_ms": 4.6, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 55.8, "gc_count": 1100, "recalcStyle_self_ms": 0, "gc_by_name": [["V8.GC_MC_INCREMENTAL", 13.8], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 13.1], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 7.0], ["MajorGC", 6.5], ["V8.GC_MARK_COMPACTOR", 6.4], ["V8.GC_MC_MARK", 1.2]], "majorGC_count": 4, "other_busy_ms": 241.5, "animation_regex_ms": 0.0, "animation_regex_count": 0, "paint_prepaint_composite_ms": 38.2}
+  named: {"ParseAuthorStyleSheet": [1, 56.5], "ParseHTML": [10, 163.2]}
+  self top: UpdateLayoutTree=951.1ms(n=26), Layout=356.6ms(n=22), ParseHTML=162.3ms(n=10), ParseAuthorStyleSheet=56.5ms(n=1), PrePaint=33.2ms(n=23), V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING=13.1ms(n=413), V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED=7.0ms(n=4), BeginRemoteFontLoad=4.9ms(n=283), Paint=3.5ms(n=24), V8.GC_MARK_COMPACTOR=3.3ms(n=4), HitTest=1.7ms(n=6), MemoryDumpManager::InvokeOnMemoryDump=1.7ms(n=12), MemoryDumpManager::FinishAsyncProcessDump=1.2ms(n=1), V8.GC_MC_INCREMENTAL=0.8ms(n=419), V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE=0.6ms(n=4)
+  big events (t, dur, name, depth): [[143.9, 56.5, "ParseAuthorStyleSheet", 0], [201.3, 876.1, "UpdateLayoutTree", 0], [1077.4, 21.3, "Layout", 0], [1102.6, 30.2, "UpdateLayoutTree", 0], [1175.6, 93.2, "ParseHTML", 0], [1275.7, 21.9, "Layout", 0], [1339.8, 53.5, "Layout", 0], [1423.6, 31.6, "Layout", 0], [1471.5, 20.8, "Layout", 0], [2574.3, 69.2, "Layout", 0], [2647.3, 29.3, "UpdateLayoutTree", 0]]
+
+== GENERATE (run -> end) {"wall_ms": 140841.2, "busy_ms": 117845.8, "idle_ms": 22995.4, "frames": 0, "style_ms": 56694.4, "style_count": 539, "recalcStyle_ms": 0.0, "recalcStyle_count": 0, "updateStyle_ms": 0.0, "styleInvalidation_ms": 0.0, "layout_ms": 46295.2, "layout_count": 512, "of_which_text_shaping_ms": 0.0, "text_shaping_count": 0, "animate_ms": 0.0, "prepaint_ms": 14232.5, "of_which_compositing_inputs_ms": 0.0, "paint_lifecycle_ms": 0.0, "of_which_Paint_ms": 63.0, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 17158.3, "gc_count": 268363, "recalcStyle_self_ms": 0, "gc_by_name": [["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 6612.4], ["V8.GC_MC_INCREMENTAL", 3690.0], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 3547.9], ["MajorGC", 1191.5], ["V8.GC_MARK_COMPACTOR", 1190.6], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 730.5]], "majorGC_count": 19, "other_busy_ms": 623.7, "animation_regex_ms": 0.0, "animation_regex_count": 0, "paint_prepaint_composite_ms": 14312.8}
+  self top: UpdateLayoutTree=49559.5ms(n=539), Layout=42322.9ms(n=512), PrePaint=14229.6ms(n=284), V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED=6612.1ms(n=19), V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING=3547.9ms(n=132838), V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE=730.5ms(n=19), V8.GC_MARK_COMPACTOR=423.8ms(n=19), V8.GC_MC_INCREMENTAL=142.0ms(n=134347), HitTest=57.2ms(n=182), V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE=48.7ms(n=19), Paint=38.1ms(n=573), MemoryDumpManager::InvokeOnMemoryDump=32.5ms(n=106), V8.GC_HEAP_EXTERNAL_PROLOGUE=21.1ms(n=19), MemoryDumpManager::FinishAsyncProcessDump=19.4ms(n=9), Layerize=17.1ms(n=284), V8.GC_MC_MARK=11.5ms(n=19), V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL=10.9ms(n=19), EventDispatch=2.5ms(n=39), V8.GC_MC_CLEAR_SWEEP_EXTERNAL_POINTER_TABLE=2.5ms(n=16), V8.GC_MC_MARK_EMBEDDER_TRACING=2.3ms(n=44), V8.GC_MC_MARK_ROOTS=1.5ms(n=57), V8.GC_MC_CLEAR_JOIN_JOB=1.5ms(n=19), V8.GC_MC_EVACUATE_UPDATE_POINTERS_TO_NEW_ROOTS=1.4ms(n=19), V8.GC_MC_INCREMENTAL_START=1.3ms(n=19), V8.GC_MC_MARK_EMBEDDER_PROLOGUE=1.3ms(n=38), V8.GC_MC_EVACUATE_UPDATE_POINTERS_POINTER_TABLES=1.1ms(n=19), MajorGC=0.7ms(n=19), V8.GC_MC_CLEAR_SWEEP_JS_DISPATCH_TABLE=0.5ms(n=13), V8.GC_MC_CLEAR_MAPS=0.3ms(n=14), V8.GC_MC_SWEEP=0.3ms(n=55)
+  incl top: UpdateLayoutTree=56694.4ms(n=539), Layout=46295.2ms(n=512), PrePaint=14232.5ms(n=284), V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED=6612.4ms(n=19), V8.GC_MC_INCREMENTAL=3690.0ms(n=134347), V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING=3547.9ms(n=132838), MajorGC=1191.5ms(n=19), V8.GC_MARK_COMPACTOR=1190.6ms(n=19), V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE=730.5ms(n=19), Paint=63.0ms(n=573), HitTest=57.2ms(n=182), V8.GC_MC_INCREMENTAL_START=51.9ms(n=19), V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE=48.7ms(n=19), MemoryDumpManager::InvokeOnMemoryDump=32.5ms(n=106), V8.GC_MC_MARK=26.2ms(n=19), V8.GC_HEAP_EXTERNAL_PROLOGUE=21.1ms(n=19), MemoryDumpManager::FinishAsyncProcessDump=19.4ms(n=9), Layerize=17.3ms(n=284), V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL=12.2ms(n=19), V8.GC_MC_CLEAR=6.0ms(n=19), V8.GC_MC_CLEAR_JOIN_JOB=5.7ms(n=19), V8.GC_MC_EVACUATE=3.2ms(n=38), V8.GC_MC_EVACUATE_UPDATE_POINTERS=2.9ms(n=19), EventDispatch=2.6ms(n=39), V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_MARKING=2.5ms(n=55), V8.GC_MC_CLEAR_SWEEP_EXTERNAL_POINTER_TABLE=2.5ms(n=16), V8.GC_MC_MARK_EMBEDDER_TRACING=2.3ms(n=44), V8.GC_MC_MARK_ROOTS=1.5ms(n=57), V8.GC_MC_EVACUATE_UPDATE_POINTERS_TO_NEW_ROOTS=1.4ms(n=19), V8.GC_MC_MARK_EMBEDDER_PROLOGUE=1.3ms(n=38)
+  other threads busy ms: {"MemoryInfra": 130.3, "ThreadPoolForegroundWorker": 97.4, "Compositor": 1.7}
+  token bounds: [(1, 18246.0), (2, 32013.0), (3, 46335.7), (4, 61371.1), (5, 77584.4), (6, 97380.6), (7, 117082.9)]
+
+== PER TOKEN
+{"wall_ms": 18246.0, "busy_ms": 15709.7, "idle_ms": 2536.4, "frames": 0, "style_ms": 9841.9, "style_count": 70, "recalcStyle_ms": 0.0, "recalcStyle_count": 0, "updateStyle_ms": 0.0, "styleInvalidation_ms": 0.0, "layout_ms": 4223.5, "layout_count": 65, "of_which_text_shaping_ms": 0.0, "text_shaping_count": 0, "animate_ms": 0.0, "prepaint_ms": 1625.9, "of_which_compositing_inputs_ms": 0.0, "paint_lifecycle_ms": 0.0, "of_which_Paint_ms": 7.7, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 757.2, "gc_count": 26927, "recalcStyle_self_ms": 0, "gc_by_name": [["V8.GC_MC_INCREMENTAL", 256.6], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 242.7], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 165.1], ["MajorGC", 33.8], ["V8.GC_MARK_COMPACTOR", 33.8], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 8.0]], "majorGC_count": 3, "other_busy_ms": 18.4, "animation_regex_ms": 0.0, "animation_regex_count": 0, "paint_prepaint_composite_ms": 1635.3, "token_index": 1, "start_ms_after_run": 0.0, "end_ms_after_run": 18246.0, "style_hist": {"1-9": [5, 5.0, 10], "10-99": [2, 25.8, 79], "1k-9,999": [24, 5815.2, 66143], "100-999": [38, 3682.2, 23142], ">=50%DOM": [1, 313.7, 50898]}, "layout_total_objects_max": 105254}
+   incl top10: [["UpdateLayoutTree", [70, 9841.9]], ["Layout", [65, 4223.5]], ["PrePaint", [38, 1625.9]], ["V8.GC_MC_INCREMENTAL", [13443, 256.6]], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", [13266, 242.7]], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", [4, 165.1]], ["MajorGC", [3, 33.8]], ["V8.GC_MARK_COMPACTOR", [3, 33.8]], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", [3, 8.0]], ["Paint", [75, 7.7]]]
+   biggest style passes (ms, elementCount, t): [[1961.2, 3141, 3356.7], [1949.2, 2425, 53.5], [569.3, 800, 2731.3], [557.0, 175, 2053.7], [313.7, 50898, 15301.6], [142.1, 824, 5445.0], [136.4, 824, 7139.7], [123.5, 3141, 14774.8]]
+   layout dirty hist: {"<100": 2, "1k-9,999": 49, "100-999": 13, ">=10k": 1} total objects max 105254
+   handshakes: [[32.4, "g id='run-start'"], [16951.6, "g id='token-1-ready'"], [18026.1, "g id='token-1-ack'"]]
+   style by elementCount (ec, n, ms): [[3141, 12, 3187.3], [2425, 1, 1949.2], [824, 12, 1363.0], [800, 12, 882.0], [163, 11, 804.4], [2366, 11, 678.6], [175, 1, 557.0], [50898, 1, 313.7], [895, 1, 59.7], [791, 1, 16.0], [39, 1, 15.3], [40, 1, 10.5], [6, 1, 4.4], [1, 4, 0.6]]
+   inval by reason: []
+{"wall_ms": 13766.9, "busy_ms": 11206.3, "idle_ms": 2560.6, "frames": 0, "style_ms": 5291.6, "style_count": 67, "recalcStyle_ms": 0.0, "recalcStyle_count": 0, "updateStyle_ms": 0.0, "styleInvalidation_ms": 0.0, "layout_ms": 4260.5, "layout_count": 64, "of_which_text_shaping_ms": 0.0, "text_shaping_count": 0, "animate_ms": 0.0, "prepaint_ms": 1631.0, "of_which_compositing_inputs_ms": 0.0, "paint_lifecycle_ms": 0.0, "of_which_Paint_ms": 7.4, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 729.2, "gc_count": 33020, "recalcStyle_self_ms": 0, "gc_by_name": [["V8.GC_MC_INCREMENTAL", 276.2], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 259.7], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 135.0], ["MajorGC", 22.4], ["V8.GC_MARK_COMPACTOR", 22.3], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 4.7]], "majorGC_count": 2, "other_busy_ms": 23.2, "animation_regex_ms": 0.0, "animation_regex_count": 0, "paint_prepaint_composite_ms": 1639.9, "token_index": 2, "start_ms_after_run": 18246.0, "end_ms_after_run": 32013.0, "style_hist": {"1k-9,999": [24, 2232.5, 66123], "100-999": [38, 2666.5, 23130], ">=50%DOM": [1, 372.5, 50898], "1-9": [3, 4.4, 8], "10-99": [1, 15.7, 39]}, "layout_total_objects_max": 105254}
+   incl top10: [["UpdateLayoutTree", [67, 5291.6]], ["Layout", [64, 4260.5]], ["PrePaint", [35, 1631.0]], ["V8.GC_MC_INCREMENTAL", [16531, 276.2]], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", [16363, 259.7]], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", [2, 135.0]], ["MajorGC", [2, 22.4]], ["V8.GC_MARK_COMPACTOR", [2, 22.3]], ["Paint", [71, 7.4]], ["HitTest", [20, 6.2]]]
+   biggest style passes (ms, elementCount, t): [[372.5, 50898, 29186.3], [155.0, 2366, 27226.7], [120.5, 3141, 28674.9], [117.8, 3141, 25009.8], [115.8, 824, 20728.2], [115.5, 3141, 25930.0], [115.5, 824, 26115.4], [115.0, 824, 24297.1]]
+   layout dirty hist: {"1k-9,999": 49, "100-999": 13, ">=10k": 1, "<100": 1} total objects max 105254
+   handshakes: [[30743.2, "g id='token-2-ready'"], [31783.2, "g id='token-2-ack'"]]
+   style by elementCount (ec, n, ms): [[3141, 12, 1310.9], [824, 12, 1284.8], [163, 12, 949.0], [2366, 11, 824.3], [50898, 1, 372.5], [800, 12, 351.3], [2405, 1, 97.3], [895, 1, 62.8], [791, 1, 18.7], [39, 1, 15.7], [6, 1, 3.9], [1, 2, 0.4]]
+   inval by reason: []
+{"wall_ms": 14322.7, "busy_ms": 11872.0, "idle_ms": 2450.8, "frames": 0, "style_ms": 5607.5, "style_count": 67, "recalcStyle_ms": 0.0, "recalcStyle_count": 0, "updateStyle_ms": 0.0, "styleInvalidation_ms": 0.0, "layout_ms": 4615.5, "layout_count": 64, "of_which_text_shaping_ms": 0.0, "text_shaping_count": 0, "animate_ms": 0.0, "prepaint_ms": 1630.5, "of_which_compositing_inputs_ms": 0.0, "paint_lifecycle_ms": 0.0, "of_which_Paint_ms": 7.2, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 1012.0, "gc_count": 32271, "recalcStyle_self_ms": 0, "gc_by_name": [["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 322.4], ["V8.GC_MC_INCREMENTAL", 288.4], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 272.3], ["MajorGC", 47.0], ["V8.GC_MARK_COMPACTOR", 47.0], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 19.5]], "majorGC_count": 2, "other_busy_ms": 18.5, "animation_regex_ms": 0.0, "animation_regex_count": 0, "paint_prepaint_composite_ms": 1639.2, "token_index": 3, "start_ms_after_run": 32013.0, "end_ms_after_run": 46335.7, "style_hist": {"1k-9,999": [24, 2224.2, 66123], "100-999": [38, 2991.1, 23130], ">=50%DOM": [1, 370.4, 50898], "1-9": [3, 5.6, 8], "10-99": [1, 16.1, 39]}, "layout_total_objects_max": 105254}
+   incl top10: [["UpdateLayoutTree", [67, 5607.5]], ["Layout", [64, 4615.5]], ["PrePaint", [35, 1630.5]], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", [2, 322.4]], ["V8.GC_MC_INCREMENTAL", [16153, 288.4]], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", [15989, 272.3]], ["MajorGC", [2, 47.0]], ["V8.GC_MARK_COMPACTOR", [2, 47.0]], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", [2, 19.5]], ["Paint", [71, 7.2]]]
+   biggest style passes (ms, elementCount, t): [[370.4, 50898, 43444.6], [327.6, 163, 34032.4], [186.8, 2366, 40597.6], [132.8, 3141, 38226.1], [123.1, 824, 38431.3], [120.4, 3141, 39199.4], [117.1, 3141, 32553.5], [113.1, 3141, 37287.5]]
+   layout dirty hist: {"1k-9,999": 49, "100-999": 13, ">=10k": 1, "<100": 1} total objects max 105254
+   handshakes: [[45045.1, "g id='token-3-ready'"], [46103.8, "g id='token-3-ack'"]]
+   style by elementCount (ec, n, ms): [[3141, 12, 1319.1], [163, 12, 1295.2], [824, 12, 1268.5], [2366, 11, 796.5], [50898, 1, 370.4], [800, 12, 350.0], [2405, 1, 108.7], [895, 1, 59.1], [791, 1, 18.3], [39, 1, 16.1], [6, 1, 5.2], [1, 2, 0.5]]
+   inval by reason: []
+{"wall_ms": 15035.4, "busy_ms": 12586.8, "idle_ms": 2448.6, "frames": 0, "style_ms": 6045.7, "style_count": 67, "recalcStyle_ms": 0.0, "recalcStyle_count": 0, "updateStyle_ms": 0.0, "styleInvalidation_ms": 0.0, "layout_ms": 4881.8, "layout_count": 64, "of_which_text_shaping_ms": 0.0, "text_shaping_count": 0, "animate_ms": 0.0, "prepaint_ms": 1636.3, "of_which_compositing_inputs_ms": 0.0, "paint_lifecycle_ms": 0.0, "of_which_Paint_ms": 7.2, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 1284.9, "gc_count": 33341, "recalcStyle_self_ms": 0, "gc_by_name": [["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 536.1], ["V8.GC_MC_INCREMENTAL", 304.7], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 288.2], ["MajorGC", 57.8], ["V8.GC_MARK_COMPACTOR", 57.8], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 29.1]], "majorGC_count": 2, "other_busy_ms": 23.0, "animation_regex_ms": 0.0, "animation_regex_count": 0, "paint_prepaint_composite_ms": 1645.0, "token_index": 4, "start_ms_after_run": 46335.7, "end_ms_after_run": 61371.1, "style_hist": {"1k-9,999": [24, 2728.5, 66123], "100-999": [38, 2891.3, 23130], ">=50%DOM": [1, 405.8, 50898], "1-9": [3, 4.8, 8], "10-99": [1, 15.3, 39]}, "layout_total_objects_max": 105254}
+   incl top10: [["UpdateLayoutTree", [67, 6045.7]], ["Layout", [64, 4881.8]], ["PrePaint", [35, 1636.3]], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", [2, 536.1]], ["V8.GC_MC_INCREMENTAL", [16711, 304.7]], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", [16511, 288.2]], ["MajorGC", [2, 57.8]], ["V8.GC_MARK_COMPACTOR", [2, 57.8]], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", [2, 29.1]], ["Paint", [71, 7.2]]]
+   biggest style passes (ms, elementCount, t): [[472.6, 3141, 47940.7], [405.8, 50898, 58461.8], [347.1, 3141, 54929.1], [141.8, 3141, 46928.8], [121.5, 824, 53166.4], [115.8, 3141, 57958.8], [115.7, 3141, 52973.8], [113.1, 824, 47147.5]]
+   layout dirty hist: {"1k-9,999": 49, "100-999": 13, ">=10k": 1, "<100": 1} total objects max 105254
+   handshakes: [[60106.2, "g id='token-4-ready'"], [61136.3, "g id='token-4-ack'"]]
+   style by elementCount (ec, n, ms): [[3141, 12, 1933.9], [824, 12, 1287.6], [163, 12, 1131.5], [2366, 11, 685.6], [50898, 1, 405.8], [800, 12, 382.7], [2405, 1, 108.9], [895, 1, 70.8], [791, 1, 18.7], [39, 1, 15.3], [6, 1, 4.4], [1, 2, 0.4]]
+   inval by reason: []
+{"wall_ms": 16213.4, "busy_ms": 13592.6, "idle_ms": 2620.8, "frames": 0, "style_ms": 5894.8, "style_count": 67, "recalcStyle_ms": 0.0, "recalcStyle_count": 0, "updateStyle_ms": 0.0, "styleInvalidation_ms": 0.0, "layout_ms": 5900.3, "layout_count": 64, "of_which_text_shaping_ms": 0.0, "text_shaping_count": 0, "animate_ms": 0.0, "prepaint_ms": 1774.5, "of_which_compositing_inputs_ms": 0.0, "paint_lifecycle_ms": 0.0, "of_which_Paint_ms": 7.7, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 1628.3, "gc_count": 33586, "recalcStyle_self_ms": 0, "gc_by_name": [["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 694.0], ["V8.GC_MC_INCREMENTAL", 326.1], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 309.4], ["MajorGC", 113.6], ["V8.GC_MARK_COMPACTOR", 113.5], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 53.2]], "majorGC_count": 3, "other_busy_ms": 23.0, "animation_regex_ms": 0.0, "animation_regex_count": 0, "paint_prepaint_composite_ms": 1787.3, "token_index": 5, "start_ms_after_run": 61371.1, "end_ms_after_run": 77584.4, "style_hist": {"1k-9,999": [24, 2418.3, 66123], "100-999": [38, 3036.8, 23130], ">=50%DOM": [1, 417.3, 50898], "1-9": [3, 5.7, 8], "10-99": [1, 16.6, 39]}, "layout_total_objects_max": 105254}
+   incl top10: [["Layout", [64, 5900.3]], ["UpdateLayoutTree", [67, 5894.8]], ["PrePaint", [35, 1774.5]], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", [2, 694.0]], ["V8.GC_MC_INCREMENTAL", [16804, 326.1]], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", [16611, 309.4]], ["MajorGC", [3, 113.6]], ["V8.GC_MARK_COMPACTOR", [3, 113.5]], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", [3, 53.2]], ["Paint", [70, 7.7]]]
+   biggest style passes (ms, elementCount, t): [[417.3, 50898, 74422.7], [289.7, 2366, 62510.8], [166.5, 824, 68498.1], [134.2, 2405, 61388.4], [123.9, 3141, 67244.7], [123.7, 3141, 68298.6], [114.5, 3141, 73906.6], [114.0, 824, 67501.1]]
+   layout dirty hist: {"1k-9,999": 49, "100-999": 13, ">=10k": 1, "<100": 1} total objects max 105254
+   handshakes: [[76179.4, "g id='token-5-ready'"], [77348.8, "g id='token-5-ack'"]]
+   style by elementCount (ec, n, ms): [[824, 12, 1335.0], [3141, 12, 1320.5], [163, 12, 1258.5], [2366, 11, 963.6], [50898, 1, 417.3], [800, 12, 372.7], [2405, 1, 134.2], [895, 1, 50.4], [791, 1, 20.3], [39, 1, 16.6], [6, 1, 5.3], [1, 2, 0.5]]
+   inval by reason: []
+{"wall_ms": 19796.2, "busy_ms": 17079.1, "idle_ms": 2717.0, "frames": 0, "style_ms": 8479.5, "style_count": 67, "recalcStyle_ms": 0.0, "recalcStyle_count": 0, "updateStyle_ms": 0.0, "styleInvalidation_ms": 0.0, "layout_ms": 6289.0, "layout_count": 64, "of_which_text_shaping_ms": 0.0, "text_shaping_count": 0, "animate_ms": 0.0, "prepaint_ms": 2287.8, "of_which_compositing_inputs_ms": 0.0, "paint_lifecycle_ms": 0.0, "of_which_Paint_ms": 7.8, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 2913.5, "gc_count": 34618, "recalcStyle_self_ms": 0, "gc_by_name": [["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 1300.7], ["V8.GC_MC_INCREMENTAL", 592.5], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 573.5], ["MajorGC", 157.0], ["V8.GC_MARK_COMPACTOR", 156.9], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 94.4]], "majorGC_count": 2, "other_busy_ms": 22.8, "animation_regex_ms": 0.0, "animation_regex_count": 0, "paint_prepaint_composite_ms": 2297.8, "token_index": 6, "start_ms_after_run": 77584.4, "end_ms_after_run": 97380.6, "style_hist": {"1k-9,999": [24, 4197.9, 66123], "100-999": [38, 3646.8, 23130], ">=50%DOM": [1, 598.9, 50898], "1-9": [3, 14.9, 8], "10-99": [1, 20.9, 39]}, "layout_total_objects_max": 105254}
+   incl top10: [["UpdateLayoutTree", [67, 8479.5]], ["Layout", [64, 6289.0]], ["PrePaint", [35, 2287.8]], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", [2, 1300.7]], ["V8.GC_MC_INCREMENTAL", [17352, 592.5]], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", [17148, 573.5]], ["MajorGC", [2, 157.0]], ["V8.GC_MARK_COMPACTOR", [2, 156.9]], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", [2, 94.4]], ["V8.GC_MC_INCREMENTAL_START", [2, 10.3]]]
+   biggest style passes (ms, elementCount, t): [[1268.6, 3141, 87250.0], [731.0, 3141, 78220.3], [598.9, 50898, 93241.3], [162.0, 824, 88721.9], [157.9, 824, 80163.9], [157.2, 3141, 84651.4], [156.1, 163, 80622.2], [153.8, 163, 86687.0]]
+   layout dirty hist: {"1k-9,999": 49, "100-999": 13, ">=10k": 1, "<100": 1} total objects max 105254
+   handshakes: [[95491.4, "g id='token-6-ready'"], [97141.9, "g id='token-6-ack'"]]
+   style by elementCount (ec, n, ms): [[3141, 12, 3286.2], [824, 12, 1565.4], [163, 12, 1528.0], [2366, 11, 826.2], [50898, 1, 598.9], [800, 12, 475.4], [2405, 1, 85.5], [895, 1, 57.7], [39, 1, 20.9], [791, 1, 20.3], [6, 1, 14.5], [1, 2, 0.5]]
+   inval by reason: []
+{"wall_ms": 19702.3, "busy_ms": 17038.0, "idle_ms": 2664.3, "frames": 0, "style_ms": 8069.3, "style_count": 67, "recalcStyle_ms": 0.0, "recalcStyle_count": 0, "updateStyle_ms": 0.0, "styleInvalidation_ms": 0.0, "layout_ms": 7193.6, "layout_count": 64, "of_which_text_shaping_ms": 0.0, "text_shaping_count": 0, "animate_ms": 0.0, "prepaint_ms": 1750.9, "of_which_compositing_inputs_ms": 0.0, "paint_lifecycle_ms": 0.0, "of_which_Paint_ms": 8.0, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 3441.3, "gc_count": 36548, "recalcStyle_self_ms": 0, "gc_by_name": [["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 1897.1], ["V8.GC_MC_INCREMENTAL", 616.2], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 595.7], ["MajorGC", 113.5], ["V8.GC_MARK_COMPACTOR", 113.4], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 76.7]], "majorGC_count": 2, "other_busy_ms": 24.2, "animation_regex_ms": 0.0, "animation_regex_count": 0, "paint_prepaint_composite_ms": 1760.8, "token_index": 7, "start_ms_after_run": 97380.6, "end_ms_after_run": 117082.9, "style_hist": {"1k-9,999": [24, 2669.1, 66123], "100-999": [38, 4850.8, 23130], ">=50%DOM": [1, 527.0, 50898], "1-9": [3, 6.2, 8], "10-99": [1, 16.2, 39]}, "layout_total_objects_max": 105254}
+   incl top10: [["UpdateLayoutTree", [67, 8069.3]], ["Layout", [64, 7193.6]], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", [3, 1897.1]], ["PrePaint", [35, 1750.9]], ["V8.GC_MC_INCREMENTAL", [18312, 616.2]], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", [18110, 595.7]], ["MajorGC", [2, 113.5]], ["V8.GC_MARK_COMPACTOR", [2, 113.4]], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", [2, 76.7]], ["V8.GC_MC_INCREMENTAL_START", [3, 8.9]]]
+   biggest style passes (ms, elementCount, t): [[1431.5, 163, 97612.4], [527.0, 50898, 113076.0], [341.1, 2366, 107295.4], [200.5, 824, 105815.6], [148.1, 163, 102475.4], [145.5, 3141, 101803.6], [145.4, 3141, 105526.4], [144.5, 163, 100134.7]]
+   layout dirty hist: {"1k-9,999": 49, "100-999": 13, ">=10k": 1, "<100": 1} total objects max 105254
+   handshakes: [[115778.2, "g id='token-7-ready'"], [116851.7, "g id='token-7-ack'"]]
+   style by elementCount (ec, n, ms): [[163, 12, 2830.3], [3141, 12, 1535.5], [824, 12, 1516.8], [2366, 11, 1037.9], [50898, 1, 527.0], [800, 12, 422.0], [2405, 1, 95.7], [895, 1, 60.5], [791, 1, 21.2], [39, 1, 16.2], [6, 1, 5.8], [1, 2, 0.5]]
+   inval by reason: []
+{"wall_ms": 23758.3, "busy_ms": 18761.3, "idle_ms": 4997.0, "frames": 0, "style_ms": 7464.1, "style_count": 67, "recalcStyle_ms": 0.0, "recalcStyle_count": 0, "updateStyle_ms": 0.0, "styleInvalidation_ms": 0.0, "layout_ms": 8931.0, "layout_count": 63, "of_which_text_shaping_ms": 0.0, "text_shaping_count": 0, "animate_ms": 0.0, "prepaint_ms": 1895.6, "of_which_compositing_inputs_ms": 0.0, "paint_lifecycle_ms": 0.0, "of_which_Paint_ms": 10.0, "hittest_ms": 0.0, "hittest_count": 0, "gc_nested_ms": 5390.2, "gc_count": 38052, "recalcStyle_self_ms": 0, "gc_by_name": [["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 1562.1], ["V8.GC_MC_INCREMENTAL", 1029.2], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 1006.4], ["MajorGC", 646.3], ["V8.GC_MARK_COMPACTOR", 645.9], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 444.9]], "majorGC_count": 3, "other_busy_ms": 470.6, "animation_regex_ms": 0.0, "animation_regex_count": 0, "paint_prepaint_composite_ms": 1907.6, "token_index": "8(partial-to-end)", "start_ms_after_run": 117082.9, "end_ms_after_run": 140841.2, "style_hist": {"1k-9,999": [24, 2392.7, 66123], "100-999": [37, 4151.0, 22235], ">=50%DOM": [1, 871.8, 50898], "1-9": [3, 15.5, 8], "10-99": [2, 33.0, 78]}, "layout_total_objects_max": 105254}
+   incl top10: [["Layout", [63, 8931.0]], ["UpdateLayoutTree", [67, 7464.1]], ["PrePaint", [36, 1895.6]], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", [2, 1562.1]], ["V8.GC_MC_INCREMENTAL", [19041, 1029.2]], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", [18840, 1006.4]], ["MajorGC", [3, 646.3]], ["V8.GC_MARK_COMPACTOR", [3, 645.9]], ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", [3, 444.9]], ["V8.GC_MC_INCREMENTAL_START", [2, 19.2]]]
+   biggest style passes (ms, elementCount, t): [[871.8, 50898, 132326.2], [554.7, 800, 125083.9], [173.4, 163, 124636.7], [151.0, 163, 120817.5], [149.7, 163, 123277.1], [149.1, 3141, 131673.9], [149.0, 163, 117311.4], [147.9, 163, 118453.8]]
+   layout dirty hist: {"1k-9,999": 48, "100-999": 13, ">=10k": 1, "<100": 1} total objects max 105254
+   handshakes: [[136852.6, "g id='token-8-ready'"], [138105.7, "g id='token-8-ack'"]]
+   style by elementCount (ec, n, ms): [[163, 12, 1746.5], [3141, 12, 1504.8], [824, 12, 1455.9], [800, 12, 921.8], [50898, 1, 871.8], [2366, 11, 786.8], [2405, 1, 101.2], [39, 2, 33.0], [791, 1, 26.9], [6, 1, 15.0], [1, 2, 0.5]]
+   inval by reason: []
+
+== STYLE PASS HISTOGRAM (generate window)
+           1-9: {"count": 26, "ms": 62.1, "elements": 66, "max_ms": 14.95, "min_ms": 0.05, "us_per_element": 940.91}
+         10-99: {"count": 10, "ms": 159.7, "elements": 391, "max_ms": 22.59, "min_ms": 10.403, "us_per_element": 408.44}
+       100-999: {"count": 303, "ms": 27916.7, "elements": 184157, "max_ms": 1431.53, "min_ms": 16.047, "us_per_element": 151.59}
+      1k-9,999: {"count": 192, "ms": 24678.5, "elements": 529004, "max_ms": 1961.16, "min_ms": 50.584, "us_per_element": 46.65}
+      >=50%DOM: {"count": 8, "ms": 3877.4, "elements": 407184, "max_ms": 871.8, "min_ms": 313.706, "us_per_element": 9.52}
+  by exact elementCount (top by ms): [[3141, 96, 15398.3], [163, 95, 11543.4], [824, 96, 11077.0], [2366, 88, 6599.5], [800, 96, 4157.9], [50898, 8, 3877.4], [2425, 1, 1949.2], [2405, 7, 731.4], [175, 1, 557.0], [895, 7, 420.9], [791, 8, 160.4], [39, 9, 149.2], [6, 8, 58.3], [40, 1, 10.5], [1, 18, 3.8]]
+
+== INVALIDATION (generate window)
+  events: {}
+  with selector part / extra:
+  samples: {}
+
+== ANIMATION names (top): [["", "n", 754608], ["", "running", 12786], ["", "e", 32], ["native-handshake", "running", 18], ["--fc-k-0", "running", 12], ["--fc-vs-0-3", "running", 12], ["--fc-vs-0-11", "running", 12], ["--fc-ks-0-0", "running", 12], ["--fc-v-0-10", "running", 12], ["--fc-v-0-4", "running", 12], ["--fc-ks-0-7", "running", 12], ["--fc-ks-0-9", "running", 12], ["--fc-v-0-11", "running", 12], ["--fc-vs-0-7", "running", 12], ["--fc-v-0-1", "running", 12], ["--fc-vs-0-5", "running", 12], ["--fc-ks-0-4", "running", 12], ["--fc-v-0-5", "running", 12], ["--fc-ks-0-3", "running", 12], ["--fc-vs-0-6", "running", 12], ["--fc-ks-0-8", "running", 12], ["--fc-ks-0-11", "running", 12], ["--fc-vs-0-8", "running", 12], ["--fc-ks-0-6", "running", 12], ["--fc-ks-0-5", "running", 12], ["--fc-ks-0-10", "running", 12], ["--fc-ks-0-2", "running", 12], ["--fc-v-0-6", "running", 12], ["--fc-vs-0-4", "running", 12], ["--fc-v-0-3", "running", 12], ["--fc-vs-0-1", "running", 12], ["--fc-v-0-9", "running", 12], ["--fc-v-0-8", "running", 12], ["--fc-vs-0-2", "running", 12], ["--fc-ks-0-1", "running", 12], ["--fc-vs-0-10", "running", 12], ["--fc-v-0-0", "running", 12], ["--fc-v-0-7", "running", 12], ["--fc-v-0-2", "running", 12], ["--fc-vs-0-0", "running", 12]] distinct 8770
+  handshake events (t, node): [[-2430.3, "g id='fonts-detected'"], [32.4, "g id='run-start'"], [16951.6, "g id='token-1-ready'"], [18026.1, "g id='token-1-ack'"], [30743.2, "g id='token-2-ready'"], [31783.2, "g id='token-2-ack'"], [45045.1, "g id='token-3-ready'"], [46103.8, "g id='token-3-ack'"], [60106.2, "g id='token-4-ready'"], [61136.3, "g id='token-4-ack'"], [76179.4, "g id='token-5-ready'"], [77348.8, "g id='token-5-ack'"], [95491.4, "g id='token-6-ready'"], [97141.9, "g id='token-6-ack'"], [115778.2, "g id='token-7-ready'"], [116851.7, "g id='token-7-ack'"], [136852.6, "g id='token-8-ready'"], [138105.7, "g id='token-8-ack'"]]
+
+== GC: total 17158.8 by name [["V8.GC_MC_INCREMENTAL", 135038], ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 133523], ["V8.GC_MC_SWEEP", 74], ["V8.GC_MC_MARK_ROOTS", 72], ["V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_MARKING", 72], ["V8.GC_MC_CLEAR_STRING_TABLE", 69], ["V8.GC_MC_MARK_EMBEDDER_TRACING", 56], ["V8.GC_MC_MARK_EMBEDDER_PROLOGUE", 48], ["V8.GC_MC_EVACUATE", 48], ["V8.GC_TIME_TO_SAFEPOINT", 44], ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 25], ["V8.GC_HEAP_EXTERNAL_PROLOGUE", 25], ["V8.GC_HEAP_EPILOGUE_SAFEPOINT", 25], ["V8.GC_HEAP_EPILOGUE", 25], ["V8.GC_HEAP_EXTERNAL_EPILOGUE", 25], ["V8.GC_MC_INCREMENTAL_START", 24], ["V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE", 24], ["V8.GC_MC_INCREMENTAL_EXTERNAL_EPILOGUE", 24], ["MajorGC", 24], ["V8.GC_MARK_COMPACTOR", 24]]
+
+== main-thread name inventory (name, count, incl ms, self ms): 
+  ["UpdateLayoutTree", 574, 57897.4, 50598.5]
+  ["Layout", 534, 46662.6, 42679.4]
+  ["PrePaint", 310, 14266.6, 14263.6]
+  ["V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED", 25, 6619.9, 6619.6]
+  ["MemoryDumpManager::InvokeOnMemoryDump", 130, 4892.7, 4892.7]
+  ["V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING", 133523, 4298.3, 4298.3]
+  ["V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE", 24, 1814.8, 1814.8]
+  ["V8.GC_MARK_COMPACTOR", 24, 2378.2, 455.7]
+  ["MemoryDumpManager::FinishAsyncProcessDump", 11, 176.6, 176.6]
+  ["ParseHTML", 10, 163.2, 162.3]
+  ["V8.GC_MC_INCREMENTAL", 135038, 4442.4, 144.0]
+  ["HitTest", 190, 59.4, 59.4]
+  ["ParseAuthorStyleSheet", 1, 56.5, 56.5]
+  ["V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE", 24, 50.7, 50.7]
+  ["V8.GC_MC_MARK", 24, 88.5, 47.5]
+  ["Paint", 597, 67.6, 41.7]
+  ["V8.GC_MC_MARK_EMBEDDER_PROLOGUE", 48, 36.2, 36.2]
+  ["V8.GC_MC_MARK_EMBEDDER_TRACING", 56, 27.0, 27.0]
+  ["V8.GC_HEAP_EXTERNAL_PROLOGUE", 25, 24.8, 24.8]
+  ["Layerize", 310, 17.7, 17.5]
+  ["V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL", 24, 38.0, 12.0]
+  ["BeginRemoteFontLoad", 283, 4.9, 4.9]
+  ["V8.GC_MC_CLEAR_JOIN_JOB", 24, 9.7, 3.7]
+  ["EventDispatch", 63, 2.6, 2.6]
+  ["V8.GC_MC_CLEAR_SWEEP_EXTERNAL_POINTER_TABLE", 18, 2.6, 2.6]
+  ["V8.GC_MC_INCREMENTAL_START", 24, 90.0, 2.4]
+  ["V8.GC_MC_MARK_ROOTS", 72, 1.8, 1.8]
+  ["V8.GC_MC_EVACUATE_COPY_PARALLEL", 4, 2.2, 1.7]
+  ["V8.GC_MC_EVACUATE_UPDATE_POINTERS_POINTER_TABLES", 24, 1.7, 1.7]
+  ["V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_PROCESS", 1, 2.1, 1.7]
+  ["V8.GC_MC_EVACUATE_UPDATE_POINTERS_TO_NEW_ROOTS", 24, 1.5, 1.5]
+  ["V8.GC_MC_CLEAR_FLUSHABLE_BYTECODE", 7, 1.2, 1.2]
+  ["MajorGC", 24, 2379.6, 1.1]
+  ["V8.GC_MC_SWEEP", 74, 1.0, 1.0]
+  ["V8.GC_MC_CLEAR", 24, 10.5, 0.8]
+  ["V8.GC_MC_CLEAR_SWEEP_JS_DISPATCH_TABLE", 17, 0.6, 0.6]
+  ["V8.GC_MC_EVACUATE_COPY", 22, 2.7, 0.6]
+  ["V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_MARKING", 72, 27.5, 0.4]
+  ["V8.GC_HEAP_EPILOGUE_SAFEPOINT", 25, 0.4, 0.4]
+  ["V8.GC_SCAVENGER_TRACED_HANDLES_RESET_PARALLEL", 1, 0.4, 0.4]
+  ["RemoteFontLoaded", 202, 0.3, 0.3]
+  ["V8.GC_MC_CLEAR_WEAK_COLLECTIONS", 24, 0.3, 0.3]
+  ["V8.GC_MC_CLEAR_MAPS", 18, 0.3, 0.3]
+  ["V8.GC_MC_CLEAR_STRING_TABLE", 69, 0.3, 0.3]
+  ["V8.GC_MC_EVACUATE_UPDATE_POINTERS", 24, 4.2, 0.3]
+  ["V8.GC_MC_EVACUATE_UPDATE_POINTERS_PARALLEL", 4, 0.3, 0.3]
+  ["V8.GC_HEAP_EPILOGUE", 25, 0.3, 0.3]
+  ["V8.GC_MC_COMPLETE_SWEEPING", 24, 0.3, 0.3]
+  ["V8.GC_MC_CLEAR_SWEEP_TRUSTED_POINTER_TABLE", 15, 0.3, 0.3]
+  ["V8.GC_MC_CLEAR_WEAK_REFERENCES_NON_TRIVIAL", 8, 0.2, 0.2]
+  ["V8.GC_MC_EVACUATE_UPDATE_POINTERS_SLOTS_MAIN", 24, 0.5, 0.2]
+  ["V8.GC_MC_FINISH", 24, 0.4, 0.2]
+  ["V8.GC_MC_SWEEP_START_JOBS", 24, 0.2, 0.2]
+  ["MinorGC", 1, 2.7, 0.2]
+  ["V8.GC_SCAVENGER_TRACED_HANDLES_COMPUTE_WEAKNESS_PARALLEL", 1, 0.2, 0.2]
+  ["V8.GC_TIME_TO_SAFEPOINT", 44, 0.1, 0.1]
+  ["Major concurrent marking rescheduled", 100, 0.1, 0.1]
+  ["V8.GC_MC_PROLOGUE", 24, 0.1, 0.1]
+  ["V8.GC_MC_MARK_FINISH_INCREMENTAL", 24, 0.1, 0.1]
+  ["V8.GC_MC_MARK_RETAIN_MAPS", 24, 0.1, 0.1]
+  ["V8.GC_MC_CLEAR_WEAK_REFERENCES_TRIVIAL", 12, 0.1, 0.1]
+  ["V8.GC_MC_EVACUATE", 48, 7.3, 0.1]
+  ["V8.GC_MC_EVACUATE_REBALANCE", 24, 0.1, 0.1]
+  ["V8.GC_HEAP_EXTERNAL_WEAK_GLOBAL_HANDLES", 4, 0.1, 0.1]
+  ["V8.GC_HEAP_EXTERNAL_EPILOGUE", 25, 0.1, 0.1]
+  ["V8.GC_MC_EVACUATE_EPILOGUE", 13, 0.1, 0.1]
+  ["V8.GC_SCAVENGER_SCAVENGE_ROOTS", 1, 0.1, 0.1]
+  ["CommitLoad", 1, 0.0, 0.0]
+  ["Major concurrent marking started", 18, 0.0, 0.0]
+  ["V8.GC_MC_INCREMENTAL_EXTERNAL_EPILOGUE", 24, 0.0, 0.0]
+  ["V8.GC_HEAP_PROLOGUE", 20, 0.0, 0.0]
+  ["V8.GC_HEAP_PROLOGUE_SAFEPOINT", 16, 0.0, 0.0]
+  ["V8.GC_MC_MARK_CLIENT_HEAPS", 17, 0.0, 0.0]
+  ["V8.GC_MC_MARK_FULL_CLOSURE_SERIAL", 24, 1.5, 0.0]
+  ["ClearStringTableJob started", 49, 0.0, 0.0]
+  ["ClearTrivialWeakRefJob started", 10, 0.0, 0.0]
+  ["V8.GC_MC_CLEAR_WEAK_LISTS", 11, 0.0, 0.0]
+  ["V8.GC_MC_CLEAR_WEAK_REFERENCES_TRUSTED", 5, 0.0, 0.0]
+  ["V8.GC_MC_EVACUATE_PROLOGUE", 23, 0.0, 0.0]
+  ["V8.GC_MC_EVACUATE_UPDATE_POINTERS_WEAK", 18, 0.0, 0.0]
+
+== per-second timeline (s, busy, style, layout, ...) first 400 rows
+  {"s": 0, "busy": 1965.1, "UpdateLayoutTree": 1959.9, "Layout": 3.0, "PrePaint": 0.5, "gc": 0.0}
+  {"s": 1, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 0.0}
+  {"s": 2, "busy": 1251.3, "UpdateLayoutTree": 1126.4, "Layout": 106.0, "PrePaint": 18.0, "gc": 13.9}
+  {"s": 3, "busy": 1987.3, "UpdateLayoutTree": 1961.2, "Layout": 20.1, "PrePaint": 5.8, "gc": 11.4}
+  {"s": 4, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 6.2}
+  {"s": 5, "busy": 539.7, "UpdateLayoutTree": 277.9, "Layout": 206.1, "PrePaint": 53.5, "gc": 29.3}
+  {"s": 6, "busy": 809.6, "UpdateLayoutTree": 514.1, "Layout": 246.9, "PrePaint": 47.1, "gc": 41.9}
+  {"s": 7, "busy": 754.6, "UpdateLayoutTree": 397.2, "Layout": 265.3, "PrePaint": 91.0, "gc": 52.4}
+  {"s": 8, "busy": 821.3, "UpdateLayoutTree": 501.2, "Layout": 294.2, "PrePaint": 24.8, "gc": 50.6}
+  {"s": 9, "busy": 783.7, "UpdateLayoutTree": 441.8, "Layout": 247.9, "PrePaint": 92.5, "gc": 39.9}
+  {"s": 10, "busy": 743.3, "UpdateLayoutTree": 383.9, "Layout": 284.1, "PrePaint": 74.0, "gc": 41.6}
+  {"s": 11, "busy": 804.5, "UpdateLayoutTree": 467.5, "Layout": 278.1, "PrePaint": 57.6, "gc": 91.8}
+  {"s": 12, "busy": 724.0, "UpdateLayoutTree": 396.5, "Layout": 250.4, "PrePaint": 75.7, "gc": 41.6}
+  {"s": 13, "busy": 830.7, "UpdateLayoutTree": 485.0, "Layout": 294.9, "PrePaint": 49.4, "gc": 49.3}
+  {"s": 14, "busy": 750.6, "UpdateLayoutTree": 408.5, "Layout": 246.3, "PrePaint": 95.0, "gc": 42.8}
+  {"s": 15, "busy": 1854.1, "UpdateLayoutTree": 441.0, "Layout": 1410.7, "PrePaint": 1.4, "gc": 217.9}
+  {"s": 16, "busy": 942.0, "UpdateLayoutTree": 4.4, "Layout": 0.0, "PrePaint": 937.6, "gc": 20.4}
+  {"s": 17, "busy": 1.3, "UpdateLayoutTree": 0.2, "Layout": 0.0, "PrePaint": 0.5, "gc": 1.9}
+  {"s": 18, "busy": 785.7, "UpdateLayoutTree": 498.0, "Layout": 257.9, "PrePaint": 27.2, "gc": 48.1}
+  {"s": 19, "busy": 795.0, "UpdateLayoutTree": 387.7, "Layout": 310.6, "PrePaint": 93.6, "gc": 43.0}
+  {"s": 20, "busy": 732.7, "UpdateLayoutTree": 406.7, "Layout": 248.6, "PrePaint": 76.2, "gc": 38.6}
+  {"s": 21, "busy": 818.7, "UpdateLayoutTree": 438.9, "Layout": 329.2, "PrePaint": 44.6, "gc": 120.5}
+  {"s": 22, "busy": 771.3, "UpdateLayoutTree": 458.6, "Layout": 236.3, "PrePaint": 75.0, "gc": 43.6}
+  {"s": 23, "busy": 784.8, "UpdateLayoutTree": 409.6, "Layout": 313.3, "PrePaint": 60.4, "gc": 43.8}
+  {"s": 24, "busy": 751.4, "UpdateLayoutTree": 403.6, "Layout": 266.4, "PrePaint": 79.9, "gc": 44.2}
+  {"s": 25, "busy": 829.8, "UpdateLayoutTree": 529.0, "Layout": 248.5, "PrePaint": 50.9, "gc": 45.2}
+  {"s": 26, "busy": 779.9, "UpdateLayoutTree": 395.6, "Layout": 289.4, "PrePaint": 93.8, "gc": 46.2}
+  {"s": 27, "busy": 834.9, "UpdateLayoutTree": 566.8, "Layout": 244.9, "PrePaint": 22.5, "gc": 140.7}
+  {"s": 28, "busy": 741.4, "UpdateLayoutTree": 398.4, "Layout": 245.2, "PrePaint": 96.2, "gc": 44.0}
+  {"s": 29, "busy": 1642.0, "UpdateLayoutTree": 391.1, "Layout": 1249.2, "PrePaint": 1.5, "gc": 58.0}
+  {"s": 30, "busy": 912.4, "UpdateLayoutTree": 3.9, "Layout": 0.0, "PrePaint": 908.5, "gc": 14.4}
+  {"s": 31, "busy": 172.9, "UpdateLayoutTree": 79.0, "Layout": 90.7, "PrePaint": 2.3, "gc": 4.0}
+  {"s": 32, "busy": 803.2, "UpdateLayoutTree": 459.6, "Layout": 265.3, "PrePaint": 73.3, "gc": 37.4}
+  {"s": 33, "busy": 782.7, "UpdateLayoutTree": 432.0, "Layout": 291.3, "PrePaint": 58.9, "gc": 63.9}
+  {"s": 34, "busy": 855.7, "UpdateLayoutTree": 566.0, "Layout": 229.8, "PrePaint": 58.7, "gc": 292.3}
+  {"s": 35, "busy": 817.2, "UpdateLayoutTree": 449.6, "Layout": 306.8, "PrePaint": 59.6, "gc": 45.7}
+  {"s": 36, "busy": 822.9, "UpdateLayoutTree": 485.4, "Layout": 276.0, "PrePaint": 59.9, "gc": 46.0}
+  {"s": 37, "busy": 842.7, "UpdateLayoutTree": 402.7, "Layout": 376.9, "PrePaint": 61.7, "gc": 49.9}
+  {"s": 38, "busy": 796.7, "UpdateLayoutTree": 449.8, "Layout": 284.8, "PrePaint": 61.5, "gc": 38.7}
+  {"s": 39, "busy": 757.3, "UpdateLayoutTree": 391.3, "Layout": 305.2, "PrePaint": 59.4, "gc": 94.7}
+  {"s": 40, "busy": 813.6, "UpdateLayoutTree": 492.2, "Layout": 264.5, "PrePaint": 56.0, "gc": 160.8}
+  {"s": 41, "busy": 777.5, "UpdateLayoutTree": 413.5, "Layout": 305.5, "PrePaint": 57.2, "gc": 45.3}
+  {"s": 42, "busy": 838.9, "UpdateLayoutTree": 492.3, "Layout": 267.8, "PrePaint": 77.2, "gc": 39.9}
+  {"s": 43, "busy": 1867.9, "UpdateLayoutTree": 492.2, "Layout": 1349.5, "PrePaint": 25.5, "gc": 73.6}
+  {"s": 44, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 18.3}
+  {"s": 45, "busy": 923.6, "UpdateLayoutTree": 5.2, "Layout": 0.0, "PrePaint": 918.0, "gc": 1.1}
+  {"s": 46, "busy": 777.0, "UpdateLayoutTree": 462.0, "Layout": 279.9, "PrePaint": 32.0, "gc": 108.3}
+  {"s": 47, "busy": 1158.1, "UpdateLayoutTree": 760.7, "Layout": 307.3, "PrePaint": 84.7, "gc": 322.5}
+  {"s": 48, "busy": 566.1, "UpdateLayoutTree": 257.9, "Layout": 268.6, "PrePaint": 38.4, "gc": 101.1}
+  {"s": 49, "busy": 740.6, "UpdateLayoutTree": 396.5, "Layout": 285.6, "PrePaint": 57.3, "gc": 40.2}
+  {"s": 50, "busy": 797.5, "UpdateLayoutTree": 424.8, "Layout": 311.2, "PrePaint": 60.0, "gc": 41.9}
+  {"s": 51, "busy": 778.8, "UpdateLayoutTree": 401.3, "Layout": 295.5, "PrePaint": 80.5, "gc": 40.3}
+  {"s": 52, "busy": 882.2, "UpdateLayoutTree": 532.3, "Layout": 297.9, "PrePaint": 50.7, "gc": 42.5}
+  {"s": 53, "busy": 744.4, "UpdateLayoutTree": 350.3, "Layout": 321.3, "PrePaint": 72.2, "gc": 110.6}
+  {"s": 54, "busy": 1048.6, "UpdateLayoutTree": 718.0, "Layout": 277.8, "PrePaint": 51.7, "gc": 213.7}
+  {"s": 55, "busy": 594.5, "UpdateLayoutTree": 257.9, "Layout": 267.4, "PrePaint": 68.0, "gc": 75.3}
+  {"s": 56, "busy": 775.9, "UpdateLayoutTree": 420.2, "Layout": 305.2, "PrePaint": 48.8, "gc": 43.0}
+  {"s": 57, "busy": 889.2, "UpdateLayoutTree": 518.8, "Layout": 301.8, "PrePaint": 67.1, "gc": 43.6}
+  {"s": 58, "busy": 1918.1, "UpdateLayoutTree": 529.7, "Layout": 1361.6, "PrePaint": 26.4, "gc": 79.9}
+  {"s": 59, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 19.1}
+  {"s": 60, "busy": 904.0, "UpdateLayoutTree": 4.4, "Layout": 0.0, "PrePaint": 899.7, "gc": 2.9}
+  {"s": 61, "busy": 708.3, "UpdateLayoutTree": 358.5, "Layout": 314.7, "PrePaint": 32.7, "gc": 84.5}
+  {"s": 62, "busy": 944.4, "UpdateLayoutTree": 592.5, "Layout": 301.3, "PrePaint": 46.0, "gc": 271.7}
+  {"s": 63, "busy": 782.4, "UpdateLayoutTree": 397.6, "Layout": 319.3, "PrePaint": 64.1, "gc": 43.1}
+  {"s": 64, "busy": 804.3, "UpdateLayoutTree": 420.3, "Layout": 319.1, "PrePaint": 64.2, "gc": 38.9}
+  {"s": 65, "busy": 822.5, "UpdateLayoutTree": 428.5, "Layout": 327.2, "PrePaint": 65.3, "gc": 41.7}
+  {"s": 66, "busy": 820.3, "UpdateLayoutTree": 439.0, "Layout": 319.4, "PrePaint": 60.5, "gc": 44.2}
+  {"s": 67, "busy": 858.3, "UpdateLayoutTree": 449.4, "Layout": 341.0, "PrePaint": 66.4, "gc": 42.1}
+  {"s": 68, "busy": 672.5, "UpdateLayoutTree": 411.5, "Layout": 195.9, "PrePaint": 64.0, "gc": 139.8}
+  {"s": 69, "busy": 1226.3, "UpdateLayoutTree": 329.6, "Layout": 842.8, "PrePaint": 53.5, "gc": 491.4}
+  {"s": 70, "busy": 523.1, "UpdateLayoutTree": 292.4, "Layout": 204.0, "PrePaint": 25.5, "gc": 116.3}
+  {"s": 71, "busy": 792.0, "UpdateLayoutTree": 409.5, "Layout": 310.6, "PrePaint": 70.6, "gc": 46.7}
+  {"s": 72, "busy": 784.3, "UpdateLayoutTree": 411.6, "Layout": 319.7, "PrePaint": 51.4, "gc": 41.4}
+  {"s": 73, "busy": 818.8, "UpdateLayoutTree": 420.9, "Layout": 325.0, "PrePaint": 72.4, "gc": 44.0}
+  {"s": 74, "busy": 2038.0, "UpdateLayoutTree": 547.3, "Layout": 1463.7, "PrePaint": 25.9, "gc": 69.2}
+  {"s": 75, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 118.5}
+  {"s": 76, "busy": 1017.7, "UpdateLayoutTree": 5.3, "Layout": 0.0, "PrePaint": 1012.4, "gc": 0.0}
+  {"s": 77, "busy": 586.5, "UpdateLayoutTree": 264.5, "Layout": 299.3, "PrePaint": 18.1, "gc": 0.0}
+  {"s": 78, "busy": 847.9, "UpdateLayoutTree": 760.0, "Layout": 72.7, "PrePaint": 12.0, "gc": 657.1}
+  {"s": 79, "busy": 823.0, "UpdateLayoutTree": 447.4, "Layout": 294.6, "PrePaint": 77.7, "gc": 43.0}
+  {"s": 80, "busy": 861.1, "UpdateLayoutTree": 445.5, "Layout": 373.4, "PrePaint": 40.9, "gc": 35.8}
+  {"s": 81, "busy": 916.0, "UpdateLayoutTree": 480.5, "Layout": 371.3, "PrePaint": 62.8, "gc": 38.7}
+  {"s": 82, "busy": 814.6, "UpdateLayoutTree": 535.8, "Layout": 206.0, "PrePaint": 71.3, "gc": 41.5}
+  {"s": 83, "busy": 727.6, "UpdateLayoutTree": 313.3, "Layout": 347.0, "PrePaint": 66.0, "gc": 34.6}
+  {"s": 84, "busy": 945.7, "UpdateLayoutTree": 528.2, "Layout": 357.7, "PrePaint": 59.3, "gc": 36.3}
+  {"s": 85, "busy": 814.5, "UpdateLayoutTree": 441.0, "Layout": 335.9, "PrePaint": 36.5, "gc": 191.0}
+  {"s": 86, "busy": 842.0, "UpdateLayoutTree": 355.3, "Layout": 422.4, "PrePaint": 63.4, "gc": 0.0}
+  {"s": 87, "busy": 1355.1, "UpdateLayoutTree": 1299.7, "Layout": 24.8, "PrePaint": 30.2, "gc": 857.9}
+  {"s": 88, "busy": 423.5, "UpdateLayoutTree": 234.8, "Layout": 150.2, "PrePaint": 37.1, "gc": 477.6}
+  {"s": 89, "busy": 816.4, "UpdateLayoutTree": 391.2, "Layout": 350.1, "PrePaint": 74.7, "gc": 41.6}
+  {"s": 90, "busy": 832.0, "UpdateLayoutTree": 441.6, "Layout": 339.4, "PrePaint": 49.5, "gc": 39.3}
+  {"s": 91, "busy": 816.1, "UpdateLayoutTree": 448.6, "Layout": 339.5, "PrePaint": 26.7, "gc": 44.0}
+  {"s": 92, "busy": 831.1, "UpdateLayoutTree": 446.9, "Layout": 282.7, "PrePaint": 100.1, "gc": 34.9}
+  {"s": 93, "busy": 2340.8, "UpdateLayoutTree": 619.2, "Layout": 1720.4, "PrePaint": 1.0, "gc": 72.4}
+  {"s": 94, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 268.4}
+  {"s": 95, "busy": 1474.7, "UpdateLayoutTree": 14.5, "Layout": 0.0, "PrePaint": 1460.2, "gc": 0.0}
+  {"s": 96, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 0.0}
+  {"s": 97, "busy": 1766.3, "UpdateLayoutTree": 1606.3, "Layout": 138.9, "PrePaint": 19.7, "gc": 988.8}
+  {"s": 98, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 487.0}
+  {"s": 99, "busy": 768.4, "UpdateLayoutTree": 318.4, "Layout": 380.2, "PrePaint": 62.3, "gc": 40.6}
+  {"s": 100, "busy": 880.1, "UpdateLayoutTree": 485.7, "Layout": 336.6, "PrePaint": 56.5, "gc": 43.5}
+  {"s": 101, "busy": 798.4, "UpdateLayoutTree": 375.3, "Layout": 392.9, "PrePaint": 28.8, "gc": 43.3}
+  {"s": 102, "busy": 833.6, "UpdateLayoutTree": 387.7, "Layout": 364.4, "PrePaint": 80.2, "gc": 39.3}
+  {"s": 103, "busy": 912.9, "UpdateLayoutTree": 474.8, "Layout": 390.9, "PrePaint": 46.7, "gc": 45.8}
+  {"s": 104, "busy": 830.2, "UpdateLayoutTree": 543.3, "Layout": 218.6, "PrePaint": 67.0, "gc": 45.0}
+  {"s": 105, "busy": 804.8, "UpdateLayoutTree": 385.5, "Layout": 358.8, "PrePaint": 59.2, "gc": 241.0}
+  {"s": 106, "busy": 889.0, "UpdateLayoutTree": 440.1, "Layout": 416.6, "PrePaint": 31.2, "gc": 0.0}
+  {"s": 107, "busy": 830.8, "UpdateLayoutTree": 459.9, "Layout": 322.6, "PrePaint": 48.0, "gc": 332.3}
+  {"s": 108, "busy": 888.9, "UpdateLayoutTree": 433.4, "Layout": 381.9, "PrePaint": 72.0, "gc": 44.2}
+  {"s": 109, "busy": 703.0, "UpdateLayoutTree": 453.5, "Layout": 186.0, "PrePaint": 62.1, "gc": 46.0}
+  {"s": 110, "busy": 884.0, "UpdateLayoutTree": 433.8, "Layout": 381.7, "PrePaint": 67.2, "gc": 42.5}
+  {"s": 111, "busy": 780.7, "UpdateLayoutTree": 332.0, "Layout": 384.8, "PrePaint": 62.7, "gc": 40.9}
+  {"s": 112, "busy": 824.8, "UpdateLayoutTree": 408.7, "Layout": 358.6, "PrePaint": 56.3, "gc": 40.2}
+  {"s": 113, "busy": 2708.0, "UpdateLayoutTree": 527.0, "Layout": 2179.7, "PrePaint": 1.1, "gc": 149.2}
+  {"s": 114, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 681.7}
+  {"s": 115, "busy": 935.5, "UpdateLayoutTree": 5.8, "Layout": 0.0, "PrePaint": 929.7, "gc": 85.1}
+  {"s": 116, "busy": 90.0, "UpdateLayoutTree": 77.1, "Layout": 9.2, "PrePaint": 2.4, "gc": 4.3}
+  {"s": 117, "busy": 869.4, "UpdateLayoutTree": 404.9, "Layout": 427.0, "PrePaint": 32.1, "gc": 40.9}
+  {"s": 118, "busy": 903.5, "UpdateLayoutTree": 475.6, "Layout": 344.8, "PrePaint": 79.7, "gc": 34.3}
+  {"s": 119, "busy": 768.6, "UpdateLayoutTree": 335.3, "Layout": 392.6, "PrePaint": 40.1, "gc": 44.4}
+  {"s": 120, "busy": 1003.0, "UpdateLayoutTree": 514.6, "Layout": 422.8, "PrePaint": 64.0, "gc": 44.4}
+  {"s": 121, "busy": 630.0, "UpdateLayoutTree": 354.0, "Layout": 199.3, "PrePaint": 75.2, "gc": 38.3}
+  {"s": 122, "busy": 864.4, "UpdateLayoutTree": 452.1, "Layout": 394.5, "PrePaint": 16.7, "gc": 38.7}
+  {"s": 123, "busy": 888.7, "UpdateLayoutTree": 373.1, "Layout": 423.8, "PrePaint": 90.6, "gc": 309.7}
+  {"s": 124, "busy": 818.2, "UpdateLayoutTree": 337.3, "Layout": 437.1, "PrePaint": 43.4, "gc": 0.0}
+  {"s": 125, "busy": 900.7, "UpdateLayoutTree": 771.4, "Layout": 96.4, "PrePaint": 24.0, "gc": 636.1}
+  {"s": 126, "busy": 809.8, "UpdateLayoutTree": 360.7, "Layout": 366.8, "PrePaint": 81.0, "gc": 39.9}
+  {"s": 127, "busy": 782.9, "UpdateLayoutTree": 337.7, "Layout": 404.2, "PrePaint": 40.3, "gc": 40.6}
+  {"s": 128, "busy": 902.0, "UpdateLayoutTree": 448.2, "Layout": 389.6, "PrePaint": 62.9, "gc": 43.9}
+  {"s": 129, "busy": 772.5, "UpdateLayoutTree": 509.7, "Layout": 188.7, "PrePaint": 72.7, "gc": 44.6}
+  {"s": 130, "busy": 818.7, "UpdateLayoutTree": 376.8, "Layout": 377.6, "PrePaint": 62.9, "gc": 37.5}
+  {"s": 131, "busy": 930.9, "UpdateLayoutTree": 465.5, "Layout": 401.6, "PrePaint": 62.5, "gc": 37.3}
+  {"s": 132, "busy": 981.1, "UpdateLayoutTree": 898.7, "Layout": 80.9, "PrePaint": 1.2, "gc": 353.2}
+  {"s": 133, "busy": 3653.9, "UpdateLayoutTree": 0.0, "Layout": 3653.9, "PrePaint": 0.0, "gc": 1127.2}
+  {"s": 134, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 0.0}
+  {"s": 135, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 1310.0}
+  {"s": 136, "busy": 1055.0, "UpdateLayoutTree": 15.0, "Layout": 0.0, "PrePaint": 1040.0, "gc": 25.7}
+  {"s": 137, "busy": 0.6, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 0.0}
+  {"s": 138, "busy": 489.5, "UpdateLayoutTree": 33.5, "Layout": 11.3, "PrePaint": 6.3, "gc": 1144.3}
+  {"s": 139, "busy": 0.0, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 0.0}
+  {"s": 140, "busy": 4852.1, "UpdateLayoutTree": 0.0, "Layout": 0.0, "PrePaint": 0.0, "gc": 0.0}

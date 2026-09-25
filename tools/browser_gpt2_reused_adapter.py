@@ -14,7 +14,11 @@ import r2c_hoist as r2c
 from browser_gpt2_reused_core import compile_reused
 import r2f_lean_handshake as r2f
 import r3r_fold_hop as r3r
+import r4s_small_hops as r4s
+import r5h_ch_scores as r5h  # R5H: forces r4s.SMALL_HOPS off when R5H_CH_SCORES is on
 import r4d_flags as r4d
+import r4t_consumer_chunk as r4t
+import r5e_dead_weight as r5e
 
 
 def compile_reused_runtime_core(
@@ -78,13 +82,13 @@ def compile_reused_runtime_core(
         )
 
     last = blocks - 1
-    source, receiver, bridge_css, _ = hybrid.bridge(last, 512)
+    source, receiver, bridge_css, _ = hybrid.bridge(last, r4t.chunk(512))  # R4T: b11-bridge consumers
     source = source.replace("var(--epoch)", "var(--position)")
     export = (
         '<div class="reused-final-export">'
-        + hybrid.probe(f"block-{last}-probe", "out", 768).replace(
+        + (hybrid.probe(f"block-{last}-probe", "out", 768).replace(
             "var(--epoch)", "var(--position)"
-        )
+        ) if r5e.KEEP_DIAG else "")  # R5E: diagnostic readback only
         + source
         + "</div>"
     )
@@ -139,7 +143,7 @@ def compile_reused_runtime_core(
         # and stamp the current pass directly onto every reader.
         receipts = [
             f".shared-{kind}-receipt" for kind in ("qkv", "attn", "fc", "proj")
-        ] + [".cache-bridge-receipt", ".fvs-score-receipt"]
+        ] + [".cache-bridge-receipt"] + ([] if r5h.no_score_hop() else [".fvs-score-receipt"])
         pass_readers = ",".join(
             [
                 ".loop-input",
@@ -168,7 +172,9 @@ def compile_reused_runtime_core(
         body, tagged_position = f5.tag_inline_readers(
             body, "var(--position)", "pass-reader"
         )
-        if tagged != 7 or tagged_position != 2:
+        # R4S / R5H: the score stamp marker (one inline var(--epoch) reader) no longer exists
+        diag = 1 if r5e.KEEP_DIAG else 0  # R5E: the reused-probe / block-11-probe epoch twins
+        if tagged != (6 if r5h.no_score_hop() else 7) - 1 + diag or tagged_position != 1 + diag:  # R5X: R5E x R5H union
             raise ValueError(
                 f"Unexpected inline pass readers: {tagged} epoch, {tagged_position} position"
             )
@@ -196,7 +202,7 @@ def compile_reused_runtime_core(
     receiver = receiver.replace(
         "{child}",
         '<div id="core-result">'
-        + hybrid.probe("core-probe", "x", 768)
+        + (hybrid.probe("core-probe", "x", 768) if r5e.KEEP_DIAG else "")  # R5E
         + "{child}</div>",
     )
     body = (
@@ -235,6 +241,8 @@ def compile_reused_runtime_core(
         "localLayerContainer": True,
         "r2fLeanHandshake": r2f.LEAN_HANDSHAKE,
         "r3rFoldHop": r3r.FOLD_HOP,
+        "r4sSmallHops": r4s.SMALL_HOPS and codec == "font-vector",
+        "r5hChScores": r5h.CH_SCORES and codec == "font-vector",
         "f5ScopedHandshake": f5.SCOPED_HANDSHAKE,
         "f5ScopedEpoch": f5.SCOPED_EPOCH,
         "f5ScopedFeedback": f5.SCOPED_FEEDBACK,
@@ -253,6 +261,7 @@ def compile_reused_runtime_core(
         "r2cHoistStages": r2c.HOIST_STAGES,
         "r2cHoistQuery": r2c.HOIST_QUERY and codec == "font-vector",
         "r2cHoistEmbedding": r2c.HOIST_EMBEDDING,
+        "r4tConsumerChunk": r4t.CHUNK,
         "kvStorage": "native remembered layout"
         if codec == "geometry"
         else "native delayed whole-head font settings"

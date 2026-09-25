@@ -1,0 +1,128 @@
+{
+  "complete": true,
+  "stopReason": "token-limit",
+  "tokenTimesMs": {
+    "1": 11099,
+    "2": 15846
+  },
+  "tokenMetrics": {
+    "1": {
+      "ts": 392924.417311,
+      "RecalcStyleCount": 66,
+      "LayoutCount": 38,
+      "dRecalc": 50,
+      "dLayout": 27,
+      "dRecalcS": 7.2,
+      "dLayoutS": 3.08
+    },
+    "2": {
+      "ts": 392926.587858,
+      "RecalcStyleCount": 70,
+      "LayoutCount": 39,
+      "dRecalc": 4,
+      "dLayout": 1,
+      "dRecalcS": 0.05,
+      "dLayoutS": 0.01
+    }
+  },
+  "traceSummary": {
+    "1": {
+      "ult": 43,
+      "ultMs": 7141,
+      "layout": 27,
+      "layoutMs": 3137,
+      "frames": {
+        "beginMainThreadFrame": 0,
+        "drawFrame": 0,
+        "commit": 21
+      },
+      "busyMs": 13672,
+      "ultElementsTop": [
+        1,
+        22,
+        0,
+        1,
+        2406,
+        2411,
+        800,
+        3141,
+        824,
+        2366,
+        2399,
+        0
+      ]
+    },
+    "2": {
+      "ult": 4,
+      "ultMs": 46,
+      "layout": 1,
+      "layoutMs": 7,
+      "frames": {
+        "beginMainThreadFrame": 0,
+        "drawFrame": 0,
+        "commit": 4
+      },
+      "busyMs": 446,
+      "ultElementsTop": [
+        1,
+        20,
+        1,
+        20
+      ]
+    }
+  },
+  "metricsIdle": {
+    "RecalcStyleCount": 16,
+    "LayoutCount": 11
+  },
+  "metricsAfter": {
+    "Timestamp": 392928.590476,
+    "AudioHandlers": 0,
+    "AudioWorkletProcessors": 0,
+    "Documents": 1,
+    "Frames": 1,
+    "JSEventListeners": 0,
+    "LayoutObjects": 129837,
+    "MediaKeySessions": 0,
+    "MediaKeys": 0,
+    "Nodes": 122213,
+    "Resources": 74,
+    "ContextLifecycleStateObservers": 3,
+    "V8PerContextDatas": 2,
+    "WorkerGlobalScopes": 0,
+    "UACSSResources": 0,
+    "RTCPeerConnections": 0,
+    "ResourceFetchers": 1,
+    "AdSubframes": 0,
+    "DetachedScriptStates": 0,
+    "ArrayBufferContents": 0,
+    "LayoutCount": 39,
+    "RecalcStyleCount": 70,
+    "LayoutDuration": 3.213847,
+    "RecalcStyleDuration": 8.142655,
+    "DevToolsCommandDuration": 0.004632,
+    "ScriptDuration": 0,
+    "V8CompileDuration": 0,
+    "TaskDuration": 15.513085,
+    "TaskOtherDuration": 4.151951,
+    "ThreadTime": 15.533479,
+    "ProcessTime": 19.765894,
+    "JSHeapUsedSize": 662684,
+    "JSHeapTotalSize": 1835008,
+    "FirstMeaningfulPaint": 0,
+    "DomContentLoaded": 392907.619603,
+    "NavigationStart": 392906.411211
+  },
+  "harness": "work/2026-09-19/R2F/run_bundle.mjs (correctness only, not a timing run)",
+  "browserArguments": [
+    "--disable-background-timer-throttling",
+    "--disable-renderer-backgrounding",
+    "--force-device-scale-factor=1",
+    "--hide-scrollbars",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--js-flags=--heap-growing-percent=10"
+  ],
+  "browser": "153.0.8010.53",
+  "artifactSha256": {}
+}

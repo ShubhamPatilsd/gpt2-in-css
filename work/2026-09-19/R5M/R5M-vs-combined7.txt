@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File [35m"/Users/shubhampatil/Documents/programming/gpt2-css/work/2026-09-19/R4M/compare_bundles.py"[0m, line [35m13[0m, in [35m<module>[0m
+    ha, hb = [31m(A / "index.html").read_bytes[0m[1;31m()[0m, (B / "index.html").read_bytes()
+             [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py"[0m, line [35m777[0m, in [35mread_bytes[0m
+    with [31mself.open[0m[1;31m(mode='rb', buffering=0)[0m as f:
+         [31m~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py"[0m, line [35m771[0m, in [35mopen[0m
+    return [31mio.open[0m[1;31m(self, mode, buffering, encoding, errors, newline)[0m
+           [31m~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[1;35mFileNotFoundError[0m: [35m[Errno 2] No such file or directory: 'bundles/R5M/index.html'[0m

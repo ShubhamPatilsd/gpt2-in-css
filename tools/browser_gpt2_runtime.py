@@ -23,6 +23,7 @@ import f5_scoping as f5
 import r2c_hoist as r2c
 import r2g_has_scope as r2g
 import r3h_blockflow_max as r3h
+import r5e_dead_weight as r5e
 import numpy as np
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 from browser_gpt2_core import compile_core
@@ -460,7 +461,7 @@ def compile_runtime(
         model, tagged = f5.tag_inline_readers(
             model, "var(--epoch)", "epoch-reader", skip_class="pass-reader"
         )
-        if tagged != 3:
+        if tagged != (3 if r5e.KEEP_DIAG else 2):  # R5E: #core-probe's epoch twin
             raise ValueError(f"Unexpected inline epoch readers in model: {tagged}")
     font_html, font_css, font_count = font_barrier(css, directory)
     css += font_css
@@ -574,13 +575,17 @@ def compile_runtime(
         + controls
         + font_html
         + model
-        + f'<i id="core-epoch-observer" style="position:fixed;top:-30px;width:anchor-size(--block-{blocks - 1}-probe-epoch width,0px);height:1px"></i>'
+        + (f'<i id="core-epoch-observer" style="position:fixed;top:-30px;width:anchor-size(--block-{blocks - 1}-probe-epoch width,0px);height:1px"></i>' if r5e.KEEP_DIAG else '')  # R5E
         + "</body></html>"
     )
     r2g_stats = None
     if r2g.SCOPED_HAS:
         # R2G/R3F: fixed-depth `:has()` arguments for every handshake rule (chains verified against the page).
         css, r2g_stats = r2g.scope_has_arguments(css, page, capacity)
+    r5e_stats = None
+    if r5e.LEAN_WALLS:
+        # R5E: shrink the two inheritance walls to the properties that can be non-initial there
+        css, r5e_stats = r5e.lean_walls(css, page)
     (directory / "runtime.css").write_text(css)
     (directory / "index.html").write_text(page)
     metadata.update(
@@ -600,6 +605,8 @@ def compile_runtime(
         detachedOutput=detached_output,
         **r2d.manifest(),
         r3hBlockflowMax=r3h.BLOCKFLOW_MAX,
+        **r5e.manifest(),
+        r5eLeanWallStats=r5e_stats,
         headEpochTransport="separate geometry" if capacity > 8 else "packed four bits",
         fontBackend=font_backend,
         teacherForcedInputs=teacher_forced_tokens[:capacity]
