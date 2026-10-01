@@ -24,9 +24,29 @@ import r2c_hoist as r2c
 import r2g_has_scope as r2g
 import r3h_blockflow_max as r3h
 import r5e_dead_weight as r5e
+import r6p_prompt as r6p  # R6P: pre-Run prompt echo fix + typed free-text prompt (prefill)
 import r6v_progress_ui as r6v  # R6V: display-only progress UI
+if r6p.TYPED and r6v.ON:  # R6X merge: R6P's prompt panel (top 52) + token readout (118) occupy R6V's panel row -> move the
+    r6v.TOP_PX = 146  # loading/progress row below the readout (R6V default 52) ...
+    r6p.OUTPUT_TOP = 184  # ... and the output text below that (R6P default 146; base 110)
+    r6v.HIDE_SELECTOR = "body>:not(.controls):not(.ld):not(.tk-panel)"  # the early-paint lock must not hide the prompt panel
 import numpy as np
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
+
+
+def r6x_head_phase_css(blocks, head_seconds=2.8):
+    """R6X: 13th bar segment for the vocabulary-head phase (--held:1 on the corestate container), pseudo-elements of .pg only."""
+    seg = r6v.BAR_PX / blocks
+    left = r6v.BAR_PX + 4
+    return (
+        f".pg::before,.pg::after{{content:\"\";position:absolute;left:{left:g}px;top:22px;width:{seg - 2:g}px;height:8px;display:block}}"
+        ".pg::before{background:#e3ded2}"
+        ".pg::after{background:#d9822b;transform-origin:0 50%;transform:scaleX(0);will-change:transform,opacity}"
+        f"@container corestate style(--held:1){{.pg::after{{animation:pg-head-fill {head_seconds}s linear forwards,pg-head-pulse .7s ease-in-out infinite alternate}}"
+        '.pg-lay::after{content:" · vocabulary head: 50,257 rows → next token… (fill ≈ estimate)"}}'
+        "@keyframes pg-head-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}"
+        "@keyframes pg-head-pulse{from{opacity:.45}to{opacity:1}}"
+    )
 from browser_gpt2_core import compile_core
 from browser_gpt2_embedding import compile_embedding
 from browser_gpt2_head import reduce_geometry
@@ -95,14 +115,18 @@ def feedback(capacity, synthetic=False):
         + ",".join(timelines)
         + "}"
     )
-    css += (
-        ".feedback-select{--token:if(style(--epoch:1):var(--frozen-prompt);"
-        + ";".join(
-            f"style(--epoch:{i}):var(--feedback-{i - 1})"
-            for i in range(2, capacity + 1)
+    if r6p.TYPED:
+        # R6P: registrations live here so the head-isolation wall resets them; --token becomes the prefill chain
+        css += r6p.regs(capacity) + r6p.token_select_css(capacity)
+    else:
+        css += (
+            ".feedback-select{--token:if(style(--epoch:1):var(--frozen-prompt);"
+            + ";".join(
+                f"style(--epoch:{i}):var(--feedback-{i - 1})"
+                for i in range(2, capacity + 1)
+            )
+            + ";else:var(--frozen-prompt))}"
         )
-        + ";else:var(--frozen-prompt))}"
-    )
     signals, metrics = (
         [
             '<g id="eos-ready"></g><g id="eos-done"><set attributeName="class" to="done" begin="eos-ready.animationend+0.001s" fill="freeze"/></g>'
@@ -160,7 +184,10 @@ def font_barrier(stylesheet, directory):
         else:
             with TTFont(path, lazy=True) as font:
                 cmap = font.getBestCmap()
-                cp = next(c for c in sorted(cmap) if font["hmtx"][cmap[c]][0] > 1)
+                if r6p.TYPED and r6p.is_tokenizer_font(path):
+                    cp = r6p.barrier_codepoint(font, cmap)  # R6P: printable witness glyph (TAB expands to tab stops)
+                else:
+                    cp = next(c for c in sorted(cmap) if font["hmtx"][cmap[c]][0] > 1)
                 info = {
                     "codepoint": cp,
                     "advance": font["hmtx"][cmap[cp]][0],
@@ -469,6 +496,17 @@ def compile_runtime(
         )
         if tagged != (3 if r5e.KEEP_DIAG else 2):  # R5E: #core-probe's epoch twin
             raise ValueError(f"Unexpected inline epoch readers in model: {tagged}")
+    r6p_font_info = None
+    if r6p.TYPED:
+        # R6P: the tokenizer fonts join the font barrier; the model nests under the tokenizer chain
+        r6p_font_info = r6p.check_fonts()
+        css += r6p.font_faces_css()
+        model = r6p.wrap_model(model)
+        _marker_old = 'width:calc(20000px + var(--epoch)*1024px)'  # R6X v5: token-fresh receipt (see apply_conflicts.py edit 6)
+        _marker_new = 'width:calc(20000px + (var(--epoch) - 1 + var(--prompt-live))*1024px)'
+        if model.count(_marker_old) != 1:
+            raise ValueError(f'R6X: expected exactly one embedding epoch marker, found {model.count(_marker_old)}')
+        model = model.replace(_marker_old, _marker_new, 1)
     font_html, font_css, font_count = font_barrier(css, directory)
     css += font_css
     scopes = re.findall(r"html\{timeline-scope:([^}]+)\}", css)
@@ -496,10 +534,18 @@ def compile_runtime(
         + ";".join(f"--display-token-{i}:-1" for i in range(1, capacity + 1))
         + "}"
     )
-    css += ".visible-output::before{counter-reset:prompt var(--frozen-prompt);content:counter(prompt,gpt2-vocabulary)}"
+    if r6p.TYPED:
+        css += r6p.display_css()  # R6P: typed text / decoded prompt tokens + echo fix
+    elif r6p.ECHO_FIX:
+        css += r6p.echo_fix_css()  # R6P (A): the pseudo-element does not inherit the private --frozen-prompt
+    else:
+        css += ".visible-output::before{counter-reset:prompt var(--frozen-prompt);content:counter(prompt,gpt2-vocabulary)}"
     css += 'body:has(#eos-done.done) .status::after{content:"Complete • end of text"}'
     for i in range(1, capacity + 1):
-        css += f"body:has(#token-{i}-captured.done) .visible-output{{--display-token-{i}:var(--feedback-{i})}}"
+        if r6p.TYPED:
+            css += r6p.display_token_rule(i)  # R6P: prefill winners hidden
+        else:
+            css += f"body:has(#token-{i}-captured.done) .visible-output{{--display-token-{i}:var(--feedback-{i})}}"
     css += f'body{{margin:24px;font:16px/1.5 system-ui;background:#f7f5ef;color:#222}}.controls{{position:fixed;left:24px;top:16px;z-index:100}}body:has(#run-latched.done) select{{pointer-events:none;opacity:.6}}.status::after{{content:"Loading model fonts…"}}body:has(#fonts-loaded.done) .status::after{{content:"Ready • {blocks}-block native compute"}}'
     css += f'body:has(#token-{capacity}-captured.done) .status::after{{content:"Complete • {capacity} tokens"}}'
     options = [15496, 464, 40, 32, 1212, 2061]
@@ -535,6 +581,14 @@ def compile_runtime(
         else "Speed depends on the block/context configuration."
     )
     controls += f'<aside style="position:fixed;left:24px;right:24px;top:176px;font:13px/1.5 system-ui;color:#666">Experimental q9/q16 GPT-2 • one prompt token • at most {capacity} generated tokens.<br>HTML/CSS/OpenType + native SVG control. No JavaScript. {speed}</aside>'
+    if r6p.TYPED:
+        # R6P: editable prompt panel, tokenizer chain, prefill handshakes, display layout
+        controls = controls.replace(
+            "one prompt token",
+            f"typed prompt (first {r6p.SLOTS} BPE tokens; each prefilled token costs one full step) or one dropdown token",
+        ).replace('<aside style="', '<aside class="tk-aside" style="')
+        controls += r6p.panel_html()
+        css += r6p.chain_css() + r6p.prefill_handshake_css() + r6p.panel_css(capacity)
     if teacher_forced_tokens is not None:
         # Known evaluation INPUT IDs, not generated answers or activations.
         # The native embedding, 12-layer loop, KV retention and full head still
@@ -583,7 +637,15 @@ def compile_runtime(
     head_style, early_panel, body_link = '', '', ''
     if r6v.EARLY_PAINT:  # R6V: paint the controls + loading panel before the big sheet is fetched/parsed
         head_style, early_panel, body_link, link = r6v.inline_style(len(css)), r6v.early_panel_html(len(css)), link, ''
+        if r6p.TYPED:  # R6X: the prompt panel (a <style contenteditable>, display:none in the UA sheet) must be visible/editable before the sheet arrives
+            head_style = head_style.replace("</style>", r6p.panel_inline_css() + "</style>", 1)
         css += r6v.early_paint_runtime_css()
+    if r6p.TYPED and r6v.ON:  # R6X: keep the output text above the fixed footer (.tk-aside, bottom 16px); scroll when longer than the box
+        css += "html .visible-output{max-height:calc(100vh - 280px);min-height:4lh;overflow:auto}"  # v4: box = content, clamped; never shorter than 4 lines
+        css += "html .tk-aside{top:calc(192px + max(128px,100vh - 280px))!important;bottom:auto}"  # v4: footer right below the output's maximum extent (off-screen in very short windows, never overlapping)
+        css += r6x_head_phase_css(blocks)
+    if os.environ.get("R6X_SCROLLBAR_FIX", "1") not in ("0", "false", "no", "off"):  # R6X v6 (R7H): headed Chrome's classic scrollbar must not shrink the id-readback scrollport
+        css += ".feedback-scroller{scrollbar-width:none}"
     page = (
         '<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="script-src \'none\';object-src \'none\'"><title>Native GPT-2 • Chromium • no JavaScript</title>' + head_style + link + '</head><body>'
         + controls
@@ -609,7 +671,8 @@ def compile_runtime(
         fontFaces=font_count,
         autostart=autostart,
         head="full-vocabulary-q16-two-pass",
-        promptTokens=1,
+        promptTokens=r6p.SLOTS if r6p.TYPED else 1,
+        **r6p.manifest(r6p_font_info),
         generatedTokenLimit=capacity,
         kvStorage="native remembered layout"
         if cache_codec == "geometry"

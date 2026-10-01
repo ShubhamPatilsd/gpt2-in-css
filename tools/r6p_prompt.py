@@ -119,6 +119,7 @@ def regs(capacity):
     css += '@property --prompt-armed{syntax:"<integer>";inherits:false;initial-value:0}'
     css += '@property --tk-count{syntax:"<integer>";inherits:false;initial-value:0}'
     css += '@property --prompt-count{syntax:"<integer>";inherits:true;initial-value:0}'
+    css += '@property --prompt-live{syntax:"<integer>";inherits:true;initial-value:0}'  # R6X v5: 1 from arming on (token-fresh embedding receipt)
     for k in range(SLOTS):
         css += f'@property --pt-low-{k}{{syntax:"<integer>";inherits:false;initial-value:0}}'
         css += f'@property --pt-high-{k}{{syntax:"<integer>";inherits:false;initial-value:0}}'
@@ -175,10 +176,10 @@ def chain_css():
     last = SLOTS - 1
     digit = f"round(nearest,calc(100cqi/1px*{UPEM} - 1),1)"
     css = (
-        ".tk-root{display:contents;--prompt-armed:inherit}"  # body sets --prompt-armed; .tk-root sets --draft-prompt itself
+        ".tk-root{display:contents;--prompt-armed:inherit;--prompt-live:if(style(--prompt-armed:1):1;else:0)}"  # body sets --prompt-armed; .tk-root sets --draft-prompt itself; R6X v5: --prompt-live inherited by the model
         # every chain element hops the two private inputs (typing / arming restyle only these elements)
         ".tk{--draft-prompt:inherit;--prompt-armed:inherit}"
-        "body:has(#run:checked){--prompt-armed:1}"
+        "body:has(#run:checked),body:has(#run-latched.done){--prompt-armed:1}"  # R6X v5: sticky (survives unchecking Run / continue)
         ".tk-metric{position:absolute;left:0;top:0;opacity:0;display:inline-block;width:max-content;height:1px;"
         "overflow:hidden;font-size:1px;line-height:1;white-space:pre;pointer-events:none;font-kerning:none;"
         "font-variation-settings:normal;--tk-text:var(--draft-prompt)}"
@@ -204,9 +205,8 @@ def chain_css():
         if k:
             hops = ";".join(f"--pt-id-{j}:inherit;--pt-present-{j}:inherit" for j in range(k))
             css += f".tk-{k}{{{hops}}}"
-        # freeze the model-facing values once the model may start (fonts loaded AND run latched), as --frozen-prompt
-        props = f"--prompt-token-id-{k},--prompt-has-{k}" + (",--prompt-count" if k == last else "")
-        css += f"body:has(#fonts-loaded.done):has(#run-latched.done) .tk-high-{k}{{transition-property:{props};{LATCH}}}"
+        # R6X v5: no transition latch — a same-pass arm+latch would freeze the pre-armed values (-1 / 0); instead nothing can change
+        # after Run: arming is sticky, the editor is read-only from #run:checked and Run is enabled only after fonts-loaded
     count = " + ".join(f"var(--prompt-has-{j})" for j in range(SLOTS))
     css += f".tk-high-{last}{{container-name:tkprompt;--prompt-count:calc({count})}}"
     # live readout of the tokenizer (leaf sibling of the model root; private hops, never restyled per token)
@@ -243,9 +243,13 @@ def display_css():
     """Pre-Run: the typed text (or the dropdown token when nothing is typed). From Run: the N decoded prompt
     tokens (what the model actually consumed) followed by the generated tokens; winners 1..N-1 are hidden."""
     css = (
-        ".feedback-reader,.visible-output{--draft-prompt:inherit;--pt-present-0:inherit}"
-        ".visible-output{--display-prompt:if(style(--pt-present-0:1):-1;else:var(--frozen-prompt));"
-        '--draft-echo:if(style(--prompt-count:0):var(--draft-prompt);else:"")}'
+        ".feedback-reader,.visible-output{--draft-prompt:inherit;--pt-present-0:inherit;--prompt-armed:inherit}"
+        # R6X v5: before Run a live preview (typed text hides the dropdown symbol); from Run on ONLY the model-facing values
+        # (--prompt-has-0 / --prompt-token-id-k / --prompt-count) so the output can never show a prompt the model did not use
+        ".visible-output{--dp-live:if(style(--pt-present-0:1):-1;else:var(--frozen-prompt));"
+        "--dp-armed:if(style(--prompt-has-0:1):-1;else:var(--frozen-prompt));"
+        "--display-prompt:if(style(--prompt-armed:1):var(--dp-armed);else:var(--dp-live));"
+        '--draft-echo:if(style(--prompt-armed:1):"";else:var(--draft-prompt))}'
         ".visible-output::before{counter-reset:prompt var(--display-prompt) "
         + " ".join(f"tkp{k} var(--prompt-token-id-{k})" for k in range(SLOTS))
         + ";content:counter(prompt,gpt2-vocabulary) var(--draft-echo) "
@@ -291,15 +295,26 @@ def panel_html():
     )
 
 
-def panel_css(capacity):
+OUTPUT_TOP = 146  # R6X: .visible-output top in px (the merge with R6V moves it below the progress row)
+
+
+def panel_inline_css():
+    """R6X: the panel's visual rules; also emitted in R6V's early-paint inline <style> so the editor is visible before the sheet."""
     return (
         ".tk-panel{position:fixed;left:24px;right:24px;top:52px;z-index:100;font:13px/1.4 system-ui;color:#444}"
         ".tk-panel label{display:block;margin-bottom:2px}"
         ".tk-editor{display:block;box-sizing:border-box;width:100%;max-width:800px;padding:4px 8px;border:1px solid #aaa;border-radius:4px;"
         "background:#fff;color:#111;font:13px/1.4 ui-monospace,Menlo,monospace;white-space:pre;overflow:hidden;caret-color:#111}"
         ".tk-editor:focus{outline:2px solid Highlight}"
-        "body:has(#run-latched.done) .tk-editor{-webkit-user-modify:read-only;pointer-events:none;opacity:.6}"
-        ".visible-output{top:146px}"
+    )
+
+
+def panel_css(capacity):
+    return (
+        panel_inline_css()
+        + "body:has(#run:checked) .tk-editor,body:has(#run-latched.done) .tk-editor{-webkit-user-modify:read-only;pointer-events:none;opacity:.6}"  # R6X v5: locked from the click itself
+        + ".controls>label:nth-of-type(2){pointer-events:none;opacity:.6}body:has(#fonts-loaded.done) .controls>label:nth-of-type(2){pointer-events:auto;opacity:1}"  # R6X v5: Run only after Ready (the tokenizer fonts must be in before the ids are armed)
+        f".visible-output{{top:{OUTPUT_TOP}px}}"
         ".tk-aside{top:auto!important;bottom:16px}"
     )
 
