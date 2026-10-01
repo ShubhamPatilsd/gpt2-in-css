@@ -24,6 +24,7 @@ import r2c_hoist as r2c
 import r2g_has_scope as r2g
 import r3h_blockflow_max as r3h
 import r5e_dead_weight as r5e
+import r6v_progress_ui as r6v  # R6V: display-only progress UI
 import numpy as np
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 from browser_gpt2_core import compile_core
@@ -179,6 +180,11 @@ def font_barrier(stylesheet, directory):
     css += f".font-status{{position:fixed;left:0;top:0;container:fontready/inline-size;width:anchor-size({anchor} width,0px);height:1px}}"
     css += "@container fontready (min-width:.99px){#fonts-detected{animation:native-handshake 1ms both}}"
     signals = '<div class="font-status"><svg xmlns="http://www.w3.org/2000/svg" class="native-signals"><g id="fonts-detected"></g><g id="fonts-loaded"><set attributeName="class" to="done" begin="fonts-detected.animationend+0.001s" fill="freeze"/></g></svg></div>'
+    if r6v.FONT_COUNT:  # R6V: N-of-283 loaded-fonts counter (sum of the proof widths) + its panel
+        sum_html, sum_css, sum_anchor = r6v.sum_tree(anchors)
+        reductions += sum_html
+        css += sum_css + r6v.load_panel_css(sum_anchor, len(faces))
+        signals += r6v.load_panel_html(len(faces))
     manifest_path.write_text(json.dumps(manifests))
     return "".join(probes + witnesses) + reductions + signals, css, len(faces)
 
@@ -563,6 +569,9 @@ def compile_runtime(
             + '")'
         )
 
+    if r6v.ON:  # R6V: per-token progress reader (first child of .core-controller) + token counter
+        model = r6v.insert_progress(model)
+        css += r6v.progress_css(blocks, capacity)
     if r2d.OVERFLOW_CLIP:
         css = r2d.overflow_clip(css)
     if r2d.POINTER_EVENTS:
@@ -570,9 +579,16 @@ def compile_runtime(
     if r2d.CONTAIN_PAINT:
         css += r2d.contain_paint_css()
     css = re.sub(r'url\("(file:[^\"]+)"\)', relative_asset, css)
+    link = '<link rel="stylesheet" href="runtime.css">'
+    head_style, early_panel, body_link = '', '', ''
+    if r6v.EARLY_PAINT:  # R6V: paint the controls + loading panel before the big sheet is fetched/parsed
+        head_style, early_panel, body_link, link = r6v.inline_style(len(css)), r6v.early_panel_html(len(css)), link, ''
+        css += r6v.early_paint_runtime_css()
     page = (
-        '<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="script-src \'none\';object-src \'none\'"><title>Native GPT-2 • Chromium • no JavaScript</title><link rel="stylesheet" href="runtime.css"></head><body>'
+        '<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="script-src \'none\';object-src \'none\'"><title>Native GPT-2 • Chromium • no JavaScript</title>' + head_style + link + '</head><body>'
         + controls
+        + early_panel
+        + body_link
         + font_html
         + model
         + (f'<i id="core-epoch-observer" style="position:fixed;top:-30px;width:anchor-size(--block-{blocks - 1}-probe-epoch width,0px);height:1px"></i>' if r5e.KEEP_DIAG else '')  # R5E
@@ -606,6 +622,7 @@ def compile_runtime(
         **r2d.manifest(),
         r3hBlockflowMax=r3h.BLOCKFLOW_MAX,
         **r5e.manifest(),
+        **r6v.manifest(),
         r5eLeanWallStats=r5e_stats,
         headEpochTransport="separate geometry" if capacity > 8 else "packed four bits",
         fontBackend=font_backend,
