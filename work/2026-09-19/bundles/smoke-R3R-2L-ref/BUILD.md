@@ -1,0 +1,1 @@
+# smoke-R3R-2L-ref — R3R 2-layer smoke (2 blocks, capacity 2), built with `R3R/compile.sh smoke-R3R-2L-ref 2 2` with R3R_FOLD_HOP=0 (byte-identical to bundles/smoke-R3F-2L-ref = R2H tools); see bundles/R3R/BUILD.md for the tools diff.
