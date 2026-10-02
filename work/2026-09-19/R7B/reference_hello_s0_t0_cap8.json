@@ -1,0 +1,117 @@
+{
+ "freeRunningReference": [
+  11,
+  314,
+  1101,
+  7926,
+  11,
+  475,
+  314,
+  1101
+ ],
+ "expectedSlots": [
+  11,
+  314,
+  1101,
+  7926,
+  11,
+  475,
+  314,
+  1101
+ ],
+ "winners": [
+  11,
+  314,
+  1101,
+  7926,
+  11,
+  475,
+  314,
+  1101
+ ],
+ "promptText": "Hello",
+ "promptTokens": [
+  15496
+ ],
+ "promptTokenCount": 1,
+ "newTokens": 8,
+ "stopEpoch": 8,
+ "capacity": 8,
+ "seed": 0,
+ "temperature": 0.0,
+ "temperatureRealized": 0.0,
+ "columns": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8
+ ],
+ "marginsQ": [
+  24.0,
+  126.0,
+  125.0,
+  4.0,
+  22.0,
+  50.0,
+  186.0,
+  87.0
+ ],
+ "greedyWinnerAtStep": [
+  11,
+  314,
+  1101,
+  7926,
+  11,
+  475,
+  314,
+  1101
+ ],
+ "sampledDiffersFromGreedy": 0,
+ "inputs": [
+  15496,
+  11,
+  314,
+  1101,
+  7926,
+  11,
+  475,
+  314
+ ],
+ "generatedIds": [
+  11,
+  314,
+  1101,
+  7926,
+  11,
+  475,
+  314,
+  1101
+ ],
+ "generatedText": ", I'm sorry, but I'm",
+ "fullText": "Hello, I'm sorry, but I'm",
+ "discardedPrefillWinners": [],
+ "teacherForcedCheck": [
+  11,
+  314,
+  1101,
+  7926,
+  11,
+  475,
+  314,
+  1101
+ ],
+ "teacherForcedEqualsWinners": true,
+ "floatWinners": null,
+ "quantizedEqualsFloat": null,
+ "firstQuantizedFloatMismatch": null,
+ "noiseTable": "/Users/shubhampatil/Documents/programming/gpt2-css/work/2026-09-19/R7B/assets-r7b/noise-table.npz",
+ "rule": "col = mod(seed + epoch - N, 64) + 1 (N = max(promptCount,1)); scores = rint(raw_q + n[col]*T_realized); first-index argmax; prefill epochs 1..N-1 skipped (slot -1)",
+ "note": "freeRunningReference[e-1] = expected --saved-token-e: -1 for e < N (head skipped), else the (sampled) winner; the run stops at stopEpoch",
+ "blocks": 12,
+ "tools": "/Users/shubhampatil/Documents/programming/gpt2-css/work/2026-09-19/R7B",
+ "seconds": 2
+}

@@ -26,6 +26,8 @@ import r3h_blockflow_max as r3h
 import r5e_dead_weight as r5e
 import r6p_prompt as r6p  # R6P: pre-Run prompt echo fix + typed free-text prompt (prefill)
 import r6v_progress_ui as r6v  # R6V: display-only progress UI
+import r7h_id_guard as r7h  # R7H: self-checking winner->token-id hop (calibration + agreement gates)
+import r7b_features as r7b  # R7B: prefill head skip, capacity-36 stop rule, Gumbel sampling
 if r6p.TYPED and r6v.ON:  # R6X merge: R6P's prompt panel (top 52) + token readout (118) occupy R6V's panel row -> move the
     r6v.TOP_PX = 146  # loading/progress row below the readout (R6V default 52) ...
     r6p.OUTPUT_TOP = 184  # ... and the output text below that (R6P default 146; base 110)
@@ -289,10 +291,16 @@ def compile_runtime(
             uncached_style=uncached_style,
             scoped_state=scoped_state,
         )
+    if r7b.PREFILL_HEAD_SKIP:
+        core = r7b.insert_prefill_signals(core)  # R7B: <g id=r7b-prefill-ready-e> in svg.loop-signals (corestate container)
     embedding, embed_css = compile_embedding(with_epoch=True)
     head_dir = ROOT / "experiments/browser-gpt2/head-two-pass"
     head = (head_dir / "head-body.html").read_text()
     head_css = (head_dir / "head.css").read_text()
+    r7b_noise_info = None
+    if r7b.SAMPLING:
+        r7b_noise_info = r7b.check_noise_font()  # R7B: 7th glyph (noise font) on every head row / fine string, NoiseQ in both font lists
+        head, head_css = r7b.add_noise_glyphs(head, head_css)
     if capacity > 8:
         head, head_css = split_head_receipt(head, head_css)
     head_bank_regs = head_bank_decls = ""
@@ -300,12 +308,21 @@ def compile_runtime(
         # F4: the head reads its 768 inputs only through two identical
         # font-variation-settings lists; latch that list once instead of 768 numbers.
         head_css, head_bank_regs, head_bank_decls = f4.pack_head_input(head_css)
+        if r7b.SAMPLING:
+            head_bank_decls = r7b.extend_head_fvs(head_bank_decls)  # R7B: ,"SEED" var(--noise-col),"TEMP" var(--temp)
+    elif r7b.SAMPLING:
+        raise ValueError("R7B_SAMPLING requires F4_PACKED_HEAD (the noise axes ride on the latched --head-fvs list)")
     if r3h.BLOCKFLOW_MAX:
         # R3H #1 (#176): coarse groups become block containers of in-flow
         # zero-height rows; a block's max-content width is the max child width,
         # i.e. the same quantity the single max-content grid track computed.
         head_css = r3h.blockflow_max(head_css)
     front, output, control_css, timeline_names = feedback(capacity)
+    front, output, control_css, timeline_names = r7h.apply(front, output, control_css, timeline_names, capacity)  # R7H (flag R7H_ID_GUARD)
+    if r7b.PREFILL_HEAD_SKIP:
+        output = r7b.add_prefill_begin(output)  # R7B: #token-e-captured also begins on r7b-prefill-ready-e.animationend
+    if r7b.CAPACITY_36:
+        output = r7b.insert_stop_signals(output)  # R7B: #r7b-stop-ready-c -> #r7b-complete-c.done (stop rule relay)
     output_receiver = ""
     if detached_output:
         # Keep token retention and feedback outside the scorer's lifecycle.
@@ -507,6 +524,8 @@ def compile_runtime(
         if model.count(_marker_old) != 1:
             raise ValueError(f'R6X: expected exactly one embedding epoch marker, found {model.count(_marker_old)}')
         model = model.replace(_marker_old, _marker_new, 1)
+    if r7b.SAMPLING:
+        css += r7b.noise_face_css()  # R7B: the noise font joins the font barrier (286th face)
     font_html, font_css, font_count = font_barrier(css, directory)
     css += font_css
     scopes = re.findall(r"html\{timeline-scope:([^}]+)\}", css)
@@ -589,6 +608,8 @@ def compile_runtime(
         ).replace('<aside style="', '<aside class="tk-aside" style="')
         controls += r6p.panel_html()
         css += r6p.chain_css() + r6p.prefill_handshake_css() + r6p.panel_css(capacity)
+    if r7b.SAMPLING:
+        controls = r7b.insert_controls(controls)  # R7B: <select id=r7b-seed>, <select id=r7b-temp>, seed readout
     if teacher_forced_tokens is not None:
         # Known evaluation INPUT IDs, not generated answers or activations.
         # The native embedding, 12-layer loop, KV retention and full head still
@@ -626,6 +647,7 @@ def compile_runtime(
     if r6v.ON:  # R6V: per-token progress reader (first child of .core-controller) + token counter
         model = r6v.insert_progress(model)
         css += r6v.progress_css(blocks, capacity)
+    css += r7b.feature_css(blocks, capacity)  # R7B: head skip on prefill epochs, stop rule + new-token progress text, sampling
     if r2d.OVERFLOW_CLIP:
         css = r2d.overflow_clip(css)
     if r2d.POINTER_EVENTS:
@@ -686,6 +708,7 @@ def compile_runtime(
         r3hBlockflowMax=r3h.BLOCKFLOW_MAX,
         **r5e.manifest(),
         **r6v.manifest(),
+        **r7b.manifest(capacity, r7b_noise_info),
         r5eLeanWallStats=r5e_stats,
         headEpochTransport="separate geometry" if capacity > 8 else "packed four bits",
         fontBackend=font_backend,
@@ -769,8 +792,8 @@ def main():
     )
     args = parser.parse_args()
     hybrid.INLINE_GELU = args.inline_gelu
-    if not 1 <= args.blocks <= 12 or not 2 <= args.capacity <= 32:
-        parser.error("blocks must be 1–12; capacity must be 2–32")
+    if not 1 <= args.blocks <= 12 or not 2 <= args.capacity <= r7b.MAX_CAPACITY:  # R7B_CAPACITY_36 lifts 32 -> 64
+        parser.error(f"blocks must be 1–12; capacity must be 2–{r7b.MAX_CAPACITY}")
     args.output.mkdir(parents=True, exist_ok=True)
     compile_runtime(
         args.output,

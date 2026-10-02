@@ -1,0 +1,36 @@
+{
+ "A0e_page_epoch": {
+  "file": "A0e_page_epoch.html",
+  "note": "A0 + epoch advances per mutation (gate closes at write, opens at readback) \u2014 control for A7",
+  "css_bytes": 15519535,
+  "html_bytes": 295859,
+  "verify": [
+   {
+    "selector": ".probe",
+    "props": [
+     "--hidden-000",
+     "--hidden-001",
+     "--hidden-1155",
+     "--hidden-3071"
+    ]
+   }
+  ]
+ },
+ "A7_chain_in_gate": {
+  "file": "A7_chain_in_gate.html",
+  "note": "chunk chain INSIDE the receipt/gate (content-visibility:hidden during the write pass), epoch advancing",
+  "css_bytes": 15519535,
+  "html_bytes": 295861,
+  "verify": [
+   {
+    "selector": ".probe",
+    "props": [
+     "--hidden-000",
+     "--hidden-001",
+     "--hidden-1155",
+     "--hidden-3071"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,119 @@
+{
+ "A0_page": {
+  "file": "A0_page.html",
+  "note": "page topology: chunk chain under .shared-fc (sibling of scroller), 12 @container layer variants",
+  "css_bytes": 15519180,
+  "html_bytes": 295852,
+  "verify": [
+   {
+    "selector": ".probe",
+    "props": [
+     "--hidden-000",
+     "--hidden-001",
+     "--hidden-1155",
+     "--hidden-3071"
+    ]
+   }
+  ]
+ },
+ "A1_sibling": {
+  "file": "A1_sibling.html",
+  "note": "chunk chain as SIBLING of .shared-fc under .fcwrap (timeline-scope + --range-fc hoisted to .fcwrap)",
+  "css_bytes": 14761662,
+  "html_bytes": 295881,
+  "verify": [
+   {
+    "selector": ".probe",
+    "props": [
+     "--hidden-000",
+     "--hidden-001",
+     "--hidden-1155",
+     "--hidden-3071"
+    ]
+   }
+  ]
+ },
+ "A2_novt_nochain": {
+  "file": "A2_novt_nochain.html",
+  "note": "carriers only, no view-timeline, no chain: pure inherited-font-change restyle + layout floor",
+  "css_bytes": 2423782,
+  "html_bytes": 150941,
+  "verify": [
+   {
+    "selector": ".shared-fc",
+    "props": [
+     "--fq-fc-000",
+     "--fq-fc-767",
+     "--range-fc"
+    ]
+   }
+  ]
+ },
+ "A3_vt_nochain": {
+  "file": "A3_vt_nochain.html",
+  "note": "carriers with view-timeline, no chain: + timeline subject bookkeeping",
+  "css_bytes": 2423782,
+  "html_bytes": 294213,
+  "verify": [
+   {
+    "selector": ".shared-fc",
+    "props": [
+     "--fq-fc-000",
+     "--fq-fc-767",
+     "--range-fc"
+    ]
+   }
+  ]
+ },
+ "A4_noanim": {
+  "file": "A4_noanim.html",
+  "note": "page topology but chunk rules without animation-*: isolates the 48 x 192 var() decode decls",
+  "css_bytes": 14509020,
+  "html_bytes": 295854,
+  "verify": [
+   {
+    "selector": ".probe",
+    "props": [
+     "--hidden-000",
+     "--hidden-001",
+     "--hidden-1155",
+     "--hidden-3071"
+    ]
+   }
+  ]
+ },
+ "A5_1variant": {
+  "file": "A5_1variant.html",
+  "note": "page topology with ONE layer variant (no 12x @container rule matching)",
+  "css_bytes": 2547077,
+  "html_bytes": 295856,
+  "verify": [
+   {
+    "selector": ".probe",
+    "props": [
+     "--hidden-000",
+     "--hidden-001",
+     "--hidden-1155",
+     "--hidden-3071"
+    ]
+   }
+  ]
+ },
+ "A6_bigmap": {
+  "file": "A6_bigmap.html",
+  "note": "page topology + 4,000 inherited registered numbers declared on the ancestor",
+  "css_bytes": 15850079,
+  "html_bytes": 295861,
+  "verify": [
+   {
+    "selector": ".probe",
+    "props": [
+     "--hidden-000",
+     "--hidden-001",
+     "--hidden-1155",
+     "--hidden-3071"
+    ]
+   }
+  ]
+ }
+}
