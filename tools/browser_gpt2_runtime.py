@@ -32,6 +32,21 @@ if r6p.TYPED and r6v.ON:  # R6X merge: R6P's prompt panel (top 52) + token reado
     r6v.TOP_PX = 146  # loading/progress row below the readout (R6V default 52) ...
     r6p.OUTPUT_TOP = 184  # ... and the output text below that (R6P default 146; base 110)
     r6v.HIDE_SELECTOR = "body>:not(.controls):not(.ld):not(.tk-panel)"  # the early-paint lock must not hide the prompt panel
+import r8u_layout as r8u  # R8U: production page layout (header, 2-row controls, shifted fixed rows); display only
+R8U_ACTIVE = r8u.ON and r6p.TYPED and r6v.ON
+if R8U_ACTIVE:  # R8U: every fixed row below the new header / second controls row moves down (emitters read these at call time)
+    r6p.PANEL_TOP, r6p.TOKENS_TOP, r6p.OUTPUT_TOP = r8u.PANEL_TOP, r8u.TOKENS_TOP, r8u.OUTPUT_TOP
+    r6v.TOP_PX = r8u.PROGRESS_TOP  # .ld (CSS phase), .ld2 (fonts phase), .pg (progress)
+    r7h.WARN_TOP = r8u.OUTPUT_TOP  # the geometry self-check panel takes the output row (a held run shows no output)
+    r6v.HIDE_SELECTOR = r8u.HIDE_SELECTOR  # the early-paint lock must not hide the header either
+
+
+def r8u_new_tokens(capacity):
+    """R8U: the run's new-token count if it does not depend on the prompt length (capacity 36 -> 32), else None."""
+    if not r7b.CAPACITY_36:
+        return None
+    totals = {total for _, _, total, _ in r7b.totals(capacity)}
+    return totals.pop() if len(totals) == 1 else None
 import numpy as np
 from analyze_full_gpt2 import MODEL_PATH, SafeTensors
 
@@ -610,6 +625,18 @@ def compile_runtime(
         css += r6p.chain_css() + r6p.prefill_handshake_css() + r6p.panel_css(capacity)
     if r7b.SAMPLING:
         controls = r7b.insert_controls(controls)  # R7B: <select id=r7b-seed>, <select id=r7b-temp>, seed readout
+    r8u_header = ""
+    if R8U_ACTIVE:  # R8U: header before .controls; footer = practical notes; Options disclosure after Reset
+        n_new = r8u_new_tokens(capacity)
+        r8u.PROMPT_SLOTS = r6p.SLOTS
+        aside = re.search(r'(<aside class="tk-aside" style=")position:fixed;left:24px;right:24px;top:176px;font:13px/1.5 system-ui;color:#666(">)(.*?)(</aside>)', controls)
+        form = '<form style="display:inline" action="index.html"><button>Reset</button></form>'
+        if aside is None or controls.count(form) != 1:
+            raise ValueError("R8U: footer / Reset / editor anchors not found")
+        controls = controls.replace(aside[0], aside[1] + "position:fixed;left:24px;right:24px;top:176px;font:12px/1.5 system-ui;color:#7a746a"
+                                    + aside[2] + r8u.footer_html(capacity, n_new, r6p.SLOTS) + aside[4], 1)
+        controls = controls.replace(form, form + r8u.OPTIONS_HTML, 1)
+        r8u_header = r8u.header_html()
     if teacher_forced_tokens is not None:
         # Known evaluation INPUT IDs, not generated answers or activations.
         # The native embedding, 12-layer loop, KV retention and full head still
@@ -663,13 +690,23 @@ def compile_runtime(
             head_style = head_style.replace("</style>", r6p.panel_inline_css() + "</style>", 1)
         css += r6v.early_paint_runtime_css()
     if r6p.TYPED and r6v.ON:  # R6X: keep the output text above the fixed footer (.tk-aside, bottom 16px); scroll when longer than the box
-        css += "html .visible-output{max-height:calc(100vh - 280px);min-height:4lh;overflow:auto}"  # v4: box = content, clamped; never shorter than 4 lines
-        css += "html .tk-aside{top:calc(192px + max(128px,100vh - 280px))!important;bottom:auto}"  # v4: footer right below the output's maximum extent (off-screen in very short windows, never overlapping)
+        if R8U_ACTIVE:  # R8U: same two rules for the shifted output row (top 332, 80 px footer reserve)
+            css += "".join(r8u.output_css())
+        else:
+            css += "html .visible-output{max-height:calc(100vh - 280px);min-height:4lh;overflow:auto}"  # v4: box = content, clamped; never shorter than 4 lines
+            css += "html .tk-aside{top:calc(192px + max(128px,100vh - 280px))!important;bottom:auto}"  # v4: footer right below the output's maximum extent (off-screen in very short windows, never overlapping)
         css += r6x_head_phase_css(blocks)
     if os.environ.get("R6X_SCROLLBAR_FIX", "1") not in ("0", "false", "no", "off"):  # R6X v6 (R7H): headed Chrome's classic scrollbar must not shrink the id-readback scrollport
         css += ".feedback-scroller{scrollbar-width:none}"
+    title = "Native GPT-2 • Chromium • no JavaScript"
+    if R8U_ACTIVE:  # R8U: presentation rules last (win over the older .controls rule); same rules inline so the header/controls paint pre-sheet
+        css += r8u.ui_css() + r8u.sheet_css()
+        if head_style:
+            head_style = head_style.replace("</style>", r8u.inline_css() + "</style>", 1)
+        title = r8u.TITLE + " — no JavaScript"
     page = (
-        '<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="script-src \'none\';object-src \'none\'"><title>Native GPT-2 • Chromium • no JavaScript</title>' + head_style + link + '</head><body>'
+        '<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="script-src \'none\';object-src \'none\'"><title>' + title + '</title>' + head_style + link + '</head><body>'
+        + r8u_header
         + controls
         + early_panel
         + body_link

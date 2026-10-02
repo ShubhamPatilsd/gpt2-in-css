@@ -28,6 +28,7 @@ import os
 import re
 
 ON = os.environ.get("R7H_ID_GUARD", "1") not in ("0", "false", "no", "off")
+WARN_TOP = 184  # R8U: .fb-warn panel top (R8U_LAYOUT moves it to the output row)
 CAL = 50256  # constant id of the calibration metric (bias at a 15 px scrollbar: +1.67 ids -> fails)
 
 
@@ -84,7 +85,7 @@ def apply(front, output, css, timelines, capacity):
     css += "".join(f"@container headstate not style(--fb-agree-{e}:1){{#token-{e}-ack{{animation:none!important}}}}" for e in slots)
     # visible explanation (only after the fonts are in, so the pre-load frames do not flash it)
     css += (
-        ".fb-warn{display:none;position:fixed;left:24px;right:24px;top:184px;z-index:120;font:14px/1.45 system-ui;color:#7a1d10;"
+        f".fb-warn{{display:none;position:fixed;left:24px;right:24px;top:{WARN_TOP}px;z-index:120;font:14px/1.45 system-ui;color:#7a1d10;"
         "background:#fbe9e5;border:1px solid #e3b0a6;border-radius:6px;padding:8px 12px}"
         '.fb-warn::after{content:"Geometry self-check failed: a token-id readback decoded a known constant wrongly (the usual cause is a '
         'classic, space-taking scrollbar on a hidden measuring element, or an unusual zoom), so the run is held rather than show wrong '

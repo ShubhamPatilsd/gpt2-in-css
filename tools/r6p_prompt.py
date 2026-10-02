@@ -217,7 +217,7 @@ def chain_css():
         for j in range(SLOTS)
     )
     css += (
-        f".tk-tokens{{position:fixed;left:24px;right:24px;top:118px;font:13px/1.4 system-ui;color:#666;white-space:pre-wrap;"
+        f".tk-tokens{{position:fixed;left:24px;right:24px;top:{TOKENS_TOP}px;font:13px/1.4 system-ui;color:#666;white-space:pre-wrap;"
         f"{hops};--tk-count:calc({tk_count});{parts};"
         f'--tk-label:if(style(--tk-count:0):"Typed prompt: none — the dropdown prompt is used. ";else:"Typed prompt → GPT-2 tokens (first {SLOTS} used, each costs one full step): ")}}'
         ".tk-tokens::after{counter-reset:"
@@ -295,13 +295,15 @@ def panel_html():
     )
 
 
+PANEL_TOP = 52  # R8U: .tk-panel top (R8U_LAYOUT moves it)
+TOKENS_TOP = 118  # R8U: .tk-tokens readout top
 OUTPUT_TOP = 146  # R6X: .visible-output top in px (the merge with R6V moves it below the progress row)
 
 
 def panel_inline_css():
     """R6X: the panel's visual rules; also emitted in R6V's early-paint inline <style> so the editor is visible before the sheet."""
     return (
-        ".tk-panel{position:fixed;left:24px;right:24px;top:52px;z-index:100;font:13px/1.4 system-ui;color:#444}"
+        f".tk-panel{{position:fixed;left:24px;right:24px;top:{PANEL_TOP}px;z-index:100;font:13px/1.4 system-ui;color:#444}}"
         ".tk-panel label{display:block;margin-bottom:2px}"
         ".tk-editor{display:block;box-sizing:border-box;width:100%;max-width:800px;padding:4px 8px;border:1px solid #aaa;border-radius:4px;"
         "background:#fff;color:#111;font:13px/1.4 ui-monospace,Menlo,monospace;white-space:pre;overflow:hidden;caret-color:#111}"
