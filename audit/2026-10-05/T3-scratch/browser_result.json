@@ -1,0 +1,353 @@
+{
+ "transformer": {
+  "loadMs": 39,
+  "firstStyleReadMs": 66,
+  "runs": [
+   {
+    "prompt": " ab",
+    "shownPrompt": "␠ab",
+    "css": "cde",
+    "ref": "cde",
+    "match": true,
+    "oneHot": true,
+    "cssStep1Logits": [
+     -1.10364,
+     -1.16717,
+     -0.888781,
+     4.94819,
+     -1.03403,
+     -0.84695,
+     -0.907628
+    ],
+    "refStep1Logits": [
+     -1.103647,
+     -1.167173,
+     -0.888779,
+     4.948199,
+     -1.034034,
+     -0.846952,
+     -0.907632
+    ],
+    "maxStep1LogitAbsErr": 0.000008999999999481645,
+    "ms": 0,
+    "opacities": [
+     [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+     ]
+    ]
+   },
+   {
+    "prompt": "bcd",
+    "shownPrompt": "bcd",
+    "css": "e.␠",
+    "ref": "e.␠",
+    "match": true,
+    "oneHot": true,
+    "cssStep1Logits": [
+     -1.24045,
+     -0.974492,
+     -0.965985,
+     -0.793938,
+     -1.01045,
+     4.99271,
+     -1.0074
+    ],
+    "refStep1Logits": [
+     -1.240441,
+     -0.974496,
+     -0.965988,
+     -0.793945,
+     -1.010452,
+     4.992713,
+     -1.007391
+    ],
+    "maxStep1LogitAbsErr": 0.000009000000000147779,
+    "ms": 81,
+    "opacities": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "prompt": "de.",
+    "shownPrompt": "de.",
+    "css": "␠ab",
+    "ref": "␠ab",
+    "match": true,
+    "oneHot": true,
+    "cssStep1Logits": [
+     4.88634,
+     -1.02864,
+     -1.11536,
+     -0.881318,
+     -1.10092,
+     -0.854874,
+     -0.905243
+    ],
+    "refStep1Logits": [
+     4.886345,
+     -1.028644,
+     -1.115365,
+     -0.881319,
+     -1.100929,
+     -0.85487,
+     -0.905237
+    ],
+    "maxStep1LogitAbsErr": 0.000009000000000147779,
+    "ms": 44,
+    "opacities": [
+     [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "prompt": ". a",
+    "shownPrompt": ".␠a",
+    "css": "bcd",
+    "ref": "bcd",
+    "match": true,
+    "oneHot": true,
+    "cssStep1Logits": [
+     -1.13054,
+     -1.00374,
+     5.01897,
+     -0.806597,
+     -1.0029,
+     -0.986438,
+     -1.08878
+    ],
+    "refStep1Logits": [
+     -1.130553,
+     -1.003737,
+     5.01899,
+     -0.806611,
+     -1.002905,
+     -0.986431,
+     -1.08878
+    ],
+    "maxStep1LogitAbsErr": 0.000019999999999242846,
+    "ms": 48,
+    "opacities": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+     ]
+    ]
+   }
+  ],
+  "hasScript": false,
+  "visibleText": "␠ab\n␠\na\nb\nc\nd\ne\n.\n␠\na\nb\nc\nd\ne\n.\n␠\na\nb\nc\nd\ne\n.",
+  "console": []
+ },
+ "mnist": {
+  "loadMs": 164,
+  "firstStyleReadMs": 3,
+  "default": {
+   "scores": [
+    10.3084,
+    -5.30598,
+    1.12277,
+    -4.51483,
+    -6.14232,
+    -6.28125,
+    1.35656,
+    0.991241,
+    -5.5759,
+    -0.62548
+   ],
+   "pred": 0,
+   "refText": "Python reference prediction\n0",
+   "detail": "MNIST test sample 3\nLabel: 0",
+   "shown": [
+    "counter(millilogit) \" mlogit\"",
+    "counter(millilogit) \" mlogit\"",
+    "counter(millilogit) \" mlogit\"",
+    "counter(millilogit) \" mlogit\"",
+    "counter(millilogit) \" mlogit\"",
+    "counter(millilogit) \" mlogit\"",
+    "counter(millilogit) \" mlogit\"",
+    "counter(millilogit) \" mlogit\"",
+    "counter(millilogit) \" mlogit\"",
+    "counter(millilogit) \" mlogit\""
+   ],
+   "hasScript": false,
+   "refPred": 0,
+   "refScores": [
+    10.3084,
+    -5.306,
+    1.1228,
+    -4.5148,
+    -6.1423,
+    -6.2812,
+    1.3566,
+    0.9912,
+    -5.5759,
+    -0.6255
+   ],
+   "maxAbsErr": 0.00004999999999988347
+  },
+  "all": [
+   {
+    "sample": 0,
+    "cssPred": 0,
+    "refPred": 0,
+    "maxAbsErr": 0.00005
+   },
+   {
+    "sample": 1,
+    "cssPred": 1,
+    "refPred": 1,
+    "maxAbsErr": 0.00004
+   },
+   {
+    "sample": 2,
+    "cssPred": 2,
+    "refPred": 2,
+    "maxAbsErr": 0.00004
+   },
+   {
+    "sample": 3,
+    "cssPred": 3,
+    "refPred": 3,
+    "maxAbsErr": 0.00005
+   },
+   {
+    "sample": 4,
+    "cssPred": 4,
+    "refPred": 4,
+    "maxAbsErr": 0.00005
+   },
+   {
+    "sample": 5,
+    "cssPred": 5,
+    "refPred": 5,
+    "maxAbsErr": 0.00005
+   },
+   {
+    "sample": 6,
+    "cssPred": 6,
+    "refPred": 6,
+    "maxAbsErr": 0.00005
+   },
+   {
+    "sample": 7,
+    "cssPred": 7,
+    "refPred": 7,
+    "maxAbsErr": 0.000035
+   },
+   {
+    "sample": 8,
+    "cssPred": 8,
+    "refPred": 8,
+    "maxAbsErr": 0.00005
+   },
+   {
+    "sample": 9,
+    "cssPred": 9,
+    "refPred": 9,
+    "maxAbsErr": 0.000044
+   }
+  ],
+  "console": []
+ },
+ "chromeVersion": "154.0.8037.97",
+ "launchMs": 905,
+ "totalMs": 4610
+}

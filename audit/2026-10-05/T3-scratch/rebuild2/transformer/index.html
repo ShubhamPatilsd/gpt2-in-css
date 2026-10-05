@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A tiny transformer, computed by CSS</title>
+  <link rel="stylesheet" href="model.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Experiment 002 · no runtime JavaScript</p>
+    <h1>A transformer, computed by CSS.</h1>
+    <p class="lede">
+      One GPT-2-style block, three attention heads, a 12-dimensional embedding,
+      causal softmax attention, GELU, residual paths, and three statically
+      unrolled autoregressive steps.
+    </p>
+
+    <section class="demo">
+      <fieldset class="prompt-picker">
+        <legend>Choose a three-token prompt</legend>
+        <div class="prompt-options">
+        <input type="radio" name="prompt" id="prompt-0" checked>
+        <label for="prompt-0"><code>␠ab</code></label>
+        <input type="radio" name="prompt" id="prompt-1">
+        <label for="prompt-1"><code>bcd</code></label>
+        <input type="radio" name="prompt" id="prompt-2">
+        <label for="prompt-2"><code>de.</code></label>
+        <input type="radio" name="prompt" id="prompt-3">
+        <label for="prompt-3"><code>.␠a</code></label>
+        </div>
+      </fieldset>
+
+      <div class="generation" aria-label="CSS-generated token sequence">
+        <span class="prompt-stack"><span class="prompt-value" data-prompt="0">␠ab</span><span class="prompt-value" data-prompt="1">bcd</span><span class="prompt-value" data-prompt="2">de.</span><span class="prompt-value" data-prompt="3">.␠a</span></span>
+          <span class="generated-token" data-step="0"><span class="token-option" data-token="0">␠</span><span class="token-option" data-token="1">a</span><span class="token-option" data-token="2">b</span><span class="token-option" data-token="3">c</span><span class="token-option" data-token="4">d</span><span class="token-option" data-token="5">e</span><span class="token-option" data-token="6">.</span></span>
+          <span class="generated-token" data-step="1"><span class="token-option" data-token="0">␠</span><span class="token-option" data-token="1">a</span><span class="token-option" data-token="2">b</span><span class="token-option" data-token="3">c</span><span class="token-option" data-token="4">d</span><span class="token-option" data-token="5">e</span><span class="token-option" data-token="6">.</span></span>
+          <span class="generated-token" data-step="2"><span class="token-option" data-token="0">␠</span><span class="token-option" data-token="1">a</span><span class="token-option" data-token="2">b</span><span class="token-option" data-token="3">c</span><span class="token-option" data-token="4">d</span><span class="token-option" data-token="5">e</span><span class="token-option" data-token="6">.</span></span>
+      </div>
+
+      <div class="pipeline">
+        <span>token + position</span><i>→</i><span>layer norm</span><i>→</i>
+        <span>causal attention</span><i>→</i><span>residual</span><i>→</i>
+        <span>GELU MLP</span><i>→</i><span>LM head</span>
+      </div>
+
+      <details>
+        <summary>Python reference outputs</summary>
+        <pre>␠ab → cde
+bcd → e.␠
+de. → ␠ab
+.␠a → bcd</pre>
+      </details>
+    </section>
+
+    <p class="proof">
+      The Python build step fits the tiny language head and writes static CSS.
+      At runtime, CSS performs the transformer arithmetic, computes each
+      <code>max()</code>, derives one-hot token choices with
+      <code>abs(sign())</code>, and feeds the chosen embedding into the next
+      unrolled step. There is no <code>&lt;script&gt;</code> element.
+    </p>
+    <p class="back"><a href="../index.html">← MNIST MLP</a></p>
+  </main>
+</body>
+</html>
