@@ -1,6 +1,6 @@
 # Deploy the GPT-2-in-CSS demo to a Cloudflare Worker (workers.dev)
 
-This is option A1 from HOSTING.md. The result is `https://gpt2-css.<your-subdomain>.workers.dev/`.
+This is option A1 of the hosting plan (static assets on Workers + R2 for the two files over 25 MiB). The result is `https://gpt2-css.<your-subdomain>.workers.dev/`.
 
 - 286 small files are served as Workers static assets. These requests are free, have no request limit, and never run the Worker.
 - 2 files are larger than the 25 MiB static-asset limit. They are stored in the R2 bucket `gpt2-css-large`, and `src/worker.js` serves them. The Worker runs on Cloudflare's servers, not in the browser, so the page still has zero client JavaScript.
@@ -27,8 +27,8 @@ Files in this folder:
 Run these from this folder:
 
 ```sh
-cd /Users/shubhampatil/Documents/programming/gpt2-css/deploy/cloudflare-worker
-M=/Users/shubhampatil/Documents/programming/gpt2-css/work/2026-09-19/R8D/out/model
+cd deploy/cloudflare-worker            # from the repo root
+M=../../out/model                       # the upload tree from: pack/prepare_upload.sh out
 
 # 0. Wrangler. The installed one is 4.115.0; npx always gets the newest.
 npx wrangler@latest --version        # or: npm i -g wrangler@latest  (then drop "npx ... @latest" below)
@@ -123,7 +123,7 @@ The machine needs about 16 GB of RAM: the tab uses about 2 GB after loading and 
 ## 5. Update
 
 When the bundle changes:
-1. Rebuild the bundle with `work/2026-09-19/R8D/prepare_upload.sh`.
+1. Rebuild the upload tree with `pack/prepare_upload.sh <out-dir>`.
 2. Re-run `./stage.sh <new bundle dir>`. It warns if a new unversioned font needs a `_headers` rule.
 3. Upload R2 objects first, then deploy the static assets:
 

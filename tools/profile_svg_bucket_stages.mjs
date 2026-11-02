@@ -2,8 +2,8 @@ import fs from "node:fs/promises";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const dependencyRoot = process.env.CODEX_NODE_MODULES ??
-  "/Users/shubhampatil/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules";
+const dependencyRoot = process.env.PLAYWRIGHT_NODE_MODULES ??
+  new URL("../node_modules", import.meta.url).pathname;
 const { chromium } = require(`${dependencyRoot}/playwright`);
 
 const executablePath = process.env.CHROME_PATH ??

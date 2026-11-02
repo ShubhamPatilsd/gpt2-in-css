@@ -1,0 +1,36 @@
+# Weights (download from Hugging Face, see README)
+data/
+*.safetensors
+*.bin
+*.pt
+*.npz
+
+# Build outputs
+experiments/
+bundles/
+assets/
+assets-*/
+global-projection-assets/
+out/
+out-zip/
+*.woff2
+*.woff
+*.ttf
+*.otf
+*.br
+*.gz
+*.zip
+
+# Deploy staging
+deploy/cloudflare-worker/public/
+.wrangler/
+
+# Tooling
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.env*
+.DS_Store
+logs/
+*.log

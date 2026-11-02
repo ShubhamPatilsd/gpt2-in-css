@@ -1,288 +1,123 @@
-# MNIST in HTML + CSS
+# GPT-2 in CSS
 
-This is the first step toward expressing a neural network in HTML and CSS: a
-784-to-32-to-10 ReLU MNIST MLP whose forward pass is evaluated by the browser's
-CSS engine. The page includes ten selectable test images—one of each digit—and
-recomputes the classifier whenever the selected radio button changes.
+GPT-2 small (124M parameters, 12 layers) running entirely in HTML + CSS. The page has no JavaScript: it ships with
+`Content-Security-Policy: script-src 'none'`. The weights are stored in fonts (variable-font axes, HVAR/GSUB tables), and
+the browser's layout and font-shaping engines do the matrix math. CSS animations, view timelines and container style
+queries clock the model through the 12 layers and feed each new token back in.
 
-There is no JavaScript in the generated page. Python is used at build time to:
+- Live demo: https://gpt2-css.shubhampatilsd.workers.dev/
+- Blog post: https://shubhampatil.dev/blog/gpt2-css
 
-1. download MNIST,
-2. train a multinomial linear classifier,
-3. export its weights and ten test images as CSS custom properties, and
-4. write the static HTML visualization.
+The page takes up to 4 prompt tokens and generates 32 new tokens (context 36). It decodes greedily by default, and has
+seed and temperature options (Gumbel-max sampling). In greedy mode it gives the same token ids as the float reference
+GPT-2.
 
-At runtime, each hidden activation and class score is a CSS expression:
+## Requirements to run the demo
 
-```css
---hidden-pre-00: calc(
-  var(--hidden-bias-00)
-  + var(--x-000) * var(--hidden-w-00-000)
-  + var(--x-001) * var(--hidden-w-00-001)
-  /* ... */
-);
+- Desktop Google Chrome or Edge **139 or newer**. The page uses CSS `@function`, `if()`, `calc-size()`, anchor
+  positioning, view timelines and `@container style()` queries. Other browsers show a broken page.
+- About **16 GB of RAM**. The tab uses about 2 GB after it loads, and up to about 6 GB while it generates.
+- About 300 MB download (240 MB of fonts). Each token takes about 15 to 45 s, so 32 tokens take about 15 minutes.
 
---hidden-00: max(0, var(--hidden-pre-00));
+## What is in this repository
+
+This is the compiler source (Python) that writes the page, the scripts that pack it, the Cloudflare deploy config,
+and two documents that explain how the page works. The built page (fonts, `runtime.css`, `index.html`) is **not** in
+git, because it is about 300 MB.
+
+```
+compile.sh                  Final page compiler entry point (wraps tools/browser_gpt2_runtime.py with the shipped flags)
+tools/                      Compiler and font builders (Python), plus research benchmarks and profilers (Playwright .mjs)
+  browser_gpt2_runtime.py     Main compiler: writes index.html + runtime.css + fonts for the full 12-layer model
+  browser_gpt2_*.py           Model parts: embedding, attention/KV cache, MLP font vectors, vocabulary head
+  f4_* r2*_ ... r8u_*.py      Optimization passes and UI features, switched by the env flags in compile.sh
+  build_*.py                  Font and CSS builders for the experiment stages that the final compile reuses
+  launch_browser_gpt2.py      Local static server + launcher (separate Chrome profile, JavaScript off, strict CSP)
+  serve_precompressed.py      Static server that serves .br/.gz files
+pack/                       Pack a built bundle into a self-contained upload folder and zip
+  prepare_upload.sh           bundles/<name>  ->  <out>/model (upload tree) + <out>-zip/gpt2-in-css.zip
+deploy/cloudflare-worker/   Cloudflare Worker config for the hosted demo (see DEPLOY.md)
+docs/                       How it works: I1 = the data path of one token, I2 = control path, clocking, sampling, UI
 ```
 
-The class with the longest bar is the CSS prediction. Python's reference
-prediction is shown only as a correctness check. Selecting an image is handled
-with radio inputs and `:has()`; there is still no JavaScript at runtime.
+The documents in `docs/` were written against the original research tree. Paths in them such as
+`work/2026-09-19/R7X/tools/x.py` correspond to `tools/x.py` here.
 
-## Build
+Tests and browser test harnesses were removed from this public copy. The research benchmark and profiler scripts in
+`tools/` (`benchmark_*`, `profile_*`, `compare_*`, `diagnose_*`, ...) are kept for reference. Many of them expect
+experiment pages that are not in this repository, so treat them as notes, not as working tools.
+
+## Run locally
+
+The easiest way is the prebuilt bundle. Download `gpt2-in-css.zip` from the GitHub release (if one is published) and
+run:
 
 ```sh
-make build
-open index.html
+unzip gpt2-in-css.zip -d gpt2-in-css && cd gpt2-in-css
+python3 tools/launch_browser_gpt2.py --directory model          # Python 3.9+, opens Chrome with JavaScript disabled
+python3 tools/launch_browser_gpt2.py --directory model --no-open  # or open the printed URL yourself
 ```
 
-The first build downloads `mnist.npz` (about 11 MB) and trains the model. The
-dataset is cached under `data/` and excluded from version control.
+Any static file server works too, but the launcher also sends the same strict CSP as the hosted page.
 
-Requirements: Python 3 and NumPy. The generated page needs a browser supporting
-CSS typed arithmetic (`*` in `calc()`). The transformer pages additionally use
-CSS custom functions, available in Chromium 139 and newer.
+## Build from source
 
-## Tiny transformer
+Status: this is the exact compiler source of the shipped page, but a from-scratch rebuild from a fresh clone has not
+been verified yet. Treat it as "compiler source + prebuilt bundle", not as a one-command build.
 
-The second experiment compiles a GPT-2-style transformer block and three
-autoregressive generation steps to CSS:
+1. Tools: Python 3.11+ and [uv](https://docs.astral.sh/uv/). The compiler runs with
+   `uv run --with numpy --with fonttools --with pillow --with brotli`. Some analysis scripts also need `torch`,
+   `safetensors` or `hnswlib`.
+2. Get the GPT-2 weights from Hugging Face (MIT license) into `data/gpt2/`:
 
-```sh
-make transformer
-open transformer/index.html
-```
+   ```sh
+   pip install -U "huggingface_hub[cli]"
+   hf download openai-community/gpt2 model.safetensors config.json vocab.json merges.txt --local-dir data/gpt2
+   # or: mkdir -p data/gpt2 && curl -L -o data/gpt2/model.safetensors \
+   #       https://huggingface.co/openai-community/gpt2/resolve/main/model.safetensors
+   ```
 
-It uses a seven-token toy vocabulary and a fitted language head so the complete
-attention/GELU/residual/argmax/feedback circuit remains small enough to inspect
-in a browser.
+3. Build the font stages that the final compile reuses (`--reuse-core`). All scripts resolve paths from the repo root
+   (`Path(__file__).resolve().parents[1]`), and write into `experiments/`:
+   - `tools/build_gpt2_block_css.py` -> `experiments/gpt2-block-css/`
+   - `tools/build_flat_twelve_block_chain.py` -> `experiments/gpt2-flat-12block-chain/layer01..11/`
+   - `tools/build_hybrid_twelve_block.py` -> `experiments/hybrid-12block-profile/`
+   - `tools/browser_gpt2_embedding.py` -> `experiments/browser-gpt2/embedding/`
+   - `tools/build_gpt2_global_q16_layernorm_integer_full.py` -> `experiments/gpt2-global-q16-layernorm-integer-full/`
+   - `tools/build_gpt2_groupwise_production_q16_sixfont.py` -> the `score-high-*` / `score-residual-*` head fonts
+   - `tools/build_noise_font_r7b.py` -> `assets-r7b/` (Gumbel noise font for sampling)
 
-## Pretrained GPT-2 checkpoint
+   Example: `uv run --with numpy --with fonttools --with pillow --with brotli python tools/build_gpt2_block_css.py`.
+   The packed operator fonts in `assets/`, `assets-r5h/` and `global-projection-assets/` are built on demand by the
+   compiler. The tokenizer fonts in `assets-r6p/` (`gpt2-token-id-{0,1}-full.ttf`) must exist before the compile
+   (see `tools/r6p_prompt.py`).
+4. Compile the shipped page (12 layers, context 36, 32 new tokens):
 
-The third experiment downloads and compiles the `sshleifer/tiny-gpt2` test
-checkpoint, including its 50,257-token language-model head:
+   ```sh
+   R7B_PREFILL_HEAD_SKIP=1 R7B_CAPACITY_36=1 R7B_SAMPLING=1 R7B_NEW_TOKENS=32 \
+   R7H_ID_GUARD=1 R6X_SCROLLBAR_FIX=1 R8U_LAYOUT=1 \
+   VALUE_LAYOUT=widths R4S_SMALL_HOPS=0 ./compile.sh bundles/demo-c32 36 12
+   ```
 
-```sh
-make pretrained
-open pretrained/index.html
-```
+5. Pack it into a self-contained folder (fonts copied into `model/fonts/`, url()s rewritten):
 
-The checkpoint is cached under `data/`. Its legacy PyTorch format is decoded by
-the build script without requiring PyTorch, and the generated page has no
-runtime JavaScript. The tied language head is two-dimensional, so an exact
-convex-hull pass proves that only 16 of its 50,257 token embeddings can ever win
-an argmax; the compiler omits the other mathematically dead logits.
+   ```sh
+   pack/prepare_upload.sh out    # -> out/model (upload tree) and out-zip/gpt2-in-css.zip
+   python3 tools/launch_browser_gpt2.py --directory out/model
+   ```
 
-This checkpoint has only two hidden dimensions and two transformer layers. It
-is useful for verifying the compiler, but it is not a usable language model:
-greedy generation collapses to repeated `stairs` or `factors` tokens even in
-the Python reference implementation.
+## Deploy
 
-To inspect four chained CSS inference passes:
+The hosted demo is a Cloudflare Worker on `workers.dev`. 286 small files are Workers static assets. The two files over
+the 25 MiB static-asset limit (`runtime.css` and `fonts/embedding-lookup.woff2`) come from an R2 bucket through a small
+server-side Worker. The Worker runs on Cloudflare, not in the browser, so the page still has no client JavaScript.
+See [deploy/cloudflare-worker/DEPLOY.md](deploy/cloudflare-worker/DEPLOY.md).
 
-```sh
-make benchmark
-python3 -m http.server 4173
-```
+Do not host the demo on a host that bills bandwidth: one cold visit downloads about 243 MB.
 
-Open `http://localhost:4173/pretrained/benchmark.html` and choose a prompt.
-Every CSS argmax selects the embedding consumed by the next transformer pass.
-The page contains no script. It intentionally recomputes every causal prefix
-instead of using a KV cache, and therefore cannot measure its own wall-clock
-throughput. Exact convex-hull elimination reduces its four-step stylesheet to
-about 561 KB.
+## Credits and license
 
-For a CSS-only prompt picker with one through four initial tokens:
-
-```sh
-make interactive
-python3 -m http.server 4173
-```
-
-Then open `http://localhost:4173/pretrained/interactive.html`. Choose the prompt
-length and select GPT-2 token pieces; native select menus support type-to-search.
-CSS observes each selected `option:checked` and maps it to a raw embedding.
-Press **start / resume generation** to start a four-phase CSS animation clock.
-Every 1.2-second cycle evaluates one transformer pass, latches the winning
-embedding into model state, and appends the decoded token to a CSS content
-buffer. The bounded picker exposes 2,066 useful/common/example token pieces;
-the output argmax remains exact over the full 50,257-token vocabulary because
-only 16 embeddings are geometrically capable of winning for this checkpoint.
-
-The page no longer precomputes future tokens. It contains one 1.51 MB recurrent
-transformer circuit and animation-latched state copied through execute/store
-custom-property banks. Generation can continue indefinitely. To keep the
-state fixed-size, the model uses a 16-token sliding context: after it fills,
-each cycle discards the oldest embedding, shifts the window, and appends the
-new winner. **Pause generation** preserves state; **reset** reloads the page.
-
-There is intentionally no ordinary text field. CSS selectors cannot read a
-text input's live string, and `attr()` reads markup attributes rather than the
-mutable form-control value. Without JavaScript or a server, arbitrary text
-cannot be BPE-tokenized. Selected `<option>` elements do expose dynamic
-`:checked` state, so token selection is the honest zero-script workaround. See
-the [Selectors input-state specification](https://www.w3.org/TR/selectors-4/#input-value-states)
-and [`attr()` definition](https://www.w3.org/TR/css-values-5/#attr-notation).
-
-## GPT-2 small scaling result
-
-`make analyze-full` runs the real 124M GPT-2-small checkpoint for one token and
-calculates the size of the equivalent CSS circuit. See
-[`FULL_GPT2.md`](FULL_GPT2.md) for the measured limit: 123.55 million CSS MAC
-terms and a projected 3.16–6.12 GB stylesheet per unrolled token. The research
-and implemented optimizations are recorded in
-[`OPTIMIZATIONS.md`](OPTIMIZATIONS.md).
-
-## TinyStories exact output head
-
-The full width-64, eight-layer TinyStories model now generates recurrently in
-CSS with a real rolling KV cache and an exact 50,257-token output head. The
-current zero-script page predeclares 16 output stages and renders `Once upon a
-time, there was a little girl named Lily. She loved to play with her toys`.
-
-The optimized static transformer-plus-head path takes 670–702 ms median. The
-complete recurrent run takes 42.69 seconds for four tokens because Chromium
-also has to latch thousands of cache properties through safe execute/store
-phases. The linked graph is about 234 MB of CSS and used roughly 1.4 GB of
-renderer memory. This is a conclusive systems demonstration, not yet a
-practical text-generation UI.
-
-See [`tinystories/RESULTS.md`](tinystories/RESULTS.md) for the end-to-end result
-and [`output-head-benchmark/RESULTS.md`](output-head-benchmark/RESULTS.md) for
-the output-search experiments.
-
-For the strict zero-JavaScript version, build and open the nested page:
-
-```sh
-make tinystories-all
-make serve-tinystories
-```
-
-Open `http://localhost:4173/tinystories/nested.html`. It contains no
-`<script>` element and uses no animation clock. Sixteen nested model elements
-reuse the same CSS circuit; each child inherits the previous model element's
-winning embedding and KV cache. The normal parent-to-child CSS cascade enforces
-the evaluation order, so a slow calculation cannot corrupt the next state.
-An exact CSS decoder covering all 50,257 tokens renders the generated text as
-`Once upon a time, there was a little girl named Lily. She loved to play with
-her toys`. Generated pieces reflect live computed CSS state, although the
-browser may batch several stages into one paint.
-
-For actual staged painting with a CSS-only Pause/Play control, open
-`http://localhost:4173/tinystories/streaming.html`. Later model subtrees use
-`content-visibility: hidden` until the previous computed winner starts their
-one-millisecond CSS gate. The gate has zero delay; the 1 ms duration is the
-smallest practical animation tick that keeps stages in separate style passes.
-The page starts paused after preparing the first token. Press Play to run the
-remaining 15 stages as quickly as Chromium can evaluate and paint them. A
-currently-running style calculation can still block the UI. The optional
-“Show token IDs” control exposes the computed winners alongside their decoded
-text.
-
-`http://localhost:4173/tinystories/streaming-packed8.html` is the recommended
-compressed experiment. It quantizes only the embedding fed from one generated
-token into the next and packs three 8-bit coordinates into each 24-bit CSS
-number. It preserves all 50,257 output candidates. The expanded 16-token run
-matched all 16 rolling-window reference IDs. The complete page is 148,926,533
-bytes raw, 33,524,024 bytes with gzip level 9, and 28,928,806 bytes with
-Brotli level 9, versus 236,991,550 raw for the earlier four-token uncompressed
-streaming page.
-A clean renderer comparison measured about 1.66 GB RSS packed versus 2.32 GB
-unpacked. Two full-paint measurements took 12.828 and 12.891 seconds for the
-15 tokens generated after Play: 1.17 visible tokens/second median. The first
-token is prepared while paused, and stylesheet loading is excluded.
-
-The compiler writes the same nine-decimal values using their shortest
-equivalent CSS spelling. All 16 browser token IDs remain unchanged. Run
-`make precompress-tinystories` to create deterministic `.gz` and `.br` files;
-the HTTP server must select them and send the matching `Content-Encoding`.
-For local testing, `make serve-tinystories` serves those precompressed static
-files at `http://127.0.0.1:4173` with immutable caching on versioned CSS. The
-server performs no inference and adds no client-side code.
-
-An alternating painted A/B test found no runtime penalty from the shorter
-numeric spelling. The legacy formatter took 17.926 and 17.355 seconds; the
-short formatter took 17.437 and 17.508 seconds. The roughly one-percent median
-difference favored the short formatter and is within renderer noise.
-
-`streaming-packed8x6.html` is a smaller experimental alternative. It packs six
-8-bit coordinates into an untyped 48-bit CSS value. All 16 token IDs match, and
-the rebuilt complete raw page is 134,485,605 bytes, but painted generation
-slowed to
-0.85 tokens/second in the measured runs. The typed 24-bit page remains the
-recommended balance of size, correctness, and speed.
-
-Three additional output-head candidates remain opt-in:
-
-- `streaming-packed8-score-token.html` carries a quantized score and token ID
-  through one untyped maximum. It is 0.96 MB smaller raw, but its two-run
-  painted median was about 4% slower and its Brotli file was slightly larger.
-- `streaming-packed8-row-int8.html` replaces full-precision score weights with
-  row-wise 8-bit codes. It is much smaller and faster, but diverged on two of
-  twenty expanded prompt tests, so it is not a faithful checkpoint build.
-- `streaming-packed8-row-int10.html` uses the safer 10-bit version. It matched
-  320/320 tested autoregressive decisions and all 16 browser tokens. The full
-  page is 126,338,257 bytes raw and 16,441,633 bytes with Brotli level 9. Its
-  two painted runs took 11.358 and 12.123 seconds versus 13.640 and 13.777 for
-  the exact baseline measured alongside it. This still changes the checkpoint
-  numerically and therefore remains experimental.
-
-Run `python3 tools/analyze_row_score_quantization.py --bits 10` to repeat the
-expanded prompt check. None of these pages contains JavaScript.
-
-### Editable prompt experiment
-
-`tinystories/dynamic.html` connects the OpenType tokenizer experiment to the
-width-64 TinyStories circuit. The editable `<style>` element supplies normal
-text. Two generated fonts apply GPT-2's ranked BPE substitutions and expose
-each resulting token ID as two safe glyph-width digits. CSS then reuses the
-output head's existing packed token-to-embedding lookup and feeds the first
-four BPE tokens through a zero-state recurrent transformer before generating
-32 new tokens sequentially.
-
-Build and serve it with:
-
-```sh
-make tinystories-dynamic
-make precompress-tinystories-experiments
-python3 tools/serve_precompressed.py --port 4174
-```
-
-Then open `http://127.0.0.1:4174/tinystories/dynamic.html`. The page contains
-no script. Chromium recovered `Once upon a time` as token IDs
-`[7454, 2402, 257, 640]`; a second live edit recovered `The little girl` as
-`[464, 1310, 2576]` and generated ` named` next. The 32-token default run
-completed. Its first nine output IDs matched the fixed-prompt reference before
-the sequence diverged because this path quantizes the prompt embeddings with
-the existing 8-bit feedback table. It is real inference over an approximate
-post-training representation, not a bit-identical checkpoint run.
-
-The complete dynamic page is 131,317,997 raw bytes and 17,550,761 bytes with
-Brotli level 9. A CSS-only document cannot append new model elements, so the
-stream is necessarily finite: this build predeclares 35 transformer stages,
-which cover up to four prompt tokens followed by exactly 32 generated tokens.
-Raising that ceiling is a build-time constant, but runtime memory and computed
-style state grow with the number of predeclared stages.
-
-The page starts in Edit mode with inference disconnected. The editable rule
-sets a registered, non-inheriting `--draft-prompt`; Run or Pause copies that
-draft into the inherited model input. Typing therefore updates one element
-instead of invalidating all 35 transformer stages. Generate starts a fresh
-run, while Edit / reset removes the active animation chain before accepting
-another prompt. The chain also closes at GPT-2 token 50256 and hides that
-internal end-of-text marker.
-
-Its handoff elements use valid phrasing markup so the browser does not relocate
-them outside the state selectors, and the four prompt-tokenizer wrappers do not
-carry the generic `.model` class. Those details prevent accidental transformer
-matches during startup and editing.
-
-Closed handoffs remain `inline-block` so `content-visibility` can skip their
-subtrees. Once a gate opens it switches to normal `inline` layout, allowing the
-prompt and generated pieces to form one sentence and wrap at ordinary word
-boundaries instead of moving the entire continuation onto a new line.
-
-Greedy generation remains the reference mode. Chromium 151 does not implement
-the draft CSS `random()` function (`tinystories/css-random-test.html` reports
-`unsupported`), and full-vocabulary sampling would require substantially more
-output-head work than exact argmax. No JavaScript fallback is used.
+- GPT-2 weights: OpenAI, released under the MIT license, from
+  [openai-community/gpt2](https://huggingface.co/openai-community/gpt2). The fonts in the built page are derived from
+  these weights.
+- License for the code in this repository: **TBD**.

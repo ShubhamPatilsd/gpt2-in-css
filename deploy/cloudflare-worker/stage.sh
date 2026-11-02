@@ -2,10 +2,10 @@
 # Stage the GPT-2-in-CSS bundle for the Cloudflare Worker deploy.
 #   ./public/  <- the bundle minus the two files over 25 MiB, plus _headers (static assets)
 #   prints     <- the two large files, to upload to the R2 bucket gpt2-css-large
-# Usage: ./stage.sh [BUNDLE_DIR]   (default: the R8D upload folder)
+# Usage: ./stage.sh [BUNDLE_DIR]   (default: out/model, written by pack/prepare_upload.sh out)
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
-BUNDLE="${1:-${BUNDLE:-$HERE/../../work/2026-09-19/R8D/out/model}}"
+BUNDLE="${1:-${BUNDLE:-$HERE/../../out/model}}"
 BUNDLE="$(cd "$BUNDLE" && pwd)"
 PUB="$HERE/public"
 LARGE=(runtime.css fonts/embedding-lookup.woff2)

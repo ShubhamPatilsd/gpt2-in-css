@@ -1,8 +1,8 @@
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const modules = process.env.CODEX_NODE_MODULES ??
-  "/Users/shubhampatil/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules";
+const modules = process.env.PLAYWRIGHT_NODE_MODULES ??
+  new URL("../node_modules", import.meta.url).pathname;
 const { chromium } = require(`${modules}/playwright`);
 const executablePath = process.env.CHROME_PATH ??
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";

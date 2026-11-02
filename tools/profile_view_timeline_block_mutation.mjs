@@ -2,8 +2,8 @@ import fs from "node:fs/promises";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const root = process.env.CODEX_NODE_MODULES ??
-  "/Users/shubhampatil/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules";
+const root = process.env.PLAYWRIGHT_NODE_MODULES ??
+  new URL("../node_modules", import.meta.url).pathname;
 const { chromium } = require(`${root}/playwright`);
 const file = process.env.VIEW_TIMELINE_PROFILE_FILE ?? "view-timeline-block.html";
 const scopeSelector = process.env.VIEW_TIMELINE_PROFILE_SCOPE ?? ".block-scope";

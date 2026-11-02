@@ -1,0 +1,56 @@
+# Static-asset headers (Workers static assets). stage.sh copies this into ./public/.
+# Not applied to the two Worker-served files; src/worker.js sets their headers.
+# Same CSP the local launcher sends (tools/launch_browser_gpt2.py), plus the page's own <meta> CSP.
+/*
+  Content-Security-Policy: script-src 'none'; object-src 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+
+/
+  Cache-Control: public, max-age=300
+
+/index.html
+  Cache-Control: public, max-age=300
+
+# Fonts referenced as fonts/<name>?v=<sha> or with a hash in the file name never change in place.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts referenced WITHOUT ?v= and without a hash in the name: shorter cache, then ETag revalidation.
+# The "! Cache-Control" line detaches the immutable value inherited from /fonts/*.
+/fonts/gpt2-token-id-0-full.ttf
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+/fonts/gpt2-token-id-1-full.ttf
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+/fonts/gumbel-noise.ttf
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+/fonts/score-high-0.woff2
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+/fonts/score-high-1.woff2
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+/fonts/score-high-2.woff2
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+/fonts/score-residual-0.woff2
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+/fonts/score-residual-1.woff2
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+/fonts/score-residual-2.woff2
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
