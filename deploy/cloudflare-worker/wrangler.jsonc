@@ -1,0 +1,25 @@
+// Cloudflare Worker for the no-JS GPT-2-in-CSS demo (option A1 in HOSTING.md).
+// The page itself has zero client JavaScript. This Worker runs on Cloudflare's
+// servers, and only for the two files that are larger than the 25 MiB
+// static-asset limit. Every other path is served as a static asset and never
+// invokes the Worker.
+{
+  "name": "gpt2-css",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-07-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    // Filled by ./stage.sh: the bundle minus the two large files, plus _headers.
+    "directory": "./public",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none",
+    // Only these paths invoke the Worker (query strings such as ?v= are ignored when matching).
+    "run_worker_first": ["/runtime.css", "/fonts/embedding-lookup.woff2"]
+  },
+  "r2_buckets": [
+    { "binding": "LARGE", "bucket_name": "gpt2-css-large" }
+  ],
+  "observability": { "enabled": false }
+}
