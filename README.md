@@ -21,31 +21,59 @@ GPT-2.
 
 ## What is in this repository
 
-This is the compiler source (Python) that writes the page, the scripts that pack it, the Cloudflare deploy config,
-and two documents that explain how the page works. The built page (fonts, `runtime.css`, `index.html`) is **not** in
-git, because it is about 300 MB.
+The compiler source of the shipped page, and the full research history that led to it: about 450 experiments, eight
+speed rounds and the audits, with the git history from the first commit (2026-08-24) on. The built page (fonts,
+`runtime.css`, `index.html`) is **not** in git, because it is about 300 MB.
 
 ```
 compile.sh                  Final page compiler entry point (wraps tools/browser_gpt2_runtime.py with the shipped flags)
-tools/                      Compiler and font builders (Python), plus research benchmarks and profilers (Playwright .mjs)
+tools/                      Compiler, font builders, tests, research benchmarks and profilers (Python, Playwright .mjs)
   browser_gpt2_runtime.py     Main compiler: writes index.html + runtime.css + fonts for the full 12-layer model
   browser_gpt2_*.py           Model parts: embedding, attention/KV cache, MLP font vectors, vocabulary head
   f4_* r2*_ ... r8u_*.py      Optimization passes and UI features, switched by the env flags in compile.sh
   build_*.py                  Font and CSS builders for the experiment stages that the final compile reuses
   launch_browser_gpt2.py      Local static server + launcher (separate Chrome profile, JavaScript off, strict CSP)
-  serve_precompressed.py      Static server that serves .br/.gz files
 pack/                       Pack a built bundle into a self-contained upload folder and zip
-  prepare_upload.sh           bundles/<name>  ->  <out>/model (upload tree) + <out>-zip/gpt2-in-css.zip
 deploy/cloudflare-worker/   Cloudflare Worker config for the hosted demo (see DEPLOY.md)
 docs/                       How it works: I1 = the data path of one token, I2 = control path, clocking, sampling, UI
+experiments/                ~450 probes and studies: font axes (HVAR/avar2/gvar), GSUB, SVG filters, anchors,
+                            timelines, counters, output-head search, quantisation, scaling to 12 layers
+work/2026-09-19/            The speed rounds for the shipped page (baseline 40.2 s/token -> about 16 s/token)
+audit/                      Profiling audits, cost models, and reviews of every experiment (E1-E6)
+EXPERIMENTS.md              Index of every experiment, round and audit, in date order
+transformer/, pretrained/,  The first prototypes (2026-08-24/25): MNIST MLP, toy transformer, tiny GPT-2,
+tinystories/, index.html    TinyStories streaming demo
+OPTIMIZATIONS.md, FULL_GPT2.md, MODEL_CANDIDATES.md   Early design notes
 ```
 
-The documents in `docs/` were written against the original research tree. Paths in them such as
-`work/2026-09-19/R7X/tools/x.py` correspond to `tools/x.py` here.
+Generated files are not in git: fonts, built CSS/HTML bundles, Chrome traces, run logs, and any file over 1 MB.
+The scripts next to each experiment, or in `tools/`, build them again. Many research scripts expect those generated
+files, so treat them as notes, not as working tools.
 
-Tests and browser test harnesses were removed from this public copy. The research benchmark and profiler scripts in
-`tools/` (`benchmark_*`, `profile_*`, `compare_*`, `diagnose_*`, ...) are kept for reference. Many of them expect
-experiment pages that are not in this repository, so treat them as notes, not as working tools.
+The documents in `docs/` were written against the research tree. A path such as `work/2026-09-19/R7X/tools/x.py`
+means `tools/x.py` as it was in round R7X. The history of `tools/` follows the rounds, so `git log -- tools/x.py`
+shows each version.
+
+## Research history
+
+Experiments from the same day and topic share one commit, dated when their files last changed. [EXPERIMENTS.md](EXPERIMENTS.md) lists them
+all. The main steps:
+
+1. **2026-08-24 – 08-26: first prototypes.** A CSS-only MNIST MLP, then a toy transformer, then a tiny GPT-2 and a
+   TinyStories model compiled to CSS (`transformer/`, `pretrained/`, `tinystories/`). JavaScript was removed from the
+   runtime, and a recurrent CSS clock streams tokens. [FULL_GPT2.md](FULL_GPT2.md) records the first wall: GPT-2
+   small did not fit as plain CSS.
+2. **2026-09-08 – 09-17: how to compute in a browser engine.** Hundreds of probes on where the matrix math can live:
+   variable-font axes and HVAR metrics, GSUB, avar2, SVG filters (RGB/HDR carriers, dithering), anchor positioning,
+   scroll/view timelines, counters. Then the output head (HNSW, IVF, LSH, certified group search) and precision
+   (W8A8, q15/q16 groupwise). See `audit/2026-09-18/E1-experiments-001-075.md` to `E6-…` for a review of each one.
+3. **2026-09-17 – 09-21: the full 12-layer model.** Chained blocks, a hybrid 12-block profile, browser integration
+   and scaling runs (`experiments/browser-gpt2*`, `experiments/gpt2-flat-12block-chain`).
+4. **2026-09-18 – 10-02: eight speed rounds.** From a 40.2 s/token baseline to about 16 s/token (round 4), then the
+   shareable demo: typed prompts, a pure-CSS progress UI, a 2 s load, sampling with seed and temperature, and a
+   32-token context (rounds 6–8). Results: `work/2026-09-19/RESULTS-round*.md`. Profiles: `audit/2026-09-18/P1-*`, `P2-*`.
+5. **2026-10-05 – 11-01: write-up and deploy.** `audit/2026-10-05/T1–T3` re-run and explain the early prototypes;
+   `deploy/` holds the Cloudflare Worker.
 
 ## Run locally
 
